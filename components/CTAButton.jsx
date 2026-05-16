@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-export default function CTAButton({ children, href = "#collections", variant = "primary", external = false }) {
+export default function CTAButton({ children, href = "#bundles", variant = "primary", external = false }) {
   const base =
     "inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 text-xs font-black uppercase tracking-[0.22em] transition duration-300 sm:px-8";
 

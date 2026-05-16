@@ -70,7 +70,7 @@ const statItems = [
   ["Instant", "download access"]
 ];
 
-const heroImage = "/brand/hero-4.svg";
+const heroImage = "/brand/hero-4.png";
 
 export default function Home() {
   return (
@@ -186,6 +186,12 @@ function Hero() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }} className="relative">
+          <motion.div
+            aria-hidden="true"
+            animate={{ opacity: [0.35, 0.62, 0.35], y: [0, -10, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -inset-8 rounded-[2.8rem] bg-[radial-gradient(circle_at_50%_30%,rgba(224,199,133,0.14),transparent_34rem)] blur-xl"
+          />
           <motion.a
             href="#bundles"
             whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
@@ -232,14 +238,21 @@ function Method() {
       </div>
       <div className="mt-14 overflow-hidden rounded-[1.6rem] border border-[#c9a65e]/10 bg-[#070604]/50">
         <div className="grid lg:grid-cols-4">
-          {insideItems.map(([Icon, title, text]) => (
-            <article key={title} className="transition duration-500 border-b border-[#c9a65e]/8 p-6 hover:bg-white/[0.025] lg:border-b-0 lg:border-l lg:first:border-l-0">
+          {insideItems.map(([Icon, title, text], index) => (
+            <motion.article
+              key={title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-90px" }}
+              transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              className="transition duration-500 border-b border-[#c9a65e]/8 p-6 hover:bg-white/[0.025] lg:border-b-0 lg:border-l lg:first:border-l-0"
+            >
               <div className="mb-7 grid h-11 w-11 place-items-center rounded-full border border-[#c9a65e]/10 text-[#dcc27b]">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="editorial-serif text-[1.45rem]">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-[#9e9688]">{text}</p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
@@ -278,7 +291,7 @@ function InsideBundle() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           {showcaseProducts.slice(1, 5).map((product, index) => (
-            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card group relative block overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/8 bg-[#11100b] shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-2 ${index % 2 ? "mt-10" : ""}`}>
+            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/8 bg-[#11100b] shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-2 ${index % 2 ? "mt-10" : ""}`}>
               <div className="luxe-sheen z-10" />
               <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.035]" />
             </a>
@@ -337,20 +350,23 @@ function BundleShowcase() {
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
       >
-        {visibleProducts.map((product) => <BundleCard key={product.slug} product={product} />)}
+        {visibleProducts.map((product, index) => <BundleCard key={product.slug} product={product} index={index} />)}
       </motion.div>
     </Section>
   );
 }
 
-function BundleCard({ product }) {
+function BundleCard({ product, index = 0 }) {
   const niche = product.title.replace(" Growth Bundle", "").replace("Complete ", "");
   return (
     <motion.a
       href={`/products/${product.slug}`}
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -12, rotateX: 2.4, rotateY: -2.2 }}
-      transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
-      className="luxe-card group relative overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.48, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
+      className="luxe-card premium-edge group relative overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
     >
       <div className="luxe-sheen z-20" />
       <div className="relative overflow-hidden bg-[#11100b]">
@@ -414,7 +430,16 @@ function CategoryShowcase() {
       </div>
       <div className="grid gap-px overflow-hidden rounded-[1.6rem] border border-[#c9a65e]/10 bg-[#c9a65e]/10 md:grid-cols-2 lg:grid-cols-4">
         {categories.map((category, index) => (
-          <a key={category.slug} href={`/categories/${category.slug}`} className="group min-h-[14rem] bg-[#050503] p-7 transition duration-500 hover:bg-[#11100b]">
+          <motion.a
+            key={category.slug}
+            href={`/categories/${category.slug}`}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -4 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
+            className="group min-h-[14rem] bg-[#050503] p-7 transition duration-500 hover:bg-[#11100b]"
+          >
             <div className="mb-8 flex items-center justify-between">
               <span className="editorial-serif text-[1.75rem] text-[#b99b63]">0{index + 1}</span>
               <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#b99b63]">{category.count} bundles</span>
@@ -422,7 +447,7 @@ function CategoryShowcase() {
             <h3 className="editorial-serif text-[1.75rem]">{category.title}</h3>
             <p className="mt-4 text-sm leading-6 text-[#9e9688]">{category.text}</p>
             <ArrowRight className="mt-8 h-4 w-4 text-[#dcc27b] transition group-hover:translate-x-1" />
-          </a>
+          </motion.a>
         ))}
       </div>
     </Section>
@@ -435,7 +460,7 @@ function Results() {
       <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
         <div>
           <Eyebrow>The Results</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(1.85rem,2.55vw,2.85rem)] leading-[1.05]">
+          <h2 className="editorial-serif text-[clamp(2.25rem,3.6vw,4.15rem)] leading-[1]">
             Pros are <span className="gold-text italic">obsessed.</span>
           </h2>
         </div>
@@ -448,9 +473,12 @@ function Results() {
         {testimonials.map(([name, role, quote, color], index) => (
           <motion.article
             key={name}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -6 }}
-            transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className={index === 3 ? "rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c] lg:col-span-2" : "rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c]"}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.44, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className={index === 3 ? "premium-edge rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c] lg:col-span-2" : "premium-edge rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c]"}
           >
             <p className="editorial-serif text-[2rem] leading-none text-[#dcc27b]">"</p>
             <p className="mt-4 text-base leading-7 text-[#d8d0c2]">{quote}</p>
@@ -475,7 +503,7 @@ function FAQ() {
     <Section id="faq">
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow centered>Frequently Asked</Eyebrow>
-        <h2 className="editorial-serif text-[clamp(1.75rem,2.35vw,2.65rem)] leading-[1.06]">
+        <h2 className="editorial-serif text-[clamp(2.25rem,3.6vw,4.15rem)] leading-[1]">
           Questions? <span className="gold-text italic">Answers.</span>
         </h2>
       </div>

@@ -108,6 +108,29 @@ body::after {
   opacity: 1;
 }
 
+.premium-edge {
+  position: relative;
+  isolation: isolate;
+}
+
+.premium-edge::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(120deg, rgba(245, 227, 167, 0.22), rgba(201, 166, 94, 0.04) 38%, rgba(255, 255, 255, 0.08) 60%, rgba(129, 92, 29, 0.16));
+  filter: blur(18px);
+  transform: scale(0.98);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.premium-edge:hover::after {
+  opacity: 1;
+  transform: scale(1.015);
+}
+
 .luxe-sheen {
   position: absolute;
   inset: 0;

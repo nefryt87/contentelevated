@@ -54,7 +54,7 @@ export default function ProductPage({ params }) {
             <BrandMark className="h-12 w-44 sm:w-52" />
           </Link>
           <Link
-            href="/#collections"
+            href="/#bundles"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-cream/72 transition hover:border-gold/40 hover:text-gold"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -168,7 +168,7 @@ export default function ProductPage({ params }) {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">Related bundles</p>
               <h2 className="mt-3 text-3xl font-black text-cream">More in {product.category}</h2>
             </div>
-            <Link href="/#collections" className="hidden text-sm font-semibold text-gold sm:inline">
+            <Link href="/#bundles" className="hidden text-sm font-semibold text-gold sm:inline">
               View catalog
             </Link>
           </div>
