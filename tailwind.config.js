@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Satoshi", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+        display: ["SF Pro Display", "Inter", "Helvetica Neue", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {
         glow: "0 0 80px rgba(108, 238, 255, 0.18)",

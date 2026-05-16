@@ -131,7 +131,7 @@ function Navbar() {
             <a key={href} href={href} className="transition duration-300 hover:text-[#b8f3ff]">{label}</a>
           ))}
         </div>
-        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#071018] transition duration-300 hover:scale-[1.02] sm:inline-flex">
+        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#06101a] transition duration-300 hover:scale-[1.02] sm:inline-flex">
           Shop Bundles
         </a>
         <button
@@ -185,13 +185,13 @@ function Hero() {
             <Eyebrow>Premium · AI-Powered · Done-For-You</Eyebrow>
           </motion.div>
           <motion.h1 variants={heroReveal} className="editorial-serif max-w-4xl text-[clamp(2.55rem,14vw,4.25rem)] font-normal leading-[0.94] tracking-normal sm:text-[clamp(3.05rem,5.7vw,6.35rem)] sm:leading-[0.92]">
-            Elevate your brand. <span className="gold-text italic">Elevate</span> your income.
+            Elevate your brand. <span className="gold-text">Elevate</span> your income.
           </motion.h1>
           <motion.p variants={heroReveal} className="mt-6 max-w-2xl text-base leading-7 text-[#aeb7c3] sm:mt-7 sm:text-xl sm:leading-9">
             Premium growth bundles for service businesses and creators, engineered like a studio-grade growth system and delivered like an instant download.
           </motion.p>
           <motion.div variants={heroReveal} className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
-            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#071018] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
+            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#06101a] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               Explore the bundles <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#f4f7fb] transition duration-300 hover:border-[#6f7a89]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
@@ -257,7 +257,7 @@ function Method() {
         <div>
           <Eyebrow>The Method</Eyebrow>
           <h2 className="editorial-serif text-[clamp(2.55rem,4.15vw,4.75rem)] leading-[0.98]">
-            Built like a <span className="gold-text italic">studio-grade</span> growth system. Ready on download.
+            Built like a <span className="gold-text">studio-grade</span> growth system. Ready on download.
           </h2>
         </div>
         <p className="max-w-3xl text-base leading-7 text-[#9aa6b5] xl:text-[1.05rem] xl:leading-8">
@@ -303,7 +303,7 @@ function InsideBundle() {
         <div>
           <Eyebrow>Inside Every Bundle</Eyebrow>
           <h2 className="editorial-serif text-[clamp(2.2rem,12vw,3.3rem)] leading-[1] sm:text-[clamp(2.55rem,4.35vw,5rem)] sm:leading-[0.98]">
-            A complete <span className="gold-text italic">operating system</span> for your business.
+            A complete <span className="gold-text">operating system</span> for your business.
           </h2>
           <div className="mt-10 space-y-6">
             {list.map(([number, title, text]) => (
@@ -344,7 +344,7 @@ function BundleShowcase() {
         <div>
           <Eyebrow>The Bundles · 34 Niches</Eyebrow>
           <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
-            Pick your <span className="gold-text italic">craft.</span> We built the rest.
+            Pick your <span className="gold-text">craft.</span> We built the rest.
           </h2>
         </div>
         <p className="text-base leading-7 text-[#9aa6b5] lg:pb-2 lg:text-right">
@@ -362,7 +362,7 @@ function BundleShowcase() {
               onClick={() => setActiveCategory(option)}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[0.6rem] font-bold uppercase tracking-[0.14em] transition duration-300 sm:px-4 sm:text-[0.66rem] sm:tracking-[0.18em] ${
                 selected
-                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#071018] shadow-[0_16px_36px_rgba(255,106,61,0.14)]"
+                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#06101a] shadow-[0_16px_36px_rgba(255,106,61,0.14)]"
                   : "border-[#6f7a89]/10 bg-white/[0.012] text-[#9aa6b5] hover:border-[#6f7a89]/28 hover:text-[#f7f8fb]"
               }`}
             >
@@ -422,7 +422,7 @@ function Process() {
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow centered>The Process</Eyebrow>
         <h2 className="editorial-serif text-[clamp(2.55rem,4.15vw,4.85rem)] leading-[0.98]">
-          Launch your new brand <span className="gold-text italic">this weekend.</span>
+          Launch your new brand <span className="gold-text">this weekend.</span>
         </h2>
         <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-[#9aa6b5] xl:text-xl xl:leading-9">
           No agency calls. No course to finish. No blank page. Just plug in, swap your colors, and start booking.
@@ -489,7 +489,7 @@ function Results() {
         <div>
           <Eyebrow>The Results</Eyebrow>
           <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
-            Pros are <span className="gold-text italic">obsessed.</span>
+            Pros are <span className="gold-text">obsessed.</span>
           </h2>
         </div>
         <div className="flex items-center gap-4 text-[#9aa6b5]">
@@ -532,7 +532,7 @@ function FAQ() {
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow centered>Frequently Asked</Eyebrow>
         <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
-          Questions? <span className="gold-text italic">Answers.</span>
+          Questions? <span className="gold-text">Answers.</span>
         </h2>
       </div>
       <div className="mx-auto mt-9 max-w-7xl border-t border-gradient-soft">
@@ -561,13 +561,13 @@ function FinalCTA() {
       <div className="relative mx-auto max-w-5xl">
         <Eyebrow centered>Your Move</Eyebrow>
         <h2 className="editorial-serif text-[clamp(2.35rem,12vw,3.65rem)] leading-[1] sm:text-[clamp(2.7rem,4.5vw,5.2rem)] sm:leading-[0.98]">
-          The next <span className="gold-text italic">90 days</span> could change everything.
+          The next <span className="gold-text">90 days</span> could change everything.
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-[#9aa6b5] sm:mt-7 sm:text-lg sm:leading-8 xl:text-xl xl:leading-9">
           Stop trading hours for tutorials. Plug in a premium system and put your craft back at the center of your business.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#071018] transition hover:scale-[1.02]">
+          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#06101a] transition hover:scale-[1.02]">
             Shop Bundles <ArrowRight className="h-4 w-4" />
           </a>
           <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/8 px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#f4f7fb] transition hover:border-[#6f7a89]/50 hover:bg-white/[0.03]">
@@ -642,7 +642,7 @@ function NewsletterForm() {
           required
         />
         <button
-          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#071018] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
+          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#06101a] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
           disabled={status === "loading"}
         >
           {status === "loading" ? "..." : "Join"}
