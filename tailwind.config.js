@@ -9,20 +9,20 @@ module.exports = {
     extend: {
       colors: {
         ink: "#05070f",
-        obsidian: "#090d18",
-        navy: "#0b1630",
-        cream: "#f7efd9",
-        muted: "#a8a392",
-        gold: "#d8aa48",
-        blueglow: "#47a4ff"
+        obsidian: "#090d14",
+        navy: "#0a1324",
+        cream: "#f7f8fb",
+        muted: "#9aa6b5",
+        gold: "#8bd7ff",
+        blueglow: "#6b7cff"
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["Satoshi", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        glow: "0 0 80px rgba(216, 170, 72, 0.22)",
-        blue: "0 0 80px rgba(71, 164, 255, 0.18)"
+        glow: "0 0 80px rgba(108, 238, 255, 0.18)",
+        blue: "0 0 80px rgba(107, 124, 255, 0.18)"
       }
     }
   },

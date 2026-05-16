@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
     <radialGradient id="bg" cx="50%" cy="38%" r="70%">
-      <stop offset="0%" stop-color="#18130b"/>
-      <stop offset="62%" stop-color="#080705"/>
-      <stop offset="100%" stop-color="#030302"/>
+      <stop offset="0%" stop-color="#111b2a"/>
+      <stop offset="62%" stop-color="#080b10"/>
+      <stop offset="100%" stop-color="#030407"/>
     </radialGradient>
-    <linearGradient id="gold" x1="26" y1="22" x2="78" y2="104" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fff2c6"/>
-      <stop offset="0.48" stop-color="#c9a65e"/>
-      <stop offset="1" stop-color="#76591d"/>
+    <linearGradient id="signal" x1="26" y1="22" x2="78" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7fbff"/>
+      <stop offset="0.5" stop-color="#b8f3ff"/>
+      <stop offset="1" stop-color="#7c8cff"/>
     </linearGradient>
     <linearGradient id="cream" x1="72" y1="24" x2="106" y2="102" gradientUnits="userSpaceOnUse">
       <stop stop-color="#ffffff"/>
-      <stop offset="0.7" stop-color="#f4f0e7"/>
-      <stop offset="1" stop-color="#b9b2a5"/>
+      <stop offset="0.7" stop-color="#edf4fb"/>
+      <stop offset="1" stop-color="#9aa7b7"/>
     </linearGradient>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="2.4" result="blur"/>
@@ -24,9 +24,9 @@
     </filter>
   </defs>
   <rect width="128" height="128" rx="28" fill="url(#bg)"/>
-  <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#c9a65e" stroke-opacity="0.22"/>
+  <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#6f7a89" stroke-opacity="0.22"/>
   <g filter="url(#glow)">
-    <path d="M57 29H49C35.8 29 27 43.4 27 64C27 84.6 35.8 99 49 99H57" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M57 29H49C35.8 29 27 43.4 27 64C27 84.6 35.8 99 49 99H57" fill="none" stroke="url(#signal)" stroke-width="12" stroke-linecap="round"/>
     <path d="M73 31H104M73 64H99M73 97H104" fill="none" stroke="url(#cream)" stroke-width="10" stroke-linecap="square"/>
   </g>
 </svg>

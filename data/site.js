@@ -288,7 +288,7 @@ export const categorySlug = (category) =>
 
 export const categories = [
   ["Creatives", "Studios, speakers, planners, photographers, florists, and makers building premium demand.", "from-[#784bff] via-[#1a2d6f] to-[#111827]"],
-  ["Beauty", "Client experience systems for beauty professionals and aesthetic brands.", "from-[#d8aa48] via-[#603a62] to-[#111827]"],
+  ["Beauty", "Client experience systems for beauty professionals and aesthetic brands.", "from-[#6b7cff] via-[#17445b] to-[#0b1020]"],
   ["Home Services", "Local authority, quote follow-ups, reviews, and seasonal campaigns.", "from-[#47a4ff] via-[#164766] to-[#10151f]"],
   ["Health & Wellness", "Trust-building education, retention systems, and patient nurture.", "from-[#65d6a5] via-[#174846] to-[#10151f]"],
   ["Hospitality", "Guest experience, booking systems, local content, and loyalty-building digital systems.", "from-[#ff9a4a] via-[#55341c] to-[#10151f]"],

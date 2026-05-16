@@ -75,7 +75,7 @@ export default function AboutVisual() {
                   whileInView={{ width: `${82 - index * 9}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, delay: 0.25 + index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="h-full rounded-full bg-gradient-to-r from-gold to-[#fff0b8]"
+                  className="h-full rounded-full bg-gradient-to-r from-gold to-[#b8f3ff]"
                 />
               </div>
               <span className="w-16 text-right text-xs font-bold uppercase tracking-[0.14em] text-gold">{value}</span>

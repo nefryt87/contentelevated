@@ -4,11 +4,11 @@
 
 :root {
   color-scheme: dark;
-  --gold: 201 166 94;
-  --soft-gold: 224 199 133;
-  --cream: 241 235 224;
-  --muted: 166 158 144;
-  --ink: 5 5 3;
+  --gold: 139 215 255;
+  --soft-gold: 108 238 255;
+  --cream: 247 248 251;
+  --muted: 154 166 181;
+  --ink: 5 7 11;
 }
 
 * {
@@ -17,7 +17,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #050503;
+  background: #05070b;
 }
 
 body {
@@ -25,10 +25,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 16% 4%, rgba(201, 166, 94, 0.09), transparent 28rem),
-    radial-gradient(circle at 86% 10%, rgba(102, 76, 32, 0.12), transparent 38rem),
-    radial-gradient(circle at 52% 52%, rgba(255, 244, 214, 0.022), transparent 44rem),
-    linear-gradient(145deg, #030302 0%, #080705 38%, #0e0b07 58%, #050503 100%);
+    radial-gradient(circle at 16% 4%, rgba(107, 124, 255, 0.09), transparent 28rem),
+    radial-gradient(circle at 86% 10%, rgba(26, 48, 88, 0.22), transparent 38rem),
+    radial-gradient(circle at 52% 52%, rgba(141, 211, 255, 0.025), transparent 44rem),
+    linear-gradient(145deg, #030407 0%, #080b10 38%, #11151c 58%, #05070b 100%);
   color: rgb(var(--cream));
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -40,8 +40,8 @@ body::before {
   pointer-events: none;
   content: "";
   background-image:
-    linear-gradient(rgba(201, 166, 94, 0.014) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 166, 94, 0.014) 1px, transparent 1px);
+    linear-gradient(rgba(107, 124, 255, 0.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 124, 255, 0.014) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: radial-gradient(circle at center, black, transparent 76%);
 }
@@ -57,8 +57,8 @@ body::after {
 }
 
 ::selection {
-  background: rgba(216, 170, 72, 0.45);
-  color: #fff7df;
+  background: rgba(255, 106, 61, 0.52);
+  color: #fff;
 }
 
 .glass {
@@ -69,7 +69,7 @@ body::after {
 }
 
 .gold-text {
-  background: linear-gradient(120deg, #f5e3a7, #c9a65e 44%, #806224);
+  background: linear-gradient(115deg, #ffffff 0%, #d8e8ff 28%, #7dd3fc 56%, #b8f3ff 74%, #c7b9ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -81,12 +81,12 @@ body::after {
 
 .border-gradient-soft {
   border-color: transparent;
-  border-image: linear-gradient(90deg, transparent, rgba(201, 166, 94, 0.13), rgba(245, 227, 167, 0.055), transparent) 1;
+  border-image: linear-gradient(90deg, transparent, rgba(107, 124, 255, 0.13), rgba(188, 245, 255, 0.055), transparent) 1;
 }
 
 .section-fade {
   background:
-    radial-gradient(circle at 80% 8%, rgba(201, 166, 94, 0.045), transparent 28rem),
+    radial-gradient(circle at 80% 8%, rgba(107, 124, 255, 0.045), transparent 28rem),
     linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.012), transparent);
 }
 
@@ -104,8 +104,8 @@ body::after {
   border-radius: inherit;
   opacity: 0;
   background:
-    radial-gradient(circle at 28% 8%, rgba(245, 227, 167, 0.18), transparent 34%),
-    radial-gradient(circle at 80% 10%, rgba(201, 166, 94, 0.12), transparent 32%);
+    radial-gradient(circle at 28% 8%, rgba(188, 245, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 80% 10%, rgba(107, 124, 255, 0.12), transparent 32%);
   transition: opacity 0.55s ease;
 }
 
@@ -125,7 +125,7 @@ body::after {
   content: "";
   border-radius: inherit;
   opacity: 0;
-  background: linear-gradient(120deg, rgba(245, 227, 167, 0.22), rgba(201, 166, 94, 0.04) 38%, rgba(255, 255, 255, 0.08) 60%, rgba(129, 92, 29, 0.16));
+  background: linear-gradient(120deg, rgba(188, 245, 255, 0.22), rgba(107, 124, 255, 0.04) 38%, rgba(255, 255, 255, 0.08) 60%, rgba(63, 76, 100, 0.16));
   filter: blur(18px);
   transform: scale(0.98);
   transition: opacity 0.55s ease, transform 0.55s ease;
@@ -141,7 +141,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   opacity: 0.55;
-  background: linear-gradient(110deg, transparent 28%, rgba(255, 244, 214, 0.08), rgba(201, 166, 94, 0.045), transparent 52%);
+  background: linear-gradient(110deg, transparent 28%, rgba(247, 251, 255, 0.08), rgba(108, 238, 255, 0.05), transparent 52%);
   transform: translateX(-145%);
   transition: transform 1.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
@@ -162,7 +162,7 @@ body::after {
   inset: -40%;
   z-index: -1;
   content: "";
-  background: conic-gradient(from 90deg, transparent, rgba(255, 239, 185, 0.78), rgba(216, 170, 72, 0.9), transparent);
+  background: conic-gradient(from 90deg, transparent, rgba(184, 243, 255, 0.74), rgba(255, 106, 61, 0.88), transparent);
   animation: spin-sheen 5.5s linear infinite;
 }
 
@@ -172,16 +172,16 @@ body::after {
   z-index: -1;
   content: "";
   border-radius: inherit;
-  background: linear-gradient(135deg, #d9ad4d, #6f4b15);
+  background: linear-gradient(135deg, #ff7348, #111722);
 }
 
 .gold-button {
-  background: linear-gradient(135deg, #e0c782 0%, #c9a65e 38%, #8f6722 100%);
-  box-shadow: 0 18px 52px rgba(143, 103, 34, 0.2);
+  background: linear-gradient(135deg, #ff8b62 0%, #ff6a3d 48%, #d94f2f 100%);
+  box-shadow: 0 18px 52px rgba(255, 106, 61, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .gold-button:hover {
-  background: linear-gradient(135deg, #ead799 0%, #d0ad63 36%, #9b7228 100%);
+  background: linear-gradient(135deg, #ffa27f 0%, #ff7449 44%, #e85a35 100%);
 }
 
 .product-box {
@@ -199,7 +199,7 @@ body::after {
 .product-box::before {
   inset: 14px -18px -18px 16px;
   transform: translateZ(-26px);
-  background: linear-gradient(135deg, rgba(216, 170, 72, 0.34), rgba(129, 92, 29, 0.1));
+  background: linear-gradient(135deg, rgba(108, 238, 255, 0.28), rgba(63, 76, 100, 0.1));
   filter: blur(18px);
 }
 
@@ -210,7 +210,7 @@ body::after {
   height: 100%;
   transform: rotateY(90deg);
   transform-origin: left;
-  background: linear-gradient(180deg, rgba(216, 170, 72, 0.5), rgba(13, 20, 38, 0.9));
+  background: linear-gradient(180deg, rgba(108, 238, 255, 0.34), rgba(13, 20, 38, 0.9));
 }
 
 .shine {
@@ -258,8 +258,8 @@ body::after {
 @media (max-width: 640px) {
   body {
     background:
-      radial-gradient(circle at 22% 0%, rgba(201, 166, 94, 0.06), transparent 22rem),
-      linear-gradient(160deg, #030302 0%, #080705 52%, #050503 100%);
+      radial-gradient(circle at 22% 0%, rgba(107, 124, 255, 0.06), transparent 22rem),
+      linear-gradient(160deg, #030407 0%, #080b10 52%, #05070b 100%);
   }
 
   body::before {

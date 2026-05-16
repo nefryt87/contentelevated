@@ -95,7 +95,7 @@ const heroImageReveal = {
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_10%_16%,rgba(201,166,94,0.045),transparent_34rem),radial-gradient(circle_at_88%_8%,rgba(130,92,31,0.07),transparent_38rem),linear-gradient(180deg,rgba(5,5,3,0.76),rgba(5,5,3,0.94)_38%,rgba(5,5,3,0.98))] text-[#f4eee2]">
+    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_10%_16%,rgba(107,124,255,0.045),transparent_34rem),radial-gradient(circle_at_88%_8%,rgba(26,48,88,0.16),transparent_38rem),linear-gradient(180deg,rgba(5,7,11,0.76),rgba(5,7,11,0.94)_38%,rgba(5,7,11,0.98))] text-[#f7f8fb]">
       <Navbar />
       <Hero />
       <Method />
@@ -121,31 +121,31 @@ function Navbar() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#c9a65e]/10 bg-[#050503]/78 backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#6f7a89]/10 bg-[#05070b]/78 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-[94rem] items-center justify-between px-5 py-4 sm:px-8">
         <a href="#" className="flex items-center">
           <BrandMark className="h-12 w-52 sm:h-14 sm:w-60" />
         </a>
-        <div className="hidden items-center gap-10 text-xs font-bold uppercase tracking-[0.18em] text-[#d8d0c2]/64 lg:flex">
+        <div className="hidden items-center gap-10 text-xs font-bold uppercase tracking-[0.18em] text-[#c9d0da]/64 lg:flex">
           {links.map(([label, href]) => (
-            <a key={href} href={href} className="transition duration-300 hover:text-[#c9a65e]">{label}</a>
+            <a key={href} href={href} className="transition duration-300 hover:text-[#b8f3ff]">{label}</a>
           ))}
         </div>
-        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#080704] transition duration-300 hover:scale-[1.02] sm:inline-flex">
+        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#071018] transition duration-300 hover:scale-[1.02] sm:inline-flex">
           Shop Bundles
         </a>
         <button
           aria-label="Open navigation"
           onClick={() => setOpen((value) => !value)}
-          className="grid h-11 w-11 place-items-center rounded-full border border-[#c9a65e]/10 bg-white/[0.03] lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.03] lg:hidden"
         >
           <Menu className="h-5 w-5" />
         </button>
       </nav>
       {open ? (
-        <div className="mx-5 mb-4 rounded-3xl border border-[#c9a65e]/8 bg-[#080806] p-3 lg:hidden">
+        <div className="mx-5 mb-4 rounded-3xl border border-[#6f7a89]/8 bg-[#080b10] p-3 lg:hidden">
           {links.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 text-sm font-semibold text-[#d8d0c2]/72">
+            <a key={href} href={href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 text-sm font-semibold text-[#c9d0da]/72">
               {label}
             </a>
           ))}
@@ -157,10 +157,10 @@ function Navbar() {
 
 function Eyebrow({ children, centered = false }) {
   return (
-    <p className={`mb-5 flex items-center gap-3 text-[0.58rem] font-bold uppercase tracking-[0.24em] text-[#b99b63] sm:mb-6 sm:gap-4 sm:text-[0.68rem] sm:tracking-[0.36em] ${centered ? "justify-center" : ""}`}>
-      <span className="h-px w-7 bg-[#b99b63] sm:w-10" />
+    <p className={`mb-5 flex items-center gap-3 text-[0.58rem] font-bold uppercase tracking-[0.24em] text-[#8bd7ff] sm:mb-6 sm:gap-4 sm:text-[0.68rem] sm:tracking-[0.36em] ${centered ? "justify-center" : ""}`}>
+      <span className="h-px w-7 bg-[#8bd7ff] sm:w-10" />
       {children}
-      {centered ? <span className="h-px w-7 bg-[#b99b63] sm:w-10" /> : null}
+      {centered ? <span className="h-px w-7 bg-[#8bd7ff] sm:w-10" /> : null}
     </p>
   );
 }
@@ -172,7 +172,7 @@ function Hero() {
         aria-hidden="true"
         animate={{ opacity: [0.52, 0.78, 0.52], scale: [1, 1.06, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 hidden bg-[radial-gradient(circle_at_15%_28%,rgba(201,166,94,0.12),transparent_27rem),radial-gradient(circle_at_78%_32%,rgba(224,199,133,0.08),transparent_34rem)] sm:block"
+        className="absolute inset-0 hidden bg-[radial-gradient(circle_at_15%_28%,rgba(107,124,255,0.12),transparent_27rem),radial-gradient(circle_at_78%_32%,rgba(108,238,255,0.08),transparent_34rem)] sm:block"
       />
       <motion.div
         className="relative mx-auto grid max-w-[92rem] items-center gap-9 lg:grid-cols-[0.96fr_1.04fr] xl:gap-16"
@@ -187,28 +187,28 @@ function Hero() {
           <motion.h1 variants={heroReveal} className="editorial-serif max-w-4xl text-[clamp(2.55rem,14vw,4.25rem)] font-normal leading-[0.94] tracking-normal sm:text-[clamp(3.05rem,5.7vw,6.35rem)] sm:leading-[0.92]">
             Elevate your brand. <span className="gold-text italic">Elevate</span> your income.
           </motion.h1>
-          <motion.p variants={heroReveal} className="mt-6 max-w-2xl text-base leading-7 text-[#b8b0a1] sm:mt-7 sm:text-xl sm:leading-9">
-            Premium growth bundles for service businesses and creators, engineered like a luxury brand kit and delivered like an instant download.
+          <motion.p variants={heroReveal} className="mt-6 max-w-2xl text-base leading-7 text-[#aeb7c3] sm:mt-7 sm:text-xl sm:leading-9">
+            Premium growth bundles for service businesses and creators, engineered like a studio-grade growth system and delivered like an instant download.
           </motion.p>
           <motion.div variants={heroReveal} className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
-            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#080704] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
+            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#071018] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               Explore the bundles <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#eee7db] transition duration-300 hover:border-[#c9a65e]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
+            <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#f4f7fb] transition duration-300 hover:border-[#6f7a89]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               How it works
             </a>
           </motion.div>
           <motion.div variants={heroReveal} className="mt-8 flex items-center gap-4 sm:mt-10 sm:gap-5">
             <div className="flex -space-x-3">
               {["bg-[#a78b4c]", "bg-[#c6929f]", "bg-[#d8d3bf]", "bg-[#3d765b]"].map((color) => (
-                <span key={color} className={`h-10 w-10 rounded-full border-2 border-[#050503] ${color}`} />
+                <span key={color} className={`h-10 w-10 rounded-full border-2 border-[#05070b] ${color}`} />
               ))}
             </div>
             <div>
-              <div className="mb-1 flex text-[#dcc27b]">
+              <div className="mb-1 flex text-[#b8f3ff]">
                 {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" />)}
               </div>
-              <p className="text-sm text-[#b7b0a3]">Trusted by modern service brands</p>
+              <p className="text-sm text-[#aeb7c3]">Trusted by modern service brands</p>
             </div>
           </motion.div>
         </div>
@@ -218,29 +218,29 @@ function Hero() {
             aria-hidden="true"
             animate={{ opacity: [0.35, 0.62, 0.35], y: [0, -10, 0] }}
             transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden absolute -inset-8 rounded-[2.8rem] bg-[radial-gradient(circle_at_50%_30%,rgba(224,199,133,0.14),transparent_34rem)] blur-xl sm:block"
+            className="hidden absolute -inset-8 rounded-[2.8rem] bg-[radial-gradient(circle_at_50%_30%,rgba(108,238,255,0.14),transparent_34rem)] blur-xl sm:block"
           />
           <motion.a
             href="#bundles"
             whileHover={{ y: -4, rotateX: 0.6, rotateY: -0.6 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="luxe-card group relative block overflow-hidden rounded-[1.35rem] border border-[#c9a65e]/10 bg-[#11100b] shadow-[0_26px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
+            className="luxe-card group relative block overflow-hidden rounded-[1.35rem] border border-[#6f7a89]/10 bg-[#10141b] shadow-[0_26px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
           >
             <div className="luxe-sheen z-20" />
-            <div className="absolute -inset-10 rounded-[3rem] border border-[#c9a65e]/10" />
+            <div className="absolute -inset-10 rounded-[3rem] border border-[#6f7a89]/10" />
             <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 group-hover:scale-[1.012] sm:group-hover:scale-[1.025]" />
-            <div className="absolute left-4 top-4 rounded-full border border-[#c9a65e]/8 bg-[#090806]/78 px-3 py-2 text-xs text-[#f4eee2] backdrop-blur-xl sm:left-5 sm:top-8 sm:px-4 sm:py-3 sm:text-sm">
-              <span className="mr-2 text-[#dcc27b]">★</span> Designed for growth
+            <div className="absolute left-4 top-4 rounded-full border border-[#6f7a89]/8 bg-[#090d12]/78 px-3 py-2 text-xs text-[#f7f8fb] backdrop-blur-xl sm:left-5 sm:top-8 sm:px-4 sm:py-3 sm:text-sm">
+              <span className="mr-2 text-[#b8f3ff]">★</span> Designed for growth
             </div>
-            <div className="absolute bottom-4 right-4 rounded-full border border-[#c9a65e]/10 bg-[#090806]/84 px-4 py-2 text-xs text-[#d8d0c2] backdrop-blur-xl sm:bottom-6 sm:right-6 sm:px-5 sm:py-3 sm:text-sm">
+            <div className="absolute bottom-4 right-4 rounded-full border border-[#6f7a89]/10 bg-[#090d12]/84 px-4 py-2 text-xs text-[#c9d0da] backdrop-blur-xl sm:bottom-6 sm:right-6 sm:px-5 sm:py-3 sm:text-sm">
               Secure checkout · Instant delivery
             </div>
           </motion.a>
-          <div className="mx-auto mt-4 grid max-w-2xl grid-cols-2 overflow-hidden rounded-[1rem] border border-[#c9a65e]/8 bg-[#080806]/40 sm:mt-5 sm:rounded-[1.25rem] md:grid-cols-5">
+          <div className="mx-auto mt-4 grid max-w-2xl grid-cols-2 overflow-hidden rounded-[1rem] border border-[#6f7a89]/8 bg-[#080b10]/40 sm:mt-5 sm:rounded-[1.25rem] md:grid-cols-5">
             {statItems.map(([value, label]) => (
-              <div key={label} className="border-l border-t border-[#c9a65e]/8 px-3 py-4 first:border-l-0 md:border-t-0 md:first:border-l-0">
+              <div key={label} className="border-l border-t border-[#6f7a89]/8 px-3 py-4 first:border-l-0 md:border-t-0 md:first:border-l-0">
                 <p className="editorial-serif gold-text text-[1.08rem] leading-none sm:text-[1.65rem]">{value}</p>
-                <p className="mt-2 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-[#8f887b] sm:text-[0.55rem] sm:tracking-[0.2em]">{label}</p>
+                <p className="mt-2 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-[#737f8f] sm:text-[0.55rem] sm:tracking-[0.2em]">{label}</p>
               </div>
             ))}
           </div>
@@ -257,14 +257,14 @@ function Method() {
         <div>
           <Eyebrow>The Method</Eyebrow>
           <h2 className="editorial-serif text-[clamp(2.55rem,4.15vw,4.75rem)] leading-[0.98]">
-            Built like a <span className="gold-text italic">luxury</span> brand kit. Priced like a download.
+            Built like a <span className="gold-text italic">studio-grade</span> growth system. Ready on download.
           </h2>
         </div>
-        <p className="max-w-3xl text-base leading-7 text-[#aaa295] xl:text-[1.05rem] xl:leading-8">
+        <p className="max-w-3xl text-base leading-7 text-[#9aa6b5] xl:text-[1.05rem] xl:leading-8">
           Every bundle is a complete operating system: calendar, content, scripts, brand kit, AI prompts, and client systems engineered to make a one-person business look and earn like a full studio.
         </p>
       </div>
-      <div className="mt-14 overflow-hidden rounded-[1.6rem] border border-[#c9a65e]/10 bg-[#070604]/50">
+      <div className="mt-14 overflow-hidden rounded-[1.6rem] border border-[#6f7a89]/10 bg-[#070a0f]/50">
         <div className="grid lg:grid-cols-4">
           {insideItems.map(([Icon, title, text], index) => (
             <motion.article
@@ -273,13 +273,13 @@ function Method() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-90px" }}
               transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="transition duration-500 border-b border-[#c9a65e]/8 p-6 hover:bg-white/[0.025] lg:border-b-0 lg:border-l lg:first:border-l-0"
+              className="transition duration-500 border-b border-[#6f7a89]/8 p-6 hover:bg-white/[0.025] lg:border-b-0 lg:border-l lg:first:border-l-0"
             >
-              <div className="mb-7 grid h-11 w-11 place-items-center rounded-full border border-[#c9a65e]/10 text-[#dcc27b]">
+              <div className="mb-7 grid h-11 w-11 place-items-center rounded-full border border-[#6f7a89]/10 text-[#b8f3ff]">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="editorial-serif text-[1.45rem]">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#9e9688]">{text}</p>
+              <p className="mt-3 text-sm leading-6 text-[#8f9baa]">{text}</p>
             </motion.article>
           ))}
         </div>
@@ -308,10 +308,10 @@ function InsideBundle() {
           <div className="mt-10 space-y-6">
             {list.map(([number, title, text]) => (
               <div key={title} className="group flex gap-5 rounded-2xl p-2 transition duration-300 hover:bg-white/[0.025]">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#c9a65e]/10 text-sm text-[#dcc27b]">{number}</span>
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#6f7a89]/10 text-sm text-[#b8f3ff]">{number}</span>
                 <div>
                   <h3 className="text-xl font-bold">{title}</h3>
-                  <p className="mt-1 text-base leading-7 text-[#9e9688]">{text}</p>
+                  <p className="mt-1 text-base leading-7 text-[#8f9baa]">{text}</p>
                 </div>
               </div>
             ))}
@@ -319,7 +319,7 @@ function InsideBundle() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           {showcaseProducts.slice(1, 5).map((product, index) => (
-            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/8 bg-[#11100b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 hover:-translate-y-1 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
+            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/8 bg-[#10141b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 hover:-translate-y-1 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
               <div className="luxe-sheen z-10" />
               <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.035]" />
             </a>
@@ -347,7 +347,7 @@ function BundleShowcase() {
             Pick your <span className="gold-text italic">craft.</span> We built the rest.
           </h2>
         </div>
-        <p className="text-base leading-7 text-[#aaa295] lg:pb-2 lg:text-right">
+        <p className="text-base leading-7 text-[#9aa6b5] lg:pb-2 lg:text-right">
           Every bundle ships as instant-download files: PDFs, editable Canva templates, prompt libraries, and ready-to-use forms.
         </p>
       </div>
@@ -362,8 +362,8 @@ function BundleShowcase() {
               onClick={() => setActiveCategory(option)}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[0.6rem] font-bold uppercase tracking-[0.14em] transition duration-300 sm:px-4 sm:text-[0.66rem] sm:tracking-[0.18em] ${
                 selected
-                  ? "border-[#dcc27b]/50 bg-[linear-gradient(135deg,#dfc57f,#c49c4e_44%,#815c1d)] text-[#080704] shadow-[0_16px_36px_rgba(143,103,34,0.14)]"
-                  : "border-[#c9a65e]/10 bg-white/[0.012] text-[#aaa295] hover:border-[#c9a65e]/28 hover:text-[#f4eee2]"
+                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#071018] shadow-[0_16px_36px_rgba(255,106,61,0.14)]"
+                  : "border-[#6f7a89]/10 bg-white/[0.012] text-[#9aa6b5] hover:border-[#6f7a89]/28 hover:text-[#f7f8fb]"
               }`}
             >
               {option}
@@ -394,21 +394,21 @@ function BundleCard({ product, index = 0 }) {
       whileHover={{ y: -5, rotateX: 0.7, rotateY: -0.7 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.48, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
-      className="luxe-card premium-edge group relative overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] shadow-[0_18px_58px_rgba(0,0,0,0.22)] sm:rounded-[1.5rem] sm:shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
+      className="luxe-card premium-edge group relative overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] shadow-[0_18px_58px_rgba(0,0,0,0.22)] sm:rounded-[1.5rem] sm:shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
     >
       <div className="luxe-sheen z-20" />
-      <div className="relative overflow-hidden bg-[#11100b]">
+      <div className="relative overflow-hidden bg-[#10141b]">
         <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.015] sm:group-hover:scale-[1.045]" />
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0b0a08] to-transparent opacity-70" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0b0f14] to-transparent opacity-70" />
       </div>
       <div className="p-5 sm:p-6">
         <div className="mb-6 flex items-center justify-between">
-          <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-[#b99b63]">For {niche}s</p>
-          <p className="editorial-serif text-xl text-[#f4eee2]">{product.price.replace(".00", "")}</p>
+          <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-[#8bd7ff]">For {niche}s</p>
+          <p className="editorial-serif text-xl text-[#f7f8fb]">{product.price.replace(".00", "")}</p>
         </div>
         <h3 className="editorial-serif text-[1.4rem] leading-[1.13] sm:text-[1.55rem]">{product.title.replace(" Growth Bundle", " Growth Bundle")}</h3>
-        <p className="mt-4 text-sm leading-6 text-[#9e9688]">{product.description}</p>
-        <div className="mt-7 flex items-center justify-between border-t border-gradient-soft pt-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#dcc27b] sm:mt-8 sm:text-xs sm:tracking-[0.24em]">
+        <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{product.description}</p>
+        <div className="mt-7 flex items-center justify-between border-t border-gradient-soft pt-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#b8f3ff] sm:mt-8 sm:text-xs sm:tracking-[0.24em]">
           View Bundle <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
         </div>
       </div>
@@ -424,17 +424,17 @@ function Process() {
         <h2 className="editorial-serif text-[clamp(2.55rem,4.15vw,4.85rem)] leading-[0.98]">
           Launch your new brand <span className="gold-text italic">this weekend.</span>
         </h2>
-        <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-[#aaa295] xl:text-xl xl:leading-9">
+        <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-[#9aa6b5] xl:text-xl xl:leading-9">
           No agency calls. No course to finish. No blank page. Just plug in, swap your colors, and start booking.
         </p>
       </div>
       <div className="relative mt-14 grid gap-10 lg:mt-20 lg:grid-cols-3 lg:gap-12">
-        <div className="absolute left-0 right-0 top-9 hidden border-t border-dashed border-[#c9a65e]/8 lg:block" />
+        <div className="absolute left-0 right-0 top-9 hidden border-t border-dashed border-[#6f7a89]/8 lg:block" />
         {processSteps.map(([number, title, text]) => (
           <article key={title} className="relative text-center">
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#c9a65e]/10 bg-[#050503] editorial-serif text-xl text-[#dcc27b] sm:h-[4.5rem] sm:w-[4.5rem] sm:text-2xl">{number}</div>
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#6f7a89]/10 bg-[#05070b] editorial-serif text-xl text-[#b8f3ff] sm:h-[4.5rem] sm:w-[4.5rem] sm:text-2xl">{number}</div>
             <h3 className="editorial-serif mt-6 text-[1.55rem] sm:mt-9 sm:text-[1.75rem]">{title}</h3>
-            <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-[#9e9688] sm:mt-5 sm:text-base sm:leading-7">{text}</p>
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-[#8f9baa] sm:mt-5 sm:text-base sm:leading-7">{text}</p>
           </article>
         ))}
       </div>
@@ -452,11 +452,11 @@ function CategoryShowcase() {
             Find the system built for your market.
           </h2>
         </div>
-        <p className="text-base leading-7 text-[#aaa295] lg:text-right lg:text-lg lg:leading-8">
+        <p className="text-base leading-7 text-[#9aa6b5] lg:text-right lg:text-lg lg:leading-8">
           Skip the generic advice and go straight to the bundles that match how your customers buy.
         </p>
       </div>
-      <div className="grid gap-px overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#c9a65e]/10 md:grid-cols-2 lg:grid-cols-4 lg:rounded-[1.6rem]">
+      <div className="grid gap-px overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#6f7a89]/10 md:grid-cols-2 lg:grid-cols-4 lg:rounded-[1.6rem]">
         {categories.map((category, index) => (
           <motion.a
             key={category.slug}
@@ -466,15 +466,15 @@ function CategoryShowcase() {
             whileHover={{ y: -2 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
-            className="group min-h-[12rem] bg-[#050503] p-5 transition duration-500 hover:bg-[#11100b] sm:p-7 lg:min-h-[14rem]"
+            className="group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 hover:bg-[#10141b] sm:p-7 lg:min-h-[14rem]"
           >
             <div className="mb-8 flex items-center justify-between">
-              <span className="editorial-serif text-[1.45rem] text-[#b99b63] sm:text-[1.75rem]">0{index + 1}</span>
-              <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#b99b63] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
+              <span className="editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
+              <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
             </div>
             <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
-            <p className="mt-4 text-sm leading-6 text-[#9e9688]">{category.text}</p>
-            <ArrowRight className="mt-8 h-4 w-4 text-[#dcc27b] transition group-hover:translate-x-1" />
+            <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
+            <ArrowRight className="mt-8 h-4 w-4 text-[#b8f3ff] transition group-hover:translate-x-1" />
           </motion.a>
         ))}
       </div>
@@ -492,8 +492,8 @@ function Results() {
             Pros are <span className="gold-text italic">obsessed.</span>
           </h2>
         </div>
-        <div className="flex items-center gap-4 text-[#aaa295]">
-          <span className="flex text-[#dcc27b]">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}</span>
+        <div className="flex items-center gap-4 text-[#9aa6b5]">
+          <span className="flex text-[#b8f3ff]">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}</span>
           <span>4.9 avg · verified buyers</span>
         </div>
       </div>
@@ -506,15 +506,15 @@ function Results() {
             whileHover={{ y: -3 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className={index === 3 ? "premium-edge rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-5 transition-colors hover:bg-[#100f0c] sm:rounded-[1.5rem] sm:p-6 lg:col-span-2" : "premium-edge rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-5 transition-colors hover:bg-[#100f0c] sm:rounded-[1.5rem] sm:p-6"}
+            className={index === 3 ? "premium-edge rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] p-5 transition-colors hover:bg-[#111722] sm:rounded-[1.5rem] sm:p-6 lg:col-span-2" : "premium-edge rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] p-5 transition-colors hover:bg-[#111722] sm:rounded-[1.5rem] sm:p-6"}
           >
-            <p className="editorial-serif text-[2rem] leading-none text-[#dcc27b]">"</p>
-            <p className="mt-4 text-base leading-7 text-[#d8d0c2]">{quote}</p>
+            <p className="editorial-serif text-[2rem] leading-none text-[#b8f3ff]">"</p>
+            <p className="mt-4 text-base leading-7 text-[#c9d0da]">{quote}</p>
             <div className="mt-8 border-t border-gradient-soft pt-6 flex items-center gap-4">
               <span className={`h-10 w-10 rounded-full ${color}`} />
               <div>
                 <p className="text-sm font-semibold">{name}</p>
-                <p className="text-xs text-[#8f887b]">{role}</p>
+                <p className="text-xs text-[#737f8f]">{role}</p>
               </div>
             </div>
           </motion.article>
@@ -543,10 +543,10 @@ function FAQ() {
             className="w-full border-b border-gradient-soft py-5 text-left transition hover:bg-white/[0.018]"
           >
             <span className="flex items-center justify-between gap-6">
-              <span className="editorial-serif text-[clamp(1.04rem,1.3vw,1.3rem)] text-[#f4eee2]">{question}</span>
-              {open === index ? <Minus className="h-5 w-5 text-[#dcc27b]" /> : <Plus className="h-5 w-5 text-[#dcc27b]" />}
+              <span className="editorial-serif text-[clamp(1.04rem,1.3vw,1.3rem)] text-[#f7f8fb]">{question}</span>
+              {open === index ? <Minus className="h-5 w-5 text-[#b8f3ff]" /> : <Plus className="h-5 w-5 text-[#b8f3ff]" />}
             </span>
-            {open === index ? <span className="mt-4 block max-w-3xl text-sm leading-6 text-[#9e9688]">{answer}</span> : null}
+            {open === index ? <span className="mt-4 block max-w-3xl text-sm leading-6 text-[#8f9baa]">{answer}</span> : null}
           </button>
         ))}
       </div>
@@ -556,21 +556,21 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="relative border-y border-[#c9a65e]/8 px-5 py-16 text-center sm:px-8 sm:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,166,94,0.12),transparent_34rem)]" />
+    <section className="relative border-y border-[#6f7a89]/8 px-5 py-16 text-center sm:px-8 sm:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(107,124,255,0.12),transparent_34rem)]" />
       <div className="relative mx-auto max-w-5xl">
         <Eyebrow centered>Your Move</Eyebrow>
         <h2 className="editorial-serif text-[clamp(2.35rem,12vw,3.65rem)] leading-[1] sm:text-[clamp(2.7rem,4.5vw,5.2rem)] sm:leading-[0.98]">
           The next <span className="gold-text italic">90 days</span> could change everything.
         </h2>
-        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-[#aaa295] sm:mt-7 sm:text-lg sm:leading-8 xl:text-xl xl:leading-9">
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-[#9aa6b5] sm:mt-7 sm:text-lg sm:leading-8 xl:text-xl xl:leading-9">
           Stop trading hours for tutorials. Plug in a premium system and put your craft back at the center of your business.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#080704] transition hover:scale-[1.02]">
+          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#071018] transition hover:scale-[1.02]">
             Shop Bundles <ArrowRight className="h-4 w-4" />
           </a>
-          <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/8 px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#eee7db] transition hover:border-[#c9a65e]/50 hover:bg-white/[0.03]">
+          <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/8 px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#f4f7fb] transition hover:border-[#6f7a89]/50 hover:bg-white/[0.03]">
             Read FAQ
           </a>
         </div>
@@ -585,8 +585,8 @@ function Footer() {
       <div className="mx-auto grid max-w-[94rem] gap-12 lg:grid-cols-[1.2fr_0.7fr_0.7fr_1fr]">
         <div>
           <BrandMark className="h-14 w-60" />
-          <p className="mt-7 max-w-md text-sm leading-6 text-[#9e9688]">
-            Premium digital marketing bundles for service entrepreneurs. Built like a luxury brand kit. Priced like a download.
+          <p className="mt-7 max-w-md text-sm leading-6 text-[#8f9baa]">
+            Premium digital marketing bundles for service entrepreneurs. Built like a studio-grade growth system. Priced like a download.
           </p>
         </div>
         <FooterList title="Shop" items={["Beauty", "Creatives", "Health & Wellness", "Home Services"]} />
@@ -630,11 +630,11 @@ function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#b99b63]">Newsletter</p>
-      <p className="mb-5 text-sm leading-6 text-[#9e9688]">Monthly drops, new prompts, and free templates.</p>
+      <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#8bd7ff]">Newsletter</p>
+      <p className="mb-5 text-sm leading-6 text-[#8f9baa]">Monthly drops, new prompts, and free templates.</p>
       <div className="flex flex-col gap-2 sm:flex-row">
         <input
-          className="min-w-0 flex-1 rounded-full border border-[#c9a65e]/10 bg-[#0b0a08] px-5 py-3 text-sm outline-none placeholder:text-[#7f776a] focus:border-[#c9a65e]/35"
+          className="min-w-0 flex-1 rounded-full border border-[#6f7a89]/10 bg-[#0b0f14] px-5 py-3 text-sm outline-none placeholder:text-[#667282] focus:border-[#8bd7ff]/35"
           placeholder="you@studio.com"
           type="email"
           value={email}
@@ -642,14 +642,14 @@ function NewsletterForm() {
           required
         />
         <button
-          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#080704] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
+          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#071018] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
           disabled={status === "loading"}
         >
           {status === "loading" ? "..." : "Join"}
         </button>
       </div>
       {message ? (
-        <p className={`mt-3 text-xs ${status === "success" ? "text-[#dcc27b]" : "text-[#d8a0a0]"}`}>
+        <p className={`mt-3 text-xs ${status === "success" ? "text-[#b8f3ff]" : "text-[#ff9a88]"}`}>
           {message}
         </p>
       ) : null}
@@ -660,10 +660,10 @@ function NewsletterForm() {
 function FooterList({ title, items }) {
   return (
     <div>
-      <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#b99b63]">{title}</p>
+      <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#8bd7ff]">{title}</p>
       <div className="space-y-4">
         {items.map((item) => (
-          <a key={item} href={item === "FAQ" ? "#faq" : "#categories"} className="block text-sm text-[#9e9688] transition hover:text-[#dcc27b]">
+          <a key={item} href={item === "FAQ" ? "#faq" : "#categories"} className="block text-sm text-[#8f9baa] transition hover:text-[#b8f3ff]">
             {item}
           </a>
         ))}
