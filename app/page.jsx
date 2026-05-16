@@ -132,7 +132,7 @@ function Navbar() {
             <a key={href} href={href} className="transition duration-300 hover:text-[#b8f3ff]">{label}</a>
           ))}
         </div>
-        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#06101a] transition duration-300 hover:scale-[1.02] sm:inline-flex">
+        <a href="#bundles" className="gold-button hidden rounded-full px-8 py-3 text-xs font-black uppercase tracking-[0.22em] text-[#f7fbff] transition duration-300 hover:scale-[1.02] sm:inline-flex">
           Shop Bundles
         </a>
         <button
@@ -192,7 +192,7 @@ function Hero() {
             Premium growth bundles for service businesses and creators, engineered like a studio-grade growth system and delivered like an instant download.
           </motion.p>
           <motion.div variants={heroReveal} className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
-            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#06101a] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
+            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#f7fbff] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               Explore the bundles <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#f4f7fb] transition duration-300 hover:border-[#6f7a89]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
@@ -365,7 +365,7 @@ function BundleShowcase() {
               onClick={() => setActiveCategory(option)}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[0.6rem] font-bold uppercase tracking-[0.14em] transition duration-300 sm:px-4 sm:text-[0.66rem] sm:tracking-[0.18em] ${
                 selected
-                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#06101a] shadow-[0_16px_36px_rgba(108,238,255,0.16)]"
+                  ? "border-[#b8f3ff]/40 bg-[linear-gradient(135deg,rgba(23,34,52,0.96),rgba(10,16,27,0.94)_54%,rgba(54,68,120,0.9))] text-[#f7fbff] shadow-[0_16px_36px_rgba(108,238,255,0.12)]"
                   : "border-[#6f7a89]/10 bg-white/[0.012] text-[#9aa6b5] hover:border-[#6f7a89]/28 hover:text-[#f7f8fb]"
               }`}
             >
@@ -467,7 +467,7 @@ function CategoryShowcase() {
             href={`/categories/${category.slug}`}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -4 }}
+            whileHover={{ scale: 1.006 }}
             whileTap={{ scale: 0.985 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
@@ -589,7 +589,7 @@ function FinalCTA() {
           Stop trading hours for tutorials. Plug in a premium system and put your craft back at the center of your business.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#06101a] transition hover:scale-[1.02]">
+          <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#f7fbff] transition hover:scale-[1.02]">
             Shop Bundles <ArrowRight className="h-4 w-4" />
           </a>
           <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/8 px-9 py-4 text-xs font-black uppercase tracking-[0.24em] text-[#f4f7fb] transition hover:border-[#6f7a89]/50 hover:bg-white/[0.03]">
@@ -664,7 +664,7 @@ function NewsletterForm() {
           required
         />
         <button
-          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#06101a] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
+          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#f7fbff] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
           disabled={status === "loading"}
         >
           {status === "loading" ? "..." : "Join"}

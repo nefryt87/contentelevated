@@ -205,7 +205,7 @@ function PurchasePanel({ product }) {
           href={product.checkoutUrl}
           target="_blank"
           rel="noreferrer"
-          className="gold-button inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-black text-[#06101a] transition hover:scale-[1.02]"
+          className="gold-button inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-black text-[#f7fbff] transition hover:scale-[1.02]"
         >
           Get the Bundle
           <ArrowRight className="h-4 w-4" />
