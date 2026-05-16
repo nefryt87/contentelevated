@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -70,7 +70,7 @@ const statItems = [
   ["Instant", "download access"]
 ];
 
-const heroImage = "/brand/hero-4.png";
+const heroImage = "/brand/hero-5.png";
 
 const heroReveal = {
   hidden: { opacity: 0, y: 18, filter: "blur(10px)" },
@@ -96,6 +96,7 @@ const heroImageReveal = {
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[radial-gradient(circle_at_10%_16%,rgba(107,124,255,0.045),transparent_34rem),radial-gradient(circle_at_88%_8%,rgba(26,48,88,0.16),transparent_38rem),linear-gradient(180deg,rgba(5,7,11,0.76),rgba(5,7,11,0.94)_38%,rgba(5,7,11,0.98))] text-[#f7f8fb]">
+      <div className="site-ambient" aria-hidden="true" />
       <Navbar />
       <Hero />
       <Method />
@@ -223,10 +224,12 @@ function Hero() {
           <motion.a
             href="#bundles"
             whileHover={{ y: -4, rotateX: 0.6, rotateY: -0.6 }}
+            whileTap={{ scale: 0.985 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="luxe-card group relative block overflow-hidden rounded-[1.35rem] border border-[#6f7a89]/10 bg-[#10141b] shadow-[0_26px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
           >
             <div className="luxe-sheen z-20" />
+            <div className="ai-scan z-20" />
             <div className="absolute -inset-10 rounded-[3rem] border border-[#6f7a89]/10" />
             <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 group-hover:scale-[1.012] sm:group-hover:scale-[1.025]" />
             <div className="absolute left-4 top-4 rounded-full border border-[#6f7a89]/8 bg-[#090d12]/78 px-3 py-2 text-xs text-[#f7f8fb] backdrop-blur-xl sm:left-5 sm:top-8 sm:px-4 sm:py-3 sm:text-sm">
@@ -362,7 +365,7 @@ function BundleShowcase() {
               onClick={() => setActiveCategory(option)}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[0.6rem] font-bold uppercase tracking-[0.14em] transition duration-300 sm:px-4 sm:text-[0.66rem] sm:tracking-[0.18em] ${
                 selected
-                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#06101a] shadow-[0_16px_36px_rgba(255,106,61,0.14)]"
+                  ? "border-[#b8f3ff]/50 bg-[linear-gradient(135deg,#dcecff,#8bd7ff_44%,#19314a)] text-[#06101a] shadow-[0_16px_36px_rgba(108,238,255,0.16)]"
                   : "border-[#6f7a89]/10 bg-white/[0.012] text-[#9aa6b5] hover:border-[#6f7a89]/28 hover:text-[#f7f8fb]"
               }`}
             >
@@ -392,6 +395,7 @@ function BundleCard({ product, index = 0 }) {
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5, rotateX: 0.7, rotateY: -0.7 }}
+      whileTap={{ scale: 0.985 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.48, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
       className="luxe-card premium-edge group relative overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] shadow-[0_18px_58px_rgba(0,0,0,0.22)] sm:rounded-[1.5rem] sm:shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
@@ -464,6 +468,7 @@ function CategoryShowcase() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.985 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
             className="group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 hover:bg-[#10141b] sm:p-7 lg:min-h-[14rem]"
@@ -546,7 +551,20 @@ function FAQ() {
               <span className="editorial-serif text-[clamp(1.04rem,1.3vw,1.3rem)] text-[#f7f8fb]">{question}</span>
               {open === index ? <Minus className="h-5 w-5 text-[#b8f3ff]" /> : <Plus className="h-5 w-5 text-[#b8f3ff]" />}
             </span>
-            {open === index ? <span className="mt-4 block max-w-3xl text-sm leading-6 text-[#8f9baa]">{answer}</span> : null}
+            <AnimatePresence initial={false}>
+              {open === index ? (
+                <motion.span
+                  key="answer"
+                  initial={{ height: 0, opacity: 0, y: -4 }}
+                  animate={{ height: "auto", opacity: 1, y: 0 }}
+                  exit={{ height: 0, opacity: 0, y: -4 }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-4 block max-w-3xl overflow-hidden text-sm leading-6 text-[#8f9baa]"
+                >
+                  {answer}
+                </motion.span>
+              ) : null}
+            </AnimatePresence>
           </button>
         ))}
       </div>
