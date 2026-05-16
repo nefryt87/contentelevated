@@ -467,8 +467,8 @@ function CategoryShowcase() {
           <motion.a
             key={category.slug}
             href={`/categories/${category.slug}`}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
             whileTap={{ scale: 0.985 }}
             viewport={{ once: true, margin: "-90px" }}
             transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
