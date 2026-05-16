@@ -79,6 +79,11 @@ body::after {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.border-gradient-soft {
+  border-color: transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(201, 166, 94, 0.13), rgba(245, 227, 167, 0.055), transparent) 1;
+}
+
 .section-fade {
   background:
     radial-gradient(circle at 80% 8%, rgba(201, 166, 94, 0.045), transparent 28rem),
@@ -135,13 +140,15 @@ body::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(110deg, transparent 22%, rgba(255, 244, 214, 0.22), transparent 46%);
-  transform: translateX(-130%);
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.55;
+  background: linear-gradient(110deg, transparent 28%, rgba(255, 244, 214, 0.08), rgba(201, 166, 94, 0.045), transparent 52%);
+  transform: translateX(-145%);
+  transition: transform 1.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
 
 .group:hover .luxe-sheen {
-  transform: translateX(130%);
+  opacity: 0.72;
+  transform: translateX(145%);
 }
 
 .premium-button {
@@ -192,7 +199,7 @@ body::after {
 .product-box::before {
   inset: 14px -18px -18px 16px;
   transform: translateZ(-26px);
-  background: linear-gradient(135deg, rgba(216, 170, 72, 0.45), rgba(71, 164, 255, 0.16));
+  background: linear-gradient(135deg, rgba(216, 170, 72, 0.34), rgba(129, 92, 29, 0.1));
   filter: blur(18px);
 }
 
@@ -210,13 +217,15 @@ body::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(115deg, transparent 26%, rgba(255, 255, 255, 0.2), transparent 48%);
-  transform: translateX(-115%);
-  transition: transform 0.8s ease;
+  opacity: 0.55;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.075), transparent 52%);
+  transform: translateX(-130%);
+  transition: transform 1.25s ease, opacity 0.45s ease;
 }
 
 .group:hover .shine {
-  transform: translateX(115%);
+  opacity: 0.68;
+  transform: translateX(130%);
 }
 
 .marquee {
@@ -243,6 +252,38 @@ body::after {
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background:
+      radial-gradient(circle at 22% 0%, rgba(201, 166, 94, 0.06), transparent 22rem),
+      linear-gradient(160deg, #030302 0%, #080705 52%, #050503 100%);
+  }
+
+  body::before {
+    opacity: 0.35;
+    background-size: 120px 120px;
+  }
+
+  body::after {
+    opacity: 0.2;
+  }
+
+  .section-fade {
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.008), transparent);
+  }
+
+  .premium-edge::after,
+  .luxe-card::before,
+  .luxe-sheen,
+  .shine {
+    display: none;
+  }
+
+  .product-box {
+    transform: rotateX(48deg) rotateZ(-30deg) scale(0.88);
   }
 }
 

@@ -16,6 +16,11 @@ export const metadata = {
     description:
       "High-end AI-powered growth systems for modern businesses and creators.",
     type: "website"
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg"
   }
 };
 

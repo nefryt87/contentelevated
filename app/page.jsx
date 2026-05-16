@@ -72,6 +72,27 @@ const statItems = [
 
 const heroImage = "/brand/hero-4.png";
 
+const heroReveal = {
+  hidden: { opacity: 0, y: 18, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] }
+  }
+};
+
+const heroImageReveal = {
+  hidden: { opacity: 0, y: 18, scale: 0.975, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.95, delay: 0.28, ease: [0.22, 1, 0.36, 1] }
+  }
+};
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[radial-gradient(circle_at_10%_16%,rgba(201,166,94,0.045),transparent_34rem),radial-gradient(circle_at_88%_8%,rgba(130,92,31,0.07),transparent_38rem),linear-gradient(180deg,rgba(5,5,3,0.76),rgba(5,5,3,0.94)_38%,rgba(5,5,3,0.98))] text-[#f4eee2]">
@@ -136,41 +157,48 @@ function Navbar() {
 
 function Eyebrow({ children, centered = false }) {
   return (
-    <p className={`mb-6 flex items-center gap-4 text-[0.68rem] font-bold uppercase tracking-[0.36em] text-[#b99b63] ${centered ? "justify-center" : ""}`}>
-      <span className="h-px w-10 bg-[#b99b63]" />
+    <p className={`mb-5 flex items-center gap-3 text-[0.58rem] font-bold uppercase tracking-[0.24em] text-[#b99b63] sm:mb-6 sm:gap-4 sm:text-[0.68rem] sm:tracking-[0.36em] ${centered ? "justify-center" : ""}`}>
+      <span className="h-px w-7 bg-[#b99b63] sm:w-10" />
       {children}
-      {centered ? <span className="h-px w-10 bg-[#b99b63]" /> : null}
+      {centered ? <span className="h-px w-7 bg-[#b99b63] sm:w-10" /> : null}
     </p>
   );
 }
 
 function Hero() {
   return (
-    <section className="relative min-h-[88vh] px-5 pb-6 pt-28 sm:px-8 lg:pb-8 lg:pt-32">
+    <section className="relative px-5 pb-6 pt-24 sm:min-h-[88vh] sm:px-8 sm:pt-28 lg:pb-8 lg:pt-32">
       <motion.div
         aria-hidden="true"
         animate={{ opacity: [0.52, 0.78, 0.52], scale: [1, 1.06, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_15%_28%,rgba(201,166,94,0.12),transparent_27rem),radial-gradient(circle_at_78%_32%,rgba(224,199,133,0.08),transparent_34rem)]"
+        className="absolute inset-0 hidden bg-[radial-gradient(circle_at_15%_28%,rgba(201,166,94,0.12),transparent_27rem),radial-gradient(circle_at_78%_32%,rgba(224,199,133,0.08),transparent_34rem)] sm:block"
       />
-      <div className="relative mx-auto grid max-w-[92rem] items-center gap-12 lg:grid-cols-[0.96fr_1.04fr] xl:gap-16">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-          <Eyebrow>Premium · AI-Powered · Done-For-You</Eyebrow>
-          <h1 className="editorial-serif max-w-4xl text-[clamp(3.05rem,5.7vw,6.35rem)] font-normal leading-[0.92] tracking-normal">
+      <motion.div
+        className="relative mx-auto grid max-w-[92rem] items-center gap-9 lg:grid-cols-[0.96fr_1.04fr] xl:gap-16"
+        initial="hidden"
+        animate="visible"
+        variants={{ visible: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } } }}
+      >
+        <div>
+          <motion.div variants={heroReveal}>
+            <Eyebrow>Premium · AI-Powered · Done-For-You</Eyebrow>
+          </motion.div>
+          <motion.h1 variants={heroReveal} className="editorial-serif max-w-4xl text-[clamp(2.55rem,14vw,4.25rem)] font-normal leading-[0.94] tracking-normal sm:text-[clamp(3.05rem,5.7vw,6.35rem)] sm:leading-[0.92]">
             Elevate your brand. <span className="gold-text italic">Elevate</span> your income.
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#b8b0a1] sm:text-xl sm:leading-9">
+          </motion.h1>
+          <motion.p variants={heroReveal} className="mt-6 max-w-2xl text-base leading-7 text-[#b8b0a1] sm:mt-7 sm:text-xl sm:leading-9">
             Premium growth bundles for service businesses and creators, engineered like a luxury brand kit and delivered like an instant download.
-          </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-8 py-4 text-xs font-black uppercase tracking-[0.22em] text-[#080704] transition duration-300 hover:scale-[1.02]">
+          </motion.p>
+          <motion.div variants={heroReveal} className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
+            <a href="#bundles" className="gold-button inline-flex items-center justify-center gap-4 rounded-full px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#080704] transition duration-300 hover:scale-[1.02] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               Explore the bundles <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-8 py-4 text-xs font-black uppercase tracking-[0.22em] text-[#eee7db] transition duration-300 hover:border-[#c9a65e]/50 hover:bg-white/[0.03]">
+            <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#eee7db] transition duration-300 hover:border-[#c9a65e]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               How it works
             </a>
-          </div>
-          <div className="mt-10 flex items-center gap-5">
+          </motion.div>
+          <motion.div variants={heroReveal} className="mt-8 flex items-center gap-4 sm:mt-10 sm:gap-5">
             <div className="flex -space-x-3">
               {["bg-[#a78b4c]", "bg-[#c6929f]", "bg-[#d8d3bf]", "bg-[#3d765b]"].map((color) => (
                 <span key={color} className={`h-10 w-10 rounded-full border-2 border-[#050503] ${color}`} />
@@ -182,42 +210,42 @@ function Hero() {
               </div>
               <p className="text-sm text-[#b7b0a3]">Trusted by modern service brands</p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        <motion.div initial={{ opacity: 0, x: 32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }} className="relative">
+        <motion.div variants={heroImageReveal} className="relative">
           <motion.div
             aria-hidden="true"
             animate={{ opacity: [0.35, 0.62, 0.35], y: [0, -10, 0] }}
             transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -inset-8 rounded-[2.8rem] bg-[radial-gradient(circle_at_50%_30%,rgba(224,199,133,0.14),transparent_34rem)] blur-xl"
+            className="hidden absolute -inset-8 rounded-[2.8rem] bg-[radial-gradient(circle_at_50%_30%,rgba(224,199,133,0.14),transparent_34rem)] blur-xl sm:block"
           />
           <motion.a
             href="#bundles"
-            whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
+            whileHover={{ y: -4, rotateX: 0.6, rotateY: -0.6 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="luxe-card group relative block overflow-hidden rounded-[2rem] border border-[#c9a65e]/10 bg-[#11100b] shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
+            className="luxe-card group relative block overflow-hidden rounded-[1.35rem] border border-[#c9a65e]/10 bg-[#11100b] shadow-[0_26px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
           >
             <div className="luxe-sheen z-20" />
             <div className="absolute -inset-10 rounded-[3rem] border border-[#c9a65e]/10" />
-            <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 group-hover:scale-[1.025]" />
-            <div className="absolute left-5 top-8 rounded-full border border-[#c9a65e]/8 bg-[#090806]/78 px-4 py-3 text-sm text-[#f4eee2] backdrop-blur-xl">
+            <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 group-hover:scale-[1.012] sm:group-hover:scale-[1.025]" />
+            <div className="absolute left-4 top-4 rounded-full border border-[#c9a65e]/8 bg-[#090806]/78 px-3 py-2 text-xs text-[#f4eee2] backdrop-blur-xl sm:left-5 sm:top-8 sm:px-4 sm:py-3 sm:text-sm">
               <span className="mr-2 text-[#dcc27b]">★</span> Designed for growth
             </div>
-            <div className="absolute bottom-6 right-6 rounded-full border border-[#c9a65e]/10 bg-[#090806]/84 px-5 py-3 text-sm text-[#d8d0c2] backdrop-blur-xl">
+            <div className="absolute bottom-4 right-4 rounded-full border border-[#c9a65e]/10 bg-[#090806]/84 px-4 py-2 text-xs text-[#d8d0c2] backdrop-blur-xl sm:bottom-6 sm:right-6 sm:px-5 sm:py-3 sm:text-sm">
               Secure checkout · Instant delivery
             </div>
           </motion.a>
-          <div className="mx-auto mt-5 grid max-w-2xl grid-cols-2 overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/8 bg-[#080806]/40 md:grid-cols-5">
+          <div className="mx-auto mt-4 grid max-w-2xl grid-cols-2 overflow-hidden rounded-[1rem] border border-[#c9a65e]/8 bg-[#080806]/40 sm:mt-5 sm:rounded-[1.25rem] md:grid-cols-5">
             {statItems.map(([value, label]) => (
               <div key={label} className="border-l border-t border-[#c9a65e]/8 px-3 py-4 first:border-l-0 md:border-t-0 md:first:border-l-0">
-                <p className="editorial-serif gold-text text-[1.28rem] leading-none sm:text-[1.65rem]">{value}</p>
-                <p className="mt-2 text-[0.55rem] font-bold uppercase tracking-[0.2em] text-[#8f887b]">{label}</p>
+                <p className="editorial-serif gold-text text-[1.08rem] leading-none sm:text-[1.65rem]">{value}</p>
+                <p className="mt-2 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-[#8f887b] sm:text-[0.55rem] sm:tracking-[0.2em]">{label}</p>
               </div>
             ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -271,10 +299,10 @@ function InsideBundle() {
 
   return (
     <Section id="inside">
-      <div className="grid items-center gap-16 lg:grid-cols-[0.92fr_1.08fr]">
+      <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <div>
           <Eyebrow>Inside Every Bundle</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(2.55rem,4.35vw,5rem)] leading-[0.98]">
+          <h2 className="editorial-serif text-[clamp(2.2rem,12vw,3.3rem)] leading-[1] sm:text-[clamp(2.55rem,4.35vw,5rem)] sm:leading-[0.98]">
             A complete <span className="gold-text italic">operating system</span> for your business.
           </h2>
           <div className="mt-10 space-y-6">
@@ -289,9 +317,9 @@ function InsideBundle() {
             ))}
           </div>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           {showcaseProducts.slice(1, 5).map((product, index) => (
-            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/8 bg-[#11100b] shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-2 ${index % 2 ? "mt-10" : ""}`}>
+            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/8 bg-[#11100b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 hover:-translate-y-1 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
               <div className="luxe-sheen z-10" />
               <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.035]" />
             </a>
@@ -312,10 +340,10 @@ function BundleShowcase() {
 
   return (
     <Section id="bundles">
-      <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+      <div className="mb-8 grid gap-6 lg:mb-10 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-8">
         <div>
           <Eyebrow>The Bundles · 34 Niches</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(2.25rem,3.6vw,4.15rem)] leading-[1]">
+          <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
             Pick your <span className="gold-text italic">craft.</span> We built the rest.
           </h2>
         </div>
@@ -323,7 +351,7 @@ function BundleShowcase() {
           Every bundle ships as instant-download files: PDFs, editable Canva templates, prompt libraries, and ready-to-use forms.
         </p>
       </div>
-      <div className="mb-10 flex gap-2 overflow-x-auto pb-2 scrollbar-hidden">
+      <div className="mb-8 flex gap-2 overflow-x-auto pb-3 scrollbar-hidden sm:mb-10">
         {categoryOptions.map((option) => {
           const selected = activeCategory === option;
 
@@ -332,7 +360,7 @@ function BundleShowcase() {
               key={option}
               type="button"
               onClick={() => setActiveCategory(option)}
-              className={`shrink-0 rounded-full border px-4 py-2 text-[0.66rem] font-bold uppercase tracking-[0.18em] transition duration-300 ${
+              className={`shrink-0 rounded-full border px-3.5 py-2 text-[0.6rem] font-bold uppercase tracking-[0.14em] transition duration-300 sm:px-4 sm:text-[0.66rem] sm:tracking-[0.18em] ${
                 selected
                   ? "border-[#dcc27b]/50 bg-[linear-gradient(135deg,#dfc57f,#c49c4e_44%,#815c1d)] text-[#080704] shadow-[0_16px_36px_rgba(143,103,34,0.14)]"
                   : "border-[#c9a65e]/10 bg-white/[0.012] text-[#aaa295] hover:border-[#c9a65e]/28 hover:text-[#f4eee2]"
@@ -348,7 +376,7 @@ function BundleShowcase() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+        className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-5"
       >
         {visibleProducts.map((product, index) => <BundleCard key={product.slug} product={product} index={index} />)}
       </motion.div>
@@ -363,24 +391,24 @@ function BundleCard({ product, index = 0 }) {
       href={`/products/${product.slug}`}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -12, rotateX: 2.4, rotateY: -2.2 }}
+      whileHover={{ y: -5, rotateX: 0.7, rotateY: -0.7 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.48, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
-      className="luxe-card premium-edge group relative overflow-hidden rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
+      className="luxe-card premium-edge group relative overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] shadow-[0_18px_58px_rgba(0,0,0,0.22)] sm:rounded-[1.5rem] sm:shadow-[0_22px_80px_rgba(0,0,0,0.24)]"
     >
       <div className="luxe-sheen z-20" />
       <div className="relative overflow-hidden bg-[#11100b]">
-        <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.045]" />
+        <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.015] sm:group-hover:scale-[1.045]" />
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0b0a08] to-transparent opacity-70" />
       </div>
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <div className="mb-6 flex items-center justify-between">
           <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-[#b99b63]">For {niche}s</p>
           <p className="editorial-serif text-xl text-[#f4eee2]">{product.price.replace(".00", "")}</p>
         </div>
-        <h3 className="editorial-serif text-[1.55rem] leading-[1.12]">{product.title.replace(" Growth Bundle", " Growth Bundle")}</h3>
+        <h3 className="editorial-serif text-[1.4rem] leading-[1.13] sm:text-[1.55rem]">{product.title.replace(" Growth Bundle", " Growth Bundle")}</h3>
         <p className="mt-4 text-sm leading-6 text-[#9e9688]">{product.description}</p>
-        <div className="mt-8 flex items-center justify-between border-t border-[#c9a65e]/8 pt-5 text-xs font-bold uppercase tracking-[0.24em] text-[#dcc27b]">
+        <div className="mt-7 flex items-center justify-between border-t border-gradient-soft pt-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#dcc27b] sm:mt-8 sm:text-xs sm:tracking-[0.24em]">
           View Bundle <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
         </div>
       </div>
@@ -400,13 +428,13 @@ function Process() {
           No agency calls. No course to finish. No blank page. Just plug in, swap your colors, and start booking.
         </p>
       </div>
-      <div className="relative mt-20 grid gap-12 lg:grid-cols-3">
+      <div className="relative mt-14 grid gap-10 lg:mt-20 lg:grid-cols-3 lg:gap-12">
         <div className="absolute left-0 right-0 top-9 hidden border-t border-dashed border-[#c9a65e]/8 lg:block" />
         {processSteps.map(([number, title, text]) => (
           <article key={title} className="relative text-center">
-            <div className="mx-auto grid h-[4.5rem] w-[4.5rem] place-items-center rounded-full border border-[#c9a65e]/10 bg-[#050503] editorial-serif text-2xl text-[#dcc27b]">{number}</div>
-            <h3 className="editorial-serif mt-9 text-[1.75rem]">{title}</h3>
-            <p className="mx-auto mt-5 max-w-sm text-base leading-7 text-[#9e9688]">{text}</p>
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#c9a65e]/10 bg-[#050503] editorial-serif text-xl text-[#dcc27b] sm:h-[4.5rem] sm:w-[4.5rem] sm:text-2xl">{number}</div>
+            <h3 className="editorial-serif mt-6 text-[1.55rem] sm:mt-9 sm:text-[1.75rem]">{title}</h3>
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-[#9e9688] sm:mt-5 sm:text-base sm:leading-7">{text}</p>
           </article>
         ))}
       </div>
@@ -420,31 +448,31 @@ function CategoryShowcase() {
       <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1fr] lg:items-end">
         <div>
           <Eyebrow>Choose Your World</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(2.55rem,4.15vw,4.75rem)] leading-[0.98]">
+          <h2 className="editorial-serif text-[clamp(2.2rem,12vw,3.3rem)] leading-[1] sm:text-[clamp(2.55rem,4.15vw,4.75rem)] sm:leading-[0.98]">
             Find the system built for your market.
           </h2>
         </div>
-        <p className="text-lg leading-8 text-[#aaa295] lg:text-right">
+        <p className="text-base leading-7 text-[#aaa295] lg:text-right lg:text-lg lg:leading-8">
           Skip the generic advice and go straight to the bundles that match how your customers buy.
         </p>
       </div>
-      <div className="grid gap-px overflow-hidden rounded-[1.6rem] border border-[#c9a65e]/10 bg-[#c9a65e]/10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-px overflow-hidden rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#c9a65e]/10 md:grid-cols-2 lg:grid-cols-4 lg:rounded-[1.6rem]">
         {categories.map((category, index) => (
           <motion.a
             key={category.slug}
             href={`/categories/${category.slug}`}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -2 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
-            className="group min-h-[14rem] bg-[#050503] p-7 transition duration-500 hover:bg-[#11100b]"
+            className="group min-h-[12rem] bg-[#050503] p-5 transition duration-500 hover:bg-[#11100b] sm:p-7 lg:min-h-[14rem]"
           >
             <div className="mb-8 flex items-center justify-between">
-              <span className="editorial-serif text-[1.75rem] text-[#b99b63]">0{index + 1}</span>
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#b99b63]">{category.count} bundles</span>
+              <span className="editorial-serif text-[1.45rem] text-[#b99b63] sm:text-[1.75rem]">0{index + 1}</span>
+              <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#b99b63] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
             </div>
-            <h3 className="editorial-serif text-[1.75rem]">{category.title}</h3>
+            <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
             <p className="mt-4 text-sm leading-6 text-[#9e9688]">{category.text}</p>
             <ArrowRight className="mt-8 h-4 w-4 text-[#dcc27b] transition group-hover:translate-x-1" />
           </motion.a>
@@ -460,7 +488,7 @@ function Results() {
       <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
         <div>
           <Eyebrow>The Results</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(2.25rem,3.6vw,4.15rem)] leading-[1]">
+          <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
             Pros are <span className="gold-text italic">obsessed.</span>
           </h2>
         </div>
@@ -469,20 +497,20 @@ function Results() {
           <span>4.9 avg · verified buyers</span>
         </div>
       </div>
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-3 lg:gap-6">
         {testimonials.map(([name, role, quote, color], index) => (
           <motion.article
             key={name}
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -3 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className={index === 3 ? "premium-edge rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c] lg:col-span-2" : "premium-edge rounded-[1.5rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-6 transition-colors hover:bg-[#100f0c]"}
+            className={index === 3 ? "premium-edge rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-5 transition-colors hover:bg-[#100f0c] sm:rounded-[1.5rem] sm:p-6 lg:col-span-2" : "premium-edge rounded-[1.25rem] border border-[#c9a65e]/10 bg-[#0b0a08] p-5 transition-colors hover:bg-[#100f0c] sm:rounded-[1.5rem] sm:p-6"}
           >
             <p className="editorial-serif text-[2rem] leading-none text-[#dcc27b]">"</p>
             <p className="mt-4 text-base leading-7 text-[#d8d0c2]">{quote}</p>
-            <div className="mt-8 border-t border-[#c9a65e]/8 pt-6 flex items-center gap-4">
+            <div className="mt-8 border-t border-gradient-soft pt-6 flex items-center gap-4">
               <span className={`h-10 w-10 rounded-full ${color}`} />
               <div>
                 <p className="text-sm font-semibold">{name}</p>
@@ -503,16 +531,16 @@ function FAQ() {
     <Section id="faq">
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow centered>Frequently Asked</Eyebrow>
-        <h2 className="editorial-serif text-[clamp(2.25rem,3.6vw,4.15rem)] leading-[1]">
+        <h2 className="editorial-serif text-[clamp(2.1rem,11vw,3.2rem)] leading-[1] sm:text-[clamp(2.25rem,3.6vw,4.15rem)]">
           Questions? <span className="gold-text italic">Answers.</span>
         </h2>
       </div>
-      <div className="mx-auto mt-9 max-w-7xl border-t border-[#c9a65e]/8">
+      <div className="mx-auto mt-9 max-w-7xl border-t border-gradient-soft">
         {faqs.map(([question, answer], index) => (
           <button
             key={question}
             onClick={() => setOpen(open === index ? -1 : index)}
-            className="w-full border-b border-[#c9a65e]/8 py-5 text-left transition hover:bg-white/[0.018]"
+            className="w-full border-b border-gradient-soft py-5 text-left transition hover:bg-white/[0.018]"
           >
             <span className="flex items-center justify-between gap-6">
               <span className="editorial-serif text-[clamp(1.04rem,1.3vw,1.3rem)] text-[#f4eee2]">{question}</span>
@@ -528,14 +556,14 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="relative border-y border-[#c9a65e]/8 px-5 py-24 text-center sm:px-8">
+    <section className="relative border-y border-[#c9a65e]/8 px-5 py-16 text-center sm:px-8 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,166,94,0.12),transparent_34rem)]" />
       <div className="relative mx-auto max-w-5xl">
         <Eyebrow centered>Your Move</Eyebrow>
-        <h2 className="editorial-serif text-[clamp(2.7rem,4.5vw,5.2rem)] leading-[0.98]">
+        <h2 className="editorial-serif text-[clamp(2.35rem,12vw,3.65rem)] leading-[1] sm:text-[clamp(2.7rem,4.5vw,5.2rem)] sm:leading-[0.98]">
           The next <span className="gold-text italic">90 days</span> could change everything.
         </h2>
-        <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-[#aaa295] xl:text-xl xl:leading-9">
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-[#aaa295] sm:mt-7 sm:text-lg sm:leading-8 xl:text-xl xl:leading-9">
           Stop trading hours for tutorials. Plug in a premium system and put your craft back at the center of your business.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -563,16 +591,69 @@ function Footer() {
         </div>
         <FooterList title="Shop" items={["Beauty", "Creatives", "Health & Wellness", "Home Services"]} />
         <FooterList title="Company" items={["About", "FAQ", "Contact", "Terms"]} />
-        <form>
-          <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#b99b63]">Newsletter</p>
-          <p className="mb-5 text-sm leading-6 text-[#9e9688]">Monthly drops, new prompts, and free templates.</p>
-          <div className="flex gap-2">
-            <input className="min-w-0 flex-1 rounded-full border border-[#c9a65e]/10 bg-[#0b0a08] px-5 py-3 outline-none placeholder:text-[#7f776a]" placeholder="you@studio.com" />
-            <button className="gold-button rounded-full px-6 text-xs font-black uppercase tracking-[0.18em] text-[#080704]">Join</button>
-          </div>
-        </form>
+        <NewsletterForm />
       </div>
     </footer>
+  );
+}
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Signup failed. Please try again.");
+      }
+
+      setEmail("");
+      setStatus("success");
+      setMessage("You are on the list.");
+    } catch (error) {
+      setStatus("error");
+      setMessage(error.message);
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <p className="mb-6 text-xs font-bold uppercase tracking-[0.34em] text-[#b99b63]">Newsletter</p>
+      <p className="mb-5 text-sm leading-6 text-[#9e9688]">Monthly drops, new prompts, and free templates.</p>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <input
+          className="min-w-0 flex-1 rounded-full border border-[#c9a65e]/10 bg-[#0b0a08] px-5 py-3 text-sm outline-none placeholder:text-[#7f776a] focus:border-[#c9a65e]/35"
+          placeholder="you@studio.com"
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          required
+        />
+        <button
+          className="gold-button rounded-full px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#080704] disabled:cursor-not-allowed disabled:opacity-60 sm:py-0"
+          disabled={status === "loading"}
+        >
+          {status === "loading" ? "..." : "Join"}
+        </button>
+      </div>
+      {message ? (
+        <p className={`mt-3 text-xs ${status === "success" ? "text-[#dcc27b]" : "text-[#d8a0a0]"}`}>
+          {message}
+        </p>
+      ) : null}
+    </form>
   );
 }
 
@@ -595,11 +676,11 @@ function Section({ id, children, compactTop = false }) {
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 34 }}
+      initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-120px" }}
-      transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-      className={`section-fade relative px-5 sm:px-8 ${compactTop ? "pb-20 pt-10 lg:pb-24 lg:pt-12" : "py-20 lg:py-24"}`}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`section-fade relative px-5 sm:px-8 ${compactTop ? "pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12" : "py-16 sm:py-20 lg:py-24"}`}
     >
       <div className="mx-auto max-w-[94rem]">{children}</div>
     </motion.section>
