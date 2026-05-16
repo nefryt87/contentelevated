@@ -467,11 +467,11 @@ function CategoryShowcase() {
           <motion.a
             key={category.slug}
             href={`/categories/${category.slug}`}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileTap={{ scale: 0.985 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-90px" }}
+            transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
             className="category-card group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 sm:p-7 lg:min-h-[14rem]"
           >
             <span className="category-card__glow" />
