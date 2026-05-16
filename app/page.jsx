@@ -467,19 +467,23 @@ function CategoryShowcase() {
             href={`/categories/${category.slug}`}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -2 }}
+            whileHover={{ y: -4 }}
             whileTap={{ scale: 0.985 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
-            className="group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 hover:bg-[#10141b] sm:p-7 lg:min-h-[14rem]"
+            className="category-card group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 sm:p-7 lg:min-h-[14rem]"
           >
+            <span className="category-card__glow" />
+            <span className="category-card__line" />
             <div className="mb-8 flex items-center justify-between">
-              <span className="editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
-              <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
+              <span className="category-card__number editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
+              <span className="category-card__count text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
             </div>
             <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
             <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
-            <ArrowRight className="mt-8 h-4 w-4 text-[#b8f3ff] transition group-hover:translate-x-1" />
+            <span className="mt-8 inline-grid h-9 w-9 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.025] text-[#b8f3ff] transition duration-500 group-hover:border-[#b8f3ff]/35 group-hover:bg-[#b8f3ff]/8">
+              <ArrowRight className="h-4 w-4 transition duration-500 group-hover:translate-x-0.5" />
+            </span>
           </motion.a>
         ))}
       </div>
