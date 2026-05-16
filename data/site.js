@@ -287,14 +287,14 @@ export const categorySlug = (category) =>
     .replace(/^-|-$/g, "");
 
 export const categories = [
-  ["Creatives", "Studios, speakers, planners, photographers, florists, and makers building premium demand.", "from-[#784bff] via-[#1a2d6f] to-[#111827]"],
-  ["Beauty", "Client experience systems for beauty professionals and aesthetic brands.", "from-[#6b7cff] via-[#17445b] to-[#0b1020]"],
-  ["Home Services", "Local authority, quote follow-ups, reviews, and seasonal campaigns.", "from-[#47a4ff] via-[#164766] to-[#10151f]"],
-  ["Health & Wellness", "Trust-building education, retention systems, and patient nurture.", "from-[#65d6a5] via-[#174846] to-[#10151f]"],
-  ["Hospitality", "Guest experience, booking systems, local content, and loyalty-building digital systems.", "from-[#ff9a4a] via-[#55341c] to-[#10151f]"],
-  ["Professional Services", "Referral systems, authority content, client communication, and premium trust assets.", "from-[#f6e6b5] via-[#55451e] to-[#10151f]"],
-  ["Coaches & Educators", "Authority content, curriculum assets, and conversion-ready offers.", "from-[#47a4ff] via-[#372a78] to-[#10151f]"],
-  ["E-Commerce", "Product launches, ad angles, retention emails, and shop growth tools.", "from-[#ff9a4a] via-[#55341c] to-[#10151f]"]
+  ["Creatives", "Booking assets, proposal polish, launch content, and referral systems for visual brands and event pros.", "from-[#784bff] via-[#1a2d6f] to-[#111827]"],
+  ["Beauty", "Consult scripts, rebooking flows, seasonal offers, and social content built for appointment-driven growth.", "from-[#6b7cff] via-[#17445b] to-[#0b1020]"],
+  ["Home Services", "Estimate follow-ups, review generation, maintenance offers, and local authority campaigns.", "from-[#47a4ff] via-[#164766] to-[#10151f]"],
+  ["Health & Wellness", "Education content, retention touchpoints, patient/client nurture, and trust-building systems.", "from-[#65d6a5] via-[#174846] to-[#10151f]"],
+  ["Hospitality", "Guest experience templates, booking prompts, loyalty campaigns, and local partnership content.", "from-[#ff9a4a] via-[#55341c] to-[#10151f]"],
+  ["Professional Services", "Authority positioning, consultation conversion, referral follow-up, and premium client communication.", "from-[#f6e6b5] via-[#55451e] to-[#10151f]"],
+  ["Coaches & Educators", "Offer messaging, curriculum support, lead nurture, and content systems for expertise-led brands.", "from-[#47a4ff] via-[#372a78] to-[#10151f]"],
+  ["E-Commerce", "Listing polish, launch angles, review requests, retention emails, and traffic-ready content prompts.", "from-[#ff9a4a] via-[#55341c] to-[#10151f]"]
 ].map(([title, text, gradient]) => ({
   title,
   text,

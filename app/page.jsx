@@ -33,10 +33,10 @@ const showcaseProducts = [
 ].filter(Boolean);
 
 const insideItems = [
-  [CalendarDays, "90-day calendar", "A full season of posts, hooks, themes, and weekly campaign direction."],
-  [BrainCircuit, "AI playbook + prompts", "Niche-ready prompts for captions, scripts, emails, offers, ads, and client experience."],
-  [Users, "Client systems", "Onboarding, follow-up, retention, review, and referral assets that compound."],
-  [Palette, "Brand kit + Canva", "Editable templates, visual direction, and positioning assets built to look premium fast."]
+  [CalendarDays, "90-day campaign engine", "Content themes, hooks, prompts, and weekly angles mapped into a full quarter of execution."],
+  [BrainCircuit, "AI growth playbook", "Niche-trained prompts for offers, captions, emails, scripts, sales replies, and client experience."],
+  [Users, "Client conversion templates", "Inquiry replies, onboarding flows, follow-ups, review asks, referrals, and rebooking assets."],
+  [Palette, "Premium brand kit", "Positioning, visual direction, and Canva-ready assets that help the business look polished fast."]
 ];
 
 const processSteps = [
@@ -64,10 +64,11 @@ const faqs = [
 
 const statItems = [
   ["34+", "niche systems"],
-  ["AI", "playbook + prompts"],
-  ["Brand", "kit included"],
+  ["AI", "growth playbook"],
+  ["Client", "templates"],
+  ["Brand", "kit assets"],
   ["90 day", "content calendar"],
-  ["Instant", "download access"]
+  ["Instant", "download"]
 ];
 
 const heroImage = "/brand/hero-5.png";
@@ -239,7 +240,7 @@ function Hero() {
               Secure checkout · Instant delivery
             </div>
           </motion.a>
-          <div className="mx-auto mt-4 grid max-w-2xl grid-cols-2 overflow-hidden rounded-[1rem] border border-[#6f7a89]/8 bg-[#080b10]/40 sm:mt-5 sm:rounded-[1.25rem] md:grid-cols-5">
+          <div className="mx-auto mt-4 grid max-w-3xl grid-cols-2 overflow-hidden rounded-[1rem] border border-[#6f7a89]/8 bg-[#080b10]/40 sm:mt-5 sm:rounded-[1.25rem] md:grid-cols-3 xl:grid-cols-6">
             {statItems.map(([value, label]) => (
               <div key={label} className="border-l border-t border-[#6f7a89]/8 px-3 py-4 first:border-l-0 md:border-t-0 md:first:border-l-0">
                 <p className="editorial-serif gold-text text-[1.08rem] leading-none sm:text-[1.65rem]">{value}</p>
@@ -276,9 +277,10 @@ function Method() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-90px" }}
               transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="transition duration-500 border-b border-[#6f7a89]/8 p-6 hover:bg-white/[0.025] lg:border-b-0 lg:border-l lg:first:border-l-0"
+              className="method-card group border-b border-[#6f7a89]/8 p-6 lg:border-b-0 lg:border-l lg:first:border-l-0"
             >
-              <div className="mb-7 grid h-11 w-11 place-items-center rounded-full border border-[#6f7a89]/10 text-[#b8f3ff]">
+              <span className="method-card__line" />
+              <div className="method-card__icon mb-7 grid h-11 w-11 place-items-center rounded-full border border-[#6f7a89]/10 text-[#b8f3ff]">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="editorial-serif text-[1.45rem]">{title}</h3>
@@ -467,7 +469,6 @@ function CategoryShowcase() {
             href={`/categories/${category.slug}`}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.006 }}
             whileTap={{ scale: 0.985 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
@@ -477,7 +478,7 @@ function CategoryShowcase() {
             <span className="category-card__line" />
             <div className="mb-8 flex items-center justify-between">
               <span className="category-card__number editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
-              <span className="category-card__count text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} bundles</span>
+              <span className="category-card__count text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} {category.count === 1 ? "bundle" : "bundles"}</span>
             </div>
             <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
             <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
