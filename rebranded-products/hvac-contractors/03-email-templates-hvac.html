@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates HVAC</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates HVAC</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>HVAC Contractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates HVAC</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>HVAC CONTRACTOR</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>24 done-for-you templates for every stage of the customer relationship Estimates • Service agreements • Seasonal campaigns • Reviews • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with customer name, job details, and company</p>
+<p>information.</p>
+<p class="template-line">• Works as email, SMS text, and customer portal messages — shorten to 2-3</p>
+<p>sentences for texts.</p>
+<p class="template-line">• The best HVAC communication feels like it comes from a neighbor who</p>
+<p>happens to be an expert — warm, plain-spoken, and straight to the point.</p>
+<p class="template-line">• Always personalize the first line. AI does this in seconds.</p>
+<h3>SECTION 1: ESTIMATES &amp; CONVERSION</h3>
+<p>Estimate Confirmation — Same Day</p>
+<div class="section-label">SUBJECT Your HVAC estimate from [Company Name], [First Name]</div>
+<p>BODY Hi [First Name], Thanks for having us out today — it was great meeting you and seeing your setup. Here&#x27;s a summary of what we discussed: Job: [brief description] Estimate: $[amount] Timeline: We could have this done by [timeframe]</p>
+<p>If you have any questions about what&#x27;s included or want to talk through options, just call or text me at [Phone] — happy to walk you through it. Looking forward to helping you out. [Your Name] | [Company Name] | [Phone] Estimate Follow-Up — Day 2</p>
+<h3>SUBJECT Checking in on your estimate — [First Name]</h3>
+<p>BODY Hi [First Name], Just wanted to follow up on the estimate I left you for [job type]. Did you have a chance to look it over? Happy to answer any questions, go over financing options, or adjust the scope if needed. Just give me a call or text.</p>
+<p>[Your Name] | [Company Name] | [Phone] Estimate Follow-Up — Day 5 (Value Add)</p>
+<h3>SUBJECT A couple of things worth knowing — [First Name]</h3>
+<p>BODY Hi [First Name], Following up again on the estimate for [job type]. A few things that might be helpful:</p></div>
+  <div class="footer"><span>Email Templates HVAC</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">- [Energy savings point — e.g., &#x27;A high-efficiency system typically saves</p>
+<p>homeowners $300-600/year on energy costs&#x27;]</p>
+<p class="template-line">- [Financing option if available — e.g., &#x27;We offer 0% financing for 18 months on</p>
+<p>qualifying installs&#x27;]</p>
+<p class="template-line">- [Urgency note if relevant — e.g., &#x27;We&#x27;re booking [season] installs about 2-3</p>
+<p>weeks out right now&#x27;] No pressure at all — just wanted to make sure you had everything you need to make the decision that&#x27;s right for you. [Your Name] | [Company Name] | [Phone] Estimate Follow-Up — Day 14 (Final)</p>
+<h3>SUBJECT Last check-in on your estimate — [First Name]</h3>
+<p>BODY Hi [First Name], I wanted to reach out one last time about the estimate for [job type]. If you&#x27;ve decided to go another direction, no worries at all — I just didn&#x27;t want to let it fall through the cracks in case you still needed it.</p>
+<p>If timing was the issue, we can also talk about a phased approach. Either way, we&#x27;re here when you&#x27;re ready. [Your Name] | [Company Name] | [Phone]</p>
+<h3>SECTION 2: SERVICE AGREEMENTS &amp;</h3>
+<h3>RETENTION</h3>
+<p>Post-Repair Service Agreement Offer</p>
+<div class="section-label">SUBJECT A way to avoid this happening again — [First Name]</div>
+<p>BODY Hi [First Name], Really glad we could get your [system type] back up and running today. I wanted to mention something while it&#x27;s fresh: what you experienced today — [brief description of what failed] — is one of the most common things we catch</p>
+<p>on routine maintenance before it becomes an emergency call. Our service agreement covers:</p>
+<p class="template-line">- Annual tune-up (spring and fall)</p>
+<p class="template-line">- Priority scheduling — you jump the queue during peak season</p>
+<p class="template-line">- [X]% discount on parts and labor</p>
+<p class="template-line">- [Any warranty extension]</p>
+<p>Annual investment: $[amount]. For most of our customers that&#x27;s less than one emergency call. Interested? I can set you up over the phone right now. Just call [Phone] or reply here. [Your Name] | [Company Name] New Install Agreement Offer</p>
+<h3>SUBJECT Protecting your new investment — [First Name]</h3></div>
+  <div class="footer"><span>Email Templates HVAC</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], Your new [system] is all set — thanks again for choosing [Company Name]! Now that your equipment is installed, I wanted to make sure you knew about our maintenance agreement. New systems that are maintained annually last 4-</p>
+<p>6 years longer on average and run significantly more efficiently — which means lower energy bills and fewer repairs. Our agreement: $[amount]/year. It covers everything you&#x27;d want — annual tune-up, priority booking, and a discount on any parts or labor if something does come up.</p>
+<p>Reply here or call [Phone] to get it set up. Takes about 2 minutes. [Your Name] | [Company Name] Agreement Renewal — 60 Days Out</p>
+<div class="section-label">SUBJECT Your maintenance agreement is coming up for renewal, [First Name]</div>
+<p>BODY Hi [First Name], Your HVAC maintenance agreement with [Company Name] renews in about 60 days — I wanted to give you plenty of notice. As a loyal customer, your renewal rate is $[amount] — same as last year. We&#x27;ll</p>
+<p>also honor that rate through the end of next month if you want to lock it in early. Questions? Just call or text [Phone]. [Your Name] | [Company Name] Seasonal Tune-Up Campaign</p>
+<div class="section-label">SUBJECT Time to get your [AC/heating] ready for [season] — [First Name]</div>
+<p>BODY Hi [First Name], [Season] is right around the corner, and I wanted to reach out to our past customers before we open the schedule to new clients. We&#x27;re booking [spring AC / fall heating] tune-ups now. Last year we filled up</p>
+<p>[timeframe] before peak season — and trust me, you don&#x27;t want to be calling us when it&#x27;s [X] degrees outside and the wait is 3 weeks. A tune-up runs $[amount] and takes about an hour. It&#x27;s the best $[amount] you&#x27;ll spend on your home this [season].</p>
+<p>Book here: [link] or call [Phone]. Let&#x27;s get you squared away. [Your Name] | [Company Name] Lapsed Customer Win-Back</p>
+<div class="section-label">SUBJECT Haven&#x27;t heard from you in a while — [First Name]</div>
+<p>BODY Hi [First Name], It&#x27;s been a couple of years since we last serviced your system, and I just wanted to check in. Your [system type] would be approximately [age] years old now. Systems at that age benefit a lot from a tune-up — it can add years of life and prevent the</p></div>
+  <div class="footer"><span>Email Templates HVAC</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>kind of breakdown that always seems to happen on the hottest/coldest day of the year. If you&#x27;d like to get a tune-up or have us take a look at anything, reply here or call [Phone]. We&#x27;d love to earn your business back. [Your Name] | [Company Name]</p>
+<h3>SECTION 3: REVIEWS, REFERRALS &amp;</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Post-Job Review Request</p>
+<h3>SUBJECT Quick favor — [First Name]</h3>
+<p>BODY Hi [First Name], Really glad we could take care of that [job type] for you today. If you were happy with the work, I&#x27;d really appreciate a quick Google review — it takes about 2 minutes and it means the world to a local business like ours.</p>
+<p>Here&#x27;s the direct link: [Google Review Link] Thanks so much — it was great working with you. [Your Name] | [Company Name]</p>
+<h3>Referral Request</h3>
+<div class="section-label">SUBJECT Know anyone who could use a great HVAC contractor?</div>
+<p>BODY Hi [First Name], Glad everything went smoothly with your [job type]! If you have a neighbor, friend, or family member who needs HVAC work — repair, installation, or just a tune-up — I&#x27;d really appreciate the referral. I&#x27;ll take great care of anyone you send our way.</p>
+<p>[Referral incentive if applicable: &#x27;And as a thank-you, we offer $X off your next service for every referral who books with us.&#x27;] [Your Name] | [Company Name] | [Phone] Realtor / Property Manager Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Company Name], HVAC Contractor, [City]</div>
+<p>BODY Hi [Name], My name is [Your Name] — I run [Company Name], an HVAC contractor serving [City/area]. We specialize in [services — e.g., residential service and installation / commercial HVAC / multi-unit buildings].</p>
+<p>I work with a lot of homeowners and property owners, and I wanted to reach out because I know [real estate agents / property managers] often need a reliable HVAC contractor they can call on for their clients and properties.</p>
+<p>I&#x27;d love to be on your short list. Happy to answer any questions or stop by to introduce ourselves properly. [Your Name] | [Company Name] | [Phone]</p></div>
+  <div class="footer"><span>Email Templates HVAC</span><span class="page-number">06</span></div>
+</section></main></body></html>

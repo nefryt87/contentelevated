@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hair Stylists Sample Document</title>
+  <style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b98378; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#241a1a; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#241a1a; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f3; }
+.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#241a1a; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#241a1a; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#241a1a; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+</style>
+</head>
+<body>
+<main class="book layout-editorial">
+  <section class="page cover">
+    <div class="brand">
+      <div class="brand-stack">
+        <div class="brand-line">CONTENT ELEVATED</div>
+        <div class="doc-label">Done-for-you AI prompts for hair stylists</div>
+      </div>
+    </div>
+    
+    <h1>5 AI Prompts for Rebooking More Clients</h1>
+    <p class="lead">A premium, niche-specific sample document built from the real product content. Review this direction before we apply it to the full bundle.</p>
+    <div class="metrics">
+      <div class="metric"><b>01</b><span>Copy and paste<br/>client prompts</span></div>
+      <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
+      <div class="metric"><b>03</b><span>Fast to use<br/>easy to customize</span></div>
+    </div>
+    <div class="footer"><span>Hair Stylists sample document</span><span>01</span></div>
+  </section>
+  <section class="page work">
+    <div class="brand"><div>Content Elevated</div><div></div></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Prompt System</p><h2>Start with the client moment.</h2></div>
+      <p class="intro">Use these prompts when the customer is asking, deciding, rebooking, reviewing, or needing a reason to say yes.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>— 4-Week Reminder (Color Client)</h3>
+        <p>When to send: Send this 4 weeks after a color appointment. Works for balayage, highlights, root touch-ups, any color service. Hey [name]! It&#x27;s been about a month since your last color — just wanted to check in and see how it&#x27;s holding up. I have some openings coming up if you&#x27;re thinking about coming in. Just reply and I&#x27;ll send you some times!   Pro tip: Keep it casual. Don&#x27;t say &#x27;your roots are showing&#x27; — say &#x27;how&#x27;s it holding up.&#x27; Let them come to that conclusion themselves.</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>— 4-Week Reminder (Cut Client)</h3>
+        <p>When to send: Send this 4 weeks after a haircut. Works especially well for shorter cuts and precision styles. Hey [name]! Just thinking about you — it&#x27;s been about a month since your cut and I know [her style] starts to lose its shape right around now. Want to get you back in before it gets too grown out. I have some spots open — does [day] or [day] work? Pro tip: Reference the specific style if you remember it. Even a vague mention like &#x27;your style&#x27; feels personal enough.</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>— 6-Week Overdue (Any Service)</h3>
+        <p>When to send: Send this when a client is 6+ weeks overdue. Warm and slightly playful — no guilt. Hey [name]! Miss seeing you in the chair   It&#x27;s been a little while — [service] tends to start showing some wear right around now. I&#x27;ve got a couple spots open this week and next if you want to get back in. Just say the word! Pro tip: The emoji softens it. &#x27;Just say the word&#x27; makes it effortless to respond. Never use the word &#x27;overdue.&#x27;</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="footer"><span>Hair Stylists</span><span>02</span></div>
+  </section>
+  <section class="page work">
+    <div class="brand"><div>Content Elevated</div><div></div></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Follow-up / Content / Trust</p><h2>Turn attention into action.</h2></div>
+      <p class="intro">This final page shows how the visual system handles longer prompt text, CTA structure, and bundle positioning.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>— Win-Back (90+ Days Quiet)</h3>
+        <p>HAIRSTYLIST COMPLETE GROWTH BUNDLE Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only When to send: Send this when a client hasn&#x27;t booked in 3+ months. Warm, no pressure, leaves the door open. Hey [name]! It&#x27;s been a minute — hope everything&#x27;s been great with you! Whenever you&#x27;re ready to come back in, just reach out and I&#x27;ll get you sorted. I always have time for you   Pro tip: No offer. No discount. No pressure. Just a warm, genuine check-in. This alone brings back 15–25% of lapsed clients.</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>— After A Big Transformation</h3>
+        <p>When to send: Send this 24–48 hours after a major color, cut, or style change. While they&#x27;re still in the glow. Hey [name]! Still thinking about your [transformation] from yesterday — you looked absolutely incredible. How are you feeling about it today? I have a feeling you&#x27;re going to love it more every day   Let me know if you have any questions about your routine! Pro tip: This text does three things: reinforces their confidence, opens a homecare conversation, and makes them feel like more than just a client.</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="cta">
+      <p class="eyebrow">Full bundle direction</p>
+      <h2>Hair Stylists Growth Bundle</h2>
+      <p class="intro">Once this sample is approved, the same niche-specific art direction can be applied across the AI Playbook, 30-day calendar files, templates, brand kit, and client system documents.</p>
+    </div>
+    <div class="footer"><span>Approval sample</span><span>03</span></div>
+  </section>
+</main>
+</body>
+</html>

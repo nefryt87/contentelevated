@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>HVAC Brand Kit &amp; Canva Guide</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#07111d; --panel:#0d1a28; --panel2:#132539; --steel:#627286; --muted:#516174; --paper:#effbf5; --cool:#73d4a6; --heat:#b9ecd4; --line:rgba(7,17,29,.16); }
+      * { box-sizing:border-box; } body { margin:0; background:#cfd8e3; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; } .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:radial-gradient(circle at 14% 9%, color-mix(in srgb,var(--cool) 20%,transparent), transparent 2.35in), radial-gradient(circle at 96% 16%, color-mix(in srgb,var(--heat) 16%,transparent), transparent 2.4in), linear-gradient(135deg,var(--paper),#fff 56%,#e9eef5); }
+      .page::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(7,17,29,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(7,17,29,.045) 1px,transparent 1px); background-size:.34in .34in; mask-image:radial-gradient(circle at 50% 42%, black, transparent 78%); pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.05in; top:-.35in; width:3.4in; height:10.4in; border-radius:999px; background:linear-gradient(180deg,color-mix(in srgb,var(--cool) 10%,transparent),transparent 45%,color-mix(in srgb,var(--heat) 10%,transparent)); transform:rotate(-12deg); pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; } .wordmark { color:var(--ink); font-size:12px; font-weight:950; letter-spacing:.18em; text-transform:uppercase; } .wordmark small { display:block; margin-top:8px; color:var(--steel); font-size:8.5px; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--cool) 38%,transparent); background:rgba(255,255,255,.58); color:var(--panel); border-radius:999px; padding:10px 14px; font-size:9px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+      .kicker,.eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; margin:0 0 17px; color:var(--cool); font-size:9px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; } .kicker::before,.eyebrow-line::before { content:""; width:44px; height:1px; background:linear-gradient(90deg,var(--cool),var(--heat)); }
+      h1,h2 { position:relative; z-index:2; margin:0; font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; } h1 { max-width:6.3in; margin-top:.82in; font-size:58px; line-height:.9; } h1 span { color:var(--heat); } h2 { margin:16px 0 12px; font-size:29px; line-height:1; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--muted); font-size:11px; line-height:1.48; } .lead { max-width:5.15in; margin-top:.28in; font-size:15px; line-height:1.5; color:#334458; }
+      .cover-panel { position:absolute; left:.58in; right:.58in; bottom:.76in; z-index:2; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; } .dark-card { border-radius:22px; background:linear-gradient(135deg,var(--panel),var(--panel2)); padding:24px; color:#edf7ff; box-shadow:0 28px 72px rgba(7,17,29,.18); } .dark-card p { color:rgba(237,247,255,.72); }
+      .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; } .stat { border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:13px; background:rgba(255,255,255,.045); } .stat strong { display:block; color:var(--cool); font-size:22px; font-weight:950; } .stat span { display:block; margin-top:6px; color:rgba(237,247,255,.7); font-size:8px; font-weight:900; letter-spacing:.12em; line-height:1.35; text-transform:uppercase; }
+      .footer { position:absolute; left:.58in; right:.58in; bottom:.31in; z-index:2; display:flex; justify-content:space-between; color:rgba(81,97,116,.78); font-size:8px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.38in; border:1px solid rgba(7,17,29,.12); border-radius:22px; background:rgba(255,255,255,.72); padding:25px; box-shadow:0 20px 58px rgba(7,17,29,.08); }
+      .system-title { margin:17px 0 10px; border-radius:14px; border:1px solid color-mix(in srgb,var(--cool) 24%,transparent); background:linear-gradient(135deg,rgba(13,26,40,.96),rgba(19,37,57,.94)); color:#edf7ff; padding:12px 14px; font-size:10px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
+      .label-line { color:var(--heat); font-weight:950; letter-spacing:.11em; text-transform:uppercase; font-size:9px; margin-top:13px; } .tip { margin:12px 0; border-left:3px solid var(--heat); padding:10px 0 10px 13px; background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 12%,transparent),transparent 76%); color:#415268; font-size:10px; line-height:1.45; }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; border-radius:50%; margin-top:7px; background:var(--cool); } .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; border:1px solid color-mix(in srgb,var(--cool) 30%,transparent); border-radius:8px; color:var(--cool); font-weight:950; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book"><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><p class="kicker" style="margin-top:.78in;">Field-Ready Growth System</p><h1><span>HVAC</span> Brand Kit &amp; Canva Guide</h1><p class="lead">Build an HVAC brand homeowners trust before they ever call, from colors and fonts to Google Business Profile polish.</p><div class="cover-panel"><div class="dark-card"><p style="font-size:10px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--heat);margin-bottom:12px;">Built for service companies</p><p>Turn follow-up, seasonal demand, reviews, content, and customer communication into a repeatable operating system.</p></div><div class="dark-card"><div class="stat-grid"><div class="stat"><strong>24</strong><span>templates</span></div><div class="stat"><strong>90</strong><span>days</span></div><div class="stat"><strong>AI</strong><span>assisted</span></div><div class="stat"><strong>0</strong><span>guesswork</span></div></div></div></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>01</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><p class="eyebrow-line">SECTION 1: POSITIONING</p>
+<p>HVAC is a trust business. Homeowners are inviting you into their homes, often during a</p>
+<p>stressful breakdown, and handing over thousands of dollars. Your brand — your truck,</p>
+<p>your uniform, your website, your Google profile — communicates whether you&#x27;re</p>
+<p>someone worth trusting before they ever speak to you.</p>
+<h2>Your Brand Promise</h2>
+<p>We help [homeowners / property managers / local businesses] in [City/area] [stay</p>
+<p>comfortable year-round / avoid system breakdowns / maximize the life of their</p>
+<p>HVAC investment] through [honest, reliable, expert service with no surprises].</p>
+<h2>Example: &#x27;We keep [City] families comfortable year-round — with expert HVAC</h2>
+<p>service, honest pricing, and a guarantee that the job is done right the first time.&#x27;</p>
+<h2>Service Positioning Angles</h2>
+<p class="bullet"><span></span>Residential comfort and reliability: &#x27;Your family deserves to be comfortable —</p>
+<p>whatever the weather outside&#x27;</p>
+<p class="bullet"><span></span>Emergency service: &#x27;When your system fails, we answer the phone and show up</p>
+<p>fast&#x27;</p>
+<p class="bullet"><span></span>Energy efficiency: &#x27;Lower energy bills without replacing your system — expert</p>
+<p>efficiency upgrades&#x27;</p>
+<p class="bullet"><span></span>Service agreements: &#x27;Prevent the breakdown before it happens — proactive</p>
+<p>maintenance saves you money&#x27;</p>
+<p class="bullet"><span></span>New construction: &#x27;Reliable HVAC for homebuilders who can&#x27;t afford callbacks&#x27;</p>
+<p class="bullet"><span></span>Commercial: &#x27;Keeping your business comfortable so your team can focus on</p>
+<p>what matters&#x27;</p>
+<p class="eyebrow-line">SECTION 2: COLOR PALETTES</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>02</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><h2>Palette A: Professional Blue (Trust, Expertise — Most Common in</h2>
+<h2>HVAC)</h2>
+<h2>Deep Blue</h2>
+<h2>#1A3A5C</h2>
+<h2>Primary — Trust,</h2>
+<h2>Authority</h2>
+<h2>Bold Orange</h2>
+<h2>#D4601A</h2>
+<h2>Accent — Energy, Action</h2>
+<h2>Steel Gray</h2>
+<h2>#4A6A8A</h2>
+<h2>Secondary —</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>03</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><h2>Professional</h2>
+<h2>Light Blue</h2>
+<h2>#EEF4FA</h2>
+<h2>Background — Clean,</h2>
+<h2>Open</h2>
+<p>Palette B: Bold Contrast (Stand Out in a Competitive Market)</p>
+<h2>Charcoal</h2>
+<h2>#1A2A3A</h2>
+<h2>Primary — Strong,</h2>
+<h2>Modern</h2>
+<h2>Electric Orange</h2>
+<h2>#E87A2A</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>04</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><h2>Accent — High Visibility,</h2>
+<h2>Energy</h2>
+<h2>Cool Gray</h2>
+<h2>#F0F4F8</h2>
+<h2>Background — Clean</h2>
+<h2>White</h2>
+<h2>#FFFFFF</h2>
+<h2>Base</h2>
+<h2>Typography</h2>
+<p>Headlines: Montserrat Bold — strong, modern, highly readable on trucks, signs, and</p>
+<p>screens. Body: Open Sans Regular — clean and professional. Both free on Google</p>
+<h2>Fonts and in Canva. Avoid overly decorative fonts — HVAC branding should</h2>
+<p>communicate competence, not creativity.</p>
+<p class="eyebrow-line">SECTION 3: CANVA TEMPLATE GUIDE</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>05</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><h2>TEMPLATE CANVA SEARCH TERM BEST USE</h2>
+<p>GBP / Facebook Post &quot;HVAC contractor facebook post</p>
+<p>template&quot;</p>
+<p>Job photos, tips, seasonal offers,</p>
+<p>reviews</p>
+<p>Before/After Post &quot;before after home improvement</p>
+<p>canva&quot;</p>
+<h2>System installs — old vs. new</h2>
+<p>Seasonal Campaign Flyer &quot;HVAC seasonal tune-up flyer</p>
+<p>canva&quot;</p>
+<p>Spring/fall tune-up campaigns</p>
+<p>Service Agreement Card &quot;home service membership card</p>
+<p>canva&quot;</p>
+<p>Print or digital service agreement</p>
+<p>promo</p>
+<p>Facebook Cover &quot;HVAC company facebook cover</p>
+<p>canva&quot;</p>
+<p>Professional first impression</p>
+<p>Door Hanger &quot;home service door hanger</p>
+<p>template canva&quot;</p>
+<p>Post-job neighborhood marketing</p>
+<p>Business Card &quot;contractor business card</p>
+<p>template canva&quot;</p>
+<h2>Magnetic or standard — bold and</h2>
+<p>legible</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>06</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><h2>The Door Hanger Play</h2>
+<p class="bullet"><span></span>After every job, leave door hangers on the 5-6 nearest neighbors</p>
+<p class="bullet"><span></span>Message: &#x27;We just serviced your neighbor at [street/neighborhood] — if you</p>
+<p>haven&#x27;t had your system checked this [season], now&#x27;s a great time&#x27;</p>
+<p class="bullet"><span></span>AI writes the message. Canva formats it. Your tech leaves it. One of the highest-</p>
+<p>ROI local marketing tactics in home services.</p>
+<h2>7-DAY BRAND LAUNCH CHECKLIST</h2>
+<h2>Days 1-2 — Foundation</h2>
+<p>✓ Choose color palette and add to Canva Brand Kit</p>
+<p>✓ Select fonts (Montserrat + Open Sans)</p>
+<p>✓ Write your Brand Promise</p>
+<p>✓ Define your primary service positioning angle</p>
+<h2>Days 3-4 — Build Templates &amp; Update Profiles</h2>
+<p>✓ Create GBP/Facebook post template with job photo frame</p>
+<p>✓ Build seasonal campaign flyer (spring/fall tune-up)</p>
+<h2>✓ Update Google Business Profile — photos, description, services, hours</h2>
+<p>✓ Update Facebook page cover photo and description</p>
+<p>✓ Design door hanger template</p>
+<h2>Days 5-7 — First Week of Content</h2>
+<p>✓ Batch-create 3 posts using the 90-Day Calendar</p>
+<p>✓ Generate captions with the monthly AI prompt</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>07</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Brand Field Guide</div></div><div class="content-card"><p>✓ Post one job photo to GBP with a keyword-rich caption</p>
+<p>✓ Schedule Mon/Wed/Fri and engage with every comment</p>
+<p>The best HVAC brand isn&#x27;t the loudest. It&#x27;s the most trusted.</p>
+<p>Show up consistently. Do the job right. Ask for the review. Repeat.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>08</span></div></section></main></body></html>

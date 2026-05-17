@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Chiropractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>CHIROPRACTOR</h3>
+<h3>PATIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>24 done-for-you templates for every stage of the patient journey New patients • Retention • Reactivation • Referrals • Reviews</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your patient&#x27;s name, condition, and your practice</p>
+<p>details.</p>
+<p class="template-line">• Tone is intentionally warm and human — patients respond to empathy, not</p>
+<p>clinical formality.</p>
+<p class="template-line">• These work as emails, SMS messages, and DMs — shorten to 2–3</p>
+<p>sentences for text.</p>
+<p class="template-line">• Always personalize the first line — AI can do this in seconds using patient</p>
+<p>context.</p>
+<p class="template-line">• Save your top performers as templates in your practice management</p>
+<p>software or Gmail.</p>
+<h3>SECTION 1: NEW PATIENT WELCOME</h3>
+<h3>SEQUENCE</h3>
+<p>New Patient Welcome — Pre-Visit</p>
+<div class="section-label">SUBJECT We&#x27;re looking forward to meeting you, [First Name]</div>
+<p>BODY Hi [First Name], We&#x27;re so glad you chose [Practice Name] for your care — we&#x27;re looking forward to meeting you on [Date] at [Time]. To make your first visit as smooth as possible:</p>
+<p class="template-line">- Please arrive 10 minutes early to complete your intake paperwork</p>
+<p class="template-line">- Wear comfortable, loose-fitting clothing</p>
+<p class="template-line">- Bring any relevant X-rays or medical records if you have them</p>
+<p class="template-line">- Come ready to share your health history and current concerns</p>
+<p>Your first visit will include a thorough consultation and examination. We won&#x27;t do anything without explaining it first — your comfort is our priority. If you have any questions before your appointment, don&#x27;t hesitate to call us at [Phone]. See you soon,</p>
+<p>Dr. [Name] &amp; the [Practice Name] Team Post First Visit — Care Plan Follow-Up</p>
+<h3>SUBJECT Your personalized care plan — next steps</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], It was a pleasure meeting you today. Based on your examination, here&#x27;s a quick summary of what we found and what we recommend: Primary concern: [Condition] Recommended care plan: [Brief overview — e.g., &#x27;3x/week for 4 weeks, then reassess&#x27;]</p>
+<p>What you can expect: [Realistic outcome statement] I know beginning a care plan is a commitment, and I want you to feel confident it&#x27;s the right one for you. If you have any questions about what we discussed today, please reply here or call the office.</p>
+<p>Your next appointment is [Date] at [Time]. We&#x27;ll see you then. Dr. [Name] | [Practice Name] | [Phone] Appointment Reminder — 48 Hours Before</p>
+<div class="section-label">SUBJECT Reminder: Your appointment at [Practice Name] — [Date]</div>
+<p>BODY Hi [First Name], Just a friendly reminder that you have an appointment with Dr. [Name] at [Practice Name] on [Date] at [Time]. [Address if new patient / &#x27;See you at our usual spot&#x27; if returning] If you need to reschedule, please let us know at least 24 hours in advance so</p>
+<p>we can offer your slot to another patient. See you soon! [Practice Name] | [Phone] No-Show Recovery Message</p>
+<h3>SUBJECT We missed you today — hope everything is okay</h3>
+<p>BODY Hi [First Name], We noticed you weren&#x27;t able to make your appointment today — no worries, life happens. We do want to make sure you&#x27;re taken care of, so whenever you&#x27;re ready to reschedule, just reply here or call us at [Phone] and we&#x27;ll find a time that works for you.</p>
+<p>If something came up that made it difficult to come in — cost, timing, or anything else — please let us know. We&#x27;re flexible and we want to make care accessible for you. Looking forward to seeing you soon. Dr. [Name] | [Practice Name]</p>
+<h3>SECTION 2: PATIENT RETENTION &amp; CARE PLAN</h3>
+<h3>COMPLETION</h3>
+<p>Between-Visit Check-In</p>
+<div class="section-label">SUBJECT Quick check-in — how are you feeling, [First Name]?</div>
+<p>BODY Hi [First Name], Just checking in after your visit [X days ago] — how are you feeling? It&#x27;s completely normal to experience some mild soreness in the first 24–48 hours after an adjustment as your body adapts. If you&#x27;re feeling that, it&#x27;s a good sign that things are shifting.</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>A quick reminder on your home care: [specific home care tip — e.g., &#x27;Ice for 10 minutes on the lower back twice a day&#x27;] Any questions before your next visit? We&#x27;re always here. Dr. [Name] | [Practice Name] Care Plan Midpoint Check-In</p>
+<div class="section-label">SUBJECT Halfway through — let&#x27;s talk about your progress</div>
+<p>BODY Hi [First Name], You&#x27;re halfway through your care plan — and I wanted to take a moment to acknowledge that. Here&#x27;s what we&#x27;ve seen so far: [Progress summary — e.g., &#x27;Your range of motion has improved significantly and you&#x27;ve reported a meaningful reduction</p>
+<p>in daily pain levels.&#x27;] I know it can be tempting to reduce visits when you start feeling better — and that&#x27;s a great sign. But the improvements you&#x27;re experiencing right now are the foundation we&#x27;re building on. Stopping too early often means the problem returns.</p>
+<p>Let&#x27;s keep the momentum going. Your next appointment is [Date] — I&#x27;ll see you then. Dr. [Name] Wellness Transition — End of Acute Care</p>
+<div class="section-label">SUBJECT Your care plan is almost complete — what&#x27;s next?</div>
+<p>BODY Hi [First Name], You&#x27;ve done the work and it shows — [brief progress recap]. As we approach the end of your initial care plan, I want to talk with you about what comes next. Many of my patients choose to continue with a maintenance care schedule —</p>
+<p>typically once or twice a month — to keep the results you&#x27;ve achieved and prevent the same issues from returning. Others prefer to check in seasonally or when something comes up. There&#x27;s no pressure either way. At your next visit, let&#x27;s take a few minutes to</p>
+<p>talk about what makes the most sense for your life and your health goals. Either way, I&#x27;m proud of the progress you&#x27;ve made. Dr. [Name] Missed Appointment — Same Day</p>
+<h3>SUBJECT We missed you today — everything okay?</h3>
+<p>BODY Hi [First Name], We noticed you missed your appointment today and just wanted to check in — hope everything is okay on your end. Staying consistent with your care plan is important for getting the results we</p>
+<p>talked about, so whenever you&#x27;re ready to reschedule, we&#x27;re here. Just reply or call [Phone] and we&#x27;ll get you back on the schedule. No judgment — life gets busy. We just don&#x27;t want your progress to slip. Dr. [Name] | [Practice Name]</p>
+<h3>SECTION 3: PATIENT REACTIVATION</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>Reactivation — 3 Months Lapsed</h3>
+<div class="section-label">SUBJECT It&#x27;s been a while — checking in on you, [First Name]</div>
+<p>BODY Hi [First Name], It&#x27;s been a few months since your last visit at [Practice Name] and I just wanted to reach out and see how you&#x27;re doing. How has your [condition — e.g., lower back / neck / etc.] been treating you?</p>
+<p>Sometimes when things feel better, it&#x27;s easy to put regular care on the back burner — which is completely understandable. If you&#x27;d like to come in for a check-up or reassessment, we&#x27;d love to see you. No pressure — just here if you need us. Dr. [Name] | [Practice Name] | [Phone]</p>
+<h3>Reactivation — 6+ Months Lapsed</h3>
+<div class="section-label">SUBJECT An update from [Practice Name] — and a note for you</div>
+<p>BODY Hi [First Name], I was reviewing patient files and your name came up — it&#x27;s been a while since we&#x27;ve seen you at [Practice Name] and I wanted to personally reach out. Whether your [condition] has fully resolved, you&#x27;ve been managing it on your</p>
+<p>own, or life just got in the way — I&#x27;d love to know how you&#x27;re doing. If you&#x27;d like to come back in for a fresh assessment, we&#x27;re currently accepting returning patients and can usually get you in within the week. Hope you&#x27;re well, Dr. [Name] | [Practice Name] | [Phone]</p>
+<p>Seasonal Reactivation</p>
+<div class="section-label">SUBJECT It&#x27;s [season] — a great time for a chiropractic check-in</div>
+<p>BODY Hi [First Name], With [season] here, it&#x27;s a great time to check in on your spine health — especially with [seasonal context: e.g., &#x27;the change in activity levels as people get back outdoors&#x27; / &#x27;holiday travel and sitting for long periods&#x27; / &#x27;back-to-school</p>
+<p>stress and posture changes&#x27;]. We&#x27;re offering [seasonal special or simply a &#x27;priority scheduling window&#x27;] for returning patients this month. Give us a call at [Phone] or reply here to get back on the schedule. Would love to see you. Dr. [Name] | [Practice Name]</p>
+<h3>SECTION 4: REFERRALS, REVIEWS &amp;</h3>
+<h3>PROFESSIONAL OUTREACH</h3>
+<h3>Referral Request — Post Milestone</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><div class="section-label">SUBJECT So glad to hear this, [First Name] — one quick thing</div>
+<p>BODY Hi [First Name], Hearing about your progress [e.g., &#x27;sleeping through the night for the first time in months / back to running / able to pick up your kids without pain&#x27;] honestly makes this job worth it.</p>
+<p>If you have a friend, family member, or coworker who&#x27;s dealing with something similar — or anyone who&#x27;s been putting off chiropractic care — I&#x27;d be grateful if you sent them our way. We take good care of the people our patients trust us with. That&#x27;s a promise.</p>
+<p>Dr. [Name] | [Practice Name] | [Phone] Google Review Request</p>
+<h3>SUBJECT A small favour — it makes a big difference</h3>
+<p>BODY Hi [First Name], I hope you&#x27;ve been feeling great since your last visit. If you&#x27;ve had a positive experience at [Practice Name], I&#x27;d be incredibly grateful if you took 2 minutes to leave us a Google review. It helps other people in</p>
+<p>[City] who are looking for care find us — and means a lot to our team. Here&#x27;s the direct link: [Google Review Link] Thank you so much — it truly makes a difference. Dr. [Name] | [Practice Name] Professional Referral Outreach (GP / PT / Trainer)</p>
+<div class="section-label">SUBJECT Fellow health professional — introduction from Dr. [Name]</div>
+<p>BODY Hi [Name], My name is Dr. [Name] — I&#x27;m a chiropractor at [Practice Name] in [City]. I came across your practice / profile and wanted to introduce myself. I work with a lot of patients who have overlapping needs with your area of</p>
+<p>expertise — [e.g., &#x27;patients recovering from sports injuries who would benefit from strength work&#x27; / &#x27;prenatal patients who need physical therapy alongside chiropractic care&#x27;]. I&#x27;d love to explore a mutual referral relationship if you think it could benefit our</p>
+<p>shared patients. Happy to grab a quick coffee or a 15-minute call if you&#x27;re open to it. Dr. [Name] | [Practice Name] | [Phone] | [Website]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section></main></body></html>

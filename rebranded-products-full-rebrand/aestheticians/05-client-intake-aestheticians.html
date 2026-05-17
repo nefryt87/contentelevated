@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Intake</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Intake</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Aestheticians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>MED SPA AESTHETICIAN</h3>
+<h3>Client Intake, Skin Assessment &amp; Consultation System</h3>
+<div class="section-label">New client intake form, pre-treatment skin assessment, consultation script guide, contraindication</div>
+<h3>checklist, and treatment menu template</h3>
+<h3>SECTION 1: NEW CLIENT INTAKE FORM</h3>
+<p>Send before every first consultation. A thorough intake protects you legally, helps you personalise treatments, and signals professionalism.</p>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you find [Studio/Spa Name]?</p>
+<h3>✓ PRIMARY SKIN CONCERN:</h3>
+<p class="template-line">✓ What is your main skin concern today? (e.g., acne, hyperpigmentation, fine lines,</p>
+<p>dehydration, sensitivity):</p>
+<p class="template-line">✓ How long have you had this concern?</p>
+<p class="template-line">✓ Have you had any professional treatments for it before? If yes, what and when?</p>
+<h3>✓ CURRENT SKINCARE ROUTINE:</h3>
+<p class="template-line">✓ Morning routine (list products you use):</p>
+<p class="template-line">✓ Evening routine:</p>
+<p class="template-line">✓ SPF: Do you use daily? Which product?</p>
+<p class="template-line">✓ Any products prescribed by a dermatologist?</p>
+<h3>✓ SKIN HISTORY:</h3>
+<p class="template-line">✓ How would you describe your skin type: Dry / Oily / Combination / Normal /</p>
+<p>Sensitive:</p>
+<p class="template-line">✓ Do you have any known skin conditions? (eczema, rosacea, psoriasis, seborrheic</p>
+<p>dermatitis):</p>
+<p class="template-line">✓ Do you experience frequent breakouts? If yes, where and what type (blackheads,</p>
+<p>cysts, whiteheads)?</p>
+<p class="template-line">✓ Have you had any adverse reactions to skincare products or treatments?</p>
+<p class="template-line">✓ MEDICAL HISTORY (required for treatment safety):</p>
+<p class="template-line">✓ Are you currently pregnant or breastfeeding?</p>
+<p class="template-line">✓ Do you have any active cold sores or skin infections?</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">✓ Are you taking any medications? (especially: blood thinners, antibiotics, hormonal</p>
+<p>medication, Accutane — current or within 6 months):</p>
+<p class="template-line">✓ Do you have a history of keloid scarring?</p>
+<p class="template-line">✓ Do you have any allergies (products, foods, latex, fragrances)?</p>
+<p class="template-line">✓ Have you had any recent cosmetic procedures? (fillers, Botox, laser — within 2</p>
+<p>weeks):</p>
+<p class="template-line">✓ Do you have any active autoimmune conditions?</p>
+<h3>✓ TREATMENT GOALS:</h3>
+<p class="template-line">✓ What does success look like to you from your treatments?</p>
+<p class="template-line">✓ Are you interested in a single treatment or an ongoing treatment plan?</p>
+<p class="template-line">✓ What is your approximate budget for skincare treatments per month?</p>
+<h3>✓ CONSENT:</h3>
+<p class="template-line">✓ I confirm the above information is accurate and I understand that withholding</p>
+<p>relevant medical information may affect the safety or outcome of my treatment.</p>
+<p class="template-line">✓ Signature: _________________________ Date: ___</p>
+<p class="template-line">✓ [This form is for informational purposes. Always adapt it to meet the requirements</p>
+<p>of your licensing jurisdiction and consult a legal professional regarding consent and record-keeping requirements in your area.]</p>
+<h3>SECTION 2: PRE-TREATMENT</h3>
+<h3>CONTRAINDICATION CHECKLIST</h3>
+<p>Check Before Every Treatment Session</p>
+<h3>CONTRAINDICATION CHECK / NOTE</h3>
+<p>Active cold sores / herpes breakout Do not proceed — reschedule Active acne cysts / open lesions in treatment area Adjust treatment or avoid area Sunburned or recently tanned skin Delay chemical exfoliation, laser, microneedling</p>
+<p>Accutane use within 6 months No chemical peels, microneedling, laser Recent Botox/filler (under 2 weeks) Avoid massage, heat, high pressure Pregnancy Avoid chemical peels, retinol, certain actives, laser Active skin infection in treatment area Do not proceed</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>Blood-thinning medications Note for treatments involving needles Keloid scar history Avoid microneedling / wounding treatments Autoimmune condition (active flare) Consult physician recommendation Metal implants in treatment area Avoid RF, electrical, or laser over metal</p>
+<p>Fitzpatrick V-VI skin (darker tones) Adjust laser/peel settings — higher risk of</p>
+<h3>PIH</h3>
+<p>This checklist is a general reference guide. Always follow your licensing jurisdiction&#x27;s requirements, the protocols of any devices you are certified to use, and consult manufacturer guidelines for each treatment. This document does not constitute medical or legal advice.</p>
+<h3>SECTION 3: CONSULTATION SCRIPT GUIDE</h3>
+<h3>How to Structure a Productive Skin Consultation</h3>
+<h3>✓ BEFORE THE CONSULTATION:</h3>
+<p class="template-line">✓ Review the intake form completely — note any contraindications or areas to explore</p>
+<p class="template-line">✓ Prepare your treatment menu and pricing for likely recommendations</p>
+<p class="template-line">✓ Ensure your magnifying lamp and analysis tools are ready</p>
+<p class="template-line">✓ OPENING (2-3 minutes):</p>
+<p class="template-line">✓ &#x27;Thank you so much for coming in — I&#x27;m really looking forward to taking a look at</p>
+<p>your skin today. Can you tell me a bit more about what&#x27;s been bothering you most?&#x27;</p>
+<p class="template-line">✓ [Listen fully before responding. Don&#x27;t offer solutions before you&#x27;ve heard the full</p>
+<p>picture.]</p>
+<p class="template-line">✓ SKIN ANALYSIS (5-10 minutes):</p>
+<p class="template-line">✓ Ask permission before touching the skin</p>
+<p class="template-line">✓ Use magnification to assess: texture, tone, pore size, hydration, sensitivity,</p>
+<p>sebaceous activity</p>
+<p class="template-line">✓ Share observations in plain language: &#x27;What I&#x27;m seeing here is...&#x27; / &#x27;This tells me</p>
+<p>that...&#x27;</p>
+<p class="template-line">✓ Validate their concern: &#x27;This is really common and completely treatable.&#x27;</p>
+<p class="template-line">✓ TREATMENT RECOMMENDATION (5-10 minutes):</p>
+<p class="template-line">✓ Recommend 1 primary treatment and 1 supporting treatment maximum — too many</p>
+<p>options creates decision paralysis</p>
+<p class="template-line">✓ Frame recommendations around their goal, not the treatment: &#x27;To address the</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Aestheticians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>hyperpigmentation you mentioned, here is what I would suggest...&#x27;</p>
+<p class="template-line">✓ Be honest about expected outcomes and timeline: &#x27;After a series of 3, most clients</p>
+<p>see significant improvement. After one session, you will see [realistic expectation].&#x27;</p>
+<p class="template-line">✓ INVESTMENT CONVERSATION (3-5 minutes):</p>
+<p class="template-line">✓ Present the investment clearly and confidently — apologising for pricing undermines</p>
+<p>confidence</p>
+<p class="template-line">✓ &#x27;For a series of 3 sessions, the investment is $[amount], which works out to $[per</p>
+<p>session] — significantly less than individual sessions. I can book all 3 now so you have your spots.&#x27;</p>
+<p class="template-line">✓ [Offer a payment plan if you have one.]</p>
+<h3>✓ CLOSE:</h3>
+<p class="template-line">✓ &#x27;Do you have any other questions before I put together your plan?&#x27;</p>
+<p class="template-line">✓ Always close with a next action: &#x27;I can book your first session today&#x27; or &#x27;I&#x27;ll send you</p>
+<p>a summary email and a booking link this afternoon.&#x27;</p>
+<p class="template-line">✓ [A consultation that ends without a clear next step rarely converts.]</p>
+<h3>SECTION 4: TREATMENT MENU TEMPLATE</h3>
+<p>Customisable Treatment Menu</p>
+<h3>TREATMENT DURATIO</h3>
+<h3>N</h3>
+<h3>FROM DESCRIPTION</h3>
+<p>HydraFacial 60 min $[amount] Deeply cleanses, exfoliates, extracts, and hydrates. All skin types. No downtime. Chemical Peel 30-45 min $[amount] Resurfaces and brightens. Best for hyperpigmentation, texture, and mild acne scarring. Mild flaking 3-5 days.</p>
+<p>Microneedling 60-75 min $[amount] Collagen stimulation for fine lines, scarring, and texture. Some redness 24-48 hours. LED Light Therapy 20-30 min $[amount] Targets acne (blue) or anti-ageing (red). No downtime. Excellent as an add-on.</p>
+<p>Dermaplaning 30-45 min $[amount] Manual exfoliation removing dead skin and vellus hair. Instant glow. No downtime. Lash Lift &amp; Tint 45-60 min $[amount] Lifts, curls, and tints natural lashes. Results last 6-8 weeks.</p>
+<p>[Your Treatment 7] [Time] $[amount] [Brief description — benefits, downtime, ideal skin type] [Your Treatment 8] [Time] $[amount] [Brief description]</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">06</span></div>
+</section></main></body></html>

@@ -1,0 +1,164 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #f8f1e7; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#0d0a08,#16100c 70%,#070504); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c4954f 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#efcc8d 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.11) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c4954f,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #c5b7a6; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c4954f 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c4954f; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.04); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c4954f; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c4954f; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c4954f; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #c5b7a6; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c4954f 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.045); box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+.cover-panel.dark { background: linear-gradient(135deg,#070504,color-mix(in srgb,#070504 76%,#c4954f)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #efcc8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.05); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c4954f 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.05); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c4954f; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.052); box-shadow: 0 22px 62px rgba(0,0,0,.18); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c4954f 18%,transparent); color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c4954f; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c4954f 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #c5b7a6; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c4954f; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Chair growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for dark shop authority</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Barbers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>BARBER</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, bold typography, 7 Canva template strategies, and a 7-day brand launch</p>
+<h3>checklist</h3>
+<h3>WHY YOUR BRAND IS WHAT MAKES CLIENTS</h3>
+<h3>CHOOSE YOUR CHAIR</h3>
+<p>Clients choose a barber on TikTok and Instagram before they ever step through the door. Your brand — the way your profile looks, your aesthetic, your visual consistency — communicates your skill level, your vibe, and whether you are the right barber for</p>
+<p>them. A distinctive, confident brand builds a following that walks through your door. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for barbers and barbershops.</p>
+<h3>PALETTE 1: BOLD CLASSIC</h3>
+<p>For barbers with a classic, masculine, old-school barbershop aesthetic. Think navy, gold, white marble, and the confidence of a traditional craft.</p>
+<h3>DEEP NAVY</h3>
+<h3>#1A1A2E</h3>
+<h3>BARBER GOLD</h3>
+<h3>#E8A020</h3>
+<h3>COOL GREY</h3>
+<h3>#8A8A9A</h3>
+<h3>CLEAN WHITE</h3>
+<h3>#F5F5F0</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Navy (#1A1A2E): logo, headlines, primary text, strong graphic elements</p>
+<p class="template-line">• Barber Gold (#E8A020): accent — CTAs, pole icon, price highlights, seasonal</p>
+<p>announcements</p>
+<p class="template-line">• Cool Grey (#8A8A9A): secondary text, captions, subtle supporting elements</p>
+<p class="template-line">• Clean White (#F5F5F0): backgrounds for text graphics, story templates, price</p>
+<p>cards</p>
+<h3>Typography</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>HEADINGS: Bebas Neue — bold, impactful, instantly masculine. The barbering industry font. BODY: Open Sans — clean and readable across all platforms and sizes. ACCENT: Bebas Neue + wide tracking — for shop name overlays, service callouts, transformation labels.</p>
+<h3>PALETTE 2: MODERN BARBERSHOP</h3>
+<p>For barbers with a cleaner, more contemporary aesthetic — the shop that feels like a premium grooming experience.</p>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>WARM COPPER</h3>
+<h3>#B87040</h3>
+<h3>OFF WHITE</h3>
+<h3>#F8F6F2</h3>
+<h3>STONE</h3>
+<h3>#A8A090</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Charcoal (#2A2A2A): all primary text and strong design elements</p>
+<p class="template-line">• Warm Copper (#B87040): primary accent — premium, warm, distinctive</p>
+<p class="template-line">• Off White (#F8F6F2): all backgrounds — warmer than pure white, premium feel</p>
+<p class="template-line">• Stone (#A8A090): secondary elements, subtle details</p>
+<h3>Typography</h3>
+<p>HEADINGS: Montserrat Bold — modern and strong. Works for both premium and street-level barbershop brands. BODY: Lato — clean, warm, professional. ACCENT: Montserrat ExtraBold ALL CAPS — for service names, price callouts, &#x27;BOOK NOW&#x27; CTAs.</p>
+<h3>7 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Before/After Transformation Post</h3>
+<p>Search &#x27;before after barbershop Instagram&#x27; or &#x27;hair transformation post&#x27;. Two-panel: before on left, after on right. Your name and barbershop small at the bottom. Clean border treatment. This is your most important recurring content type — post every</p>
+<p>transformation with client consent. These drive more DMs than any other format.</p>
+<h3>Template 2: TikTok / Reel Cover Frame</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;TikTok thumbnail barber&#x27; or &#x27;Reel cover template&#x27;. The first frame determines whether people click or scroll. Bold text overlay on a dark background: &#x27;WATCH THIS FADE&#x27; or &#x27;THE PERFECT SKIN FADE&#x27; or &#x27;HOW I DO THIS CUT&#x27;. Your barbershop</p>
+<p>name small at the bottom. Create one master template and apply to every video.</p>
+<h3>Template 3: Price List / Services Card</h3>
+<p>Search &#x27;barbershop price list&#x27; or &#x27;salon menu Instagram&#x27;. Clean, bold layout. Your services listed with prices. Your barbershop name and booking info at the bottom. Use your accent colour (Gold or Copper) for service names. Post as a pinned Instagram</p>
+<p>post — clients check this before DMing.</p>
+<h3>Template 4: Availability / Flash Booking Story</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;appointment open Instagram story&#x27;. Vertical. Dark background. Bold text: &#x27;SPOTS OPEN [DAY]&#x27; + time slots. Your barbershop name. Your</p>
+<div class="section-label">booking contact. Post this every time slots open up — it drives immediate bookings from</div>
+<p>your existing followers.</p>
+<h3>Template 5: 5-Star Review Post</h3>
+<p>Search &#x27;barber review Instagram&#x27; or &#x27;client testimonial post&#x27;. Feature your best review line. Client first name or &#x27;@handle if they consent&#x27;. Your barbershop name. These build local trust. Post every new 5-star review — aim for one per week.</p>
+<h3>Template 6: Educational Style Guide</h3>
+<p>Search &#x27;hair guide Instagram&#x27; or &#x27;style tip post barber&#x27;. &#x27;Find your fade&#x27; or &#x27;Which cut suits your face shape?&#x27; — clean, informative, highly shareable. One tip or insight per slide in a carousel. These save at very high rates and attract new followers who are in</p>
+<p>the research phase.</p>
+<h3>Template 7: Google Business Profile Post Template</h3>
+<p>Search &#x27;local business announcement&#x27; or &#x27;service update post&#x27;. Clean. Your barbershop name, service or availability update, booking link. Post to GBP weekly — every post improves your ranking when people search &#x27;barber near me&#x27; in your area. 10 minutes</p>
+<p>per week, significant long-term impact.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 6 story highlight covers:</p>
+<p>Portfolio, Prices, Reviews, Booking, Behind the Scenes, Transformations.</p>
+<p class="template-line">✓ Day 3: Create your price list card using Template 3 — pin it as your first Instagram</p>
+<p>post.</p>
+<p class="template-line">✓ Day 4: Create a TikTok cover frame template using Template 2 — apply it to your</p>
+<p>last 5 videos.</p>
+<p class="template-line">✓ Day 5: Create 5 before/after post templates using Template 1 — apply to your 5</p>
+<p>best transformations.</p>
+<p class="template-line">✓ Day 6: Create 5 review post graphics using Template 5 — schedule one per week</p>
+<p>for 5 weeks.</p>
+<p class="template-line">✓ Day 7: Set up or update your Google Business Profile — add your services, photos,</p>
+<p>and first GBP post.</p>
+<p class="template-line">✓ [Your TikTok and Instagram presence is your storefront. A consistent, bold brand</p>
+<p>turns scrollers into followers and followers into clients.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

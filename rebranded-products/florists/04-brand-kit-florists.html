@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Florists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>FLORIST</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, botanical typography, 8 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND IS THE FIRST FLOWER</h3>
+<h3>YOUR CLIENT FALLS IN LOVE WITH</h3>
+<p>Brides and event clients fall in love with a florist&#x27;s aesthetic before they ever speak to them. Your brand — your palette, your typography, how your Instagram grid looks — communicates whether you are the right artist for their vision. A distinctive, cohesive</p>
+<p>visual identity attracts the clients who are already aligned with your style. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for florists and floral designers.</p>
+<h3>PALETTE 1: ROMANTIC BOTANICAL</h3>
+<p>For florists with a romantic, lush, English-garden aesthetic. Think deep rose, champagne, sage, and the richness of a summer cottage garden.</p>
+<h3>DEEP ROSE</h3>
+<h3>#3A1A2A</h3>
+<h3>CHAMPAGNE</h3>
+<h3>GOLD</h3>
+<h3>#C9922A</h3>
+<h3>GARDEN SAGE</h3>
+<h3>#7A9A6A</h3>
+<h3>PETAL CREAM</h3>
+<h3>#FDF5E8</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Rose (#3A1A2A): logo, headlines, primary text — romantic and distinctive</p>
+<p class="template-line">• Champagne Gold (#C9922A): CTAs, accent details, price presentation, seasonal</p>
+<p>campaign elements</p>
+<p class="template-line">• Garden Sage (#7A9A6A): secondary accents, botanical content, natural green</p>
+<p>details</p>
+<p class="template-line">• Petal Cream (#FDF5E8): all backgrounds — warm, organic, beautiful behind</p>
+<p>flower photography</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Typography</h3>
+<p>HEADINGS: Cormorant Garamond — the definitive botanical luxury font. Romantic, editorial, instantly premium. BODY: Jost — clean and warm. Reads beautifully across Instagram, email, and proposals. ACCENT: Pinyon Script — for studio name in logos, seasonal campaign titles, pull</p>
+<p>quotes. Use with restraint.</p>
+<h3>PALETTE 2: MODERN FLORAL STUDIO</h3>
+<p>For florists with a cleaner, more architectural, editorial aesthetic — the studio that produces flowers that could be in a gallery.</p>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>DUSTY BLUSH</h3>
+<h3>#C4978A</h3>
+<h3>STONE WHITE</h3>
+<h3>#F5F0EB</h3>
+<h3>SLATE GREEN</h3>
+<h3>#6A7A6A</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Charcoal (#2A2A2A): all primary text and strong design elements — editorial and</p>
+<p>contemporary</p>
+<p class="template-line">• Dusty Blush (#C4978A): primary accent — warm, botanical, distinctly feminine</p>
+<p>without being sugary</p>
+<p class="template-line">• Stone White (#F5F0EB): primary backgrounds — warm and pure, gorgeous for</p>
+<p>floristry imagery</p>
+<p class="template-line">• Slate Green (#6A7A6A): secondary accent for botanical and natural content,</p>
+<p>foliage focus</p>
+<h3>Typography</h3>
+<p>HEADINGS: Libre Baskerville — authoritative serif with elegance. Clean and editorial. BODY: Nunito — warm and friendly. Approachable for client communications. ACCENT: Josefin Sans Light (wide tracking, ALL CAPS) — for labels, seasonal tags, minimal graphic overlays.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Floral Arrangement Reveal Post</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;floral arrangement Instagram&#x27; or &#x27;flower photography post&#x27;. Your best arrangement photography fills the frame. Minimal text overlay: studio name in small serif type, bottom corner. Clean and editorial. Let the flowers speak. Create 10-15 of these</p>
+<p>with consistent overlay treatment and your feed will look immediately cohesive and professional.</p>
+<h3>Template 2: Wedding Florals Carousel</h3>
+<p>Search &#x27;wedding Instagram carousel&#x27; or &#x27;floral slideshow&#x27;. 8-10 slides: atmosphere shot of the venue, ceremony flowers, bridal bouquet, table arrangements, detail shots, and a final slide with your studio name and inquiry CTA. Use this for every wedding you</p>
+<p>photograph. It is your most powerful portfolio format.</p>
+<h3>Template 3: Seasonal Flower Guide Carousel</h3>
+<p>Search &#x27;flower guide carousel&#x27; or &#x27;botanical education slides&#x27;. 5-7 slides: one seasonal flower per slide — name, peak season, what style it suits, how long it lasts in water. A genuinely useful resource that saves at very high rates and attracts brides in the research phase.</p>
+<h3>Template 4: Pinterest Wedding Board</h3>
+<p>Search &#x27;wedding inspiration Pinterest&#x27; or &#x27;floral mood board&#x27;. Create a board for each season and style you work in: &#x27;Romantic Garden Wedding Florals&#x27;, &#x27;Modern Architectural Wedding Flowers&#x27;, &#x27;Wild Meadow Weddings&#x27;. Pin your own work and</p>
+<p>curated inspiration. A well-optimised Pinterest profile drives consistent inquiry traffic for years.</p>
+<h3>Template 5: Client Testimonial Graphic</h3>
+<p>Search &#x27;wedding testimonial quote&#x27; or &#x27;client review floral&#x27;. Feature the most evocative line from a client&#x27;s review — something that makes the reader feel the flowers. Client first name and wedding description below. Your studio name. Schedule one per week</p>
+<p>— social proof is your most powerful conversion tool.</p>
+<h3>Template 6: Instagram Story — Enquiries Open</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;wedding florist story&#x27;. Vertical. A beautiful atmospheric arrangement photo as background. Soft overlay. &#x27;Now booking [season] weddings and events.&#x27; + &#x27;Enquire via link.&#x27; Your studio name. Post every time you open new booking windows.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Florists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Corporate &amp; Home Subscription Post</h3>
+<p>Search &#x27;office flowers Instagram&#x27; or &#x27;home flower delivery post&#x27;. Clean, lifestyle-forward layout. A flower arrangement in a beautiful home or office setting. Brief text: &#x27;Weekly flower subscriptions — for homes, offices, and hotels in [City].&#x27; Your contact or booking</p>
+<p>link. Targets the non-wedding revenue stream.</p>
+<h3>Template 8: Instagram Highlight Covers</h3>
+<p>Search &#x27;highlight cover floral&#x27; or &#x27;botanical Instagram icons&#x27;. Create 8 round covers: Weddings, Events, Corporate, Home Subscriptions, Seasonal, Reviews, About,</p>
+<div class="section-label">Booking. Consistent palette. First thing profile visitors see — make them feel the</div>
+<p>aesthetic immediately.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 8 highlight covers using</p>
+<h3>Template 8.</h3>
+<p class="template-line">✓ Day 3: Create 10 arrangement reveal post overlays using Template 1 — apply to</p>
+<p>your 10 best photos.</p>
+<p class="template-line">✓ Day 4: Set up or refresh your Pinterest profile: create 4 seasonal/style boards and</p>
+<p>pin 10 images each.</p>
+<p class="template-line">✓ Day 5: Create your first wedding carousel using Template 2 — use your most recent</p>
+<p>or most beautiful wedding.</p>
+<p class="template-line">✓ Day 6: Create 5 testimonial graphics using Template 4 — schedule one per week</p>
+<p>for 5 weeks.</p>
+<p class="template-line">✓ Day 7: Create a seasonal flower guide carousel using Template 3 — schedule it for</p>
+<p>next week.</p>
+<p class="template-line">✓ [A cohesive, beautiful brand across Instagram, Pinterest, and email tells a bride</p>
+<p>everything she needs to know about your aesthetic before she sends a single message — and it makes your inquiry rate measurably higher.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

@@ -1,0 +1,214 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Life Business Coaches</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook Life Business Coaches</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Life &amp; Business Coaches</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>THE LIFE COACH &amp;</h3>
+<h3>BUSINESS COACH&#x27;S AI</h3>
+<h3>PLAYBOOK</h3>
+<div class="section-label">How to Fill Your Coaching Practice, Retain Clients Longer,</div>
+<p>and Scale Your Impact Using AI A Complete Guide for Life Coaches, Business Coaches &amp; Executive Coaches</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the Coach&#x27;s Most Powerful Business Tool 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Filling Your Practice With Aligned Clients 4. Chapter 4: Delivering a World-Class Coaching Experience Between Sessions</p>
+<p>5. Chapter 5: Launching and Filling Group Programs and Courses 6. Chapter 6: Building a Content Engine That Attracts Clients on Autopilot 7. Chapter 7: Partnerships, Referrals, and Expanding Your Reach 8. Chapter 8: Your 30-Day AI Implementation Plan</p>
+<p>9. BONUS: AI Prompt Cheat Sheet for Coaches</p>
+<h3>Chapter 1: Why AI Is the Coach&#x27;s Most Powerful</h3>
+<p>Business Tool Coaching is one of the fastest-growing industries in the world — and one of the most competitive. The coaches building sustainable six-figure practices aren&#x27;t necessarily the most certified or the most experienced. They&#x27;re the most visible, the most responsive,</p>
+<p>and the most consistent in how they show up for their audience and their clients. AI makes all three effortless.</p>
+<p class="template-line">• The Visibility Gap: Most coaches produce brilliant content inconsistently —</p>
+<p>posting in bursts when inspired, then going silent for weeks. Consistent visibility is what builds an audience that converts to clients. AI removes the friction that causes inconsistency.</p>
+<p class="template-line">• The Follow-Up Problem: Discovery calls that don&#x27;t close, warm leads who go</p>
+<p>cold, past clients who drift away — all of these are follow-up problems. AI builds systematic follow-up into every stage of your client journey.</p>
+<p class="template-line">• The Between-Session Experience: Coaching clients who feel supported</p>
+<p>between sessions achieve better results, stay enrolled longer, and refer more. Most coaches have no system for this. AI creates one in an afternoon.</p>
+<p class="template-line">• What AI Does vs. What You Do: AI handles communication, content, and</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><div class="section-label">follow-up. You hold the space, ask the powerful questions, and facilitate</div>
+<p>transformation. Never confuse the two — your presence is irreplaceable; your admin is not.</p>
+<h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+<p>Pick one this week. Each takes under an hour to set up and produces immediate results.</p>
+<p class="template-line">• Win #1 — Discovery Call Follow-Up: AI writes a personalized post-discovery</p>
+<p>call email that recaps the prospect&#x27;s goals, proposes the right coaching package, and makes saying yes feel like the obvious next step. Close rate improves significantly with a well-crafted follow-up.</p>
+<p class="template-line">• Win #2 — Between-Session Check-In: AI writes a mid-week check-in message</p>
+<p>for every active coaching client — asking about their progress on commitments, celebrating wins, and offering a thought that supports their current focus. Clients feel seen. Retention goes up.</p>
+<p class="template-line">• Win #3 — Content Batch: Use AI to write an entire month of social media</p>
+<p>captions in one session. Give it your niche, your audience, and your core message — it writes the words. You post and engage.</p>
+<h3>Chapter 3: Filling Your Practice With Aligned</h3>
+<p>Clients A full coaching practice starts with a clear message, consistent visibility, and a system for converting inquiry conversations into enrolled clients. AI supports all three.</p>
+<p class="template-line">• Niche and Positioning Messaging: The coaches who fill fastest are the most</p>
+<p>clearly positioned. AI helps you write bio copy, website headline copy, and social media positioning statements that speak directly to your ideal client — not everyone.</p>
+<p class="template-line">• The Discovery Call Sequence: A 3-touch sequence from inquiry to booked</p>
+<p>discovery call: warm response with a compelling value statement, a value-add</p>
+<div class="section-label">follow-up, and a soft urgency close. Most coaches follow up once. This system</div>
+<p>follows up three times without being pushy.</p>
+<p class="template-line">• Post-Discovery Call Conversion: AI writes a personalized follow-up that</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>mirrors the language the prospect used on the call, maps their goals to your coaching approach, and proposes a specific package — turning interested prospects into enrolled clients.</p>
+<p class="template-line">• The Long-Game Nurture Sequence: For prospects who aren&#x27;t ready yet, AI</p>
+<p>writes a 90-day nurture sequence — monthly insights, client stories, and value touches that keep you top of mind until the timing is right.</p>
+<p class="template-line">• Waitlist and Launch Sequences: When you open spots in your practice or</p>
+<p>launch a new program, AI writes the announcement sequence, early bird email, and last-chance message that fill your cohort.</p>
+<h3>Chapter 4: Delivering a World-Class Coaching</h3>
+<p>Experience Between Sessions The quality of your coaching isn&#x27;t only measured in session — it&#x27;s measured in what happens between sessions. Clients who feel supported, accountable, and seen between calls achieve better results and stay enrolled longer. AI makes this possible at</p>
+<p>scale.</p>
+<p class="template-line">• The Weekly Check-In System: A personalized message every week that</p>
+<p>acknowledges their focus, asks about their commitments from the last session, and offers one insight or reframe. Takes 3 minutes with AI. Client results and</p>
+<h3>retention both improve.</h3>
+<p class="template-line">• The Commitment Accountability Message: When a client sets a meaningful</p>
+<p>commitment in session, AI writes a follow-up message 48 hours later checking in on their progress — before the momentum fades.</p>
+<p class="template-line">• The Breakthrough Celebration: When a client has a breakthrough — a limiting</p>
+<p>belief shifted, a goal achieved, a courageous action taken — AI writes a personalized celebration that makes them feel the significance of what they&#x27;ve done. Clients share these moments.</p>
+<p class="template-line">• The Stuck Client Reframe: When a client hits resistance or feels stuck, most</p>
+<p>coaches wait for the next session to address it. AI writes a compassionate, reframing message that meets them in the moment and restarts their momentum.</p>
+<p class="template-line">• The Program Renewal Conversation: When a coaching engagement is ending,</p>
+<p>AI writes a renewal message that reflects on the transformation, frames what the next level looks like, and makes continuing feel like the natural next chapter.</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Chapter 5: Launching and Filling Group</h3>
+<p>Programs and Courses Group programs and online courses are the fastest path to scaling a coaching business without trading all of your time for money. AI handles the launch content that most coaches find overwhelming.</p>
+<p class="template-line">• The Launch Email Sequence: A 5-email launch sequence for any group</p>
+<p>program or course: teaser announcement, problem agitation, solution reveal,</p>
+<div class="section-label">social proof, and last-chance close. AI writes all five in one session.</div>
+<p class="template-line">• The Beta Launch Approach: For coaches launching a group program for the</p>
+<p>first time, AI writes the beta offer framing — lower investment, more access, feedback in exchange — that fills a first cohort with enthusiastic early adopters.</p>
+<p class="template-line">• Weekly Program Emails: AI writes the weekly touchpoint emails that keep</p>
+<p>group program participants engaged, accountable, and excited throughout the duration — reducing drop-off and increasing completion rates and referrals.</p>
+<p class="template-line">• The Alumni Sequence: When a program ends, AI writes a 3-message alumni</p>
+<p>sequence: celebration of completion, invitation to continue at the next level, and a referral ask from people who&#x27;ve just had their best experience with you.</p>
+<h3>Chapter 6: Building a Content Engine That</h3>
+<p>Attracts Clients on Autopilot The coaches who never worry about where their next client is coming from have one thing in common: they show up consistently with content that resonates. AI makes that consistency achievable alongside a full coaching practice.</p>
+<p class="template-line">• The 3-Post Formula: One thought leadership post (insight, perspective,</p>
+<p>reframe), one trust post (client story, your journey, vulnerable truth), one engagement post (question, poll, bold opinion). Post Mon/Wed/Fri.</p>
+<p class="template-line">• High-Converting Topic Categories: For life coaches: identity shifts, fear and</p>
+<p>self-sabotage, relationship with success, morning routines and mindset, life transitions, purpose and fulfillment. For business coaches: revenue plateaus,</p>
+<div class="section-label">pricing confidence, client acquisition, time and energy management, scaling</div>
+<p>decisions.</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Long-Form Content: AI writes the outlines and first drafts for newsletters,</p>
+<p>LinkedIn articles, podcast episode outlines, and YouTube scripts — your voice and perspective, without the blank page paralysis.</p>
+<p class="template-line">• Batch Creating in One Session: Use the monthly AI caption prompt in your 90-</p>
+<div class="section-label">Day Calendar to generate a full month of social content in under 45 minutes.</div>
+<p>Refine, schedule, done.</p>
+<h3>Chapter 7: Partnerships, Referrals, and</h3>
+<p>Expanding Your Reach The fastest-growing coaches build ecosystems — relationships with complementary professionals who refer clients, collaborate on content, and expand their reach into new audiences. AI makes building and maintaining those relationships effortless.</p>
+<p class="template-line">• The Referral Partner Outreach: Therapists, HR professionals, nutritionists,</p>
+<p>personal trainers, and financial advisors all work with people who would benefit from coaching. AI writes a peer-to-peer introduction message that starts partnerships naturally.</p>
+<p class="template-line">• The Podcast Guest Pitch: Guest appearances on podcasts in your niche are</p>
+<p>one of the highest-ROI visibility strategies for coaches. AI writes a compelling pitch email that gets responses — including the hook, your credibility, and 3 episode topic ideas.</p>
+<p class="template-line">• The Guest Expert Collaboration: When you want to co-host a workshop,</p>
+<p>webinar, or challenge with another practitioner, AI writes the collaboration proposal and co-promotion email sequence.</p>
+<p class="template-line">• Client Referral Ask: Your happiest clients are your best salespeople — but most</p>
+<p>coaches never ask systematically. AI writes a referral request that feels like a natural extension of the coaching relationship, not a sales pitch.</p>
+<h3>Chapter 8: Your 30-Day AI Implementation Plan</h3>
+<p>One week at a time. This plan gets you from reading to real results in 30 days.</p>
+<p class="template-line">• Week 1 — Client Acquisition: Write your discovery call follow-up template.</p>
+<p>Build your inquiry-to-discovery-call sequence. Set up your post-call conversion</p>
+<h3>email.</h3>
+<p class="template-line">• Week 2 — Client Experience: Build your weekly check-in template. Write</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>commitment accountability messages. Create your breakthrough celebration</p>
+<h3>template.</h3>
+<p class="template-line">• Week 3 — Content System: Batch 2 weeks of social posts using your 90-Day</p>
+<p>Calendar. Write one long-form piece (newsletter or LinkedIn article). Build your monthly content batching routine.</p>
+<p class="template-line">• Week 4 — Referrals and Scale: Write your referral partner outreach email. Draft</p>
+<p>2 podcast pitch emails. Set up your client referral ask template.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Coaches</h3>
+<p class="template-line">Copy and paste these into Claude or ChatGPT. Replace [brackets] with your details.</p>
+<h3>Client Acquisition Prompts</h3>
+<p class="template-line">Write a post-discovery call follow-up email for a potential coaching client named [Name]. On the call they shared: [2–3 key details — goals, fears, current situation]. They seem [level of readiness]. Propose my [program name] at [investment]. Mirror</p>
+<p>their language from the call. Tone: warm, direct, confident — not salesy. Sign as [Your Name], [Business Name]. Write a 5-email launch sequence for my [group program / course name] launching on [date]. Target audience: [ideal client].</p>
+<p>Transformation promised: [outcome]. Investment: [price]. Email 1: Teaser (problem). Email 2: Agitation (what happens if nothing changes). Email 3: Solution reveal (introduce program). Email 4:</p>
+<div class="section-label">Social proof (client story or result). Email 5: Last chance</div>
+<p>(urgency close, cart closes [date]).</p>
+<h3>Client Retention Prompts</h3>
+<p class="template-line">Write a mid-week check-in message for my coaching client [Name] who is working on [their current focus/goal]. In our last session they committed to [specific action]. Ask how it went, celebrate any wins, and offer one brief insight or reframe relevant to where</p>
+<p>they are. Keep it under 100 words, warm and personal. Write a program renewal email for my coaching client [Name] whose [X-month] engagement ends in 2 weeks. Reflect on 2–3 specific transformations or breakthroughs they&#x27;ve had. Frame what the next</p>
+<p>level looks like and why continuing makes sense for where they are now. Propose [next program/package]. Tone: celebratory and forward-looking, not sales-heavy.</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Life &amp; Business Coaches Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Content &amp; Visibility Prompts</h3>
+<p>Write 5 thought leadership social media posts for a [life/business/executive] coach who specializes in [niche]. Topics: [topic 1], [topic 2], [topic 3], [topic 4], [topic 5]. Each under 200 words, written in first person, shares a genuine</p>
+<p>insight or perspective, ends with a question or bold statement. No generic motivational quotes — original thinking only. Write a podcast guest pitch email for [Podcast Name] hosted by [Host Name]. I&#x27;m a [type of coach] specializing in</p>
+<p>[niche/outcome]. My audience is [ideal client]. Three episode topics I could cover: 1) [topic 1] 2) [topic 2] 3) [topic 3]. Keep the pitch under 200 words, compelling and specific — not generic. Sign as [Your Name], [Business Name], [website]. Your coaching changes lives.</p>
+<p>AI makes sure the people who need it can find you, trust you, and stay with you.</p></div>
+  <div class="footer"><span>AI Playbook Life Business Coaches</span><span class="page-number">09</span></div>
+</section></main></body></html>

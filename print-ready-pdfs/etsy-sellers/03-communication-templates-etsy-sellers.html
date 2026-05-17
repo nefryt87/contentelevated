@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#eff3f4; --paper:#fbfcfc; --ink:#111416; --muted:#5d6468;
+  --accent:#3f8f98; --accent2:#9cb7ff; --dark:#11171c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Complete Growth Bundle</span></div></div><div class="pill">Shop growth system</div></div><p class="kicker">Premium business system</p><h1>Communication Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Etsy Sellers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Etsy Sellers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>ETSY SELLER</h3>
+<p>Customer Communication Template Pack 24 done-for-you templates: pre-purchase messages, order updates, complaints, review requests, and shop announcements</p>
+<h3>SECTION 1: PRE-PURCHASE MESSAGES</h3>
+<p>T1 — General Pre-Purchase Question Response</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], thank you so much for reaching out! 😊 [Answer their question specifically and completely in 2-3 sentences.] [Add one helpful piece of information they didn&#x27;t ask for but would want to</p>
+<p>know — e.g., processing time, gift wrapping availability, customisation options.] Please feel free to ask if you have any other questions — I&#x27;m always happy to help! [Your Name] | [Shop Name] T2 — Custom Order Inquiry Response</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], what a lovely idea — I would love to help with this! 🎉 To make sure I get it exactly right, could you confirm:</p>
+<p class="template-line">- [Question 1 — e.g., What name/text would you like?]</p>
+<p class="template-line">- [Question 2 — e.g., What colour/size/material would you prefer?]</p>
+<p class="template-line">- [Question 3 — e.g., Do you have a deadline for this?]</p>
+<p>Once I have these details I can send you a custom listing with the exact price and timeline. Estimated: $[amount] and [X] days to make. Let me know if that works! [Your Name] | [Shop Name] T3 — Size / Fit / Measurement Question</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], great question! Here are the measurements for [product]: [List all relevant measurements clearly — dimensions, weight, capacity, fit guide if apparel] [Add any helpful guidance — e.g., &#x27;If you are between sizes I would</p>
+<p>recommend the larger size&#x27; / &#x27;This fits a standard A4/Letter sheet exactly&#x27;] Hope that helps — let me know if you need anything else! [Your Name] | [Shop Name] T4 — Shipping Time / Deadline Question</p>
+<h3>SUBJECT Etsy Message — send directly</h3></div><div class="footer"><span>Communication Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], happy to help! 😊 Current processing time: [X] business days to make and dispatch. Once dispatched: [X-X] business days for [domestic] delivery / [X-X] days for international.</p>
+<p>If you need it by [their deadline]: [honest assessment — &#x27;Yes, that should be fine!&#x27; OR &#x27;To be safe I would recommend [faster shipping option] which I can</p>
+<h3>offer for $[amount]&#x27;].</h3>
+<p>Just let me know and I will get this sorted for you! [Your Name] | [Shop Name] T5 — Personalisation / Customisation Options</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], yes I can absolutely personalise this for you! Here is what I can do: Name/text: up to [X] characters, font options: [list fonts] Colour: [list available colours] Size: [list available sizes] [Any other options]</p>
+<p>To add personalisation: either add your details in the &#x27;Note to seller&#x27; box at checkout, or message me after ordering. Happy to answer any other questions! [Your Name] | [Shop Name]</p>
+<h3>SECTION 2: ORDER PROCESSING &amp; UPDATES</h3>
+<p>T6 — Order Confirmation Message</p>
+<div class="section-label">SUBJECT Etsy Message — send after order received</div>
+<p>Hi [Name], thank you so much for your order — it really means the world to a small handmade shop like mine! 🙏 I have received your order for [product] and I will begin working on it right away. Estimated dispatch: [date].</p>
+<p>[If personalised: &#x27;I will create your [item] with [their personalisation] — please message me if you need to make any changes before I start.&#x27;] I will send you tracking information as soon as it ships. Please do not hesitate</p>
+<p>to get in touch if you have any questions in the meantime! [Your Name] | [Shop Name] T7 — Dispatch Notification Message</p>
+<h3>SUBJECT Etsy Message — send when dispatched</h3>
+<p>Hi [Name], great news — your order has been dispatched! 📦 [If tracking available:] Tracking number: [number]. You can track it at [carrier link]. [If no tracking:] Standard [domestic/international] post typically takes [X-X] days.</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Estimated delivery: [date range]. I hope you love it — please do not hesitate to message me if anything is not quite right when it arrives. [Your Name] | [Shop Name] T8 — Processing Delay Notice</p>
+<h3>SUBJECT Etsy Message — send if delay occurs</h3>
+<p>Hi [Name], I wanted to reach out personally to let you know that your order is running slightly behind schedule — I am so sorry for this. [Brief honest reason — e.g., &#x27;I have had a higher volume of orders than</p>
+<p>expected this week&#x27; / &#x27;I am waiting on a material delivery&#x27;]. New estimated dispatch date: [date]. If this causes any issue for you — for example if you needed it by a specific date — please let me know and I will do everything I can to prioritise your order.</p>
+<p>Thank you so much for your patience. [Your Name] | [Shop Name]</p>
+<h3>SECTION 3: COMPLAINTS &amp; DIFFICULT</h3>
+<h3>SITUATIONS</h3>
+<p>T9 — Item Arrived Damaged</p>
+<div class="section-label">SUBJECT Etsy Message — send in response to complaint</div>
+<p>Hi [Name], I am so sorry to hear your [product] arrived damaged — that is absolutely not the experience I want for my customers and I completely understand your frustration. Could you send me a photo of the damage so I can understand exactly what</p>
+<p>happened? Once I see it, I will arrange a replacement / full refund right away — whichever you prefer. I take full responsibility for this and I want to make it right as quickly as possible. [Your Name] | [Shop Name] T10 — Item Not as Expected</p>
+<div class="section-label">SUBJECT Etsy Message — send in response to complaint</div>
+<p>Hi [Name], thank you for reaching out — I am really sorry to hear it was not quite what you were expecting. [If there was a misunderstanding: &#x27;I can see from your message that [explain</p>
+<p>the issue briefly] — I apologise if my listing was not clear enough about this.&#x27;] I would love to make this right for you. Options I can offer: [list your resolution options — partial refund / exchange / full refund on return]. Which would work best for you?</p>
+<p>Your satisfaction genuinely matters to me. [Your Name] | [Shop Name] T11 — Package Lost in Transit</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT Etsy Message — send when package appears lost</div>
+<p>Hi [Name], I am so sorry your package has not arrived yet — I completely understand how frustrating that must be. [If tracking available: &#x27;The last tracking update was [date/location]. I am going to contact [carrier] on your behalf to investigate.&#x27;]</p>
+<p>In the meantime, I want to reassure you that I will not leave you without a resolution. If [carrier] confirms the package is lost, I will send a replacement / issue a full refund immediately — your choice.</p>
+<p>I will update you within [X] days. [Your Name] | [Shop Name] T12 — Negative Review Response (Public)</p>
+<div class="section-label">SUBJECT Etsy — respond to public review directly</div>
+<p>Thank you for your feedback, [Name] — I&#x27;m genuinely sorry your experience wasn&#x27;t what you hoped for. I&#x27;ve reached out via message and I&#x27;d love to make this right. Your satisfaction is truly important to me. — [Your Name], [Shop Name]</p>
+<p>[Keep it brief, professional, and never defensive. Move the conversation to private messages. Potential buyers read how you respond to negative reviews.]</p>
+<h3>SECTION 4: REVIEW GENERATION</h3>
+<p>T13 — Post-Delivery Follow-Up Message</p>
+<div class="section-label">SUBJECT Etsy Message — send 5-7 days after estimated delivery</div>
+<p>Hi [Name], I hope your [product] has arrived safely and you are loving it! 😊 [If personalised: &#x27;I hope the [personalisation] came out just as you imagined.&#x27;] If everything is perfect, I would genuinely love it if you could leave a review on</p>
+<p>Etsy — reviews mean everything to small handmade shops and I read every single one. And if anything is not quite right — please message me first and I will sort it out straight away. Thank you so much for your support! [Your Name] | [Shop Name]</p>
+<p>T14 — Packaging Insert / Thank You Card Text</p>
+<h3>SUBJECT Print and include with every order</h3>
+<p>Hello! Thank you so much for your order from [Shop Name]. It genuinely means the world to a small maker like me. If you love your [product], a 5-star review on Etsy takes 2 minutes and makes</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>an enormous difference to my small business — it helps other buyers find me and gives me the confidence to keep making. Tag me on Instagram @[your handle] with a photo — I reshare every one and would love to celebrate your order with you!</p>
+<p>Any questions or issues: message me on Etsy first — I always make it right. Made with love, [Your Name] | [Shop Name] | [Etsy Shop URL] T15 — Second Review Request (For Repeat Buyers)</p>
+<div class="section-label">SUBJECT Etsy Message — send after repeat purchase</div>
+<p>Hi [Name], it is so lovely to have you back — thank you so much for ordering from [Shop Name] again! 🙏 I noticed you have been a wonderful supporter of my shop and I just wanted to say it genuinely means so much to me.</p>
+<p>If you have been happy with your orders, a review would be incredibly helpful — and if you have already left one in the past, I appreciate you more than I can say! Hope you love your new [product]! [Your Name] | [Shop Name]</p>
+<h3>SECTION 5: SHOP ANNOUNCEMENTS &amp;</h3>
+<h3>CAMPAIGNS</h3>
+<p>T16 — Seasonal Sale Announcement Email</p>
+<h3>SUBJECT Send to past buyers via email list</h3>
+<p>Hello [Name], It is sale time at [Shop Name]! 🎉 For [duration], everything in my shop is [X]% off — including [highlight 2-3 popular products]. Shop now: [Etsy shop link] [If personalised products: &#x27;Please note custom and personalised items are</p>
+<p>also included — just order before [date] to allow enough time for personalisation.&#x27;] Thank you for your continued support — it means the absolute world. [Your Name] | [Shop Name] T17 — New Collection / Product Launch</p>
+<h3>SUBJECT Etsy Message or email to past buyers</h3>
+<p>Hi [Name], I am so excited to share something new with you — [new collection/product name] is now live in my Etsy shop! [2-3 sentences describing what is new and why it is special — what inspired it, what makes it different.]</p>
+<p>As a previous customer of [Shop Name], you are the first to know. Shop it here: [Etsy link] I would love to know what you think! [Your Name] | [Shop Name] T18 — Holiday Last Order Date Notice</p>
+<h3>SUBJECT Social post or Etsy shop announcement</h3></div><div class="footer"><span>Communication Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Important dates for [Holiday] orders from [Shop Name]: Order by [date] for standard [holiday] delivery Order by [date] for express delivery (add express shipping at checkout) [International orders: order by [date] for delivery by [holiday]]</p>
+<p>I cannot guarantee delivery after these dates — please order early to avoid disappointment! 🎄 Shop: [Etsy link] | Questions? Message me on Etsy. [Shop Name] T19 — Shop Closing / Holiday Notice</p>
+<h3>SUBJECT Etsy shop announcement and social posts</h3>
+<p>[Shop Name] will be closed from [date] to [date] for [holiday/break]. Orders placed before [date] will be dispatched before I leave. Orders placed during this period will be processed from [return date].</p>
+<p>If you need something urgently, please message me and I will do my best to help. Thank you for your understanding — I cannot wait to come back refreshed and full of new making ideas! [Your Name] | [Shop Name]</p>
+<h3>SECTION 6: REPUTATION MANAGEMENT</h3>
+<p>T20 — Responding to 5-Star Reviews</p>
+<div class="section-label">SUBJECT Etsy — respond to public review directly</div>
+<p>Thank you so much, [Name]! Reviews like this genuinely make my day — I am so glad you love your [product]. Thank you for choosing [Shop Name]! 🙏 — [Your Name] [Keep it warm and specific. Always mention your shop name — it appears in search results.]</p>
+<p>T21 — Responding to 4-Star Reviews</p>
+<div class="section-label">SUBJECT Etsy — respond to public review directly</div>
+<p>Thank you so much for your kind review, [Name]! I am glad you are happy with your [product]. If there is anything I can do to make your experience a 5- star one next time, please do not hesitate to message me. — [Your Name], [Shop Name]</p>
+<h3>SECTION 7: ADDITIONAL TEMPLATES</h3>
+<p>T22 — Wholesale / Bulk Order Inquiry Response</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], thank you for reaching out about a bulk/wholesale order — I would love to discuss this! For orders of [X] or more items, I can offer [discount percentage or pricing structure]. Here are my minimum quantities and lead times for bulk orders:</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Etsy Sellers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>[details]. Could you share more about: what products you are interested in, the quantities you need, and your timeline? That will help me put together an accurate quote for you. Looking forward to hearing from you! [Your Name] | [Shop Name]</p>
+<p>T23 — Gifting / Gift Wrapping Options</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], what a lovely gift idea! 🎁 Yes, I offer gift wrapping for $[amount] / Yes, all orders come with complimentary gift packaging. Here is what is included: [describe your gift packaging].</p>
+<p>I can also include a personalised message card — just add your message in the &#x27;Note to seller&#x27; box at checkout. Is there anything else I can help with? [Your Name] | [Shop Name] T24 — International Shipping Question</p>
+<h3>SUBJECT Etsy Message — send directly</h3>
+<p>Hi [Name], great question! Yes, I ship to [Country / worldwide]. International shipping: $[amount] — estimated delivery [X-X] weeks. [If tracking available:] International orders include tracked shipping.</p>
+<p>[If duties applicable:] Please note that import duties and taxes may be payable on arrival — these are the responsibility of the buyer. Feel free to place your order and I will get it on its way as quickly as possible! [Your Name] | [Shop Name]</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">09</span></div></section></main></body></html>

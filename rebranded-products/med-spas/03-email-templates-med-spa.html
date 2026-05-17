@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Med Spas</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>MED SPA &amp; AESTHETIC PRACTICE</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE PACK</h3>
+<p>24 done-for-you templates for every stage of the client journey Inquiries • Pre-treatment • Post-treatment • Retention • Referrals • Reviews</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with client name, treatment, and spa details.</p>
+<p class="template-line">• Keep the tone warm, professional, and reassuring — aesthetic clients want</p>
+<p>to feel safe and cared for, not processed.</p>
+<p class="template-line">• Works as email, SMS, and client portal messages — shorten to 2-3</p>
+<p>sentences for texts.</p>
+<p class="template-line">• Always personalize the opening line using AI for best response rates.</p>
+<h3>SECTION 1: INQUIRY &amp; CONSULTATION</h3>
+<h3>New Client Inquiry Response</h3>
+<h3>SUBJECT Re: Your inquiry to [Spa Name] — [First Name]</h3>
+<p>BODY Hi [First Name], Thank you so much for reaching out — we&#x27;re so glad you&#x27;re considering [Spa Name] for your [treatment interest]! Here&#x27;s a quick overview of how we can help:</p>
+<p class="template-line">- Treatment: [brief description of the treatment they inquired about]</p>
+<p class="template-line">- What to expect: [one sentence on the process]</p>
+<p class="template-line">- Investment: Starting from $[amount] — we&#x27;ll discuss the exact plan at your</p>
+<p>consultation We&#x27;d love to schedule a complimentary consultation so we can understand your goals and recommend the best approach for you specifically. Book here: [booking link] or reply and we&#x27;ll find a time that works. Looking forward to meeting you!</p>
+<p>[Practitioner Name] | [Spa Name] | [Phone] Post-Consultation Conversion Email</p>
+<h3>SUBJECT Your treatment plan — [First Name]</h3>
+<p>BODY Hi [First Name], It was such a pleasure meeting you today! I loved learning about your goals and I&#x27;m genuinely excited about what we can achieve together. Based on our consultation, here&#x27;s what I&#x27;d recommend: Treatment plan: [treatment(s) recommended]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Expected results: [brief description of realistic outcomes] Investment: $[amount] / [package price] Recommended schedule: [frequency and timing] To get started, simply [clear CTA — e.g., &#x27;book your first appointment here:</p>
+<p>[link]&#x27; / &#x27;reply to confirm and I&#x27;ll hold a time for you&#x27;]. Any questions at all — just reach out. I want you to feel completely comfortable before we begin. [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Injectables</p>
+<div class="section-label">SUBJECT Your appointment is coming up — how to prepare, [First Name]</div>
+<p>BODY Hi [First Name], Your [Botox / filler / treatment] appointment is on [Date] at [Time] — I&#x27;m so excited for you! To make sure you get the best possible results, here&#x27;s how to prepare:</p>
+<p class="template-line">- Avoid alcohol for 24 hours before your appointment</p>
+<p class="template-line">- Avoid blood thinners (aspirin, ibuprofen, fish oil) for 1 week before if possible</p>
+<p>— check with your doctor first</p>
+<p class="template-line">- Come with a clean face — no makeup needed</p>
+<p class="template-line">- Arrive 5-10 minutes early to complete any paperwork</p>
+<p class="template-line">- Let me know if you have any upcoming events — timing matters with</p>
+<p>injectables First time? I want you to know: we go slowly, we check in throughout, and you&#x27;re always in control. This is your experience. See you soon! [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Laser / Body</p>
+<div class="section-label">SUBJECT Your [treatment] appointment — what to know, [First Name]</div>
+<p>BODY Hi [First Name], Your [laser / body treatment] is coming up on [Date] at [Time] — exciting! A few things to help you prepare:</p>
+<p class="template-line">- [Specific prep instructions for the treatment type — e.g., &#x27;Avoid sun exposure</p>
+<p>and self-tanner for 2 weeks before your laser appointment&#x27;]</p>
+<p class="template-line">- [Skincare to pause — e.g., &#x27;Stop retinol and exfoliating acids 5 days before&#x27;]</p>
+<p class="template-line">- [Comfort tips — e.g., &#x27;You may want to take an OTC pain reliever 30-60</p>
+<p>minutes before if you&#x27;re sensitive to discomfort&#x27;]</p>
+<p class="template-line">- What to expect during: [brief treatment description]</p>
+<p class="template-line">- Results timeline: [when they&#x27;ll see results]</p>
+<p>If you have any questions before your appointment, please don&#x27;t hesitate to reach out. We want you feeling informed and confident. [Practitioner Name] | [Spa Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SECTION 2: POST-TREATMENT &amp; RETENTION</h3>
+<p>Post-Treatment Follow-Up — 48 Hours</p>
+<h3>SUBJECT How are you feeling, [First Name]?</h3>
+<p>BODY Hi [First Name], Just checking in — how are you feeling after your [treatment] on [Date]? A quick post-care reminder: [1-2 specific aftercare tips relevant to their treatment] Results timeline: [when to expect full results — e.g., &#x27;Botox typically takes 7-14</p>
+<p>days to fully settle&#x27;] I&#x27;d love to see you back for [maintenance recommendation] in approximately [timeframe]. Want to lock in a time now? Book here: [link] or reply and I&#x27;ll check availability. [Practitioner Name] | [Spa Name] Maintenance Reminder — Botox</p>
+<h3>SUBJECT Time for your touch-up, [First Name]!</h3>
+<p>BODY Hi [First Name], It&#x27;s been about [timeframe] since your last Botox treatment — which means you&#x27;re right on schedule for your maintenance appointment! Staying consistent is the best way to maintain your results and actually need less product over time as muscles train.</p>
+<p>I have [some availability this week / availability in [month]] — shall I hold a time for you? Book here: [link] or reply and I&#x27;ll sort it. [Practitioner Name] | [Spa Name] Treatment Package Offer</p>
+<div class="section-label">SUBJECT A smarter way to invest in your results — [First Name]</div>
+<p>BODY Hi [First Name], A lot of my clients who see the best, longest-lasting results invest in a treatment package rather than individual sessions. Here&#x27;s what I&#x27;d recommend for your goals: [Package name]: [inclusions] — $[price] (save $[amount] vs. individual sessions)</p>
+<p>The benefits: priority scheduling, significant savings, and the consistency that produces the results you actually want. Interested? Reply here or book directly at [link]. [Practitioner Name] | [Spa Name] Lapsed Client Win-Back</p>
+<div class="section-label">SUBJECT It&#x27;s been a while — we&#x27;d love to see you, [First Name]</div>
+<p>BODY Hi [First Name], It&#x27;s been [timeframe] since your last visit and I just wanted to check in — how are you doing? We&#x27;ve added [new treatment or technology] since you were last in, and given your treatment history, I think you&#x27;d be a great candidate.</p>
+<p>I&#x27;d love to welcome you back. Reply here or book at [link] — mention this email for [small offer if applicable]. [Practitioner Name] | [Spa Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Med Spas Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SECTION 3: REFERRALS, REVIEWS &amp;</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Post-Results Referral Ask</p>
+<div class="section-label">SUBJECT You&#x27;re glowing — and we&#x27;d love to share it, [First Name]</div>
+<p>BODY Hi [First Name], I hope you&#x27;re loving your results — you looked absolutely radiant after your last visit! If you have friends or family who&#x27;ve been curious about [treatment type], I&#x27;d love to be introduced. I&#x27;ll take incredible care of anyone you refer.</p>
+<p>As a thank-you, [referral reward if applicable — e.g., &#x27;you&#x27;ll both receive $X toward your next treatment&#x27;]. Just share my booking link: [link] or have them mention your name when they call. [Practitioner Name] | [Spa Name] Google Review Request</p>
+<div class="section-label">SUBJECT A small ask — your words help others find us, [First Name]</div>
+<p>BODY Hi [First Name], I hope your results are everything you hoped for! If you&#x27;ve loved your experience at [Spa Name], I&#x27;d be so grateful if you shared it on Google. It genuinely helps other people in [City] feel confident choosing us. Here&#x27;s the direct link: [Google Review Link]</p>
+<p>Thank you — you&#x27;re one of my all-time favourite clients. [Practitioner Name] Dermatologist / Primary Care Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Spa Name], Medical Aesthetics, [City]</div>
+<p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m [title / credentials] at [Spa Name] in [City], specializing in [treatments]. I work with many patients who overlap with your practice — particularly those</p>
+<p>interested in non-surgical aesthetic enhancement and medical-grade skincare. I&#x27;d love to explore a mutual referral relationship that benefits our shared patients. Happy to share more about our clinical approach and the treatments we offer.</p>
+<p>Would you be open to a brief introduction? [Your Name] | [Spa Name] | [Phone]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section></main></body></html>

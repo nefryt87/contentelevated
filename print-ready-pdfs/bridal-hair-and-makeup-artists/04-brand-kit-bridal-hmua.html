@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit Bridal Hmua</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Brand Kit Bridal Hmua</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Bridal Hair &amp; Makeup Artists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Bridal Hair &amp; Makeup Artists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Brand Kit Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>BRIDAL HAIR &amp; MAKEUP ARTIST</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, editorial typography, 8 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND BOOKS BRIDES BEFORE</h3>
+<h3>YOU SPEAK TO THEM</h3>
+<p>Brides decide on their shortlist of hair and makeup artists based almost entirely on Instagram — before they ever send a message. Your brand is the first impression they form, and it either communicates &#x27;this artist is premium, trusted, and right for me&#x27; or it</p>
+<p>doesn&#x27;t. A cohesive visual identity signals taste, professionalism, and a level of quality that justifies your fees. This kit gives you two palettes, typography pairings, and Canva</p>
+<div class="section-label">template strategies built specifically for bridal hair and makeup artists.</div>
+<h3>PALETTE 1: ROMANTIC ELEGANCE</h3>
+<p>For bridal artists whose work is warm, romantic, and timeless. Think champagne, blush, candlelight, and soft florals.</p>
+<h3>DEEP ROSE</h3>
+<h3>#4A1A3A</h3>
+<h3>CHAMPAGNE</h3>
+<h3>GOLD</h3>
+<h3>#C9A86C</h3>
+<h3>BLUSH PINK</h3>
+<h3>#ECC8C0</h3>
+<h3>IVORY CREAM</h3>
+<h3>#FDF0F6</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Rose (#4A1A3A): logo, headlines, primary text — sophisticated and</p>
+<p>distinctly bridal</p>
+<p class="template-line">• Champagne Gold (#C9A86C): accent for CTAs, dividers, price highlights, luxury</p>
+<p>details</p>
+<p class="template-line">• Blush Pink (#ECC8C0): background tint for Instagram graphics, story templates,</p>
+<p>highlight covers</p></div><div class="footer"><span>Brand Kit Bridal Hmua</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Brand Kit Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Ivory Cream (#FDF0F6): all page and email backgrounds — soft and premium</p>
+<h3>Typography Pairing</h3>
+<p>HEADINGS: Cormorant Garamond — the definitive bridal luxury font. Editorial, romantic, instantly premium. BODY: Jost — clean geometric sans-serif that balances the decorative heading perfectly.</p>
+<p>ACCENT: Pinyon Script or Alex Brush — for names, taglines, quote cards. Use sparingly for maximum impact.</p>
+<h3>PALETTE 2: MODERN BRIDAL</h3>
+<p>For bridal artists whose aesthetic is more editorial, modern, and clean. Think white space, bold contrasts, and intentional simplicity.</p>
+<h3>SOFT BLACK</h3>
+<h3>#2A2A2A</h3>
+<h3>DUSTY MAUVE</h3>
+<h3>#C4978A</h3>
+<h3>WARM WHITE</h3>
+<h3>#F9F7F5</h3>
+<h3>SAGE</h3>
+<h3>#8A9E8A</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Soft Black (#2A2A2A): all text, logo — high contrast, clean, modern</p>
+<p class="template-line">• Dusty Mauve (#C4978A): primary accent — warm, feminine, editorial</p>
+<p class="template-line">• Warm White (#F9F7F5): all backgrounds — warmer than pure white, premium</p>
+<p>without being soft</p>
+<p class="template-line">• Sage (#8A9E8A): secondary accent for florals content, garden weddings,</p>
+<p>seasonal posts</p>
+<h3>Typography Pairing</h3>
+<p>HEADINGS: Playfair Display — a sophisticated serif with editorial weight. Widely used across luxury wedding brands. BODY: Nunito — friendly and warm. Reads beautifully on mobile, which is where most brides discover you.</p>
+<p>ACCENT: Josefin Sans Light (wide tracking, caps) — for labels, price presentation, and clean overlay text.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3></div><div class="footer"><span>Brand Kit Bridal Hmua</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Brand Kit Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 1: Bridal Reveal Carousel</h3>
+<p>Search &#x27;wedding photography carousel&#x27; or &#x27;bridal slideshow Instagram&#x27;. 8-10 slides: cover slide with a strong atmospheric image and your studio name, 6-7 photos showing the full look from multiple angles, final slide with your Instagram handle and booking</p>
+<p>CTA. Save as your master carousel template and apply to every wedding.</p>
+<h3>Template 2: Before &amp; After Transformation</h3>
+<p>Search &#x27;before after makeup Instagram&#x27; or &#x27;beauty transformation post&#x27;. Two-panel layout. Left: bride before (or arriving — with permission). Right: finished look. Your studio name and &#x27;Bride: [Name, with permission]&#x27; at bottom. These generate more DMs</p>
+<p>than any other single post type.</p>
+<h3>Template 3: Client Testimonial Quote Graphic</h3>
+<p>Search &#x27;wedding testimonial quote&#x27; or &#x27;bride review graphic&#x27;. Feature the most emotional line from a review. &#x27;Bride: [First Name], [Month Year]&#x27; below. Your studio name in corner. These build trust before any message is sent.</p>
+<h3>Template 4: Instagram Story — Inquiry CTA</h3>
+<p>Search &#x27;Instagram story booking&#x27; or &#x27;beauty booking story&#x27;. Vertical. A soft atmospheric photo as background (getting ready flat lay or close-up makeup). Semi-transparent overlay panel. Text: &#x27;Now booking [season] weddings&#x27; + &#x27;[X] dates remaining&#x27;. Your</p>
+<p>name and handle. Link sticker.</p>
+<h3>Template 5: Pinterest Bridal Board Cover</h3>
+<p>Search &#x27;Pinterest board cover elegant&#x27;. Square format, one per board: &#x27;Bridal Makeup&#x27;, &#x27;Bridal Hair&#x27;, &#x27;Getting Ready Details&#x27;, &#x27;Bridesmaid Beauty&#x27;, &#x27;Real Weddings&#x27;. Consistent</p>
+<div class="section-label">palette. A well-organised Pinterest profile with branded covers appears more</div>
+<p>professional and is more likely to be followed.</p>
+<h3>Template 6: Instagram Highlight Covers</h3></div><div class="footer"><span>Brand Kit Bridal Hmua</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Brand Kit Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Search &#x27;Instagram highlight cover bridal&#x27; or &#x27;beauty highlight icons&#x27;. Create 8 round covers: Brides, Bridesmaids, Reviews, Trial Runs, Behind the Scenes, Booking, About Me, Contact. These are the first thing profile visitors see — make them on-brand and</p>
+<p>instantly clear.</p>
+<h3>Template 7: Educational Tip Graphic</h3>
+<p>Search &#x27;beauty tip Instagram&#x27; or &#x27;skin care carousel post&#x27;. &#x27;5 Things to Do Before Your Bridal Trial&#x27; or &#x27;How to Prep Your Skin for Wedding Day Makeup&#x27;. Clean, readable, shareable. These save at extremely high rates — brides bookmark them and come back.</p>
+<h3>Template 8: TikTok / Reel Cover Frame</h3>
+<p>Search &#x27;TikTok text overlay&#x27; or &#x27;Reel thumbnail template&#x27;. For the first frame of every video: your key message in large text, your studio name small at bottom, your brand colour background or a soft atmospheric photo. Viewers see this before pressing play</p>
+<p>— make it irresistible.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram profile photo, bio, and create 8 highlight covers using</p>
+<h3>Template 6.</h3>
+<p class="template-line">✓ Day 3: Create 5 Pinterest board covers using Template 5. Update Pinterest bio with</p>
+<p>bridal keywords.</p>
+<p class="template-line">✓ Day 4: Create your master carousel template using Template 1 — apply to your last</p>
+<p>3 weddings.</p>
+<p class="template-line">✓ Day 5: Create 3 testimonial graphics using Template 3 — schedule one per week</p>
+<p>for the next 3 weeks.</p>
+<p class="template-line">✓ Day 6: Create an inquiry CTA story template using Template 4 — post to your</p>
+<p>stories this week.</p>
+<p class="template-line">✓ Day 7: Create a TikTok cover template using Template 8 — apply to your next 5</p>
+<p>video uploads.</p></div><div class="footer"><span>Brand Kit Bridal Hmua</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Brand Kit Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ [Consistency across Instagram, TikTok, and Pinterest creates a premium</p>
+<p>impression that justifies premium fees. Brides notice.</p></div><div class="footer"><span>Brand Kit Bridal Hmua</span><span class="page-number">07</span></div></section></main></body></html>

@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Lash Technicians Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Lash Technicians Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>LASH TECHNICIAN</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: DM inquiries, fill reminders, aftercare, upselling, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING</h3>
+<p>T1 — DM Inquiry Response</p>
+<h3>SUBJECT Instagram DM — send directly</h3>
+<p>Hi [Name]! Thank you so much for reaching out — I would love to help with your lashes! 🌿 [One specific response to what they described — e.g., &#x27;Natural classics are definitely my favourite for a first set&#x27; / &#x27;Wispy volume sounds perfect for the</p>
+<p>look you described!&#x27;] Quick question: [one qualifying question — e.g., &#x27;Are you new to lash extensions or have you had them before?&#x27; / &#x27;Do you have a date you need them done by?&#x27;] [Your Name / Studio Name] T2 — Email Inquiry Response</p>
+<h3>SUBJECT Re: Your lash inquiry — [First Name]</h3>
+<p>Hi [Name], Thank you for reaching out — I would love to help with your lashes! A bit about my process: [brief description — consultation, service time, what they can expect]. My current availability: [booking link or available dates].</p>
+<p>Service and pricing overview: [link or brief list] Any questions before you book, I am happy to help. [Your Name] | [Studio Name] T3 — First Appointment Information Email</p>
+<div class="section-label">SUBJECT Your first lash appointment — what to know, [First Name]</div>
+<p>Hi [Name], I am so excited for your first lash appointment on [date] at [time]!</p>
+<h3>How to prepare:</h3>
+<p class="template-line">- Arrive with a completely clean face — no eye makeup, no mascara</p>
+<p class="template-line">- Remove contact lenses before the appointment (bring your case)</p>
+<p class="template-line">- Avoid caffeine if possible — it can cause eye fluttering during the</p>
+<p>appointment</p>
+<p class="template-line">- Wear comfortable clothing — you will be lying down for [X] hours</p></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>What to expect: we will start with a brief consultation about the style and look you want. The application takes [X hours] and you will need to keep your eyes closed throughout. Most clients find it very relaxing!</p>
+<p>Aftercare starts immediately after — I will go through everything with you at the end. See you on [date]! [Your Name] | [Studio Name] T4 — Booking Confirmation</p>
+<div class="section-label">SUBJECT Your lash appointment is confirmed! — [First Name]</div>
+<p>Hi [Name]! You are booked 🌿 [Service] on [date] at [time] at [address]. Reminder: arrive clean-faced, no eye makeup, contact lenses removed. Cancellation policy: [brief — X hours notice required]. Direct number if anything changes: [Phone].</p>
+<p>So looking forward to your lashes! [Your Name / Studio Name]</p>
+<h3>SECTION 2: APPOINTMENT MANAGEMENT &amp;</h3>
+<h3>FILL CYCLE</h3>
+<p>T5 — 48-Hour Reminder</p>
+<div class="section-label">SUBJECT Your lash appointment is in 2 days — [First Name]</div>
+<p>Hi [Name]! Just a reminder that your [service] appointment is on [date] at [time] at [address] 🌿 Prep reminder: please arrive with a clean face — no eye makeup, no mascara, no oily products around your eyes.</p>
+<p>Cancellation policy reminder: [brief]. Any changes: [Phone]. See you soon! [Your Name / Studio Name] T6 — 24-Hour Confirmation</p>
+<h3>SUBJECT See you tomorrow! — [First Name]</h3>
+<p>Hi [Name]! Confirming your [service] appointment is tomorrow [date] at [time] 🌿 Quick prep: clean face, no eye makeup, contact lenses removed. Avoid oily serums or moisturisers around the eye area tonight.</p>
+<p>Any changes? Contact me at [Phone]. [Your Name / Studio Name] T7 — Fill Cycle Education Email</p>
+<div class="section-label">SUBJECT Your lash fill schedule — making the most of your set, [First Name]</div>
+<p>Hi [Name], Now that you have your new [classic / hybrid / volume] set, I wanted to share a little about how the fill cycle works so you can keep them looking their best. How lashes work: your natural lashes are on a growth cycle — they shed and</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>regrow constantly. Each extension is attached to a single natural lash, so when that lash sheds, the extension goes with it. This is completely normal. Optimal fill timing: Classic lashes: every [2-3] weeks Hybrid / volume: every [3-4] weeks</p>
+<p>Leaving it longer than this means more lashes have shed, which means the fill takes longer and costs more. Staying on schedule is the most cost- effective approach. I will send you a reminder when your fill window is approaching! [Your Name] | [Studio Name]</p>
+<p>T8 — Cancellation Policy Message</p>
+<h3>SUBJECT Booking policy — [Studio Name]</h3>
+<p>Hi [Name], A quick note on my booking policy: Cancellations and rescheduling: I require [X] hours notice. Cancellations within [X] hours may incur a [X]% fee. No-shows: charged [X]% of the service price.</p>
+<p>I really appreciate your understanding — lash appointments are long and last-minute cancellations are difficult to fill. Thank you for helping me manage my schedule. [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: REBOOKING &amp; RETENTION</h3>
+<p>T9 — End-of-Appointment Rebooking Message</p>
+<h3>SUBJECT Text / DM — send same day</h3>
+<p>Hi [Name]! So lovely to see you today — your lashes look incredible 🌿 Your [classic / hybrid / volume] set will look its absolute best for [2-3 / 3-4] weeks. I would love to book your fill now while I have your preferred time available!</p>
+<p>I have [two specific available times]. Would either of those work? [Your Name / Studio Name] T10 — Rebooking Reminder (Fill Window)</p>
+<h3>SUBJECT Time for your lash fill! — [First Name]</h3>
+<p>Hi [Name]! It has been [X weeks] since your [service] — you are right in the sweet spot for your fill!</p>
+<div class="section-label">Booking now means your lashes will stay looking full and fresh. My next</div>
+<p>available slots: [two options or booking link]. [Your Name / Studio Name] T11 — Retention Check-In (5-7 Days Post-Appointment)</p>
+<div class="section-label">SUBJECT How are your lashes holding up? — [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name]! It has been about a week since your [service] — I wanted to check in on your retention! At this point you might notice a few lashes have shed — this is completely normal as your natural lashes go through their cycle. If you are losing what</p>
+<p>feels like more than a few per day, let me know and I can take a look. How are you finding the aftercare? [Your Name] | [Studio Name] T12 — Lapsed Client Win-Back</p>
+<h3>SUBJECT We miss you! — [First Name]</h3>
+<p>Hi [Name]! It has been [X months] since your last lash appointment — I hope you are doing well! I have been doing some beautiful [seasonal / new style] sets lately that I think you would love.</p>
+<p>If you are ready to come back, I have availability in [timeframe]: [two options or booking link]. Would love to see you! [Your Name / Studio Name]</p>
+<h3>SECTION 4: UPSELLING &amp; NEW SERVICES</h3>
+<p>T13 — Brow Lamination Introduction</p>
+<div class="section-label">SUBJECT Complete your look with brow lamination — [First Name]</div>
+<p>Hi [Name], I wanted to share something I have been thinking about since your last lash appointment. Your lashes look stunning — but I think brow lamination would take your whole look to the next level. It is a 30-45 minute treatment that restructures</p>
+<p>your brows to lie flat and full, creating the brushed-up fluffy brow look that completes the lash effect beautifully. The results last 4-6 weeks. Investment: $[amount]. You could add it to your next lash fill appointment — it works perfectly</p>
+<p>alongside your lash service. Would you like to add it? [Your Name] | [Studio Name] T14 — Lash Lift Introduction (To Non-Extension Client)</p>
+<div class="section-label">SUBJECT Low maintenance lashes — have you heard of a lash lift? [First Name]</div>
+<p>Hi [Name], I wanted to mention something you might love if you have been thinking about lashes but not sure about extensions. A lash lift is a semi-permanent treatment that curls and lifts your natural</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>lashes from the root — no extensions, no maintenance, just beautifully curled lashes that last 6-8 weeks. It is perfect for anyone who wants that wide-eyed look without the commitment of fills. Paired with a lash tint: $[amount]. Takes about 45 minutes.</p>
+<p>Happy to answer any questions or add it to your next brow appointment! [Your Name] | [Studio Name] T15 — Pre-Event Lash Campaign</p>
+<div class="section-label">SUBJECT Lashes for [event] — book now, [First Name]</div>
+<p>Hi [Name], With [event / occasion / holiday] coming up, I wanted to reach out before my books fill for the season. [Description of the service/occasion connection — e.g., &#x27;A fresh lash set for</p>
+<p>Christmas means waking up looking gorgeous throughout the party season without thinking about eye makeup.&#x27;] Services I recommend for [event]: [list 1-2 appropriate services]. I have limited availability before [date]. To book: [link / DM me back].</p>
+<p>[Your Name] | [Studio Name] T16 — Gift Voucher Campaign</p>
+<h3>SUBJECT Gift vouchers — [Studio Name]</h3>
+<p>Hi [Name], With [occasion] coming up, I wanted to let you know I offer gift vouchers for lash and brow treatments at [Studio Name]. A lash or brow voucher is one of those gifts people genuinely love but rarely buy for themselves — and the results last weeks.</p>
+<p>Available for any amount or specific service. To purchase: [link / reply here]. I will send a beautifully presented digital voucher. [Your Name] | [Studio Name]</p>
+<h3>SECTION 5: AFTERCARE &amp; EDUCATION</h3>
+<p>T17 — Lash Extension Aftercare Email</p>
+<div class="section-label">SUBJECT Your lash aftercare guide — [First Name]</div>
+<p>Hi [Name], Thank you so much for coming in today — your lashes look absolutely beautiful and I want to make sure they stay that way! First 24-48 hours:</p>
+<p class="template-line">- Keep lashes completely dry — no water, steam, or sweating</p>
+<p class="template-line">- Avoid saunas, swimming pools, hot showers in your face</p>
+<p class="template-line">- Sleep on your back or side (not face-down)</p>
+<p>Ongoing care:</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Brush your lashes daily with your lash wand (morning is best)</p>
+<p class="template-line">- Use oil-free makeup remover and cleansers only — oils break down the</p>
+<p>adhesive</p>
+<p class="template-line">- Avoid waterproof mascara on extensions</p>
+<p class="template-line">- Clean your lashes 2-3x per week with a lash-safe foam cleanser</p>
+<p>What to avoid: picking, pulling, rubbing your eyes — this causes premature lash shedding. Some lash shedding is completely normal — your natural lashes are always on a growth cycle. At your fill, I will replace everything that has shed.</p>
+<p>Fill reminder coming at [X] weeks! [Your Name] | [Studio Name] T18 — Lash Lift Aftercare Email</p>
+<h3>SUBJECT Your lash lift aftercare — [First Name]</h3>
+<p>Hi [Name], Your lash lift looks incredible — here is how to keep it looking its best: First 24 hours:</p>
+<p class="template-line">- Do not get lashes wet</p>
+<p class="template-line">- Do not apply mascara</p>
+<p class="template-line">- Do not sleep face-down</p>
+<p class="template-line">- Avoid steam</p>
+<p>After 24 hours: your lashes are set and you can return to your normal routine. Mascara, water, and heat are all fine now. To maximise longevity: use a lash serum or nourishing oil nightly — this keeps your lashes healthy between lifts.</p>
+<p>Your lift should last 6-8 weeks. I would recommend your next appointment in [6-8 weeks]. [Your Name] | [Studio Name]</p>
+<h3>SECTION 6: REPUTATION MANAGEMENT</h3>
+<p>T19 — Google Review Request</p>
+<h3>SUBJECT A quick favour — [First Name]</h3>
+<p>Hi [Name]! Hope you are still loving your lashes 🌿 Quick favour — if you loved your experience at [Studio Name], a Google review would genuinely help other clients find me. Takes about 2 minutes. Direct link: [Google Review Link]</p>
+<p>No pressure — just wanted to ask personally. Thank you! [Your Name / Studio Name] T20 — Instagram Before/After Feature Request</p>
+<h3>SUBJECT DM — send directly</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name]! I am so glad you love your lashes! Would you be happy for me to share your before/after on my Instagram? I would tag you (or keep it untagged if you prefer). It really helps other clients see what is possible! 🌿</p>
+<p>No pressure at all. [Your Name / Studio Name] T21 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [Name]! It was such a pleasure doing your [service] — [add one specific detail if they mention it]. So glad you love them! We cannot wait to see you for your next fill. — [Your Name], [Studio Name]</p>
+<p>[Respond within 24 hours. Personal, warm, include studio name for local</p>
+<h3>SEO.]</h3>
+<p>T22 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hi [Name], thank you for sharing this — I am genuinely sorry your experience did not meet my standard. I take every piece of feedback seriously and I would love to make it right. Please reach out at [Phone] or [Email]. — [Your Name], [Studio Name]</p>
+<h3>SECTION 7: ADDITIONAL TEMPLATES</h3>
+<p>T23 — Referral Thank-You</p>
+<div class="section-label">SUBJECT Thank you for the referral — [First Name]</div>
+<p>Hi [Name]! [Client Name] just booked with me and mentioned you sent them my way — thank you so much! Referrals from clients I love are genuinely how I build my book. [Referral gesture if applicable — e.g., a complimentary lash tint or priority rebooking slot].</p>
+<p>[Your Name / Studio Name] T24 — Patch Test Reminder (For New Adhesive Clients)</p>
+<h3>SUBJECT Patch test reminder — [First Name]</h3>
+<p>Hi [Name], As a new lash extension client (or if it has been more than [X months] since your last set), I recommend a patch test before your full appointment. A patch test involves applying a small number of lashes to check for any</p></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>adhesive sensitivity. It takes about 15 minutes and should be done [24-48] hours before your full appointment. To book your patch test: [link / instructions]. It is a small step that makes a big difference — better to know before than</p>
+<p>during! [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section></main></body></html>

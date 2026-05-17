@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates Bridal Hmua</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Email Templates Bridal Hmua</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Bridal Hair &amp; Makeup Artists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Bridal Hair &amp; Makeup Artists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>BRIDAL HAIR &amp; MAKEUP ARTIST</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to post-wedding, vendor partnerships, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING CONVERSION</h3>
+<h3>Template 1 — Same-Day Bridal Inquiry Response</h3>
+<div class="section-label">SUBJECT Re: Your bridal hair and makeup inquiry — [Bride&#x27;s Name]</div>
+<p>Hi [Name], Thank you so much for reaching out — your wedding on [date] at [venue] sounds absolutely beautiful, and [one specific detail she mentioned] is exactly the kind of brief I love working with.</p>
+<p>A little about how I&#x27;d approach your day: [2-3 sentences on your approach for her style and party size]. Here&#x27;s a quick overview of my bridal packages: [brief package summary or link to pricing guide].</p>
+<p>I&#x27;d love to hop on a quick call or answer your questions over email — whatever works best for you. Would a 20-minute call work this week? I have availability [two specific times]. Can&#x27;t wait to connect! [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 2 — Follow-Up Day 3</h3>
+<div class="section-label">SUBJECT Checking in on your [date] wedding — [Bride&#x27;s Name]</div>
+<p>Hi [Name], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get lost in all the wedding planning! I was thinking about your [venue / style / party] — [one specific genuine</p>
+<p>observation]. [Her date/venue] is such a beautiful backdrop for the look you described. Still available for a call [two times] this week if you&#x27;d like to chat. [Your Name] | [Studio Name]</p>
+<h3>Template 3 — Follow-Up Day 8 (Value Add)</h3>
+<div class="section-label">SUBJECT One more thing about your [date] wedding, [Name]</div>
+<p>Hi [Name], One last follow-up before I close out my [month] inquiry folder. I put together a few thoughts on [her style / her venue lighting / her season] that I think you&#x27;ll find useful whether or not we work together: [one specific,</p></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>genuine piece of advice about bridal hair and makeup for her situation]. Your date is still available if the timing ever works. All the best with your planning — it&#x27;s going to be an incredible day. [Your Name] | [Studio Name]</p>
+<h3>Template 4 — Bridal Party Pricing Email</h3>
+<div class="section-label">SUBJECT Your bridal party pricing — [Bride&#x27;s Name]</div>
+<p>Hi [Name], Here&#x27;s the breakdown for your wedding party: Bride (hair and makeup): $[amount] Bridesmaids (each): Hair $[amount] / Makeup $[amount] / Both $[amount] Mothers of the bride/groom (each): $[amount] Flower girls (each — if applicable): $[amount]</p>
+<p>Travel fee (if applicable): $[amount] for [location] Total for your party of [X]: $[total amount] What&#x27;s included for each person: [brief description — full glam / natural / trial- matched look].</p>
+<p>To confirm your date, I require a [deposit amount] non-refundable deposit and a signed contract. The remaining balance is due [timeline]. Want to move forward? Reply here or call [Phone] and I&#x27;ll send the contract over. [Your Name] | [Studio Name]</p>
+<div class="section-label">Template 5 — Post-Discovery Call Booking Follow-Up</div>
+<div class="section-label">SUBJECT Following our call — your [date] wedding, [Name]</div>
+<p>Hi [Name], It was so lovely speaking with you today! Your vision for [wedding description] is genuinely beautiful and I&#x27;d love to be part of it. As discussed: I&#x27;ll hold your date until [date/time] while you review the</p>
+<p>contract. To confirm your booking: [deposit amount] deposit + signed contract. Here&#x27;s the link: [contract link]. Any questions before you sign — I&#x27;m always a quick message or call away. So excited about [date]! [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: TRIAL RUN SYSTEM</h3>
+<h3>Template 6 — Trial Run Booking Confirmation</h3>
+<div class="section-label">SUBJECT Your bridal trial is confirmed — here&#x27;s how to prepare, [Name]</div>
+<p>Hi [Name], Your bridal trial is confirmed for [date] at [time] at [location] — I&#x27;m so excited!</p>
+<h3>How to prepare:</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hair trial: come with clean, dry hair (no product, no heat styling). If you have a specific texture you want, arrive as you naturally dry. Makeup trial: clean moisturised skin, no foundation or heavy products. Bring</p>
+<p>any skincare you use regularly if it affects how makeup sits. What to bring: your inspiration photos, any accessories you want to test (veil, earrings, headpiece), and your phone for photos.</p>
+<p>What we&#x27;ll do: We&#x27;ll create your full look, photograph it from multiple angles, and I&#x27;ll document the exact products, techniques, and timing for your wedding</p>
+<h3>day.</h3>
+<p>See you on [date]! [Your Name] | [Studio Name]</p>
+<h3>Template 7 — Post-Trial Confirmation Email</h3>
+<h3>SUBJECT Your approved bridal look — [Name]</h3>
+<p>Hi [Name], What a beautiful trial! I&#x27;m so happy with what we created — and more importantly, I hope you are too. Here&#x27;s your approved look on record: Hair: [description — e.g., low chignon with face-framing tendrils, volume at crown]</p>
+<p>Makeup: [description — e.g., rosy taupe eye, dewy skin, classic nude lip] Adjustments we agreed to for the wedding day: [any specific tweaks — e.g., slightly more defined brow, softer contour].</p>
+<p>Wedding day timing for you: I&#x27;ll allocate [X] minutes. Plan to be in my chair at [time]. If anything changes between now and your wedding, just let me know. See you on [date]! [Your Name] | [Studio Name]</p>
+<h3>Template 8 — Trial Rescheduling Email</h3>
+<h3>SUBJECT Rescheduling your bridal trial — [Name]</h3>
+<p>Hi [Name], No problem at all — life happens! Let&#x27;s find a new time for your trial. My available dates: [list 3-4 options with times] Please reply with which works best and I&#x27;ll send an updated confirmation. If</p>
+<p>none of these work, let me know your availability and I&#x27;ll do my best to accommodate. [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: WEDDING DAY LOGISTICS</h3>
+<h3>Template 9 — Getting Ready Timeline Email</h3>
+<h3>SUBJECT Your wedding morning timeline — [Name]</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], Here&#x27;s your wedding morning getting-ready timeline. Please review and let me know if anything needs adjusting.</p>
+<div class="section-label">WEDDING MORNING TIMELINE — [BRIDE&#x27;S NAME] — [DATE]</div>
+<p>[Time]: [Your Name] arrives at [location] [Time]: Hair begins — [Person 1 name/role] [Time]: Hair begins — [Person 2] [Time + X mins]: Makeup begins — [Person 1] ... [Bride&#x27;s hair time]: Bride&#x27;s hair begins [Bride&#x27;s makeup time]: Bride&#x27;s makeup begins</p>
+<p>[Done by time]: Bride fully ready for photography What I need from you:</p>
+<p class="template-line">- A well-lit getting-ready space near a window or with good lighting</p>
+<p class="template-line">- Enough space for my kit and a chair</p>
+<p class="template-line">- Refreshments for the morning (I&#x27;ll take care of myself!)</p>
+<p>My phone will be on all morning: [Phone]. See you on [date]! [Your Name] | [Studio Name]</p>
+<h3>Template 10 — Week-Before Wedding Confirmation</h3>
+<h3>SUBJECT One week to go! Final details — [Name]</h3>
+<p>Hi [Name], One week! I am so excited for you. Confirming: My arrival: [time] at [address] My assistant (if applicable): [Name] will be with me Getting-ready order: [brief summary] My direct phone for the morning: [Phone]</p>
+<p>One tip from me: Make sure your getting-ready space has as much natural light as possible — open the curtains, move near a window. It makes a beautiful difference to your photos. See you next [day of week]! [Your Name] | [Studio Name]</p>
+<h3>Template 11 — Day-Before Wedding Check-In</h3>
+<h3>SUBJECT Tomorrow is YOUR day! — [Name]</h3>
+<p>Hi [Name], Tomorrow is your wedding day — I could not be more excited for you. I have everything I need and I&#x27;ll be arriving at [time] at [address]. My phone is [Phone] for anything that comes up.</p>
+<p>Tonight: please get a good night&#x27;s sleep (I know — easier said than done!), moisturise your skin, and set out anything you want to wear for getting-ready photos. I can&#x27;t wait to see you tomorrow. [Your Name] | [Studio Name]</p>
+<h3>SECTION 4: POST-WEDDING SYSTEM</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 12 — Post-Wedding Check-In</h3>
+<h3>SUBJECT How was your wedding day, [Name]? ✨</h3>
+<p>Hi [Name], I&#x27;ve been thinking about you since [date] and I genuinely hope it was everything you dreamed of. How did your look hold up throughout the day? Any feedback — positive or anything I should know for future brides — I&#x27;d genuinely love to hear.</p>
+<p>And if you have any photos from your photographer yet — even sneak peeks — I would absolutely love to see. [Your Name] | [Studio Name]</p>
+<h3>Template 13 — Google Review Request</h3>
+<h3>SUBJECT A personal ask — [Name]</h3>
+<p>Hi [Name], I hope you&#x27;re still absolutely glowing from [date] — I know I&#x27;m still thinking about your morning. A personal ask: if you were happy with your hair and makeup, a Google review from a bride I&#x27;ve loved working with means more to my business than</p>
+<p>almost anything else. It helps other brides in [City] find an artist they can trust for the most important day of their lives. Direct link (2 minutes): [Google Review Link] No pressure at all. It was truly an honour to be part of your day. [Your Name]</p>
+<p>| [Studio Name]</p>
+<h3>Template 14 — Knot / WeddingWire Review Request</h3>
+<h3>SUBJECT One more ask — [Name]</h3>
+<p>Hi [Name], If you have a moment and you haven&#x27;t already — a review on [The Knot / WeddingWire] would also be incredibly helpful for couples searching for bridal artists in [City]. Direct link: [The Knot / WeddingWire link]</p>
+<p>Thank you so much — your kind words genuinely make a difference. [Your Name] | [Studio Name]</p>
+<h3>Template 15 — 1-Year Anniversary Message</h3>
+<h3>SUBJECT Happy first anniversary! — [Name]</h3>
+<p>Hi [Name], One year! I can&#x27;t believe it&#x27;s been twelve months since your beautiful day. I still look back at photos from your wedding morning and feel so proud of what we created together. I hope this year has been full of joy.</p></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>If you&#x27;re ever looking for a glam artist for an anniversary shoot, a headshot session, or just a special occasion — I&#x27;d love to work with you again. With love, [Your Name] | [Studio Name]</p>
+<h3>SECTION 5: VENDOR PARTNERSHIP</h3>
+<h3>OUTREACH</h3>
+<h3>Template 16 — Wedding Photographer Introduction</h3>
+<div class="section-label">SUBJECT Introduction — [Your Name], Bridal Hair &amp; Makeup, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a bridal hair and makeup artist based in [City] specialising in [style — e.g., romantic bridal / editorial bridal / natural glow]. I&#x27;ve been following your work and it&#x27;s absolutely stunning — [one specific</p>
+<p>genuine compliment about their photography style]. I reach out because I believe we&#x27;d be wonderful referral partners. Well- prepared hair and makeup dramatically affects how a bride photographs, and</p>
+<p>photographers with consistent stylistic vision tend to get the best results from artists who share it. I&#x27;d love to explore either a mutual referral relationship or a styled shoot collaboration. [Your Name] | [Studio Name] | [Phone] | [Instagram]</p>
+<h3>Template 17 — Wedding Planner Introduction</h3>
+<div class="section-label">SUBJECT Introduction — [Your Name], Bridal Hair &amp; Makeup, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name] from [Studio Name] — a bridal hair and makeup studio in [City]. I&#x27;ve been admiring the events [Planning Company] produces and I&#x27;d love to introduce myself as a potential vendor recommendation for your couples. I</p>
+<p>specialise in [style], I&#x27;m always professional and on-time, and I work with [team / assistants] to ensure every party member is attended to without rushing. Happy to send a portfolio, references from other planners, or meet briefly if that would be useful.</p>
+<p>[Your Name] | [Studio Name] | [Phone] | [Instagram]</p>
+<h3>Template 18 — Monthly Vendor Value Touch</h3>
+<h3>SUBJECT [Month] — a note from [Your Name]</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], Quick monthly note — something that might be useful for your couples: [One specific genuine insight — e.g., for a photographer: &#x27;I&#x27;ve found that brides who prep their skin for 6 weeks before the wedding have dramatically</p>
+<p>more even coverage and a better glow in photos — worth mentioning to your bookings early&#x27; / for a planner: &#x27;Getting-ready spaces with south-facing windows photograph best — if you have input on where the bride gets ready,</p>
+<p>it can make a significant difference to the morning photos&#x27;]. Hope your bookings are going beautifully. [Your Name] | [Studio Name] | [Instagram]</p>
+<h3>Template 19 — Post-Wedding Vendor Thank-You</h3>
+<div class="section-label">SUBJECT Thank you — [Wedding Couple Name]&#x27;s wedding</div>
+<p>Hi [Name], I just wanted to drop a quick note after [couple name]&#x27;s wedding. [One specific genuine observation about what they contributed — e.g., &#x27;Your photography was absolutely stunning — the way you captured the getting-</p>
+<p>ready light was just beautiful&#x27; / &#x27;The way you managed the morning timeline made my job so much easier and I really appreciated it&#x27;]. I&#x27;d love to stay in touch and continue working together. If any of your future</p>
+<p>couples are looking for bridal hair and makeup, I&#x27;d genuinely appreciate the mention. [Your Name] | [Studio Name] | [Instagram]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<h3>Template 20 — Styled Shoot Collaboration Pitch</h3>
+<div class="section-label">SUBJECT Styled shoot collaboration — [Your Name] + [Their Name]</div>
+<p>Hi [Name], I&#x27;ve been thinking about a styled shoot collaboration and your work immediately came to mind. I&#x27;m envisioning: [brief concept — venue, style, mood, season]. I&#x27;d handle all</p>
+<p>hair and makeup styling. What I&#x27;m looking for: [photographer / florist / dress designer / venue]. What I can offer: full high-resolution images for your portfolio, complete usage rights, and a credit in any publications we submit to.</p>
+<p>Interested? I&#x27;d love to get on a quick call to talk through the concept. [Your Name] | [Studio Name] | [Instagram]</p>
+<h3>Template 21 — Unavailable Date Response</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT Re: Your [date] wedding inquiry — [Name]</div>
+<p>Hi [Name], Thank you so much for thinking of me for your wedding on [date] — unfortunately I&#x27;m already booked for that day. I&#x27;d hate for you to be without a wonderful artist, so I wanted to suggest two</p>
+<p>colleagues whose work I genuinely admire and who I know are exceptional: [Name 1 — Instagram handle] and [Name 2 — Instagram handle]. If your date ever changes or you need a stylist for another occasion, please don&#x27;t hesitate to reach out.</p>
+<p>Congratulations on your upcoming wedding! [Your Name] | [Studio Name]</p>
+<h3>Template 22 — Contract Deposit Reminder</h3>
+<h3>SUBJECT Your booking deposit — [Name]</h3>
+<p>Hi [Name], Just a quick follow-up — I haven&#x27;t yet received your deposit to confirm your [date] booking. As a reminder, your date is held until [date/time]. To officially confirm: [deposit amount] via [payment method] + signed contract at [link].</p>
+<p>If your plans have changed or you have any questions, please let me know — I&#x27;m happy to chat. [Your Name] | [Studio Name] | [Phone]</p>
+<div class="section-label">Template 23 — Bridesmaid / Hen Party Services Email</div>
+<div class="section-label">SUBJECT Hair and makeup for your [hen party / bachelorette / event] — [Name]</div>
+<p>Hi [Name], Thank you for reaching out! I&#x27;d love to help make your [hen party / bachelorette / pre-wedding event] extra special. I offer group glam sessions for [X or more] people, including full hair and</p>
+<p>makeup or individual services. Investment: [pricing structure]. What to expect: I&#x27;ll come to your venue or accommodation, set up a full kit, and we&#x27;ll work through the group at a relaxed pace with everyone looking and feeling amazing.</p>
+<p>Available dates: [list options or invite them to share theirs]. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 24 — Referral Thank-You</h3>
+<h3>SUBJECT Thank you for the referral — [Name]</h3></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Bridal Hair &amp; Makeup Artists<span>Email Templates Bridal Hmua</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], Thank you so much for referring [Bride&#x27;s Name] to me — I&#x27;m absolutely going to take wonderful care of her. Referrals from people whose work I respect mean everything to my business, and I never take them for granted. [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates Bridal Hmua</span><span class="page-number">11</span></div></section></main></body></html>

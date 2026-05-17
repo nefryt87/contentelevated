@@ -1,0 +1,112 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Communication Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Barbers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Barbers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>BARBER</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: DM inquiries, reminders, rebooking, referrals, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING</h3>
+<p>T1 — New Client DM Response</p>
+<h3>SUBJECT DM / Instagram — send directly</h3>
+<p>Hey [Name]! Welcome — great to hear from you. 💈 [Answer their question directly in 1-2 sentences] To book: [booking link / &#x27;just DM me your preferred day and time&#x27; / &#x27;call or text [Phone]&#x27;]. [Your Name] | [Barbershop Name] T2 — Style Consultation DM Response</p>
+<h3>SUBJECT DM — send directly</h3>
+<p>Hey [Name]! Yeah that is a great style — totally doable. For your hair type/texture I would [brief description of how you would approach it — e.g., &#x27;do a mid skin fade with a textured crop on top — we would just need to work with your natural growth pattern&#x27;].</p>
+<p>[If clarifying question needed: &#x27;Quick question — how long have you been growing it out? That will help me plan the session.&#x27;] To book: [booking process]. [Your Name] T3 — Booking Confirmation</p>
+<h3>SUBJECT Text / DM — send after booking</h3>
+<p>Hey [Name]! Confirmed — see you [date] at [time] at [Barbershop Name], [address]. 💈 Reminder: [cancellation policy briefly — e.g., &#x27;please give me [X] hours notice if you need to reschedule&#x27;]. Any questions just message me. [Your Name]</p>
+<p>T4 — Price Enquiry Response</p>
+<h3>SUBJECT DM — send directly</h3>
+<p>Hey [Name]! Here is the breakdown: [Service 1]: $[amount] [Service 2]: $[amount] [Service 3]: $[amount] [Beard trim / line-up add-on]: $[amount] To book: [booking process]. Any questions just ask! [Your Name] | [Barbershop Name]</p>
+<h3>SECTION 2: APPOINTMENT MANAGEMENT</h3>
+<p>T5 — 24-Hour Reminder</p>
+<h3>SUBJECT Text / DM — send the day before</h3></div><div class="footer"><span>Communication Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hey [Name]! Quick reminder — your appointment is tomorrow [date] at [time] at [Barbershop Name]. [Cancellation policy reminder: &#x27;If anything comes up, just let me know by [time] today — appreciate it!&#x27;] [Your Name] | [Phone] T6 — Same-Day Reminder</p>
+<h3>SUBJECT Text — send morning of appointment</h3>
+<p>Hey [Name]! See you today at [time] at [Barbershop Name]. 💈 Any changes: [Phone]. [Your Name] T7 — Cancellation Policy Message</p>
+<div class="section-label">SUBJECT DM / text — send with booking confirmation</div>
+<p>Quick note on my booking policy: I need [X] hours notice to cancel or reschedule. Late cancellations and no-shows may be charged [X]% of the service. Really appreciate the heads up — it helps me keep the chair moving for</p>
+<p>everyone. [Your Name] | [Barbershop Name] T8 — No-Show Follow-Up</p>
+<div class="section-label">SUBJECT Text / DM — send after missed appointment</div>
+<p>Hey [Name] — looks like you missed your [time] slot today. Hope everything is okay! [If applying fee: &#x27;As per my booking policy, a [X]% no-show fee of $[amount] applies. Happy to discuss if something came up.&#x27;]</p>
+<p>Whenever you are ready to rebook, just message me. [Your Name] | [Barbershop Name]</p>
+<h3>SECTION 3: REBOOKING &amp; RETENTION</h3>
+<p>T9 — Rebooking Reminder (2-3 Weeks)</p>
+<h3>SUBJECT Text / DM — send at optimal window</h3>
+<p>Hey [Name]! It has been about [X] weeks since your last cut — you are right at the point where a fresh one is going to look sharp again. 💈 I have availability [two specific times]. Want to lock one in? [Your Name] | [Barbershop Name]</p>
+<p>T10 — Rebooking Reminder (4+ Weeks)</p>
+<h3>SUBJECT Text / DM — send at 4-week window</h3>
+<p>Hey [Name]! Your hair is probably feeling a bit grown out by now — time for a fresh cut! I have got [two specific times / booking link] available this week if you want to come in. [Your Name] | [Barbershop Name] T11 — Lapsed Client Win-Back</p>
+<div class="section-label">SUBJECT Text / DM — send to clients not seen in 2+ months</div></div><div class="footer"><span>Communication Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hey [Name]! It has been a while — hope you are doing well. I wanted to reach out because [something new — e.g., &#x27;I have been doing some great work with [style] lately&#x27; / &#x27;I just added [new service] to the menu&#x27;].</p>
+<p>If you are ready for a fresh cut, I have availability [timeframe]. Would love to see you back in the chair. [Your Name] | [Barbershop Name] T12 — End-of-Cut Rebooking Text (Follow-Up)</p>
+<h3>SUBJECT Text — send same day as appointment</h3>
+<p>Hey [Name]! Great having you in today — hope you are loving the cut! 💈 If you want to keep it looking sharp, best to come back in [2-3 / 3-4] weeks. I have [two specific times] free — want to lock one in while I have the availability?</p>
+<p>[Your Name] | [Barbershop Name]</p>
+<h3>SECTION 4: REFERRALS &amp; REVIEWS</h3>
+<p>T13 — Referral Ask Message</p>
+<h3>SUBJECT Text / DM — send to loyal clients</h3>
+<p>Hey [Name]! Really appreciate your loyalty — clients like you are honestly</p>
+<h3>why I love doing this.</h3>
+<p>Quick ask: if you have any mates or family who need a good barber, I would really appreciate the mention. Most of my best new clients come from recommendations from people like you.</p>
+<p>[If offering incentive: &#x27;Anyone you send my way gets [X]% off their first cut — and I will give you [X]% off your next one as a thank you.&#x27;] [Your Name] | [Barbershop Name] T14 — Google Review Request</p>
+<h3>SUBJECT Text / DM — send after appointment</h3>
+<p>Hey [Name]! Great to see you today — hope you are loving the cut. Quick favour: if you had a good experience, a Google review would mean a lot to me. Helps other people find the shop and honestly just makes my day.</p>
+<p>Direct link: [Google Review Link]. Takes 2 minutes. Cheers! [Your Name] | [Barbershop Name] T15 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3></div><div class="footer"><span>Communication Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Thanks so much [Name] — that genuinely made my day! It was great having you in and I am really glad you loved the cut. See you in a few weeks! — [Your Name], [Barbershop Name] [Respond within 24 hours. Warm, specific, include barbershop name for local</p>
+<h3>SEO.]</h3>
+<p>T16 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hey [Name], thanks for the feedback — really sorry to hear it did not hit the mark. I take this seriously and I would love to make it right. Please reach out at [Phone] so we can have a chat. — [Your Name], [Barbershop Name]</p>
+<p>[Never argue publicly. Move it offline. Your response is what future clients read.]</p>
+<h3>SECTION 5: SEASONAL CAMPAIGNS &amp;</h3>
+<h3>PROMOTIONS</h3>
+<p>T17 — Gift Voucher Campaign</p>
+<h3>SUBJECT Instagram / text — send seasonally</h3>
+<p>Gift vouchers now available at [Barbershop Name]! 💈 The perfect gift for any man who takes his hair seriously. Available for any service or amount. To purchase: [link / reply here / call [Phone]]. I will send a digital voucher you can gift directly.</p>
+<p>[Your Name] | [Barbershop Name] T18 — Seasonal Fresh Cut Push</p>
+<div class="section-label">SUBJECT Instagram / text — send before key dates</div>
+<p>[Season/Holiday] is coming — and your hair should not be the thing you are worried about. Book your fresh cut now at [Barbershop Name] — I have [limited availability] before [date]. To book: [booking link / DM / call [Phone]]. [Your Name] | [Barbershop Name]</p>
+<p>T19 — New Service / Product Announcement</p>
+<h3>SUBJECT Instagram / DM — send at launch</h3>
+<p>New at [Barbershop Name]: [service or product name]. 💈 [2-3 sentences describing what it is and why it is great.] [How to add it to a booking / how to try it.] [Your Name] | [Barbershop Name] T20 — Flash Availability Post</p>
+<div class="section-label">SUBJECT Instagram story / DM — post when slots open</div></div><div class="footer"><span>Communication Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Barbers<span>Communication Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I have [X] spots open [this week / today] at [Barbershop Name]. [Day 1]: [time] — [service type] available [Day 2]: [time] — [service type] available To book: [booking link / DM / call [Phone]]. First in, first served. 💈 [Your Name] | [Barbershop Name]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T21 — Unavailable Date / Wait List Response</p>
+<h3>SUBJECT DM / text — send when fully booked</h3>
+<p>Hey [Name]! Unfortunately I am fully booked on [date] — but I would love to get you in. Nearest availability: [alternative dates]. Would any of those work? [If waitlist: &#x27;I can add you to my waitlist for that date and let you know if anything opens up.&#x27;]</p>
+<p>[Your Name] | [Barbershop Name] T22 — Walk-In Availability Update</p>
+<h3>SUBJECT Instagram story / GBP — post regularly</h3>
+<p>Walk-ins welcome [day] from [time] — [X] spots available at [Barbershop Name]. First come first served. Address: [address]. [Your Name] T23 — Before/After Feature Request (Client Consent)</p>
+<h3>SUBJECT DM — send directly</h3>
+<p>Hey [Name]! Love how your cut came out today — would you be happy for me to post a before/after on my Instagram? I would tag you (or keep it untagged if you prefer). Really helps bring in new clients and I think it looks great. No pressure at all! [Your Name]</p>
+<p>T24 — Barbershop Milestone / Thank You Post</p>
+<h3>SUBJECT Instagram / TikTok caption</h3>
+<p>[Milestone — e.g., &#x27;[X] cuts / [X] years in the game / [X] five-star reviews&#x27;] — and I am more grateful than I can say. To every client who has sat in this chair: you are not just a booking to me.</p>
+<p>You are the reason I show up every day with a fresh blade and an even fresher mindset. Thank you [City]. Let us keep going. [Your Name] | [Barbershop Name]💈</p></div><div class="footer"><span>Communication Templates</span><span class="page-number">07</span></div></section></main></body></html>

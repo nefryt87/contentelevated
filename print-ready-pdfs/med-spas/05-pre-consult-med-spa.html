@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Pre Consult</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Pre Consult</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Med Spas Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Med Spas Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Pre Consult</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>MED SPA &amp; AESTHETIC</h3>
+<h3>PRACTICE</h3>
+<p>Pre-Consultation, VIP &amp; Reputation Management Templates</p>
+<div class="section-label">New client intake, contraindication scripts, VIP loyalty sequence, and review response templates</div>
+<h3>SECTION 1: PRE-CONSULTATION &amp; INTAKE</h3>
+<h3>New Client Consultation Intake Questionnaire</h3>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ Emergency contact:</p>
+<p class="template-line">✓ How did you hear about us?</p>
+<p class="template-line">✓ Primary aesthetic concern(s) to address today:</p>
+<p class="template-line">✓ Have you had aesthetic treatments before? If yes, what and when?</p>
+<p class="template-line">✓ Current medications (including supplements, retinoids, blood thinners):</p>
+<p class="template-line">✓ History of: cold sores/herpes (for lip treatments), keloid scarring, autoimmune</p>
+<p>conditions, skin conditions (rosacea, eczema, psoriasis)?</p>
+<p class="template-line">✓ Pregnant or breastfeeding?</p>
+<p class="template-line">✓ Dental work in the last 2 weeks? (relevant for lip/cheek filler)</p>
+<p class="template-line">✓ Upcoming events or vacations in the next 2-4 weeks?</p>
+<p class="template-line">✓ Inspiration photos? (optional but helpful)</p>
+<p class="template-line">✓ What does a successful result look like to you?</p>
+<p class="template-line">✓ [Collect before every consultation — via booking software or secure form link sent</p>
+<p>24 hours prior.] Pre-Consultation Confirmation Email</p>
+<div class="section-label">SUBJECT Your consultation at [Spa Name] — what to expect, [First Name]</div>
+<p>Hi [First Name], Your consultation is on [date] at [time]. I&#x27;m looking forward to meeting you! A few things to help us make the most of our time:</p></div><div class="footer"><span>Pre Consult</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Pre Consult</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Come with a clean face if possible — it helps me assess your skin</p>
+<p class="template-line">- Bring any inspiration photos you&#x27;d like to share</p>
+<p class="template-line">- Complete your intake form: [link]</p>
+<p class="template-line">- Have a list of current medications or supplements ready</p>
+<p>What to expect: We&#x27;ll discuss your goals, I&#x27;ll walk you through which treatments I&#x27;d recommend and why. No pressure to book anything — this is a conversation. Any questions? Just reply here. [Practitioner Name] | [Spa Name]</p>
+<h3>SECTION 2: CONTRAINDICATION SCRIPTS</h3>
+<p>Handling a Contraindication Discovery</p>
+<h3>SCRIPT — CONTRAINDICATION IDENTIFIED</h3>
+<p>PRACTITIONER: I appreciate you sharing that with me. [Medication / condition] is something I want to approach carefully because it can affect how we proceed safely. PRACTITIONER: Here&#x27;s what I&#x27;d recommend: [Option A — adjust treatment plan / Option B</p>
+<p>— wait X weeks / Option C — get physician clearance first]. PRACTITIONER: I want to make sure we&#x27;re doing this in a way that&#x27;s right for your health, not just your timeline. Does that make sense?</p>
+<p>[Never dismiss a contraindication to close a booking. Clients who feel protected become loyal advocates.] Pregnancy Contraindication Script</p>
+<h3>SCRIPT — PREGNANCY CONTRAINDICATION</h3>
+<p>PRACTITIONER: I&#x27;m so happy for you — and I want to take the best possible care of both of you. PRACTITIONER: [Treatment name] is something we hold off on during pregnancy — it&#x27;s a</p>
+<p>standard precaution across the industry. It&#x27;s not about a specific risk; it&#x27;s about being appropriately cautious during such an important time. PRACTITIONER: What we absolutely can do during pregnancy: [list pregnancy-safe</p>
+<p>services — e.g., facials, brow/lash services, skincare consultations]. PRACTITIONER: And I&#x27;d love to get you in for [treatment] after delivery — I&#x27;ll make sure you&#x27;re first on my list. [Always offer an alternative. Never make the client feel turned</p>
+<p>away — make her feel protected and valued.]</p></div><div class="footer"><span>Pre Consult</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Pre Consult</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 3: VIP CLIENT LOYALTY SEQUENCE</h3>
+<p>VIP Welcome Email — After 5th Visit</p>
+<div class="section-label">SUBJECT You&#x27;re officially one of our favourites — [First Name]</div>
+<p>Hi [First Name], I realized I&#x27;ve never properly said this: thank you for being such a loyal part of [Spa Name]. You&#x27;re one of our very favourite clients and it genuinely means a lot to our team.</p>
+<p>As a thank-you, I&#x27;d like to offer you [VIP benefit — e.g., priority booking access / complimentary skin consultation / 10% off your next service]. You don&#x27;t need a code — just mention this when you book and we&#x27;ll take care of it.</p>
+<p>With gratitude, [Practitioner Name] | [Spa Name] VIP Seasonal Early Access</p>
+<div class="section-label">SUBJECT First access to our [season] offerings — VIPs only, [First Name]</div>
+<p>Hi [First Name], Before I open the [season] schedule to new clients, I wanted to reach out to our regulars first — you always get first access. Coming up this [season]: [new treatments, seasonal specials, limited availability].</p>
+<p>To book: reply here or use this link: [link]. VIP slots go fast. [Practitioner Name] | [Spa Name]</p>
+<h3>SECTION 4: REPUTATION MANAGEMENT</h3>
+<h3>TEMPLATES</h3>
+<p>5-Star Review Response</p>
+<h3>SUBJECT Google / RealSelf — respond directly</h3>
+<p>Thank you so much, [First Name]! It was such a pleasure working with you on [treatment] — [add one personal detail if review mentions it]. We&#x27;re so glad you&#x27;re happy with your results. Can&#x27;t wait to see you again! — [Practitioner Name], [Spa Name]</p>
+<p>[Respond within 24 hours. Specific and personal. Include spa name — it helps local search ranking.] Negative Review Response</p>
+<h3>SUBJECT Google / RealSelf — respond directly</h3>
+<p>Hi [First Name], thank you for sharing this. I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client at [Spa Name]. I take every piece of feedback seriously and I&#x27;d really like the chance to make</p></div><div class="footer"><span>Pre Consult</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Pre Consult</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>it right. Please contact me directly at [Phone] or [Email]. — [Practitioner Name], [Spa Name] [CRITICAL: Never reference a treatment outcome or clinical detail publicly — HIPAA and liability. Move it offline immediately.]</p></div><div class="footer"><span>Pre Consult</span><span class="page-number">06</span></div></section></main></body></html>

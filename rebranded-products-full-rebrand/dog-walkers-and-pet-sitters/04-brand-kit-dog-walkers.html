@@ -1,0 +1,164 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit Dog Walkers</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #18130f; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8ef,#f2e8dc 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7657 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6b888 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7657,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #6c6256; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7657 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7657; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7657; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7657; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7657; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #6c6256; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7657 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#211810,color-mix(in srgb,#211810 76%,#9b7657)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6b888; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7657 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7657; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7657 18%,transparent); color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7657; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7657 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #6c6256; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7657; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Client experience system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit Dog Walkers</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for warm service polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Dog Walkers &amp; Pet Sitters</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit Dog Walkers</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>DOG WALKER</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, friendly-professional typography, 7 Canva template strategies, and a 7-</p>
+<h3>day brand launch checklist</h3>
+<h3>WHY YOUR BRAND BUILDS TRUST BEFORE</h3>
+<h3>YOU EVER MEET THE DOG</h3>
+<p>Pet owners choosing a dog walker are making one of the most trust-intensive decisions they make. Before they DM or call, they look at your Instagram, your Google profile, your website. A professional, warm, and consistent visual brand communicates that you</p>
+<p>are organised, reliable, and genuinely care — before a single conversation. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for dog walkers and pet sitters.</p>
+<h3>PALETTE 1: NATURAL &amp; TRUSTWORTHY</h3>
+<p>For walkers with a warm, nature-forward, professional aesthetic. Think forest green, amber, and the feel of an outdoor-loving, reliable small business.</p>
+<h3>FOREST GREEN</h3>
+<h3>#2A4A1A</h3>
+<h3>WARM AMBER</h3>
+<h3>#E8892A</h3>
+<h3>SOFT TAN</h3>
+<h3>#C8B090</h3>
+<h3>CREAM</h3>
+<h3>#F5F8F0</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Forest Green (#2A4A1A): logo, headlines, primary text — outdoor, reliable,</p>
+<p>professional</p>
+<p class="template-line">• Warm Amber (#E8892A): accent for CTAs, seasonal highlights, pricing callouts</p>
+<p class="template-line">• Soft Tan (#C8B090): secondary elements, backgrounds for warm lifestyle</p>
+<h3>content</h3>
+<p class="template-line">• Cream (#F5F8F0): all page and email backgrounds — natural and clean</p></div>
+  <div class="footer"><span>Brand Kit Dog Walkers</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Typography</h3>
+<p>HEADINGS: Nunito Bold — friendly and rounded. Warm and approachable without being unprofessional. BODY: Open Sans — clean and highly readable across all platforms. ACCENT: Nunito ExtraBold — for dog names in posts, seasonal campaign titles, key callouts.</p>
+<h3>PALETTE 2: PLAYFUL PROFESSIONAL</h3>
+<p>For walkers with a more colourful, energetic, personality-forward brand. Think cobalt, coral, and the energy of a dog who has just spotted a squirrel.</p>
+<h3>COBALT BLUE</h3>
+<h3>#2A5C8A</h3>
+<h3>WARM CORAL</h3>
+<h3>#E86A3A</h3>
+<h3>LIGHT SKY</h3>
+<h3>#E8F2FA</h3>
+<h3>WHITE</h3>
+<h3>#FFFFFF</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Cobalt Blue (#2A5C8A): logo, primary text, professional elements — trustworthy</p>
+<p>and bold</p>
+<p class="template-line">• Warm Coral (#E86A3A): accent — energetic, friendly, warm CTAs and highlights</p>
+<p class="template-line">• Light Sky (#E8F2FA): background for graphics, story templates, seasonal</p>
+<h3>content</h3>
+<p class="template-line">• White (#FFFFFF): all primary backgrounds — clean and modern</p>
+<h3>Typography</h3>
+<p>HEADINGS: Poppins Bold — modern and friendly. Works across Instagram, stories, and print. BODY: Lato — clean, professional, readable at all sizes. ACCENT: Poppins ExtraBold ALL CAPS — for &#x27;BOOKING OPEN&#x27;, seasonal announcements, walk counts.</p>
+<h3>7 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Happy Dog Walk Photo Post</h3></div>
+  <div class="footer"><span>Brand Kit Dog Walkers</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;pet Instagram post template&#x27; or &#x27;dog photo frame&#x27;. A photo of a happy dog on the walk fills the frame. Your business name small at the bottom. Minimal overlay. The dog is the content — your brand just needs to be consistently present. Post one of</p>
+<p>these every single day. No other content type builds a following faster for a dog walker.</p>
+<h3>Template 2: Walk Update Card</h3>
+<p>Search &#x27;pet update card template&#x27; or &#x27;daily update Instagram&#x27;. Design a branded &#x27;Walk Update&#x27; card: your logo, a space for the dog&#x27;s name, &#x27;Today we...&#x27; and a few icons (route, duration, happy meter). Send as a story or message after walks. Clients love</p>
+<p>these and share them — they become your best organic marketing.</p>
+<h3>Template 3: 5-Star Review Graphic</h3>
+<p>Search &#x27;pet business review post&#x27; or &#x27;client testimonial template&#x27;. Feature the most specific and emotional line from a review. The reviewer&#x27;s first name. Your business name. A paw print or simple dog icon. Post every new 5-star review — aim for one per</p>
+<div class="section-label">week. These are your most powerful trust-building content.</div>
+<h3>Template 4: Service &amp; Pricing Card</h3>
+<p>Search &#x27;pet services menu&#x27; or &#x27;dog walker pricing Instagram&#x27;. Clean layout: your services, brief descriptions, prices. Your business name and contact at the bottom. Pin it as your first Instagram post. Add to your GBP profile. Eliminates the most common</p>
+<p>first message (&#x27;how much do you charge?&#x27;).</p>
+<h3>Template 5: Instagram Story — Availability Open</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;pet sitter story template&#x27;. Vertical. A happy dog photo or park background. Text: &#x27;NEW SLOTS AVAILABLE in [Area]&#x27; + &#x27;DM to book your free meet-and-greet.&#x27; Your business name. Post every time you open new</p>
+<p>availability — generates immediate inquiries.</p>
+<h3>Template 6: Seasonal Dog Safety Tip</h3>
+<p>Search &#x27;pet care tip Instagram&#x27; or &#x27;dog safety graphic&#x27;. Clean, readable. &#x27;Summer safety tip: [tip]&#x27; or &#x27;Winter walk warning: [tip]&#x27;. Your business name. These save at very high rates, reach new audiences, and position you as a knowledgeable, caring professional.</p></div>
+  <div class="footer"><span>Brand Kit Dog Walkers</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dog Walkers &amp; Pet Sitters Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Google Business Profile Banner</h3>
+<p>Search &#x27;local business Google cover&#x27; or &#x27;pet business banner&#x27;. A professional banner for your GBP profile: your business name, your service area, a happy dog photo, your contact details. Your GBP banner is seen by every person who finds you in local search</p>
+<p>— make it warm and professional.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit.</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 6 story highlights: Dogs I</p>
+<p>Walk, Reviews, Services, About Me, Walk Updates, Booking.</p>
+<p class="template-line">✓ Day 3: Create your service and pricing card using Template 4 — pin it as your first</p>
+<p>Instagram post.</p>
+<p class="template-line">✓ Day 4: Set up or update your Google Business Profile — add all services, photos,</p>
+<p>and your first GBP post.</p>
+<p class="template-line">✓ Day 5: Create 5 review graphics using Template 3 — schedule one per week for 5</p>
+<p>weeks.</p>
+<p class="template-line">✓ Day 6: Create a seasonal safety tip graphic using Template 6 — post this week.</p>
+<p class="template-line">✓ Day 7: Create a walk update story template using Template 2 — use it on your next</p>
+<p>walk.</p>
+<p class="template-line">✓ [Consistency is everything for a dog walking business. Pet owners who see you</p>
+<p>posting daily walk updates, safety tips, and happy dogs build trust over weeks and months before they even need your service — then you are their first call.]</p></div>
+  <div class="footer"><span>Brand Kit Dog Walkers</span><span class="page-number">06</span></div>
+</section></main></body></html>

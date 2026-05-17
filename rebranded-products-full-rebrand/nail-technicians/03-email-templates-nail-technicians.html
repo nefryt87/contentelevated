@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nail Technicians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>NAIL TECHNICIAN</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: DM inquiries, reminders, rebooking, seasonal campaigns, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING</h3>
+<p>T1 — DM Inquiry Response</p>
+<h3>SUBJECT Instagram DM — send directly</h3>
+<p>Hi [Name]! Thanks so much for reaching out — I love your idea! [One specific genuine reaction to what they described]. Quick question before I send you availability: [one qualifying question — e.g.,</p>
+<p>&#x27;Are you looking for gel or acrylics?&#x27; / &#x27;Do you have a length in mind?&#x27; / &#x27;Is this for a specific event?&#x27;] Once I have that, I can check what fits for you! 💅 [Your Name / Studio Name] T2 — Email Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your nail appointment inquiry — [First Name]</div>
+<p>Hi [Name], Thank you for reaching out — I&#x27;d love to help with your [service]! Here is a bit about my process: [brief description — booking, consultation, what to expect]. My current availability: [availability or booking link]. [Pricing overview or link to pricing if applicable]</p>
+<p>To book: [link / instructions]. Looking forward to it! [Your Name] | [Studio Name] T3 — Booking Confirmation Message</p>
+<div class="section-label">SUBJECT Your nail appointment is confirmed! — [First Name]</div>
+<p>Hi [Name]! You are officially booked 💅 Your appointment: [service] on [date] at [time] at [address]. A couple of things to know:</p>
+<p class="template-line">- [Prep tip specific to service — e.g., &#x27;Please remove any old gel/polish before</p>
+<p>you arrive if possible&#x27; / &#x27;Come with clean, dry nails&#x27;]</p>
+<p class="template-line">- My cancellation policy: [brief — X hours notice required]</p>
+<p class="template-line">- My direct number if anything changes: [Phone]</p>
+<p>Can&#x27;t wait to see you! [Your Name / Studio Name] T4 — Price Enquiry Response</p>
+<h3>SUBJECT Nail pricing — [Studio Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [Name]! Great question — here is my pricing: [Service 1]: $[amount] [Service 2]: $[amount] [Service 3]: $[amount] Nail art: from $[amount] depending on complexity Removal (if needed): $[amount] [Optional: &#x27;I always recommend a consultation for custom nail art so I can</p>
+<p>give you an accurate quote for your specific design.&#x27;] To book: [link / DM me back]. [Your Name / Studio Name]</p>
+<h3>SECTION 2: APPOINTMENT MANAGEMENT</h3>
+<p>T5 — 48-Hour Reminder</p>
+<div class="section-label">SUBJECT Your nail appointment is in 2 days — [First Name]</div>
+<p>Hi [Name]! Just a reminder that your [service] appointment is on [date] at [time] at [address]. Reminder: I require [X] hours notice for cancellations. To reschedule or cancel: [Phone / DM]. Can&#x27;t wait to see you! [Your Name / Studio Name] T6 — 24-Hour Confirmation</p>
+<h3>SUBJECT See you tomorrow! — [First Name]</h3>
+<p>Hi [Name]! Just confirming your [service] appointment is tomorrow, [date] at [time]. Quick prep tip: [one specific relevant tip — e.g., &#x27;If you can, remove any old gel at home tonight to save us time&#x27; / &#x27;Arrive with clean nails — no oils or lotions on them&#x27;].</p>
+<p>Any changes? Contact me at [Phone]. See you tomorrow! [Your Name / Studio Name] T7 — Cancellation Policy Message</p>
+<h3>SUBJECT Booking policy — [Studio Name]</h3>
+<p>Hi [Name], A quick note on my booking policy: Cancellations: I require [X] hours notice. Cancellations within [X] hours may incur a [X]% late cancellation fee. No-shows: charged [X]% of the service price. Rescheduling: always welcome with enough notice — just let me know as</p>
+<p>soon as possible. I really appreciate you respecting this — it helps me manage my schedule and serve all my clients as well as possible. [Your Name] | [Studio Name] T8 — No-Show Follow-Up</p>
+<h3>SUBJECT We missed you today — [First Name]</h3>
+<p>Hi [Name], We had you booked for [service] today at [time] but didn&#x27;t see you. I hope everything is okay! [If applying fee:] As per my booking policy, a [X]% no-show fee of $[amount] applies. [Payment instructions if applicable.]</p>
+<p>I would love to rebook you when you are ready — here is my availability: [link / options]. [Your Name] | [Studio Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SECTION 3: REBOOKING &amp; RETENTION</h3>
+<p>T9 — End-of-Appointment Rebooking Message</p>
+<h3>SUBJECT DM or text — send after appointment</h3>
+<p>Hi [Name]! So lovely to see you today — your nails look absolutely gorgeous 💅 Quick reminder: gel manicures typically last [2-3] weeks before they need a fill or refresh. I have availability on [two specific dates] if you want to lock in your next slot now while they are fresh!</p>
+<p>To book: [link / DM me]. [Your Name / Studio Name] T10 — Rebooking Reminder (Optimal Window)</p>
+<h3>SUBJECT Time for a nail refresh! — [First Name]</h3>
+<p>Hi [Name]! It has been about [X] weeks since your [service] — your nails are right at the perfect point for a refresh! I have availability in [timeframe]: [two specific options]. Would either of these work? [Link to booking or invite to DM back]. [Your Name / Studio Name]</p>
+<p>T11 — Lapsed Client Win-Back</p>
+<h3>SUBJECT We miss your nails! — [First Name]</h3>
+<p>Hi [Name]! It has been a while since we last saw you — I hope you are doing well! I wanted to reach out because I have some [seasonal / new] designs I think you would love: [brief description of what is new or seasonal].</p>
+<p>Would love to get you back in! Here is my current availability: [link / two options]. [Your Name / Studio Name] T12 — Referral Ask</p>
+<h3>SUBJECT A small favour — [First Name]</h3>
+<p>Hi [Name]! So glad you loved your nails 💅 Quick favour — if you have a friend, sister, or colleague who needs a nail tech, I would so appreciate the mention. Word of mouth from clients I love working with is literally how I fill my books.</p>
+<p>Even a &#x27;my nail tech is amazing, you should go to her&#x27; makes a real difference. Thank you! [Your Name / Studio Name]</p>
+<h3>SECTION 4: SEASONAL CAMPAIGNS &amp;</h3>
+<h3>UPSELLING</h3>
+<p>T13 — Seasonal Nail Art Campaign</p>
+<h3>SUBJECT [Season] nails are here! — [Studio Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [Name]! [Season] designs are officially available at [Studio Name] and I could not be more excited about them. This season I am offering: [Design 1 — brief description]✨ [Design 2 — brief description]✨ [Design 3 — brief description]✨</p>
+<p>These are available on a first-come, first-served basis and spots fill fast. To book your [season] nails: [link]. I am only taking [X] seasonal design appointments per week — so do not wait too long! [Your Name] | [Studio Name] T14 — Nail Art Upsell at Booking</p>
+<h3>SUBJECT Upgrade your appointment — [First Name]</h3>
+<p>Hi [Name]! So excited for your appointment on [date]. Quick note — I have been working on some [seasonal / new] nail art designs that would look incredible with your [service] booking. Adding nail art is $ [amount] and takes about [X] extra minutes.</p>
+<p>Would you like to add a design? If so, just let me know and send me any inspo images you love! 🎨 [Your Name / Studio Name] T15 — Gift Voucher Campaign</p>
+<h3>SUBJECT Gift vouchers — [Studio Name]</h3>
+<p>Hi [Name]! Looking for a gift for someone who deserves a little luxury? Gift vouchers for nail appointments at [Studio Name] make the most thoughtful present — and they are available for any service or amount.</p>
+<p>To purchase: [link / instructions]. I&#x27;ll send a beautifully presented digital voucher via email. Perfect for birthdays, holidays, hen parties, or just because 💅 [Your Name] | [Studio Name] T16 — Press-On / Nail Set Announcement</p>
+<div class="section-label">SUBJECT Custom press-ons are now available — [Studio Name]</div>
+<p>Hi [Name]! Exciting news — I am now offering custom hand-painted press-on nail sets. Each set is made to order: [description — your sizing process, what is included, turnaround time]. Perfect for events, holidays, or anyone who wants salon-quality nails at home.</p>
+<p>Prices start at $[amount] for a set of 20. To order: [link / DM me]. [Your Name] | [Studio Name]</p>
+<h3>SECTION 5: AFTERCARE &amp; CLIENT EDUCATION</h3>
+<p>T17 — Post-Appointment Aftercare Message</p>
+<h3>SUBJECT Your nail aftercare guide — [First Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [Name]! So lovely to see you today 💅 Quick aftercare reminder to keep your nails looking beautiful: First 24 hours: avoid hot water and steam if possible — let everything fully cure. Ongoing: use cuticle oil daily (I recommend [product] — your nails will thank you).</p>
+<p>Avoid: picking, peeling, or using nails as tools — this is how chips and lifts happen. Wear gloves for cleaning and washing up. If anything chips or lifts before your scheduled fill: get in touch and I will fix it as soon as possible.</p>
+<p>See you in [X] weeks! [Your Name / Studio Name] T18 — Cuticle Care / Nail Health Education Email</p>
+<div class="section-label">SUBJECT The one habit that will transform your nails — [First Name]</div>
+<p>Hi [Name]! After your appointment today I wanted to share the single biggest thing you can do between visits to improve your nail health: cuticle oil. I know it sounds simple — but daily cuticle oil application keeps the skin</p>
+<p>around your nails healthy, prevents lifting, and actually improves how long your gel lasts between appointments. I recommend [product name] — available [where to buy]. Use it morning and evening. It takes 10 seconds. Your nails will genuinely look better within 2 weeks.</p>
+<p>[Your Name / Studio Name]</p>
+<h3>SECTION 6: REPUTATION MANAGEMENT</h3>
+<p>T19 — Google Review Request</p>
+<h3>SUBJECT A quick favour — [First Name]</h3>
+<p>Hi [Name]! Hope you are still obsessed with your nails 💅 Quick favour — if you loved your experience at [Studio Name], a Google review would genuinely make my day and helps other clients find me. Takes about 2 minutes. Direct link: [Google Review Link]</p>
+<p>No pressure — just wanted to ask personally. Thank you! [Your Name / Studio Name] T20 — Instagram Testimonial / Photo Request</p>
+<h3>SUBJECT DM — send directly</h3>
+<p>Hi [Name]! I am so glad you love your nails! Would you be happy for me to feature them on my Instagram? I would tag you (or keep it untagged, whatever you prefer). It really helps other clients who are considering booking see my work! No pressure at all [Your Name / Studio Name]💕</p>
+<p>T21 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Thank you so much, [Name]! It was such a pleasure doing your [service] — [one specific personal detail if their review mentions it]. So glad you loved them! We cannot wait to see you again. — [Your Name], [Studio Name]</p>
+<p>[Respond within 24 hours. Personal, warm, include studio name for local</p>
+<h3>SEO.]</h3>
+<p>T22 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hi [Name], thank you for sharing this — I am genuinely sorry your experience did not meet my standard. I take every piece of feedback seriously and I would love the chance to make it right. Please reach out at [Phone] or [Email]. — [Your Name], [Studio Name]</p>
+<p>[Never argue publicly. Move it offline.]</p>
+<h3>SECTION 7: ADDITIONAL TEMPLATES</h3>
+<p>T23 — Nail Art Waitlist Message</p>
+<h3>SUBJECT Nail art waitlist — [Studio Name]</h3>
+<p>Hi [Name]! Thank you for your interest in [design/service] — I am currently fully booked for [timeframe] but I would love to add you to my waitlist. If a spot opens up I will contact you first. You are number [X] on the list.</p>
+<p>Alternatively, here are my next available dates for this service: [dates]. Would any of these work? [Your Name / Studio Name] T24 — Referral Thank-You</p>
+<h3>SUBJECT Thank you for the referral — [First Name]</h3>
+<p>Hi [Name]! [Client Name] just booked with me and mentioned you sent them my way — thank you so much! Referrals from clients I love are literally how I fill my books. As a small thank you: [referral gesture if you offer one — e.g., complimentary</p>
+<p>nail art add-on at your next visit / priority rebooking]. [Your Name / Studio Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">08</span></div>
+</section></main></body></html>

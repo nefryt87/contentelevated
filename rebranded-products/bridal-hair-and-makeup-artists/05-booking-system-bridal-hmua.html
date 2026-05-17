@@ -1,0 +1,195 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Booking System Bridal HMUA</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Booking System Bridal HMUA</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Bridal Hair &amp; Makeup Artists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>BRIDAL HAIR &amp; MAKEUP ARTIST</h3>
+<p>Bridal Booking System &amp; Contract Prep Kit Pre-booking questionnaire, trial feedback form, wedding morning checklist, contract clause guide, and vendor co-marketing proposal</p>
+<h3>SECTION 1: BRIDAL BOOKING QUESTIONNAIRE</h3>
+<p>Send before or at the booking conversation. The more you know before the trial, the better the result — and the more professional you appear.</p>
+<p class="template-line">✓ Bride&#x27;s full name:</p>
+<p class="template-line">✓ Wedding date:</p>
+<p class="template-line">✓ Ceremony start time:</p>
+<p class="template-line">✓ Getting-ready venue / address:</p>
+<p class="template-line">✓ Photographer&#x27;s name (for tagging and coordination):</p>
+<p class="template-line">✓ Wedding planner (if applicable):</p>
+<p class="template-line">✓ How did you hear about [Studio Name]?</p>
+<h3>✓ BRIDAL PARTY BREAKDOWN:</h3>
+<p class="template-line">✓ Number of people needing hair: ___</p>
+<p class="template-line">✓ Number of people needing makeup: ___</p>
+<p class="template-line">✓ Number needing both: ___</p>
+<p class="template-line">✓ Names and roles of each person in the party (e.g., Bride, MOH, 3 x Bridesmaids,</p>
+<p>Mother of Bride):</p>
+<p class="template-line">✓ Any flower girls or junior bridesmaids?</p>
+<h3>✓ BRIDAL LOOK VISION:</h3>
+<p class="template-line">✓ How would you describe your dream bridal look in 3 words?</p>
+<p class="template-line">✓ Inspo photos: (link to Pinterest board or attach)</p>
+<p class="template-line">✓ Any looks you&#x27;ve seen that you definitely don&#x27;t want?</p>
+<h3>✓ HAIR:</h3>
+<p class="template-line">✓ Current hair length and texture:</p>
+<p class="template-line">✓ Extensions (currently using / planning to use / open to discussing)?</p>
+<p class="template-line">✓ Have you had a hair trial before?</p>
+<p class="template-line">✓ Any concerns about your hair for the wedding day?</p>
+<h3>✓ MAKEUP:</h3>
+<p class="template-line">✓ Skin type: Dry / Normal / Oily / Combination</p>
+<p class="template-line">✓ Any skin conditions or sensitivities I should know about? (rosacea, eczema,</p>
+<p>allergies)</p>
+<p class="template-line">✓ Foundation shade (if known):</p>
+<p class="template-line">✓ Any makeup you&#x27;ve tried that didn&#x27;t work for you?</p></div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>✓ PRACTICAL:</h3>
+<p class="template-line">✓ Preferred artist arrival time:</p>
+<p class="template-line">✓ Is there a getting-ready space with natural light?</p>
+<p class="template-line">✓ Will there be a videographer? (affects product choices)</p>
+<p class="template-line">✓ Do you have a wedding morning schedule or timeline yet?</p>
+<p class="template-line">✓ Is there anything else I should know?</p>
+<p class="template-line">✓ [A completed questionnaire means the trial is productive from minute one — no</p>
+<p>time wasted on discovery that could be used on the look itself.]</p>
+<h3>SECTION 2: TRIAL RUN FEEDBACK FORM</h3>
+<p>Post-Trial Sign-Off Form</p>
+<h3>✓ APPROVED BRIDAL LOOK — [BRIDE&#x27;S NAME] — [DATE]</h3>
+<p class="template-line">✓</p>
+<h3>✓ HAIR:</h3>
+<p class="template-line">✓ Style: [description]:</p>
+<p class="template-line">✓ Parting:</p>
+<p class="template-line">✓ Volume/placement notes:</p>
+<p class="template-line">✓ Any specific adjustments for wedding day:</p>
+<p class="template-line">✓</p>
+<h3>✓ MAKEUP:</h3>
+<p class="template-line">✓ Foundation/skin prep notes:</p>
+<p class="template-line">✓ Eye look:</p>
+<p class="template-line">✓ Brow:</p>
+<p class="template-line">✓ Lip colour (shade + product):</p>
+<p class="template-line">✓ Highlight/contour notes:</p>
+<p class="template-line">✓ Setting method:</p>
+<p class="template-line">✓ Any specific adjustments for wedding day:</p>
+<p class="template-line">✓</p>
+<h3>✓ TIMING:</h3>
+<p class="template-line">✓ Hair session duration: ___ minutes</p>
+<p class="template-line">✓ Makeup session duration: ___ minutes</p>
+<p class="template-line">✓ Total time for bride: ___ minutes</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ PRODUCTS USED (note anything bride may react to or request):</p>
+<p class="template-line">✓</p>
+<div class="section-label">✓ BOTH PARTIES CONFIRM THIS LOOK AND AGREE TO THESE NOTES:</div>
+<p class="template-line">✓ Bride signature: _________________________ Date: ___</p>
+<p class="template-line">✓ Artist signature: _________________________ Date: ___</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ [This form protects both parties. A signed trial sign-off means no &#x27;that&#x27;s not what I</p></div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>wanted&#x27; on the wedding morning. Build it into every trial.&#x27;]</p>
+<h3>SECTION 3: WEDDING MORNING ARTIST</h3>
+<h3>CHECKLIST</h3>
+<p>Pre-Wedding Night Kit Check</p>
+<h3>✓ MAKEUP KIT:</h3>
+<p class="template-line">✓ Foundation: exact shade match(es) for each client in party</p>
+<p class="template-line">✓ Concealers: colour-correctors, under-eye, blemish</p>
+<p class="template-line">✓ Contouring: cream and powder options</p>
+<p class="template-line">✓ Eyes: full palette — neutrals, mid-tones, darks, shimmer</p>
+<p class="template-line">✓ Brows: pomade, pencil, gel, scissors, tweezers</p>
+<p class="template-line">✓ Lips: bride&#x27;s approved shade (at least 2 backups), lip liner, gloss</p>
+<p class="template-line">✓ Setting: setting spray x2, loose powder, blotting papers</p>
+<p class="template-line">✓ Lashes: bride&#x27;s approved style x2, party lash options, glue x2</p>
+<h3>✓ HAIR KIT:</h3>
+<p class="template-line">✓ Heat tools: straightener, curling wand(s) x2 sizes, tongs</p>
+<p class="template-line">✓ Pins and grips: bobby pins (x50+), U-pins, kirby grips — all colours</p>
+<p class="template-line">✓ Elastics: multiple sizes and colours</p>
+<p class="template-line">✓ Products: volumising spray, texture spray, shine spray, hairspray (x2), dry shampoo</p>
+<p class="template-line">✓ Accessories: any pre-agreed hair accessories (confirm with bride)</p>
+<h3>✓ HYGIENE &amp; PROFESSIONAL:</h3>
+<p class="template-line">✓ Brush cleaner + sanitising spray</p>
+<p class="template-line">✓ Disposable applicators (wands, sponges, spatulas)</p>
+<p class="template-line">✓ Hand sanitiser</p>
+<p class="template-line">✓ Face masks if preferred</p>
+<p class="template-line">✓ Palette knives</p>
+<h3>✓ ADMIN:</h3>
+<p class="template-line">✓ Signed contract copy</p>
+<p class="template-line">✓ Balance due reminder (if applicable)</p>
+<p class="template-line">✓ Shot list of looks (from trial sign-off form)</p>
+<p class="template-line">✓ Photographer/planner contact numbers</p>
+<p class="template-line">✓ Emergency contact for bride</p>
+<p class="template-line">✓ [Review this checklist the night before every wedding. The item you forget will be</p>
+<p>the one you need.]</p></div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Bridal Hair &amp; Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>SECTION 4: VENDOR CO-MARKETING</h3>
+<h3>PROPOSAL</h3>
+<p>Photographer + Bridal Artist Styled Shoot Proposal</p>
+<div class="section-label">SUBJECT A collaboration idea — [Your Name] + [Photographer Name]</div>
+<p>Hi [Name], I&#x27;ve been thinking about our shared audience and I wanted to put a specific idea on the table. What I&#x27;m proposing: a styled bridal shoot collaboration. I handle all hair and makeup styling for [X] looks, you photograph them. We both walk away with a</p>
+<p>stunning portfolio set, co-branded marketing material, and a genuine referral relationship built on working together. Concept I have in mind: [brief description — venue, mood, season, number of looks, any dress/florist already in mind].</p>
+<p>What I can offer: complete hair and makeup styling, portfolio usage rights, credit in all publications, and a genuine referral partner who actively recommends you to every bride I book. What I&#x27;m looking for: your photography talent and creative vision.</p>
+<p>Would a quick call to explore this work for you? [Your Name] | [Studio Name] | [Phone] | [Instagram]</p></div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span class="page-number">06</span></div>
+</section></main></body></html>

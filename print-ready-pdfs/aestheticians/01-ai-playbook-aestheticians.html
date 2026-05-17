@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Aestheticians Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Aestheticians Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>MED SPA AESTHETICIAN</h3>
+<p>The AI Playbook for Med Spa Aestheticians Fill your books with returning clients, upsell treatments with confidence, build your personal</p>
+<div class="section-label">brand, and create a client experience that drives referrals</div>
+<h3>INTRODUCTION</h3>
+<p>The aestheticians with full appointment books aren&#x27;t just the most skilled. They follow up after every treatment to check how the skin is responding. They reach out before the</p>
+<div class="section-label">client even thinks about rebooking. They recommend the right next treatment at exactly</div>
+<p>the right time. They build a personal brand on Instagram that makes clients feel like they already know and trust them before they ever book. And they create a client experience</p>
+<p>so consistently excellent that referrals happen naturally. This playbook gives you 7 chapters covering every high-leverage communication scenario — with copy-paste AI prompts throughout.</p>
+<h3>CHAPTER 1: NEW CLIENT CONVERSION &amp;</h3>
+<h3>CONSULTATION</h3>
+<p>The New Client Inquiry Response System First impressions set the tone for the entire client relationship. A warm, specific, knowledgeable response to a new client inquiry — whether via DM, email, or phone —</p>
+<p>converts at dramatically higher rates than a generic &#x27;we&#x27;d love to help you!&#x27;</p>
+<h3>PROMPT — NEW CLIENT INQUIRY RESPONSE</h3>
+<p class="template-line">Write a warm, professional inquiry response email for my aesthetician practice. The potential client [Name] reached out about [treatment type — e.g., HydraFacial / chemical peel / Botox consult / microneedling / lash lift]. They mentioned: [paste key</p>
+<p>details — their skin concern, what they&#x27;re hoping to achieve, any questions they have]. I want to: (1) acknowledge their specific concern and show I understand it, (2) briefly explain how [treatment] addresses it, (3) mention what a consultation looks</p>
+<p>like and what they can expect, (4) invite them to book. Warm and knowledgeable, under 200 words. Sign as [Your Name], [Studio/Spa Name].</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PROMPT — CONSULTATION CONFIRMATION EMAIL</h3>
+<p class="template-line">Write a consultation confirmation email for my aesthetician practice. Client [Name], consultation on [date] at [time] at [address]. I want to: (1) confirm the appointment and build excitement, (2) tell them how to prepare (no active ingredients night</p>
+<p>before, clean skin, no makeup if possible), (3) briefly describe what will happen at the consultation — skin analysis, treatment discussion, personalised plan, (4) let them know there&#x27;s no pressure and no commitment at the consultation. Warm and</p>
+<p>reassuring. Under 200 words. Sign as [Your Name], [Studio/Spa Name]. Post-Consultation Conversion The consultation that doesn&#x27;t convert in 48 hours rarely converts. A specific, personalised follow-up that summarises what you discussed and makes the next step</p>
+<p>clear closes at dramatically higher rates than waiting for the client to decide on their own.</p>
+<h3>PROMPT — POST-CONSULTATION FOLLOW-UP</h3>
+<p class="template-line">Write a post-consultation follow-up email for my aesthetician practice. Client [Name], we discussed: [treatment plan — e.g., a series of 3 HydraFacials + a chemical peel, starting with [treatment]]. Their main skin concern: [concern]. I want to: (1) recap the</p>
+<p>personalised plan we discussed, (2) explain the expected outcome in plain language, (3) present the investment and next step clearly. Warm and confident. Under 200 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>CHAPTER 2: REBOOKING &amp; TREATMENT</h3>
+<h3>SERIES SYSTEM</h3>
+<p>The Post-Treatment Follow-Up &amp; Rebooking System The single most effective thing an aesthetician can do for their business is follow up 3-5 days after every treatment. Most don&#x27;t. The ones who do have the fullest books,</p>
+<p>because clients feel cared for — and they rebook before they&#x27;ve even finished healing.</p>
+<h3>PROMPT — POST-TREATMENT CHECK-IN (3-5 DAYS)</h3>
+<p class="template-line">Write a post-treatment check-in message for my aesthetician practice. Client [Name] had [treatment type] on [date]. I want to: (1) check in on how their skin is responding, (2) ask about any specific side effects they&#x27;re noticing, (3) give one</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>helpful tip relevant to where they&#x27;ll be in their healing, (4) plant the seed for their next appointment without being pushy. Warm and caring. Under 150 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>PROMPT — REBOOKING REMINDER (4-6 WEEKS)</h3>
+<p class="template-line">Write a rebooking reminder message for my aesthetician practice. Client [Name] had [treatment] on [date]. Their recommended rebooking window is [X] weeks. I want to: (1) reference their treatment specifically, (2) mention that now is the optimal</p>
+<p>time to book their next session for best results, (3) make it easy to book. Brief and warm. Under 100 words. Sign as [Your Name], [Studio/Spa Name]. Treatment Series Selling Clients who commit to a treatment series achieve dramatically better results and</p>
+<p>generate more revenue per client. The conversation about a series is best had immediately after the first treatment — when the client is excited and you&#x27;ve just demonstrated your value.</p>
+<h3>PROMPT — TREATMENT SERIES RECOMMENDATION</h3>
+<p>Write an email recommending a treatment series to a client after their first session.</p>
+<div class="section-label">Client [Name] just had their first [treatment]. Their skin concern: [concern]. I want to:</div>
+<p>(1) compliment their skin&#x27;s response to today&#x27;s treatment, (2) explain why a series of [X] sessions produces significantly better results than a single treatment, (3) present the series investment vs. individual session pricing, (4) offer to book all sessions</p>
+<p>now to guarantee availability. Warm and educational. Under 200 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>CHAPTER 3: UPSELLING &amp; ADD-ON</h3>
+<h3>TREATMENTS</h3>
+<p>Introducing New Treatments to Existing Clients Existing clients are your warmest possible audience for new or complementary treatments. They already trust you. The key is framing the recommendation as serving their skincare goals — not selling a service.</p>
+<h3>PROMPT — COMPLEMENTARY TREATMENT INTRODUCTION</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Write an email introducing a complementary treatment to an existing client. Client [Name] regularly books [their usual treatment]. I want to introduce [new treatment] as a complement because [specific skin reason — e.g., &#x27;it addresses the texture</p>
+<p>concerns we&#x27;ve discussed while your HydraFacial handles congestion&#x27;]. I want to: (1) reference their skin journey and goals, (2) explain the new treatment in plain language, (3) invite them to add it to their next appointment or book a standalone</p>
+<p>session. Not salesy — framed as genuinely serving their goals. Under 200 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>PROMPT — SEASONAL TREATMENT CAMPAIGN</h3>
+<p class="template-line">Write a seasonal treatment campaign email for my aesthetician practice. Season/occasion: [e.g., summer skin prep / pre-event glow / winter hydration / post- summer repair]. Featured treatments: [list 2-3]. I want to: (1) connect the season to</p>
+<p>a specific skin concern it causes, (2) present the treatments as the solution, (3) create mild urgency around limited booking availability. Professional and helpful. Under 200 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>CHAPTER 4: PERSONAL BRAND &amp; INSTAGRAM</h3>
+<h3>STRATEGY</h3>
+<div class="section-label">Content Pillars That Build Client Trust and Book Appointments</div>
+<p>Instagram is where most new aesthetician clients discover and vet their treatment provider. The accounts that consistently drive bookings post across 4 pillars: education</p>
+<p>(skin tips, treatment explanations, myth-busting), transformation (before/afters, results), personal brand (your face, your process, your voice), and social proof (reviews, client reactions).</p>
+<h3>PROMPT — INSTAGRAM CAPTION BATCH</h3>
+<p>Write 5 Instagram captions for an aesthetician at a med spa. Topics: (1) a common skin myth you want to debunk — specific and backed by your expertise, (2) what clients with [skin type/concern — e.g., congested skin / ageing skin / sensitive skin]</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>should know before booking any treatment, (3) a before/after result story (anonymised, describe the transformation in words if you can&#x27;t show the photo), (4) a behind-the-scenes look at your consultation process — what you look for and why,</p>
+<p>(5) a direct booking CTA with a limited availability hook. Each under 150 words, warm and authoritative. Spa name: [Spa/Studio Name].</p>
+<h3>PROMPT — EDUCATIONAL REEL / TIKTOK CONCEPTS</h3>
+<p>Write 5 concepts for Instagram Reels or TikTok videos for an aesthetician. Each should include: (1) a hook line that stops the scroll, (2) the video content description, (3) the caption. Topics: what happens to your skin if you skip SPF for a year, the</p>
+<p>difference between a HydraFacial and a regular facial, debunking a popular skincare trend, a day in the life of an aesthetician, one product clients waste money on vs. the treatment that actually fixes the issue. Each 15-60 seconds. Spa: [Spa/Studio Name].</p>
+<h3>CHAPTER 5: CLIENT RETENTION &amp; VIP</h3>
+<h3>LOYALTY</h3>
+<p>The VIP Client Experience Clients who feel recognised, valued, and specially cared for stay longer, spend more, and refer more. A VIP system doesn&#x27;t need to be expensive — it needs to feel personal.</p>
+<h3>PROMPT — VIP CLIENT MILESTONE EMAIL</h3>
+<p class="template-line">Write a VIP client milestone email for my aesthetician practice. Client [Name] has been a client for [timeframe] / has completed [X] treatments. I want to: (1) acknowledge this milestone personally, (2) express genuine appreciation, (3) offer a</p>
+<p>small VIP gesture — [e.g., a complimentary add-on at their next visit / priority</p>
+<div class="section-label">booking access / a product sample]. Warm and genuine — not corporate. Under</div>
+<p>150 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>PROMPT — LAPSED CLIENT WIN-BACK EMAIL</h3>
+<p class="template-line">Write a win-back email for a lapsed client. Client [Name] last visited [timeframe] ago for [treatment]. I want to: (1) acknowledge the time that&#x27;s passed without blame, (2) mention what might have changed in their skin since we last saw them, (3) offer a</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>gentle incentive to return — [e.g., complimentary skin analysis / a priority booking slot]. Warm and non-pushy. Under 150 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>CHAPTER 6: REVIEWS &amp; REPUTATION</h3>
+<p>The Review Generation System</p>
+<h3>PROMPT — POST-TREATMENT REVIEW REQUEST</h3>
+<p class="template-line">Write a post-treatment review request message for my aesthetician practice. Client [Name] just had [treatment]. Send 3-5 days after when they can see initial results. I want to: (1) check in on how they&#x27;re feeling about their skin, (2) make a warm</p>
+<p>personal ask for a Google review, (3) include the direct link. Genuine and non- automated. Under 120 words. Sign as [Your Name], [Studio/Spa Name].</p>
+<h3>PROMPT — POSITIVE REVIEW RESPONSE</h3>
+<p class="template-line">Write a warm, specific response to a 5-star Google review for my aesthetician practice. The reviewer said: [paste their review]. Respond personally using their name, reference one specific detail, express genuine thanks, mention [Studio/Spa</p>
+<p>Name] naturally for SEO. Under 80 words.</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: New Client Conversion System</h3>
+<p class="template-line">• Build your new client inquiry response template using Chapter 1 prompt</p>
+<p class="template-line">• Write your post-consultation follow-up email</p>
+<p class="template-line">• Set a reminder: follow up within 24 hours of every consultation</p>
+<h3>Week 2: Rebooking System</h3>
+<p class="template-line">• Build your post-treatment check-in message (3-5 days) for your top 3 most-</p>
+<p>booked treatments</p>
+<p class="template-line">• Write your rebooking reminder for each treatment&#x27;s optimal window</p>
+<p class="template-line">• Identify past clients overdue for rebooking — send the Chapter 2 reminder to 10</p>
+<p>of them this week</p>
+<h3>Week 3: Instagram Content Batch</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Use Chapter 4 Instagram prompt to batch 10 captions in one session</p>
+<p class="template-line">• Plan 3 Reels using the Chapter 4 Reel concept prompt</p>
+<p class="template-line">• Schedule 4-5 posts per week for the next 3 weeks</p>
+<h3>Week 4: Review &amp; VIP System</h3>
+<p class="template-line">• Identify clients who haven&#x27;t reviewed — send personal Google review requests</p>
+<p class="template-line">• Identify your top 5 VIP clients — send the Chapter 5 milestone email</p>
+<p class="template-line">• Set post-treatment review request as a standard step 3-5 days after every</p>
+<p>appointment</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div></section></main></body></html>

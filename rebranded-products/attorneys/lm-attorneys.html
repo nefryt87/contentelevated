@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Free</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Lead Magnet</p>
+  <h1>Free</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Attorneys</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Free</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><h3>ATTORNEY &amp; LAW FIRM</h3>
+<p>Free Mini Guide 5 practice development strategies that convert more consultations and build a referral engine Note: All communication strategies should be reviewed for compliance with your state bar&#x27;s advertising and</p>
+<p>solicitation rules before use. The attorneys building the most sustainable practices master communication as rigorously as they master law. The Post-Consultation Conversion Email</p>
+<p>The consultation that doesn&#x27;t convert in the first 48 hours rarely converts at all. The single highest-ROI communication habit for attorneys is a personalized same-day follow-up after every consultation.</p>
+<p> Summarize their legal situation in their own words (plain language, not legal jargon)  Outline your recommended approach in 2-3 clear sentences  Propose one specific, frictionless next step — not a vague &#x27;let&#x27;s think about it&#x27;</p>
+<p class="template-line">Write a post-consultation follow-up email for a [practice area] attorney. The prospect [Name] came in about [brief situation]. Summarize their situation in plain language, outline the recommended legal approach in 2-3 sentences, and propose a</p>
+<p>clear next step to engage services. Professional but warm. Compliance-review-ready. Under 200 words. Sign as [Your Name], [Firm Name]. The CPA Referral Partnership One CPA relationship maintained well can send 5-15 qualified referrals per year. The difference between a</p>
+<p>CPA who refers occasionally and one who refers consistently is a monthly value touch that keeps you top of mind.  Professional introduction: brief, focused on value for their clients</p>
+<p> Monthly value touch: a relevant legal update, planning resource, or mutual referral opportunity  Post-referral thank-you: personal, within 24 hours, every single time Write a monthly value touch email from a [practice area] attorney to a CPA named</p>
+<p>[Name] at [Firm]. Include one brief legal insight relevant to their clients (e.g., a recent law change, an estate planning consideration, a business formation tip). Professional, useful, under 150 words. Review for bar compliance before sending.</p>
+<p>The Matter Close-Out Referral System The best time to ask for a referral from a satisfied client is 30 days after their matter resolves — when the outcome is fresh and their trust is highest. Most attorneys never send this message.</p></div>
+  <div class="footer"><span>Free</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><p> Acknowledge what they went through and what was accomplished  Introduce other practice areas where you can help them in the future  Make a warm, personal referral ask — not a sales pitch Write a post-matter close-out email for a [practice area] attorney to client [Name]</p>
+<p>whose [matter type] was just resolved successfully. Thank them for their trust, briefly mention other practice areas you handle, and make a gentle personal referral ask. Warm, not salesy. Under 150 words. Review for bar compliance.</p>
+<p>Want the complete system? The Attorney Growth Bundle includes the full AI Playbook, 90-Day Calendar, 25 Templates + Brand Kit. Get it at [your-link] — $197</p></div>
+  <div class="footer"><span>Free</span><span class="page-number">04</span></div>
+</section></main></body></html>

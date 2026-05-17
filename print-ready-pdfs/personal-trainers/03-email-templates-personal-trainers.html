@@ -1,0 +1,112 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Personal Trainers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Personal Trainers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PERSONAL TRAINER</h3>
+<h3>EMAIL &amp; FOLLOW-UP TEMPLATE</h3>
+<h3>PACK</h3>
+<p>22 done-for-you templates for every stage of the client journey Lead nurture • Onboarding • Retention • Win-back • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, goal, and your business info.</p>
+<p class="template-line">• Keep the tone conversational — these work because they sound human,</p>
+<p>not corporate.</p>
+<p class="template-line">• Personalize the first line using AI: &#x27;Add a personalized opening line for</p>
+<p>[name] who wants to [goal].&#x27;</p>
+<p class="template-line">• Text message versions: most of these work as SMS or DMs — just shorten</p>
+<p>to 2–3 sentences.</p>
+<p class="template-line">• Use your CRM or Gmail templates to save the top performers for reuse.</p>
+<h3>SECTION 1: NEW LEAD FOLLOW-UP</h3>
+<h3>SEQUENCE</h3>
+<h3>Email 1 — Same Day (Warm Response)</h3>
+<div class="section-label">SUBJECT Your fitness inquiry — next steps from [Your Name]</div>
+<p>BODY Hi [First Name], Thanks for reaching out — I love that you&#x27;re taking this step. I&#x27;d love to learn more about your goals and see if we&#x27;d be a good fit to work together. Here&#x27;s what I suggest:</p>
+<p>Let&#x27;s jump on a free 15-minute discovery call — no pressure, just a conversation about where you are, where you want to be, and whether I can help you get there. Here&#x27;s my booking link: [Link] — pick whatever time works for you. Talk soon,</p>
+<p>[Your Name] | [Business Name] | [Phone]</p>
+<h3>Email 2 — Day 2 (Value Add)</h3>
+<div class="section-label">SUBJECT One thing that makes the biggest difference for [goal]...</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Hi [First Name], While you&#x27;re thinking things over, I wanted to share something that comes up with almost every client I work with who has your goal: [Specific insight — e.g., &#x27;Most people trying to lose weight are</p>
+<p>overcomplicating it. The single biggest lever isn&#x27;t your workout — it&#x27;s your protein intake. When we get that right, everything else gets easier.&#x27;] This is the kind of thing we&#x27;d talk about in our first session together.</p>
+<p>Still happy to set up that free call if you&#x27;re interested — [link]. [Your Name]</p>
+<h3>Email 3 — Day 5 (Social Proof)</h3>
+<div class="section-label">SUBJECT What [type of client similar to them] achieved in 12 weeks</div>
+<p>BODY Hi [First Name], I wanted to share a quick story that might resonate with you. [Client story — anonymized: e.g., &#x27;One of my clients came to me in a similar situation — [relatable context]. 12 weeks later, [specific result]. What made the</p>
+<p>difference wasn&#x27;t willpower — it was having the right plan and someone in their corner.&#x27;] I&#x27;d love to help you write a similar story. Free discovery call is still open if you&#x27;d like to chat: [link]. [Your Name]</p>
+<h3>Email 4 — Day 10 (Objection Handler)</h3>
+<div class="section-label">SUBJECT Re: Getting started — what&#x27;s holding you back?</div>
+<p>BODY Hi [First Name], I&#x27;ll keep this short — I know life gets busy. If it&#x27;s the investment: I offer [flexible payment options / a trial session / a short starter package] so you can experience the coaching before committing to a full program.</p>
+<p>If it&#x27;s the time: most of my clients train [X] times per week for [X] minutes. We build it around your schedule. If something else is holding you back, just reply and tell me — I&#x27;d rather know than guess. [Your Name]</p>
+<h3>Email 5 — Day 21 (Long Game)</h3>
+<h3>SUBJECT Keeping your spot open, [First Name]</h3>
+<p>BODY Hi [First Name], I haven&#x27;t heard back, so I&#x27;ll assume the timing isn&#x27;t right — and that&#x27;s completely okay. When you&#x27;re ready to get started, I&#x27;ll still be here. Just reply to this email and we can pick up where we left off.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>In the meantime, feel free to follow me on [Instagram/TikTok] — I post free tips every week. Rooting for you regardless. [Your Name]</p>
+<h3>SECTION 2: ONBOARDING &amp; TRIAL SESSION</h3>
+<p>Pre-Session Welcome Email</p>
+<h3>SUBJECT You&#x27;re booked — here&#x27;s what to expect</h3>
+<p>BODY Hi [First Name], So excited to meet you for your [trial session / first session] on [Date] at [Time]! A few things to help you prepare:</p>
+<p class="template-line">- Wear comfortable workout clothes and bring water</p>
+<p class="template-line">- Eat a light meal or snack 1–2 hours before (don&#x27;t train completely fasted)</p>
+<p class="template-line">- Come ready to tell me about your goals, any injuries or limitations, and what&#x27;s</p>
+<p>worked or hasn&#x27;t worked for you in the past This first session is about learning how you move and what you need — not about pushing you to your limit. See you soon! [Your Name] Post-Trial Session (Conversion Email)</p>
+<h3>SUBJECT Your personalized plan — [First Name]</h3>
+<p>BODY Hi [First Name], It was great working with you today! Here&#x27;s my honest assessment: Your strengths: [2 genuine strengths observed] Key areas to develop: [1–2 focus areas] My recommendation: [Brief 12-week plan overview]</p>
+<p>If you&#x27;re ready to commit to this, here&#x27;s what I&#x27;d suggest as a starting point: [Package name, sessions/week, investment]. I genuinely believe you can [specific goal] in [timeframe] — I&#x27;ve seen it happen</p>
+<p>with clients who had a similar starting point. But it starts with a decision. Reply here or book your first official session at: [link] Proud of you for showing up today. [Your Name]</p>
+<h3>SECTION 3: CLIENT RETENTION &amp; MILESTONE</h3>
+<h3>EMAILS</h3>
+<p>Weekly Check-In</p>
+<div class="section-label">SUBJECT Quick check-in — how are you feeling, [First Name]?</div>
+<p>BODY Hi [First Name], Just checking in between sessions — how has your week been? Specifically:</p>
+<p class="template-line">- How&#x27;s your energy and sleep?</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Did you get your [homework workout / nutrition tracking / steps goal] done?</p>
+<p class="template-line">- Anything feeling off or any areas you want to focus on in our next session?</p>
+<p>Even a quick &#x27;all good&#x27; helps me tailor our next session to where you actually are. [Your Name] Milestone Celebration</p>
+<div class="section-label">SUBJECT Big moment, [First Name] — I have to say something</div>
+<p>BODY Hi [First Name], I just had to reach out because [milestone — e.g., &#x27;you hit your first unassisted pull-up today / you&#x27;ve officially lost 10 lbs / you just completed your 12th session&#x27;].</p>
+<p>I know it might not feel like a big deal from the inside — but from where I&#x27;m standing, it absolutely is. You showed up, you put in the work, and this is the result. [Specific personal note about their journey]</p>
+<p>This is just the beginning. Can&#x27;t wait to see what the next phase looks like. [Your Name] Plateau Check-In</p>
+<div class="section-label">SUBJECT Let&#x27;s talk about your progress — I have some thoughts</div>
+<p>BODY Hi [First Name], I&#x27;ve been looking at your recent sessions and I want to be proactive about something. Your progress has slowed down a bit recently — and I want you to know that&#x27;s completely normal and expected. It&#x27;s not a sign that anything is wrong.</p>
+<p>What it usually means: your body has adapted to your current stimulus. The fix is a program adjustment, not more willpower. Let&#x27;s talk about this in our next session. I have 2–3 ideas I want to try with you. You&#x27;re doing better than you think. [Your Name]</p>
+<p>Package Renewal Email</p>
+<div class="section-label">SUBJECT Your package ends soon — let&#x27;s talk about what&#x27;s next</div>
+<p>BODY Hi [First Name], Your current package wraps up in [X weeks] — which feels like a good moment to zoom out and look at how far you&#x27;ve come. [Progress recap: 2–3 specific wins] Based on where you are now and where you want to go, here&#x27;s what I&#x27;d</p>
+<p>recommend for your next phase: [Next package / program recommendation]. Continuing clients get [priority scheduling / same rate / X bonus sessions — whatever applies]. Let&#x27;s lock in your spot before my schedule fills up. Reply here or grab a time at: [link].</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>[Your Name]</p>
+<h3>SECTION 4: WIN-BACK &amp; REFERRAL EMAILS</h3>
+<p>Win-Back — Email 1</p>
+<div class="section-label">SUBJECT Hey [First Name] — been thinking about you</div>
+<p>BODY Hi [First Name], It&#x27;s been a little while and I just wanted to check in — no agenda, just genuinely wondering how you&#x27;re doing. If life got in the way of training (it does for all of us), I completely understand.</p>
+<p>When you&#x27;re ready to get back on track, I&#x27;m here. Even if you just want to chat about where you are fitness-wise and figure out a new plan, I&#x27;m happy to do that at no cost. [Your Name] Win-Back — Email 2 (Re-engagement)</p>
+<div class="section-label">SUBJECT Something that might help you get back on track</div>
+<p>BODY Hi [First Name], I wanted to share something that&#x27;s been working really well for clients who took a break and came back: [Tip or program update — e.g., &#x27;I&#x27;ve been using a 4-week re-entry program</p>
+<p>that&#x27;s specifically designed to rebuild momentum without the soreness and overwhelm of starting from scratch.&#x27;] If you&#x27;re open to it, I&#x27;d love to get you back in for a session and build a fresh plan around where you are now. [Your Name]</p>
+<h3>Referral Request</h3>
+<h3>SUBJECT A quick favour — means a lot</h3>
+<p>BODY Hi [First Name], Working with you has been genuinely one of the highlights of my week — thank you for trusting me with your goals. If you know anyone who&#x27;s been thinking about getting started with a trainer —</p>
+<p>a friend, partner, or coworker — I&#x27;d be grateful for the introduction. I promise to take care of anyone you send my way exactly the same way I take care of you. And as a thank-you: refer someone who signs up and I&#x27;ll give you [X free</p>
+<p>session / discount on your next package — whatever you offer]. Thank you, [Your Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section></main></body></html>

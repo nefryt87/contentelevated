@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nail Technicians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>NAIL TECHNICIAN</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, playful-premium typography, 8 Canva template strategies, and a 7-day</p>
+<h3>brand launch checklist</h3>
+<h3>WHY YOUR BRAND ATTRACTS YOUR IDEAL</h3>
+<h3>CLIENT</h3>
+<p>Nail clients choose their tech based on Instagram before they ever DM. Your brand — your palette, your typography, how your feed grid looks — tells a potential client within 5 seconds whether you are the right fit for them. A distinctive, consistent visual identity</p>
+<p>attracts the clients who value your work, tip well, and come back every 2-3 weeks. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for nail technicians.</p>
+<h3>PALETTE 1: LUXE FEMININE</h3>
+<p>For nail techs with a luxe, feminine, editorial aesthetic. Think deep plum, champagne, soft blush, and the feel of a high-end nail salon.</p>
+<h3>DEEP PLUM</h3>
+<h3>#2A1A3A</h3>
+<h3>CHAMPAGNE</h3>
+<h3>#C9922A</h3>
+<h3>SOFT BLUSH</h3>
+<h3>#ECC8D8</h3>
+<h3>CREAM</h3>
+<h3>#FDF0F8</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Plum (#2A1A3A): logo, headlines, primary text — premium and distinctive</p>
+<p class="template-line">• Champagne (#C9922A): CTAs, booking buttons, highlight elements, price</p>
+<p>presentation</p>
+<p class="template-line">• Soft Blush (#ECC8D8): background tint for graphics, story templates, highlight</p>
+<p>covers</p>
+<p class="template-line">• Cream (#FDF0F8): all page and email backgrounds — soft and premium</p>
+<h3>Typography</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>HEADINGS: Cormorant Garamond — editorial luxury serif. Nail art and beauty</p>
+<h3>content loves this font.</h3>
+<p>BODY: Jost — clean geometric sans. Reads beautifully across Instagram, email, and stories. ACCENT: Pinyon Script — for studio name in logos, taglines, seasonal campaign titles. Use sparingly.</p>
+<h3>PALETTE 2: BRIGHT PLAYFUL</h3>
+<p>For nail techs with a bold, colourful, maximalist aesthetic — the personality- forward feed that attracts clients who want fun, creative, expressive nails.</p>
+<h3>HOT CORAL</h3>
+<h3>#E8522A</h3>
+<h3>COBALT</h3>
+<h3>#2A4AE8</h3>
+<h3>WARM WHITE</h3>
+<h3>#FFF8F0</h3>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Hot Coral (#E8522A): primary accent — energetic, fun, memorable</p>
+<p class="template-line">• Cobalt (#2A4AE8): secondary accent — bold contrast, seasonal campaign</p>
+<p>graphics</p>
+<p class="template-line">• Warm White (#FFF8F0): all backgrounds — warmer than white, keeps the</p>
+<h3>palette from feeling harsh</h3>
+<p class="template-line">• Charcoal (#2A2A2A): all primary text — high contrast, readable across all</p>
+<p>backgrounds</p>
+<h3>Typography</h3>
+<p>HEADINGS: Raleway Bold — modern and playful. Works for bold nail art content. BODY: Nunito — friendly rounded sans. Warm and approachable, perfect for a fun nail</p>
+<h3>brand.</h3>
+<p>ACCENT: Raleway ExtraBold ALL CAPS — for &#x27;BOOKING OPEN&#x27;, seasonal campaign titles, flash announcements.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Nail Art Reveal Post</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;nail art Instagram post&#x27; or &#x27;beauty close-up template&#x27;. A close-up nail photo fills the frame. Minimal text overlay: your studio name small at the bottom. Keep it clean — the nail art is the hero. Create 10 of these with consistent overlay style and your grid will</p>
+<p>look immediately professional and cohesive.</p>
+<h3>Template 2: Before &amp; After Transformation</h3>
+<p>Search &#x27;before after beauty post&#x27; or &#x27;nail transformation Instagram&#x27;. Two-panel layout. Left: nails before (grown out, damaged, plain). Right: fresh set after. Your studio name bottom corner. With client permission. These generate more DMs than any other post type for nail techs.</p>
+<h3>Template 3: Seasonal Campaign Graphic</h3>
+<p>Search &#x27;seasonal beauty announcement&#x27; or &#x27;nail art campaign post&#x27;. Bold, colourful. &#x27;[Season] Nails Are Here&#x27; in your largest heading font. Preview of 2-3 designs. Booking info. Post 1-2 weeks before the season and update monthly. These drive more bookings</p>
+<p>than any other single post type.</p>
+<h3>Template 4: Instagram Story — Booking Open</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;appointment open Instagram story&#x27;. Vertical. Your best nail art photo as background. Semi-transparent overlay. &#x27;BOOKING [MONTH]&#x27; in bold. Your DM or link. Post every time you open new slots — at least weekly during peak season.</p>
+<h3>Template 5: TikTok / Reel Cover Frame</h3>
+<p>Search &#x27;TikTok thumbnail beauty&#x27; or &#x27;Reel cover template&#x27;. For the first frame of every video: your key message in large text (&#x27;Watch me do this nail art&#x27;, &#x27;Gel vs acrylic — the truth&#x27;). Your studio name small at bottom. Brand colour background. Makes people click</p>
+<p>instead of scroll past.</p>
+<h3>Template 6: Nail Care Education Graphic</h3>
+<p>Search &#x27;beauty tip infographic&#x27; or &#x27;nail care tips post&#x27;. &#x27;5 Tips for Longer Lasting Gel&#x27; or &#x27;Nail Health Guide&#x27;. One tip per carousel slide or all 5 on one graphic. Your name and</p>
+<div class="section-label">booking link. These save at very high rates — clients bookmark them and share them</div>
+<p>with friends.</p>
+<h3>Template 7: Price List / Service Menu</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nail Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;beauty price list Instagram&#x27; or &#x27;salon services menu&#x27;. Clean, organised layout: service name, brief description, price. Your studio name at top. Style and aesthetic consistent with your palette. Share in stories, feed, and booking highlights. Reduces</p>
+<p>&#x27;how much?&#x27; DMs significantly.</p>
+<h3>Template 8: Instagram Highlight Covers</h3>
+<p>Search &#x27;highlight cover nails&#x27; or &#x27;nail studio Instagram icons&#x27;. Create 8 round covers: Portfolio, Reviews, Seasonal, Booking, Aftercare, Price List, About Me, Press-Ons (if applicable). Consistent palette. Your profile looks immediately professional and organised.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 8 highlight covers using</p>
+<h3>Template 8.</h3>
+<p class="template-line">✓ Day 3: Create 10 nail reveal post overlays using Template 1 — apply to your 10</p>
+<p>best photos.</p>
+<p class="template-line">✓ Day 4: Create a seasonal campaign graphic using Template 3 — schedule it for</p>
+<p>next Monday.</p>
+<p class="template-line">✓ Day 5: Create 5 nail care education graphics using Template 6 — save to Aftercare</p>
+<p>highlight.</p>
+<p class="template-line">✓ Day 6: Create a price list graphic using Template 7 — save to Price List highlight</p>
+<p>and stories.</p>
+<p class="template-line">✓ Day 7: Create a TikTok cover template using Template 5 — apply to your next 5</p>
+<p>videos.</p>
+<p class="template-line">✓ [Your grid is your portfolio. Consistent branding across your feed, stories,</p>
+<p>highlights, and TikTok tells potential clients everything they need to know about your professionalism before they DM.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

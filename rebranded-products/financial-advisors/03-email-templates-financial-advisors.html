@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Financial Advisors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>FINANCIAL ADVISOR</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>25 done-for-you templates — compliance-review ready Prospect nurture • Client retention • Life events • Referrals • Market updates</p>
+<h3>COMPLIANCE NOTE</h3>
+<p>All templates in this pack are designed as starting points — not final communications. Every template should be reviewed and approved through your firm&#x27;s compliance process before use. Templates avoid specific investment</p>
+<p>recommendations and focus on education, planning concepts, and relationship- building. Always apply your firm&#x27;s disclosure requirements to outgoing communications.</p>
+<h3>SECTION 1: PROSPECT NURTURE SEQUENCE</h3>
+<p>Post-Meeting Follow-Up — Same Day</p>
+<h3>SUBJECT Great meeting today — a quick summary</h3>
+<p>BODY Hi [First Name], It was a genuine pleasure meeting with you today. I wanted to send a quick summary of what we discussed while it&#x27;s fresh: Your primary goals: [1–2 goals from the meeting] Key concerns you raised: [1–2 concerns]</p>
+<p>What I&#x27;d recommend as a next step: [specific recommendation] I&#x27;ll follow up in [timeframe] with [specific deliverable — e.g., a sample financial</p>
+<div class="section-label">plan outline / investment proposal / estate planning checklist].</div>
+<p>In the meantime, feel free to reach out with any questions. [Your Name] | [Firm] | [Phone] | [Email] Note: This communication is for informational purposes only and does not constitute investment advice. Prospect Follow-Up — Day 7 (Value Add)</p>
+<div class="section-label">SUBJECT Something relevant to what we discussed, [First Name]</div>
+<p>BODY Hi [First Name], I&#x27;ve been thinking about what you shared last week — specifically [their primary concern or goal]. I wanted to share something that might be useful: [one relevant financial planning insight, resource, or concept — educational, not a recommendation].</p>
+<p>No pressure on timing — I just wanted to make sure you had something valuable in the meantime. Happy to answer any questions or schedule a follow-up whenever you&#x27;re ready. [Your Name] | [Firm] Prospect Follow-Up — Day 30</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Checking in — [First Name]</h3>
+<p>BODY Hi [First Name], Just a quick check-in — I know financial decisions take time and I&#x27;m not in a rush. I did want to see if you have any questions about what we discussed, or if anything has changed in your situation that might be worth a conversation.</p>
+<p>Either way, I&#x27;m here whenever the timing feels right. [Your Name] | [Firm] | [Phone] Market Volatility — Client Reassurance</p>
+<h3>SUBJECT A note on recent market movement — [First Name]</h3>
+<p>BODY Hi [First Name], I wanted to reach out personally given the recent market volatility. Here&#x27;s my honest perspective: [plain language market commentary — what happened, historical context, long-term view]. This is exactly the kind of period</p>
+<p>your financial plan was designed to navigate. Your portfolio is positioned to [brief reassurance tied to their specific situation/risk tolerance — personalize this]. If you&#x27;d like to talk through anything, please don&#x27;t hesitate to call me directly at</p>
+<p>[Phone]. That&#x27;s what I&#x27;m here for. [Your Name] | [Firm] Past performance is not indicative of future results. This communication is for informational purposes only. Life Event — Retirement Approaching</p>
+<div class="section-label">SUBJECT Your retirement timeline — a few things worth discussing</div>
+<p>BODY Hi [First Name], With [X years] until your target retirement date, I wanted to proactively flag a few planning areas that tend to matter most in this window:</p>
+<p class="template-line">- Social Security optimization — timing this correctly can add significantly to</p>
+<p>lifetime income</p>
+<p class="template-line">- Healthcare bridge coverage — particularly if retiring before Medicare</p>
+<p>eligibility</p>
+<p class="template-line">- Sequence of returns risk — how we structure your drawdown strategy</p>
+<p>matters more now than at any other phase I&#x27;d love to schedule a dedicated retirement transition review to work through these together. Would [date range] work for you? [Your Name] | [Firm]</p>
+<h3>SECTION 2: ONGOING CLIENT</h3>
+<h3>COMMUNICATION</h3>
+<p>Quarterly Check-In</p>
+<h3>SUBJECT Checking in — how are things, [First Name]?</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], It&#x27;s been a quarter since we last connected and I wanted to reach out — not just about markets, but about you. A few things I&#x27;m curious about:</p>
+<p class="template-line">- Has anything changed in your life situation, goals, or financial priorities?</p>
+<p class="template-line">- How are you feeling about [any specific planning area you&#x27;ve been working</p>
+<p>on together]?</p>
+<p class="template-line">- Is there anything on your mind financially that you&#x27;d like to talk through before</p>
+<p>our next formal review? No meeting needed unless you want one — sometimes a quick email exchange is enough. I just want to make sure nothing falls through the cracks. [Your Name] | [Firm] Annual Review Prep Email</p>
+<div class="section-label">SUBJECT Your annual review is coming up — a few questions first</div>
+<p>BODY Hi [First Name], Your annual review is scheduled for [Date]. Before we meet, I&#x27;d love to get your thoughts on a few things: 1. Have there been any significant life changes this year? (Job, family, health, housing, inheritance)</p>
+<p>2. Have your financial goals or priorities shifted in any way? 3. Is there anything specific you want to make sure we cover? Your answers help me make our time together as valuable as possible. Reply here or we can walk through this when we meet. Looking forward to seeing you.</p>
+<p>[Your Name] | [Firm] Portfolio Milestone Celebration</p>
+<h3>SUBJECT A milestone worth acknowledging, [First Name]</h3>
+<p>BODY Hi [First Name], I wanted to reach out with some good news — your portfolio recently crossed [milestone — e.g., $500,000 / $1,000,000 / projected retirement date is now on track]. This doesn&#x27;t happen by accident. It&#x27;s the result of [discipline / consistent</p>
+<p>contributions / staying the course during volatile periods — personalize]. I&#x27;m proud of the work we&#x27;ve done together to get here. We&#x27;ll review what this milestone means for your planning at our next meeting — but I didn&#x27;t want it to pass without acknowledgement.</p>
+<p>[Your Name] | [Firm]</p>
+<h3>SECTION 3: REFERRALS &amp; PROFESSIONAL</h3>
+<h3>PARTNERSHIPS</h3>
+<h3>Referral Request — Post Milestone</h3>
+<h3>SUBJECT A personal ask, [First Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], It&#x27;s been a pleasure working with you toward [milestone or goal], and I just wanted to say — thank you for trusting me with something this important. I have a genuine ask: if you know someone — a colleague, friend, or family</p>
+<p>member — who might benefit from the kind of work we do together, I&#x27;d be honoured by an introduction. My practice is built on relationships, and the clients who come through referrals are consistently the ones I enjoy working with most. Thank you either way. [Your Name] | [Firm]</p>
+<p>CPA / Attorney Introduction</p>
+<h3>SUBJECT Introduction — [Your Name], [Firm]</h3>
+<p>BODY Dear [Name], My name is [Your Name] — I&#x27;m a financial advisor at [Firm] specializing in [specialty — e.g., retirement planning / wealth management / business owner planning] in [City]. I work with clients who often have complex tax and estate planning needs that</p>
+<p>require close collaboration with their CPA or attorney. I wanted to introduce myself as a resource for any clients of yours who might benefit from coordinated financial planning. I&#x27;d welcome a brief call to learn more about your practice and explore whether</p>
+<p>there might be opportunities to serve our mutual clients better. Thank you for your time. [Your Name] | [Firm] | [Phone] | [Email] Monthly Value Touch — Referral Partner</p>
+<h3>SUBJECT A resource for your clients — [First Name]</h3>
+<p>BODY Hi [First Name], I wanted to share something that might be useful for your clients: [One relevant resource, insight, or planning tool — e.g., &#x27;I&#x27;ve put together a one-page guide on the key financial decisions business owners should make</p>
+<p>before an exit. Happy to share it if you think any of your clients are approaching that stage.&#x27;] No agenda beyond making sure we&#x27;re adding value to the people we&#x27;re both serving. [Your Name] | [Firm]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section></main></body></html>

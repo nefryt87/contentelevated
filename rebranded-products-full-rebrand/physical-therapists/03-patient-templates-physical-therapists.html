@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Patient Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Patient Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Physical Therapists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>PHYSICAL THERAPIST</h3>
+<h3>PATIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>25 done-for-you templates for every stage of the patient journey Reminders • HEP support • Retention • Physician outreach • Reviews • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your patient&#x27;s name, condition, and practice</p>
+<p>details.</p>
+<p class="template-line">• Keep the tone warm, encouraging, and clinically authoritative — patients</p>
+<p>trust practitioners who sound like they care.</p>
+<p class="template-line">• Works as emails, patient portal messages, and SMS — shorten to 2–3</p>
+<p>sentences for texts.</p>
+<p class="template-line">• Always personalize the first line — AI does this in seconds.</p>
+<p class="template-line">• Save top performers in your practice management system (WebPT,</p>
+<p>Clinicient, etc.) for fast reuse.</p>
+<h3>SECTION 1: APPOINTMENT REMINDERS &amp; NO-</h3>
+<h3>SHOW RECOVERY</h3>
+<p>Reminder — 48 Hours Before</p>
+<h3>SUBJECT Your PT appointment at [Practice Name] — [Date]</h3>
+<p>BODY Hi [First Name], Just a friendly reminder that you have a physical therapy appointment at [Practice Name] on [Date] at [Time] with [Therapist Name]. A few things to help you prepare:</p>
+<p class="template-line">- Wear comfortable clothing that allows access to the area we&#x27;re treating</p>
+<p class="template-line">- Bring any relevant imaging reports (X-rays, MRI) if you haven&#x27;t already</p>
+<p>shared them</p>
+<p class="template-line">- If anything has changed with your symptoms, please let us know when you</p>
+<p>arrive If you need to reschedule, please call us at [Phone] at least 24 hours in advance. See you soon! [Practice Name] | [Phone] Reminder — Morning Of</p>
+<h3>SUBJECT See you today, [First Name]!</h3>
+<p>BODY Hi [First Name], Your PT appointment is today at [Time] at [Practice Name]. We&#x27;re looking forward to working with you! Quick reminder: wear comfortable, loose-fitting clothing and arrive 5 minutes early if possible.</p></div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>You&#x27;re one session closer to [brief goal reference — e.g., &#x27;getting back to the activities you love&#x27;]. See you soon! [Practice Name] | [Phone] | [Address] Pre-Visit Anxiety Reducer</p>
+<h3>SUBJECT What to expect at your first PT appointment</h3>
+<p>BODY Hi [First Name], We&#x27;re so glad you&#x27;ve scheduled your first appointment at [Practice Name]. We know starting PT can feel a little intimidating — you&#x27;re not alone. Here&#x27;s exactly what will happen: 1. We&#x27;ll start with a thorough evaluation — asking about your symptoms,</p>
+<p>history, and goals 2. A physical examination to assess your movement, strength, and areas of concern 3. We&#x27;ll explain what we found and recommend a plan of care together 4. Your first treatment will begin — only what you&#x27;re comfortable with</p>
+<p>You are always in control. If anything hurts or feels wrong, say so immediately — our job is to help, never to hurt. See you [Date] at [Time]. [Therapist Name] | [Practice Name] No-Show Recovery</p>
+<div class="section-label">SUBJECT We missed you today — hope everything is okay, [First Name]</div>
+<p>BODY Hi [First Name], We noticed you weren&#x27;t able to make your appointment today — no worries at all. Staying consistent with your plan of care is important for your recovery, so whenever you&#x27;re ready to rebook, just reply here or call [Phone] and we&#x27;ll get</p>
+<p>you back on the schedule. If something came up — schedule, transportation, pain levels, or anything else — please let us know. We want to find a way to make your care work. Looking forward to seeing you soon. [Practice Name] | [Phone] Waitlist Activation</p>
+<div class="section-label">SUBJECT Good news — we have an opening [Date], [First Name]</div>
+<p>BODY Hi [First Name], We just had a cancellation and have an opening on [Date] at [Time]. Would you like to take this slot? Just reply &#x27;yes&#x27; or call us at [Phone] and we&#x27;ll get you confirmed right away. [Practice Name] | [Phone]</p>
+<h3>SECTION 2: HEP SUPPORT &amp; PATIENT</h3>
+<h3>RETENTION</h3>
+<p>HEP Companion Email</p>
+<h3>SUBJECT Your home exercise program — [First Name]</h3>
+<p>BODY Hi [First Name], Your home exercise program is attached / available in [app/portal]. Here&#x27;s a quick overview:</p></div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><div class="section-label">Why these exercises: [1–2 sentences on the clinical rationale in plain</div>
+<p>language] The most common mistake I see: [one specific correction relevant to their exercises] How often: [frequency and duration] What to expect: [brief note on expected sensations — mild soreness is normal, sharp pain is not]</p>
+<p>Consistency with your HEP is one of the biggest factors in how fast you recover. Even 15 minutes a day makes a real difference. Any questions, just reply or ask at your next visit. [Therapist Name] | [Practice Name] Between-Visit Check-In</p>
+<div class="section-label">SUBJECT Quick check-in — how are you feeling, [First Name]?</div>
+<p>BODY Hi [First Name], Just checking in between visits — how have your symptoms been since we last saw you? A few quick questions:</p>
+<p class="template-line">- Any changes in your pain level (better, worse, or the same)?</p>
+<p class="template-line">- Have you been able to complete your home exercises?</p>
+<p class="template-line">- Anything you want to make sure we address at your next appointment?</p>
+<p>Even a brief reply helps me prepare for our next session. [Therapist Name] | [Practice Name]</p>
+<h3>Plan of Care Midpoint</h3>
+<div class="section-label">SUBJECT Halfway through — let&#x27;s talk about your progress</div>
+<p>BODY Hi [First Name], You&#x27;re at the midpoint of your plan of care — and I want to take a moment to acknowledge how far you&#x27;ve come: [2–3 specific progress points — range of motion improvement, pain reduction, functional milestone]</p>
+<p>I also want to address something that comes up with almost every patient at this stage: when things start feeling better, it&#x27;s tempting to stop coming. But the improvements you&#x27;re feeling right now are the result of the work we&#x27;re doing —</p>
+<p>and stopping too early usually means the problem returns. Let&#x27;s keep the momentum going. Your next appointment is [Date]. [Therapist Name] | [Practice Name] Discharge Planning Email</p>
+<div class="section-label">SUBJECT You&#x27;re almost there, [First Name] — what comes next</div>
+<p>BODY Hi [First Name], As we approach the end of your plan of care, I wanted to share a quick summary of your progress and what I recommend going forward: What we accomplished: [2–3 specific functional outcomes]</p></div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Your maintenance program: [brief HEP and activity guidance for ongoing self- management] When to come back: [specific scenarios — e.g., &#x27;if symptoms return or worsen&#x27; / &#x27;for a tune-up before your season starts&#x27;]</p>
+<p>It&#x27;s been a genuine privilege helping you recover. You put in the work — I just helped direct it. [Therapist Name] | [Practice Name]</p>
+<h3>SECTION 3: PHYSICIAN OUTREACH, REVIEWS</h3>
+<h3>&amp; REFERRALS</h3>
+<p>Physician Progress Update</p>
+<div class="section-label">SUBJECT Patient Update — [Patient First Name, Last Initial] — [Practice Name]</div>
+<p>BODY Dear Dr. [Name], I wanted to provide a progress update on [Patient Name], who was referred to [Practice Name] for [diagnosis/condition]. Current status:</p>
+<p class="template-line">- Sessions completed: [X of Y prescribed]</p>
+<p class="template-line">- Functional progress: [2–3 specific clinical observations in plain language]</p>
+<p class="template-line">- HEP adherence: [good/improving/needs reinforcement]</p>
+<p class="template-line">- Plan: [remaining sessions and goals / anticipated discharge date]</p>
+<p>Thank you for the referral — it&#x27;s always a pleasure working with your patients. Please don&#x27;t hesitate to reach out if you have any questions or would like to discuss this patient&#x27;s care. Sincerely, [Your Name], PT, [Specialty if applicable] [Practice Name] | [Phone] | [Fax]</p>
+<p>New Physician Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], PT — [Practice Name]</div>
+<p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m a physical therapist and [owner/clinical director] at [Practice Name] in [City], specializing in [specialty — e.g., orthopedic / sports / neurological / pelvic floor rehabilitation].</p>
+<p>I wanted to introduce myself and let you know we&#x27;re available as a resource for your patients who could benefit from physical therapy. Our practice focuses on [brief description of your approach and outcomes].</p>
+<p>I&#x27;d welcome the opportunity to connect briefly — even a 10-minute call helps us serve your patients better. I&#x27;m also happy to provide you with any clinical resources or patient education materials that might be useful. Thank you for your time.</p>
+<p>[Your Name], PT | [Practice Name] | [Phone] | [Email] Google Review Request</p></div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Physical Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT A small favour — means a lot to us</h3>
+<p>BODY Hi [First Name], We hope your recovery is going well! If you&#x27;ve had a positive experience at [Practice Name], we&#x27;d be incredibly grateful if you took 2 minutes to leave us a Google review. It helps other people in [City] find the PT care they need.</p>
+<p>Here&#x27;s the direct link: [Google Review Link] Thank you so much — it means the world to our team. [Practice Name]</p>
+<h3>Referral Request — Post Discharge</h3>
+<h3>SUBJECT A personal thank-you — and a small ask</h3>
+<p>BODY Hi [First Name], It was such a pleasure working with you through your recovery. Watching you get back to [activity/goal] is exactly why we do this work. If you know anyone — a friend, family member, coworker, or teammate —</p>
+<p>who&#x27;s dealing with pain or recovering from an injury, we&#x27;d love to help them the way we helped you. We take great care of everyone who comes through our door. Your recommendation means everything to us. [Therapist Name] | [Practice Name] | [Phone]</p></div>
+  <div class="footer"><span>Patient Templates</span><span class="page-number">07</span></div>
+</section></main></body></html>

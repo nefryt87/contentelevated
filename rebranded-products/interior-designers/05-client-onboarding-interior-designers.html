@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Onboarding</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Onboarding</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Interior Designers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>INTERIOR DESIGNER</h3>
+<div class="section-label">Client Onboarding, Scope &amp; Realtor Partnership Templates</div>
+<p>Design brief questionnaire, scope agreement scripts, onboarding system, photography permission kit, and realtor co-marketing templates</p>
+<h3>SECTION 1: CLIENT ONBOARDING SYSTEM</h3>
+<h3>New Client Design Brief Questionnaire</h3>
+<p class="template-line">✓ Full name(s):</p>
+<p class="template-line">✓ Property address:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you hear about [Studio Name]?</p>
+<p class="template-line">✓ Project type: Full home design / Single room / Renovation design / New build /</p>
+<p>Staging / Other:</p>
+<p class="template-line">✓ Rooms included in this project (list all):</p>
+<p class="template-line">✓ Who lives in the space? (adults, children, ages, pets):</p>
+<p class="template-line">✓ How would you describe your current style in 3 words?</p>
+<p class="template-line">✓ How would you describe your ideal style in 3 words?</p>
+<p class="template-line">✓ Designers or spaces you love (Instagram accounts, magazines, projects): share</p>
+<p>links or images if possible</p>
+<p class="template-line">✓ Designers or spaces you dislike (equally important): what specifically bothers you?</p>
+<p class="template-line">✓ Existing pieces you want to keep (list furniture, art, or sentimental items):</p>
+<p class="template-line">✓ Existing pieces you want to remove or replace:</p>
+<p class="template-line">✓ Budget range for this project: Under $20K / $20-50K / $50-100K / $100-200K /</p>
+<h3>$200K+</h3>
+<p class="template-line">✓ Timeline: Is there a fixed deadline (move-in date, event, sale date)?</p>
+<p class="template-line">✓ Decision making: Who is the primary decision maker? Will both partners be involved</p>
+<p>equally?</p>
+<p class="template-line">✓ How do you prefer to communicate? Email / Phone / WhatsApp / Project portal:</p>
+<p class="template-line">✓ What does success look like to you when this project is complete — specifically?</p>
+<p class="template-line">✓ Is there anything else about your lifestyle, preferences, or concerns we should</p>
+<p>know?</p>
+<p class="template-line">✓ [Send this before every discovery call. Clients who complete it arrive aligned —</p></div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>and the project starts on the right foot.]</p>
+<h3>Client Onboarding Welcome Email</h3>
+<div class="section-label">SUBJECT Welcome to [Studio Name] — let&#x27;s begin, [First Name]</div>
+<p>Hi [First Name], I&#x27;m so excited to officially start working together on your [project name]. This is going to be a beautiful project and I&#x27;m honoured you&#x27;ve trusted me with it. Here&#x27;s everything you need to know to get us started well:</p>
+<p>Your project portal / primary contact method: [details] How I&#x27;ll communicate: I send project updates at the end of each phase. For urgent questions, [Phone/WhatsApp] is best. What happens next: [Phase 1 description and timeline] Before our first working session, please:</p>
+<p class="template-line">- Complete the Design Brief Questionnaire: [link]</p>
+<p class="template-line">- Gather any inspiration images into a shared folder: [link]</p>
+<p class="template-line">- Send measurements of [any specific items if needed]</p>
+<p>If anything comes up before we meet, I&#x27;m always reachable at [Phone]. Let&#x27;s make something extraordinary. [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: SCOPE CONVERSATION SCRIPTS</h3>
+<p>Presenting Your Fee — The Budget Conversation</p>
+<h3>SCRIPT — PRESENTING YOUR FEE CONFIDENTLY</h3>
+<p>YOU: Before I put together the proposal, I want to have an honest conversation about investment — because it shapes everything we&#x27;ll do together. YOU: For a project like yours — [brief description of scope] — you&#x27;re typically</p>
+<p>looking at a design fee in the range of $[X] to $[X], depending on complexity. That covers [brief description of what&#x27;s included]. It doesn&#x27;t include the cost of furniture, finishes, and trades, which we&#x27;d discuss separately.</p>
+<p>YOU: The reason I&#x27;m sharing this before the proposal is that I&#x27;d rather have this conversation now than send you something that doesn&#x27;t work. Does that range feel aligned with what you were expecting? [Listen. Don&#x27;t jump in. Let them respond before you say anything else.]</p>
+<p>[If yes: &#x27;Great — I&#x27;ll put together a full proposal within [timeframe].&#x27;] [If hesitation: see below] When the Client Pushes Back on Your Fee</p>
+<h3>SCRIPT — FEE PUSHBACK CONVERSATION</h3></div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>YOU: I hear you — it&#x27;s more than you were expecting. Can I ask: is it the total number, or is it a question of what&#x27;s included? [Let them answer. The reason shapes your response.] [If total number:]</p>
+<p>YOU: One thing that sometimes helps is approaching the project in phases. We could start with [Phase 1 — e.g., &#x27;the main living areas&#x27;] at a reduced fee of $[amount], and treat the rest as a second phase. That way you see the process and the results before</p>
+<p>committing to the full scope. [If questioning what&#x27;s included:] YOU: Let me walk you through exactly what my fee covers — because I want to make sure you&#x27;re comparing apples to apples if you&#x27;re getting other quotes. [Explain</p>
+<p>process in detail: site visits, space planning, sourcing, trade coordination, install supervision.] The designers who quote less typically hand off responsibility at some point. I stay involved through to the final styling.</p>
+<p>[Never apologize for your fee. State it, explain it, hold it.]</p>
+<h3>SECTION 3: REALTOR &amp; ARCHITECT CO-</h3>
+<h3>MARKETING KIT</h3>
+<p>Realtor Co-Marketing Proposal Email</p>
+<div class="section-label">SUBJECT A co-marketing idea — [Your Name] + [Realtor Name]</div>
+<p>Hi [Name], I&#x27;ve been thinking about how we might build on our referral relationship and wanted to put a specific idea on the table. Option A — Joint content: I create a monthly &#x27;design + real estate&#x27; post or</p>
+<div class="section-label">email — you share market expertise, I share design insight. Each of us sends</div>
+<p>to our list. Great for building both our audiences with the same content. Option B — Buyer welcome package: For clients who purchase through you, I offer a complimentary 1-hour &#x27;new home orientation&#x27; consultation — it</p>
+<p>creates an exceptional client experience for you and gives me a warm</p>
+<h3>introduction to a potential project.</h3>
+<p>Option C — Staging partnership: For any listings you want staged, I provide professional staging at a preferential rate. Staged homes sell faster and at higher prices — we both benefit. Happy to do any or all of these — or if you have a better idea, I&#x27;m all ears.</p>
+<p>Would a quick call this week work? [Your Name] | [Studio Name] | [Phone] Realtor Referral Thank-You + Update</p></div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><div class="section-label">SUBJECT Update on [Client Name] — and a genuine thank you, [Realtor Name]</div>
+<p>Hi [Name], Quick update on [Client First Name]: [brief status — e.g., &#x27;we&#x27;ve completed the design brief and are moving into the concept phase — they&#x27;re thrilled with the direction&#x27; / &#x27;the project is now underway and progressing beautifully&#x27;].</p>
+<p>I also just want to say — thank you for the introduction. [He/She/They] is exactly the kind of client I love working with, and I&#x27;m going to take excellent care of them. That reflects on you, and I take that seriously.</p>
+<p>As always, if any of your other clients are planning a design project — whether before listing, after purchasing, or for their own home — I&#x27;d love to be your go-to. I&#x27;ll always treat your referrals as a priority. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>SECTION 4: PHOTOGRAPHY &amp; PRESS</h3>
+<h3>PERMISSION KIT</h3>
+<p>Photography Permission Email</p>
+<div class="section-label">SUBJECT Professional photography for your [project name] — [First Name]</div>
+<p>Hi [First Name], Now that your [project name] is complete, I&#x27;d love to arrange professional photography of the finished space. Here&#x27;s what that would look like: What I&#x27;d cover: the full cost of a professional photographer (typically a half-</p>
+<h3>day session)</h3>
+<p>What you&#x27;d receive: a full set of high-resolution images — yours to use however you like What I&#x27;d use them for: my portfolio, website, Instagram, Pinterest, and potentially editorial submissions Your privacy: I would never identify your address or full name without your</p>
+<p>explicit permission. I typically refer to projects by neighbourhood or city (e.g., &#x27;Kensington project&#x27; or &#x27;Hamptons renovation&#x27;). Are you open to it? And are there any rooms or areas you&#x27;d prefer to keep private? I&#x27;m completely happy to work around any preferences.</p>
+<p>[Your Name] | [Studio Name] Press / Editorial Submission Email</p>
+<div class="section-label">SUBJECT Project submission — [Studio Name] + [Publication Name]</div>
+<p>Hi [Editor/Writer Name], I&#x27;m [Your Name], an interior designer based in [City] specializing in [specialty]. I recently completed a [brief project description] that I think would resonate beautifully with [Publication]&#x27;s audience.</p></div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>The brief: [2 sentences on the client&#x27;s goals and the design challenge]. The result: [2 sentences on what was created — be specific about materials, layout decisions, or design challenges solved]. I have professional photography available and the client has given permission</p>
+<p>for publication. Happy to share a full press pack if you&#x27;d like to take a look. [Your Name] | [Studio Name] | [Phone] | [Portfolio Link]</p></div>
+  <div class="footer"><span>Client Onboarding</span><span class="page-number">07</span></div>
+</section></main></body></html>

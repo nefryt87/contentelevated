@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f2f0e8; --paper:#fbfaf5; --ink:#121417; --muted:#61666d;
+  --accent:#536f78; --accent2:#8aa5a2; --dark:#1d252c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Complete Growth Bundle</span></div></div><div class="pill">Trust operating system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Attorneys Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Attorneys Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>ATTORNEY &amp; LAW FIRM</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE PACK</h3>
+<p>24 done-for-you, ethics-aware templates for every stage of the client relationship</p>
+<div class="section-label">Intake • Consultation follow-up • Client retention • Referral network • Reviews</div>
+<p>Important: All templates should be reviewed for compliance with your state bar&#x27;s rules on advertising, solicitation, and client communication before use.</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with client name, matter details, and firm information.</p>
+<p class="template-line">• Review every template for compliance with your state bar&#x27;s advertising and</p>
+<p>solicitation rules before sending.</p>
+<p class="template-line">• Works as email and through client portals (Clio, MyCase, PracticePanther,</p>
+<p>etc.).</p>
+<p class="template-line">• The tone throughout is professional, warm, and clear — clients hire</p>
+<p>attorneys they trust and understand.</p>
+<h3>SECTION 1: INTAKE &amp; CONSULTATION</h3>
+<p>Same-Day Intake Response</p>
+<div class="section-label">SUBJECT Re: Your inquiry to [Firm Name] — [First Name]</div>
+<p>BODY Dear [First Name], Thank you for reaching out to [Firm Name]. We understand that [legal situation type — e.g., &#x27;going through a divorce / starting a business / dealing with an estate matter&#x27;] can feel overwhelming, and we&#x27;re glad you took this step.</p>
+<p>Here&#x27;s what happens next: 1. We&#x27;ll review the information you&#x27;ve shared 2. One of our attorneys will be in touch within [timeframe] to schedule a consultation 3. At the consultation, we&#x27;ll discuss your situation in detail and outline our recommended approach</p>
+<p>In the meantime, if you have any urgent questions, please call us at [Phone]. We look forward to speaking with you. [Attorney Name] | [Firm Name] | [Phone] Post-Consultation Follow-Up — Same Day</p>
+<div class="section-label">SUBJECT Following our consultation today — [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Dear [First Name], Thank you for coming in today — it was a pleasure meeting you and learning more about your situation. Based on our conversation, here&#x27;s a summary of where things stand and what I&#x27;d recommend:</p>
+<p>Your situation: [1-2 sentence plain-language summary of their legal situation] Recommended approach: [2-3 sentences on the proposed legal strategy] Proposed next steps: [clear next step to engage]</p>
+<p>If you&#x27;d like to move forward, [clear call to action — e.g., &#x27;please sign and return the attached engagement letter&#x27; / &#x27;please call our office to schedule your next appointment&#x27;]. I&#x27;m happy to answer any additional questions before you decide. Please don&#x27;t</p>
+<p>hesitate to reach out. Sincerely, [Attorney Name] | [Firm Name] | [Phone] 30-Day Nurture — Prospect Not Yet Retained</p>
+<div class="section-label">SUBJECT A resource that may be helpful — [First Name]</div>
+<p>BODY Dear [First Name], I wanted to follow up and share a resource that may be useful as you consider your options. [Link or brief description of a relevant article, checklist, or explainer relevant to their legal situation]</p>
+<p>Navigating [legal situation] is something many people find daunting, and having the right information makes a real difference in the decisions you make. If you have any questions or would like to discuss your situation further, I&#x27;m always happy to talk.</p>
+<p>Sincerely, [Attorney Name] | [Firm Name] | [Phone]</p>
+<h3>SECTION 2: ACTIVE MATTER COMMUNICATION</h3>
+<p>Matter Progress Update</p>
+<h3>SUBJECT Update on your matter — [First Name]</h3>
+<p>BODY Dear [First Name], I wanted to provide you with a brief update on your [matter type]. Where things stand: [2-3 clear sentences on current status in plain language] What&#x27;s happening next: [next concrete step and approximate timing]</p>
+<p>What I need from you (if anything): [specific ask or &#x27;nothing at this time&#x27;] Please don&#x27;t hesitate to reach out if you have questions at any point. Keeping you informed is something I take seriously. Sincerely, [Attorney Name] | [Firm Name]</p>
+<p>Matter Completion — Close-Out Letter</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT Your matter is resolved — a note from [Attorney Name]</div>
+<p>BODY Dear [First Name], I&#x27;m pleased to let you know that your [matter type] has been successfully [resolved / closed / executed]. What was accomplished: [1-2 sentences summarizing the outcome in plain language]</p>
+<p>It&#x27;s been a genuine privilege helping you through this. [One personal sentence acknowledging what they went through or achieved.] A few things worth knowing now that this matter is closed: [any relevant follow-</p>
+<p>up actions — document storage, future review dates, etc.] Should you need legal assistance in the future — or if someone you know does — I hope you&#x27;ll think of us. And if you have a moment, a Google review would mean a great deal to our firm: [link]</p>
+<p>With appreciation, [Attorney Name] | [Firm Name] Annual Review Outreach — Estate / Business Clients</p>
+<div class="section-label">SUBJECT Time for your annual legal review — [First Name]</div>
+<p>BODY Dear [First Name], It&#x27;s been approximately a year since we [completed your estate plan / formed your business / handled your last matter], and I wanted to reach out about a brief annual review.</p>
+<p>Laws change. Life changes. What we put in place last year may need updating based on [relevant trigger — e.g., &#x27;changes in your family situation / new business developments / recent tax law changes&#x27;].</p>
+<p>A review typically takes [timeframe] and can prevent significant issues down the road. Would you like to schedule a brief call? I&#x27;m happy to let you know whether any updates are needed. Sincerely, [Attorney Name] | [Firm Name]</p>
+<h3>SECTION 3: REFERRAL NETWORK &amp; REVIEWS</h3>
+<p>Post-Referral Thank-You</p>
+<h3>SUBJECT Thank you for the referral — [Name]</h3>
+<p>BODY Dear [Name], I just wanted to take a moment to personally thank you for referring [Client First Name] to our firm. We take every referral seriously — it&#x27;s the highest expression of professional trust, and I don&#x27;t take it for granted.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Attorneys<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I&#x27;ll make sure [he/she/they] receives the same quality of service that led you to think of us. I&#x27;ll keep you posted as appropriate on how the matter progresses. With gratitude, [Attorney Name] | [Firm Name] CPA / Financial Advisor Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], [Practice Area] Attorney, [Firm Name]</div>
+<p>BODY Dear [Name], My name is [Attorney Name] — I&#x27;m a [practice area] attorney at [Firm Name] in [City], focused on [brief description of clients and work]. I work with many clients who also need the guidance of a skilled [CPA /</p>
+<p>financial advisor], and I&#x27;m always looking for trusted professionals to refer them to. Similarly, your clients likely encounter [relevant legal situations] where quality legal counsel makes a real difference.</p>
+<p>I&#x27;d love to explore whether a mutual referral relationship might benefit both of our clients. Would you be open to a brief call? Sincerely, [Attorney Name] | [Firm Name] | [Phone] Google Review Request — Post Close</p>
+<div class="section-label">SUBJECT A small ask — your words carry real weight</div>
+<p>BODY Dear [First Name], Now that your matter has been resolved, I wanted to reach out with one small ask. If you were happy with the service you received at [Firm Name], an honest Google review would mean a great deal to us — and genuinely helps other</p>
+<p>people in [City] find legal representation they can trust. Here&#x27;s the direct link: [Google Review Link] Thank you again for trusting us with something so important. Sincerely, [Attorney Name] | [Firm Name] Past Client Referral Request</p>
+<h3>SUBJECT A personal note — [First Name]</h3>
+<p>BODY Dear [First Name], I hope you&#x27;re doing well since we resolved your [matter type]. I&#x27;m reaching out because the foundation of this practice is built on client trust and referrals — and I wanted to let you know that if you ever have a friend,</p>
+<p>family member, or colleague who needs [practice area] legal help, I would consider it a privilege to assist them. Anyone you refer will receive the same attention and care we gave to your matter. Thank you for continuing to be a part of our practice community.</p>
+<p>Sincerely, [Attorney Name] | [Firm Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section></main></body></html>

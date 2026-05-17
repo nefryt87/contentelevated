@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Party Planners</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>PARTY PLANNER</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, joyful-premium typography, 8 Canva template strategies, and a 7-day</p>
+<h3>brand launch checklist</h3>
+<h3>WHY YOUR BRAND IS THE FIRST MAGIC TRICK</h3>
+<p>Parents choose a party planner based on Instagram before they ever make contact. Your brand — your colour palette, your photography aesthetic, how your grid looks — communicates whether you create the kind of magic their child deserves. A distinctive,</p>
+<p>joyful, and polished visual identity attracts clients who value what you do and are ready to invest in it. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for party planners.</p>
+<h3>PALETTE 1: JOYFUL LUXURY</h3>
+<p>For party planners with a luxurious, whimsical, editorial aesthetic. Deep plum, hot pink, and champagne — the palette of celebration done at the highest level.</p>
+<h3>DEEP PLUM</h3>
+<h3>#4A1A5C</h3>
+<h3>CELEBRATION</h3>
+<h3>PINK</h3>
+<h3>#E85AA0</h3>
+<h3>CHAMPAGNE</h3>
+<h3>#F0D898</h3>
+<h3>BLUSH WHITE</h3>
+<h3>#FFF0FA</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Plum (#4A1A5C): logo, headlines, primary text — sophisticated and</p>
+<p>memorable</p>
+<p class="template-line">• Celebration Pink (#E85AA0): CTAs, accent elements, party reveal highlights,</p>
+<p>seasonal announcements</p>
+<p class="template-line">• Champagne (#F0D898): secondary accent for milestones, luxury details, price</p>
+<p>presentation</p>
+<p class="template-line">• Blush White (#FFF0FA): all backgrounds — soft, warm, and beautiful behind</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>party photography</p>
+<h3>Typography</h3>
+<p>HEADINGS: Cormorant Garamond — editorial luxury. Elegant and celebratory without being childish. BODY: Jost — clean and modern. Readable across Instagram, email, and printed materials. ACCENT: Pinyon Script — for event names, milestone ages, headline moments in a</p>
+<p>styled graphic. Use sparingly.</p>
+<h3>PALETTE 2: BRIGHT CELEBRATIONS</h3>
+<p>For party planners with a bolder, more colourful, maximally joyful brand — the planner everyone thinks of for the most fun, exciting, vibrant parties.</p>
+<h3>ELECTRIC PURPLE</h3>
+<h3>#6A1A9A</h3>
+<h3>SUNNY YELLOW</h3>
+<h3>#F0C020</h3>
+<h3>CORAL</h3>
+<h3>#E86040</h3>
+<h3>WHITE</h3>
+<h3>#FFFFFF</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Electric Purple (#6A1A9A): logo and primary brand colour — bold and distinctive</p>
+<p class="template-line">• Sunny Yellow (#F0C020): accent — the energy of celebration, joy, and childhood</p>
+<p>delight</p>
+<p class="template-line">• Coral (#E86040): secondary accent for seasonal campaigns, CTAs, and high-</p>
+<p>energy content</p>
+<p class="template-line">• White (#FFFFFF): all backgrounds — lets the colours breathe</p>
+<h3>Typography</h3>
+<p>HEADINGS: Nunito ExtraBold — friendly, rounded, joyful. Works perfectly for both kids parties and fun adult events. BODY: Poppins Regular — modern and clean. Reads beautifully across all digital formats.</p>
+<p>ACCENT: Nunito ExtraBold ALL CAPS — for theme names, ages (&#x27;TURNING 5!&#x27;), party announcements.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Party Reveal Post</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;party reveal Instagram&#x27; or &#x27;event setup reveal post&#x27;. The finished party space — balloons, tablescapes, backdrop, every element in frame. Your business name small at the bottom. This is your most powerful content type. Every reveal post attracts new</p>
+<p>followers and drives direct inquiry DMs. Post every single event you plan.</p>
+<h3>Template 2: Before / After Setup Transformation</h3>
+<p>Search &#x27;transformation before after Instagram&#x27; or &#x27;event setup time-lapse&#x27;. Two images: empty room left, decorated party right. Or use a split screen. Caption: &#x27;This is what [X hours] of setup looks like.&#x27; These perform exceptionally well on TikTok as videos and on</p>
+<p>Instagram as carousels.</p>
+<h3>Template 3: Theme Inspiration Carousel</h3>
+<p>Search &#x27;party theme ideas Instagram&#x27; or &#x27;kids birthday inspiration carousel&#x27;. 5-7 slides: one theme per slide with a beautiful image and brief description. Final slide: your name and CTA. Create one for each of your most popular themes — parents save these and</p>
+<p>return to them when planning. High-save-rate content.</p>
+<h3>Template 4: Client Testimonial Graphic</h3>
+<p>Search &#x27;party planner testimonial post&#x27; or &#x27;client review celebration&#x27;. Feature the most emotional line from a parent&#x27;s review — something about their child&#x27;s face, the magic of the moment, how stress-free it felt. First name and event type below. Your business</p>
+<p>name. Post every new testimonial.</p>
+<h3>Template 5: Instagram Story — Booking Open</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;party planner story template&#x27;. Vertical. A beautiful party photo as background. Text: &#x27;NOW BOOKING [SEASON/MONTH] PARTIES&#x27; + &#x27;DM to enquire.&#x27; Your business name. Post every time you open new availability — generates immediate DMs.</p>
+<h3>Template 6: TikTok / Reel Cover Frame</h3>
+<p>Search &#x27;TikTok first frame template&#x27; or &#x27;Reel cover birthday party&#x27;. For every video: your hook text in large font on a branded background. &#x27;Watch how I transformed this room in 3 hours&#x27; or &#x27;This is what a [theme] party actually looks like&#x27;. Your business name small.</p>
+<p>Makes viewers click rather than scroll past.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Party Theme Mood Board</h3>
+<p>Search &#x27;party mood board Pinterest&#x27; or &#x27;event inspiration board&#x27;. A collage of images representing a specific theme — colours, balloons, cake, decorations, linens, activities. Your business name. Create one for each of your signature themes and pin them to</p>
+<p>Pinterest. Parents discover party planners through theme-specific searches.</p>
+<h3>Template 8: Instagram Highlight Covers</h3>
+<p>Search &#x27;highlight cover party&#x27; or &#x27;celebration Instagram icons&#x27;. Create 8 round covers: Portfolio, Kids Parties, Milestone Events, Baby Showers, Reviews, Themes, Behind the Scenes, Booking. Consistent palette. Every profile visitor sees these — they</p>
+<p>communicate your range and professionalism instantly.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit.</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 8 highlight covers using</p>
+<h3>Template 8.</h3>
+<p class="template-line">✓ Day 3: Create 10 party reveal post overlays using Template 1 — apply to your 10</p>
+<p>best party photos.</p>
+<p class="template-line">✓ Day 4: Create a theme inspiration carousel for your most popular theme using</p>
+<h3>Template 3.</h3>
+<p class="template-line">✓ Day 5: Create 5 testimonial graphics using Template 4 — schedule one per week</p>
+<p>for 5 weeks.</p>
+<p class="template-line">✓ Day 6: Create a TikTok cover frame template using Template 6 — apply to your</p>
+<p>next 5 videos.</p>
+<p class="template-line">✓ Day 7: Set up or refresh Pinterest — create 5 themed boards and pin 10 images to</p>
+<p>each with keyword-rich descriptions.</p>
+<p class="template-line">✓ [Instagram and Pinterest are where parties are discovered. A professional,</p>
+<p>beautiful, consistent brand presence across both platforms is the difference between clients who find you already convinced and clients who need to be persuaded.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

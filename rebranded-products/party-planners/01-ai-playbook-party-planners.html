@@ -1,0 +1,180 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Party Planners</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PARTY PLANNER</h3>
+<p>The AI Playbook for Party Planners Convert more inquiries, present proposals that get booked on the spot, build vendor relationships that fill your calendar, and create magical events that generate referrals for years</p>
+<h3>INTRODUCTION</h3>
+<p>The party planners with fully booked calendars and repeat clients aren&#x27;t just the most creative. They respond to every inquiry the same day with a message that makes parents and clients feel like the party is already in good hands. They present proposals</p>
+<p>that paint such a vivid picture of the event that clients book without needing to think twice. They maintain relationships with entertainers, venues, bakeries, and balloon artists who send referrals year-round. They build an Instagram and TikTok presence</p>
+<p>that attracts exactly the right clients. And they create events so consistently magical that every birthday party becomes a referral for the next five. This playbook covers kids parties, milestone celebrations, baby showers, and private social events — with copy-</p>
+<p>paste AI prompts throughout.</p>
+<h3>CHAPTER 1: INQUIRY RESPONSE &amp; BOOKING</h3>
+<h3>CONVERSION</h3>
+<p>The Inquiry Response System Parents and clients planning a party are often overwhelmed — they have a vision, a date, and a budget, but no idea where to start. Your first response should make them</p>
+<p>feel like they just found the person who is going to make everything easy and magical.</p>
+<h3>PROMPT — KIDS PARTY INQUIRY RESPONSE</h3>
+<p class="template-line">Write a warm, enthusiastic inquiry response for my party planning business. The</p>
+<div class="section-label">client [Name] reached out about planning a [theme / type] party for their child</div>
+<p>[Name] who is turning [age] on [date]. Details they shared: [paste key details — venue they have or need, guest count, budget indication, any theme ideas]. My speciality: [your niche — e.g., themed kids parties / luxury milestone celebrations /</p>
+<p>outdoor adventure parties]. I want to: (1) make them feel immediately that this is going to be magical and stress-free, (2) briefly describe how I&#x27;d approach their specific party, (3) ask 2-3 questions to understand their vision, (4) invite them to a</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>planning call or consultation. Warm, excited, and reassuring. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — ADULT / MILESTONE PARTY INQUIRY RESPONSE</h3>
+<p class="template-line">Write a professional, enthusiastic inquiry response for my party planning business. The client [Name] reached out about planning [event type — e.g., a 40th birthday / baby shower / anniversary party / graduation celebration] on [date] for [approximate</p>
+<p>guest count] people. Details: [paste key details]. I want to: (1) express genuine excitement about the event, (2) briefly describe my approach for this type of celebration, (3) ask 2-3 clarifying questions, (4) propose a planning call. Warm and</p>
+<p>professional. Under 200 words. Sign as [Your Name], [Business Name]. The Proposal That Gets Booked A party planning proposal that describes the experience — the moment the birthday child walks in, the look on their face, the sounds and colours of the celebration — closes</p>
+<p>at dramatically higher rates than a flat list of services and prices.</p>
+<h3>PROMPT — PARTY PROPOSAL EMAIL</h3>
+<p class="template-line">Write a party planning proposal email for my business. Client [Name], event: [type and theme], date: [date], venue: [venue or TBD], guest count: [X]. What I am proposing: [brief description of key elements — decorations, entertainment, catering</p>
+<p>coordination, activities, timeline]. Investment: $[amount] which includes [what is covered]. I want this proposal to: (1) open by painting the picture of the moment — how it will feel when everyone arrives, (2) describe each key element vividly, (3)</p>
+<p>present the investment confidently, (4) give a clear next step to confirm. Evocative and warm. Under 300 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 2: VENDOR PARTNERSHIPS</h3>
+<p>Building the Referral Network That Fills Your Calendar Children&#x27;s entertainers, balloon artists, face painters, bakeries, party venues, and photographers all serve the same client. One strong referral relationship with a popular</p>
+<p>local entertainer or venue can generate 20-30 qualified inquiries per year.</p>
+<h3>PROMPT — ENTERTAINER / VENDOR INTRODUCTION</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a professional introduction email from a party planner to a [children&#x27;s entertainer / balloon artist / face painter / bakery / party venue / photographer] named [Name] at [Business]. I want to: (1) introduce my party planning business</p>
+<p>and the types of events I plan, (2) mention how our services complement each other for the same clients, (3) propose a mutual referral arrangement, (4) offer to meet for coffee or a call. Friendly and professional. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — MONTHLY VENDOR VALUE TOUCH</h3>
+<p class="template-line">Write a monthly value message from a party planner to a vendor partner named [Name]. I want to share: (1) one party trend, seasonal theme idea, or insight that would be genuinely useful for their business or our shared clients, (2) a soft mention</p>
+<p>of any upcoming events or availability. Short, genuine, under 100 words. Colleague tone. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 3: CLIENT EXPERIENCE</h3>
+<p>The Pre-Event Experience The event experience begins long before the party itself. Clients who feel informed, excited, and cared for throughout the planning process arrive on the day relaxed — and relaxed clients become the most enthusiastic referrers.</p>
+<h3>PROMPT — PLANNING TIMELINE EMAIL</h3>
+<p class="template-line">Write a planning timeline email for a party planning client. Client [Name], event: [type], date: [date]. I want to outline: what we need to decide and by when — venue confirmation, theme finalisation, vendor bookings, catering, invitations, decorations,</p>
+<div class="section-label">day-of logistics. I want this to feel like a reassuring roadmap, not a to-do list. Warm</div>
+<p>and organised. Under 250 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — DAY-BEFORE CONFIRMATION EMAIL</h3>
+<p class="template-line">Write a day-before event confirmation email for a party planning client. Client [Name], party tomorrow [date] at [venue]. Confirm: arrival time, setup schedule, vendor arrival times, what the client needs to do vs. what I handle, emergency</p>
+<p>contact. Reassuring and specific. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — POST-EVENT FOLLOW-UP</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a post-event follow-up email for my party planning business. Client [Name], event was [date] — [brief description]. I want to: (1) express genuine joy about how the event went, (2) share one specific memory or moment that was magical, (3) ask</p>
+<p>for feedback, (4) plant the seed for next year&#x27;s party or future events, (5) make a warm ask for a review or referral. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 4: INSTAGRAM &amp; TIKTOK CONTENT</h3>
+<h3>STRATEGY</h3>
+<h3>Content That Books Parties</h3>
+<p>Party planning content is among the most shareable and saveable on Instagram and TikTok — parents plan parties by scrolling for ideas. The accounts that convert followers into clients post consistently across 4 pillars: event reveals (the finished setup,</p>
+<p>the reaction), process (the planning, the decorating, the behind-the-scenes), education (theme ideas, party tips, trend commentary), and social proof (client quotes, testimonials).</p>
+<h3>PROMPT — INSTAGRAM CAPTION BATCH</h3>
+<p>Write 5 Instagram captions for a party planner. Topics: (1) a recent party reveal — describe the theme, the setup, the moment the child/guest of honour walked in (anonymise), (2) a party trend you are loving right now and how to incorporate it, (3)</p>
+<p>behind-the-scenes of your planning and setup process, (4) a tip for parents planning a party on a budget — 3 specific ways to make it feel magical without overspending, (5) a direct booking CTA with current availability. Each under 150 words, warm and</p>
+<p>visual. Business name: [Business Name].</p>
+<h3>PROMPT — TIKTOK / REEL CONCEPTS</h3>
+<p>Write 5 TikTok or Reel concept ideas for a party planner. Each: (1) hook line for the first 2 seconds, (2) content description, (3) caption. Topics: a transformation video (empty venue to finished party setup), a &#x27;what $[budget] gets you&#x27; breakdown, the</p>
+<p>top 3 party themes for [current season], a day-in-the-life on party day, a reaction video of the guest of honour walking in (with consent). Business name: [Business Name].</p>
+<h3>CHAPTER 5: PRICING &amp; PACKAGES</h3>
+<p>Presenting Your Rates With Confidence</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — PRICING ENQUIRY RESPONSE</h3>
+<p class="template-line">Write a response to a potential client who asked &#x27;how much does party planning cost?&#x27; My packages: [describe your tiers — e.g., Styling Only: $[X] / Partial Planning: $[X] / Full Planning: $[X]]. I want to: (1) briefly explain what each level includes, (2)</p>
+<p>ask about their event so I can point them toward the right option, (3) invite them to a free consultation. Confident and clear. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — BUDGET OBJECTION RESPONSE</h3>
+<p class="template-line">Write a professional response to a potential party planning client who said my fee is above their budget. My minimum: $[amount]. Their budget: $[amount]. I want to: (1) acknowledge their situation warmly, (2) briefly explain what my fee reflects, (3) offer</p>
+<p>genuine alternatives — a smaller scope package, a styling-only option, or a DIY guide I could provide. Warm and solution-focused. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 6: REVIEWS &amp; REPUTATION</h3>
+<p>The Post-Event Review System</p>
+<h3>PROMPT — REVIEW REQUEST EMAIL</h3>
+<p class="template-line">Write a post-event review request email for my party planning business. Client [Name], event [type] on [date]. I want to: (1) share one specific memory from the event that moved me, (2) express what it means to create these moments for</p>
+<p>families, (3) make a warm personal ask for a Google review, (4) include the direct link. Emotional and genuine. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Inquiry &amp; Proposal System</h3>
+<p class="template-line">• Write your kids party and adult/milestone inquiry response templates</p>
+<p class="template-line">• Build your proposal email template using the Chapter 1 prompt</p>
+<p class="template-line">• Set a standard: respond to every inquiry within 3 hours</p>
+<h3>Week 2: Vendor Partnerships</h3>
+<p class="template-line">• List 10 local entertainers, venues, bakeries, and photographers you want referral</p>
+<p>relationships with</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Party Planners Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Write 5 personalised introduction emails using Chapter 2 prompts</p>
+<p class="template-line">• Build your monthly vendor value touch template</p>
+<h3>Week 3: Content Batch</h3>
+<p class="template-line">• Batch 5 Instagram captions using Chapter 4 prompt</p>
+<p class="template-line">• Plan 5 TikTok/Reel concepts using Chapter 4</p>
+<p class="template-line">• Schedule 4-5 posts per week for the next 3 weeks</p>
+<h3>Week 4: Review &amp; Client Experience System</h3>
+<p class="template-line">• Write your post-event follow-up and review request emails</p>
+<p class="template-line">• Write your planning timeline and day-before confirmation templates</p>
+<p class="template-line">• Set post-event review request as a standard 3-day follow-up after every event</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section></main></body></html>

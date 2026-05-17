@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Electricians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>ELECTRICIAN</h3>
+<p>The AI Playbook for Electrical Contractors Convert more estimates, sell service agreements, win commercial accounts, and build the Google reputation that makes your phone ring first</p>
+<h3>INTRODUCTION</h3>
+<p>The electrical contractors dominating their local markets aren&#x27;t just the best technicians. They follow up on estimates within 48 hours. They win commercial accounts with a professional proposal that most competitors never send. They sell whole-home</p>
+<p>electrical inspections that generate 3-5 additional jobs per customer per year. And they have a Google reputation that does their selling before they pick up the phone. AI makes all of it systematic. This playbook gives you 7 chapters covering every high-</p>
+<p>leverage scenario — with copy-paste prompts throughout.</p>
+<h3>CHAPTER 1: ESTIMATE FOLLOW-UP &amp;</h3>
+<h3>CONVERSION</h3>
+<p>The 48-Hour Follow-Up Window Electrical estimates that aren&#x27;t followed up within 48 hours convert at a fraction of the rate of those that are. Most homeowners are getting 2-3 quotes — the contractor who</p>
+<p>follows up professionally and specifically wins a disproportionate number of jobs.</p>
+<h3>PROMPT — ESTIMATE FOLLOW-UP EMAIL</h3>
+<p class="template-line">Write a professional estimate follow-up email for my electrical contracting business. The customer [Name] received an estimate for [job type] on [date] for $[amount]. I want to: (1) confirm they received it, (2) briefly explain what&#x27;s included that a lower</p>
+<p>bid might not cover (licensed, insured, permit pulled if required, [X]-year workmanship guarantee), (3) make the next step obvious. Professional and warm, not pushy. Under 150 words. Sign as [Your Name], [Company Name]. The 3-Touch Follow-Up Sequence</p>
+<h3>PROMPT — 3-TOUCH ESTIMATE FOLLOW-UP SEQUENCE</h3>
+<p class="template-line">Write a 3-message follow-up sequence for an electrical estimate that hasn&#x27;t converted. Customer [Name], job type [description], estimate amount $[amount]. Message 1 (Day 2): confirm receipt, ask if there are questions. Message 2 (Day 5):</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>add one piece of value — e.g., mention permit requirements, safety consideration, or timing advantage. Message 3 (Day 10): soft close — &#x27;closing my estimate folder for the month&#x27;. Each under 80 words. Sign as [Your Name], [Company Name].</p>
+<h3>CHAPTER 2: SERVICE AGREEMENT &amp;</h3>
+<h3>MAINTENANCE PLAN SELLING</h3>
+<p>The Post-Job Maintenance Plan Offer Homeowners who&#x27;ve just had an electrical issue resolved are the warmest possible audience for a maintenance plan. They&#x27;ve just experienced a problem — and the fear of another one is fresh. This is the right moment.</p>
+<h3>PROMPT — POST-JOB MAINTENANCE PLAN OFFER</h3>
+<p class="template-line">Write a post-job email offering a home electrical maintenance plan to customer [Name] who just had [job type] completed. The plan costs $[amount]/year and covers [what&#x27;s included — e.g., annual whole-home inspection, priority scheduling,</p>
+<p>X% discount on repairs]. I want to frame it as: &#x27;this is how you prevent what happened today from happening again unexpectedly&#x27;. Warm, not salesy. Under 150 words. Sign as [Your Name], [Company Name]. The EV Charger Upsell Campaign</p>
+<p>EV charger installation is one of the highest-growth electrical services in the country right now. Homeowners with Teslas and other EVs frequently don&#x27;t know that a Level 2 charger can be installed for a predictable cost by a licensed electrician. This is a</p>
+<p>proactive outreach campaign to past customers.</p>
+<h3>PROMPT — EV CHARGER CAMPAIGN EMAIL</h3>
+<p class="template-line">Write a proactive EV charger campaign email for my electrical contracting business to send to past residential customers. I want to: (1) mention the rapid growth of EVs and that many homeowners don&#x27;t realise they can charge at home significantly</p>
+<p>faster with a Level 2 charger, (2) briefly explain the installation (what it involves, typical timeframe), (3) mention the investment range $[X]-$[X], (4) invite them to call or reply for a free assessment. Professional, helpful, not spammy. Under 200 words.</p>
+<p>Sign as [Your Name], [Company Name].</p>
+<h3>CHAPTER 3: COMMERCIAL ACCOUNT</h3>
+<h3>ACQUISITION</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Winning Property Managers &amp; Building Owners One commercial property management company can send 20-50 electrical service calls per year. The electricians winning these accounts send a professional introduction — not just a knock on the door.</p>
+<h3>PROMPT — PROPERTY MANAGER INTRODUCTION EMAIL</h3>
+<p class="template-line">Write a professional introduction email from an electrical contractor to a property manager named [Name] at [Company]. I want to: (1) briefly introduce my company and our commercial electrical service capabilities, (2) mention that we specialise in</p>
+<p>[relevant services — e.g., emergency response, code compliance, panel upgrades], (3) note our response time commitment and licensing, (4) propose a brief meeting or call. Under 150 words. Professional and confident. Sign as [Your Name], [Company Name].</p>
+<p>Monthly Commercial Client Value Touch</p>
+<h3>PROMPT — COMMERCIAL CLIENT MONTHLY TOUCH</h3>
+<p class="template-line">Write a monthly value email from an electrical contractor to a commercial property management client named [Name]. Include: (1) one electrical safety tip or code update relevant to commercial properties right now, (2) a seasonal maintenance</p>
+<p>reminder (e.g., GFCI testing, panel inspection, outdoor lighting before winter), (3) a soft reminder that we&#x27;re available for emergency calls. Professional, genuinely useful, under 150 words. Sign as [Your Name], [Company Name].</p>
+<h3>CHAPTER 4: SEASONAL CAMPAIGNS &amp;</h3>
+<h3>PROACTIVE OUTREACH</h3>
+<p>Whole-Home Electrical Inspection Campaign A proactive whole-home electrical inspection campaign converts at remarkably high rates when framed correctly — not as a sales call, but as a safety check. Position it as what responsible homeowners do every few years.</p>
+<h3>PROMPT — WHOLE-HOME INSPECTION CAMPAIGN</h3>
+<p class="template-line">Write a proactive outreach email to past residential customers offering a whole- home electrical safety inspection. Inspection costs $[amount] and takes approximately [time]. I want to: (1) frame this as a safety initiative, not a sales call,</p>
+<p>(2) mention 2-3 specific things an inspection catches (outdated panels, overloaded circuits, GFCI compliance), (3) note that we&#x27;re booking limited slots this month. Under 200 words. Sign as [Your Name], [Company Name]. Smart Home &amp; Panel Upgrade Campaign</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — PANEL UPGRADE CAMPAIGN EMAIL</h3>
+<p class="template-line">Write an educational email to past residential customers about electrical panel upgrades. I want to: (1) explain what a panel upgrade involves and who typically needs one (in plain language — not technical jargon), (2) mention the EV charger</p>
+<p>and smart home connection — many customers don&#x27;t realise a panel upgrade enables both, (3) offer a free panel assessment with no obligation. Under 200 words. Sign as [Your Name], [Company Name].</p>
+<h3>CHAPTER 5: SOCIAL CONTENT &amp; BRAND</h3>
+<h3>VISIBILITY</h3>
+<h3>Content That Builds Trust With Homeowners</h3>
+<p>Homeowners hire electricians they trust — and social media builds trust before a single conversation happens. The content pillars that convert best for electrical contractors: education (safety, what to look for), social proof (completed jobs, reviews), and</p>
+<p>seasonal awareness (when to call).</p>
+<h3>PROMPT — FACEBOOK &amp; GOOGLE POST BATCH</h3>
+<p>Write 5 Facebook and Google Business Profile posts for an electrical contractor. Topics: (1) &#x27;5 signs your home&#x27;s electrical panel might need an upgrade&#x27; — educational, specific signs in plain language, (2) &#x27;Why you should always hire a</p>
+<p>licensed electrician for [job type]&#x27; — builds trust, explains licensing, (3) a completed job post — describe a recent project (e.g., &#x27;Just finished a full rewire at a [year] home in [neighbourhood] — here&#x27;s what we found&#x27;), (4) EV charger educational post</p>
+<p>— what Level 1 vs Level 2 means for a homeowner, (5) a seasonal safety tip post. Each under 150 words, professional and useful. Company name: [Company Name]. Nextdoor Strategy for Electricians Nextdoor is the highest-converting social platform for trade contractors because it&#x27;s</p>
+<p>hyperlocal and neighbours trust recommendations from other neighbours. One strong Nextdoor review can generate 5-15 calls.</p>
+<h3>PROMPT — NEXTDOOR COMMUNITY POST</h3>
+<p class="template-line">Write a professional Nextdoor community introduction post for an electrical contractor. I want to: (1) introduce myself and my company briefly, (2) mention the neighbourhoods I serve, (3) share one useful electrical tip for homeowners in the</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>area, (4) offer a free estimate for any electrical work. Warm and community-focused — not a sales pitch. Under 150 words. Sign as [Your Name], [Company Name], [License Number if relevant].</p>
+<h3>CHAPTER 6: GOOGLE REVIEWS &amp; REPUTATION</h3>
+<p>The Post-Job Review Request System Electrical contractors with 50+ Google reviews get called first by homeowners who don&#x27;t have a referral. The window for asking is 24-48 hours after job completion — when satisfaction is highest.</p>
+<h3>PROMPT — POST-JOB REVIEW REQUEST</h3>
+<p class="template-line">Write a post-job review request text message and email for my electrical contracting business. Customer [Name] just had [job type] completed at their home. The text version should be under 60 words. The email version should be under 100 words.</p>
+<p>Both should: make a personal, non-automated-feeling ask, include the direct Google review link, and express genuine appreciation. Sign as [Your Name], [Company Name]. Responding to Reviews</p>
+<h3>PROMPT — 5-STAR REVIEW RESPONSE</h3>
+<p class="template-line">Write a warm, specific response to a 5-star Google review for my electrical company. The reviewer said: [paste their review]. I want to: respond personally, reference one detail from their review, express genuine thanks, and mention</p>
+<p>[Company Name] naturally for SEO. Under 80 words.</p>
+<h3>PROMPT — NEGATIVE REVIEW RESPONSE</h3>
+<p class="template-line">Write a professional, non-defensive response to a negative Google review for my electrical company. The reviewer said: [paste their review]. I want to: acknowledge their experience, apologise for falling short of our standard, invite them to contact</p>
+<p>me directly to resolve it, and include my direct phone number. Under 80 words. Never argue. Never explain defensively.</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Estimate Follow-Up System</h3>
+<p class="template-line">• Build your 48-hour estimate follow-up email using the Chapter 1 prompt</p>
+<p class="template-line">• Write your 3-touch follow-up sequence and save as email drafts</p>
+<p class="template-line">• Set a recurring calendar reminder: check unanswered estimates every Monday</p>
+<p>and Friday</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Week 2: Proactive Campaign</h3>
+<p class="template-line">• Build your EV charger outreach email and send to past residential customers</p>
+<p class="template-line">• Write your whole-home inspection campaign email — target customers from 3+</p>
+<p>years ago</p>
+<p class="template-line">• Set a goal: send to 50 past customers this week</p>
+<h3>Week 3: Commercial Outreach</h3>
+<p class="template-line">• List 10 property managers or commercial building owners in your area</p>
+<p class="template-line">• Use Chapter 3 prompts to write 5 personalized introduction emails</p>
+<p class="template-line">• Follow up on any responses immediately — commercial accounts move fast</p>
+<p>when they need someone</p>
+<h3>Week 4: Review System</h3>
+<p class="template-line">• Identify 20 past customers who haven&#x27;t left a Google review</p>
+<p class="template-line">• Use Chapter 6 prompts to write personalized review request texts</p>
+<p class="template-line">• Set up a post-job review request as a standard step in your job close-out process</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section></main></body></html>

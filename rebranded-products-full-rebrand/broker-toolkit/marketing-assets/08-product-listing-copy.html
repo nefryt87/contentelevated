@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Product Listing Copy</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Product Listing Copy</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>broker_toolkit</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>Product Listing Copy Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 1</p>
+<h3>MARKETING RESOURCE 1 OF 3</h3>
+<p>Product Listing Copy Gumroad · Stan Store · Shopify — Ready to Paste Plug in your price, add your cover image, and go live today.</p>
+<div class="section-label">HOW TO USE THIS: This document contains platform-ready listing copy for Gumroad, Stan Store, or</div>
+<p>any digital product platform. Each section is labeled. Copy the text, paste it into your listing, swap in your price, and publish. The email sequence at the end is for your post-purchase automation. Product Listing Copy Healthcare Broker Solo Toolkit</p>
+<p>Healthcare Broker Solo Toolkit | Independent Broker Resources Page 2</p>
+<h3>SECTION 1 — TITLE, SUBTITLE &amp; META</h3>
+<h3>PRODUCT TITLE</h3>
+<p>Healthcare Broker Solo Toolkit — The Complete Growth Bundle for Independent Brokers</p>
+<h3>SHORT SUBTITLE</h3>
+<p>(Stan Store / above the fold) 7 done-for-you resources to help solo brokers look professional, stay organized, and grow their book of business — without a marketing team.</p>
+<h3>SEO DESCRIPTION</h3>
+<p>(Gumroad / meta) Independent insurance broker tools | Employee benefits marketing | Content calendar for brokers | AI for insurance agents | Benefits proposal template | Renewal tracker | Broker brand kit</p>
+<h3>TAGS</h3>
+<p>insurance broker, healthcare broker, employee benefits, independent broker, broker tools, open enrollment, content calendar, AI for insurance, group health insurance, broker resources, solo broker Product Listing Copy Healthcare Broker Solo Toolkit</p>
+<p>Healthcare Broker Solo Toolkit | Independent Broker Resources Page 3</p>
+<h3>SECTION 2 — HOOK COPY (Top of Listing)</h3>
+<p>PLACEMENT: This is the first thing buyers read. Paste this at the very top of your product description, before the feature list. You&#x27;re a solo broker competing against agencies with full teams behind them.</p></div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>They have a marketing coordinator. A CRM admin. Someone who writes their emails, designs their proposals, and keeps track of every renewal. You have yourself. This toolkit changes that.</p>
+<p>The Healthcare Broker Solo Toolkit is a complete, ready-to-use resource bundle built specifically for independent brokers who want to show up professionally, win more clients, and never let a renewal slip through the cracks again.</p>
+<p>No fluff. No filler. Just tools you&#x27;ll actually use this week. Product Listing Copy Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 4</p>
+<h3>SECTION 3 — WHAT&#x27;S INSIDE (Feature List)</h3>
+<p>PLACEMENT: This becomes your main product description body. Use the emoji icons as-is — they increase conversion on digital product platforms.</p>
+<h3>WHAT&#x27;S INSIDE — 7 RESOURCES, 10 FILES:</h3>
+<p>■ 90-Day Content Calendar (PDF + Word) Stop staring at a blank screen every Monday morning. This week-by-week plan covers 12 weeks of LinkedIn, Facebook, and email content — with themes, ready-to-post captions, and a full hashtag bank already written for you.</p>
+<p>■ Brand Kit Guide (PDF + Word) Clients decide whether to trust you before you say a word. This guide walks you through picking your brand personality, color palette, fonts, and building all 7 assets that make you look like a polished pro —</p>
+<p>including your LinkedIn profile, email signature, and voicemail script. ■ AI in Your Brokerage Business (PDF + Word) The unfair advantage solo brokers aren&#x27;t using yet. Get the top 10 AI tools, a complete copy-paste prompt</p>
+<p>library for client emails, proposals, and LinkedIn posts, a weekly AI workflow, and a 7-day quick-start challenge. ■ Client Renewal Tracker (Excel) Never miss a renewal again. This spreadsheet auto-color-codes every client red, amber, or green based</p>
+<p>on how close their renewal is — with a live dashboard showing your total book premium and upcoming renewals in 30, 60, and 90 days. ■ Benefits Cost Comparison Calculator (Excel)</p>
+<p>Pull this up in your next client meeting and watch their jaw drop. Enter up to 4 plan options and it instantly calculates annual employer cost, per-employee cost, and savings vs. their current plan. The recommendation box generates automatically.</p></div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>■ Benefits Proposal Template (PDF) A fully structured, professional proposal you can fill in and send the same day. Includes current situation analysis, plan comparison table, recommendation section, and next steps. Looks like something a 10-person agency built.</p>
+<p>Product Listing Copy Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 5 ■ Client Onboarding Questionnaire (PDF) Send this before your first meeting and arrive already knowing exactly what the client needs. 7 sections</p>
+<p>covering workforce, current coverage, budget, priorities, and decision timeline. Works as a printout or in Google Forms. Product Listing Copy Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 6</p>
+<h3>SECTION 4 — WHO IT&#x27;S FOR</h3>
+<h3>THIS IS FOR YOU IF:</h3>
+<p class="template-line">✓</p>
+<p>You&#x27;re an independent broker tired of losing clients to agencies that just look more put-together</p>
+<p class="template-line">✓</p>
+<p>You want to post consistent content but never know what to say or where to start</p>
+<p class="template-line">✓</p>
+<p>You&#x27;ve let renewals slip because you don&#x27;t have a real tracking system</p>
+<p class="template-line">✓</p>
+<p>Your proposals are still plain docs you&#x27;re slightly embarrassed to send</p>
+<p class="template-line">✓</p>
+<p>You know AI could save you hours every week but haven&#x27;t figured out how to use it for your business</p>
+<p class="template-line">✓</p>
+<p>You&#x27;re building your practice and need professional tools without agency-level overhead</p>
+<h3>SECTION 5 — CLOSING COPY &amp; CTA</h3>
+<h3>INSTANT DOWNLOAD. USE IT TODAY.</h3>
+<p>No waiting. No onboarding. No subscription. No tech setup required. Download all 10 files, open what you need, and start using it in your business today. The renewal tracker alone could save you a client you didn&#x27;t even know was at risk.</p>
+<p>&quot;A single retained client pays for this toolkit 10 times over. One saved renewal pays for it 50 times.&quot; ➤ [INSERT YOUR PRICE HERE — Recommended: $67–$97] ➤ Instant access. Download immediately after purchase. ➤ 10 files delivered as a ZIP folder. Product Listing Copy</p></div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 7</p>
+<h3>SECTION 6 — POST-PURCHASE EMAIL SEQUENCE</h3>
+<p>PLACEMENT: Set these up in Gumroad, Stan Store, or your email tool (ConvertKit, Mailchimp, etc.) as automated post-purchase emails. Customize [BRACKETS] with your details.</p>
+<h3>EMAIL 1 — Immediate (Delivery)</h3>
+<div class="section-label">SUBJECT: Subject: Your Healthcare Broker Toolkit is ready ■■</div>
+<p>Hey [First Name], Your download is ready. All 10 files are in the ZIP folder — just click the link below.</p>
+<h3>[DOWNLOAD LINK]</h3>
+<p>Here&#x27;s where I&#x27;d start if I were you: → Open the Client Renewal Tracker first. Add your top 5 clients. → Then read the AI Guide — spend 20 minutes and you&#x27;ll save 2 hours this week. → Post Week 1 content from the calendar by Friday. You&#x27;ve got everything you need. Go use it.</p>
+<h3>— [YOUR NAME]</h3>
+<h3>EMAIL 2 — Day 3 (Check-In)</h3>
+<h3>SUBJECT: Subject: Quick question about your toolkit</h3>
+<p>Hey [First Name], Just checking in — have you had a chance to open the files yet? If you haven&#x27;t started, I get it. Here&#x27;s the 10-minute version: 1. Open the Renewal Tracker. Add 3 clients. That&#x27;s it for today.</p>
+<p>2. Tomorrow: use one prompt from the AI Guide to write a LinkedIn post. 3. Day after: post it. That&#x27;s the whole system. One small action at a time. Reply if you have any questions — I read every email.</p>
+<h3>— [YOUR NAME]</h3>
+<p>Product Listing Copy Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 8</p>
+<h3>EMAIL 3 — Day 7 (Value + Upsell Seed)</h3>
+<div class="section-label">SUBJECT: Subject: One broker saved $40K for a client this week</div>
+<p>Hey [First Name], I wanted to share a quick story. A broker using the Benefits Cost Calculator found that his client&#x27;s current plan was costing them $40,000 more per year than a comparable PPO — for the exact same coverage. He presented it in a 20-minute</p></div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">broker_toolkit Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>meeting. Client switched. Renewal secured. That&#x27;s what this toolkit is for. If you haven&#x27;t opened the calculator yet, it&#x27;s worth 20 minutes of your time this week. More coming soon — I&#x27;m working on [NEXT PRODUCT TEASER].</p>
+<h3>— [YOUR NAME]</h3></div>
+  <div class="footer"><span>Product Listing Copy</span><span class="page-number">07</span></div>
+</section></main></body></html>

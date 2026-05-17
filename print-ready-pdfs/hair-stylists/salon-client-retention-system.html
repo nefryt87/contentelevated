@@ -1,0 +1,188 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon Client Retention System</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Salon Client Retention System</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Hair Stylists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Hair Stylists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<h3>CLIENT RETENTION</h3>
+<h3>SYSTEM</h3>
+<p>Keep the Clients You Have. Rebook More. Build a Chair That&#x27;s Always Full. 5</p>
+<h3>Retention systems</h3>
+<p>3x More valuable than new clients 30+ Ready-to-use scripts $197 Bundle price © 2026 · Hairstylist Complete Growth Bundle · Client Retention System · For single-business use only</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only The Most Expensive Thing in Your Business Is a Client Who Doesn&#x27;t Come Back</p>
+<p>Most salon owners focus on getting new clients. That&#x27;s understandable — new clients feel like growth. But the math tells a different story: acquiring a new client costs 3–5x more than keeping</p>
+<p>an existing one. And a client who books twice a year is worth exponentially more over their lifetime than someone who comes once and disappears.</p>
+<div class="section-label">Retention isn&#x27;t about being pushy or over-communicating. It&#x27;s about creating a client experience so</div>
+<p>consistent and intentional that coming back feels obvious. This system gives you the exact scripts, sequences, and touchpoints to make that happen. The 5 Systems in This Guide</p>
+<h3>System</h3>
+<p>What It Covers 1 The In-Chair Experience System</p>
+<div class="section-label">How to run every appointment so clients leave wanting to return</div>
+<p>2 The Rebooking System Scripts and timing for rebooking before they leave and after 3 The Follow-Up System Post-appointment messages that build loyalty and generate reviews 4 The Win-Back System</p>
+<h3>How to re-engage clients who have gone quiet</h3>
+<p>5 The Loyalty &amp; Referral System</p>
+<div class="section-label">How to turn your best clients into your best marketers</div></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>The Retention Math Before you build any of these systems, understand what retention is actually worth: Scenario Annual Value Per Client</p>
+<h3>Client visits 1x per year @ $120 avg ticket</h3>
+<p>$120/year</p>
+<h3>Client visits 3x per year @ $120 avg ticket</h3>
+<p>$360/year</p>
+<h3>Client visits 6x per year @ $120 avg ticket</h3>
+<p>$720/year</p>
+<div class="section-label">Client visits 6x AND refers 2 friends who each visit 3x</div>
+<p>$1,440/year total value Moving a client from 1x to 3x per year is the equivalent of tripling their value — without a single new</p>
+<h3>client acquisition.</h3>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>System 1</h3>
+<p>The In-Chair Experience System</p>
+<div class="section-label">Retention starts before the appointment ends. How you run your chair determines whether a client</div>
+<p>books again — or quietly tries someone else. This system gives you a consistent framework for every appointment. The 5-Part Appointment Framework 1 The Arrival Greeting (first 2 minutes)</p>
+<p class="template-line">• Use their name immediately — &#x27;Hi [name], so great to see you!&#x27;</p>
+<p class="template-line">• Reference something personal from last visit or their intake form: &#x27;How did that balayage hold</p>
+<p>up in the summer?&#x27;</p>
+<p class="template-line">• Offer water, coffee, or tea before they sit down — this is hospitality, not just service</p>
+<p class="template-line">• Never start talking business (rebooking, retail) in the first 2 minutes</p>
+<p>2 The Consultation (even for regulars)</p>
+<p class="template-line">• Every appointment gets a brief consultation — even for clients you&#x27;ve seen 50 times</p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Ask: &#x27;How has your hair been behaving since last time?&#x27; — this uncovers maintenance issues</p>
+<p>and opens retail conversations</p>
+<p class="template-line">• Ask: &#x27;Are we doing the same thing today, or is there anything you want to try differently?&#x27;</p>
+<p class="template-line">• Listen more than you talk in this phase — what they tell you shapes the whole appointment</p>
+<p>3 The Service Narrative</p>
+<p class="template-line">• Talk through what you&#x27;re doing and why — not a lecture, but a running commentary</p>
+<p class="template-line">• Example: &#x27;I&#x27;m placing these highlights slightly higher than last time to give you more lift around</p>
+<p>the face — I think it&#x27;ll really open up your look&#x27;</p>
+<p class="template-line">• This builds trust, positions you as an expert, and creates natural retail conversation hooks</p>
+<p class="template-line">• Clients who understand what&#x27;s happening are more likely to follow your homecare</p>
+<p>recommendations 4 The Reveal</p>
+<p class="template-line">• When you finish, don&#x27;t just hand them a mirror — build a moment</p>
+<p class="template-line">• Turn them toward the mirror and let them absorb it before you say anything</p>
+<p class="template-line">• Then: &#x27;What do you think?&#x27; — wait for their reaction before adding anything</p>
+<p class="template-line">• This pause is important: rushing the reveal undercuts the emotional impact of your work</p>
+<p>5 The Checkout (the rebooking window)</p>
+<p class="template-line">• This is the highest-leverage 90 seconds in your business — see System 2</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<p class="template-line">• Also the moment for retail: &#x27;I want to send you home with the right products to maintain this&#x27;</p>
+<p class="template-line">• End with: &#x27;Thank you so much — you look amazing. I&#x27;ll see you [specific date]&#x27;</p>
+<p class="template-line">• Walk them to the door if possible. The physical gesture signals you value their time.</p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>System 2</h3>
+<p>The Rebooking System The best time to rebook a client is while they&#x27;re still in your chair, looking at results they love. The second best time is within 48 hours of their appointment. Everything after that gets harder. In-Chair Rebooking Scripts</p>
+<p>Use one of these at checkout — before payment, while they&#x27;re in front of the mirror: For color clients: &quot;To keep this looking its best, I&#x27;d love to see you back in about [6-8] weeks. I have [date] and [date] available — which works better for you?&quot;</p>
+<p>For cut clients: &quot;Your hair shape really holds well at about [4-6] weeks — after that you start to lose the line. I can get you on the books right now while I have good availability. What works for you?&quot; For treatment clients:</p>
+<p>&quot;For the best results from this treatment, I recommend coming back in [4] weeks for a maintenance pass. Want to lock that in while you&#x27;re here?&quot; The Key Principle: Give Two Options, Not an Open-Ended Question</p>
+<p>&#x27;Would you like to rebook?&#x27; gives them a yes/no. &#x27;I have Tuesday the 12th or Thursday the 14th — which works better?&#x27; gives them a choice between two yeses. Use the second format every time. Post-Appointment Rebooking Texts</p>
+<p>If they didn&#x27;t rebook in the chair, send this text 3–4 weeks after their appointment: 4-week reminder (color client): Hey [name]! It&#x27;s been about a month since your last color — just wanted to check in and see how</p>
+<p>it&#x27;s holding up. I have some openings coming up if you&#x27;re thinking about coming in. Just reply and I&#x27;ll send you options!   6-week overdue (any service): Hey [name]! Miss seeing you in the chair   It&#x27;s been a little while — [service] tends to start showing</p>
+<p>wear around now. I&#x27;ve got a couple spots open this week and next if you want to get back in. Just say the word! 8+ weeks overdue: Hey [name]! It&#x27;s been a minute — hope everything&#x27;s good with you! I know life gets busy. Whenever</p>
+<p>you&#x27;re ready to come back in, just reach out and I&#x27;ll get you sorted. I always have time for you.  </p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Rebooking Rate Tracking Track this monthly: of all the clients you saw, what percentage booked their next appointment</p>
+<p>before leaving? A healthy rebooking rate is 60–70%. Below 40% means your checkout process needs work. Use the Tab 4 tracker in the Profit Calculator to monitor this metric.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>System 3</h3>
+<p>The Follow-Up System One touchpoint after an appointment can dramatically increase the chance a client returns. Most stylists skip this entirely — which means you can stand out with minimal effort. The 24-Hour Follow-Up Text</p>
+<p>Send this the day after every appointment. Takes 30 seconds. Works every time: After color: Hey [name]! Just checking in — how are you loving your hair today? Hope you&#x27;re getting lots of</p>
+<p>compliments   Remember: wait 48 hours before washing, and use sulfate-free shampoo to keep that color vibrant as long as possible! After a big change (chop, color transformation, etc.):</p>
+<p>Hey [name]! Still thinking about your transformation yesterday — you looked absolutely amazing. How are you feeling about it today? First-day nerves are normal after a big change, but I have a feeling you&#x27;re going to love it more every day  </p>
+<p>After a regular maintenance appointment: Hey [name]! Thanks so much for coming in yesterday — always love seeing you! Let me know if you have any questions about the products I recommended. See you in [X] weeks!  </p>
+<p>The Review Ask (send 48 hours post-appointment) The best time to ask for a review is when the client is still in the glow of their new look — 24–48 hours after their appointment:</p>
+<p>Hey [name]! So glad you came in — you looked incredible. If you have 2 minutes, I&#x27;d love it if you left me a Google review. It genuinely means the world to small businesses like mine and helps other</p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>clients find me. Here&#x27;s the link: [LINK] — and thank you in advance!   Homecare Education Message (send 1 week after) This message positions you as an expert and creates a natural retail follow-up:</p>
+<p>Hey [name]! Quick tip for keeping your [service] looking amazing: [1 specific tip relevant to their service, e.g., &#x27;Use a purple toning shampoo once a week to keep that blonde bright — I love the</p>
+<p>Redken Color Extend Blondage one.&#x27;]. Any questions about your routine, just ask! That&#x27;s what I&#x27;m here for   Batching Your Follow-Ups With AI</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only At the end of each workday, spend 5 minutes generating follow-up texts using the prompts from</p>
+<p>the Salon AI Prompt Library (Prompts #22–26). Give ChatGPT the service and client details, get a personalized message in 10 seconds, and send it.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>System 4</h3>
+<p>The Win-Back System A client who hasn&#x27;t booked in 90+ days is at serious risk of not coming back. But most of them haven&#x27;t left on purpose — they just got busy, lost the habit, or assumed you were too booked. A</p>
+<p>well-timed win-back message brings a significant percentage back. The Win-Back Sequence (3 messages over 10 days) Message 1 — Day 1 (Warm Reconnect)</p>
+<h3>Subject: We miss you at [Salon Name]</h3>
+<p>Hey [name]! It&#x27;s been a little while and I wanted to reach out personally. I always loved seeing you in my chair and I hope everything&#x27;s been great. I&#x27;ve had a few openings come up and thought of you —</p>
+<p>no pressure at all, but if you&#x27;ve been thinking about coming in, I&#x27;d love to get you back on the books.</p>
+<h3>[BOOKING LINK]</h3>
+<p>Message 2 — Day 4 (Value Email)</p>
+<div class="section-label">Subject: A quick tip for [their hair type/last service]</div></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hey [name]! Wanted to share something you might find helpful — [1 genuinely useful tip relevant to their hair or last service]. If it&#x27;s been a while since your last [service], now is actually a great time to</p>
+<p>come in before [seasonal concern, e.g., &#x27;the summer sun does more damage to color&#x27;]. I have some availability coming up if you&#x27;re interested. [BOOKING LINK] Message 3 — Day 10 (Final Nudge)</p>
+<h3>Subject: A little something for you</h3>
+<p>Hey [name]! Last note from me — I wanted to offer you [a small gesture: priority booking, complimentary treatment add-on, etc.] as a welcome back. My books fill up fast but I always want</p>
+<p>to make room for clients I care about. If you&#x27;d like to come in, here&#x27;s my booking link: [BOOKING LINK]. Either way, I hope you&#x27;re doing great!   Win-Back Rate Benchmarks</p>
+<p>A well-executed 3-message win-back sequence typically brings back 15–25% of lapsed clients. At an average ticket of $120, re-engaging 10 lapsed clients per month = $1,200–$3,000 in recovered revenue. Who to target first:</p>
+<p class="template-line">• Clients who were regulars (3+ visits) before going quiet — highest re-engagement rate</p>
+<p class="template-line">• Clients who gave you 5-star reviews — they loved you, they just drifted</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<p class="template-line">• Clients who referred someone — high relationship equity</p>
+<p class="template-line">• Recent lapsed (90–120 days) before longer-lapsed (180+ days)</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>System 5</h3>
+<p>The Loyalty &amp; Referral System Your most loyal clients are your most valuable marketing asset. They refer friends, leave reviews, and stay through price increases because they trust you. This system is designed to recognize, reward, and activate them.</p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Identifying Your VIP Clients A VIP client meets at least 2 of these criteria:</p>
+<p class="template-line">• Books 4+ times per year</p>
+<p class="template-line">• Average ticket is above your menu average</p>
+<p class="template-line">• Has referred at least one friend in the past year</p>
+<p class="template-line">• Has left a Google review</p>
+<p class="template-line">• Has been coming to you for 2+ years</p>
+<p>The 3 Referral Program Structures Structure How It Works Best For Give $20, Get $20 Referring client gets $20 off next visit when their friend books. New client gets $20 off first visit. Easy to explain and track. Works for any salon size.</p>
+<p>Service Upgrade Reward Referring client gets a complimentary add-on (gloss, scalp treatment, blowout) on their next visit. Protects margins better than discounts. Feels more premium. Points-Based Loyalty</p>
+<p>Clients earn points for visits, referrals, and reviews. Redeem for free services or products. Best for salons with a booking system that supports tracking.</p>
+<div class="section-label">Referral Ask Script (send 1–2 days after a great appointment):</div>
+<p>Hey [name]! I&#x27;m so glad you loved your [service] — you looked incredible. If you have any friends who&#x27;ve been looking for a new stylist, I&#x27;d absolutely love the referral. Anyone you send my way gets</p>
+<p>[offer], and I&#x27;ll take care of you too with [reward]. Thanks for being such an amazing client   VIP Recognition Touchpoints These small gestures have outsized impact on client loyalty: Birthday message</p>
+<p>Send a birthday text or email with a small offer (complimentary add-on, priority booking). Use</p>
+<h3>Prompt #19 from the Prompt Library.</h3>
+<p>Anniversary acknowledgment When a client hits 1 year or a milestone visit (10th appointment, 5-year anniversary), acknowledge it in chair and on social (with permission).</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only First-to-know access Offer VIP clients early access to your new services, seasonal promotions, or limited openings before you announce publicly.</p>
+<p>Handwritten thank-you After a client&#x27;s first visit or a significant booking (wedding hair, major transformation), a handwritten note creates a lasting impression almost no other stylist does.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Implementation: Your First 30 Days Don&#x27;t try to implement all 5 systems at once. Use this 4-week rollout:</p>
+<h3>Week</h3>
+<p>Focus Actions</p>
+<h3>Week 1</h3>
+<p>In-Chair Experience Review the 5-part appointment framework. Identify 1-2 things you want to do more consistently. Practice the checkout rebooking script on every client this week.</p>
+<h3>Week 2</h3>
+<p>Rebooking System Track your rebooking rate. Send follow-up texts to every client within 24 hours. Set up a simple system (phone notes, spreadsheet) to flag clients due for a reminder.</p>
+<h3>Week 3</h3>
+<p>Win-Back Pull up clients who haven&#x27;t booked in 90+ days. Send Message 1 to your top 10 highest-value lapsed clients. Note who responds.</p>
+<h3>Week 4</h3>
+<h3>Referral Launch</h3>
+<p>Choose your referral structure. Write your announcement using the referral ask script. Share it with your current client list via text or email. The 3 Metrics to Track Metric</p>
+<h3>How to Measure</h3>
+<p>Target Rebooking Rate # clients who rebook before leaving ÷ total clients seen 60–70%</p>
+<h3>Retention Rate</h3>
+<p># clients from 6 months ago who have booked again ÷ total clients 6 months ago 70%+</p>
+<h3>Referral Rate</h3></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">11</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Client Retention System</span></div></div><div class="pill">Working pages</div></div><div class="content"><p># new clients who came via referral ÷ total new clients 30%+ Check these monthly. Any metric below target tells you which system to focus on next.</p></div><div class="footer"><span>Salon Client Retention System</span><span class="page-number">12</span></div></section></main></body></html>

@@ -1,0 +1,163 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Electricians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>ELECTRICIAN</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, professional typography, 7 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND WINS JOBS BEFORE YOU</h3>
+<h3>ARRIVE</h3>
+<p>Most homeowners Google an electrician before calling one. Before they read a single review, they see your brand — your logo, your truck, your Google listing. A professional, consistent visual identity communicates: this contractor is established, trustworthy, and</p>
+<p>worth the call. This kit gives you two complete palettes, professional typography, and</p>
+<div class="section-label">Canva strategies for every platform that generates electrical leads.</div>
+<h3>PALETTE 1: AUTHORITY PROFESSIONAL</h3>
+<p>For contractors who want to project experience, reliability, and premium positioning. Think Navy, gold, and clean white — the palette of companies people trust with their home.</p>
+<h3>DEEP NAVY</h3>
+<h3>#1A2E4A</h3>
+<h3>ELECTRIC AMBER</h3>
+<h3>#E8A020</h3>
+<h3>SLATE GREY</h3>
+<p>#607080</p>
+<h3>LIGHT BLUE</h3>
+<h3>#EEF2F8</h3>
+<h3>Palette 1 Usage Guide</h3>
+<p class="template-line">• Deep Navy (#1A2E4A): logo, headlines, primary text, strong CTA buttons,</p>
+<p>vehicle signage</p>
+<p class="template-line">• Electric Amber (#E8A020): accent colour for CTAs, badges, rating stars, icon</p>
+<p>highlights, &#x27;Licensed &amp; Insured&#x27; callout</p>
+<p class="template-line">• Slate Grey (#607080): secondary text, contact info, captions, less prominent</p>
+<p>elements</p>
+<p class="template-line">• Light Blue (#EEF2F8): background for graphics, email headers, estimate</p>
+<p>templates</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Palette 1 Typography</h3>
+<p>HEADINGS: Montserrat Bold — strong, professional, highly readable on trucks, signs, and digital. Free on Canva. BODY: Open Sans — clean and professional. The industry standard for trade contractor communications.</p>
+<p>ACCENT: Montserrat ExtraBold — for license numbers, credentials badges, and trust- signal callouts.</p>
+<h3>PALETTE 2: BOLD TRADE</h3>
+<p>For contractors who want high visibility and a strong local brand presence. Think Safety Yellow, Charcoal, and White — the palette of a contractor who means business.</p>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>SAFETY YELLOW</h3>
+<h3>#F5C800</h3>
+<h3>BRIGHT WHITE</h3>
+<h3>#FFFFFF</h3>
+<h3>STEEL BLUE</h3>
+<h3>#4A6A8A</h3>
+<h3>Palette 2 Usage Guide</h3>
+<p class="template-line">• Charcoal (#2A2A2A): all text, logo, professional headings — high contrast, highly</p>
+<p>legible</p>
+<p class="template-line">• Safety Yellow (#F5C800): primary accent — high-visibility, instantly associated</p>
+<p>with electrical trades</p>
+<p class="template-line">• Bright White (#FFFFFF): backgrounds, clean space, keeps the palette sharp and</p>
+<p>readable</p>
+<p class="template-line">• Steel Blue (#4A6A8A): secondary accent for a professional touch — links,</p>
+<p>contact info, secondary CTAs</p>
+<h3>Palette 2 Typography</h3>
+<p>HEADINGS: Raleway Bold — strong and modern. Good for both print and digital. BODY: Lato — clean and professional across all sizes. Pairs well with Raleway. ACCENT: Black Han Sans — maximum impact for &#x27;LICENSED &amp; INSURED&#x27;, &#x27;FREE ESTIMATES&#x27;, trust badges.</p>
+<h3>7 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Google Business Profile Post</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;business update post&#x27; or &#x27;service announcement&#x27;. Clean layout: your company colours, a bold headline (e.g., &#x27;Now offering EV charger installation in [City]&#x27;), 2-3 bullet points, your phone number, and license number. GBP posts improve local search ranking — post weekly.</p>
+<h3>Template 2: Facebook Job Completion Post</h3>
+<p>Search &#x27;before after service post&#x27; or &#x27;completed job announcement&#x27;. Two-column: left side &#x27;The Challenge&#x27;, right side &#x27;The Result&#x27;. Include job type, neighbourhood, your company name. These drive more engagement and enquiries than any other Facebook post type.</p>
+<h3>Template 3: Educational Safety Graphic</h3>
+<p>Search &#x27;infographic safety tips&#x27; or &#x27;educational checklist post&#x27;. &#x27;5 Signs Your Panel Needs Upgrading&#x27; or &#x27;Home Electrical Safety Checklist&#x27;. Clean, readable, shareable. These save and share more than any other content type on Facebook.</p>
+<h3>Template 4: 5-Star Review Post</h3>
+<p>Search &#x27;testimonial graphic&#x27; or &#x27;review post&#x27;. Screenshot your best Google review, clean up the background, add your company logo and colours. Post every new 5-star review you receive. Social proof is your most powerful marketing tool.</p>
+<h3>Template 5: Truck/Vehicle Signage Template</h3>
+<p>Search &#x27;vehicle wrap text&#x27; or &#x27;truck lettering&#x27;. Even if you&#x27;re designing your own vehicle wrap, Canva lets you visualise the layout: company name, phone number, license number, key services. Your truck is your most-seen billboard — it should match your digital brand.</p>
+<h3>Template 6: Facebook / Google Banner</h3>
+<p>Search &#x27;Facebook cover photo business&#x27; or &#x27;Google Business header&#x27;. Wide format. Your best job photo, company name, tagline (&#x27;Licensed. Insured. Reliable.&#x27;), phone number. This is the first impression on every platform.</p>
+<h3>Template 7: Door Hanger / Flyer</h3>
+<p>Search &#x27;door hanger template&#x27; or &#x27;service flyer&#x27;. After completing a job in a neighbourhood, leave door hangers on nearby homes: &#x27;We just did electrical work on your street — here&#x27;s how to reach us.&#x27; High-conversion local marketing that costs almost nothing.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">✓ Day 1: Choose your palette and set up your Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update your Google Business Profile: new header image, updated logo,</p>
+<p>colours applied throughout.</p>
+<p class="template-line">✓ Day 3: Update your Facebook business page: new cover photo, profile photo, about</p>
+<h3>section updated.</h3>
+<p class="template-line">✓ Day 4: Create your first GBP post using Template 1 — post it immediately.</p>
+<p class="template-line">✓ Day 5: Create 3 review post graphics using Template 4 — your 3 best Google</p>
+<p>reviews.</p>
+<p class="template-line">✓ Day 6: Create 1 educational safety graphic using Template 3 — schedule it for next</p>
+<h3>week.</h3>
+<p class="template-line">✓ Day 7: Order door hangers or flyers using Template 7 — use after your next job in a</p>
+<p>residential neighbourhood.</p>
+<p class="template-line">✓ [Consistency matters more than perfection. A posted graphic beats a perfect one</p>
+<p>sitting in your Canva drafts.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

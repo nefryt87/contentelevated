@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90 Day Content Calendar Nannies · Month 1</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #18130f; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8ef,#f2e8dc 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7657 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6b888 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7657,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #6c6256; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7657 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7657; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7657; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7657; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7657; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #6c6256; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7657 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#211810,color-mix(in srgb,#211810 76%,#9b7657)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6b888; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7657 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7657; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7657 18%,transparent); color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7657; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7657 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #6c6256; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7657; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Client experience system</div></div>
+  <p class="kicker">90-Day Calendar</p>
+  <h1>90 Day Content Calendar Nannies · Month 1</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for warm service polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nannies &amp; Childcare Professionals</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>90 Day Content Calendar Nannies · Month 1</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><h3>NANNY</h3>
+<p>90-Day Content Calendar 12 weeks of Mon/Wed/Fri content for LinkedIn, Instagram, and Care Platforms — with monthly AI</p>
+<h3>content prompts</h3>
+<h3>HOW TO USE THIS CALENDAR</h3>
+<p>LinkedIn is your most powerful professional positioning tool — families, agencies, and</p>
+<div class="section-label">referral contacts all look you up here. Instagram builds a personal brand and community</div>
+<p>around your childcare philosophy. Platform profiles on Care.com, UrbanSitter, and similar sites are your primary inquiry source and benefit enormously from regular activity and profile updates. Post Mon/Wed/Fri. Batch content monthly with the AI prompt.</p>
+<h3>MONTH 1: PROFESSIONAL BRAND</h3>
+<h3>INTRODUCTION</h3>
+<p>Write 8 LinkedIn or Instagram captions for a professional nanny. Topics: your journey into childcare and why you love it, your approach to early childhood development, a child development milestone and how you support it, the importance</p>
+<p>of play in learning, what families say about working with you, a typical day in your care, a child-safe activity idea, a direct inquiry CTA. Under 150 words each, warm and professional.</p>
+<h3>WEEK 1: YOUR STORY &amp; PHILOSOPHY</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3>
+<p>Mon LinkedIn Your journey into childcare: what drew you to working with children, what your philosophy is, what you want every child in your care to experience. Wed Instagram A child development insight that most parents find surprising —</p>
+<p>show your expertise in a warm, accessible way. Fri Platform Profile Update your Care.com / UrbanSitter profile summary using your new bio — activity on platforms increases your search ranking.</p>
+<h3>WEEK 2: EXPERTISE &amp; APPROACH</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3></div>
+  <div class="footer"><span>90 Day Content Calendar Nannies · Month 1</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Mon LinkedIn Your approach to early childhood: play-based learning / structured routine / outdoor time / language development — one clear specific area of expertise. Wed Instagram Age-appropriate activity idea: &#x27;[Age] activity that builds [skill]&#x27; —</p>
+<p>practical, shareable, positions your childcare knowledge. Fri LinkedIn &#x27;What I look for in a family role — and what makes a placement thrive for everyone.&#x27; Shows you are a professional who chooses their families too.</p>
+<h3>WEEK 3: PROFESSIONAL CREDENTIALS</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3>
+<p>Mon LinkedIn Your qualifications and certifications — first aid, early childhood education, SEN training, paediatric CPR. Framed around what it means for the children in your care. Wed Instagram Behind the scenes: what goes into your prep as a nanny —</p></div>
+  <div class="footer"><span>90 Day Content Calendar Nannies · Month 1</span><span class="page-number">04</span></div>
+</section></main></body></html>

@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f2f0e8; --paper:#fbfaf5; --ink:#121417; --muted:#61666d;
+  --accent:#536f78; --accent2:#8aa5a2; --dark:#1d252c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Complete Growth Bundle</span></div></div><div class="pill">Trust operating system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Insurance Agents Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Insurance Agents Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>INSURANCE AGENT</h3>
+<h3>EMAIL &amp; FOLLOW-UP TEMPLATE</h3>
+<h3>PACK</h3>
+<p>20 done-for-you templates for every stage of the client journey Quote follow-up • Renewals • Cross-sells • Referrals • Re-engagement</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, policy type, and your agency</p>
+<p>info.</p>
+<p class="template-line">• Personalize the opening line — AI can help: &#x27;Add a personalized first</p>
+<p>sentence for [name] who [context].&#x27;</p>
+<p class="template-line">• Templates are intentionally conversational — resist the urge to make them</p>
+<p>more formal.</p>
+<p class="template-line">• A/B test subject lines — small changes in subject lines can double open</p>
+<p>rates.</p>
+<p class="template-line">• Save your top performers as templates in Gmail or your CRM for one-click</p>
+<p>sending.</p>
+<h3>SECTION 1: QUOTE FOLLOW-UP SEQUENCES</h3>
+<h3>Email 1 of 5 — Same Day (Warm Intro)</h3>
+<div class="section-label">SUBJECT Your [auto/home/life] quote from [Your Name] — quick recap</div>
+<p>BODY Hi [First Name], Great connecting with you today! As promised, here&#x27;s a quick recap of the quote we put together. Policy: [Type] | Coverage: [Key Details] | Monthly Premium: $[Amount] A few highlights worth noting:</p>
+<p class="template-line">- [Coverage benefit 1]</p>
+<p class="template-line">- [Coverage benefit 2]</p>
+<p class="template-line">- [Why your agency stands out]</p>
+<p>No pressure — I just want to make sure you have everything you need to make a confident decision. Any questions at all, just reply here or call me at [Phone]. Happy to walk through anything. Talk soon, [Your Name] | [Agency Name] | [Phone]</p>
+<h3>Email 2 of 5 — Day 3 (Value Add)</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT One thing most people miss when comparing insurance quotes...</div>
+<p>BODY Hi [First Name], Just checking in — I also wanted to share something that often gets overlooked when comparing quotes: [Specific insight — e.g., &#x27;The cheapest premium isn&#x27;t always the best value.</p>
+<p>Here&#x27;s the one coverage difference I&#x27;d pay attention to in your situation: [detail]&#x27;] Happy to hop on a quick call to walk through it. Usually takes under 10 minutes. What does your schedule look like this week? [Your Name]</p>
+<h3>Email 3 of 5 — Day 7 (Check-In)</h3>
+<div class="section-label">SUBJECT Still thinking it over? No rush — just wanted to check in.</div>
+<p>BODY Hi [First Name], I know insurance decisions don&#x27;t always happen overnight — totally understand. I&#x27;m still holding your quote and would love to get you covered before [relevant deadline or renewal date].</p>
+<p>Is there anything I can clarify or adjust to make this easier? Sometimes a small tweak to the deductible or coverage limit makes a real difference in the number. Either way, no pressure. I&#x27;m here when you&#x27;re ready. [Your Name]</p>
+<h3>Email 4 of 5 — Day 14 (Objection Handler)</h3>
+<div class="section-label">SUBJECT Re: Your insurance quote — worth 2 minutes?</div>
+<p>BODY Hi [First Name], I&#x27;ll be brief — I know your time is valuable. If the quote felt too high, there are usually 2–3 adjustments I haven&#x27;t tried yet that could bring the number down while keeping the coverage that matters.</p>
+<p>If timing is the issue, I can set a follow-up for whenever works best for you. What&#x27;s the main thing holding you back? Even a one-word reply helps me point you in the right direction. [Your Name]</p>
+<h3>Email 5 of 5 — Day 30 (Long Game)</h3>
+<div class="section-label">SUBJECT Keeping this on file for you, [First Name]</div>
+<p>BODY Hi [First Name], I&#x27;ve kept your information on file — quotes are usually valid for 30 days, but I can often re-run at the same or similar rate. Whenever you&#x27;re ready to revisit, I&#x27;m one message away. No need to start from scratch.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>In the meantime, feel free to reach out if you have any coverage questions — I&#x27;m happy to give you a straight answer, no obligation. Hope everything&#x27;s going well! [Your Name] | [Agency Name]</p>
+<h3>SECTION 2: RENEWAL EMAILS</h3>
+<p>Renewal — 60 Days Out (Annual Review Invite)</p>
+<div class="section-label">SUBJECT Your policy renews soon — let&#x27;s make sure it still fits</div>
+<p>BODY Hi [First Name], Your [home/auto/life] policy renews on [Date] — coming up in about 60 days. Before it auto-renews, I&#x27;d love to do a quick annual review with you. Takes about 15 minutes, and it&#x27;s the best way to make sure you&#x27;re not overpaying or</p>
+<p>underprotected. Life changes — new car, home improvements, a new family member — can all affect what coverage makes sense for you. Want to pick a time? [Calendly link or &#x27;just reply and we&#x27;ll find a slot&#x27;] [Your Name] Renewal — 30 Days Out (Gentle Urgency)</p>
+<div class="section-label">SUBJECT Your [auto/home] policy renews in 30 days — quick note</div>
+<p>BODY Hi [First Name], Friendly reminder — your policy renews on [Date], which is 30 days out. Everything looks good on my end, but I always like to touch base before renewals in case anything has changed for you this year.</p>
+<p>Reply with a quick &#x27;all good&#x27; and I&#x27;ll make sure everything processes smoothly — or let me know if you&#x27;d like to review options. Either way, I&#x27;ve got you covered. [Your Name] Renewal — Rate Increase (Proactive Explanation)</p>
+<div class="section-label">SUBJECT About your upcoming renewal — I want to be upfront with you</div>
+<p>BODY Hi [First Name], I wanted to reach out before your renewal notice arrives because your premium is going up this year. I know that&#x27;s never fun to hear, so I want to give you the full picture:</p>
+<p>[Reason — e.g., &#x27;Industry-wide rate increases due to inflation in repair costs / claims in your zip code / etc.&#x27;] Here&#x27;s what I&#x27;ve done on my end: [e.g., &#x27;I&#x27;ve already reviewed your policy for discounts and applied [X]&#x27;]</p>
+<p>If you&#x27;d like to explore other options, I&#x27;m happy to shop around for you at no cost. That&#x27;s what I&#x27;m here for. Let me know how you&#x27;d like to proceed. [Your Name]</p>
+<h3>SECTION 3: CROSS-SELL &amp; UPSELL EMAILS</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Cross-Sell — Bundle Opportunity</p>
+<div class="section-label">SUBJECT Quick question about your [home/auto] — could save you money</div>
+<p>BODY Hi [First Name], I was reviewing your account and noticed you have your [home OR auto] with us, but not both. In most cases, bundling saves clients $[X]–$[X] per year and simplifies renewals down to one date.</p>
+<p>I can run a quick bundle quote — usually takes under 10 minutes — and you can decide from there with no pressure. Interested? Just reply &#x27;yes&#x27; and I&#x27;ll get it together for you. [Your Name] Cross-Sell — Life Insurance (Life Event)</p>
+<div class="section-label">SUBJECT Congrats on [event] — one thing worth considering</div>
+<p>BODY Hi [First Name], Congratulations on [new baby / new home / recent marriage]! Big life moments like this are a great time to make sure your coverage reflects where you are now.</p>
+<p>If you don&#x27;t have a life insurance policy in place — or haven&#x27;t reviewed it in a while — it&#x27;s worth a quick conversation. Rates are lowest when you&#x27;re young and healthy. Even a 15-minute call can give you a clear picture. No obligation, just information.</p>
+<p>Want me to pull together a few options for you? [Your Name]</p>
+<h3>SECTION 4: REFERRALS &amp; RE-ENGAGEMENT</h3>
+<h3>Referral Request — Post-Policy</h3>
+<h3>SUBJECT Quick favor — means a lot</h3>
+<p>BODY Hi [First Name], I just wanted to say thank you for trusting me with your [policy type]. It really means a lot. If you know anyone — a friend, family member, or coworker — who could use</p>
+<p>a straight-talking insurance agent, I&#x27;d be grateful for the introduction. No hard sell, just a conversation. I take care of anyone you send my way the same way I take care of you. Thanks again for being a great client. [Your Name]</p>
+<p>Re-Engagement — Lapsed Client (Email 1)</p>
+<div class="section-label">SUBJECT It&#x27;s been a while — just wanted to check in</div>
+<p>BODY Hi [First Name], It&#x27;s been a little while since we last connected, and I just wanted to reach out to see how you&#x27;re doing. If your situation has changed and you&#x27;re open to revisiting your coverage</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>options, I&#x27;m happy to run a fresh look — a lot has changed with rates and products since we last spoke. No pressure at all. Just know I&#x27;m here if you need anything. [Your Name] Re-Engagement — Lapsed Client (Email 2 — Value)</p>
+<div class="section-label">SUBJECT Something that might be relevant to you, [First Name]</div>
+<p>BODY Hi [First Name], I was thinking of you because [relevant reason — e.g., &#x27;rates for your area have actually come down&#x27; / &#x27;there&#x27;s a new discount program for [profile]&#x27;]. I don&#x27;t want to overstay my welcome in your inbox, but I&#x27;d feel bad not</p>
+<p>mentioning it since it could genuinely benefit you. If you&#x27;re open to a quick quote comparison, I can have something together in under 24 hours. No response needed if the timing isn&#x27;t right — I&#x27;ll follow up one more time in a few months. [Your Name]</p>
+<p>Re-Engagement — Lapsed Client (Email 3 — Breakup)</p>
+<div class="section-label">SUBJECT Closing the loop on your file, [First Name]</div>
+<p>BODY Hi [First Name], I don&#x27;t want to keep cluttering your inbox if insurance isn&#x27;t a priority right now — totally understand. I&#x27;m going to close out my follow-ups after this note, but if you ever want to revisit, I&#x27;m always a message away.</p>
+<p>Wishing you all the best. [Your Name] P.S. — If anything has changed and now is actually a good time, just reply &#x27;yes&#x27; and I&#x27;ll pull up your info.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section></main></body></html>

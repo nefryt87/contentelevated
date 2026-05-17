@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f0f4ed; --paper:#fbfcf7; --ink:#141a17; --muted:#5f6c61;
+  --accent:#6e8a77; --accent2:#b7c7bb; --dark:#17211b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Complete Growth Bundle</span></div></div><div class="pill">Care growth system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Nutritionists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Nutritionists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>NUTRITIONIST &amp; DIETITIAN</h3>
+<h3>EMAIL &amp; CLIENT COMMUNICATION</h3>
+<h3>TEMPLATE PACK</h3>
+<p>24 done-for-you templates for every stage of the client journey Lead nurture • Onboarding • Retention • Referrals • Win-back</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, goal, condition, and your</p>
+<p>practice details.</p>
+<p class="template-line">• Keep the tone warm, science-backed, and non-judgmental — the hallmark</p>
+<p>of great nutrition counselling.</p>
+<p class="template-line">• Always include your credentials in your sign-off — credibility matters in this</p>
+<p>regulated field.</p>
+<p class="template-line">• These work as emails, practice portal messages, and WhatsApp/text</p>
+<p>messages — shorten for text.</p>
+<p class="template-line">• Save your top performers as templates in your practice management</p>
+<p>software or Gmail.</p>
+<h3>SECTION 1: LEAD INQUIRY &amp; DISCOVERY CALL</h3>
+<h3>SEQUENCE</h3>
+<p>Inquiry Response — Same Day</p>
+<div class="section-label">SUBJECT Re: Your nutrition inquiry — next steps from [Your Name]</div>
+<p>BODY Hi [First Name], Thank you so much for reaching out — I&#x27;m really glad you did. Based on what you&#x27;ve shared, [brief personalized note — e.g., &#x27;managing blood sugar through nutrition is absolutely something we can work on together&#x27;</p>
+<p>/ &#x27;your goal of improving your relationship with food while losing weight sustainably is exactly my area of focus&#x27;]. I&#x27;d love to learn more about your situation and see if we&#x27;re a good fit to work together. Here&#x27;s what I suggest:</p>
+<p>Let&#x27;s book a free 20-minute discovery call — no commitment, just a conversation about your goals and how I work. Here&#x27;s my booking link: [link] — pick whatever time works best for you. Looking forward to connecting. [Your Name], [Credentials] | [Practice Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Follow-Up — Day 3 (Value Add)</h3>
+<div class="section-label">SUBJECT One thing that makes the biggest difference for [goal]...</div>
+<p>BODY Hi [First Name], I wanted to follow up on my note and share something that&#x27;s really relevant to what you mentioned: [Specific insight relevant to their stated goal — e.g., &#x27;Most people trying to</p>
+<p>manage blood sugar focus on cutting carbs — but the research shows that meal timing and protein distribution often matter just as much. That&#x27;s where we&#x27;d start.&#x27; / &#x27;One of the biggest reasons weight loss attempts stall isn&#x27;t</p>
+<p>willpower — it&#x27;s inadequate protein and poor hunger hormone signalling. Easy to fix once we know what&#x27;s happening.&#x27;] Happy to go deeper on this in a discovery call. Booking link is here if you&#x27;re ready: [link]. [Your Name], [Credentials]</p>
+<p>Post-Discovery Call Conversion</p>
+<div class="section-label">SUBJECT Your personalized nutrition plan — next steps</div>
+<p>BODY Hi [First Name], It was so great talking with you today. Based on our conversation, here&#x27;s what I&#x27;d recommend: Your primary goals: [1–2 key goals from the call] My recommended approach: [2–3 sentences on your clinical approach for their situation]</p>
+<p>Recommended package: [Package name, sessions included, investment] I genuinely believe that [specific outcome] is achievable for you within [timeframe] — I&#x27;ve helped clients with very similar situations get there. But it</p>
+<p>starts with the right plan and consistent support. To get started, simply reply here or click: [booking/payment link] I&#x27;m excited about what&#x27;s possible for you. [Your Name], [Credentials] | [Practice Name] Re-Inquiry Nurture — 30 Days</p>
+<div class="section-label">SUBJECT Still thinking things over? No pressure — just a check-in</div>
+<p>BODY Hi [First Name], I know life gets busy — just wanted to pop back in and see how you&#x27;re going with [their stated goal]. If the timing wasn&#x27;t right when we last spoke, that&#x27;s completely okay. I&#x27;m still here when you&#x27;re ready.</p>
+<p>In the meantime, here&#x27;s one thing worth trying right now: [one actionable, specific nutrition tip relevant to their goal]. Small changes add up. [Your Name], [Credentials] Package Renewal Email</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT Your package is ending — let&#x27;s talk about what&#x27;s next</div>
+<p>BODY Hi [First Name], Your current package wraps up after our next session — which feels like a good moment to look back at how far you&#x27;ve come. [Progress recap — 2–3 specific wins observed over the program]</p>
+<p>Based on where you are now and what&#x27;s still ahead, here&#x27;s what I&#x27;d recommend for your next phase: [Next package recommendation with brief rationale] Continuing clients receive [priority scheduling / same rate locked in / bonus session — whatever applies].</p>
+<p>Let&#x27;s make sure we keep your momentum going. Reply here or book your next package at: [link] [Your Name], [Credentials]</p>
+<h3>SECTION 2: CLIENT RETENTION &amp;</h3>
+<h3>ENGAGEMENT</h3>
+<h3>New Client Welcome Email</h3>
+<div class="section-label">SUBJECT Welcome to [Practice Name] — I&#x27;m so glad you&#x27;re here</div>
+<p>BODY Hi [First Name], Welcome aboard — I&#x27;m genuinely excited to work with you on [their goal]. Here&#x27;s what to expect from our time together:</p>
+<p class="template-line">- [Session frequency and format]</p>
+<p class="template-line">- How I&#x27;ll send your meal plans and educational resources</p>
+<p class="template-line">- The best way to reach me between sessions</p>
+<p class="template-line">- What makes the biggest difference for clients who achieve lasting results:</p>
+<p>[brief philosophy statement] Before our first session, it would help me to know: [1–2 intake questions or a link to your intake form]. Looking forward to this journey with you. [Your Name], [Credentials] | [Practice Name] Meal Plan Companion Email</p>
+<h3>SUBJECT Your week [X] meal plan — what to know</h3>
+<p>BODY Hi [First Name], Your Week [X] meal plan is attached/linked here: [link] A few things worth knowing about this plan:</p>
+<div class="section-label">Why these foods: [1–2 sentences on the nutrition rationale]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Your targets: [Macro/calorie targets if applicable, in plain language] The most common question I get about this type of plan: [question + answer] What to do if you go off-plan: [brief, compassionate guidance] You&#x27;re doing great. See you [next session date].</p>
+<p>[Your Name], [Credentials] Weekly Check-In</p>
+<div class="section-label">SUBJECT Quick check-in — how&#x27;s the week going, [First Name]?</div>
+<p>BODY Hi [First Name], Just checking in mid-week — how are things going with the plan? A few things I&#x27;m curious about:</p>
+<p class="template-line">- How have your energy levels been?</p>
+<p class="template-line">- Any meals that felt really good — or any that were tough to stick to?</p>
+<p class="template-line">- Anything you&#x27;d like to adjust or talk through at our next session?</p>
+<p>Even a quick reply helps me tailor our next session to where you actually are. [Your Name], [Credentials] Milestone Celebration</p>
+<h3>SUBJECT I have to say something, [First Name]</h3>
+<p>BODY Hi [First Name], I just wanted to take a moment to acknowledge what you&#x27;ve achieved: [Specific milestone — e.g., &#x27;You&#x27;ve completed 4 consecutive weeks of meal prep.&#x27; / &#x27;Your latest bloodwork shows your HbA1c has improved by 0.8%.&#x27; /</p>
+<p>&#x27;You&#x27;ve hit your protein targets every day this week for the first time.&#x27;] This might seem small from the inside — but from where I&#x27;m sitting, it&#x27;s significant. This kind of consistency is exactly what produces lasting change.</p>
+<p>I&#x27;m proud of you. Let&#x27;s keep going. [Your Name], [Credentials] Plateau Handler — Mid-Program</p>
+<div class="section-label">SUBJECT Let&#x27;s talk about where you are right now — I have some thoughts</div>
+<p>BODY Hi [First Name], I&#x27;ve been thinking about your progress and I want to be proactive about something. Progress has levelled off a bit recently — and I want you to know that&#x27;s completely expected and normal. It&#x27;s not a sign that the plan isn&#x27;t working.</p>
+<p>What it usually means: [brief clinical explanation — e.g., &#x27;Your body has adapted to the calorie level and we need to reassess your targets&#x27; / &#x27;Stress and sleep quality can significantly stall fat loss even when nutrition is perfect — and</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>based on what you&#x27;ve shared, that might be a factor here&#x27;]. I have a couple of adjustments I&#x27;d like to try. Let&#x27;s discuss at our next session — or feel free to reply if you want to talk sooner. You&#x27;re doing better than you think. [Your Name], [Credentials]</p>
+<p>Non-Adherence Recovery</p>
+<div class="section-label">SUBJECT No judgment — just want to check in, [First Name]</div>
+<p>BODY Hi [First Name], I noticed it&#x27;s been a little quiet — I just wanted to reach out with absolutely no judgment. Going off track is part of the process for almost every client I&#x27;ve worked with. It</p>
+<p>doesn&#x27;t mean you&#x27;ve failed — it means we need to look at what&#x27;s making adherence hard right now and adjust. Can we talk before our next session? Even 10 minutes would help me understand what&#x27;s happening so we can make the plan work better for your real life.</p>
+<p>I&#x27;m on your side — always. [Your Name], [Credentials]</p>
+<h3>SECTION 3: REFERRALS, WIN-BACK &amp;</h3>
+<h3>PROFESSIONAL OUTREACH</h3>
+<h3>Referral Request — Post Milestone</h3>
+<h3>SUBJECT A small ask — and a genuine thank you</h3>
+<p>BODY Hi [First Name], Watching [milestone] has been genuinely one of the highlights of my work this</p>
+<div class="section-label">month — thank you for trusting me with your health.</div>
+<p>If you know anyone who&#x27;s been struggling with [similar challenge] or looking for a nutritionist/dietitian they can actually trust, I&#x27;d be so grateful if you pointed them my way. I&#x27;ll take great care of anyone you send to me — that&#x27;s a promise.</p>
+<p>[Your Name], [Credentials] | [Practice Name] Win-Back — 3 Months Lapsed</p>
+<h3>SUBJECT Checking in on you, [First Name]</h3>
+<p>BODY Hi [First Name], It&#x27;s been a few months and I just wanted to reach out and see how you&#x27;re doing. How has [their primary goal] been going since we last spoke? Sometimes having a plan in place makes a big difference even after sessions end — and</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Nutritionists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>sometimes people find they need a tune-up when life shifts. If you&#x27;d like to reconnect, I&#x27;m happy to do a quick check-in session at a returning client rate. No pressure at all — just here if you need me. [Your Name], [Credentials] | [Practice Name]</p>
+<p>Healthcare Provider Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], [Credentials], [Specialty]</div>
+<p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m a [RD/Registered Nutritionist/Nutrition Coach] based in [City] specializing in [specialty — e.g., diabetes and metabolic health / gut health and IBS / weight management / sports nutrition].</p>
+<p>I wanted to introduce myself as a local clinical resource for patients who would benefit from nutritional intervention alongside their medical care. I work closely with patients to [brief description of your approach and outcomes].</p>
+<p>I&#x27;d welcome the opportunity to discuss how we might collaborate for our shared patients — whether that&#x27;s a formal referral arrangement or simply knowing I&#x27;m available as a resource. Thank you for your time.</p>
+<p>[Your Name], [Credentials] | [Practice Name] | [Phone] | [Email] Personal Trainer Partnership Proposal</p>
+<div class="section-label">SUBJECT Mutual referral partnership — [Your Name], Dietitian/Nutritionist</div>
+<p>BODY Hi [Name], I came across your work and wanted to reach out — I think we might be a great complement to each other&#x27;s practices. I&#x27;m a [RD/nutritionist] specializing in [specialty] based in [City/online]. A lot of</p>
+<p>my clients are also working with personal trainers — and I imagine some of your clients would benefit from nutrition support alongside their training. I&#x27;d love to explore a mutual referral relationship. I refer clients who need</p>
+<p>structured training to trusted trainers, and vice versa — both of us end up with better client outcomes and a fuller client load. Happy to jump on a quick call if that sounds interesting. Either way, keep up the great work.</p>
+<p>[Your Name], [Credentials] | [Practice Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section></main></body></html>

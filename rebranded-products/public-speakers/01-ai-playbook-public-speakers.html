@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Public Speakers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PUBLIC SPEAKER</h3>
+<p>The AI Playbook for Public Speakers Book more paid engagements, negotiate your fee with confidence, build the LinkedIn presence that attracts event organisers, and create the speaker brand that commands premium rates</p>
+<h3>INTRODUCTION</h3>
+<p>The professional speakers filling their calendars with paid engagements aren&#x27;t just the most inspiring on stage. They respond to every enquiry quickly with materials that make event organisers feel certain they are making the right choice. They negotiate their fee</p>
+<p>with confidence rather than apologising for it. They maintain relationships with meeting planners, speaker bureaus, and event organisers who book them year after year. They build a LinkedIn and content presence that positions them as the obvious expert in their</p>
+<p>space. And they follow up after every engagement to generate the testimonials, referrals, and repeat bookings that compound over time. This playbook gives you 7 chapters covering every high-leverage scenario for professional speakers — keynote,</p>
+<p>workshop, corporate, conference, and virtual.</p>
+<h3>CHAPTER 1: ENQUIRY RESPONSE &amp; BOOKING</h3>
+<h3>CONVERSION</h3>
+<p>The Enquiry Response System Event organisers and meeting planners are busy people who contact multiple speakers. A fast, professional, enthusiastic response with the right supporting materials wins a disproportionate number of bookings.</p>
+<h3>PROMPT — SPEAKING ENQUIRY RESPONSE EMAIL</h3>
+<p class="template-line">Write a professional, enthusiastic response to a speaking enquiry for my speaking business. The event organiser [Name] from [Company/Organisation] reached out about speaking at [event name] on [date] for [audience description]. They</p>
+<p>mentioned: [paste key details — topic they need, format, duration, virtual/in-person]. My speaking speciality: [your topic/niche — e.g., leadership / resilience / sales / AI in business / DEI / mental health]. I want to: (1) express genuine enthusiasm for the</p>
+<p>opportunity, (2) briefly describe how my talk addresses their specific audience and objective, (3) ask 2-3 clarifying questions to build a tailored proposal, (4) mention my fee range if appropriate. Professional and warm. Under 250 words. Sign as [Your</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Name], [Business Name if applicable].</p>
+<h3>PROMPT — POST-CALL PROPOSAL EMAIL</h3>
+<p class="template-line">Write a post-call proposal email for a speaking engagement. I just spoke with [Name] from [Organisation] about speaking at [event] on [date]. Audience: [description]. Proposed talk: [talk title and brief description]. Duration: [X minutes].</p>
+<p>Format: [keynote/workshop/panel]. My fee: $[amount] which covers [what&#x27;s included — preparation, travel, pre-event call, follow-up materials]. I want this email to: (1) confirm what we discussed in specific terms, (2) describe the talk&#x27;s value to their</p>
+<p>audience compellingly, (3) present the fee confidently, (4) outline the next steps. Professional and persuasive. Under 300 words. Sign as [Your Name]. Fee Negotiation With Confidence Fee negotiation is where many professional speakers leave significant money on the</p>
+<p>table — either accepting the first offer or apologising for their rate. A confident, value- anchored approach closes at higher fees without damaging the relationship.</p>
+<h3>PROMPT — FEE NEGOTIATION RESPONSE</h3>
+<p class="template-line">Write a professional response to an event organiser who said my speaking fee is above their budget. My fee: $[amount]. Their budget: $[amount]. I want to: (1) acknowledge their constraints without apologising for my rate, (2) briefly reframe the</p>
+<p>value of my talk relative to the investment, (3) if appropriate, offer one genuine alternative — a shorter format, a virtual option, or a bundled workshop rate — without devaluing my standard fee. Confident and collaborative. Under 200 words. Sign as [Your Name].</p>
+<h3>CHAPTER 2: SPEAKER MATERIALS &amp;</h3>
+<h3>POSITIONING</h3>
+<p>Your Speaker One-Sheet A one-sheet is a single-page PDF summary of your speaking offer — your topic(s), key outcomes, social proof, and booking contact. It is the most important document a professional speaker has and most speakers have one that is either outdated or generic.</p>
+<h3>PROMPT — SPEAKER ONE-SHEET COPY</h3>
+<p>Write the copy for my professional speaker one-sheet. My name: [Name]. My speaking topic/niche: [topic]. My signature talk title: [title]. The 3 key outcomes audiences leave with: [outcomes]. My background credibility: [relevant credentials,</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>experience, notable past engagements]. 3 testimonials or quotes: [paste quotes if available]. My speaking style in 2 sentences: [describe your style — e.g., &#x27;data- driven and story-led&#x27; / &#x27;high energy and immediately practical&#x27;]. I want the copy to: be</p>
+<p>punchy and skimmable, communicate value to event organisers, and end with a clear booking CTA. Under 400 words total.</p>
+<h3>PROMPT — SPEAKER BIO (3 LENGTHS)</h3>
+<p>Write three versions of my professional speaker bio: (1) long form (200 words) for event programmes and websites, (2) medium form (100 words) for event introductions, (3) short form (50 words) for social media and slides. My name:</p>
+<p>[Name]. My speaking topic: [topic]. Key credentials: [your background — experience, titles, notable achievements]. Signature talk or speciality: [describe]. Style and approach: [2-3 words]. Written in third person. Professional and authoritative.</p>
+<h3>CHAPTER 3: EVENT PLANNER &amp; BUREAU</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Building Your Booking Pipeline The professional speakers with the fullest calendars have multiple active pipelines: direct bookings from organisations, speaker bureau relationships, repeat bookings from</p>
+<p>past clients, and a referral network of other speakers. Each requires a different outreach approach.</p>
+<h3>PROMPT — SPEAKER BUREAU INTRODUCTION</h3>
+<p class="template-line">Write a professional introduction email from a public speaker to a speaker bureau. Bureau name: [name]. My speaking topic: [topic]. My credentials: [key credentials]. My fee range: $[X]-$[X]. I want to: (1) introduce myself and my speaking niche</p>
+<p>briefly, (2) explain why I would be a strong fit for their roster, (3) mention relevant past engagements, (4) attach my one-sheet and propose a brief call. Professional and specific. Under 200 words. Sign as [Your Name].</p>
+<h3>PROMPT — EVENT ORGANISER PROSPECTING EMAIL</h3>
+<p class="template-line">Write a prospecting email from a professional speaker to an event organiser at [Company/Conference] named [Name]. Their event: [description of their annual conference or event]. My talk: [talk title and one-sentence description]. Why</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>relevant: [specific reason my talk fits their audience]. I want to: (1) demonstrate I know their event, (2) briefly pitch my talk and its relevance, (3) offer to send my one- sheet and a demo video link. Under 150 words. Professional and specific. Sign as [Your Name].</p>
+<div class="section-label">PROMPT — MONTHLY VALUE TOUCH (PAST CLIENTS &amp; ORGANISERS)</div>
+<p class="template-line">Write a monthly value email from a professional speaker to a past event organiser or booker named [Name]. I want to share: (1) one insight, trend, or piece of research relevant to my speaking topic that would be genuinely useful to them or their</p>
+<p>audience, (2) a soft mention of my upcoming speaking schedule or new talk. Under 100 words. Colleague tone — not a sales email. Sign as [Your Name].</p>
+<h3>CHAPTER 4: LINKEDIN &amp; CONTENT STRATEGY</h3>
+<p>LinkedIn as Your Primary Booking Channel LinkedIn is the highest-ROI content platform for professional speakers. Your audience — event organisers, HR directors, L&amp;D managers, conference chairs, CEOs — is there</p>
+<p>daily. One strong LinkedIn post reaches hundreds of potential bookers with zero ad spend. The speakers who post consistently on LinkedIn fill their calendars with inbound enquiries.</p>
+<h3>PROMPT — LINKEDIN POST BATCH</h3>
+<p>Write 5 LinkedIn posts for a professional speaker specialising in [your topic]. Topics: (1) a counterintuitive insight from your speaking topic that most people get wrong, (2) a story from a recent keynote — the moment you knew it landed (anonymise the</p>
+<div class="section-label">client), (3) a data point or research finding relevant to your topic that will surprise</div>
+<p>your audience, (4) a practical takeaway from your talk that professionals can apply today, (5) a direct booking CTA — who you speak for, what you deliver, how to enquire. Each under 200 words, specific and thought-leading. Your name: [Name].</p>
+<h3>PROMPT — SPEAKER TESTIMONIAL POST</h3>
+<p class="template-line">Write a LinkedIn post sharing a testimonial or outcome from a recent speaking engagement. The testimonial: [paste or describe the feedback]. The event: [type — e.g., leadership conference / sales kick-off / industry summit]. I want to: (1) share</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>the testimonial genuinely, (2) briefly describe what made the engagement work, (3) speak to the types of events or audiences this talk suits. Under 200 words. Sign as [Your Name].</p>
+<h3>CHAPTER 5: POST-ENGAGEMENT SYSTEM</h3>
+<p>Turning Every Engagement into Future Bookings The period immediately after a successful speaking engagement is when you are most top-of-mind with the organiser, most likely to receive a referral, and most likely to be re-</p>
+<p>engaged. Most speakers never systematically follow up. The ones who do see compounding results.</p>
+<h3>PROMPT — POST-ENGAGEMENT FOLLOW-UP EMAIL</h3>
+<p class="template-line">Write a post-engagement follow-up email for my speaking business. Organiser [Name] from [Organisation], event on [date]. I want to: (1) express genuine gratitude and one specific personal observation about the event or audience, (2) ask for</p>
+<p>feedback — what landed, what could be adjusted, (3) make a soft ask for a testimonial or LinkedIn recommendation, (4) plant the seed for a repeat engagement or referral. Professional and warm. Under 200 words. Sign as [Your Name].</p>
+<h3>PROMPT — TESTIMONIAL REQUEST EMAIL</h3>
+<p class="template-line">Write a testimonial request email for my speaking business. Event organiser [Name], event [description]. I want to: (1) make a personal and specific ask for a written testimonial or LinkedIn recommendation, (2) make it as easy as possible —</p>
+<div class="section-label">offer guiding questions, (3) mention how and where I&#x27;ll use it. Under 150 words. Sign</div>
+<p>as [Your Name].</p>
+<h3>CHAPTER 6: VIRTUAL SPEAKING &amp; ONLINE</h3>
+<h3>PRESENCE</h3>
+<p>Positioning for Virtual and Hybrid Engagements Virtual and hybrid speaking engagements have become a permanent part of the speaking landscape — and they open up international bookings that were previously</p>
+<p>inaccessible. The speakers who invest in their virtual presence and technical setup consistently command higher virtual fees.</p>
+<h3>PROMPT — VIRTUAL SPEAKING ENQUIRY RESPONSE</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a response to an enquiry for a virtual speaking engagement. Event: [description]. Audience: [X people via [platform]]. My virtual speaking setup: [describe your studio/setup if relevant — green screen / ring light / professional mic /</p>
+<p>good backdrop]. I want to: (1) confirm I&#x27;m set up for high-quality virtual delivery, (2) briefly describe how I adapt my interactive approach for virtual audiences, (3) ask the key logistical questions (platform, time zone, recording permissions).</p>
+<p>Professional and reassuring. Under 200 words. Sign as [Your Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Enquiry &amp; Proposal System</h3>
+<p class="template-line">• Write your speaking enquiry response template using Chapter 1 prompt</p>
+<p class="template-line">• Draft your speaker one-sheet copy using Chapter 2 prompt — design it in Canva</p>
+<p class="template-line">• Write your 3 speaker bio versions using Chapter 2 prompt</p>
+<h3>Week 2: Outreach</h3>
+<p class="template-line">• Identify 5 speaker bureaus relevant to your topic — write introduction emails</p>
+<p>using Chapter 3</p>
+<p class="template-line">• List 10 conferences or corporate events in your niche — write prospecting emails</p>
+<p>for each</p>
+<p class="template-line">• Build your monthly value touch template — schedule for the 1st of each month</p>
+<h3>Week 3: LinkedIn Content</h3>
+<p class="template-line">• Use Chapter 4 LinkedIn prompt to write 10 posts in one session</p>
+<p class="template-line">• Schedule 3 posts per week for the next month</p>
+<p class="template-line">• Set a goal: respond to every LinkedIn comment within 24 hours this month</p>
+<h3>Week 4: Post-Engagement System</h3>
+<p class="template-line">• Write your post-engagement follow-up and testimonial request emails using</p>
+<h3>Chapter 5</h3>
+<p class="template-line">• Identify past engagements where you haven&#x27;t asked for a testimonial — send the</p>
+<p>request today</p>
+<p class="template-line">• Set post-engagement follow-up as a standard step within 48 hours of every talk</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section></main></body></html>

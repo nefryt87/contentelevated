@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon Profit Calculator Guide</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Salon Profit Calculator Guide</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Hair Stylists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Hair Stylists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<h3>SALON PROFIT</h3>
+<h3>CALCULATOR</h3>
+<p>Know Your Numbers. Price With Confidence. Keep More Money. 4 Calculator tabs $197 Bundle price 1 Spreadsheet included 0 Guesswork needed © 2026 · Hairstylist Complete Growth Bundle · Salon Profit Calculator · For single-business use only</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>Why Most Salon Owners Are Undercharging</h3>
+<p>If you set your prices by looking at what competitors charge, asking around, or going with your gut — you&#x27;re not alone. Most stylists do. But here&#x27;s the problem: none of those methods actually tell you whether you&#x27;re making money.</p>
+<p>Pricing without knowing your real costs means you could be fully booked and still not profitable. It means giving discounts you can&#x27;t afford. It means never knowing if a slow week is fine or a financial emergency.</p>
+<p>This calculator fixes that. Four simple tabs. Real numbers. Total clarity on what you need to charge, what you need to earn, and whether your current business model is working. What&#x27;s Included Tab Name What It Does 1 Service Pricing Calculator</p>
+<p>Calculates your true price floor for any service based on supply costs, time, and target hourly rate 2 Break-Even Tracker Shows exactly how many services you need to sell each month to cover all your costs 3 Service Menu Planner</p>
+<p>Maps your full menu with price floors, current prices, and margin per service 4 Monthly Profit Goal Setter Works backward from your income goal to tell you exactly what you need to do each week</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 1 Service Pricing Calculator This tab answers the most important question in your business: what is the minimum you can</p>
+<p>charge for this service and still make money?</p>
+<h3>How to use it:</h3></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Enter your inputs for each service in the blue cells. The calculator does the rest. Input Field What to Enter Example Service Name The name of the service as it appears on your menu Full Balayage Supply Cost ($)</p>
+<p>All product costs for this service — color, developer, foils, gloves, toner $18.00 Service Duration (min) Total chair time including processing 180 min Target Hourly Rate ($) What you want to earn per hour of your time $65/hr Overhead Per Hour ($)</p>
+<p>Booth rent, utilities, software — divided by hours worked per day $12/hr Washout/Finish Time (min) Rinse, blow dry, style — add to total if separate from above 30 min The Formula Behind It</p>
+<p>Price Floor = Supply Cost + (Total Minutes ÷ 60) × (Hourly Rate + Overhead Per Hour) The calculator outputs three numbers for every service:</p>
+<p class="template-line">• Price Floor — the absolute minimum you should charge (covers costs + hits your target rate)</p>
+<p class="template-line">• Recommended Price — price floor + 20% margin buffer for slow weeks, product waste, and</p>
+<p>unbillable time</p>
+<p class="template-line">• Margin at Current Price — if you enter your current price, it shows exactly what you&#x27;re keeping</p>
+<p>per service Real Example Your Input Service Full Balayage Supply Cost $22 Duration 3.5 hours Target Hourly Rate $60/hr Overhead Per Hour $10/hr</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Price Floor $= 22 + (3.5 × $70) = $267 Recommended Price $267 × 1.20 = $320 Your Current Price $280 Margin at Current Price</p>
+<p>$280 − $267 = $13 per service (you&#x27;re undercharging) In this example, the stylist is charging $280 for a service that needs to be priced at $320 to hit their income goal. Multiply that by 5 balayages a week and they&#x27;re leaving $200/week —</p>
+<p>$10,400/year — on the table.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 2 Break-Even Tracker Your break-even point is the number of services you need to perform each month just to cover</p></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>your fixed costs. Anything above that is profit. Most salon owners have no idea what this number is. What to enter: Expense Category What to Include Booth Rent / Chair Rent Your monthly booth or suite rental fee Product &amp; Supply Budget</p>
+<p>Monthly spend on color, retail, tools, and supplies Software Subscriptions</p>
+<h3>Booking system, email platform, Canva, etc.</h3>
+<p>Education &amp; Training Classes, certifications, memberships (monthly average) Marketing Budget Paid ads, printed materials, giveaways Health Insurance / Benefits If self-employed, include your monthly premium Miscellaneous / Buffer</p>
+<p>Unexpected costs — recommend 10% of total above The Formula Break-Even Services = Total Monthly Fixed Costs ÷ Average Revenue Per Service The tracker outputs:</p>
+<p class="template-line">• Break-even service count — how many clients you need per month just to cover costs</p>
+<p class="template-line">• Break-even per week — broken down to weekly targets for easier planning</p>
+<p class="template-line">• Profit per additional service — every client above break-even earns this amount</p>
+<p class="template-line">• Days to break-even — based on your average daily client count</p>
+<p>Use this number every month. It changes when your rent goes up, when you add a software tool, or when your average ticket changes. Check it quarterly at minimum.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 3 Service Menu Planner This tab is your complete menu overview — every service, its price floor, your current price, and the</p>
+<p>margin you&#x27;re earning. It&#x27;s designed to show you at a glance where you&#x27;re profitable and where you&#x27;re not.</p>
+<h3>How to build your menu in this tab:</h3>
+<p>Column What to Enter Service Name Exactly as it appears on your menu or booking system Category Color / Cut / Treatment / Style / Add-On Supply Cost ($) Pulled from Tab 1 if already entered there Duration (min) Total chair time Price Floor ($)</p></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Auto-calculated from Tab 1 inputs Current Price ($) What you charge today — enter manually Margin ($) Auto-calculated: Current Price minus Price Floor Margin (%) Auto-calculated: Margin ÷ Current Price Status Auto-flagged: Healthy / Low Margin / Below Floor</p>
+<p>Understanding the Status Flags Status What It Means What to Do   Healthy Margin is 20%+ above price floor No action needed. Consider raising at next price review.    Low Margin Margin is 0–20% above price floor</p>
+<p>Review supply costs or raise price at next opportunity.   Below Floor Current price is below calculated price floor Raise immediately. You are losing money on this service.</p>
+<p>Pro tip: Sort the Status column after you&#x27;ve filled in all your services. Any red flags tell you exactly which prices need to change — and by how much — before your next price increase.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 4 Monthly Profit Goal Setter Most stylists think about income as a result of however many clients they happen to see. This tab</p>
+<p>flips that. You start with what you want to earn — then it tells you exactly what needs to happen to get there. Step 1 — Enter Your Income Goal Enter your target take-home income for the month. This is after expenses — the money that</p>
+<p>actually lands in your pocket. Step 2 — Enter Your Working Days &amp; Hours How many days per week do you work? How many hours per day are you behind the chair? The calculator uses this to build your available appointment slots. Step 3 — Enter Your Service Mix</p>
+<p>Estimate what percentage of your appointments are each service category (color, cut, treatment, etc.) and the average price for each. This doesn&#x27;t need to be perfect — a rough split gets you 90% of the way there. What the calculator outputs: Output</p>
+<p>What It Tells You Target Monthly Revenue Gross revenue needed to hit your income goal after expenses Required Weekly Revenue What you need to bring in each week — a more actionable number Required Daily Revenue Your daily target on working days</p></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Clients Needed Per Week Based on your average ticket, how many appointments per week Utilization Rate Needed What % of your available slots need to be filled Gap Analysis Difference between your current pace and your goal — shown in $ and clients</p>
+<p>3 Ways to Close the Gap Options: raise average ticket, add clients, add days — with math for each The 3 Levers Every income goal can be reached by pulling one or more of these levers. The calculator shows you the math for all three:</p>
+<p class="template-line">• Raise your average ticket — add retail, upsell add-ons, or adjust service pricing</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<p class="template-line">• See more clients — fill gaps in your schedule, reduce no-shows, improve rebooking rate</p>
+<p class="template-line">• Work more days — add a day or extend hours if capacity is the constraint</p>
+<p>Most stylists find lever 1 (raising average ticket) is the fastest path. A $20 increase across 20 clients per week is $400/week — $20,000/year — with zero additional time in the chair.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Getting Started in 20 Minutes You don&#x27;t need to fill everything in perfectly on day one. Follow this sequence: Step 1 — Tab 1, your top 5 services (5 min)</p>
+<p class="template-line">• Enter your 5 most commonly booked services</p>
+<p class="template-line">• Be honest about supply costs — look at your actual product usage</p>
+<p class="template-line">• Set your target hourly rate: what do you want to earn per hour of your time?</p>
+<p class="template-line">• Look at the price floor vs. your current price for each service</p>
+<p>Step 2 — Tab 2, your monthly expenses (5 min)</p>
+<p class="template-line">• List every fixed expense you pay monthly</p>
+<p class="template-line">• Don&#x27;t forget software, education, and a buffer for surprises</p>
+<p class="template-line">• Note your break-even service count — is it realistic given your current schedule?</p></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Hair Stylists<span>Salon Profit Calculator Guide</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Step 3 — Tab 3, your full menu (5 min)</p>
+<p class="template-line">• Add all your remaining services</p>
+<p class="template-line">• Check the Status column — any red flags?</p>
+<p class="template-line">• Note which services are Below Floor — these need immediate attention</p>
+<p>Step 4 — Tab 4, your income goal (5 min)</p>
+<p class="template-line">• Enter what you want to take home this month</p>
+<p class="template-line">• Look at what it requires — is it achievable at your current pricing?</p>
+<p class="template-line">• Identify your primary lever: ticket, volume, or days</p>
+<p>Using This With AI (Prompt from the AI Playbook) Once you have your numbers from this calculator, use Prompt #47 from the Salon AI Prompt Library to go deeper: Help me calculate a price floor for [SERVICE]. My costs: [SUPPLIES COST]. My target hourly rate:</p>
+<p>$[AMOUNT]. Average service duration: [X] minutes. My overhead per service slot: $[AMOUNT]. Walk me through the math and tell me the minimum price I should charge and the recommended price with a healthy margin.</p>
+<p>Update this calculator quarterly — when your rent changes, when your supply costs shift, or after every price increase. Your numbers are a living document, not a one-time exercise.</p></div><div class="footer"><span>Salon Profit Calculator Guide</span><span class="page-number">08</span></div></section></main></body></html>

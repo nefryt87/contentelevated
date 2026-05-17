@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Mortgage Brokers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>MORTGAGE BROKER</h3>
+<h3>EMAIL &amp; FOLLOW-UP TEMPLATE</h3>
+<h3>PACK</h3>
+<p>25 done-for-you templates for every stage of the loan journey Lead nurture • Pre-approval • Realtor outreach • Referrals • Re-engagement</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your borrower&#x27;s name, loan type, and your</p>
+<p>NMLS/company info.</p>
+<p class="template-line">• The tone is intentionally warm and conversational — resist making them</p>
+<p>more formal.</p>
+<p class="template-line">• Personalize the opening line for highest response rates — AI can do this in</p>
+<p>seconds.</p>
+<p class="template-line">• Subject lines are tested for open rates — don&#x27;t over-edit them.</p>
+<p class="template-line">• Save top performers as templates in Gmail or your CRM for one-click</p>
+<p>reuse.</p>
+<h3>SECTION 1: PRE-APPROVAL FOLLOW-UP</h3>
+<h3>SEQUENCE</h3>
+<h3>Email 1 — Same Day (Warm Confirmation)</h3>
+<div class="section-label">SUBJECT Your pre-approval application — next steps from [Your Name]</div>
+<p>BODY Hi [First Name], Thanks for taking the first step — submitting your application takes courage, and I want to make sure the process is as smooth as possible for you. Here&#x27;s what happens next: 1. I&#x27;ll review your application within [X] business hours</p>
+<p>2. I may reach out to request a few supporting documents 3. Once reviewed, I&#x27;ll have your pre-approval letter ready along with a clear picture of your options In the meantime, feel free to reach out with any questions — no question is too small.</p>
+<p>[Your Name] | NMLS# [#] | [Phone] | [Company]</p>
+<h3>Email 2 — Day 3 (Value Add)</h3>
+<div class="section-label">SUBJECT One thing most buyers don&#x27;t know about the pre-approval process...</div>
+<p>BODY Hi [First Name], While we&#x27;re working through your application, I wanted to share something that often surprises buyers: [Insight — e.g., &#x27;Your pre-approval doesn&#x27;t lock your rate. Rates can change</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>daily, and timing your lock strategically can save you hundreds per month. I&#x27;ll walk you through when and how to do that.&#x27;] Happy to answer any questions about this — it usually comes up and I&#x27;d rather you hear it from me now than be surprised later. Talk soon, [Your Name]</p>
+<h3>Email 3 — Day 7 (Check-In)</h3>
+<h3>SUBJECT Still here whenever you&#x27;re ready, [First Name]</h3>
+<p>BODY Hi [First Name], Just checking in — pre-approval processes can feel a little quiet from your end while we&#x27;re working behind the scenes. Your application is [status — e.g., &#x27;under review / waiting on one document</p>
+<p>from you&#x27;]. If there&#x27;s anything you&#x27;re unsure about or want to talk through, I&#x27;m a call or text away. What questions do you have so far? [Your Name]</p>
+<h3>Email 4 — Day 14 (Urgency + Value)</h3>
+<h3>SUBJECT Before you start shopping — read this first</h3>
+<p>BODY Hi [First Name], I want to make sure you have your pre-approval letter in hand before you start seriously looking at homes — your offer won&#x27;t be competitive without it. I can often turn around a pre-approval in 24–48 hours once I have your</p>
+<p>documents. If there&#x27;s something holding things up on your end, just let me know and I&#x27;ll work around it. What&#x27;s the main thing on your mind right now? [Your Name]</p>
+<h3>Email 5 — Day 30 (Long Game)</h3>
+<h3>SUBJECT Still keeping your file active, [First Name]</h3>
+<p>BODY Hi [First Name], I&#x27;m still here whenever the timing is right for you. Pre-approval files stay active in my system, so we won&#x27;t need to start from scratch. The market is [brief honest market note]. Happy to give you an updated picture whenever you&#x27;re ready.</p>
+<p>No pressure at all — just want you to know I&#x27;m in your corner. [Your Name] | NMLS# [#] | [Company]</p>
+<h3>SECTION 2: REALTOR RELATIONSHIP EMAILS</h3>
+<p>Weekly Market Update (Realtor)</p>
+<h3>SUBJECT This week in rates — quick note for your buyers</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [Realtor Name], Quick update for you and your buyers this week: [Rate note — e.g., &#x27;Rates ticked down slightly to around X% for a 30-year fixed. For a $400k purchase, that&#x27;s roughly $X/mo — meaningful for buyers who&#x27;ve been sitting on the fence.&#x27;]</p>
+<p>If any of your buyers are still pre-shopping, now&#x27;s a good time for them to lock in a conversation with me. Have a great week, [Your Name] | NMLS# [#] | [Phone] New Realtor Outreach — Email 1</p>
+<div class="section-label">SUBJECT Fellow [City] professional — wanted to introduce myself</div>
+<p>BODY Hi [Realtor Name], I came across your profile / we share a few mutual connections in the [City] real estate community — wanted to reach out and introduce myself. I&#x27;m [Your Name], a loan officer with [Company] specializing in [purchase</p>
+<p>loans / FHA / VA / jumbo — whatever applies]. I work closely with a handful of realtor partners in [area] and I&#x27;m always open to building new relationships. No pitch — just thought it might be worth a quick hello. Happy to grab coffee or a quick call if you&#x27;re open to it.</p>
+<p>[Your Name] | NMLS# [#] | [Phone] New Realtor Outreach — Email 2 (Follow-up)</p>
+<h3>SUBJECT Adding some value — [market insight or tool]</h3>
+<p>BODY Hi [Realtor Name], Following up on my note last week — I wanted to share something that might be useful for you or your buyers: [Value item — e.g., &#x27;I put together a quick one-page breakdown of current down payment assistance programs available in [County]. Happy to send it</p>
+<p>over if it&#x27;d be helpful for your first-time buyers.&#x27;] No obligation — just thought it might be a useful tool to have in your back pocket. [Your Name] Closed Deal Thank-You (Realtor)</p>
+<h3>SUBJECT Thank you — really</h3>
+<p>BODY Hi [Realtor Name], I just wanted to take a moment to say thank you for trusting me with [Buyer Name]&#x27;s transaction. Working with you made the whole process smoother — you communicated clearly, kept things on track, and made my job easier. That&#x27;s rare and I don&#x27;t</p>
+<p>take it for granted. I look forward to working together again. If you ever have a buyer who needs a reliable lender, I&#x27;ll always make you and them look good. [Your Name]</p>
+<h3>SECTION 3: NOT-READY LEAD NURTURE</h3>
+<p>Not-Ready Lead — Month 1 Touch</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Your home buying plan — checking in</h3>
+<p>BODY Hi [First Name], I know you mentioned you&#x27;re about [X months] away from being ready to buy — I just wanted to check in and see how things are progressing. In the meantime, here&#x27;s one thing worth doing now: [tip — e.g., &#x27;Keep your</p>
+<p>credit card balances below 30% of their limit. That alone can move your score up meaningfully before we run your full application.&#x27;] No pressure — I&#x27;m just here to make sure when you&#x27;re ready, the process is as fast and smooth as possible. [Your Name]</p>
+<p>Credit Repair Nurture — Month 1</p>
+<h3>SUBJECT Your 90-day credit roadmap — from [Your Name]</h3>
+<p>BODY Hi [First Name], Since we talked about working on your credit score, I put together a simple 90-</p>
+<h3>day roadmap for you:</h3>
+<div class="section-label">Month 1: Pay down credit card balances to below 30% utilization</div>
+<div class="section-label">Month 2: Dispute any errors on your credit report (free at</div>
+<p>annualcreditreport.com)</p>
+<div class="section-label">Month 3: Avoid any new credit applications — let your score stabilize</div>
+<p>If you follow these steps, I&#x27;d expect to see a meaningful improvement before we run your application again. Check in with me any time — I&#x27;m rooting for you. [Your Name] Re-Engagement — Lapsed Lead</p>
+<h3>SUBJECT Still thinking about buying, [First Name]?</h3>
+<p>BODY Hi [First Name], It&#x27;s been a little while since we last connected — I just wanted to pop back in and see if buying a home is still on your radar. A lot can change in a few months — rates, programs, your own situation.</p>
+<p>Happy to give you a fresh look at what&#x27;s available with no pressure and no commitment. Even if the timing still isn&#x27;t right, I&#x27;m happy to answer any questions. [Your Name] | NMLS# [#]</p>
+<h3>SECTION 4: POST-CLOSE, ANNIVERSARY &amp;</h3>
+<h3>REFERRAL</h3>
+<p>Post-Close Thank You (Borrower)</p>
+<h3>SUBJECT Congratulations — you&#x27;re a homeowner!</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], Congratulations — you did it! Watching someone go from &#x27;I want to buy a home&#x27; to keys in hand never gets old for me. It was a genuine pleasure working with you through this process. If you ever</p>
+<p>have questions about your mortgage, want to explore a refinance down the road, or know someone who&#x27;s looking to buy, I&#x27;m always here. Enjoy your new home — you&#x27;ve earned it. [Your Name] | NMLS# [#] 1-Year Anniversary Email</p>
+<h3>SUBJECT Happy 1-year home anniversary, [First Name]!</h3>
+<p>BODY Hi [First Name], One year ago today you closed on [Address / &#x27;your home&#x27;] — time flies! I wanted to check in and see how everything is going. Also, with the way rates and home values have shifted over the past year, it might be worth a quick</p>
+<p>conversation to see if a refinance could save you money — or if you&#x27;re thinking about a second property, I&#x27;d love to help with that too. Either way, congratulations on a great first year of homeownership. [Your Name]</p>
+<h3>Referral Request (Post-Close)</h3>
+<h3>SUBJECT Quick favor — and thank you</h3>
+<p>BODY Hi [First Name], Working with you on this purchase was genuinely a pleasure — thank you for trusting me. If you know anyone who&#x27;s thinking about buying, refinancing, or just wants to understand their options, I&#x27;d be grateful for the introduction. I promise to take</p>
+<p>care of them the same way I took care of you. Thanks again — enjoy the new home! [Your Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section></main></body></html>

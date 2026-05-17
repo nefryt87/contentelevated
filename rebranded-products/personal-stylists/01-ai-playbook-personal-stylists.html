@@ -1,0 +1,193 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Personal Stylists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PERSONAL STYLIST</h3>
+<p>The AI Playbook for Personal Stylists &amp; Fashion Consultants Convert more discovery calls, build a premium client experience, create content that attracts ideal clients, and grow a practice that runs on referrals</p>
+<h3>INTRODUCTION</h3>
+<p>The personal stylists building thriving practices aren&#x27;t just the most knowledgeable about fashion. They respond to inquiries the same day — with copy that makes a potential client feel instantly understood. They follow up on proposals before clients</p>
+<p>disappear. They maintain relationships with photographers, executives, and wedding planners who send warm referrals year-round. And they create consistent content that positions them as the go-to authority in their niche. This playbook gives you 7 chapters</p>
+<p>covering every high-leverage scenario — with copy-paste AI prompts throughout.</p>
+<h3>CHAPTER 1: INQUIRY RESPONSE &amp;</h3>
+<h3>CONSULTATION CONVERSION</h3>
+<p>The Same-Day Inquiry Response First response wins a disproportionate number of consultations in personal styling. High-value clients — executives, brides, professionals going through a career transition</p>
+<p>— are often contacting 2-3 stylists simultaneously. The one who responds thoughtfully and specifically within a few hours wins the call.</p>
+<h3>PROMPT — SAME-DAY INQUIRY RESPONSE EMAIL</h3>
+<p class="template-line">Write a warm, enthusiastic inquiry response email for my personal styling practice. The potential client [Name] reached out about [service type — e.g., wardrobe audit / corporate styling / bridal styling / total style transformation]. They mentioned: [paste</p>
+<p>key details from their inquiry — their goal, their concern, what they&#x27;re hoping to achieve]. My styling philosophy is [your approach — e.g., building a functional wardrobe around their real life / helping professional women dress with authority /</p>
+<p>effortless elevated everyday style]. I want to: (1) make them feel genuinely understood, (2) briefly describe how I&#x27;d approach their specific situation, (3) invite them to a discovery call with a specific time offered. Warm, confident, under 200</p>
+<p>words. Sign as [Your Name], [Business Name].</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — FOLLOW-UP SEQUENCE (3 TOUCHES)</h3>
+<p class="template-line">Write a 3-message follow-up sequence for a personal styling inquiry that hasn&#x27;t responded. Client [Name], service: [type]. Message 1 (Day 3): warm check-in, add one specific insight relevant to their stated goal. Message 2 (Day 8): share one</p>
+<p>piece of genuinely useful style advice for their situation — no pitch. Message 3 (Day 14): soft close that leaves the door open. Each under 80 words. Sign as [Your Name], [Business Name]. Post-Discovery Call Conversion</p>
+<p>The discovery call that doesn&#x27;t convert within 48 hours rarely converts. A thoughtful, specific follow-up that reflects what you heard on the call closes at a dramatically higher rate than waiting for the client to decide on their own.</p>
+<h3>PROMPT — POST-DISCOVERY CALL FOLLOW-UP</h3>
+<p class="template-line">Write a post-discovery call follow-up email for my personal styling practice. I just spoke with [Name] about [their goal/situation]. Key things they shared: [list 3-4 things — their wardrobe frustration, their body confidence issue, their lifestyle</p>
+<p>needs, their upcoming event or life change]. I&#x27;m proposing [service/package] at $ [amount]. I want this email to: (1) mirror back what they told me they most need in their own language, (2) briefly explain how my approach addresses it, (3) present</p>
+<p>the next step clearly (sign up / book / pay deposit). Warm and confident. Under 250 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 2: CLIENT EXPERIENCE &amp;</h3>
+<h3>RETENTION</h3>
+<p>Onboarding &amp; Pre-Session Communication Clients who arrive well-prepared for styling sessions get dramatically better results. A pre-session email that sets expectations, asks the right questions, and builds</p>
+<p>anticipation creates a better client experience before you&#x27;ve even met in person.</p>
+<h3>PROMPT — PRE-WARDROBE-AUDIT PREP EMAIL</h3>
+<p class="template-line">Write a pre-wardrobe audit preparation email for my personal styling client [Name] whose session is on [date]. I want them to: (1) know what to have ready for the session (their full closet accessible, nothing put away), (2) think in advance about</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>what they love wearing vs. what they avoid, (3) feel excited rather than anxious — frame the audit as an act of self-care, not criticism. Include 3 questions to reflect on before we meet. Warm and practical. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — PRE-SHOPPING SESSION PREP EMAIL</h3>
+<p class="template-line">Write a pre-personal-shopping-session preparation email for my styling client [Name] whose session is on [date] at [location/area]. Cover: what to wear (something easy to take on and off), what to bring (their measurements if known,</p>
+<p>any items they want to match to), what to expect, and how many looks we&#x27;re aiming for. Excited and organised. Under 200 words. Sign as [Your Name], [Business Name]. Post-Session Follow-Up &amp; Retention</p>
+<p>The session that doesn&#x27;t have a clear next step loses the client. A post-session email that celebrates what was accomplished and proposes a natural next step converts one- time clients into ongoing relationships.</p>
+<h3>PROMPT — POST-WARDROBE-AUDIT FOLLOW-UP</h3>
+<p class="template-line">Write a post-wardrobe audit follow-up email for my styling client [Name]. In the session we: [list 2-3 key accomplishments — e.g., identified 15 pieces for donation, identified 3 key gaps in their wardrobe, created a capsule of 20 versatile pieces]. I</p>
+<p>want to: (1) celebrate what we accomplished, (2) share the 2-3 most important gaps I identified and why they matter for their specific goals, (3) propose a shopping session as the natural next step. Warm and motivating. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 3: PARTNERSHIP &amp; REFERRAL</h3>
+<h3>SYSTEM</h3>
+<p>Building Referral Partnerships The highest-value referral partners for personal stylists are: photographers (headshots, branding sessions, events), wedding planners, executive coaches, real estate agents, and corporate HR teams. Each can send multiple warm clients per year.</p>
+<h3>PROMPT — PHOTOGRAPHER PARTNERSHIP INTRODUCTION</h3>
+<p class="template-line">Write a professional introduction email from a personal stylist to a photographer named [Name] who specialises in [headshots / branding / weddings]. I want to propose a mutual referral relationship — my clients need photography, their clients</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>benefit from styling guidance before shoots. I want to: (1) introduce myself and my styling niche briefly, (2) explain how styling before a shoot dramatically improves results for both of us, (3) propose a collaboration — either a joint package or a</p>
+<p>mutual referral arrangement. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — CORPORATE / EXECUTIVE COACH INTRODUCTION</h3>
+<p class="template-line">Write a professional introduction email from a personal stylist to an executive coach named [Name]. I want to propose a referral relationship — executive coaches work with clients on professional presence, and personal styling is a tangible extension of</p>
+<p>that work. I want to: (1) introduce my corporate styling specialty briefly, (2) explain how wardrobe and personal presentation affects executive presence and confidence, (3) propose a referral arrangement or a guest session for their clients.</p>
+<p>Professional and compelling. Under 150 words. Sign as [Your Name], [Business Name]. Monthly Partner Value Touch</p>
+<h3>PROMPT — MONTHLY PARTNER VALUE TOUCH</h3>
+<p class="template-line">Write a monthly value email from a personal stylist to a referral partner named [Name] — [photographer / executive coach / wedding planner]. Share: (1) one relevant styling insight that helps their clients — e.g., &#x27;what to wear for a headshot</p>
+<p>session&#x27;, &#x27;how a capsule wardrobe supports a job transition&#x27;, &#x27;bridal party styling tips that photograph beautifully&#x27;. Useful, collegial, under 120 words. Not a sales email. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 4: INSTAGRAM &amp; PINTEREST</h3>
+<h3>CONTENT STRATEGY</h3>
+<h3>Content Pillars for Personal Stylists</h3>
+<p>Instagram and Pinterest are the highest-ROI platforms for personal stylists — visual- first, discovery-oriented, and populated by exactly your ideal clients. The content pillars that convert best: education (style rules, outfit formulas, capsule building),</p>
+<p>transformation (before/afters, client reveals), behind-the-scenes (shopping trips, wardrobe audits), and social proof.</p>
+<h3>PROMPT — INSTAGRAM CAPTION BATCH</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Write 5 Instagram captions for a personal stylist who specialises in [niche — e.g., corporate women / plus-size styling / sustainable fashion / bridal party]. Topics: (1) the most common wardrobe mistake your clients make before working with you, (2)</p>
+<p>a capsule wardrobe formula for [their specific lifestyle — e.g., the working mum / the female executive / the weekend-focused professional], (3) how to dress for [specific situation — e.g., a job interview / a first date / a conference keynote], (4) what</p>
+<p>personal styling actually costs vs. what clients assume, (5) a before/after client transformation story (anonymise). Each under 150 words, warm and specific, ending with a question or soft CTA. Business name: [Business Name].</p>
+<h3>PROMPT — PINTEREST BOARD PIN DESCRIPTIONS</h3>
+<p>Write 5 Pinterest pin descriptions for a personal stylist, each optimised for search discovery. Pins cover: (1) capsule wardrobe for [professional women / working mum / etc.], (2) business casual outfit ideas for [body type or style preference], (3) how to</p>
+<p>dress for a job interview, (4) wardrobe essentials every woman needs, (5) styling tips for [a specific occasion — conference, wedding guest, casual Friday]. Each 100-150 words, keyword-rich, include style type, occasion, and a soft CTA. Business name: [Business Name].</p>
+<h3>CHAPTER 5: PRICING &amp; PREMIUM POSITIONING</h3>
+<p>Presenting Your Fees With Confidence Personal stylists who struggle with pricing conversations almost always struggle because they haven&#x27;t established value before presenting the number. By the time you</p>
+<p>share your fee, the client should already understand what transformation they&#x27;re buying — not just what service.</p>
+<h3>PROMPT — PRICING ENQUIRY RESPONSE</h3>
+<p class="template-line">Write a response email to a potential styling client who asked &#x27;what do you charge?&#x27; for [service type]. My investment for [service] is $[amount]. Rather than just listing the price, I want to: (1) briefly describe what&#x27;s actually included and the</p>
+<p>transformation they can expect, (2) explain why that investment is positioned where it is, (3) invite them to a discovery call to confirm it&#x27;s the right fit. Confident, not apologetic. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — BUDGET OBJECTION RESPONSE</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a response for a potential styling client who said &#x27;I love your work but it&#x27;s a bit beyond my budget&#x27;. My lowest service is $[amount]. Options I can genuinely offer: [e.g., a smaller package / a payment plan / a virtual service instead of in-person]. I</p>
+<p>want to: (1) acknowledge their honesty, (2) briefly explain what my fee reflects, (3) present any genuine alternatives without devaluing the full service. Warm but confident. Under 200 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 6: REVIEWS &amp; REPUTATION</h3>
+<p>The Post-Service Review Request System</p>
+<h3>PROMPT — POST-SERVICE REVIEW REQUEST</h3>
+<p class="template-line">Write a post-service review request email for my personal styling practice. Client [Name] just completed [wardrobe audit / shopping session / total transformation package]. I want to: (1) celebrate what they achieved, (2) make a personal, warm</p>
+<p>ask for a Google or Instagram review, (3) include the direct link. Emotional and genuine — not automated-feeling. Under 150 words. Sign as [Your Name], [Business Name].</p>
+<h3>PROMPT — INSTAGRAM TESTIMONIAL REQUEST</h3>
+<p class="template-line">Write a message asking a happy styling client [Name] if they&#x27;d be willing to share a before/after photo and a brief testimonial for my Instagram. I want to: (1) acknowledge their transformation, (2) explain how it helps other clients who are</p>
+<p>where they were, (3) give them the option to stay anonymous if they prefer. Warm and personal. Under 100 words. Sign as [Your Name], [Business Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Inquiry &amp; Conversion System</h3>
+<p class="template-line">• Build your same-day inquiry response template using the Chapter 1 prompt</p>
+<p class="template-line">• Write your 3-touch follow-up sequence and save as drafts</p>
+<p class="template-line">• Set a reminder to check unanswered inquiries every Monday and Thursday</p>
+<h3>Week 2: Partnership Outreach</h3>
+<p class="template-line">• List 10 photographers, executive coaches, or wedding planners you want referral</p>
+<p>relationships with</p>
+<p class="template-line">• Write 5 personalized introduction emails using the Chapter 3 prompts</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Build your monthly partner value touch template</p>
+<h3>Week 3: Content Batch</h3>
+<p class="template-line">• Use the Chapter 4 Instagram prompt to write 10 captions in one session</p>
+<p class="template-line">• Schedule 3-4 posts per week for the next 3 weeks</p>
+<p class="template-line">• Write 5 Pinterest pin descriptions for your most popular styling content</p>
+<h3>Week 4: Review System</h3>
+<p class="template-line">• Identify 10 past clients who haven&#x27;t reviewed — write personal review requests</p>
+<p>using Chapter 6 prompts</p>
+<p class="template-line">• Ask 3 clients for before/after Instagram testimonials</p>
+<p class="template-line">• Set post-service review request as a standard final step after every engagement</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div>
+</section></main></body></html>

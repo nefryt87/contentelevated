@@ -1,0 +1,147 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Phone Scripts</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Phone Scripts</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Electricians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>ELECTRICIAN</h3>
+<h3>Phone Scripts, Voicemail &amp; Dispatcher Playbook</h3>
+<p>Inbound call scripts, emergency protocols, voicemails that get returned, commercial pitching, and review response templates</p>
+<h3>SECTION 1: INBOUND CALL SCRIPTS</h3>
+<p>Standard Residential Service Call</p>
+<h3>DISPATCHER SCRIPT — STANDARD RESIDENTIAL CALL</h3>
+<p>DISPATCHER: Thank you for calling [Company Name], this is [Name] — how can I help you today? [Listen fully. Let them describe the problem without interrupting. Don&#x27;t diagnose on the phone.] DISPATCHER: Got it — that&#x27;s something we can definitely take care of. Let me get a</p>
+<p>couple of quick details. [Collect: full name, address, best callback number, description of the issue, urgency level] DISPATCHER: We have availability [today / tomorrow / this week]. Our electricians</p>
+<p>are licensed and insured — they&#x27;ll call you 30 minutes before arrival. Does [time window] work? [Confirm. Read the address back. Always.] DISPATCHER: Perfect — you&#x27;re all set. Any questions before I let you go? [KEY: Collect all details before quoting anything. Never give a</p>
+<p>firm price over the phone for diagnostic work.] Emergency Call — Burning Smell / Sparking / Power Out</p>
+<h3>DISPATCHER SCRIPT — ELECTRICAL EMERGENCY</h3>
+<p>DISPATCHER: [Company Name] — sounds like an emergency. I want to help you quickly. What&#x27;s happening? [Listen. Assess safety risk immediately.] DISPATCHER: First — if you can smell burning or see sparking, please turn off the</p>
+<p>main breaker at your electrical panel right now if it&#x27;s safe to do so. Do you know where your panel is? [Guide them through this if needed. Do NOT let them stay near an active electrical hazard.] DISPATCHER: I&#x27;m reaching out to our nearest licensed electrician right now. What&#x27;s</p>
+<p>your address and best callback number? [Dispatch. Call back within 10 minutes with a confirmed ETA.] DISPATCHER: [Your Name] is heading to you now and will be there by [time]. If anything changes before they arrive, call me directly at [Phone].</p>
+<p>[If burning smell or smoke: &#x27;If the burning smell continues after you turn off the breaker, please call 911 and evacuate. Electrical fires can start inside walls.&#x27;] Price-Shopping Call — &#x27;How Much Does It Cost?&#x27;</p></div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>DISPATCHER SCRIPT — PRICE SHOPPING</h3>
+<p>CUSTOMER: How much does it cost to [rewire an outlet / install a panel / run a new circuit]? DISPATCHER: Great question — and I want to give you a real number, not a guess. For [panel upgrades], most residential jobs run between $[X] and $[X] depending on</p>
+<p>the size of your panel and the condition of your existing wiring. For smaller jobs like outlets and circuits, our service call is $[amount] and our electrician will give you an exact price before any work starts.</p>
+<p>DISPATCHER: Can I get you scheduled for a free assessment? It&#x27;s the only way to give you an accurate number — and there&#x27;s no obligation after the assessment. [Give ranges for standard jobs. Never give firm prices for diagnostic work. Always offer the free assessment as the next</p>
+<p>step.]</p>
+<h3>SECTION 2: VOICEMAIL SCRIPTS</h3>
+<h3>ESTIMATE FOLLOW-UP</h3>
+<h3>VOICEMAIL — ESTIMATE FOLLOW-UP</h3>
+<p>Hi [First Name], this is [Your Name] from [Company Name] — just following up on the estimate for [job type] I left on [day]. Wanted to make sure you got it and see if you had any questions. We&#x27;re [available this week / booking out X weeks] if you&#x27;d like to move forward.</p>
+<p>Call or text me at [Phone] — [repeat number]. No pressure at all. Talk soon. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
+<h3>SEASONAL CAMPAIGN</h3>
+<h3>VOICEMAIL — SEASONAL CAMPAIGN</h3>
+<p>Hi [First Name], [Your Name] from [Company Name]. Just reaching out because we&#x27;re running our [seasonal] whole-home electrical inspection this month — it&#x27;s $[amount], takes about [X] hours, and catches the kind of issues that turn into emergencies. If your home is</p>
+<p>more than 15 years old, it&#x27;s worth doing. Call me at [Phone] — [repeat number]. Thanks! [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
+<h3>EV CHARGER CAMPAIGN</h3>
+<h3>VOICEMAIL — EV CHARGER CAMPAIGN</h3></div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>Hi [First Name], [Your Name] from [Company Name]. I&#x27;m calling because a lot of our customers in [area] are getting EVs and asking about Level 2 home charging. Installation typically runs $[X]-$[X] and cuts charging time from 50 hours to under 8. Happy to give you</p>
+<p>a free assessment if you&#x27;re interested. Call me at [Phone] — [repeat number]. Thanks. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
+<h3>COMMERCIAL PROSPECT</h3>
+<h3>VOICEMAIL — COMMERCIAL PROSPECT</h3>
+<p>Hi [Name], [Your Name] from [Company Name]. I&#x27;m a licensed electrical contractor serving commercial properties in [City] — reaching out because I work with several property managers in the area and I&#x27;d love to introduce myself. Happy to talk about emergency</p>
+<p>response, code compliance, or anything else. My number is [Phone] — [repeat number]. Look forward to connecting. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
+<h3>SECTION 3: OBJECTION HANDLING SCRIPTS</h3>
+<p>Objection: &quot;IT&#x27;S TOO EXPENSIVE&quot;</p>
+<h3>OBJECTION SCRIPT — IT&#x27;S TOO EXPENSIVE</h3>
+<p>ELEC: I hear you — it&#x27;s more than you were expecting. Can I ask: is it the total number, or a question about what&#x27;s included? [If total number:] ELEC: We do offer [payment plan / financing for jobs over $X] if spreading the cost</p>
+<p>out would help. For a job like this, that works out to about $[monthly amount] a</p>
+<h3>month.</h3>
+<p>[If questioning what&#x27;s included:] ELEC: Let me quickly walk you through what our quote covers that a lower bid might not: we&#x27;re licensed, we pull the permit where required, our work is inspected, and everything comes with a [X]-year workmanship guarantee. A lower quote may not</p>
+<p>include all of those — and when something goes wrong, you&#x27;ll want those protections. [Never apologize for your price. State it, explain the value, hold it.] Objection: &quot;I GOT A CHEAPER QUOTE&quot;</p>
+<h3>OBJECTION SCRIPT — I GOT A CHEAPER QUOTE</h3></div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>ELEC: I appreciate you being upfront about that. Can I ask — was the other quote for the same scope? Did they mention pulling a permit? ELEC: The reason I ask is that [job type] typically requires a permit in [jurisdiction]. If</p>
+<p>the other quote doesn&#x27;t include that, you may be looking at unpermitted work — which can create issues at resale and potentially void your homeowner&#x27;s insurance. ELEC: I&#x27;m not suggesting they&#x27;re cutting corners — I genuinely don&#x27;t know. But it&#x27;s worth asking before you sign.</p>
+<p>[Never disparage competitors. Ask the right question and let the customer connect the dots themselves.] Objection: &quot;I&#x27;LL THINK ABOUT IT&quot;</p>
+<h3>OBJECTION SCRIPT — I&#x27;LL THINK ABOUT IT</h3>
+<p>DISPATCHER: Of course — take your time. Can I ask: is there anything specific you&#x27;re weighing? Sometimes I can answer it right now. DISPATCHER: One thing worth knowing: we&#x27;re currently booking about [X weeks] out</p>
+<p>for [job type]. I can hold a slot for [24/48 hours] while you decide — that way you don&#x27;t lose the availability. [Soft urgency. Never pressure. Give them a genuine reason to decide sooner without making them feel pushed.]</p>
+<h3>SECTION 4: REVIEW RESPONSE TEMPLATES</h3>
+<p>5-Star Review Response</p>
+<h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Thank you so much, [First Name]! It was a pleasure taking care of your [job type] — [add one specific detail from the review if possible]. We really appreciate you taking the time to share your experience. If you ever need us</p>
+<p>again, we&#x27;re just a call or text away. — [Your Name], [Company Name] [Respond within 24 hours. Include company name — it helps local SEO. Specific and warm.] Negative Review Response</p>
+<h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Hi [First Name], thank you for taking the time to share this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I&#x27;d really like to understand what happened and make it right. Please call me directly at</p>
+<p>[Phone] and I&#x27;ll personally address it. We stand behind our work and I take every piece of feedback seriously. — [Your Name], Owner, [Company Name] [Never argue publicly. Never explain defensively. Move it offline. Prospects</p></div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>read your responses — composure and accountability are more trust-building than a defensive explanation.]</p></div>
+  <div class="footer"><span>Phone Scripts</span><span class="page-number">07</span></div>
+</section></main></body></html>

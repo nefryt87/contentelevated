@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Bridal Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Bridal Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Makeup Artists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Bridal Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>MAKEUP ARTIST</h3>
+<p>Bridal Checklist, Trial Feedback &amp; Instagram DM Scripts Protect your bookings, gather trial feedback, and convert more Instagram DMs into paid clients</p>
+<h3>SECTION 1: BRIDAL CONTRACT &amp; BOOKING</h3>
+<h3>CHECKLIST</h3>
+<p>Pre-Booking Confirmation Checklist</p>
+<p class="template-line">✓ Deposit received (non-refundable): $[amount] on [date]</p>
+<p class="template-line">✓ Contract sent and signed: [yes / date signed]</p>
+<p class="template-line">✓ Wedding date confirmed:</p>
+<p class="template-line">✓ Ceremony start time:</p>
+<p class="template-line">✓ Getting-ready location (full address):</p>
+<p class="template-line">✓ Artist arrival time confirmed:</p>
+<p class="template-line">✓ Number in party: [Bride + X bridesmaids + X others]</p>
+<p class="template-line">✓ Breakdown of services per person: [list each person and service]</p>
+<p class="template-line">✓ Trial scheduled: [date, time, location]</p>
+<p class="template-line">✓ Hair artist: [coordinated through you / booked separately / details]</p>
+<p class="template-line">✓ Parking available at getting-ready location: [yes/no/details]</p>
+<p class="template-line">✓ Allergies or skin sensitivities: [documented]</p>
+<p class="template-line">✓ Inspiration photos shared: [yes/no — where stored]</p>
+<p class="template-line">✓ Final balance due: [date — typically 1 week before or day-of per your policy]</p>
+<p class="template-line">✓ Cancellation / rescheduling policy: [reviewed with client: yes]</p>
+<p class="template-line">✓ [Go through this checklist immediately after booking. Missing one detail on a</p>
+<p>wedding morning is avoidable stress.] Bridal Trial Feedback Form</p>
+<p class="template-line">✓ Overall happiness with the trial look (1-10): ___</p>
+<p class="template-line">✓ Foundation coverage and finish: [perfect / needs adjustment — describe]:</p>
+<p class="template-line">✓ Eye look: [loved it / adjustments needed — describe]:</p>
+<p class="template-line">✓ Lip color: [perfect / change to]:</p>
+<p class="template-line">✓ Brow shape and intensity: [perfect / adjustments — describe]:</p>
+<p class="template-line">✓ Any longevity concerns (anything that might not last all day):</p>
+<p class="template-line">✓ Anything to add more of / less of:</p>
+<p class="template-line">✓ Skin prep notes for wedding day (what worked / what to adjust):</p>
+<p class="template-line">✓ Final approved look — description for your records: [document together and both</p></div>
+  <div class="footer"><span>Bridal Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>sign off]</p>
+<p class="template-line">✓ [Complete this form with the bride immediately after the trial while it&#x27;s fresh. Sign</p>
+<p>off on the approved look description together. This prevents any confusion on the wedding morning.]</p>
+<h3>SECTION 2: INSTAGRAM DM CONVERSION</h3>
+<h3>SCRIPTS</h3>
+<p>Responding to How Much Do You Charge?</p>
+<h3>DM SCRIPT — HOW MUCH DO YOU CHARGE?</h3>
+<p>Response: Hi [Name]! Thanks for reaching out! My rates vary depending on the services and number of people — I&#x27;d love to get you an exact quote. Could you tell me:</p>
+<p class="template-line">- What&#x27;s the occasion? (Wedding, event, prom, etc.)</p>
+<p class="template-line">- Roughly how many people would need makeup?</p>
+<p class="template-line">- What date are you looking at?</p>
+<p>Once I have those details I can put together pricing for you! [Never quote a price in the first DM. Get the details first — it prevents sticker shock before they understand the value.] Following Up on an Unanswered Inquiry</p>
+<h3>DM SCRIPT — UNANSWERED INQUIRY FOLLOW-UP</h3>
+<div class="section-label">Day 3 follow-up: Hi [Name]! Just following up on your inquiry — I wanted to make sure my</div>
+<p>message didn&#x27;t get buried. I&#x27;d love to chat about your event. Are you still looking for a makeup artist?</p>
+<div class="section-label">Day 7 follow-up: Hey [Name]! Last follow-up from me — just making sure you had</div>
+<p>everything you needed. If you&#x27;ve found someone already, no worries at all! If not, I&#x27;m still available / just had a cancellation for that date. [Two follow-ups maximum. Warm and not desperate. Most conversions happen on follow-up 1 or 2 — never on zero follow-up.]</p>
+<p>When a Lead Says I&#x27;ll Think About It</p>
+<h3>DM SCRIPT — I&#x27;LL THINK ABOUT IT</h3>
+<p>Response: Totally understand — take all the time you need! Just so you know, [date] is popular and I can only provisionally hold it for [24/48] hours before it opens to other inquiries. I can hold your date while you decide — no commitment, no charge. Just let me know!</p></div>
+  <div class="footer"><span>Bridal Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>[Give a soft genuine reason to decide sooner. A provisional hold is a real service — it also creates natural urgency without pressure.]</p>
+<h3>SECTION 3: BRIDAL DAY KIT CHECKLIST</h3>
+<p>Pre-Wedding Night Kit Check</p>
+<p class="template-line">✓ SKIN PREP: Primer (hydrating + setting varieties), setting spray, color correctors</p>
+<p class="template-line">✓ FOUNDATION: Client&#x27;s exact shade match + 2 flanking shades, concealer, contour,</p>
+<p>highlight</p>
+<p class="template-line">✓ EYES: Transition shades, mid-tones, darks, shimmer/glitter options, waterproof</p>
+<p>mascara, eyelash glue + lashes (multiple styles)</p>
+<p class="template-line">✓ BROWS: Pomade, pencil, brow gel, scissors, tweezers</p>
+<p class="template-line">✓ LIPS: 3+ options matching approved trial shade, lip liner, gloss</p>
+<p class="template-line">✓ TOOLS: Full brush set (cleaned and sanitized), beauty blenders, palette knives,</p>
+<h3>palette</h3>
+<p class="template-line">✓ SETTING: Setting spray x2, loose powder, blotting papers</p>
+<p class="template-line">✓ CLIENT TOUCH-UP KIT: Blotting papers, lip match, small brush, compact mirror —</p>
+<p>leave with bride</p>
+<p class="template-line">✓ HYGIENE: Brush cleaner spray, disposable wands and applicators, hand sanitizer</p>
+<p class="template-line">✓ LIGHTING: Ring light or portable daylight light if venue lighting is uncertain</p>
+<p class="template-line">✓ ADMIN: Signed contract copy, final payment reminder, emergency contact note</p>
+<p class="template-line">✓ [Build this checklist into your pre-wedding night routine. The one thing you forget</p>
+<p>will be the one thing you need on the day.]</p></div>
+  <div class="footer"><span>Bridal Kit</span><span class="page-number">05</span></div>
+</section></main></body></html>

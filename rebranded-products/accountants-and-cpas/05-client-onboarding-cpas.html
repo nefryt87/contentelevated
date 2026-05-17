@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Onboarding CPAs</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Onboarding CPAs</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Accountants &amp; CPAs</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Onboarding CPAs</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>ACCOUNTANT &amp; CPA</h3>
+<h3>Client Onboarding, Advisory Scripts &amp; Partnership</h3>
+<p>Templates</p>
+<div class="section-label">New client questionnaire, advisory upsell scripts, IRS notice response guide, CPA partnership</div>
+<p>proposal, and year-end planning system</p>
+<h3>SECTION 1: NEW CLIENT ONBOARDING</h3>
+<h3>QUESTIONNAIRE</h3>
+<p>Send before every new client engagement. Completed intake dramatically improves the quality of the first planning conversation and signals a professional, systematic practice.</p>
+<p class="template-line">✓ Full legal name (individual) / Business legal name:</p>
+<p class="template-line">✓ Date of birth (individual) / Business formation date:</p>
+<p class="template-line">✓ Social Security Number / EIN: [collect securely — do not send via unencrypted</p>
+<h3>email]</h3>
+<p class="template-line">✓ Address:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you hear about [Firm Name]?</p>
+<p class="template-line">✓ Filing status (individual): Single / MFJ / MFS / HOH / QW</p>
+<p class="template-line">✓ Occupation / Industry:</p>
+<p class="template-line">✓ Primary reason for engaging a CPA (what problem are you trying to solve?):</p>
+<p class="template-line">✓ Have you worked with a CPA before? If yes, who and when?</p>
+<p class="template-line">✓ Do you need us to obtain your prior year returns? If yes, from whom?</p>
+<p class="template-line">✓ Current bookkeeping software (if business): QuickBooks / Xero / Wave /</p>
+<p>Spreadsheet / None</p>
+<p class="template-line">✓ Do you have an accountant, bookkeeper, or financial advisor you work with? If yes,</p>
+<p>who?</p>
+<p class="template-line">✓ Are there any time-sensitive issues — IRS notices, upcoming deadlines,</p>
+<p>transactions — we should know about?</p>
+<p class="template-line">✓ What does a successful relationship with your CPA look like to you?</p>
+<p class="template-line">✓ [This questionnaire sets the foundation for an exceptional first meeting. Clients</p>
+<p>who complete it start with clarity and confidence — and so do you.]</p>
+<h3>SECTION 2: ADVISORY UPSELL</h3></div>
+  <div class="footer"><span>Client Onboarding CPAs</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>CONVERSATION SCRIPTS</h3>
+<p>Introducing Tax Planning to a Compliance-Only Client</p>
+<h3>SCRIPT — ADVISORY SERVICES INTRODUCTION CONVERSATION</h3>
+<p>YOU: I want to raise something with you that I think could make a real difference to your tax bill — and I want to be direct about it because I think you&#x27;re leaving money on the table. YOU: Everything we&#x27;ve done together has been compliance-focused — accurate</p>
+<p>returns, filed on time. That&#x27;s important. But there&#x27;s another layer that most clients don&#x27;t know to ask about: proactive planning. YOU: Planning means we look at your situation in [Q3/Q4 / mid-year], make decisions</p>
+<p>about income timing, deductions, retirement contributions, entity structure — before December 31, when there&#x27;s still something we can do. Right now we&#x27;re mostly reporting what happened. YOU: Based on [specific thing about their situation — income level, business</p>
+<p>structure, upcoming transaction], I think there are real opportunities. Would you be open to a planning conversation? [Frame it as serving their interests, not selling a service. You&#x27;re a professional advisor who sees an opportunity to help — not a salesperson looking to upsell.]</p>
+<p>When a Client Asks &#x27;What Else Can You Do For Me?&#x27;</p>
+<h3>SCRIPT — FULL SERVICE DISCOVERY CONVERSATION</h3>
+<p>YOU: Great question — I&#x27;d love to walk you through what we offer beyond tax preparation. YOU: For [business owners], we can help with: bookkeeping and financial statement preparation, payroll, quarterly estimated tax planning, business structure</p>
+<p>optimisation, and what I&#x27;d call CFO-lite advisory — being a sounding board when you&#x27;re making big financial decisions. YOU: For [individuals], beyond the annual return, we can do: year-round tax planning, assistance with major transactions like real estate or business sales, IRS</p>
+<p>representation if you ever receive a notice, and estate planning coordination alongside your attorney. YOU: The clients I have the most impact with are the ones I hear from more than once a year. What matters most to you right now?</p>
+<p>[Let them tell you what they need. Then match your services to their stated priorities.]</p>
+<h3>SECTION 3: IRS NOTICE RESPONSE SYSTEM</h3></div>
+  <div class="footer"><span>Client Onboarding CPAs</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>IRS Notice Triage — What to Tell Clients Immediately</h3>
+<p class="template-line">✓ CP2000 — Underreporter inquiry: IRS matching return data. Common, not an audit.</p>
+<p>Respond within 60 days.</p>
+<p class="template-line">✓ CP503 / CP504 — Balance due notices: Taxes owed. Address promptly to avoid</p>
+<p>lien.</p>
+<p class="template-line">✓ CP90 / 1058 — Intent to levy: Urgent. Contact client immediately.</p>
+<p class="template-line">✓ Letter 3219 — Notice of deficiency: 90-day letter. Do not ignore.</p>
+<p class="template-line">✓ Letter 525 / 531 — Audit examination: Respond through proper channels.</p>
+<p class="template-line">✓ CP01 / CP01A — Identity protection: Identity theft or PIN issue.</p>
+<p class="template-line">✓ [Rule: Never let clients respond to IRS notices directly without speaking to you</p>
+<p>first. The response matters as much as the issue.]</p>
+<h3>Client IRS Notice Response Protocol Email</h3>
+<div class="section-label">SUBJECT You received an IRS notice — here&#x27;s what to do, [First Name]</div>
+<p class="template-line">Dear [First Name], Thank you for forwarding the IRS notice. I&#x27;ve reviewed it and want to give you some immediate context so you&#x27;re not worrying unnecessarily. What this notice is: [plain-language explanation of the specific notice type and what triggered it].</p>
+<p>What it is NOT: [reassurance where appropriate — e.g., &#x27;This is not an audit. It is a routine matching notice.&#x27;] What happens next:</p>
+<p class="template-line">- I will [specific action — draft response / review the discrepancy / request an</p>
+<p>account transcript] by [date]</p>
+<p class="template-line">- Your response deadline: [date] — we have sufficient time</p>
+<p class="template-line">- I may need from you: [any specific information or documents]</p>
+<p>Please do not contact the IRS directly — let me handle the response. This is exactly the type of situation where having a CPA in your corner matters. I&#x27;ll update you by [date]. [Your Name] | [Firm Name] | [Phone]</p>
+<h3>SECTION 4: PROFESSIONAL PARTNERSHIP</h3>
+<h3>PROPOSAL</h3>
+<p>Co-Referral Partnership Proposal Email</p>
+<h3>SUBJECT A partnership idea — [Your Name] + [Their Name]</h3></div>
+  <div class="footer"><span>Client Onboarding CPAs</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">Dear [Name], I&#x27;ve been thinking about how we might build a more structured referral relationship and wanted to put a specific idea on the table. The overlap between our clients is significant: [attorney: &#x27;your estate planning</p>
+<p>and business law clients routinely need tax guidance on the transactions and structures you&#x27;re creating&#x27; / financial advisor: &#x27;your investment and planning clients almost always have tax implications that affect their overall strategy&#x27;]. What I&#x27;m proposing:</p>
+<p>Option A — Warm introductions: when either of us identifies a need the other can serve, we make a personal introduction rather than just passing a business card. Option B — Joint client meetings: for clients we share, we meet together</p>
+<p>once or twice a year to coordinate their planning holistically. Option C — Educational event: we co-host a workshop for small business owners / high-net-worth individuals — you cover [their expertise], I cover [tax/accounting angle]. Shared audience, shared credibility.</p>
+<p>Happy to do any or all of these. Would a brief call work this week? Sincerely, [Your Name] | [Firm Name] | [Phone]</p></div>
+  <div class="footer"><span>Client Onboarding CPAs</span><span class="page-number">06</span></div>
+</section></main></body></html>

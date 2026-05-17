@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Life &amp; Business Coaches Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Life &amp; Business Coaches Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>LIFE COACH &amp; BUSINESS COACH</h3>
+<h3>EMAIL &amp; CLIENT COMMUNICATION</h3>
+<h3>TEMPLATE PACK</h3>
+<p>25 done-for-you templates for every stage of the coaching relationship Lead nurture • Enrollment • Retention • Launch • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, goals, and your coaching</p>
+<p>program details.</p>
+<p class="template-line">• The tone is intentionally warm, direct, and human — coaches who sound</p>
+<p>like humans get better responses than coaches who sound like marketers.</p>
+<p class="template-line">• Personalize the first line of every email using AI — it takes 30 seconds and</p>
+<p>dramatically improves open and response rates.</p>
+<p class="template-line">• These work as emails, Voxer messages, and WhatsApp/text follow-ups —</p>
+<p>adapt length for the medium.</p>
+<p class="template-line">• Save your top performers as email templates in Gmail or your CRM for fast</p>
+<p>reuse.</p>
+<h3>SECTION 1: LEAD NURTURE &amp; ENROLLMENT</h3>
+<h3>SEQUENCE</h3>
+<p>Inquiry Response — Same Day</p>
+<div class="section-label">SUBJECT Re: Your coaching inquiry — a note from [Your Name]</div>
+<p>BODY Hi [First Name], Thank you for reaching out — I&#x27;m really glad you did. What you shared about [brief reference to their situation/goal] landed with me. [One sentence of genuine resonance — e.g., &#x27;That tension between knowing</p>
+<p>what you want and feeling stuck is exactly what I help people move through.&#x27;] I&#x27;d love to explore whether we&#x27;d be a great fit to work together. My approach is [one sentence on your coaching style], and the clients I work with best are</p>
+<p>[brief ideal client description]. Here&#x27;s my discovery call link — let&#x27;s have a real conversation: [link] Looking forward to it. [Your Name] | [Business Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Follow-Up — Day 2 (Value Add)</h3>
+<div class="section-label">SUBJECT Something that came to mind after your message...</div>
+<p>BODY Hi [First Name], I&#x27;ve been thinking about what you shared and I wanted to offer something that might be useful right now: [One specific insight, reframe, or question relevant to their situation — this is</p>
+<p>where your coaching voice shines. Make it personal and specific to what they mentioned.] This is the kind of thing we&#x27;d go much deeper on together — but I wanted you to have it now. Discovery call link is still open if you&#x27;d like to connect: [link] [Your Name]</p>
+<p>Post-Discovery Call — Conversion</p>
+<div class="section-label">SUBJECT After our conversation today — [First Name]</div>
+<p>BODY Hi [First Name], I really enjoyed our conversation today. What stood out to me was [specific observation from the call — a strength, a pattern, a readiness you noticed]. Based on what you shared, here&#x27;s what I&#x27;d propose: Program: [Program Name]</p>
+<p>What we&#x27;d focus on: [2–3 key areas drawn from their stated goals] Format: [Sessions per month, duration, format] Investment: [Price] I believe [specific outcome] is genuinely within reach for you — not because I</p>
+<p>say that to everyone, but because of [specific reason from the call]. To move forward, [clear next step — payment link, contract link, or reply here]. I&#x27;m excited about what&#x27;s possible. [Your Name] | [Business Name] Prospect Not Ready — 30-Day Nurture</p>
+<div class="section-label">SUBJECT Still here when the timing is right, [First Name]</div>
+<p>BODY Hi [First Name], I know our timing didn&#x27;t quite align — and that&#x27;s completely okay. I just wanted to share something that&#x27;s been on my mind since our conversation: [One insight or reflection relevant to their situation — something that adds</p>
+<p>value without pushing for a sale] When the timing is right, I&#x27;m here. No follow-up pressure from my end — just wanted to make sure you know the door is open. [Your Name] Program Launch Announcement</p>
+<div class="section-label">SUBJECT Something I&#x27;ve been building — and it&#x27;s finally ready</div></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Hi [First Name], I&#x27;ve been working on something for a while now and I&#x27;m finally ready to share it. [Program Name] is a [duration] program for [ideal client] who want to [outcome]. Here&#x27;s what&#x27;s different about this one: [2–3 things that make this program</p>
+<p>distinct] I&#x27;m opening [X] spots for the [date] cohort. Early access is available until [date] at the founding member rate of [price]. If this sounds like it was built for you — it probably was. Learn more and apply here: [link] [Your Name]</p>
+<h3>SECTION 2: CLIENT EXPERIENCE &amp; RETENTION</h3>
+<h3>New Client Welcome</h3>
+<div class="section-label">SUBJECT Welcome — I&#x27;m so glad you&#x27;re here, [First Name]</div>
+<p>BODY Hi [First Name], Welcome to [Program Name] — I&#x27;m genuinely excited to work with you. Before we dive in, I want to set the tone for our time together: [2–3 sentences on your coaching philosophy and what you believe makes</p>
+<p>transformation possible — this is your chance to set the container] Here&#x27;s what to expect in our first session: [brief overview] And one thing I&#x27;d love you to reflect on before we meet: [one powerful coaching question relevant to their goal]</p>
+<p>See you [first session date]. [Your Name] Mid-Week Check-In</p>
+<div class="section-label">SUBJECT Checking in — how&#x27;s the week unfolding, [First Name]?</div>
+<p>BODY Hi [First Name], Just a mid-week check-in — how are things moving since our last session? Specifically, I&#x27;m curious:</p>
+<p class="template-line">- How did [commitment from last session] go?</p>
+<p class="template-line">- What&#x27;s feeling alive or energized right now?</p>
+<p class="template-line">- What&#x27;s feeling heavy or stuck?</p>
+<p>Even a one-line reply helps me hold you in mind as the week unfolds. [Your Name] Breakthrough Celebration</p>
+<h3>SUBJECT What just happened — [First Name]</h3>
+<p>BODY Hi [First Name], I just have to name what happened [in our session / in what you shared with me]: [Specific breakthrough — name it clearly and specifically. What belief shifted? What action was taken? What was risked?]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I don&#x27;t want that to pass without acknowledgement. What you did took [courage / clarity / trust in yourself] — and it matters. This is what the work is for. [Your Name] Stuck Client Reframe</p>
+<div class="section-label">SUBJECT Something I want to offer you, [First Name]</div>
+<p>BODY Hi [First Name], I&#x27;ve been sitting with what you shared and I want to offer a reframe: [The reframe — specific to their situation. This is pure coaching value. Make it honest, direct, and compassionate.]</p>
+<p>You don&#x27;t have to do anything with this right now. Just let it sit. We&#x27;ll dig deeper on [next session date] — but I didn&#x27;t want to wait to share it. [Your Name] Program Renewal</p>
+<div class="section-label">SUBJECT The end of one chapter — and what comes next</div>
+<p>BODY Hi [First Name], As we approach the end of our [program name] together, I&#x27;ve been reflecting on everything you&#x27;ve moved through. [2–3 specific transformations, breakthroughs, or shifts — be specific, not generic]</p>
+<p>Here&#x27;s what I notice about where you are now vs. where you started: [honest, specific observation] For what&#x27;s next, I&#x27;d love to propose [next program/continuation] — which I think fits perfectly with the momentum you&#x27;ve built.</p>
+<p>Let&#x27;s talk about it in our next session. And [First Name] — it&#x27;s been an honour. [Your Name] Win-Back — 3 Months Post-Program</p>
+<div class="section-label">SUBJECT Checking in — how&#x27;s life on the other side, [First Name]?</div>
+<p>BODY Hi [First Name], It&#x27;s been a few months since we wrapped up and I&#x27;ve been thinking about you. How are things going? Are you holding the shifts we worked on — or has life pulled you back toward old patterns? (Both are completely normal.)</p>
+<p>If you&#x27;re in a season where support would be useful again, I have a couple of spots opening up. And if you&#x27;re thriving — I&#x27;d genuinely love to hear about it. Either way, I&#x27;m cheering for you. [Your Name]</p>
+<h3>SECTION 3: LAUNCHES, REFERRALS &amp;</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Group Program Launch — Last Chance</p>
+<h3>SUBJECT Closing in 24 hours — [Program Name]</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Hi [First Name], Enrollment for [Program Name] closes tomorrow at [time]. I wanted to reach out personally because based on [what they&#x27;ve shared / their situation], I genuinely think this is the right program for where you are right now.</p>
+<p>What&#x27;s waiting on the other side: [outcome 1], [outcome 2], [outcome 3]. The investment is [price], and spots close at [time] tomorrow. If you&#x27;ve been sitting on this — here&#x27;s the link: [link] Whatever you decide, I appreciate you being in my world.</p>
+<p>[Your Name]</p>
+<h3>Client Referral Ask</h3>
+<h3>SUBJECT A genuine ask — and a thank you</h3>
+<p>BODY Hi [First Name], Working with you has been one of the highlights of my coaching practice this [season/year]. Thank you for showing up so fully. I have a genuine ask: if you know someone who&#x27;s at a similar crossroads —</p>
+<p>someone who is [description of ideal client situation] — I would love an</p>
+<h3>introduction.</h3>
+<p>I take extraordinary care of anyone my clients refer to me. Your word is on the line when you refer someone, and I take that seriously. Thank you for trusting me with your journey. [Your Name] Podcast Guest Pitch</p>
+<div class="section-label">SUBJECT Guest pitch — [Your Name] for [Podcast Name]</div>
+<p>BODY Hi [Host Name], I&#x27;ve been following [Podcast Name] for [timeframe] and [specific episode or thing you genuinely appreciated] — it&#x27;s clear you care about [what the podcast values]. I&#x27;m [Your Name], a [type of coach] who works with [ideal client] on</p>
+<p>[transformation]. I&#x27;ve helped clients [specific result or outcome]. Three episode ideas I think would resonate with your audience: 1. [Topic 1 — specific and compelling] 2. [Topic 2 — specific and compelling] 3. [Topic 3 — specific and compelling]</p>
+<p>I&#x27;d bring a fresh perspective and a genuine commitment to your listeners&#x27; transformation — not a pitch for my program. Happy to share more if any of these land. Thank you for your time. [Your Name] | [Website] | [Social Handle]</p>
+<h3>Partnership Proposal</h3>
+<div class="section-label">SUBJECT Collaboration idea — [Your Name] + [Their Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Life &amp; Business Coaches<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Hi [Name], I&#x27;ve been following your work for a while and I genuinely admire [specific thing about what they do and who they serve]. I think our audiences overlap in a meaningful way — you work with [their client</p>
+<p>type] and I work with [your client type], and the intersection is [where they overlap]. I&#x27;d love to explore a collaboration — whether that&#x27;s a joint workshop, a live Q&amp;A, a podcast swap, or simply a mutual referral understanding.</p>
+<p>Would you be open to a 20-minute call to explore what might make sense? No agenda beyond seeing if there&#x27;s something here that serves both our communities. [Your Name] | [Business Name] | [Link]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section></main></body></html>

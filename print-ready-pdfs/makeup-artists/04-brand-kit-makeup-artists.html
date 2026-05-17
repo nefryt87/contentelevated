@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Brand Kit</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Makeup Artists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Makeup Artists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>MAKEUP ARTIST</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a beauty brand that books itself. Color palettes • Fonts • Canva templates • Niche framework • 7-day checklist</p>
+<h3>SECTION 1: BRAND POSITIONING</h3>
+<p>The most booked MUAs aren&#x27;t necessarily the most skilled — they&#x27;re the most clearly positioned and consistently visible. Your brand communicates who you are, who you serve, and why you&#x27;re the only choice before a client ever reaches out.</p>
+<p>Your Beauty Brand Promise I help [client type — e.g., brides / women of color / editorial models / prom queens] feel [emotional outcome — e.g., confident / timeless / bold / like the most beautiful</p>
+<p>version of themselves] through [your approach — e.g., luxurious, long-wear makeup tailored to their features and vision]. Example: &#x27;I help brides in [City] feel effortlessly beautiful on their wedding day —</p>
+<p>with a look they&#x27;ll love in photos for the rest of their life.&#x27; Niche Options — The More Specific, The More Bookable</p>
+<p class="template-line">• Bridal and wedding party makeup</p>
+<p class="template-line">• Editorial and fashion/print</p>
+<p class="template-line">• Film, TV, and commercial</p>
+<p class="template-line">• Special occasion (galas, proms, events)</p>
+<p class="template-line">• Mature skin and age-positive beauty</p>
+<p class="template-line">• Melanin-rich and textured skin specialist</p>
+<p class="template-line">• Airbrush specialist</p>
+<p class="template-line">• Natural and clean beauty</p>
+<p class="template-line">• Bold, avant-garde, and creative looks</p>
+<p class="template-line">• On-location and destination weddings</p>
+<h3>SECTION 2: COLOR PALETTES</h3>
+<div class="section-label">Palette A: Romantic Luxury (Bridal / High-End Events)</div>
+<p>Deep Rose</p>
+<h3>#8B3A5A</h3>
+<p>Primary — Luxury, Femininity Warm Blush</p>
+<h3>#D4847A</h3></div><div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Accent — Soft, Warm Champagne Gold</p>
+<h3>#C9922A</h3>
+<p>Highlight — Premium, Glam Blush White</p>
+<h3>#FAF0F3</h3>
+<p>Background — Clean, Delicate</p>
+<div class="section-label">Palette B: Editorial Edge (Bold / Fashion / Creative MUA)</div>
+<p>Matte Black</p>
+<h3>#1A1A1A</h3>
+<p>Primary — Edgy, Strong Burnt Red</p>
+<h3>#8B1A1A</h3>
+<p>Accent — Bold, Fierce Warm Gold</p>
+<h3>#C9922A</h3>
+<p>Highlight — Luxe Touch Off White</p>
+<h3>#FAF6F0</h3>
+<p>Background — Clean Canvas</p>
+<h3>SECTION 3: TYPOGRAPHY</h3>
+<h3>USE FONT NOTES</h3>
+<p>Headlines (Romantic) Cormorant Garamond Bold Elegant and luxurious — perfect for bridal and high-end beauty brands. Free on Google Fonts. Headlines (Editorial) Josefin Sans Bold Clean and modern — ideal for fashion-forward and editorial MUAs.</p>
+<p>Body Copy Lato Regular Readable and friendly — great for captions, emails, and print materials. CTA / Emphasis Lato Bold For booking buttons, key offers, and important callouts.</p>
+<h3>SECTION 4: CANVA TEMPLATE GUIDE</h3>
+<h3>TEMPLATE CANVA SEARCH TERM BEST USE</h3>
+<p>Instagram Post (1:1) &quot;makeup artist instagram post</p>
+<h3>template&quot;</h3>
+<p>Portfolio, transformations, tips Before/After Template &quot;before after beauty transformation canva&quot;</p>
+<h3>Client transformations with clean</h3>
+<p>framing Instagram Story (9:16) &quot;beauty artist story template&quot; Behind the scenes, polls, flash availability Facebook Cover &quot;makeup artist facebook cover&quot; First impression, niche statement,</p>
+<h3>booking CTA</h3></div><div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Pricing Guide PDF &quot;beauty services pricing guide</p>
+<h3>canva&quot;</h3>
+<p>Send to inquiries — branded, professional Testimonial Quote Card &quot;beauty testimonial quote</p>
+<h3>template&quot;</h3>
+<p>Highlight client reviews as social proof Print Templates</p>
+<p class="template-line">• Business Card — Search: &#x27;makeup artist business card&#x27; — include Instagram</p>
+<p>handle prominently</p>
+<p class="template-line">• Services Menu — Search: &#x27;beauty services menu canva&#x27; — for bridal fairs and</p>
+<p>consultations</p>
+<p class="template-line">• Gift Certificate — Search: &#x27;gift certificate template canva&#x27; — high-converting</p>
+<p>holiday and birthday offer</p>
+<p class="template-line">• Contract/Agreement Header — Search: &#x27;service agreement header canva&#x27; —</p>
+<h3>brand your client contracts</h3>
+<h3>SECTION 5: 7-DAY BRAND LAUNCH CHECKLIST</h3>
+<h3>Day 1 — Foundation</h3>
+<p class="template-line">✓ Choose your color palette (A or B)</p>
+<p class="template-line">✓ Select fonts in Canva Brand Kit</p>
+<p class="template-line">✓ Write your Brand Promise</p>
+<p class="template-line">✓ Choose and lock in your niche</p>
+<p>Days 2–3 — Build Templates</p>
+<p class="template-line">✓ Create Instagram post template</p>
+<p class="template-line">✓ Design before/after transformation template</p>
+<p class="template-line">✓ Build pricing guide PDF</p>
+<p class="template-line">✓ Create Instagram Story template</p>
+<p class="template-line">✓ Design testimonial quote card</p>
+<p>Days 4–5 — Update All Profiles</p>
+<p class="template-line">✓ Update Instagram bio with Brand Promise + booking link</p>
+<p class="template-line">✓ Update TikTok bio</p>
+<p class="template-line">✓ Update Facebook page cover and description</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Makeup Artists<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Update Google Business Profile if applicable</p>
+<p class="template-line">✓ Add email signature with Instagram handle and booking link</p>
+<p>Days 6–7 — First Week of Content</p>
+<p class="template-line">✓ Batch-create 3 posts using your 90-Day Calendar</p>
+<p class="template-line">✓ Generate captions with the monthly AI prompt</p>
+<p class="template-line">✓ Film one Reel or GRWM video</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri</p>
+<p class="template-line">✓ Engage with every comment in the first hour after posting</p>
+<p>Your art deserves to be seen. Your business deserves to thrive. Build the brand that makes both possible.</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div></section></main></body></html>

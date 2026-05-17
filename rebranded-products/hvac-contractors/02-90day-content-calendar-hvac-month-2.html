@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90 Day Content Calendar HVAC · Month 2</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">90-Day Calendar</p>
+  <h1>90 Day Content Calendar HVAC · Month 2</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>HVAC Contractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>90 Day Content Calendar HVAC · Month 2</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><h3>Week 5</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: Seasonal alert — &#x27;Before [summer heat/winter cold] hits, here&#x27;s what to check&#x27; (Timely + CTA)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>POST: Energy savings tip — &#x27;How to lower your bill this [season] without replacing your system&#x27; (Practical Value) FRIDAY POST: &#x27;What&#x27;s the difference between a repair and a replacement?&#x27; — honest guide (Edu + Trust)</p>
+<h3>Week 6</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: Service agreement spotlight — &#x27;What our maintenance plan customers never worry about&#x27; (Retention + Upsell)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>POST: Job photo — challenging install or repair with a brief story (Social Proof) FRIDAY POST: &#x27;Your AC is X years old — here&#x27;s what to expect&#x27; — age-based education (Lead Qualifier)</p>
+<h3>Week 7</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: Financing spotlight — &#x27;New system, no big upfront cost — here&#x27;s how&#x27; (Conversion)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>POST: Review roundup — 3 recent Google reviews compiled into one post (Social Proof) FRIDAY POST: &#x27;Emergency AC/heat call? Here&#x27;s what to check before you call us&#x27; — builds trust (Practical + Trust)</p>
+<h3>Week 8</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: &#x27;Why [City] homeowners choose [Company Name]&#x27; — your differentiators (Brand + Trust)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3></div>
+  <div class="footer"><span>90 Day Content Calendar HVAC · Month 2</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>POST: Seasonal offer — tune-up special or service agreement discount (CTA) FRIDAY POST: Booking/estimate CTA — &#x27;Don&#x27;t wait for the hottest/coldest day of the year. Book now.&#x27; (Urgency CTA) AI Caption Prompt for This Month</p>
+<p>Write 12 social media posts for an HVAC contractor for seasonal campaign &amp; drive service calls. Mix: 4 educational posts (tips,</p>
+<div class="section-label">system care, costs), 4 trust/social proof posts (jobs, reviews,</div>
+<p>team), 4 engagement or CTA posts (seasonal offers, booking prompts). Each under 150 words, local and conversational, ends with a question or CTA. Company: [Company Name], [City]. Number 1- 12.</p>
+<h3>MONTH 3: RETAIN, REFER &amp; BUILD YOUR</h3>
+<h3>PIPELINE</h3>
+<p>Turn satisfied customers into loyal agreement holders and active referral sources. Build the local reputation that means your phone rings before the competition&#x27;s does.</p>
+<h3>Week 9</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: &#x27;Why regular maintenance is cheaper than emergency repair&#x27; — the numbers (Retention Edu)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>POST: Referral appreciation — &#x27;Most of our calls come from neighbors recommending us&#x27; (Referral Prompt) FRIDAY POST: Seasonal campaign — fall/spring tune-up push, limited slots (Urgency</p>
+<h3>CTA)</h3>
+<h3>Week 10</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: New equipment feature — smart thermostat, high-efficiency unit, EV- ready HVAC (Timely + Tech)</p></div>
+  <div class="footer"><span>90 Day Content Calendar HVAC · Month 2</span><span class="page-number">04</span></div>
+</section></main></body></html>

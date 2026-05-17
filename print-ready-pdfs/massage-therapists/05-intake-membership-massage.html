@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Intake Membership Massage</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f0f4ed; --paper:#fbfcf7; --ink:#141a17; --muted:#5f6c61;
+  --accent:#6e8a77; --accent2:#b7c7bb; --dark:#17211b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Massage Therapists<span>Complete Growth Bundle</span></div></div><div class="pill">Care growth system</div></div><p class="kicker">Premium business system</p><h1>Intake Membership Massage</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Massage Therapists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Massage Therapists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Massage Therapists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Massage Therapists<span>Intake Membership Massage</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>MASSAGE THERAPIST</h3>
+<div class="section-label">New Client Intake, Membership Scripts &amp; Reputation</div>
+<p>Templates Health intake form, injury return protocol, membership conversation scripts, and review responses</p>
+<h3>SECTION 1: NEW CLIENT HEALTH INTAKE</h3>
+<h3>New Client Health History Form</h3>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ Emergency contact name and phone:</p>
+<p class="template-line">✓ How did you hear about [Business Name]?</p>
+<p class="template-line">✓ Primary reason for today&#x27;s appointment:</p>
+<p class="template-line">✓ Areas of focus / concern (e.g., neck, lower back, shoulders, full body):</p>
+<p class="template-line">✓ Current pain level (0-10): ___ Location of pain:</p>
+<p class="template-line">✓ Have you had professional massage before? If yes, how recently?</p>
+<p class="template-line">✓ Recent injuries, surgeries, or medical procedures (last 6 months):</p>
+<p class="template-line">✓ Current medications (especially blood thinners, pain medications):</p>
+<p class="template-line">✓ Medical conditions relevant to massage (blood clots, osteoporosis, neuropathy,</p>
+<p>cancer, pregnancy):</p>
+<p class="template-line">✓ Skin sensitivities or allergies (oils, lotions, or products):</p>
+<p class="template-line">✓ Pressure preference: Light / Medium / Deep</p>
+<p class="template-line">✓ Areas to avoid:</p>
+<p class="template-line">✓ Anything else your therapist should know?</p>
+<p class="template-line">✓ I confirm the above is accurate: ___ Date: ___</p>
+<p class="template-line">✓ [Collect before every first appointment. Protects both the client and the therapist —</p>
+<p>and signals professionalism.] Return-to-Massage After Injury Email</p>
+<div class="section-label">SUBJECT Welcome back — returning after [injury/surgery], [First Name]</div></div><div class="footer"><span>Intake Membership Massage</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Massage Therapists<span>Intake Membership Massage</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [First Name], So glad to hear you&#x27;re recovering and ready to come back. Before your first session back, I want to make sure we approach it thoughtfully. A few things I&#x27;ll want to know:</p>
+<p class="template-line">- What clearance have you received from your doctor or physio?</p>
+<p class="template-line">- Any areas or movements that are still restricted?</p>
+<p class="template-line">- Your current pain level and how it compares to before?</p>
+<p>For your first session back, I&#x27;d recommend we start with lighter pressure / focusing only on non-affected areas / a shorter session to see how your body responds. We can always progress from there.</p>
+<p>Please reply with any details, or we can talk through it when you arrive. So glad to have you back. [Your Name] | [Business Name]</p>
+<h3>SECTION 2: MEMBERSHIP CONVERSION</h3>
+<h3>SCRIPTS</h3>
+<p>In-Person Membership Introduction</p>
+<h3>SCRIPT — INTRODUCING MEMBERSHIP AFTER A SESSION</h3>
+<p>YOU: Before you head off — can I mention something quickly?</p>
+<h3>CLIENT: Sure.</h3>
+<p>YOU: I&#x27;ve noticed [specific observation — e.g., how much tension you carry in your neck and shoulders] and I think consistency would make a significant difference for you. YOU: We have a membership option that makes regular sessions really easy — $</p>
+<p>[amount] a month, covers [X] sessions, and you get priority booking so you&#x27;re never waiting. YOU: A lot of my regular clients say it&#x27;s the best thing they&#x27;ve done for their wellbeing — not just the savings, but having it locked in means they actually stick to</p>
+<p>it. YOU: Want me to tell you more about how it works? [Frame it as a wellness recommendation from a professional, not a sales offer.] Objection: Can&#x27;t Commit to Every Month</p>
+<h3>SCRIPT — FLEXIBILITY OBJECTION</h3>
+<p>YOU: That&#x27;s fair — and the membership is flexible enough to work around that. Sessions roll over for [X months] so if you travel or life gets busy, you won&#x27;t lose them. YOU: The main benefit is the savings and the priority booking — you&#x27;re locking in the</p></div><div class="footer"><span>Intake Membership Massage</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Massage Therapists<span>Intake Membership Massage</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>current rate and always having access to a time on my schedule. [Know your terms before this conversation. Flexibility is a genuine selling point — lead with it.] Objection: A Bit Expensive</p>
+<h3>SCRIPT — PRICE OBJECTION</h3>
+<p>YOU: I understand — it is an investment. Can I put it in context quickly? YOU: An individual session is $[amount]. The membership works out to $[per- session cost] per session — you&#x27;re saving $[X] every time you come in. Over a year</p>
+<p>of monthly visits, that&#x27;s $[total savings]. YOU: A lot of my clients think of it as the cost of one physio visit or one chiropractic appointment — for ongoing maintenance that prevents those from becoming necessary.</p>
+<p>[Do the math for them. Price anchoring against medical alternatives is legitimate and usually compelling.]</p>
+<h3>SECTION 3: REVIEW RESPONSE TEMPLATES</h3>
+<p>5-Star Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [First Name]! It means the world to have your kind words — [add one personal detail if the review mentions it]. It&#x27;s such a privilege doing this work. See you at your next session! — [Your Name], [Business Name]</p>
+<p>[Respond within 24 hours. Be specific and human. Short is better than long.] Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hi [First Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client. I&#x27;d really appreciate the chance to understand what happened and make it right.</p>
+<p>Please reach out directly at [Phone] or [Email]. — [Your Name], [Business Name] [Never argue publicly. Move it offline. Your composure and accountability build trust even out of a bad review.]</p></div><div class="footer"><span>Intake Membership Massage</span><span class="page-number">05</span></div></section></main></body></html>

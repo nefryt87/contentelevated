@@ -1,0 +1,308 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon AI Prompt Library</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1>Salon <em>AI</em> Prompt Library</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Hair Stylists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<h3>THE SALON AI</h3>
+<h3>PROMPT LIBRARY</h3>
+<p>57 Copy-Paste Prompts Across 6 Categories — Built for Salons 57 Prompts total 6 Categories 0 Tech skills needed ∞ Uses © 2026 · Hairstylist Complete Growth Bundle · AI Prompt Library · 57 prompts across 6 categories · Single-business use only</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>How to Use This Library</h3>
+<p>Every prompt in this library is written specifically for hair salons and beauty businesses. Brackets like [THIS] indicate fields you fill in with your specific details. The more specific you are, the better the output you&#x27;ll get from ChatGPT or any AI tool.</p>
+<p>Bookmark this document and come back to it whenever you need to produce something quickly. Each prompt is a starting point — feel free to adapt the language to match your voice. 1 Copy the prompt</p>
+<p>Select the prompt text, copy it, and paste it directly into ChatGPT (chat.openai.com) or your preferred AI tool. 2 Fill in the brackets Replace every [BRACKETED FIELD] with your specific details before hitting send. The more detail, the better. 3 Refine if needed</p>
+<p>If the first output isn&#x27;t quite right, don&#x27;t start over. Just reply: &#x27;Make it shorter,&#x27; &#x27;More casual,&#x27; or &#x27;Try a different angle.&#x27; 4 Save your best outputs Keep a running document of AI outputs you love — these become your template library over time.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 1</p>
+<h3>Social Media &amp; Content Creation</h3>
+<h3>Prompt #1 — Monthly Brainstorm</h3>
+<p>Give me 30 social media post ideas for a hair salon in [MONTH/SEASON]. Include a balanced mix of: before/after transformations (8), educational tips (7), engagement questions (5), promotional posts</p></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>(5), behind-the-scenes content (3), and personal/brand storytelling (2). Format as a numbered list with one-line descriptions.</p>
+<h3>Prompt #2 — Caption from Photo</h3>
+<p>Write 3 Instagram captions for a photo of [DESCRIBE PHOTO: e.g., a balayage transformation on dark brown hair, natural lighting]. Each caption should have a different angle: 1) Educational/technique-focused, 2) Emotional/client story, 3) Promotional with a booking CTA. Under</p>
+<p>130 words each.</p>
+<h3>Prompt #3 — Promotional Post (Non-Salesy)</h3>
+<p class="template-line">Write a social post promoting [SERVICE] at my salon. Make it feel like a helpful recommendation rather than a sales pitch. Lead with who the service is best for and what problem it solves. End with a soft CTA. Tone: warm and genuine. Under 120 words.</p>
+<h3>Prompt #4 — Reel/TikTok Script</h3>
+<p class="template-line">Write a 30-45 second TikTok/Instagram Reel script for a hair stylist about [TOPIC]. Include: a hook in the first 2 seconds (text overlay or spoken), the main content in 3-4 punchy points, and a call to action at the end. Format as a spoken script with timing notes.</p>
+<h3>Prompt #5 — Engagement Post</h3>
+<p class="template-line">Write an Instagram engagement post that asks my salon followers a question about [HAIR TOPIC/DECISION]. The question should be easy to answer (multiple choice or one-word), feel genuinely curious rather than forced, and hint that I&#x27;ll respond to everyone. Under 80 words.</p>
+<h3>Prompt #6 — Story Sequence (5 Slides)</h3>
+<p class="template-line">Write a 5-slide Instagram Story sequence promoting [SERVICE/OFFER]. Slide 1: hook/problem. Slide 2: agitate the problem. Slide 3: introduce the solution. Slide 4: proof or details. Slide 5: CTA with link. Each slide: 1-2 sentences max.</p>
+<h3>Prompt #7 — Hashtag Set</h3>
+<p>Give me 20 hashtags for a [SERVICE TYPE] post from a hair salon in [CITY, STATE]. Group them: 5 broad discovery tags (1M+ posts), 10 niche/targeted tags (100K-1M posts), 5 hyper-local or</p>
+<div class="section-label">brand-specific tags. Explain briefly why each group matters.</div>
+<h3>Prompt #8 — Repurpose Across Platforms</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>I have this Instagram caption: [PASTE CAPTION]. Rewrite it as: 1) A Facebook post (more conversational, slightly longer), 2) A 30-second TikTok voiceover script, 3) A Twitter/X post (under 280 characters), 4) A Pinterest pin description with keywords.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>Prompt #9 — Seasonal Campaign</h3>
+<p>Create a marketing campaign for my salon around [HOLIDAY/SEASON]. Include: campaign name, core hook, 5 content post ideas, one promotional offer concept, and write a full caption for the launch post. Make it feel special and specific to this time of year.</p>
+<h3>Prompt #10 — Hot Take Post</h3>
+<p class="template-line">Write a mildly controversial but good-natured &#x27;hot take&#x27; post about [HAIR TOPIC: e.g., box dye, skipping trims, cheap shampoo]. The post should be confident and direct without being mean. It should invite debate in the comments. Under 100 words.</p>
+<h3>Prompt #11 — Google Business Post</h3>
+<p class="template-line">Write a Google Business update post for my salon announcing [SERVICE/OFFER/NEWS]. Under 300 words. Include natural keywords (hair salon, [city], [service name]) without stuffing. End with a clear CTA (Book now / Call to schedule). Professional but not stiff.</p>
+<h3>Prompt #12 — Pinterest Pin Description</h3>
+<p class="template-line">Write a Pinterest pin description for a hair transformation image showing [DESCRIBE IMAGE]. Include keywords for: [SERVICE], [HAIR TYPE], [STYLE], and [CITY] if relevant. Helpful and informative tone. Include a subtle link-in-bio CTA. Under 150 words.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 2</p>
+<h3>Email Marketing</h3>
+<h3>Prompt #13 — Welcome Email — New Client</h3>
+<p class="template-line">Write a welcome email for a new salon client who just booked their first appointment. Warm and excited tone. Include: brief intro to the salon/stylist, what they can expect at their appointment, how</p></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>to prepare, cancellation policy, and one line of genuine excitement about meeting them. Under 200 words.</p>
+<h3>Prompt #14 — Post-Appointment Follow-Up</h3>
+<p class="template-line">Write a follow-up email sent 24-48 hours after a client&#x27;s salon appointment. Include: genuine thank-you, reference to the specific service they received, care tips for maintaining their result, a</p>
+<p>natural ask for a Google review (with [LINK PLACEHOLDER]), and a subtle rebooking nudge. Friendly, personal tone. Under 180 words.</p>
+<h3>Prompt #15 — Rebooking Reminder Email</h3>
+<p class="template-line">Write an email to a salon client who is 4-6 weeks overdue for their [SERVICE] appointment. Mention what tends to happen when you wait too long (without being alarmist), make it feel like a note from</p>
+<p>the stylist not a marketing blast, and include a direct booking link placeholder. Under 150 words.</p>
+<h3>Prompt #16 — Win-Back Email (90+ Days)</h3>
+<p class="template-line">Write a win-back email to a salon client who hasn&#x27;t booked in 3+ months. Subject line: creates curiosity, not desperation. Body: acknowledge the time gap warmly, share one thing that&#x27;s new or</p>
+<p>different at the salon, offer a reason to return (priority booking, free add-on — not just a discount), and make it genuinely easy to reply. Under 200 words.</p>
+<h3>Prompt #17 — 3-Email Re-Engagement Sequence</h3>
+<p class="template-line">Write a 3-email re-engagement campaign for salon clients inactive for 90+ days. Email 1 (Day 1): warm reconnect — we miss you. Email 2 (Day 4): value email — share a tip or update. Email 3 (Day 7):</p>
+<p>final nudge with a clear offer. Each email under 150 words. Subject lines for all three.</p>
+<h3>Prompt #18 — Monthly Newsletter</h3>
+<p class="template-line">Write a 250-word monthly newsletter for a hair salon. Sections: 1) One genuinely useful tip clients will appreciate, 2) A behind-the-scenes update or what&#x27;s new at the salon, 3) A promotion or seasonal</p>
+<p>offer, 4) A clear CTA. Tone: conversational, like a note from a friend who happens to be a great stylist.</p>
+<h3>Prompt #19 — Birthday Email</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a birthday email from a hair stylist to a salon client. Warm and personal — not corporate. Include a birthday offer: [OFFER: e.g., $25 off any service, complimentary scalp treatment add-on].</p>
+<div class="section-label">Booking link placeholder. Under 120 words. Subject line included.</div>
+<h3>Prompt #20 — Price Increase Announcement</h3>
+<p class="template-line">Write an email announcing a price increase at my salon. New prices effective [DATE]. The email should: be direct and confident (no over-apologizing), briefly note why (supply costs, continued</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only education, etc.), thank them for their loyalty, and encourage early booking at current prices. Under 200 words. Subject line included.</p>
+<h3>Prompt #21 — New Service Launch Email</h3>
+<p class="template-line">Write an email announcing a new service at my salon: [SERVICE NAME AND BRIEF DESCRIPTION]. Build excitement. Explain who it&#x27;s for, what makes it different, introductory pricing if applicable, and</p>
+<div class="section-label">how to book. Include a strong subject line. Under 220 words.</div>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 3</p>
+<h3>Client Communications &amp; Texts</h3>
+<h3>Prompt #22 — Appointment Confirmation Text</h3>
+<p class="template-line">Write an appointment confirmation text for a salon client booked for [SERVICE] on [DAY] at [TIME]. Include: salon address, parking or entry note, one preparation tip, and cancellation policy reminder. Under 60 words. Friendly but professional.</p>
+<h3>Prompt #23 — Rebooking Reminder Text (4 Weeks)</h3>
+<p class="template-line">Write a casual, friendly text from a hair stylist to a client who is due for their [SERVICE] in about 2 weeks. Feel like it&#x27;s from the stylist directly, not automated. Mention what happens to [hair type/service] if they wait too long. Easy to respond to. Under 50 words.</p></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Prompt #24 — Rebooking Text (Client Overdue)</h3>
+<p class="template-line">Write a light, warm text to a salon client who is 6+ weeks overdue for their [SERVICE]. Slightly playful tone — not guilting. Acknowledge it happens, explain what we&#x27;re working with now, and give them an easy path to rebook. Under 60 words.</p>
+<h3>Prompt #25 — No-Show Follow-Up Text</h3>
+<p class="template-line">Write a text to a client who missed their appointment without cancelling. Tone: understanding and warm, not punitive. Acknowledge things come up, gently note the cancellation policy, and offer to rebook. Under 50 words.</p>
+<h3>Prompt #26 — Review Request (Post-Appointment)</h3>
+<p class="template-line">Write a text asking a happy salon client for a Google review. Send this 1-2 days after their appointment. Should feel personal (reference their service/result), make the ask feel natural not transactional, and include a [LINK PLACEHOLDER]. Under 50 words.</p>
+<h3>Prompt #27 — Consultation Question Sequence</h3>
+<p>Create a consultation question script for a stylist meeting a new client for [SERVICE]. Include: 5 questions about hair history and goals, 2 questions about daily routine and maintenance habits, and 2</p>
+<p>questions to uncover any concerns or sensitivities. Format as natural conversation, not a form.</p>
+<h3>Prompt #28 — Price Objection Response</h3>
+<p class="template-line">Write a calm, confident response (text or in-person script) for when a client says &#x27;That&#x27;s more than I expected&#x27; about your pricing. Don&#x27;t apologize for your prices. Acknowledge their reaction, briefly explain the value, and offer a path forward if appropriate. Under 100 words.</p>
+<h3>Prompt #29 — Declining a Service Script</h3>
+<p class="template-line">Write a compassionate but clear script for a stylist who needs to decline a chemical service because the client&#x27;s hair isn&#x27;t healthy enough. Explain the assessment, what could happen if you proceed,</p>
+<p>what you can do today instead, and the realistic timeline for their goal. Tone: expert and caring.</p>
+<h3>Prompt #30 — Responding to a 5-Star Review</h3>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Write a Google review response for this positive review: [PASTE REVIEW]. Response should: thank</p>
+<p>them by name, reference something specific from their review, sound like the actual stylist (not a corporate voice), and invite them back. Under 80 words.</p>
+<h3>Prompt #31 — Responding to a Negative Review</h3>
+<p class="template-line">Write a calm, professional response to this negative Google review: [PASTE REVIEW]. Acknowledge their experience without admitting specific fault, express genuine concern, invite them to contact you</p>
+<p>directly to make it right, and keep the door open. Under 100 words. Do not be defensive.</p>
+<h3>Prompt #32 — Handling a Complaint In Person</h3>
+<p class="template-line">Write a script for a stylist responding to a client who is unhappy with their result before they leave the salon. Include: how to stay calm, how to listen first, how to assess the issue, what to offer, and</p>
+<div class="section-label">how to make sure they feel heard. Tone: professional and de-escalating.</div>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 4 Hiring, HR &amp; Team Management</p>
+<h3>Prompt #33 — Stylist Job Posting</h3>
+<p class="template-line">Write a job posting for a licensed hair stylist at my salon. Details: [COMMISSION/BOOTH RENTAL/SUITE], team size [X], salon vibe [DESCRIBE], top services [LIST], ideal candidate [DESCRIBE].</p>
+<p>Must include: role summary, what we offer, what we&#x27;re looking for, and how to apply. Tone: human and specific to my brand, not generic.</p>
+<h3>Prompt #34 — Assistant/Receptionist Job Post</h3>
+<p class="template-line">Write a job posting for a salon receptionist/front desk role. Responsibilities include: booking, client check-in, retail assistance, and maintaining salon atmosphere. What we&#x27;re looking for: [DESCRIBE IDEAL CANDIDATE]. Tone: welcoming and clear. Include how to apply.</p>
+<h3>Prompt #35 — Interview Questions — Stylist</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">09</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Write 10 interview questions for a hair stylist role at a salon that values [YOUR VALUES]. Include: 3 technical questions, 3 culture-fit questions, 4 scenario-based questions. For each, include: what a strong answer looks like and what a red flag sounds like.</p>
+<h3>Prompt #36 — Performance Review Template</h3>
+<p>Create a quarterly performance review template for a salon stylist. Sections: technical skills (service quality, technique growth), client relationships (retention rate, rebooking rate, reviews), retail</p>
+<p>performance, culture and team contribution, professional development, and 3 goals for next quarter.</p>
+<h3>Prompt #37 — Staff Meeting Agenda</h3>
+<p>Create an agenda for a [LENGTH]-minute salon team meeting. Topics to cover: [LIST YOUR TOPICS]. Include: time allocations, a team wins/appreciation moment, a problem-solving segment, and a clear action items section at the end.</p>
+<h3>Prompt #38 — Difficult Conversation Script</h3>
+<p class="template-line">Write a script for a salon owner having a difficult conversation with a stylist about [ISSUE: e.g., chronic lateness, client complaints, low retail performance]. Approach: direct but respectful. Include:</p>
+<div class="section-label">how to open the conversation, how to present the issue with specifics, how to listen, and how to close</div>
+<p>with clear expectations.</p>
+<h3>Prompt #39 — New Hire Onboarding Plan</h3>
+<p>Create a first-week onboarding plan for a new stylist joining my salon. Day-by-day breakdown covering: what they need to learn, who they shadow, what processes to review, key policies to discuss, and what success looks like at the end of week one. Welcoming but structured.</p>
+<h3>Prompt #40 — Social Media Policy for Staff</h3>
+<p class="template-line">Write a social media policy for salon employees. Cover: what they can and cannot post related to the salon, client confidentiality rules, tagging guidelines, how to handle negative comments about the</p>
+<p>salon, and what happens if the policy is violated. Professional tone, easy to understand.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">10</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 5 Operations &amp; SOPs</p>
+<h3>Prompt #41 — Opening Checklist</h3>
+<p>Create a morning opening checklist for a hair salon. Covers: station/chair prep, product and supply check, front desk and booking system check, cleanliness walkthrough, and client schedule review. Format as a checkable list with responsible roles noted. For a team of [X PEOPLE].</p>
+<h3>Prompt #42 — Closing Checklist</h3>
+<p>Create an end-of-day closing checklist for a hair salon. Covers: client checkout and booking confirmations, station breakdown and sanitation, product and retail inventory check, POS reconciliation, safety checks, and lockup procedure. Checkable format.</p>
+<h3>Prompt #43 — Color Service SOP</h3>
+<p class="template-line">Write a standard operating procedure for a full hair color service from client greeting to checkout. Include: pre-service consultation steps, mixing and application protocol, timing guidelines, quality</p>
+<p>checkpoints during processing, rinse and finish steps, and checkout/rebooking process.</p>
+<h3>Prompt #44 — Client Intake Form</h3>
+<p class="template-line">Write a new client intake form for a hair salon. Include questions covering: hair history (color, chemical, heat), current concerns, hair goals, maintenance habits, lifestyle factors, product preferences, allergies/sensitivities, and how they found the salon.</p>
+<h3>Prompt #45 — Retail Sales Training Guide</h3>
+<p class="template-line">Write a one-page guide for stylists on how to recommend retail products naturally during appointments. Include: when to bring it up, how to phrase the recommendation (not a pitch), how to</p>
+<p>handle &#x27;I&#x27;ll just get it cheaper online,&#x27; and sample language for 3 different scenarios. Tone: helpful guide, not a sales manual.</p>
+<h3>Prompt #46 — Service Menu Review Prompt</h3>
+<p>Review my current salon service menu and suggest improvements. My menu: [PASTE MENU]. Look at:</p>
+<div class="section-label">pricing psychology and structure, whether service names are clear and appealing, menu length and</div></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">11</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>organization, anything that seems underpriced or missing, and whether the menu communicates my positioning. Be specific and actionable.</p>
+<h3>Prompt #47 — Pricing Calculator Brief</h3>
+<p>Help me calculate a price floor for [SERVICE]. My costs: [SUPPLIES COST]. My target hourly rate: $[AMOUNT]. Average service duration: [X] minutes. My overhead per service slot (rent, utilities, etc.):</p>
+<p>$[AMOUNT]. Walk me through the math and tell me the minimum price I should charge and the recommended price with a healthy margin.</p>
+<h3>Prompt #48 — Cancellation Policy Draft</h3>
+<p class="template-line">Write a cancellation and no-show policy for a hair salon. Cover: required notice period, fee structure for late cancellations and no-shows, how repeat offenders are handled, how to communicate the</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only policy to new clients, and the language to use when enforcing it. Firm but not aggressive.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Category 6 Growth, Marketing Strategy &amp; Business</p>
+<h3>Prompt #49 — Ideal Client Profile</h3>
+<p>Help me define my ideal client avatar for my hair salon. Ask me a series of questions to build a detailed profile including: demographics, psychographics, goals, frustrations, what they value most in</p>
+<p>a salon experience, where they spend time online, and what would make them immediately book. Use my answers to write a 1-paragraph client profile.</p>
+<h3>Prompt #50 — Competitor Research Framework</h3>
+<p>Give me a step-by-step framework for researching 5 competing salons in my area. What to look at:</p>
+<div class="section-label">pricing, services, Google reviews (themes in positive AND negative reviews), social media presence,</div>
+<div class="section-label">booking experience. What questions to answer after the research. What to do with the findings to</div>
+<p>sharpen my positioning.</p></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">12</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Prompt #51 — Referral Program Design</h3>
+<p>Help me design a referral program for my salon. Constraints: must be simple to explain in 10 seconds, not require complicated tracking, reward both the referrer and the new client, and be sustainable</p>
+<p>without gutting margins. Suggest 3 different structures with pros and cons. Then write the</p>
+<h3>client-facing announcement for my preferred option.</h3>
+<h3>Prompt #52 — Price Increase Strategy</h3>
+<p>Help me plan a price increase for my salon services. Current situation: [DESCRIBE]. Goal: increase average ticket by [AMOUNT or %]. Walk me through: the right timing, how to phase it in, how to</p>
+<p>communicate it to existing clients, how to handle pushback, and the exact email/text to send.</p>
+<h3>Prompt #53 — New Year / Quarterly Goal Setting</h3>
+<p>Help me set 3 business goals for Q[X]. My current situation: [DESCRIBE]. Goals should be SMART: specific, measurable, achievable, relevant, time-bound. For each goal: what success looks like, one key metric to track, and the first action step.</p>
+<h3>Prompt #54 — Local Business Partnership Pitch</h3>
+<p class="template-line">Write a brief pitch for a referral partnership between my salon and a [TYPE OF BUSINESS: photographer, wedding planner, boutique, gym, etc.]. Describe the mutual benefit clearly, propose a simple collaboration structure, and include an email or DM I can send to reach out.</p>
+<h3>Prompt #55 — Google Business Description</h3>
+<p class="template-line">Write a Google Business Profile description for my hair salon. Name: [NAME]. Location: [CITY, STATE]. Services: [LIST TOP 3-5]. Differentiator: [WHAT MAKES YOU DIFFERENT]. The description should: be</p>
+<p>200-250 words, include natural keywords, communicate our vibe and clientele, and end with a</p>
+<h3>booking CTA.</h3>
+<h3>Prompt #56 — Blog Post for Local SEO</h3>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">13</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Write a 450-word blog post for my salon website targeting the search term &#x27;[SERVICE] in [CITY]&#x27;.</p>
+<p>Include: what the service is, who it&#x27;s best for, how to prepare, what the process looks like, what results to expect, and how to book. Conversational and informative — not keyword-stuffed.</p>
+<h3>Prompt #57 — Client Retention Analysis Prompt</h3>
+<p>Help me understand why I might be losing clients after their first or second appointment. I&#x27;ll describe my current process: [DESCRIBE]. Identify the most likely drop-off points, what clients are probably</p>
+<p>experiencing, and give me 3 specific things I can change this week to improve first-to-second-visit</p>
+<h3>retention.</h3>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 14 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Keep This Document Open While You Work Every prompt was written for salon owners. None of them are generic. Quick-Reference Index Category Prompts Page</p>
+<h3>Social Media &amp; Content Creation</h3>
+<p>#1 – #12 2</p>
+<h3>Email Marketing</h3>
+<p>#13 – #21 3</p>
+<h3>Client Communications &amp; Texts</h3>
+<p>#22 – #32 4 Hiring, HR &amp; Team Management #33 – #40 5 Operations &amp; SOPs #41 – #48 6 Growth, Marketing Strategy &amp; Business #49 – #57 7</p></div>
+  <div class="footer"><span>Salon AI Prompt Library</span><span class="page-number">14</span></div>
+</section></main></body></html>

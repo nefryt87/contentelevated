@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Phone Scripts HVAC</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Phone Scripts HVAC</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>HVAC Contractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Phone Scripts HVAC</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>HVAC CONTRACTOR</h3>
+<h3>Phone &amp; Voicemail Script Playbook</h3>
+<p>Convert inbound calls, leave voicemails that get returned, handle objections, respond to reviews</p>
+<h3>SECTION 1: INBOUND CALL SCRIPTS</h3>
+<p>Standard Service Call</p>
+<h3>DISPATCHER SCRIPT — STANDARD SERVICE CALL</h3>
+<p>DISPATCHER: Thank you for calling [Company Name], this is [Name] — how can I help you today? [Listen fully. Let them describe the problem without interrupting.] DISPATCHER: Got it — that&#x27;s something we can definitely take care of. Let me get a couple of quick details.</p>
+<p>[Collect: full name, address, best callback number, problem description, urgency level] DISPATCHER: We have availability [today/tomorrow]. Our techs are licensed and insured — they&#x27;ll call 30 minutes before arrival. Does [time window] work?</p>
+<p>[Confirm. Read back the address. Always.] DISPATCHER: Perfect — you&#x27;re all set. Anything else before I let you go? [KEY: A calm professional dispatcher builds trust before the tech ever arrives.] Emergency No-Heat / No-Cool Call</p>
+<h3>DISPATCHER SCRIPT — EMERGENCY CALL</h3>
+<p>DISPATCHER: [Company Name] — sounds like an emergency. Let&#x27;s get this sorted quickly. [Get address immediately. Time matters.] DISPATCHER: I&#x27;m reaching our nearest available tech right now. Best callback number for the next 10 minutes?</p>
+<p>DISPATCHER: While you wait — if you have pets or elderly family, move them to the most comfortable area. [Dispatch tech. Call customer back within 10 minutes with confirmed ETA.] DISPATCHER: Great — [Tech Name] is heading your way and will be there by [time].</p>
+<p>[Always call back with a specific ETA. &#x27;We sent someone&#x27; is not enough on an emergency call.] Price-Shopping Call — How Much Does It Cost?</p>
+<h3>DISPATCHER SCRIPT — PRICE SHOPPING</h3>
+<p>CUSTOMER: How much do you charge for [problem]? DISPATCHER: Great question — I want to give you an honest number, not one I&#x27;ll have to walk back. The cost depends on what&#x27;s actually causing the issue. DISPATCHER: Our diagnostic fee is $[amount] and applies toward the repair. For</p></div>
+  <div class="footer"><span>Phone Scripts HVAC</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>standard tune-ups, customers typically pay $[X]. Larger issues depend on what we find. DISPATCHER: Can I get you scheduled? Our tech gives you an exact price before any work starts — zero surprises. [Never give firm prices for diagnostic work. Ranges are fine for</p>
+<p>standard services.]</p>
+<h3>SECTION 2: VOICEMAIL SCRIPTS</h3>
+<p>Estimate Follow-Up Voicemail</p>
+<h3>VOICEMAIL — ESTIMATE FOLLOW-UP</h3>
+<p>Hi [First Name], this is [Your Name] from [Company Name] — just following up on the estimate for [job type] from [day]. Wanted to make sure you got it and see if you had any questions. We&#x27;re available [timeframe] if you want to move forward. Call me at [Phone] —</p>
+<p>that&#x27;s [repeat number]. No pressure at all. [Keep voicemails under 25 seconds. Name, company, reason, number twice. That&#x27;s it.] Seasonal Tune-Up Voicemail</p>
+<h3>VOICEMAIL — SEASONAL TUNE-UP CAMPAIGN</h3>
+<p>Hi [First Name], [Your Name] from [Company Name]. [Season] is coming up and we&#x27;re</p>
+<div class="section-label">booking [spring AC / fall heating] tune-ups for past customers before opening the schedule.</div>
+<p>Last year we filled up [X] weeks before peak season. Tune-up runs $[amount], takes about an hour. Call me at [Phone] — [repeat number]. Hope to hear from you! [Under 25 seconds. Specific and warm.] Service Agreement Renewal Voicemail</p>
+<h3>VOICEMAIL — SERVICE AGREEMENT RENEWAL</h3>
+<p>Hi [First Name], [Your Name] from [Company Name]. Your HVAC maintenance agreement is coming up for renewal. As a loyal customer your rate stays at $[amount] — same as last year. Give me a call at [Phone] — [repeat number] — to renew. Takes about 2 minutes. Thanks!</p>
+<h3>SECTION 3: OBJECTION HANDLING</h3>
+<p>Objection: It&#x27;s Too Expensive</p>
+<h3>OBJECTION — TOO EXPENSIVE</h3>
+<p>TECH: I hear you — more than you were hoping for. Can I ask what budget you were working with? I want to see if there&#x27;s a way to make this work. TECH: We offer financing — you could spread this over [X] months at low or zero interest. Works out to about $[monthly amount] a month.</p></div>
+  <div class="footer"><span>Phone Scripts HVAC</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>TECH: I also want to be honest: if you&#x27;re comparing to a lower quote, it&#x27;s worth asking what&#x27;s included — licensing, insurance, warranty. We&#x27;re licensed, insured, with a [X]-year workmanship guarantee. [Never just repeat the price. Address the real objection —</p>
+<p>budget, value, or trust.] Objection: Want to Think About It</p>
+<h3>OBJECTION — WANT TO THINK ABOUT IT</h3>
+<p>DISPATCHER: Absolutely — take the time you need. Can I ask: is there anything specific you&#x27;re weighing? Sometimes I can answer it right now. DISPATCHER: If it helps, we&#x27;re booking [timeframe] out for [service type]. I can hold a slot for [24/48 hours] while you decide.</p>
+<p>[Give a soft reason to decide sooner. Never pressure, never guilt.] Objection: Got a Cheaper Quote</p>
+<h3>OBJECTION — GOT A CHEAPER QUOTE</h3>
+<p>TECH: I appreciate you being upfront. Can I ask — was it for the same scope? Same equipment brand and efficiency rating? TECH: We&#x27;re not always the cheapest and I won&#x27;t pretend otherwise. What I can offer:</p>
+<p>[X]-year parts and labor warranty, licensed techs, and [X] years serving [City]. If the scope is genuinely identical, go with them. But if there&#x27;s any doubt about what&#x27;s included, that&#x27;s worth clarifying first. [Respect the customer&#x27;s intelligence. Never disparage competitors.]</p>
+<h3>SECTION 4: REVIEW RESPONSE TEMPLATES</h3>
+<p>5-Star Review Response</p>
+<h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Thank you so much, [First Name]! It was a pleasure taking care of your [system/job type] — [add one personal detail if possible]. We appreciate you taking the time. If you ever need us again, we&#x27;re just a call away. — [Your Name], [Company Name]</p>
+<p>[Respond within 24 hours. Be specific. Include company name for SEO. Warm and brief.] Negative Review Response</p>
+<h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Hi [First Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I&#x27;d really like to make this right. Please call me at [Phone] or email [Email] and I&#x27;ll personally address it. — [Your Name], Owner, [Company Name]</p></div>
+  <div class="footer"><span>Phone Scripts HVAC</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">HVAC Contractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>[Never argue publicly. Never explain defensively. Move it offline. How you respond to criticism is as trust-building as your 5-star reviews.]</p></div>
+  <div class="footer"><span>Phone Scripts HVAC</span><span class="page-number">06</span></div>
+</section></main></body></html>

@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Intake Reactivation</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Intake Reactivation</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Chiropractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Intake Reactivation</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>CHIROPRACTIC PRACTICE</h3>
+<p>New Patient Intake, Insurance Scripts &amp; Reactivation Templates Comprehensive intake form, insurance conversation scripts, and lapsed patient reactivation</p>
+<h3>system</h3>
+<h3>SECTION 1: NEW PATIENT INTAKE</h3>
+<p>New Patient Health History Form</p>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Occupation:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ Emergency contact:</p>
+<p class="template-line">✓ How were you referred to us?</p>
+<p class="template-line">✓ Primary complaint — reason for today&#x27;s visit:</p>
+<p class="template-line">✓ When did this problem begin? What caused it (if known)?</p>
+<p class="template-line">✓ Current pain level (0-10): ___ Where exactly: ___</p>
+<p class="template-line">✓ Does the pain radiate? If yes, where?</p>
+<p class="template-line">✓ What makes the pain worse? What makes it better?</p>
+<p class="template-line">✓ Have you had chiropractic care before? If yes, when and for what?</p>
+<p class="template-line">✓ Previous injuries, surgeries, or accidents related to this area:</p>
+<p class="template-line">✓ Any X-rays or MRI for this condition? Do you have copies?</p>
+<p class="template-line">✓ Current medications:</p>
+<p class="template-line">✓ Medical conditions (osteoporosis, arthritis, herniated disc, blood clotting issues,</p>
+<p>cancer history):</p>
+<p class="template-line">✓ Pregnant or nursing?</p>
+<p class="template-line">✓ Goals for chiropractic care — what does success look like to you?</p>
+<p class="template-line">✓ [Collect before every first appointment. Comprehensive intake improves exam</p>
+<p>efficiency and builds patient confidence from the first interaction.]</p>
+<h3>SECTION 2: INSURANCE &amp; PAYMENT SCRIPTS</h3>
+<p>Insurance Verification Call Script</p>
+<h3>FRONT DESK SCRIPT — INSURANCE VERIFICATION</h3>
+<p>FRONT DESK: Hi, this is [Name] from [Practice Name] — I&#x27;m calling to verify chiropractic benefits for a patient. [Provide: patient name, DOB, member ID, group number, date of service] FRONT DESK: Can you confirm: Does the plan cover chiropractic services? What is</p></div>
+  <div class="footer"><span>Intake Reactivation</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>the deductible and has it been met? What is the copay or coinsurance per visit? Is there a visit limit per year? [Document: representative name + call reference number] FRONT DESK: Thank you — can I get your name and a reference number for this call?</p>
+<p>[Always verify before the patient arrives. Coverage surprises at checkout create billing disputes and erode trust.] Explaining Coverage to the Patient</p>
+<h3>FRONT DESK SCRIPT — COVERAGE EXPLANATION</h3>
+<p>FRONT DESK: Before your appointment, I want to quickly go over your insurance so there are no surprises. FRONT DESK: Based on what we verified, your plan covers chiropractic care with a $ [copay] per visit. Your deductible is $[amount] and [it has / has not] been met for this</p>
+<p>year. FRONT DESK: Your out-of-pocket for today&#x27;s visit will be $[amount]. [If visit limit:] Your plan covers up to [X] visits per year — you have [X] remaining. FRONT DESK: Any questions about that before you go in?</p>
+<p>[Cover this proactively before the appointment — not at checkout. Transparency before treatment builds lasting trust.]</p>
+<h3>SECTION 3: PATIENT REACTIVATION SYSTEM</h3>
+<p>6-Month Lapsed Patient Reactivation</p>
+<h3>SUBJECT We&#x27;ve been thinking about you — [First Name]</h3>
+<p>Hi [First Name], It&#x27;s been about [X months] since your last visit at [Practice Name], and we just wanted to check in. How has your area of complaint or general health been? Sometimes the benefits of regular care aren&#x27;t fully appreciated until you&#x27;ve been away from it for a while.</p>
+<p>If things have been creeping back — neck tension, stiffness, headaches — that&#x27;s exactly the right time to come back before it becomes a bigger issue. We have availability this week or in the coming weeks: [booking link] or call [Phone].</p>
+<p>It would be great to see you again. [Dr. Name] | [Practice Name] Seasonal Wellness Reactivation</p>
+<h3>SUBJECT Time for a spinal health check? — [First Name]</h3>
+<p>Hi [First Name], With the new season / new year / holiday travel / increased sitting coming up, a lot of our patients find this is the perfect time for a tune-up. Sitting more, stress, and physical demands all take a toll — and catching</p></div>
+  <div class="footer"><span>Intake Reactivation</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>things early is always easier and less expensive than waiting for something to become painful. We&#x27;re welcoming returning patients for [specific service]. Book here: [link] or call [Phone]. We&#x27;d love to see you. [Dr. Name] | [Practice Name]</p></div>
+  <div class="footer"><span>Intake Reactivation</span><span class="page-number">05</span></div>
+</section></main></body></html>

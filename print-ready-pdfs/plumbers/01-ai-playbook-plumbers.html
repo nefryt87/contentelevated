@@ -1,0 +1,112 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#eef3f7; --paper:#fbfdff; --ink:#07111d; --muted:#526171;
+  --accent:#348bb9; --accent2:#f08245; --dark:#0e1b28;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Complete Growth Bundle</span></div></div><div class="pill">Field growth system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Plumbers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Plumbers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>THE PLUMBER&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<div class="section-label">How to Convert More Estimates, Build Recurring Revenue,</div>
+<p>and Grow Your Plumbing Business Using AI A Complete Growth Guide for Plumbing Contractors &amp; Service Companies</p>
+<h3>Chapter 1: Why AI Is the Plumber&#x27;s Business</h3>
+<p>Edge Most plumbing businesses run almost entirely on reactive marketing — customers call when something breaks. That model works, but it leaves money on the table every single day: estimates that never convert, emergency customers who never become</p>
+<p>maintenance clients, reviews that never get requested, and slow weeks that could have been filled with proactive outreach. AI fixes all of that.</p>
+<p class="template-line">• The Estimate Conversion Gap: The average plumber converts 40-60% of</p>
+<p>estimates — meaning 40-60% of the time you spent diagnosing and quoting resulted in zero revenue. A systematic follow-up sequence recovers a significant portion of those.</p>
+<p class="template-line">• The Emergency-to-Recurring Opportunity: Every emergency call is an</p>
+<p>opportunity to turn a one-time customer into a recurring drain maintenance, water heater check, or annual inspection client. Most plumbers never make that offer — because they never have a system for it.</p>
+<p class="template-line">• The Google Review Machine: Plumbers with 50+ Google reviews get called</p>
+<p>first. Full stop. The phone doesn&#x27;t lie — high-review contractors get more calls, better leads, and can charge more. AI writes the review request that actually gets sent.</p>
+<p class="template-line">• The Seasonal Revenue Opportunity: Winterization campaigns, water heater</p>
+<p>flush reminders, spring drain cleaning — plumbers who run proactive campaigns fill slow weeks before they become slow. AI writes the campaign in minutes.</p>
+<h3>Chapter 2: Your First 3 AI Wins This Week</h3>
+<p>Start here. Three quick wins with immediate impact.</p>
+<p class="template-line">• Win #1 — Estimate Follow-Up Sequence: AI writes a 3-message follow-up for</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>every estimate that doesn&#x27;t book within 48 hours. Most plumbers send zero follow-ups. This sequence alone typically recovers 15-25% of cold estimates.</p>
+<p class="template-line">• Win #2 — Post-Job Review Request: 24 hours after every completed job, AI</p>
+<p>writes a personal review request linked directly to your Google Business Profile. One extra review per week compounds into a 50+ review profile within a year.</p>
+<p class="template-line">• Win #3 — Service Plan Offer: For every emergency repair customer, AI writes a</p>
+<p>post-job maintenance plan offer — annual drain cleaning, water heater service, or inspection. Turns emergency revenue into recurring revenue.</p>
+<div class="section-label">Chapter 3: Converting Estimates and Filling Your</div>
+<p>Schedule The most profitable plumbing businesses don&#x27;t just wait for the phone to ring. They have systems that fill slow weeks proactively.</p>
+<p class="template-line">• The 3-Message Estimate Follow-Up: Day 2 check-in, Day 5 value-add</p>
+<p>(financing, warranty info, what happens if they wait), Day 14 final outreach. Three messages recovers significantly more jobs than zero.</p>
+<p class="template-line">• The Seasonal Outreach Calendar: Winter: pipe freeze prevention, water heater</p>
+<p>checks. Spring: drain cleaning, outdoor plumbing inspection. Fall: winterization, sump pump check. AI writes all four campaigns — your customer list receives them automatically.</p>
+<p class="template-line">• The Lapsed Customer Win-Back: For customers who haven&#x27;t called in 2+</p>
+<p>years, AI writes a win-back message tied to a seasonal offer or a system age check: &#x27;Your water heater from [year] is now [X] years old — here&#x27;s what to watch for.&#x27;</p>
+<p class="template-line">• The Referral Neighbor Drop: After every job, the neighboring 5-6 homes get a</p>
+<p>door hanger or a text: &#x27;We just helped your neighbor at [street]. If you&#x27;ve been meaning to get [drain/water heater/pipes] checked, now&#x27;s a great time.&#x27; AI writes it. Your tech delivers it.</p>
+<h3>Chapter 4: Building Recurring Revenue in a</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Reactive Industry The plumbing business runs on emergencies — but the most profitable plumbing companies convert emergencies into recurring relationships.</p>
+<p class="template-line">• The Annual Maintenance Plan: Offer customers a simple annual plan: drain</p>
+<p>cleaning + water heater flush + whole-home plumbing inspection. $[X]/year. AI writes the offer, the renewal sequence, and the mid-year check-in.</p>
+<p class="template-line">• The Post-Emergency Upsell: After fixing an emergency, the customer is more</p>
+<p>receptive to prevention than they&#x27;ll ever be again. AI writes a post-repair message that offers a maintenance plan at the moment of maximum receptiveness.</p>
+<p class="template-line">• Water Heater Replacement Pipeline: Water heaters last 8-12 years. AI writes a</p>
+<div class="section-label">system-age email series for customers with aging units — educational, not pushy</div>
+<p>— that positions you as their first call when replacement time comes.</p>
+<p class="template-line">• The Property Manager Relationship: Property managers have ongoing, high-</p>
+<p>volume plumbing needs. One good property manager relationship can be worth $5K-$20K/year. AI writes the introduction, the service offer, and the quarterly check-in.</p>
+<h3>Chapter 5: Reviews, Referrals, and Local</h3>
+<p>Dominance In plumbing, local trust is everything. The contractor with the most reviews and the fastest response gets the call — especially for emergencies.</p>
+<p class="template-line">• The Post-Job Review System: Every job, every time. A personal text within 24</p>
+<p>hours asking for a Google review. The link goes directly to your GBP. Contractors who do this consistently become the most-reviewed plumber in their market within 12-18 months.</p>
+<p class="template-line">• The Referral Program: Happy customers refer. They just need to be reminded</p>
+<p>and rewarded. AI writes the referral ask and — if you offer a referral incentive — the thank-you confirmation when they send someone your way.</p>
+<p class="template-line">• The Realtor and Home Inspector Partnership: Realtors and home inspectors</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>encounter plumbing issues on every transaction. A warm relationship with 3-5 realtors and 2-3 inspectors in your market can generate 20-40 high-quality leads per year.</p>
+<p class="template-line">• The Nextdoor and Neighborhood Group Play: Nextdoor is the #1 referral</p>
+<p>platform for home service contractors in most US markets. Providing genuine value in neighborhood groups — answering plumbing questions, offering tips — generates consistent inbound calls.</p>
+<h3>Chapter 6: Content That Builds Trust and Drives</h3>
+<p>Calls Plumbers who post educational content on Google Business Profile and Facebook consistently get more calls from better customers — because trust is established before they even dial.</p>
+<p class="template-line">• What Actually Works for Plumbers: Before/after job photos (the simpler the</p>
+<p>better — burst pipe repaired, water heater replaced, drain cleared), &#x27;is this a real emergency?&#x27; educational posts that save customers from panic, seasonal tips, and honest pricing content (&#x27;what does a water heater replacement actually cost in [city]?&#x27;).</p>
+<p class="template-line">• Short-Form Video: 30-60 second videos explaining common plumbing issues</p>
+<p>perform exceptionally well. &#x27;Why your toilet keeps running,&#x27; &#x27;What that dripping sound means,&#x27; &#x27;How to shut off your water in an emergency.&#x27; AI writes the script. Your phone records it.</p>
+<p class="template-line">• Google Business Profile: For plumbers, GBP is non-negotiable. Weekly posts,</p>
+<p>responding to every review, keeping photos current, and maintaining accurate service area information drives significant organic call volume.</p>
+<p class="template-line">• The Emergency Content Hook: &#x27;If [this] is happening right now, here&#x27;s what to</p>
+<p>do while you wait for a plumber&#x27; — this type of content drives emergency calls directly to you. Customers search for the problem, find your content, and call you.</p>
+<h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+<p>One system per week. Measurable results in 30 days.</p>
+<p class="template-line">• Week 1: 3-message estimate follow-up sequence + post-job review request +</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>GBP post template.</p>
+<p class="template-line">• Week 2: Post-repair maintenance plan offer + water heater age alert email +</p>
+<p>lapsed customer win-back.</p>
+<p class="template-line">• Week 3: Seasonal campaign (pick your next season) + referral request +</p>
+<p>realtor/inspector introduction.</p>
+<p class="template-line">• Week 4: 2 weeks of social content batched using 90-Day Calendar + AI caption</p>
+<h3>prompt + door hanger text.</h3>
+<h3>BONUS: AI Prompt Cheat Sheet for Plumbers</h3>
+<p class="template-line">Copy and paste into Claude or ChatGPT. Replace [brackets] with your details. Estimate Follow-Up Write a 3-message estimate follow-up sequence for a plumbing contractor. Customer [Name] received an estimate for [job type —</p>
+<p>e.g., water heater replacement / drain repair / whole-home repipe] for $[amount] on [date]. Message 1 (Day 2): warm check-in, ask if they have questions. Message 2 (Day 5): add value — mention what</p>
+<p>could happen if they wait, any financing available, or warranty info. Message 3 (Day 14): final soft close, leave the door open. Friendly and professional — not pushy. Sign as [Your Name], [Company Name], [Phone]. Seasonal Campaign</p>
+<p class="template-line">Write a seasonal plumbing outreach email for [winter / spring / summer / fall]. The campaign is for [company name] in [city], targeting past customers. The main service to promote is [service — e.g., winterization check / drain cleaning / water heater</p>
+<p>flush / sump pump inspection]. Include: one reason this time of year matters for plumbing, what the service includes, price if applicable ($[amount]), and a clear booking CTA. Under 150 words. Friendly, local tone. GBP / Social Content</p>
+<p>Write 5 Google Business Profile posts for a plumbing contractor in [City]. Topics: how to know if your water heater needs replacing, what to do if a pipe bursts before the plumber arrives, signs your</p>
+<p>drain needs professional cleaning (not just Drano), how often to flush your water heater, and one recent job highlight (describe: [job type, area, what you fixed]). Each under 150 words, practical and local. Company: [Name].</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>The best plumbers show up fast, fix it right, and ask for the review. AI helps you do the rest — follow up, stay visible, and turn one-time emergencies into lifetime customers.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div></section></main></body></html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barber Free AI Prompts Sample</title>
+  <style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #111;
+  color: #f6f0e7;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+.book { width: 8.5in; margin: 0 auto; }
+.page {
+  position: relative;
+  width: 8.5in;
+  min-height: 11in;
+  overflow: hidden;
+  page-break-after: always;
+  padding: .58in;
+  background: #080706;
+}
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 22%, rgba(213,157,68,.22), transparent 1.45in),
+    radial-gradient(circle at 42% 82%, rgba(213,157,68,.14), transparent 1.8in),
+    linear-gradient(90deg, rgba(0,0,0,.96) 0 43%, rgba(7,6,5,.72) 64%, rgba(0,0,0,.98) 100%);
+  pointer-events: none;
+}
+.page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: .42in .42in;
+  opacity: .45;
+  mask-image: radial-gradient(circle at 55% 45%, black, transparent 82%);
+  pointer-events: none;
+}
+.brand {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: rgba(246,240,231,.9);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 900;
+}
+.brand-stack { display: grid; gap: 8px; }
+.brand-line { color: rgba(246,240,231,.94); letter-spacing: .26em; }
+.doc-label {
+  color: #d0a04a;
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.cover-title {
+  position: relative;
+  z-index: 3;
+  max-width: 5.55in;
+  margin-top: .78in;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-size: 82px;
+  line-height: .82;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+  font-weight: 950;
+}
+.cover-title .gold {
+  display: block;
+  color: #c7963c;
+  text-shadow: 0 0 30px rgba(199,150,60,.18);
+}
+.cover-sub {
+  position: relative;
+  z-index: 3;
+  margin-top: .42in;
+  color: rgba(246,240,231,.93);
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.cover-sub strong { color: #c9963c; }
+.cover-linework {
+  position: absolute;
+  z-index: 2;
+  right: .58in;
+  top: 1.6in;
+  width: 3.1in;
+  height: 6in;
+  border-top: 1px solid rgba(214,173,96,.28);
+  border-bottom: 1px solid rgba(214,173,96,.18);
+  background:
+    linear-gradient(90deg, transparent, rgba(214,173,96,.08), transparent),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 22px);
+  opacity: .72;
+}
+.stats {
+  position: absolute;
+  z-index: 3;
+  left: .58in;
+  right: 2.1in;
+  bottom: 1.12in;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(214,173,96,.54);
+  border-bottom: 1px solid rgba(214,173,96,.34);
+}
+.stat {
+  min-height: 1.18in;
+  padding: 18px 16px;
+  border-right: 1px solid rgba(214,173,96,.34);
+}
+.stat b {
+  display: block;
+  color: #d3a64d;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.stat span {
+  display: block;
+  color: rgba(246,240,231,.88);
+  font-size: 10px;
+  line-height: 1.6;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.footer {
+  position: absolute;
+  z-index: 3;
+  left: .58in;
+  right: .58in;
+  bottom: .31in;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(246,240,231,.68);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.work {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(214,173,96,.15), transparent 1.8in),
+    linear-gradient(135deg, #0b0908, #17110d 74%, #050504);
+}
+.work .section-head {
+  position: relative;
+  z-index: 3;
+  margin-top: .5in;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: .38in;
+  align-items: end;
+}
+.eyebrow {
+  color: #c9973e;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+h2 {
+  margin: 12px 0 0;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-size: 42px;
+  line-height: .9;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+}
+.intro {
+  color: rgba(246,240,231,.72);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.prompt-grid {
+  position: relative;
+  z-index: 3;
+  margin-top: .42in;
+  display: grid;
+  gap: 14px;
+}
+.prompt-card {
+  display: grid;
+  grid-template-columns: .52in 1fr;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid rgba(214,173,96,.22);
+  background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+  border-radius: 18px;
+  box-shadow: 0 20px 55px rgba(0,0,0,.18);
+}
+.prompt-num {
+  width: .52in;
+  height: .52in;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(214,173,96,.55);
+  color: #d5a349;
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+.label {
+  margin: 0 0 8px;
+  color: #c9973e;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 950;
+}
+h3 {
+  margin: 0 0 8px;
+  color: #fff8ec;
+  font-size: 18px;
+  line-height: 1.1;
+}
+.prompt-card p:not(.label) {
+  margin: 0;
+  color: rgba(246,240,231,.75);
+  font-size: 10px;
+  line-height: 1.48;
+}
+.cta-panel {
+  position: relative;
+  z-index: 3;
+  margin-top: .4in;
+  border-radius: 26px;
+  border: 1px solid rgba(214,173,96,.28);
+  background:
+    linear-gradient(135deg, rgba(214,173,96,.12), rgba(255,255,255,.03)),
+    #100d0b;
+  padding: 26px;
+}
+.cta-panel h2 { font-size: 38px; }
+.cta-panel p {
+  max-width: 5.8in;
+  color: rgba(246,240,231,.72);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.bundle-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.bundle-list div {
+  border: 1px solid rgba(214,173,96,.18);
+  border-radius: 14px;
+  padding: 13px;
+  color: rgba(246,240,231,.82);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+@media print { body { background: white; } .book { margin: 0; } }
+</style>
+</head>
+<body>
+<main class="book">
+  <section class="page cover">
+    <div class="brand">
+      <div class="brand-stack">
+        <div class="brand-line">CONTENT ELEVATED</div>
+        <div class="doc-label">Done-for-you AI prompts for barbers</div>
+      </div>
+    </div>
+    <div class="cover-linework"></div>
+    <h1 class="cover-title">5 Free <span class="gold">AI Prompts</span></h1>
+    <p class="cover-sub">Copy. Paste. Customize.<br/><strong>Fill more chairs.</strong></p>
+    <div class="stats">
+      <div class="stat"><b>01</b><span>Under<br/>5 minutes<br/>each</span></div>
+      <div class="stat"><b>02</b><span>Save<br/>30-60 minutes<br/>per message</span></div>
+      <div class="stat"><b>03</b><span>Book more<br/>appointments<br/>on autopilot</span></div>
+    </div>
+    <div class="footer"><span>Done-for-you AI prompts for barbers</span><span>01</span></div>
+  </section>
+
+  <section class="page work">
+    <div class="brand"><div class="ce">CONTENT ELEVATED HQ</div><div class="tag">Prompt System</div></div>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Copy / Paste / Customize</p>
+        <h2>Messages that keep the chair full.</h2>
+      </div>
+      <p class="intro">Replace every bracket with your barbershop details. Each prompt turns an everyday client moment into a polished message you can send fast.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="prompt-num">01</div>
+      <div>
+        <p class="label">Copy / paste prompt</p>
+        <h3>New Client DM Response</h3>
+        <p>Write a warm, professional DM response for my barbershop. A potential new client [Name] messaged asking about [booking / prices / availability / a specific style]. I want to make them feel welcome, answer directly, and make it easy to book. My booking process: [how clients book]. My price range: $[X]-$[X]. Under 100 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="prompt-num">02</div>
+      <div>
+        <p class="label">Copy / paste prompt</p>
+        <h3>24-Hour Appointment Reminder</h3>
+        <p>Write a 24-hour appointment reminder message for my barbershop. Client [Name], appointment tomorrow [date] at [time]. Remind them warmly, confirm the key details, mention my cancellation policy briefly, and share my direct number. Under 60 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="prompt-num">03</div>
+      <div>
+        <p class="label">Copy / paste prompt</p>
+        <h3>Rebooking Reminder</h3>
+        <p>Write a rebooking reminder message for a barbershop client. Client [Name] had their last cut [X weeks ago]. Mention their hair is at the point where a fresh cut will look sharp again, make it easy to book, and make it feel personal, not automated. Under 70 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="footer"><span>Barber Growth Bundle</span><span>02</span></div>
+  </section>
+
+  <section class="page work">
+    <div class="brand"><div class="ce">CONTENT ELEVATED HQ</div><div class="tag">Chair Growth</div></div>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Reviews / Reels / Retention</p>
+        <h2>Turn the cut into the next booking.</h2>
+      </div>
+      <p class="intro">Use these when the client leaves happy, when the cut is fresh, or when you need new content that actually sounds like a barber.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="prompt-num">04</div>
+      <div>
+        <p class="label">Copy / paste prompt</p>
+        <h3>Google Review Request</h3>
+        <p>Write a post-appointment Google review request message for my barbershop. Client [Name] just had [service]. Thank them for coming in, make a warm personal ask for a Google review, include the direct link, and make it feel personal, not automated. Under 80 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="prompt-num">05</div>
+      <div>
+        <p class="label">Copy / paste prompt</p>
+        <h3>TikTok / Reel Ideas</h3>
+        <p>Write 5 TikTok or Instagram Reel concept ideas for a barber. Each should have a scroll-stopping hook for the first 2 seconds, a brief description of the content, and a caption. Topics: transformation video, technique breakdown, what-to-tell-your-barber guide, day-in-the-life, and a style guide for a specific hair type or face shape. Barbershop name: [Barbershop Name].</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="cta-panel">
+      <p class="eyebrow">Want the full system?</p>
+      <h2>The Barber Growth Bundle</h2>
+      <p>The complete bundle includes the AI Playbook, 90-Day Content Calendar, 24 Communication Templates, Brand Kit, and Client Intake & Loyalty System.</p>
+      <div class="bundle-list">
+        <div>AI Playbook</div>
+        <div>90-Day Calendar</div>
+        <div>24 Templates</div>
+        <div>Client Loyalty System</div>
+      </div>
+    </div>
+    <div class="footer"><span>Copy. Paste. Fill more chairs.</span><span>03</span></div>
+  </section>
+</main>
+</body>
+</html>

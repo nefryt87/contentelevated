@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Free Accountants CPAs</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Lead Magnet</p>
+  <h1>Free Accountants CPAs</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Accountants &amp; CPAs</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Free Accountants CPAs</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><h3>ACCOUNTANT &amp; CPA</h3>
+<p>5 Free AI Prompts to Grow Your Practice Copy-paste into Claude or ChatGPT — replace [brackets] — done in under 5 minutes each</p>
+<h3>How to use these prompts</h3>
+<p class="template-line">Copy and paste into Claude or ChatGPT. Replace every [bracket] with your details. Each prompt replaces 30-60 minutes of writing.</p>
+<h3>PROMPT 1: Post-Consultation Follow-Up Email</h3>
+<p class="template-line">Write a post-consultation follow-up email for my CPA practice. The prospect [Name] came in about [matter type — e.g., business tax planning / personal tax return / new business setup]. Key things they shared: [list 2-3 things]. I want to: (1) summarize their</p>
+<p>situation in plain language showing I listened, (2) outline my recommended approach in 2-3 sentences, (3) present a clear next step. Professional but warm, under 200 words. Sign as [Your Name], [Firm Name].</p>
+<h3>PROMPT 2: Monthly Referral Partner Value Touch</h3>
+<p class="template-line">Write a monthly value email from a CPA to a referral partner — [attorney / financial advisor] named [Name] at [Firm]. Include: (1) one brief tax or accounting insight relevant to their clients right now, (2) a soft mention of any relevant case type I&#x27;m available</p>
+<p>for. Professional, genuinely useful, under 150 words. Should feel like useful information from a knowledgeable colleague. Sign as [Your Name], [Firm Name].</p>
+<h3>PROMPT 3: Tax Season Kickoff Email</h3>
+<p class="template-line">Write a tax season kickoff email for my CPA practice to send to clients in January or February. Cover: (1) our timeline for the season, (2) what documents clients need to gather and submit, (3) our deadline for receiving documents to guarantee on-time filing,</p>
+<p>(4) how to submit documents. Professional, warm, and organised, under 200 words. Sign as [Your Name], [Firm Name].</p>
+<div class="section-label">PROMPT 4: Advisory Services Introduction to Existing Client</div>
+<p class="template-line">Write an email introducing advisory and tax planning services to an existing compliance</p>
+<div class="section-label">client [Name] who is a [business owner / high-income individual]. I want to frame it as:</div></div>
+  <div class="footer"><span>Free Accountants CPAs</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><p>this is what we do for clients who want to get ahead of their tax situation rather than just report it. Include 1-2 specific examples of planning opportunities relevant to their situation. Invite a 30-minute planning call. Not salesy — under 200 words. Sign as [Your</p>
+<p>Name], [Firm Name].</p>
+<h3>PROMPT 5: LinkedIn Post Batch (5 posts)</h3>
+<p>Write 5 LinkedIn posts for a CPA specialising in [specialty]. Topics: (1) the most common</p>
+<div class="section-label">tax mistake [business owners / high-income individuals] make — specific, (2) a recent IRS</div>
+<p>or tax law update in plain language, (3) what advisory-level accounting looks like vs. just filing returns, (4) an anonymised client outcome story, (5) a direct consultation CTA. Each under 200 words, educational and specific, ending with a question or insight.</p>
+<p>Firm name: [Firm Name]. Want the full system? The Accountant &amp; CPA Growth Bundle includes the complete AI Playbook, 90-Day Content Calendar, 24 Templates, Brand Kit, and Client Onboarding &amp; Advisory System. $197 at [your-link]</p></div>
+  <div class="footer"><span>Free Accountants CPAs</span><span class="page-number">04</span></div>
+</section></main></body></html>

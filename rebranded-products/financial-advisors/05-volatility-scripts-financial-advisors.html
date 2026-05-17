@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Volatility Scripts</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Volatility Scripts</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Financial Advisors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Volatility Scripts</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>FINANCIAL ADVISOR</h3>
+<p>Market Volatility Scripts &amp; Portfolio Review Templates 5 market scenario emails, quarterly review templates, and milestone communications — compliance-review-ready All templates are compliance-review-ready drafts. Review through your firm&#x27;s compliance</p>
+<p>workflow before use. Nothing here constitutes specific investment advice.</p>
+<h3>SECTION 1: MARKET VOLATILITY RESPONSE</h3>
+<h3>EMAILS</h3>
+<p>Scenario 1: Significant Market Decline (10%+)</p>
+<div class="section-label">SUBJECT Market volatility and your portfolio — a personal note from [Your Name]</div>
+<p class="template-line">Dear [First Name], You&#x27;ve likely seen the market headlines this week, and I wanted to reach out personally before you called me. Here&#x27;s what I want you to know: what&#x27;s happening right now is uncomfortable,</p>
+<p>but it is not unusual. Markets have experienced declines like this multiple times in recent decades — and in every instance, patient investors who stayed the course recovered fully and then some. Your portfolio is designed for exactly these moments. [1-2 sentences specific</p>
+<p>to their allocation — e.g., Your bond allocation has cushioned the impact.] My recommendation: [1 sentence appropriate to their situation]. I&#x27;m available any time this week if you&#x27;d like to talk through it. Please don&#x27;t hesitate to call. [Your Name] | [Firm Name] | [Phone]</p>
+<p>[Compliance note: Highly personalized — do not send as a mass email. Review before sending.] Scenario 2: Extended Bear Market (20%+)</p>
+<div class="section-label">SUBJECT Checking in on your long-term plan — [First Name]</div>
+<p class="template-line">Dear [First Name], I wanted to reach out directly given the extended period of market volatility we&#x27;ve been experiencing. I know watching a portfolio decline for weeks or months is genuinely difficult — even when you know intellectually that it&#x27;s temporary. I want to</p>
+<p>acknowledge that, not minimize it. Here&#x27;s what I want you to focus on: [personalized anchor — e.g., Your retirement is [X] years away — you have time for the market to recover and grow significantly beyond today&#x27;s levels.]</p></div>
+  <div class="footer"><span>Volatility Scripts</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>We built your plan specifically to survive periods like this. My job is to make sure we stay disciplined and don&#x27;t make permanent decisions based on temporary conditions. I&#x27;d like to schedule a brief call — would [day] work for you? [Your Name] | [Firm Name] | [Phone]</p>
+<p>[Compliance note: Highly personalized. Compliance review essential.] Scenario 3: Interest Rate Rise / Bond Impact</p>
+<div class="section-label">SUBJECT Bond market update and what it means for your portfolio — [First Name]</div>
+<p class="template-line">Dear [First Name], I wanted to send a brief note about something that may be showing up in your portfolio statements: bond prices have declined as interest rates have risen. Here&#x27;s the context: when interest rates rise, existing bond prices fall because</p>
+<p>newer bonds pay higher interest. This is temporary — if you hold bonds to maturity, you&#x27;ll receive your principal back plus all interest payments. For your portfolio specifically: [1-2 sentences on their situation].</p>
+<p>My recommendation: [specific recommendation appropriate to their situation]. [Your Name] | [Firm Name] | [Phone] [Compliance note: Review for accuracy relative to current rate environment. Compliance review required.] Scenario 4: Market Recovery</p>
+<h3>SUBJECT Good news worth sharing — [First Name]</h3>
+<p class="template-line">Dear [First Name], I wanted to reach out with a positive update: markets have recovered meaningfully from recent lows, and your portfolio has participated in that recovery. I know the past period has been uncomfortable. I wanted you to hear directly</p>
+<p>from me: the discipline you showed — staying invested and not reacting to short-term headlines — is one of the most valuable things a long-term investor can do. I&#x27;d love to schedule a brief review call to look at where we are relative to your</p>
+<p>goals and whether any adjustments make sense. [Your Name] | [Firm Name] | [Phone] [Compliance note: Do not include specific portfolio values without current data. Review before sending.] Scenario 5: Specific Holding Decline</p>
+<div class="section-label">SUBJECT A note about [holding name] in your portfolio — [First Name]</div>
+<p class="template-line">Dear [First Name], I wanted to reach out specifically about [holding] in your portfolio, which has declined [X]% recently. Here&#x27;s my current thinking: [plain-language assessment — e.g., The decline appears driven by [reason] rather than a fundamental change in the</p></div>
+  <div class="footer"><span>Volatility Scripts</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>company&#x27;s long-term outlook.] My recommendation: [specific recommendation]. I&#x27;d like to discuss this directly — are you available for a brief call [day/time]? [Your Name] | [Firm Name] | [Phone] [Compliance note: Specific holding discussion requires current research.</p>
+<p>Compliance review essential.]</p>
+<h3>SECTION 2: QUARTERLY REVIEW &amp;</h3>
+<h3>MILESTONE TEMPLATES</h3>
+<p>Quarterly Review Meeting Request</p>
+<div class="section-label">SUBJECT Your [Q1/Q2/Q3/Q4] portfolio review — [First Name]</div>
+<p class="template-line">Dear [First Name], It&#x27;s time for your quarterly portfolio review and I&#x27;d like to schedule a 30 or 60- minute call to cover:</p>
+<p class="template-line">- Portfolio performance vs. your personal goals</p>
+<p class="template-line">- Any life changes since we last spoke (income, family, goals)</p>
+<p class="template-line">- Current market environment and what it means for your allocation</p>
+<p class="template-line">- Any adjustments I&#x27;d recommend going forward</p>
+<p>Available times: [list 2-3 options] Or use my booking link: [link] Looking forward to connecting. [Your Name] | [Firm Name] | [Phone] Portfolio Milestone Celebration</p>
+<h3>SUBJECT A milestone worth celebrating — [First Name]</h3>
+<p class="template-line">Dear [First Name], I wanted to reach out with news I genuinely enjoy sharing: your portfolio has reached $[milestone amount] — a meaningful milestone and a reflection of the consistency you&#x27;ve brought to your financial plan.</p>
+<p>[1 sentence connecting to their specific goal — e.g., You&#x27;re now [X]% of the way to your retirement goal.] Progress like this doesn&#x27;t happen by accident. It&#x27;s the result of the systematic contributions you&#x27;ve maintained even during volatile markets. You should feel</p>
+<p>genuinely good about this. I&#x27;d love to catch up briefly and talk about what comes next. Are you free for a call this week? [Your Name] | [Firm Name] | [Phone] [Compliance note: Avoid forward-looking performance guarantees.]</p></div>
+  <div class="footer"><span>Volatility Scripts</span><span class="page-number">05</span></div>
+</section></main></body></html>

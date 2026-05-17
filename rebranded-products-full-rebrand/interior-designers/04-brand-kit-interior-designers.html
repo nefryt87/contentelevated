@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Interior Designers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>INTERIOR DESIGNER</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, refined typography, 8 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND MATTERS AS MUCH AS</h3>
+<h3>YOUR PORTFOLIO</h3>
+<p>Your design work is exceptional. But high-budget clients often decide who to contact before they see a single project — based entirely on how your brand presents itself. A cohesive visual identity communicates the same thing a beautifully designed space</p>
+<p>does: that you have taste, judgement, and an eye for detail. This kit gives you two complete palettes, typography pairings, and Canva template strategies to build a brand that attracts premium clients.</p>
+<h3>PALETTE 1: WARM EDITORIAL</h3>
+<p>For designers whose work leans toward warmth, texture, and timeless elegance. Think linen, aged brass, terracotta, and natural stone.</p>
+<h3>DEEP FOREST</h3>
+<h3>#2C4A3E</h3>
+<h3>ANTIQUE GOLD</h3>
+<h3>#B8860B</h3>
+<h3>WARM LINEN</h3>
+<h3>#F5EDD6</h3>
+<h3>TERRACOTTA</h3>
+<h3>#C4714A</h3>
+<h3>Palette 1 Usage Guide</h3>
+<p class="template-line">• Deep Forest (#2C4A3E): headlines, logo mark, primary text on light</p>
+<p>backgrounds, CTAs</p>
+<p class="template-line">• Antique Gold (#B8860B): accent colour, section dividers, icon highlights, quote</p>
+<p>graphics</p>
+<p class="template-line">• Warm Linen (#F5EDD6): background colour for social graphics, email headers,</p>
+<h3>Canva templates</h3>
+<p class="template-line">• Terracotta (#C4714A): accent for seasonal campaigns, before/after reveal posts,</p>
+<p>Pinterest graphics</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Palette 1 Typography Pairing</h3>
+<p>HEADINGS: Cormorant Garamond — elegant serif that communicates luxury and editorial refinement. Use at 28-48pt for Instagram and Pinterest titles. BODY: Jost — clean, geometric sans-serif with warmth. Use at 12-16pt for captions, proposal documents, and email body text.</p>
+<p>ACCENT: Playfair Display Italic — for pull quotes, testimonials, and moment-of-impact copy.</p>
+<h3>PALETTE 2: MODERN MONOCHROME +</h3>
+<h3>WARMTH</h3>
+<p>For designers whose work leans toward clean lines, architectural spaces, and contemporary sophistication with warm accents.</p>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>WARM STONE</h3>
+<h3>#C8B89A</h3>
+<h3>SOFT WHITE</h3>
+<h3>#F8F6F2</h3>
+<h3>SAGE</h3>
+<h3>#8A9E8A</h3>
+<h3>Palette 2 Usage Guide</h3>
+<p class="template-line">• Charcoal (#2A2A2A): primary text, logo, headlines, strong CTA buttons</p>
+<p class="template-line">• Warm Stone (#C8B89A): accent colour, borders, highlight boxes, pull quote</p>
+<p>backgrounds</p>
+<p class="template-line">• Soft White (#F8F6F2): background for all content — warmer than pure white,</p>
+<p>easier on the eye</p>
+<p class="template-line">• Sage (#8A9E8A): secondary accent for seasonal content, nature-themed posts,</p>
+<p>biophilic design content</p>
+<h3>Palette 2 Typography Pairing</h3>
+<p>HEADINGS: Libre Baskerville — authoritative serif with a modern, editorial feel. Available on Canva free tier. BODY: Nunito — friendly rounded sans-serif. Readable at all sizes, warm without being informal.</p>
+<p>ACCENT: Josefin Sans (all caps, wide tracking) — for labels, category tags, and minimal graphic overlays.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search these terms in Canva&#x27;s template library. After finding a template you like, replace all colours with your palette and all fonts with your typography pairing. Save as a &#x27;Brand Template&#x27; in Canva for future reuse.</p>
+<h3>Template 1: Before &amp; After Interior Design Post</h3>
+<p>Search: &#x27;before after interior&#x27; or &#x27;room transformation Instagram&#x27;. Two-panel layout. Left: before photo. Right: after photo. Headline: &#x27;[Room type] Transformation — [City]&#x27;. Your logo bottom right. Use Warm Linen or Soft White background for text panels.</p>
+<h3>Template 2: Project Reveal Carousel</h3>
+<p>Search: &#x27;interior design carousel&#x27; or &#x27;home decor slideshow&#x27;. 5-8 slides: cover slide (project name + your logo), 3-5 room photos, final slide with your CTA and contact. Consistent font treatment across all slides.</p>
+<h3>Template 3: Pinterest Room Mood Board</h3>
+<p>Search: &#x27;mood board Pinterest&#x27; or &#x27;interior design collage&#x27;. Grid of 6-9 images: fabric swatches, paint colours, furniture silhouettes, inspiration imagery. Add a title in your heading font. Rich keywords in the pin description for discoverability.</p>
+<h3>Template 4: Educational Tip Graphic</h3>
+<p>Search: &#x27;interior design tips Instagram&#x27; or &#x27;home decor education post&#x27;. Clean layout with a headline question, 3-4 bullet answers, and your studio name. These save/share more than any other post type.</p>
+<h3>Template 5: Client Testimonial Graphic</h3>
+<p>Search: &#x27;testimonial quote Instagram&#x27; or &#x27;client review post&#x27;. Quote in Playfair italic or Libre Baskerville. Client first name and project type below. Subtle background pattern using your accent colour.</p>
+<h3>Template 6: LinkedIn Article Header</h3>
+<p>Search: &#x27;LinkedIn article banner&#x27; or &#x27;professional blog header&#x27;. 1200×627px. Clean, architectural feel. Space for a headline and your studio name. Use Charcoal or Deep Forest as background.</p>
+<h3>Template 7: Pinterest Profile Board Covers</h3>
+<p>Search: &#x27;Pinterest board cover&#x27; or &#x27;Pinterest highlight&#x27;. Square format, one per board: &#x27;Client Projects&#x27;, &#x27;Process &amp; Behind the Scenes&#x27;, &#x27;Colour Stories&#x27;, &#x27;Sourcing &amp; Materials&#x27;, &#x27;Trend Watch&#x27;. Consistent across all boards.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Interior Designers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 8: Instagram Story — Booking CTA</h3>
+<p>Search: &#x27;Instagram story link&#x27; or &#x27;swipe up story&#x27;. Vertical format. Atmospheric project photo as background. Overlay: &#x27;Now booking [season] projects&#x27; + &#x27;Link in bio&#x27;. Subtle branded colour bar at bottom.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette (Warm Editorial or Modern Monochrome) and install</p>
+<p>fonts in Canva</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and highlight covers using your palette</p>
+<p class="template-line">✓ Day 3: Update Pinterest profile and create 5 board covers using Template 7</p>
+<p class="template-line">✓ Day 4: Update LinkedIn banner image and &#x27;About&#x27; section to reflect your positioning</p>
+<p class="template-line">✓ Day 5: Create 3 educational tip graphics (Template 4) using your brand colours —</p>
+<p>schedule for next week</p>
+<p class="template-line">✓ Day 6: Create a Project Reveal carousel template in Canva — save it as your</p>
+<p>branded master template</p>
+<p class="template-line">✓ Day 7: Update your website contact page and email signature with your brand</p>
+<p>colours and typography</p>
+<p class="template-line">✓ [Once your brand is set up in Canva, every future post takes 5-10 minutes — not</p>
+<p>an hour.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

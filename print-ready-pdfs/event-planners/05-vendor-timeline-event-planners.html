@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Vendor Timeline</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Vendor Timeline</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Event Planners Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Event Planners Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Vendor Timeline</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>WEDDING &amp; EVENT PLANNER</h3>
+<p>Vendor Briefs, Day-Of Timeline &amp; Client Questionnaire Everything to run flawless events — from first consultation to final bow</p>
+<h3>SECTION 1: CLIENT DISCOVERY</h3>
+<h3>QUESTIONNAIRE</h3>
+<p>Event Discovery Questionnaire</p>
+<p class="template-line">✓ Client name(s):</p>
+<p class="template-line">✓ Event date (or date range under consideration):</p>
+<p class="template-line">✓ Event type (wedding / corporate / social / milestone):</p>
+<p class="template-line">✓ Estimated guest count:</p>
+<p class="template-line">✓ Primary venue (confirmed or considering):</p>
+<p class="template-line">✓ Location / city:</p>
+<p class="template-line">✓ Approximate budget range:</p>
+<p class="template-line">✓ Have you worked with an event planner before?</p>
+<p class="template-line">✓ How would you describe the overall vibe or aesthetic? (3 words)</p>
+<p class="template-line">✓ What are the 2-3 elements of the event that matter most to you?</p>
+<p class="template-line">✓ What is your biggest concern or stress point about planning this event?</p>
+<p class="template-line">✓ Preferred communication style (email / phone / WhatsApp / planning portal):</p>
+<p class="template-line">✓ How did you hear about us?</p>
+<p class="template-line">✓ Is there anything else we should know before our discovery call?</p>
+<p class="template-line">✓ [Send before every discovery call. Clients who complete this arrive with clarity —</p>
+<p>and the call converts at a significantly higher rate.] Budget Conversation Opener</p>
+<h3>SCRIPT — INTRODUCING THE BUDGET CONVERSATION</h3>
+<p>YOU: Before we go further, I want to have an honest conversation about budget — because it shapes every decision we&#x27;ll make together, and I&#x27;d rather be transparent now than have it become a problem later.</p></div><div class="footer"><span>Vendor Timeline</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Vendor Timeline</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>YOU: Can you share a comfortable range for the total event investment? There&#x27;s no wrong answer — it just helps me know what&#x27;s realistic and where to focus our energy. [If client hesitates or says &#x27;I&#x27;m not sure&#x27;]</p>
+<p>YOU: That&#x27;s completely normal — most people haven&#x27;t planned an event like this before. Would it help if I shared typical ranges for events similar to what you&#x27;re describing? [Give realistic market ranges. Never let planning proceed without</p>
+<p>a budget conversation — it always creates problems later.]</p>
+<h3>SECTION 2: VENDOR BRIEF TEMPLATES</h3>
+<p>Photographer Vendor Brief</p>
+<p class="template-line">✓ Event: [Name] | Date: [Date] | Location: [Venue, full address]</p>
+<p class="template-line">✓ Client names:</p>
+<p class="template-line">✓ Approximate guest count:</p>
+<p class="template-line">✓ Schedule overview: [ceremony time, cocktail hour, reception start/end]</p>
+<p class="template-line">✓ Shot list priorities (in order): [family formals, first dance, cake cutting, candids, etc.]</p>
+<p class="template-line">✓ Key people to capture: [name + relationship for anyone non-obvious]</p>
+<p class="template-line">✓ Family formal groupings: [list specific groupings by name]</p>
+<p class="template-line">✓ Off-limits or sensitive situations: [guests who prefer not to be photographed / family</p>
+<p>dynamics]</p>
+<p class="template-line">✓ Expected deliverables: [number of edited photos, delivery timeline, format]</p>
+<p class="template-line">✓ Point of contact on the day: [Your Name + Phone]</p>
+<p class="template-line">✓ [Send to every photographer 72 hours before the event. Prevents the most</p>
+<p>common wedding photography problems: missed shots, timeline confusion, and family tension.] Catering / Venue Vendor Brief</p>
+<p class="template-line">✓ Event: [Name] | Date: [Date] | Start time: [Time] | Guest count: [Number]</p>
+<p class="template-line">✓ Dietary requirements: [number of vegetarian / vegan / gluten-free / nut-free / other]</p>
+<p class="template-line">✓ Service timeline: [cocktail hour start, dinner service, speeches, cake cutting, last</p></div><div class="footer"><span>Vendor Timeline</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Vendor Timeline</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>service, bar close]</p>
+<p class="template-line">✓ Table layout confirmed: [yes/no — if yes, layout attached]</p>
+<p class="template-line">✓ Head table / sweetheart table: [yes/no — details]</p>
+<p class="template-line">✓ Special dietary guests at head table: [list if applicable]</p>
+<p class="template-line">✓ Vendor meal requirements: [number of vendors requiring meals + preferred service</p>
+<p>time]</p>
+<p class="template-line">✓ Cake/dessert table: [location, service time, who cuts it]</p>
+<p class="template-line">✓ Bar closing time:</p>
+<p class="template-line">✓ Late night snack (if applicable): [time and service details]</p>
+<p class="template-line">✓ Point of contact on the day: [Your Name + Phone]</p>
+<h3>SECTION 3: DAY-OF TIMELINE TEMPLATE</h3>
+<p>Wedding Day-Of Master Timeline</p>
+<div class="section-label">WEDDING DAY-OF TIMELINE — [CLIENT NAMES] — [DATE]</div>
+<p>Lead Planner: [Your Name] | Phone: [Your Number] | Venue Contact: [Name, Phone]</p>
+<h3>GETTING READY</h3>
+<p>[Time] Hair + makeup begins for [person/group] [Time] Photographer arrives — detail shots (dress, rings, flowers) [Time] Florist delivers bouquets and boutonnieres [Time] First look / couple portraits (if applicable) [Time] Bridal party photos complete</p>
+<h3>CEREMONY</h3>
+<p>[Time] Family formals — follow priority list sent to photographer [Time] Guests arrive — ushers in position [Time] Ceremony begins [Time] Ceremony ends — recessional [Time] Guests directed to cocktail hour</p>
+<h3>RECEPTION</h3>
+<p>[Time] Cocktail hour begins [Time] Grand entrance — [order/format] [Time] Welcome speech — [Name] [Time] First dance [Time] Dinner service begins [Time] Speeches — [order and names] [Time] Cake cutting [Time] Dance floor opens to all guests</p>
+<p>[Time] Late night snack (if applicable) [Time] Last song / end of evening [Time] Guests depart — venue clear by [time]</p></div><div class="footer"><span>Vendor Timeline</span><span class="page-number">05</span></div></section></main></body></html>

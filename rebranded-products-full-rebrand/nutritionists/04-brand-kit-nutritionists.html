@@ -1,0 +1,203 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nutritionists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>NUTRITIONIST &amp; DIETITIAN</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a nutrition brand that attracts ideal clients and commands premium rates. Color palettes • Fonts • Canva templates • Niche clarity framework • 7-day checklist</p>
+<h3>SECTION 1: BRAND POSITIONING</h3>
+<p>The nutrition space is crowded with generic advice. The practitioners who build thriving practices are those who are clearly positioned — who they help, what outcome they deliver, and why their approach is different. Your brand communicates this before a</p>
+<p>potential client ever speaks to you. Your Practice Promise I help [specific person — e.g., women with PCOS / endurance athletes / people newly diagnosed with type 2 diabetes / busy professionals] [achieve specific</p>
+<p>outcome — e.g., balance their hormones through food / fuel their training and recover faster / manage their blood sugar without medication / finally have a healthy relationship with food] without [biggest fear — e.g., extreme restriction /</p>
+<p>giving up the foods they love / complicated meal plans they can&#x27;t sustain]. Example: &#x27;I help women with PCOS balance their hormones and lose weight sustainably — without cutting out entire food groups or following a plan that doesn&#x27;t fit real life.&#x27;</p>
+<p>Niche Clarity — The Most Important Brand Decision You&#x27;ll Make Generalist nutritionists compete on price. Specialists in high-demand niches command 2–3x higher rates and attract clients who are pre-sold on their expertise. You don&#x27;t have</p>
+<p>to turn anyone away — but your marketing should speak to one person.</p>
+<p class="template-line">• Gut health and IBS / IBD</p>
+<p class="template-line">• Diabetes and metabolic health</p>
+<p class="template-line">• PCOS and hormonal balance</p>
+<p class="template-line">• Sports nutrition and performance</p>
+<p class="template-line">• Weight management (non-diet approach)</p>
+<p class="template-line">• Prenatal and postnatal nutrition</p>
+<p class="template-line">• Eating disorder recovery support</p>
+<p class="template-line">• Pediatric and family nutrition</p>
+<p class="template-line">• Plant-based and vegan nutrition</p>
+<p class="template-line">• Oncology nutrition support</p>
+<h3>SECTION 2: COLOR PALETTES</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Nutrition branding should feel nourishing, natural, and trustworthy. Greens and earthy tones dominate the best nutrition brands — they signal health, growth, and nature without being clinical or cold.</p>
+<div class="section-label">Palette A: Fresh &amp; Clinical (Evidence-Based / RD-Led Practice)</div>
+<p>Deep Green</p>
+<h3>#1B5E20</h3>
+<p>Primary — Health, Expertise Lime Green</p>
+<h3>#558B2F</h3>
+<p>Accent — Vitality, Growth Light Green</p>
+<h3>#EEF5E8</h3>
+<p>Background — Fresh, Natural White</p>
+<h3>#FFFFFF</h3>
+<p>Base BG — Clean, Clear</p>
+<div class="section-label">Palette B: Warm &amp; Holistic (Intuitive Eating / Wellness / Non-Diet</div>
+<p>Approach) Warm Terracotta</p>
+<h3>#A0522D</h3>
+<p>Primary — Warmth, Earth Sage</p>
+<h3>#87A878</h3>
+<p>Accent — Balance, Natural Warm Cream</p>
+<h3>#FAF3E0</h3>
+<p>Background — Inviting, Soft Off White</p>
+<h3>#FDFAF5</h3>
+<p>Base BG — Warm, Clean</p>
+<h3>SECTION 3: TYPOGRAPHY</h3>
+<h3>USE FONT NOTES</h3>
+<p>Headlines (Clinical) Josefin Sans Bold Clean, modern authority — feels scientific without being cold. Free on Google Fonts. Headlines (Holistic) Playfair Display Bold Elegant and warm — ideal for wellness, non- diet, or hormone-focused brands.</p>
+<p>Body Copy Karla Regular Highly readable and friendly — excellent for</p>
+<h3>client-facing content.</h3>
+<p>CTA / Emphasis Josefin Sans SemiBold For buttons, key stats, and calls to action. Use sparingly.</p>
+<h3>SECTION 4: CANVA TEMPLATE GUIDE</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>All templates below are free on Canva. Search the exact term, apply your palette and fonts. Budget 20–30 minutes per template set.</p>
+<h3>Social &amp; Digital Templates</h3>
+<h3>TEMPLATE CANVA SEARCH TERM BEST USE</h3>
+<p>Instagram Post (1:1) &quot;nutritionist instagram post</p>
+<h3>template&quot;</h3>
+<p>Education, myth-busting, client wins Instagram Carousel &quot;nutrition tips carousel canva&quot; Multi-slide breakdowns of nutrition concepts Instagram Story (9:16) &quot;wellness coach story template&quot; Quick tips, polls, client check-ins</p>
+<p>TikTok Video Overlay &quot;health tip text overlay canva&quot; Text overlays for educational clips Facebook Post &quot;health and wellness facebook post&quot; Longer educational content, community posts Lead Magnet Cover &quot;ebook cover template nutrition&quot; Free guide or meal plan opt-in</p>
+<h3>offer</h3>
+<p>Print &amp; Business Templates</p>
+<p class="template-line">• Business Card — Search: &#x27;dietitian nutritionist business card&#x27; — always include</p>
+<p>credentials (RD, RDN, CNS, etc.)</p>
+<p class="template-line">• Meal Plan Template — Search: &#x27;weekly meal plan template canva&#x27; — brand your</p>
+<h3>client meal plans before sending</h3>
+<p class="template-line">• Recipe Card — Search: &#x27;recipe card template canva&#x27; — send branded recipes</p>
+<p>with every plan</p>
+<p class="template-line">• Referral Card — Search: &#x27;refer a friend card template&#x27; — for clients to share with</p>
+<p>their network</p>
+<p class="template-line">• Lead Magnet PDF — Search: &#x27;nutrition guide template canva&#x27; — for free opt-in</p>
+<p>offers like &#x27;5-Day Anti-Inflammatory Meal Plan&#x27; Lead Magnet Ideas — Free Offers That Build Your Email List</p>
+<p class="template-line">• &#x27;5-Day Anti-Inflammatory Meal Plan&#x27; — high download rate, broad appeal</p>
+<p class="template-line">• &#x27;The Blood Sugar Balance Starter Guide&#x27; — strong for diabetes and PCOS</p>
+<p>niches</p>
+<p class="template-line">• &#x27;What to Eat Before and After a Workout&#x27; — sports nutrition and PT audience</p>
+<p>overlap</p>
+<p class="template-line">• &#x27;The Gut Health Reset: 7-Day Eating Plan&#x27; — extremely high interest topic</p>
+<p class="template-line">• &#x27;Hormone-Balancing Nutrition: Your First Week&#x27; — resonates strongly with</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>women 30–50</p>
+<h3>SECTION 5: CONTENT PHOTO &amp; VIDEO GUIDE</h3>
+<p>What to Photograph</p>
+<p class="template-line">• Food styling: Real food, natural light, simple props — avoid overly staged or</p>
+<p>filtered images</p>
+<p class="template-line">• Your workspace: Clean desk, notebook, laptop — signals professionalism and</p>
+<p>approachability</p>
+<p class="template-line">• Headshot: Warm, genuine, ideally in a natural or clean clinical setting — not a</p>
+<p>white coat unless appropriate for your brand</p>
+<p class="template-line">• Process shots: Reviewing a meal plan, having a virtual session, cooking demo —</p>
+<p>shows clients what working with you looks like Short-Form Video Ideas (Instagram Reels / TikTok)</p>
+<p class="template-line">• &#x27;Reacting to viral nutrition advice&#x27; — one of the highest-reach formats for</p>
+<p>dietitians</p>
+<p class="template-line">• &#x27;What I eat in a day as a dietitian&#x27; — high curiosity, strong trust-builder</p>
+<p class="template-line">• &#x27;Grocery store walkthrough&#x27; — incredibly practical, very shareable</p>
+<p class="template-line">• &#x27;Explaining [condition] nutrition in 60 seconds&#x27; — establishes niche authority fast</p>
+<p class="template-line">• &#x27;Client win story&#x27; (with consent) — emotional, high-conversion content</p>
+<h3>SECTION 6: 7-DAY BRAND LAUNCH CHECKLIST</h3>
+<h3>Day 1 — Foundation</h3>
+<p class="template-line">✓ Choose your color palette (A or B)</p>
+<p class="template-line">✓ Select your fonts in Canva Brand Kit</p>
+<p class="template-line">✓ Write your Practice Promise (one sentence)</p>
+<p class="template-line">✓ Define your niche clearly — who you help and how</p>
+<p>Days 2–3 — Build Templates</p>
+<p class="template-line">✓ Create Instagram post template</p>
+<p class="template-line">✓ Create Instagram carousel template (5 slides)</p>
+<p class="template-line">✓ Design Facebook cover photo</p>
+<p class="template-line">✓ Build lead magnet cover (for your free opt-in)</p>
+<p class="template-line">✓ Create branded meal plan template</p>
+<p>Days 4–5 — Update All Profiles</p>
+<p class="template-line">✓ Update Instagram bio with Practice Promise + credentials + link</p>
+<p class="template-line">✓ Update Facebook profile + cover photo</p>
+<p class="template-line">✓ Update LinkedIn (important for professional referral credibility)</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">✓ Add email signature with credentials to Gmail</p>
+<p class="template-line">✓ Update Psychology Today / Healthgrades / Zocdoc if applicable</p>
+<p>Days 6–7 — First Week of Content</p>
+<p class="template-line">✓ Batch-create 3 posts using your 90-Day Calendar</p>
+<p class="template-line">✓ Generate captions with the monthly AI prompt</p>
+<p class="template-line">✓ Film one short-form video (myth-bust or quick tip)</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri</p>
+<p class="template-line">✓ Engage with every comment in the first hour after posting</p>
+<p>The right nutrition advice changes lives. Your brand makes sure the people who need it can find you.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">07</span></div>
+</section></main></body></html>

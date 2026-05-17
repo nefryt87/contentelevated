@@ -1,0 +1,204 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #111618; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfdfc,#edf5f4 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#3e9a9f 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff946d 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#3e9a9f,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #5c6668; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#3e9a9f 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #3e9a9f; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #3e9a9f; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #3e9a9f; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #3e9a9f; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #3e9a9f; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #5c6668; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#3e9a9f 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#11191c,color-mix(in srgb,#11191c 76%,#3e9a9f)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff946d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#3e9a9f 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #3e9a9f; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); color: #3e9a9f; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #3e9a9f; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#3e9a9f 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #5c6668; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #3e9a9f; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Shop growth system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for commerce-ready momentum</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Etsy Sellers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>ETSY SELLER</h3>
+<p>The AI Playbook for Etsy Sellers Optimise your listings for search, convert more browsers into buyers, generate consistent 5-star reviews, and build the social presence that drives traffic to your shop</p>
+<h3>INTRODUCTION</h3>
+<p>The Etsy sellers generating consistent sales and growing year-on-year aren&#x27;t just the most talented makers or designers. They write listings that Etsy&#x27;s search algorithm surfaces and that browsers can&#x27;t scroll past. They respond to customer messages within</p>
+<p>hours in a way that turns hesitant browsers into confident buyers. They follow up after every order to generate the 5-star reviews that build social proof. They run seasonal campaigns and sales that create urgency at the right moments. And they post</p>
+<p>consistently on Pinterest and Instagram in ways that drive external traffic directly to their shop. This playbook gives you 7 chapters covering every high-leverage growth scenario — with copy-paste AI prompts throughout.</p>
+<h3>CHAPTER 1: ETSY SEO &amp; LISTING</h3>
+<h3>OPTIMISATION</h3>
+<p>How Etsy Search Actually Works Etsy&#x27;s search algorithm — called Etsy Search — ranks listings based on a combination of keyword relevance, listing quality score, recency, customer experience score, and</p>
+<p>shipping price. Understanding this means you can systematically improve every listing to rank higher and convert better.</p>
+<h3>PROMPT — ETSY LISTING TITLE OPTIMISATION</h3>
+<p>Write 5 optimised Etsy listing title options for my product: [describe your product in detail — material, style, size, what it is, who it&#x27;s for]. My current title is: [paste current title if you have one]. I want titles that: (1) lead with the most searched keywords, (2)</p>
+<p>include specific descriptors buyers use when searching (material, style, occasion, recipient), (3) are under 140 characters, (4) feel natural to read. Include a mix of approaches — some leading with the product type, some leading with the occasion</p>
+<p>or recipient. Provide each title on its own line.</p>
+<h3>PROMPT — ETSY LISTING DESCRIPTION</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a compelling Etsy listing description for my product: [describe product — what it is, materials, dimensions, variations, what makes it special]. Target buyer: [describe your ideal customer — e.g., a bride looking for personalised wedding</p>
+<p>gifts / a home decorator who loves minimalist style]. I want the description to: (1) open with a hook that addresses the buyer&#x27;s need or occasion, (2) describe the product clearly with all key details, (3) answer the most common questions buyers</p>
+<p>ask, (4) include relevant keywords naturally, (5) end with a reassuring next step. Under 400 words. Shop name: [Shop Name].</p>
+<h3>PROMPT — ETSY TAGS GENERATOR</h3>
+<p>Generate 13 Etsy tags for this product: [describe product]. Tags should be: specific phrases buyers actually search for (2-5 words each), a mix of broad and niche terms, include occasion-based tags (e.g., wedding gift, birthday gift, mother&#x27;s day),</p>
+<p>material-based tags, style-based tags, and recipient-based tags. List all 13 tags on separate lines, each under 20 characters. Product Photography Guidance Etsy&#x27;s own data shows that product photography is the single most important factor in a</p>
+<p>buyer&#x27;s purchase decision. Better photos increase both click-through rate from search results and conversion rate on the listing page.</p>
+<h3>PROMPT — PRODUCT PHOTO SHOT LIST</h3>
+<p>Create a 7-image product photography shot list for my Etsy listing. Product: [describe product]. I want shots that: show the product on its own clearly (main listing image), show it in use or styled in context, show scale, show detail or close-</p>
+<p>up of a key feature, show variations (if applicable), show packaging, and one lifestyle or aspirational shot. For each shot, describe: what it should show, the ideal background/setting, and what buyer concern or question it addresses.</p>
+<h3>CHAPTER 2: CUSTOMER COMMUNICATION &amp;</h3>
+<h3>CONVERSION</h3>
+<p>Responding to Messages That Convert Etsy messages from potential buyers are your highest-leverage conversion opportunity. A warm, specific, knowledgeable response to a pre-purchase question converts at</p>
+<p>dramatically higher rates than a delayed or generic one. Etsy also factors your message response rate and speed into your Star Seller status.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — PRE-PURCHASE QUESTION RESPONSE</h3>
+<p class="template-line">Write a warm, helpful response to a customer who asked: &#x27;[paste their question]&#x27; about my Etsy product: [product description]. I want to: (1) answer their question completely and specifically, (2) reassure any hesitation they might have, (3) add one</p>
+<p>piece of relevant information they didn&#x27;t ask for but would find useful, (4) make the next step (adding to cart / placing an order) feel easy and obvious. Friendly and professional. Under 150 words. Sign as [Your Name], [Shop Name].</p>
+<h3>PROMPT — CUSTOM ORDER INQUIRY RESPONSE</h3>
+<p class="template-line">Write a response to a customer who has asked about a custom or personalised order: &#x27;[paste their request]&#x27;. My shop: [brief shop description]. For custom orders I typically: [describe your process — e.g., &#x27;I confirm the details, send a digital proof,</p>
+<p>and ship within X days of approval&#x27;]. I want to: (1) express enthusiasm for their idea, (2) ask any clarifying questions I need, (3) give them a rough timeline and price indication if possible, (4) outline the next step. Friendly and professional. Under 150</p>
+<p>words. Sign as [Your Name], [Shop Name]. Handling Complaints &amp; Difficult Situations</p>
+<h3>PROMPT — ITEM ARRIVED DAMAGED RESPONSE</h3>
+<p class="template-line">Write a professional, empathetic response to a customer who messaged to say their item arrived damaged. I want to: (1) apologise genuinely without being defensive, (2) take full responsibility, (3) offer a clear resolution — replacement, refund, or</p>
+<p>partial refund as appropriate, (4) ask for photos if needed, (5) thank them for letting me know. Warm and solution-focused. Under 150 words. Sign as [Your Name], [Shop Name].</p>
+<h3>PROMPT — WHERE IS MY ORDER RESPONSE</h3>
+<p class="template-line">Write a helpful response to a customer who messaged asking where their order is. Their order was placed on [date] with estimated delivery [date range]. Tracking number (if available): [tracking]. I want to: (1) acknowledge their concern, (2) provide</p>
+<p>the tracking information or check the status, (3) give them a realistic updated timeline, (4) offer a next step if the package appears lost. Reassuring and helpful. Under 120 words. Sign as [Your Name], [Shop Name].</p>
+<h3>CHAPTER 3: REVIEW GENERATION SYSTEM</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>The Post-Purchase Follow-Up System 5-star reviews are the single most powerful growth lever on Etsy. Listings with more reviews rank higher in search, convert at higher rates, and attract repeat buyers. Most</p>
+<p>sellers never systematically ask for reviews. The ones who do grow significantly faster.</p>
+<h3>PROMPT — POST-DELIVERY FOLLOW-UP MESSAGE</h3>
+<p class="template-line">Write a post-delivery follow-up Etsy message for my shop. The customer [Name] ordered [product] and it should have arrived approximately [X days ago]. I want to: (1) check in and make sure they received it and are happy, (2) provide any relevant</p>
+<p>care or use instructions briefly, (3) make a warm, personal ask for a review — explain why it matters to a small shop, (4) invite them to contact me if anything isn&#x27;t perfect. Warm and genuine. Under 150 words. Sign as [Your Name], [Shop Name].</p>
+<h3>PROMPT — PACKAGING INSERT / THANK YOU CARD TEXT</h3>
+<p>Write the text for a printed thank-you card to include with every Etsy order. I want it to: (1) thank them personally for their purchase, (2) mention my shop name, (3) make a warm ask for a 5-star review with a reason why reviews matter to small</p>
+<p>makers, (4) invite them to share a photo on Instagram tagging [your handle], (5) let them know I&#x27;m always available if anything isn&#x27;t perfect. Warm, personal, and brief — fits on a small card. Max 100 words. Shop name: [Shop Name].</p>
+<h3>CHAPTER 4: SEASONAL CAMPAIGNS &amp; ETSY</h3>
+<h3>SALES</h3>
+<p>Running Etsy Sales That Actually Drive Revenue Etsy&#x27;s built-in sale and promotion tools — percentage off, free shipping thresholds, and targeted offers — are consistently underused by sellers who could be generating</p>
+<p>significant additional revenue. The sellers who run systematic seasonal campaigns generate 2-4x the revenue of those who don&#x27;t.</p>
+<h3>PROMPT — SEASONAL SALE ANNOUNCEMENT (SOCIAL MEDIA)</h3>
+<p>Write 3 social media posts announcing a seasonal sale on my Etsy shop. Sale: [X]% off everything / [specific products] for [duration]. Occasion: [e.g., Black Friday / Christmas / Valentine&#x27;s Day / Spring launch]. I want the posts to: (1) create genuine</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>excitement and urgency, (2) highlight the best products in the sale, (3) include a clear CTA with my shop link. One post for Instagram, one for Pinterest, one for Facebook. Each under 150 words. Shop name: [Shop Name].</p>
+<h3>PROMPT — EMAIL/NEWSLETTER CAMPAIGN FOR SALE</h3>
+<p class="template-line">Write a customer email announcing a seasonal sale to past buyers of my Etsy shop. Sale: [details]. I want to: (1) make past buyers feel like they&#x27;re getting early or exclusive access, (2) highlight my best-selling or most giftable products, (3) create</p>
+<p>urgency with the end date, (4) include a direct link to my shop. Warm and enthusiastic. Under 200 words. Shop name: [Shop Name]. Holiday &amp; Gift Guide Strategy</p>
+<h3>PROMPT — GIFT GUIDE LISTING DESCRIPTIONS (SEASONAL)</h3>
+<p>Rewrite my Etsy listing description to be optimised for [occasion — e.g., Mother&#x27;s</p>
+<div class="section-label">Day / Christmas / Valentine&#x27;s Day] gift searches. Original description: [paste current</div>
+<p>description]. I want the new version to: (1) open with the gift occasion, (2) speak directly to the gift-giver and what the recipient will love, (3) mention gifting details (gift-wrapping available, arrives in time for [date]), (4) keep all the original product</p>
+<p>details. Under 400 words. Shop name: [Shop Name].</p>
+<h3>CHAPTER 5: PINTEREST &amp; INSTAGRAM</h3>
+<h3>TRAFFIC STRATEGY</h3>
+<p>Driving External Traffic to Your Etsy Shop Etsy rewards shops that drive external traffic — their algorithm gives a boost to listings that receive visits from outside Etsy (Pinterest, Instagram, Google). Pinterest is the</p>
+<p>highest-ROI external traffic source for most Etsy sellers because pins are searchable, evergreen, and link directly to listings.</p>
+<h3>PROMPT — PINTEREST PIN DESCRIPTIONS (BATCH)</h3>
+<p>Write 5 Pinterest pin descriptions for products in my Etsy shop. Products: [list 5 products with brief descriptions]. Each pin description should: (1) be 100-150 words, (2) include searchable keywords for that product type, (3) speak to the occasion or</p>
+<p>recipient it&#x27;s perfect for, (4) end with a CTA to visit the shop. Optimised for Pinterest search discovery. Shop name: [Shop Name], Etsy shop link: [link].</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — INSTAGRAM CAPTION BATCH FOR ETSY SHOP</h3>
+<p>Write 5 Instagram captions for my Etsy shop. Products to feature: [list 5 products or topics]. Topics: (1) a product reveal with the story behind how I make it, (2) a behind-the-scenes of the making process, (3) a customer photo or testimonial (with</p>
+<p>permission), (4) a seasonal or gifting post with a direct shop link, (5) a direct shop CTA post. Each under 150 words, warm and personal. Shop name: [Shop Name].</p>
+<h3>CHAPTER 6: SHOP OPTIMISATION &amp; STAR</h3>
+<h3>SELLER</h3>
+<p>Achieving and Maintaining Star Seller Status Etsy&#x27;s Star Seller badge is awarded to shops that consistently achieve: 95%+ 5-star reviews, message response within 24 hours on all messages, and ship-by-date</p>
+<p>consistency. Star Seller shops appear higher in search and convert at higher rates. Most sellers never systematically optimise for it.</p>
+<h3>PROMPT — SHOP ABOUT SECTION</h3>
+<p class="template-line">Write a compelling Etsy shop About section for my store. My shop: [Shop Name]. What I sell: [brief description]. My story: [how you started, what drives you, what makes your products special]. I want the About section to: (1) tell a genuine</p>
+<p>personal story that builds emotional connection, (2) explain what makes my products different, (3) describe who my ideal customer is and what they love about my shop, (4) include a warm welcome and invitation to browse. Under 300 words.</p>
+<h3>PROMPT — SHOP POLICIES TEMPLATE</h3>
+<p>Write clear, friendly Etsy shop policies for my store. I want to cover: processing time ([X] business days), shipping methods and estimated delivery times ([domestic: X days] [international: X days]), returns and exchanges policy (my policy: [describe —</p>
+<p>e.g., &#x27;I accept returns within 14 days for non-personalised items&#x27;]), and custom order policy. Write each section to be clear and reassuring — not legalistic. Shop name: [Shop Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Listing Optimisation</h3>
+<p class="template-line">• Audit your 5 best-selling listings — use Chapter 1 prompts to rewrite titles,</p>
+<p>descriptions, and tags</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Generate 3 new title options for each listing — test one and monitor impressions</p>
+<p>over 30 days</p>
+<p class="template-line">• Review your product photos — identify which listings are missing the 7 key shot</p>
+<p>types</p>
+<h3>Week 2: Customer Communication System</h3>
+<p class="template-line">• Build your pre-purchase question response template using Chapter 2 prompts</p>
+<p class="template-line">• Write your post-delivery follow-up message using the Chapter 3 prompt</p>
+<p class="template-line">• Design your packaging insert / thank you card text using Chapter 3 prompt — get</p>
+<p>it printed</p>
+<h3>Week 3: Pinterest &amp; Instagram Setup</h3>
+<p class="template-line">• Set up or refresh your Pinterest profile — create 5 boards with keyword-rich</p>
+<p>names</p>
+<p class="template-line">• Write 10 pin descriptions using Chapter 5 prompt — pin them to your boards with</p>
+<p>shop links</p>
+<p class="template-line">• Batch 5 Instagram captions using Chapter 5 prompt — schedule for the next 2</p>
+<p>weeks</p>
+<h3>Week 4: Seasonal Campaign</h3>
+<p class="template-line">• Identify the next major selling occasion in the next 60 days</p>
+<p class="template-line">• Write your seasonal sale social posts using Chapter 4 prompt</p>
+<p class="template-line">• Update your top 5 listings with seasonal gift language using Chapter 4 prompt</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div>
+</section></main></body></html>

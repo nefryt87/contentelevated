@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Meal Plan Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Meal Plan Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nutritionists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Meal Plan Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>NUTRITIONIST &amp; DIETITIAN</h3>
+<p>Meal Plan Delivery, Food Journal Review &amp; Sensitive Communication Templates Templates for every stage of nutrition coaching — from meal plan delivery to lab review to program renewal</p>
+<h3>SECTION 1: MEAL PLAN DELIVERY TEMPLATES</h3>
+<p>Meal Plan Delivery Email</p>
+<div class="section-label">SUBJECT Your personalised meal plan is ready — [First Name]</div>
+<p>Hi [First Name], Your meal plan is attached! Here&#x27;s a quick overview to help you get started: What we&#x27;re focusing on this week or phase: [1-2 sentence nutritional rationale in plain language] A few important notes:</p>
+<p class="template-line">- [Specific note 1 — e.g., The breakfast options are interchangeable — pick</p>
+<p>whichever fits your morning best]</p>
+<p class="template-line">- [Specific note 2 — e.g., Evening snacks are optional — only have them if</p>
+<p>you&#x27;re genuinely hungry]</p>
+<p class="template-line">- [Specific note 3 — e.g., We&#x27;re allowing one flex meal per week where you</p>
+<p>eat freely — enjoy it guilt-free] If any meals don&#x27;t work for you, reply here and I&#x27;ll swap them quickly. Let&#x27;s do this! [Your Name] | [Business Name] Food Journal Weekly Review Email</p>
+<h3>SUBJECT Your food journal review — [First Name]</h3>
+<p>Hi [First Name], I&#x27;ve reviewed your food journal from this week and wanted to share a few observations: What&#x27;s going really well: [1-2 specific positives — protein consistency, hydration, vegetable variety, meal timing]</p>
+<p>One area to work on this week: [ONE specific, actionable adjustment — never overwhelm with multiple changes at once] My suggestion: [specific, practical swap or habit — e.g., Try adding a handful of almonds in the afternoon to prevent the 4pm energy crash you mentioned]</p>
+<p>Overall: [brief encouraging summary of the week&#x27;s data] Keep going — you&#x27;re building real habits here. [Your Name] | [Business Name]</p>
+<h3>SECTION 2: SENSITIVE CLIENT</h3>
+<h3>COMMUNICATION TEMPLATES</h3>
+<p>Discussing Lab Results with a Client</p>
+<div class="section-label">SUBJECT Your lab results — let&#x27;s talk through them, [First Name]</div></div>
+  <div class="footer"><span>Meal Plan Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nutritionists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [First Name], Thank you for sharing your lab results with me. I&#x27;ve reviewed them and wanted to give you some context before we talk. Please remember: I&#x27;m providing a nutritional perspective to complement your doctor&#x27;s medical interpretation — not medical advice or diagnosis.</p>
+<p>From a nutritional standpoint, here&#x27;s what I noticed: [plain-language observations — e.g., Your ferritin (iron stores) is on the lower side, which is consistent with the fatigue you&#x27;ve been experiencing. Several dietary strategies can help improve this.]</p>
+<p>What I&#x27;d like to adjust in your plan: [1-2 specific dietary recommendations] I&#x27;d recommend discussing [specific finding] with your doctor before we make any significant changes. Would it help if I prepared a brief nutritional summary for you to bring to that appointment?</p>
+<p>[Your Name], [Credentials] | [Business Name] Progress Plateau Acknowledgment + Reframe</p>
+<div class="section-label">SUBJECT Let&#x27;s talk about what&#x27;s happening — [First Name]</div>
+<p>Hi [First Name], I&#x27;ve been looking at your progress over the last [timeframe] and I want to address what I know you might be feeling: it&#x27;s been slower recently. First — this is completely normal and expected. The body is not linear. What</p>
+<p>looks like a plateau is often your metabolism and hormones adjusting to your new lower weight, and it&#x27;s actually a sign of real progress, not stagnation. Here&#x27;s what I&#x27;d like to try: [1-2 specific adjustments — e.g., a brief calorie</p>
+<p>break of 1-2 weeks / adjusting your protein timing] I want to be clear: the work you&#x27;ve done is real. The results are coming. This is a normal part of the process and we&#x27;re going to work through it together. [Your Name] | [Business Name] Program Renewal Offer</p>
+<h3>SUBJECT What comes next — [First Name]</h3>
+<p>Hi [First Name], You&#x27;re approaching the end of your program and I wanted to reach out before it wraps up. Here&#x27;s what I&#x27;ve seen in your progress: [2-3 specific results — what changed, what improved]. My recommendation for your next phase: [specific focus area and why it&#x27;s the</p>
+<p>right next step for them]. Investment: $[amount]. Want to continue? I can hold your spot. Just reply here. [Your Name] | [Business Name]</p></div>
+  <div class="footer"><span>Meal Plan Templates</span><span class="page-number">04</span></div>
+</section></main></body></html>

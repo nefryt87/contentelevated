@@ -1,0 +1,201 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Accountants CPAs</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook Accountants CPAs</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Accountants &amp; CPAs</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>ACCOUNTANT &amp; CPA</h3>
+<p>The AI Playbook for Accountants &amp; CPAs Convert more consultations, retain clients through life events, build referral partnerships with attorneys and financial advisors, and become the most trusted advisor in your clients&#x27; lives</p>
+<h3>INTRODUCTION</h3>
+<p>The CPA practices growing fastest aren&#x27;t just technically superior — they communicate better. They follow up on consultations before the prospect has time to contact anyone else. They reach out proactively when a tax law changes that affects their clients. They</p>
+<p>maintain attorney and financial advisor relationships with a monthly value touch that generates referrals year-round. And they show up digitally in ways that make their ideal clients find them before they ever search a competitor. This playbook gives you 7</p>
+<p>chapters covering every high-leverage communication scenario — with copy-paste AI prompts throughout.</p>
+<h3>CHAPTER 1: CONSULTATION CONVERSION &amp;</h3>
+<h3>PROSPECT NURTURING</h3>
+<p>The Post-Consultation Follow-Up System The consultation that doesn&#x27;t convert in 48 hours rarely converts at all. Most prospects are contacting 2-3 CPAs. The first professional, specific, and action-oriented follow-up wins a disproportionate number of engagements.</p>
+<h3>PROMPT — POST-CONSULTATION FOLLOW-UP EMAIL</h3>
+<p class="template-line">Write a post-consultation follow-up email for my CPA practice. The prospect [Name] came in about [matter type — e.g., business tax planning / personal tax return / estate planning / new business setup]. Key things they shared: [list 2-3 things from</p>
+<p>the consultation]. I want to: (1) summarize their situation in plain language showing I listened, (2) outline my recommended approach in 2-3 sentences, (3) present a clear next step and fee expectation. Professional but warm. Under 200 words. Sign</p>
+<p>as [Your Name], [Firm Name]. Note: review for compliance with your state bar and professional standards.</p>
+<h3>PROMPT — PROSPECT NURTURE SEQUENCE (NOT YET READY)</h3></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a 3-message nurture sequence for a CPA prospect who said they weren&#x27;t ready to engage yet after a consultation. [Name], matter: [type]. Message 1 (2 weeks): one genuinely useful insight relevant to their situation, no pitch. Message 2</p>
+<p>(6 weeks): a relevant development — new tax law, deadline, or planning opportunity that applies to them. Message 3 (3 months): soft check-in with an invitation to reconnect. Each under 100 words. Professional, not pushy. Sign as [Your Name], [Firm Name].</p>
+<p>The Referral Source Introduction System One strong attorney or financial advisor relationship maintained well can send 5-15 qualified referrals per year. The difference between one who refers once and one who refers consistently is regular, professional contact.</p>
+<h3>PROMPT — ATTORNEY / FINANCIAL ADVISOR INTRODUCTION</h3>
+<p class="template-line">Write a professional introduction email from a CPA to [an attorney / a financial advisor] named [Name] at [Firm]. I specialise in [specialty — e.g., small business tax / estate planning / high-net-worth individuals]. I want to: (1) introduce myself and my</p>
+<p>practice briefly, (2) explain how our clients likely overlap and how we can help each other&#x27;s clients, (3) propose a brief coffee or call. Under 150 words. Professional. Sign as [Your Name], [Firm Name].</p>
+<h3>PROMPT — MONTHLY PROFESSIONAL REFERRAL VALUE TOUCH</h3>
+<p class="template-line">Write a monthly value email from a CPA to a referral partner — [attorney / financial advisor] named [Name] at [Firm]. Include: (1) one brief tax or accounting insight relevant to their clients right now — e.g., a recent IRS update, a planning</p>
+<p>opportunity, or a common issue I&#x27;m seeing, (2) a soft mention of any relevant case type I&#x27;m available for. Professional, genuinely useful, under 150 words. Should feel like useful information from a knowledgeable colleague, not a marketing email. Sign as [Your Name], [Firm Name].</p>
+<h3>CHAPTER 2: CLIENT RETENTION THROUGH</h3>
+<h3>LIFE EVENTS</h3>
+<p>The Life Event Outreach System CPAs who build lifelong client relationships show up at the right moments — without being asked. Five life events trigger the most valuable tax and planning conversations:</p>
+<p>marriage, divorce, new child, inheritance, and business sale. Most CPAs wait for clients to call them. The best ones reach out first.</p></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — LIFE EVENT OUTREACH EMAIL</h3>
+<p class="template-line">Write a life event outreach email from a CPA to client [Name] who recently [life event — e.g., got married / had a baby / inherited assets / sold their business / went through a divorce]. Acknowledge the moment personally. Mention 1-2 specific tax or</p>
+<p>financial planning considerations relevant to this event. Invite a brief call to discuss. Warm, not salesy. Professional. Under 150 words. Review for accuracy and compliance before sending. Sign as [Your Name], [Firm Name]. The Annual Tax Season Communication System</p>
+<div class="section-label">Tax season is your highest-touch client period — but most of the stress comes from</div>
+<p>poor communication about what&#x27;s needed and when. A proactive communication</p>
+<div class="section-label">system sets expectations, reduces back-and-forth, and positions your firm as organised</div>
+<p>and professional.</p>
+<h3>PROMPT — TAX SEASON KICKOFF EMAIL</h3>
+<p class="template-line">Write a tax season kickoff email for my CPA practice to send to all individual and/or business clients in [January / early February]. Cover: (1) our timeline for the season, (2) what documents clients need to gather and submit, (3) our deadline for receiving</p>
+<p>documents to guarantee filing by [date], (4) how to submit documents — [portal /</p>
+<div class="section-label">email / in person]. Professional, warm, and organised. Under 200 words. Sign as</div>
+<p>[Your Name], [Firm Name].</p>
+<h3>PROMPT — MISSING DOCUMENTS FOLLOW-UP</h3>
+<p class="template-line">Write a follow-up email to a client [Name] who hasn&#x27;t submitted their tax documents yet. Our deadline is [date]. I want to: (1) note that we haven&#x27;t received their documents, (2) remind them of the deadline clearly, (3) explain what happens if we</p>
+<p>miss the deadline — extension, etc. Professional and direct without being harsh. Under 120 words. Sign as [Your Name], [Firm Name].</p>
+<h3>CHAPTER 3: ADVISORY SERVICES &amp; FEE</h3>
+<h3>CONVERSATIONS</h3></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Moving Clients From Compliance to Advisory The most profitable CPA engagements are advisory — tax planning, business consulting, wealth strategy — not just compliance. The challenge is that most clients</p>
+<p>don&#x27;t know to ask for it, and most CPAs don&#x27;t know how to introduce it without it feeling like a sales pitch.</p>
+<h3>PROMPT — ADVISORY SERVICES INTRODUCTION EMAIL</h3>
+<p class="template-line">Write an email introducing advisory/tax planning services to an existing compliance</p>
+<div class="section-label">client [Name] who is a [business owner / high-income individual / recent inheritance</div>
+<p>recipient]. I want to frame advisory services as: &#x27;this is what we do for clients who want to get ahead of their tax situation rather than just report it.&#x27; Include 1-2 specific examples of planning opportunities relevant to their situation. Invite a 30-minute</p>
+<p>planning call. Not salesy — framed as genuinely serving their interests. Under 200 words. Sign as [Your Name], [Firm Name].</p>
+<h3>PROMPT — FEE INCREASE COMMUNICATION</h3>
+<p class="template-line">Write a professional fee increase notification for my CPA practice to send to existing clients. Our fees are increasing by [X]% effective [date] due to [brief reason — increased complexity of regulations, cost of technology, investment in staff training].</p>
+<p>I want to: (1) communicate the change clearly, (2) reaffirm the value of the relationship, (3) invite questions. Professional, warm, and confident. Under 150 words. Sign as [Your Name], [Firm Name].</p>
+<h3>CHAPTER 4: CONTENT STRATEGY &amp; THOUGHT</h3>
+<h3>LEADERSHIP</h3>
+<p>LinkedIn Content for CPAs LinkedIn is the highest-ROI content platform for accounting professionals. Your audience — business owners, executives, attorneys, financial advisors — is there daily. One strong LinkedIn post reaches hundreds of qualified prospects and referral sources</p>
+<p>with zero ad spend.</p>
+<h3>PROMPT — LINKEDIN POST BATCH</h3>
+<p>Write 5 LinkedIn posts for a CPA specialising in [specialty]. Topics: (1) the most common tax mistake [business owners / high-income individuals] make that costs them money — be specific, (2) a recent IRS or tax law update that affects [your</p></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>target client type] — explain it in plain language, (3) what advisory-level accounting actually looks like vs. just filing returns, (4) a client outcome story (anonymised) — the situation, what we did, the result, (5) a question post — something your</p>
+<p>followers genuinely debate. Each under 200 words, educational and specific, ending with a question or insight. Firm name: [Firm Name].</p>
+<h3>Email Newsletter for Client Retention</h3>
+<p>A monthly email newsletter keeps you top of mind with every client and referral partner. CPAs who send a consistent monthly newsletter see dramatically higher retention and</p>
+<div class="section-label">referral rates because clients think of them year-round — not just in April.</div>
+<h3>PROMPT — MONTHLY CLIENT NEWSLETTER</h3>
+<p class="template-line">Write a monthly email newsletter for my CPA practice for [month]. Include: (1) one relevant tax or financial planning tip for [your target client type], (2) one upcoming deadline or date worth knowing, (3) one brief practice update or team note, (4) one</p>
+<p>question clients should be asking themselves right now. Professional, warm, and genuinely useful — not a marketing email. Under 300 words. Sign as [Your Name], [Firm Name].</p>
+<h3>CHAPTER 5: GOOGLE REVIEWS &amp; LOCAL</h3>
+<h3>VISIBILITY</h3>
+<p>The Review Request System Most CPA clients would give a review if asked — but very few are ever asked. The window is immediately after filing completion, when the relief and gratitude are fresh.</p>
+<h3>PROMPT — POST-FILING REVIEW REQUEST</h3>
+<p class="template-line">Write a post-filing review request email for my CPA practice. Client [Name] just had their [personal / business] taxes filed. I want to: (1) acknowledge that tax season is stressful and thank them for trusting us, (2) make a personal, non-automated-feeling</p>
+<p>ask for a Google review, (3) include the direct link. Warm and brief. Under 120 words. Sign as [Your Name], [Firm Name]. Responding to Reviews</p>
+<h3>PROMPT — 5-STAR REVIEW RESPONSE</h3></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a warm, specific response to a 5-star Google review for my CPA practice. The reviewer said: [paste their review]. Respond personally using their name, reference one detail from their review, express genuine thanks, and mention [Firm Name] naturally. Under 80 words.</p>
+<h3>PROMPT — NEGATIVE REVIEW RESPONSE</h3>
+<p class="template-line">Write a professional, non-defensive response to a negative Google review for my CPA practice. The reviewer said: [paste their review]. Acknowledge their experience, apologise for falling short, invite them to contact me directly to resolve</p>
+<p>it, include my direct phone number. Under 80 words. Never argue publicly.</p>
+<h3>CHAPTER 6: BUSINESS DEVELOPMENT &amp; NEW</h3>
+<h3>SERVICE LAUNCHES</h3>
+<p>Launching a New Service to Existing Clients</p>
+<h3>PROMPT — NEW SERVICE ANNOUNCEMENT EMAIL</h3>
+<p class="template-line">Write an email announcing a new service to existing clients of my CPA practice. New service: [service name — e.g., bookkeeping / payroll / estate planning coordination / business valuation]. I want to: (1) announce the service, (2) explain</p>
+<p>which clients it&#x27;s most relevant for, (3) describe the value it adds, (4) invite them to book a brief call to discuss whether it&#x27;s right for them. Professional and warm. Under 200 words. Sign as [Your Name], [Firm Name].</p>
+<h3>PROMPT — SMALL BUSINESS NEW CLIENT PROSPECTING EMAIL</h3>
+<p class="template-line">Write a prospecting email from a CPA to a small business owner named [Name] who owns [type of business] in [city]. I want to: (1) introduce my practice briefly, (2) mention one specific tax or accounting issue common to their type of business, (3)</p>
+<div class="section-label">offer a free 30-minute consultation. Professional and genuinely helpful. Under 150</div>
+<p>words. Sign as [Your Name], [Firm Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Consultation Conversion System</h3>
+<p class="template-line">• Build your post-consultation follow-up email using the Chapter 1 prompt</p>
+<p class="template-line">• Write your 3-message nurture sequence for prospects not yet ready</p></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Accountants &amp; CPAs Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Set a reminder to follow up within 24 hours after every consultation</p>
+<h3>Week 2: Referral Partner Outreach</h3>
+<p class="template-line">• List 10 attorneys and financial advisors you want as referral partners</p>
+<p class="template-line">• Write 5 personalized introduction emails using the Chapter 1 prompt</p>
+<p class="template-line">• Build your monthly value touch template — schedule for the 1st of each month</p>
+<h3>Week 3: Content Batch</h3>
+<p class="template-line">• Use the Chapter 4 LinkedIn prompt to write 10 posts in one session</p>
+<p class="template-line">• Schedule 2-3 posts per week for the next month</p>
+<p class="template-line">• Write your first monthly newsletter using the Chapter 4 prompt</p>
+<h3>Week 4: Review &amp; Retention System</h3>
+<p class="template-line">• Identify 20 past clients who haven&#x27;t reviewed — use Chapter 5 prompt to write</p>
+<p>personal requests</p>
+<p class="template-line">• Set up post-filing review request as a standard workflow step</p>
+<p class="template-line">• Build your tax season kickoff email for the coming season</p></div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span class="page-number">09</span></div>
+</section></main></body></html>

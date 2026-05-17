@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90 Day Content Calendar · Month 3</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #f8f1e7; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#0d0a08,#16100c 70%,#070504); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c4954f 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#efcc8d 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.11) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c4954f,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #c5b7a6; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c4954f 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c4954f; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.04); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c4954f; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c4954f; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c4954f; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #c5b7a6; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c4954f 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.045); box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+.cover-panel.dark { background: linear-gradient(135deg,#070504,color-mix(in srgb,#070504 76%,#c4954f)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #efcc8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.05); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c4954f 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.05); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c4954f; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.052); box-shadow: 0 22px 62px rgba(0,0,0,.18); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c4954f 18%,transparent); color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c4954f; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c4954f 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #c5b7a6; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c4954f; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Chair growth system</div></div>
+  <p class="kicker">90-Day Calendar</p>
+  <h1>90 Day Content Calendar · Month 3</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for dark shop authority</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Barbers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>90 Day Content Calendar · Month 3</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Mon Instagram Shoutout to a long-term client (with permission) — the relationship, the loyalty, what it means. Human and warm. Wed Google Profile &#x27;Thank you [City] for your support&#x27; — community appreciation post. Local connection matters for GBP.</p>
+<p>Fri TikTok &#x27;Q&amp;A — your barbershop questions answered&#x27; — use comments from previous posts to drive this content.</p>
+<h3>MONTH 3: SEASONAL CAMPAIGNS &amp;</h3>
+<h3>CONVERSION</h3>
+<p>Write 8 Instagram captions for a barber. Topics: a seasonal haircut trend or recommendation, a before the holidays fresh cut push, a new service or product announcement, a client transformation story, a gift voucher for the holidays, a loyalty</p>
+<div class="section-label">offer for regulars, a strong rebooking CTA, a year/season reflection post. Under 150</div>
+<p>words each.</p>
+<h3>WEEK 9: SEASONAL PUSH</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3>
+<p>Mon Instagram Seasonal fresh cut push: &#x27;Before [event/holiday/season] — get in the chair. Here is what I have available.&#x27; + booking CTA. Wed TikTok &#x27;[Season] haircut trends I am seeing most in my chair right now&#x27; — positions you as current and in demand.</p>
+<p>Fri Google Profile &#x27;[Holiday/event] is coming — book your fresh cut now. Limited spots at [Barbershop Name].&#x27; Local urgency.</p>
+<h3>WEEK 10: PRODUCT &amp; SERVICE SPOTLIGHT</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3>
+<p>Mon Instagram New product or service announcement: what it is, who it is for,</p>
+<h3>how to get it. Direct and enthusiastic.</h3>
+<p>Wed TikTok Product in action: show the product being used on a client&#x27;s hair — application, finish, result. Genuine demo. Fri Instagram &#x27;The [product name] changed how my clients maintain their cuts at home — here is why.&#x27; Educational and promotional.</p>
+<h3>WEEK 11: GIFT VOUCHERS &amp; LOYALTY</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3></div>
+  <div class="footer"><span>90 Day Content Calendar · Month 3</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Mon Instagram &#x27;Gift vouchers for [Barbershop Name] — the gift every man actually wants.&#x27; Occasion-specific gifting content. Wed TikTok &#x27;If someone gifted you a barber voucher, what would you book?&#x27; — engagement content that doubles as gifting promo.</p>
+<p>Fri Instagram Loyalty appreciation post: &#x27;To my regulars — you are the reason I love this job. Thank you.&#x27; Warm and genuine.</p>
+<h3>WEEK 12: STRONG CLOSE</h3>
+<h3>DAY PLATFORM CONTENT IDEA</h3>
+<p>Mon Instagram &#x27;My last [X] spots of [season/year] are open — here is how to secure one.&#x27; Genuine scarcity CTA. Wed Google Profile Year-end or season reflection: &#x27;It has been an incredible [year/season] at [Barbershop Name]. Thank you [City].&#x27; Community warmth.</p>
+<p>Fri TikTok New year / new season framing: &#x27;Starting [period] fresh — this is what I am offering. Here is how to book.&#x27; Energy and CTA.</p></div>
+  <div class="footer"><span>90 Day Content Calendar · Month 3</span><span class="page-number">04</span></div>
+</section></main></body></html>

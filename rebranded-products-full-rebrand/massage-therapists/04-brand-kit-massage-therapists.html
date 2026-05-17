@@ -1,0 +1,155 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Massage Therapists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>MASSAGE THERAPIST</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a wellness brand that attracts loyal clients and commands premium rates. Color palettes • Fonts • Canva templates • Niche clarity • 7-day checklist</p>
+<h3>SECTION 1: POSITIONING &amp; BRAND PROMISE</h3>
+<p>The most booked massage therapists are clearly positioned and consistently present. Your brand communicates who you help, what you specialize in, and why you&#x27;re the right choice before a client ever books. Your Brand Promise</p>
+<p>I help [client type] [achieve outcome] through [your approach]. Example: &#x27;I help busy professionals in [City] release chronic stress and tension through therapeutic massage that&#x27;s actually tailored to your body — not a one- size-fits-all template.&#x27; Specialty Options</p>
+<p class="template-line">• Swedish and relaxation massage</p>
+<p class="template-line">• Deep tissue and therapeutic massage</p>
+<p class="template-line">• Sports massage and injury recovery</p>
+<p class="template-line">• Prenatal and postnatal massage</p>
+<p class="template-line">• Hot stone therapy</p>
+<p class="template-line">• Lymphatic drainage</p>
+<p class="template-line">• Trigger point therapy</p>
+<p class="template-line">• Aromatherapy massage</p>
+<p class="template-line">• Corporate and workplace wellness</p>
+<p class="template-line">• Oncology massage support</p>
+<h3>SECTION 2: COLOR PALETTES</h3>
+<div class="section-label">Palette A: Therapeutic Calm (Recommended for Most Practices)</div>
+<p>Deep Teal</p>
+<h3>#0B6B6B</h3>
+<p>Primary — Calm, Trust Sage Green</p>
+<h3>#6B8E7A</h3>
+<p>Accent — Natural, Healing Warm Ivory</p>
+<h3>#FAF6EE</h3>
+<p>Background — Safe, Soft White</p>
+<h3>#FFFFFF</h3>
+<p>Base BG</p>
+<div class="section-label">Palette B: Luxe Wellness (Premium / Spa-Adjacent Positioning)</div>
+<p>Warm Charcoal</p>
+<h3>#3D3535</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Primary — Premium, Grounded Warm Gold</p>
+<h3>#B8922A</h3>
+<p>Accent — Luxury, Warmth Blush Cream</p>
+<h3>#FAF0E8</h3>
+<p>Background — Inviting, Soft Off White</p>
+<h3>#FDFAF7</h3>
+<p>Base</p>
+<h3>Typography</h3>
+<p>Headlines: Cormorant Garamond Bold for luxe/premium positioning, or Nunito SemiBold for warm and approachable branding. Body Copy: Nunito Regular. CTAs: Nunito Bold. All available free on Google Fonts and in Canva.</p>
+<h3>SECTION 3: CANVA TEMPLATE GUIDE</h3>
+<p>All templates below are free on Canva. Search the exact term, apply your brand colors and fonts.</p>
+<h3>TEMPLATE CANVA SEARCH TERM BEST USE</h3>
+<p>Instagram Post (1:1) &quot;massage therapist instagram post template&quot; Wellness tips, benefits, client stories Instagram Story (9:16) &quot;wellness spa story template</p>
+<h3>canva&quot;</h3>
+<p>Availability, seasonal offers, tips Facebook Cover &quot;massage therapy facebook cover canva&quot; First impression, niche statement,</p>
+<h3>booking CTA</h3>
+<p>GBP Post &quot;local wellness business post</p>
+<h3>template&quot;</h3>
+<p>Weekly tip, seasonal campaign, team updates Services Menu PDF &quot;massage therapy services menu</p>
+<h3>canva&quot;</h3>
+<p>Branded print and digital pricing guide Gift Certificate &quot;gift certificate template spa</p>
+<h3>canva&quot;</h3>
+<p>Holiday and occasion revenue driver Print Templates</p>
+<p class="template-line">• Business Card — Search: &#x27;massage therapist business card&#x27; — include specialty</p>
+<p>and direct booking link or phone</p>
+<p class="template-line">• Referral Card — Search: &#x27;refer a friend card template&#x27; — for treatment room and</p>
+<p>front desk</p>
+<p class="template-line">• Appointment Reminder Card — Search: &#x27;appointment card template canva&#x27; —</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>hand out at checkout</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p>Days 1-2 — Foundation</p>
+<p class="template-line">✓ Choose your color palette (A or B)</p>
+<p class="template-line">✓ Select fonts and add to your Canva Brand Kit</p>
+<p class="template-line">✓ Write your Brand Promise in one clear, specific sentence</p>
+<p class="template-line">✓ Choose and commit to your specialty niche</p>
+<p>Days 3-4 — Build Templates &amp; Update Profiles</p>
+<p class="template-line">✓ Create your Instagram post template and Story template</p>
+<p class="template-line">✓ Build your services menu PDF</p>
+<p class="template-line">✓ Update Instagram bio with Brand Promise + booking link</p>
+<p class="template-line">✓ Update Facebook page cover and description</p>
+<p class="template-line">✓ Update Google Business Profile with new photos, updated description, and</p>
+<p>services list Days 5-7 — First Week of Content</p>
+<p class="template-line">✓ Batch-create 3 posts using your 90-Day Calendar</p>
+<p class="template-line">✓ Generate captions using the monthly AI caption prompt</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri</p>
+<p class="template-line">✓ Post your first piece of content and engage with every comment in the first hour</p>
+<p>You heal people. Let AI help you build the business that sustains it. Consistent communication. Consistent visibility. Consistently full schedule.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section></main></body></html>

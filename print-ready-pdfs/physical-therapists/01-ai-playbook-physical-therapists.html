@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f0f4ed; --paper:#fbfcf7; --ink:#141a17; --muted:#5f6c61;
+  --accent:#6e8a77; --accent2:#b7c7bb; --dark:#17211b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>Complete Growth Bundle</span></div></div><div class="pill">Care growth system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Physical Therapists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Physical Therapists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>THE PHYSICAL THERAPIST&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<div class="section-label">How to Reduce No-Shows, Improve Patient Outcomes,</div>
+<p>and Grow Your PT Practice Using AI A Complete Guide for Physical Therapists &amp; PT Practice Owners</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the PT Practice&#x27;s Growth Tool 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Reducing No-Shows and Protecting Your Schedule 4. Chapter 4: Patient Retention — Completing Plans of Care</p>
+<p>5. Chapter 5: Home Exercise Program Communication That Actually Works 6. Chapter 6: Building Your Physician Referral Network 7. Chapter 7: Social Content That Educates and Attracts Patients 8. Chapter 8: Your 30-Day AI Implementation Plan</p>
+<p>9. BONUS: AI Prompt Cheat Sheet for Physical Therapists</p>
+<h3>Chapter 1: Why AI Is the PT Practice&#x27;s Growth</h3>
+<p>Tool Physical therapy practices face a unique set of business challenges: high no-show rates, patients who discharge early before completing their plan of care, physician</p>
+<div class="section-label">referral relationships that require consistent maintenance, and a need to stay visible in</div>
+<p>an increasingly competitive local market. None of these are clinical problems. They are communication problems — and AI solves communication problems.</p>
+<p class="template-line">• The No-Show Cost: A single PT no-show costs a practice $75–$200 in lost</p>
+<p>revenue. With an average of 3–5 per week, that&#x27;s $15,000–$50,000 per year in preventable losses. A consistent reminder sequence cuts this significantly.</p>
+<p class="template-line">• The Early Discharge Problem: Studies show that patients who discharge</p>
+<p>before completing their plan of care have significantly worse outcomes — and are far less likely to refer. Communication between visits keeps patients engaged and committed to the full plan.</p>
+<p class="template-line">• The Physician Referral Gap: Most PT practices receive the majority of their</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>patients from physician referrals — yet most PTs have no systematic process for maintaining those relationships. AI makes consistent outreach effortless.</p>
+<p class="template-line">• What AI Does vs. What You Do: AI communicates, educates, reminds, and</p>
+<p>follows up. You assess, treat, and guide recovery. The clinical work is irreplaceable — the admin work is not.</p>
+<h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+<p>Start with one of these. Each takes under an hour to implement and produces immediate, measurable results.</p>
+<p class="template-line">• Win #1 — Appointment Reminder Sequence: A 3-message reminder system</p>
+<p>— 48 hours before, morning of, and post no-show recovery — reduces cancellations and fills gaps faster. AI writes all three in under 5 minutes.</p>
+<p class="template-line">• Win #2 — HEP Companion Email: Every home exercise program should be</p>
+<p>sent with an AI-written companion email that explains each exercise, addresses the most common mistakes, and encourages the patient. HEP adherence improves. Outcomes improve.</p>
+<p class="template-line">• Win #3 — Physician Thank-You and Update: After treating a referred patient,</p>
+<p>AI writes a professional update letter to the referring physician — clinical progress, current status, and a thank-you. Most PT practices never send these consistently. The ones that do get significantly more referrals.</p>
+<h3>Chapter 3: Reducing No-Shows and Protecting</h3>
+<p>Your Schedule PT practices that implement a structured reminder system typically see no-show rates drop from 15–20% to under 8%. The barrier isn&#x27;t wanting to fix this — it&#x27;s having the</p>
+<p>time and system to do it consistently for every patient. AI removes that barrier.</p>
+<p class="template-line">• The 3-Touch Reminder System: 48-hour reminder (confirm or reschedule),</p>
+<p>morning-of reminder (logistics and encouragement), no-show recovery message (same day, warm and non-judgmental). Three messages that protect your schedule.</p>
+<p class="template-line">• The Cancellation Recovery Message: When a patient cancels, most practices</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>just update the schedule. AI writes a same-day recovery message that acknowledges the cancellation, makes rebooking easy, and keeps the therapeutic relationship intact.</p>
+<p class="template-line">• The Waitlist Activation Message: When a cancellation creates a gap, AI</p>
+<p>immediately drafts an outreach message to waitlist patients — filling the slot in minutes.</p>
+<p class="template-line">• Reducing Fear-Driven Cancellations: Pain and fear of worsening symptoms</p>
+<p>are the top reasons PT patients cancel last-minute. AI writes a pre-appointment reassurance message — what to expect, how to communicate discomfort, why consistency matters — that addresses these fears before they become cancellations.</p>
+<h3>Chapter 4: Patient Retention — Completing</h3>
+<p>Plans of Care The average PT patient completes only 60–70% of their prescribed plan of care. The gap between prescribed and completed visits represents both revenue loss and suboptimal patient outcomes. Communication is the most powerful lever for improving</p>
+<p>both.</p>
+<p class="template-line">• The Between-Visit Check-In: A short message 2–3 days after each visit asking</p>
+<p>about soreness, pain levels, and HEP adherence. Takes 90 seconds with AI. Patients feel supported between appointments. Drop-off rates fall significantly.</p>
+<p class="template-line">• The Plateau Acknowledgment: When a patient&#x27;s progress slows, most stop</p>
+<p>coming without saying anything. AI writes a proactive midpoint message that normalizes the plateau, explains the process, and reinforces why continuing matters.</p>
+<p class="template-line">• The Discharge Planning Email: As a patient approaches the end of their plan of</p>
+<p>care, AI writes a transition message that recaps their progress, sets self- management expectations, and introduces the option of wellness or maintenance visits.</p>
+<p class="template-line">• The Missed Visit Recovery: When a patient misses a scheduled visit, AI writes</p>
+<p>a same-day check-in that acknowledges the missed visit, asks if everything is okay, and makes rebooking frictionless.</p>
+<h3>Chapter 5: Home Exercise Program</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Communication That Actually Works HEP adherence is one of the most significant predictors of PT outcomes — and one of the most commonly poor. The difference between patients who do their exercises and</p>
+<p>those who don&#x27;t is almost always communication and understanding. AI makes HEP communication systematic and effortless.</p>
+<p class="template-line">• The HEP Companion Email: Every time a HEP is issued or updated, AI writes a</p>
+<p>companion email that explains each exercise in plain language, describes the common mistakes to avoid, explains why each exercise matters for their specific condition, and provides encouragement.</p>
+<p class="template-line">• The HEP Check-In Message: 3–4 days after issuing a new HEP, AI writes a</p>
+<p>brief check-in asking if the patient has been able to complete the exercises, whether anything is unclear, and if they&#x27;ve experienced any discomfort.</p>
+<p class="template-line">• The Progress Reinforcement Email: When a patient demonstrates consistent</p>
+<p>HEP adherence, AI writes a reinforcement message — acknowledging their commitment and connecting their effort to the improvements you&#x27;re both observing.</p>
+<p class="template-line">• The HEP Update Communication: When a HEP is progressed or modified, AI</p>
+<p>writes a clear update email that explains what changed, why it changed, and what the patient should stop doing — reducing the confusion that causes HEP drop-off.</p>
+<h3>Chapter 6: Building Your Physician Referral</h3>
+<p>Network The PT practices with the fullest schedules have the strongest physician relationships. But most PTs never systematically build and maintain these relationships — they rely</p>
+<p>on sporadic contact and hope the referrals keep coming. AI makes the outreach and maintenance systematic.</p>
+<p class="template-line">• The Post-Treatment Physician Update: After treating every referred patient, AI</p>
+<p>writes a professional progress note update to the referring physician — clinical findings, progress, functional outcomes, and a thank-you. This single habit, done consistently, is the most powerful referral-building tool in PT.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• The New Physician Introduction: AI writes a professional introduction letter to</p>
+<p>new physicians in your area — specialties that refer PT patients: orthopedic surgeons, sports medicine doctors, neurologists, rheumatologists, primary care. Brief, clinical, and focused on outcomes.</p>
+<p class="template-line">• The Monthly Value Touch: Once a referral relationship is established, AI writes</p>
+<p>a monthly email to your referral partners — a clinical update, a relevant research summary, or a patient education resource. Keeps you top of mind without being salesy.</p>
+<p class="template-line">• The Specialist Partnership: Beyond physicians, chiropractors, personal</p>
+<p>trainers, and massage therapists are excellent referral partners. AI writes a peer- to-peer outreach message that proposes a mutual referral relationship.</p>
+<h3>Chapter 7: Social Content That Educates and</h3>
+<p>Attracts Patients Patients research physical therapists online before they call — and before their physician refers them. PT practices with consistent, educational social content get more</p>
+<p>direct-access patients, earn more trust from referring physicians, and convert better. AI makes that consistency achievable alongside a full patient load.</p>
+<p class="template-line">• The 3-Post Formula: One educational post (condition explainer, exercise tip,</p>
+<p>myth-bust), one trust post (patient story with consent, team spotlight, behind the scenes), one engagement post (question, poll, seasonal tip). Mon/Wed/Fri.</p>
+<p class="template-line">• High-Converting Topics: Low back pain myths, rotator cuff recovery, ACL</p>
+<p>rehab timeline, why &#x27;rest&#x27; isn&#x27;t always the answer, the difference between PT and a personal trainer, dry needling explained, pelvic floor PT, balance and fall prevention for seniors.</p>
+<p class="template-line">• Google Business Profile: For PT practices, Google is the most important</p>
+<p>platform for local patient acquisition. Weekly GBP posts, consistent photo updates, and responding to every review drives meaningful new patient volume.</p>
+<p class="template-line">• Short-Form Video: &#x27;What to expect at your first PT visit&#x27; is the single most-</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>watched video type for physical therapy — addresses the most common barrier to booking a first appointment. AI writes the script.</p>
+<h3>Chapter 8: Your 30-Day AI Implementation Plan</h3>
+<p>One system at a time. This plan delivers real results in 30 days without disrupting clinical workflow.</p>
+<p class="template-line">• Week 1 — No-Show Reduction: Write your 3-touch reminder sequence. Build</p>
+<p>your cancellation recovery message. Create your waitlist activation template.</p>
+<p class="template-line">• Week 2 — Retention and HEP: Build your between-visit check-in template.</p>
+<p>Write your HEP companion email template. Create your discharge planning message.</p>
+<p class="template-line">• Week 3 — Physician Referrals: Write your post-treatment physician update</p>
+<div class="section-label">template. Draft introduction letters to 5 new referring physicians. Build your</div>
+<p>monthly value touch email.</p>
+<p class="template-line">• Week 4 — Social Content: Batch 2 weeks of posts using your 90-Day Calendar.</p>
+<p>Generate captions with the monthly AI prompt. Create one GBP post. Schedule everything Mon/Wed/Fri.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Physical</h3>
+<p>Therapists Copy and paste these into Claude or ChatGPT. Replace [brackets] with your patient and practice details. Patient Communication Prompts Write a 3-message appointment reminder sequence for a PT patient</p>
+<p>named [Name] who has an appointment on [Date] at [Time] at [Practice Name]. Message 1: 48 hours before (confirm or reschedule). Message 2: morning-of (warm and motivating). Message 3: post no-show recovery (same day, non-judgmental, easy</p>
+<p>rebooking). Each under 60 words. Write a home exercise program companion email for my PT patient [Name] who has [condition — e.g., lower back pain / rotator cuff repair / knee replacement]. Their HEP includes: [list exercises].</p>
+<p>For each exercise, explain in plain language: what it does, common mistakes to avoid, and how it helps their specific condition. End with encouragement. Sign as [Your Name], [Practice Name]. Physician Referral Prompts</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Physical Therapists<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Write a post-treatment progress update letter to Dr. [Name] at [Practice] regarding their patient [Patient Name (or &#x27;your patient&#x27; if keeping it generic)] who was referred for [condition]. Clinical progress: [2–3 progress points]. Current status: [current</p>
+<p>functional status]. Plan: [remaining sessions or discharge plan]. End with a genuine thank-you for the referral. Professional, clinical tone. Sign as [Your Name], PT, [Practice Name].</p>
+<h3>Social Media Prompts</h3>
+<p>Write 5 educational social media posts for a physical therapist. Topics: the real cause of most lower back pain, why rest is usually the wrong treatment for muscle injuries, what to expect at your first PT appointment, the difference between PT and a</p>
+<p>personal trainer, and how long ACL recovery actually takes. Each under 150 words, ends with a question or CTA. Practice: [Practice Name], [City]. Better communication doesn&#x27;t just grow your practice.</p>
+<p>It helps patients commit to the full plan of care that actually gets them better.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div></section></main></body></html>

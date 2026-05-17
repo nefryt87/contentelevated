@@ -1,0 +1,199 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #f8f0ea; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#0b0909,#161111 70%,#060505); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#b37a6c 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6a065 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.11) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#b37a6c,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #c7b4aa; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#b37a6c 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #b37a6c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.04); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #b37a6c; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #b37a6c; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #b37a6c; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #b37a6c; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #c7b4aa; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#b37a6c 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.045); box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+.cover-panel.dark { background: linear-gradient(135deg,#060505,color-mix(in srgb,#060505 76%,#b37a6c)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6a065; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#b37a6c 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.05); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#b37a6c 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.05); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #b37a6c; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#b37a6c 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.052); box-shadow: 0 22px 62px rgba(0,0,0,.18); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#b37a6c 18%,transparent); color: #b37a6c; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #b37a6c; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#b37a6c 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #c7b4aa; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #b37a6c; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">Studio demand system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for portfolio-led conversion</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Tattoo Artists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>TATTOO ARTIST</h3>
+<p>The AI Playbook for Tattoo Artists Convert more consultation requests, fill your books with ideal clients, build your Instagram following, and create a client experience that generates referrals and repeat bookings</p>
+<h3>INTRODUCTION</h3>
+<p>The tattoo artists with fully booked calendars aren&#x27;t just the most technically skilled. They respond to every inquiry professionally and specifically. They follow up on clients who expressed interest but didn&#x27;t book. They post consistently on Instagram with</p>
+<div class="section-label">content that attracts their ideal clients — not just likes. They have a consultation</div>
+<p>process that builds trust before the needle touches skin. And they create a client experience that makes every person they tattoo become a walking advertisement. This</p>
+<div class="section-label">playbook gives you 7 chapters covering every high-leverage scenario — with copy-</div>
+<p>paste AI prompts throughout.</p>
+<h3>CHAPTER 1: INQUIRY RESPONSE &amp;</h3>
+<h3>CONSULTATION BOOKING</h3>
+<p>The DM &amp; Email Response System Instagram DMs are how most tattoo clients first make contact. The response speed and tone of your first reply determines whether that conversation becomes a booking. A</p>
+<p>warm, specific, professional response within a few hours converts dramatically better than a delayed or generic one.</p>
+<h3>PROMPT — INSTAGRAM DM INQUIRY RESPONSE</h3>
+<p class="template-line">Write a warm, professional Instagram DM response for my tattoo studio. The client [Name] reached out about [tattoo type/idea — e.g., a floral sleeve / a blackwork geometric piece / a fine line portrait]. They mentioned: [paste key details from their</p>
+<p>message]. My style is [your style — e.g., blackwork / fine line / neo-traditional / realism / Japanese]. I want to: (1) make them feel like I genuinely read their message, (2) briefly describe how I&#x27;d approach their idea, (3) ask 1-2 qualifying</p>
+<p>questions to move the conversation forward, (4) invite them to book a consultation. Warm and confident, under 150 words. Sign as [Your Name / Studio Name].</p>
+<h3>PROMPT — EMAIL INQUIRY RESPONSE</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a professional inquiry response email for my tattoo studio. Client [Name] reached out about [tattoo description]. They mentioned: [details]. My style: [style]. I want to: (1) acknowledge their idea specifically, (2) briefly describe my approach, (3)</p>
+<p>outline the consultation and booking process, (4) include a link to my booking form or calendar. Professional and warm, under 200 words. Sign as [Your Name], [Studio Name]. Handling Pricing Conversations</p>
+<div class="section-label">Pricing is one of the most common friction points in tattoo bookings. Artists who handle</div>
+<p>it proactively — with context, not defensiveness — convert more inquiries into consultations.</p>
+<h3>PROMPT — PRICE ENQUIRY RESPONSE</h3>
+<p class="template-line">Write a response to someone who asked &#x27;how much does a tattoo like this cost?&#x27; for a [tattoo type/description]. My minimum is $[amount] / I charge $[X] per hour. I want to: (1) give them a realistic range without committing to a final price before the</p>
+<p>consultation, (2) briefly explain what affects the price (size, detail, placement, session length), (3) invite them to book a consultation where I can give an accurate quote. Confident and non-defensive. Under 150 words. Sign as [Your Name / Studio Name].</p>
+<h3>CHAPTER 2: CONSULTATION &amp; CLIENT PREP</h3>
+<p>The Consultation as a Trust-Building System The consultation is where bookings are won or lost. A client who leaves a consultation fully informed, excited, and clear on the process books. A client who leaves with</p>
+<p>unanswered questions ghosts. Your consultation communication before and after the session is as important as the session itself.</p>
+<h3>PROMPT — CONSULTATION CONFIRMATION EMAIL</h3>
+<p class="template-line">Write a consultation confirmation email for my tattoo studio. Client [Name], consultation on [date] at [time] at [studio address]. I want to: (1) confirm the details, (2) tell them what to bring (reference images, ideas about placement, anything</p>
+<p>they&#x27;ve gathered), (3) tell them what we&#x27;ll cover (design direction, size, placement,</p>
+<div class="section-label">pricing, timeline), (4) build excitement. Warm and practical. Under 200 words. Sign</div>
+<p>as [Your Name], [Studio Name].</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>PROMPT — POST-CONSULTATION FOLLOW-UP EMAIL</h3>
+<p class="template-line">Write a post-consultation follow-up email for my tattoo studio. Client [Name], we discussed: [tattoo description, placement, rough size]. I want to: (1) recap what we agreed on, (2) outline the next steps (deposit to book, design approval process,</p>
+<p>session date options), (3) let them know how long I&#x27;ll hold their spot before opening it to others. Warm but clear about next steps. Under 200 words. Sign as [Your Name], [Studio Name]. Appointment Preparation Email</p>
+<h3>PROMPT — APPOINTMENT PREP EMAIL</h3>
+<p class="template-line">Write an appointment preparation email for my tattoo studio. Client [Name], appointment on [date] at [time]. I want to cover: (1) how to prepare their skin (moisturise, no sunburn, no alcohol the night before), (2) what to eat and drink</p>
+<p>before the session (meal beforehand, bring snacks and water for longer sessions), (3) what to wear (loose clothing for the tattooed area), (4) what to bring (ID, deposit receipt, any final reference images), (5) pain management options if applicable.</p>
+<p>Practical and reassuring. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+<h3>CHAPTER 3: AFTERCARE &amp; REBOOKING</h3>
+<h3>SYSTEM</h3>
+<p>The Post-Session Follow-Up System The client experience doesn&#x27;t end when the tattoo is finished. A thoughtful post-session</p>
+<div class="section-label">system provides aftercare guidance, invites healed photos, asks for the review, and</div>
+<p>plants the seed for the next piece. This is the most underused retention system in tattooing.</p>
+<h3>PROMPT — POST-SESSION AFTERCARE EMAIL</h3>
+<p class="template-line">Write a post-session aftercare email for my tattoo studio. Client [Name] just got their [tattoo description] today. I want to cover: (1) immediate aftercare instructions (wrap removal, washing, moisturising), (2) what&#x27;s normal in the first few days (redness,</p>
+<p>swelling, peeling), (3) what to avoid (sun, swimming, tight clothing), (4) when to contact me if something seems wrong. Clear, reassuring, and professional. Under 250 words. Sign as [Your Name], [Studio Name].</p>
+<h3>PROMPT — HEALED PHOTO &amp; REVIEW REQUEST (4-6 WEEKS)</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a 4-6 week follow-up message for my tattoo studio. Client [Name] got their [tattoo description] on [date]. I want to: (1) check in on how the healing went, (2) ask for a healed photo so I can feature it in my portfolio, (3) make a warm personal ask</p>
+<p>for a Google or Instagram review. Warm and genuine. Under 150 words. Sign as [Your Name / Studio Name]. The Rebooking System Clients who&#x27;ve already been tattooed by you are your warmest possible prospect for the</p>
+<p>next piece. Most artists never proactively reach out. The ones with full books do.</p>
+<h3>PROMPT — REBOOKING OUTREACH (MULTI-PIECE CLIENTS)</h3>
+<p class="template-line">Write a rebooking outreach message for a past client [Name] who got their [tattoo description] on [date]. I remember they mentioned wanting to add [next piece they mentioned / continue the sleeve]. I want to: (1) check in warmly, (2) mention their</p>
+<p>idea for the next piece, (3) let them know I have availability in [timeframe]. Warm and personal — not a blast. Under 100 words. Sign as [Your Name / Studio Name].</p>
+<h3>PROMPT — FLASH DAY ANNOUNCEMENT EMAIL</h3>
+<p class="template-line">Write a flash day announcement email for my tattoo studio. I&#x27;m running a flash day on [date]. Designs available: [brief description — e.g., 20 original flash designs in my signature style, each done once only]. Price range: $[X]-$[X]. How to book:</p>
+<p>[process — first come first served / pre-book / walk-ins]. I want this email to create genuine excitement and urgency. Fun, enthusiastic, under 200 words. Sign as [Your Name], [Studio Name].</p>
+<h3>CHAPTER 4: INSTAGRAM CONTENT STRATEGY</h3>
+<h3>Content Pillars That Fill Your Books</h3>
+<p>Instagram is where tattoo clients discover, vet, and decide on their artist. The accounts that stay fully booked post consistently across 4 content pillars: finished work (healed and fresh), process content (stencils, in-progress, setup), personal story (your journey,</p>
+<p>your style, your values), and education (aftercare tips, placement advice, style explanations).</p>
+<h3>PROMPT — INSTAGRAM CAPTION BATCH</h3>
+<p>Write 5 Instagram captions for a tattoo artist with a [style — e.g., blackwork / fine line / Japanese / realism] aesthetic. Topics: (1) a tattoo you&#x27;re most proud of this</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><div class="section-label">month — describe it emotionally and technically, (2) your approach to consulting</div>
+<p>with a new client — what you ask and why, (3) a common misconception about [your style] that you&#x27;d like to correct, (4) your favourite placement for [type of design] and why it makes the tattoo better, (5) a direct booking CTA with a description of</p>
+<p>what you&#x27;re taking on right now. Each under 150 words, specific and genuine. Studio name: [Studio Name].</p>
+<h3>PROMPT — FLASH DESIGN POST CAPTIONS</h3>
+<p>Write 3 Instagram captions for announcing flash tattoo designs. I&#x27;ve created [number] original flash designs in my [style] style. They&#x27;re available on [date / first come first served / DM to claim]. Price: $[amount] each. I want the captions to: (1)</p>
+<p>create genuine excitement, (2) show why flash designs are a different experience from custom work, (3) drive DMs and bookings. Fun and enthusiastic. Under 100 words each. Studio: [Studio Name].</p>
+<h3>CHAPTER 5: STUDIO REPUTATION &amp; REVIEWS</h3>
+<p>The Review Generation System</p>
+<h3>PROMPT — GOOGLE REVIEW REQUEST</h3>
+<p class="template-line">Write a Google review request message (DM and email versions) for my tattoo studio. Client [Name] got their [tattoo description] on [date]. Send 4-6 weeks after session when healed. DM version: under 60 words. Email version: under 100 words.</p>
+<p>Both: personal, non-automated, include direct Google review link, express genuine appreciation. Sign as [Your Name / Studio Name].</p>
+<h3>PROMPT — RESPONDING TO REVIEWS</h3>
+<p class="template-line">Write a warm, specific response to a 5-star Google review for my tattoo studio. The reviewer said: [paste their review]. Respond personally using their name, reference one detail from their review, express genuine thanks, mention [Studio Name] naturally. Under 80 words.</p>
+<h3>CHAPTER 6: STUDIO POLICIES &amp; DIFFICULT</h3>
+<h3>SITUATIONS</h3>
+<p>Communicating Policies Professionally</p>
+<h3>PROMPT — DEPOSIT &amp; CANCELLATION POLICY EMAIL</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">Write a deposit and cancellation policy explanation email for my tattoo studio to send with every booking confirmation. Policy: deposit is $[amount], non-refundable if cancelled within [X] days / if no-show. I want to: (1) explain the policy clearly, (2)</p>
+<p>explain why deposits exist (design time, holding the spot), (3) tell them what happens if they need to reschedule vs. cancel outright. Professional and matter-of- fact — no apology for having policies. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+<h3>PROMPT — DECLINING AN INQUIRY</h3>
+<p class="template-line">Write a professional, warm response to a tattoo inquiry I need to decline because [reason — e.g., the design is outside my style / I&#x27;m fully booked for the foreseeable future / I don&#x27;t feel I&#x27;m the right artist for this piece]. I want to: (1) be honest without</p>
+<p>being harsh, (2) if appropriate, suggest they consider a different artist type, (3) leave the door open for future work that is more aligned. Under 100 words. Sign as [Your Name / Studio Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Inquiry &amp; Consultation System</h3>
+<p class="template-line">• Build your DM and email inquiry response templates using Chapter 1 prompts</p>
+<p class="template-line">• Write your consultation confirmation and post-consultation follow-up emails</p>
+<p class="template-line">• Set a reminder: check all unanswered DMs and emails every morning</p>
+<h3>Week 2: Aftercare &amp; Rebooking System</h3>
+<p class="template-line">• Build your post-session aftercare email using the Chapter 3 prompt</p>
+<p class="template-line">• Write your 4-6 week healed photo and review request</p>
+<p class="template-line">• Identify 10 past clients who mentioned a next piece — use rebooking outreach</p>
+<h3>prompt</h3>
+<h3>Week 3: Instagram Content Batch</h3>
+<p class="template-line">• Use Chapter 4 Instagram prompt to batch 10 captions in one session</p>
+<p class="template-line">• Schedule 4-5 posts per week for the next 3 weeks</p>
+<p class="template-line">• Plan a flash day for the coming month using the Chapter 3 flash day</p>
+<p>announcement prompt</p>
+<h3>Week 4: Review System</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Tattoo Artists Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Identify past clients who haven&#x27;t reviewed — write personal review request DMs</p>
+<p class="template-line">• Set healed photo + review request as a standard step 4-6 weeks after every</p>
+<p>session</p>
+<p class="template-line">• Respond to all existing Google reviews using the Chapter 5 response prompt</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div>
+</section></main></body></html>

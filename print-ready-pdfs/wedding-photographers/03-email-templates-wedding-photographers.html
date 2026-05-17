@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Wedding Photographers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Wedding Photographers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>WEDDING PHOTOGRAPHER</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to gallery delivery, vendor partnerships, and review requests</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING CONVERSION</h3>
+<h3>Template 1 — Same-Day Inquiry Response</h3>
+<div class="section-label">SUBJECT Re: Your wedding photography inquiry — [Names]</div>
+<p>Hi [Names], Thank you so much for reaching out — your wedding on [date] at [venue] sounds absolutely beautiful, and [one specific detail they mentioned] really caught my attention. [One sentence on how you&#x27;d approach their specific wedding — reference</p>
+<p>their style or venue]. A few quick questions before I put together a full response: Have you had a chance to look at a photographer&#x27;s galleries in detail? And what does your timeline look like for making a decision?</p>
+<p>Would a 20-minute call work for you this week? I have availability [two specific times]. I&#x27;d love to hear more about your day. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 2 — Follow-Up Day 3</h3>
+<div class="section-label">SUBJECT Checking in on your [date] wedding photography — [Names]</div>
+<p>Hi [Names], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get buried in all the wedding planning madness! I was thinking about your [venue/location] — [one genuine observation about</p>
+<p>the venue, lighting, or location that shows you know it]. It&#x27;s a beautiful space to photograph. Still available for a call [two times]. Would love to connect. [Your Name] | [Studio Name]</p>
+<h3>Template 3 — Follow-Up Day 8</h3>
+<div class="section-label">SUBJECT One more thing about your photography, [Names]</div>
+<p>Hi [Names], One more follow-up before I close out my [month] enquiry folder. I put together a small selection of images from weddings at similar venues and with a similar feel to what you described — [link to relevant portfolio</p>
+<div class="section-label">section or gallery]. I think it&#x27;ll give you a much better sense of what your day</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>could look like. If the timing isn&#x27;t right just now, please do reach out whenever it is — I&#x27;d genuinely love to be part of your day. [Your Name] | [Studio Name]</p>
+<div class="section-label">Template 4 — Post-Consultation Booking Follow-Up</div>
+<div class="section-label">SUBJECT Following our call — your [date] wedding, [Names]</div>
+<p>Hi [Names], It was so lovely speaking with you both today — your vision for [date] at [venue] is genuinely beautiful and I&#x27;m excited about what we could create together. As discussed: I&#x27;ll hold your date until [date/time] while you review the</p>
+<p>contract. Here&#x27;s the link: [contract link]. A [deposit amount] deposit confirms your booking. Any questions before you sign — I&#x27;m always a quick message away. Can&#x27;t wait to photograph your day. [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: ONBOARDING &amp; PRE-WEDDING</h3>
+<h3>EXPERIENCE</h3>
+<h3>Template 5 — Post-Booking Welcome Email</h3>
+<div class="section-label">SUBJECT You&#x27;re officially booked! Welcome to [Studio Name], [Names]</div>
+<p>Hi [Names], YOU&#x27;RE BOOKED! I am so genuinely excited to photograph your wedding on [date] at [venue] — this is going to be incredible. Here&#x27;s what to expect from now until your big day: [6-12 months out] — Engagement session (if included). I&#x27;ll reach out to</p>
+<p>schedule this seasonally. [3 months out] — I&#x27;ll send a detailed wedding questionnaire covering timeline, key people, and moments that matter most. [6 weeks out] — Final planning call to lock in every detail.</p>
+<p>[1 week out] — I&#x27;ll confirm arrival time and any last details. The best way to reach me: [Phone/WhatsApp/Email]. I aim to respond within [timeframe]. Start a Pinterest board of images that inspire you and share it whenever</p>
+<p>you&#x27;re ready — it helps me understand your vision even better. So excited for this journey. [Your Name] | [Studio Name]</p>
+<h3>Template 6 — Engagement Session Prep Email</h3>
+<div class="section-label">SUBJECT Your engagement session is coming up — what to know, [Names]</div>
+<p>Hi [Names], Your engagement session is on [date] at [time] at [location] — I&#x27;m so excited! What to wear:</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Choose colours that complement each other (not match), and avoid busy</p>
+<p>patterns</p>
+<p class="template-line">- Dress for the location — [specific guidance for their location/season]</p>
+<p class="template-line">- Bring a second outfit for variety if you&#x27;d like</p>
+<h3>How to feel natural:</h3>
+<p class="template-line">- I&#x27;ll guide you throughout — you don&#x27;t need to know any poses</p>
+<p class="template-line">- Focus on each other, not the camera. The best shots happen when you</p>
+<p>forget I&#x27;m there</p>
+<p class="template-line">- [Your #1 natural couples tip — e.g., &#x27;Walk slowly holding hands and talk to</p>
+<p>each other&#x27;] Arrive [X] minutes early so we can chat before we start. Any questions? I&#x27;m just a message away. See you soon! [Your Name] | [Studio Name]</p>
+<h3>Template 7 — Wedding Questionnaire Email</h3>
+<div class="section-label">SUBJECT Your wedding day questionnaire — [Names] — [date]</div>
+<p>Hi [Names], With [X months/weeks] to go, it&#x27;s time to get into the details! I&#x27;ve put together a questionnaire to make sure I know everything I need to capture your day perfectly. Please complete this by [date]: [questionnaire link]</p>
+<p>Key things I&#x27;ll ask about: timeline, key moments (vows, first dances, speeches), family formals list, any special details or meaningful items, and whether there&#x27;s anything I should know about family dynamics for group photos.</p>
+<p>The more detail you give me, the more I can be invisibly in the right place at the right time. So excited for [date]! [Your Name] | [Studio Name]</p>
+<h3>Template 8 — Final Week Confirmation Email</h3>
+<div class="section-label">SUBJECT Final details — your wedding on [date], [Names]</div>
+<p>Hi [Names], One week to go — I cannot wait! Confirming:</p>
+<p class="template-line">- My arrival time: [time] at [location]</p>
+<p class="template-line">- My assistant/second shooter: [Name] will be with me</p>
+<p class="template-line">- Gallery delivery: approximately [timeframe] after the wedding</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>My phone will be on throughout the day: [Phone]. Use it for anything urgent. One tip for the morning: please make sure your getting-ready space has as much natural light as possible — near a window or outside is ideal. It makes</p>
+<p>a significant difference to the detail shots. See you on [date]. [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: GALLERY DELIVERY &amp; REVIEW</h3>
+<h3>GENERATION</h3>
+<h3>Template 9 — Gallery Delivery Email</h3>
+<h3>SUBJECT Your gallery is ready — [Names] ✨</h3>
+<p>Hi [Names], Before I give you the link — I want you to know that photographing your wedding was genuinely one of the great privileges of my year. [One specific personal observation from their day — e.g., &#x27;The moment</p>
+<p>[Name] saw [Name] at the altar — I will not forget that expression for a very long time.&#x27;] Your gallery is ready: [gallery link] It contains [number] images, fully edited. To download: [brief instructions]. A few things worth knowing:</p>
+<p class="template-line">- Your gallery is available for [X months/years] — I recommend downloading</p>
+<p>promptly</p>
+<p class="template-line">- Printing: [your recommended lab or print partner if you offer this]</p>
+<p class="template-line">- Sharing: feel free to share freely — please tag me [Instagram handle] if you</p>
+<p>post I&#x27;ll check in again in a few days. For now — enjoy every single image. [Your Name] | [Studio Name]</p>
+<div class="section-label">Template 10 — Review Request (5-7 Days Post-Gallery)</div>
+<h3>SUBJECT A personal ask — [Names]</h3>
+<p>Hi [Names], I hope you&#x27;ve had some time to look through your gallery and relive some of those moments. A personal ask: if you&#x27;re happy with your photos — and I genuinely hope you are — a Google review from a couple I&#x27;ve loved working with means more to</p>
+<p>my business than almost any advertising. It helps other couples in [City] find a photographer they can trust for the most important day of their lives. Direct link: [Google Review Link]. Takes about 2 minutes.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>No pressure at all — I just wanted to ask personally rather than send a generic automated message. Thank you for trusting me with your day, [Names]. It was an honour. [Your Name] | [Studio Name]</p>
+<h3>Template 11 — Positive Review Response</h3>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [Names]! Photographing your wedding was such a privilege — [add one specific personal detail if their review mentions it]. Reviews like yours mean absolutely everything to a small studio like mine.</p>
+<p>Congratulations again on your marriage — I hope you love your photos for a lifetime. — [Your Name], [Studio Name] [Respond within 24 hours. Be specific, warm, include studio name for SEO.]</p>
+<h3>Template 12 — 1-Year Anniversary Check-In</h3>
+<h3>SUBJECT Happy anniversary! — [Names]</h3>
+<p>Hi [Names], One year! I can&#x27;t believe it — it feels like just yesterday I was watching [Name] walk down the aisle at [venue]. I hope your first year has been everything you hoped for. I still look back at</p>
+<p>your gallery and feel proud of every image we made together. One small ask if I may: I&#x27;m updating my portfolio and would love to feature a few of your images [on my website / on Instagram / in a real wedding submission] if you&#x27;re happy for me to do so.</p>
+<p>Wishing you many more wonderful years together. [Your Name] | [Studio Name]</p>
+<h3>SECTION 4: VENDOR PARTNERSHIP</h3>
+<h3>OUTREACH</h3>
+<h3>Template 13 — Venue Coordinator Introduction</h3>
+<div class="section-label">SUBJECT Introduction — [Your Name], Wedding Photographer, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a wedding photographer based in [City] specialising in [style — e.g., romantic documentary / bright editorial]. I&#x27;ve photographed [number] weddings in [City/region] over the past [years] and I&#x27;ve been a long-time</p>
+<p>admirer of [Venue Name]. I&#x27;d love to introduce myself as a potential vendor recommendation for your couples. I&#x27;m always professional, communication-focused, and I genuinely care about making the venue look as beautiful as possible — not just the couple.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Happy to send a portfolio, references from other venue coordinators, or meet briefly if that would be useful. [Your Name] | [Studio Name] | [Phone] | [Portfolio Link]</p>
+<div class="section-label">Template 14 — Wedding Planner Monthly Value Touch</div>
+<h3>SUBJECT [Month] — a note from [Your Name]</h3>
+<p>Hi [Name], Quick note this month — something that came up recently that might be useful for your couples: [One specific, genuine insight — e.g., &#x27;I&#x27;ve noticed golden hour at [specific venue] is particularly stunning between 6-7pm in autumn — worth building</p>
+<p>into timelines for couples booking there&#x27; or &#x27;The new ceremony space at [venue] has much better natural light than the old one — worth mentioning to couples who care about their ceremony photos&#x27;].</p>
+<p>Hope your bookings are going well. If any of your couples are still looking for a photographer in [upcoming season], I&#x27;d love to be top of mind. [Your Name] | [Studio Name] | [Instagram Handle]</p>
+<h3>Template 15 — Post-Referral Thank-You</h3>
+<div class="section-label">SUBJECT Thank you for the introduction — [Names]</div>
+<p>Hi [Name], Thank you so much for introducing me to [Couple Names] — I genuinely appreciated the trust that took and I&#x27;m going to make sure their experience is everything you promised. I&#x27;ll keep you posted on how it goes. And thank you again — referrals from</p>
+<p>people whose work I respect mean the world to me. [Your Name] | [Studio Name]</p>
+<h3>Template 16 — Styled Shoot Collaboration Pitch</h3>
+<div class="section-label">SUBJECT Styled shoot collaboration — [Your Name] + [Their Name]</div>
+<p>Hi [Name], I&#x27;ve been admiring your work for a while and I wanted to reach out about a potential styled shoot collaboration. I&#x27;m envisioning: [brief concept — e.g., &#x27;an intimate elopement-style shoot at</p>
+<p>[location], focusing on editorial couple portraits with a [season/colour palette] mood&#x27;]. What I&#x27;m looking for: [florist / planner / venue / hair and makeup]. What I can</p>
+<div class="section-label">offer: high-resolution images for your portfolio, full usage rights, and a credit</div></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>in any publications we submit to. Interested? I&#x27;d love to get on a quick call to talk through the concept. [Your Name] | [Studio Name] | [Instagram Handle]</p>
+<h3>SECTION 5: ADDITIONAL TEMPLATES</h3>
+<h3>Template 17 — Pricing Enquiry Response</h3>
+<div class="section-label">SUBJECT Re: Wedding photography pricing — [Names]</div>
+<p>Hi [Names], Thank you for reaching out! I&#x27;d love to tell you about my packages. My wedding photography investment starts at $[amount] for [brief package description] and goes to $[amount] for [full package description including</p>
+<p>hours, engagement session, albums etc]. What affects the investment: the number of hours of coverage, whether you&#x27;d like a second shooter, and whether you want an album or prints included.</p>
+<p>The best way for me to give you an accurate sense of what fits your day is a quick call — I can usually match the right coverage to your timeline in about 10 minutes. Would [two specific times] work for a call this week? Looking forward to it.</p>
+<p>[Your Name] | [Studio Name]</p>
+<h3>Template 18 — Unavailable Date Response</h3>
+<div class="section-label">SUBJECT Re: Your wedding photography enquiry — [Names]</div>
+<p>Hi [Names], Thank you so much for thinking of me for your wedding on [date] — unfortunately I&#x27;m already booked for that date. I&#x27;d hate for you to be without a great photographer, so I wanted to suggest a</p>
+<p>couple of colleagues whose work I genuinely admire: [Name 1, link] and [Name 2, link]. They have a similar aesthetic and I know they&#x27;re wonderful to work with. If your date changes, or if you ever need photography for another occasion,</p>
+<p>please don&#x27;t hesitate to reach out. Congratulations on your upcoming wedding! [Your Name] | [Studio Name]</p>
+<div class="section-label">Template 19 — Second Shooter Collaboration Email</div>
+<div class="section-label">SUBJECT Second shooting opportunity — [Your Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a wedding photographer based in [City]. I&#x27;ve been following your work for a while and I genuinely love your [specific thing — e.g., &#x27;reception lighting work&#x27; / &#x27;candid couple moments&#x27;].</p></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I have a wedding coming up on [date] at [venue] and I&#x27;m looking for a talented second shooter. Coverage needed: [hours]. Rate: $[amount]. If you&#x27;re available and interested, I&#x27;d love to send you the details. Always</p>
+<p>looking to build relationships with photographers whose work I respect. [Your Name] | [Studio Name] | [Instagram Handle]</p>
+<h3>Template 20 — Press / Real Wedding Submission</h3>
+<div class="section-label">SUBJECT Real wedding submission — [Names] at [Venue]</div>
+<p>Hi [Editor Name], I&#x27;d love to submit a recent wedding for consideration in [Publication]. The wedding: [Names], [date], at [Venue Name] in [City]. Style: [style description — 2 sentences]. What makes it special: [2-3 sentences on what&#x27;s</p>
+<p>genuinely distinctive about this wedding — the details, the emotion, the setting]. I have [number] high-resolution images available, along with vendor credits and a quote from the couple. The couple has given their permission for publication.</p>
+<p>Happy to send a full press pack. [Your Name] | [Studio Name] | [Portfolio Link]</p>
+<h3>Template 21 — Album Upsell Email (Post-Gallery)</h3>
+<div class="section-label">SUBJECT Your wedding album — have you thought about it, [Names]?</div>
+<p>Hi [Names], Now that you&#x27;ve had a chance to look through your gallery, I wanted to bring up something I genuinely believe every couple should have: a wedding album. Screens fade, hard drives fail, social media changes. A physical album is the</p>
+<p>one thing that lasts. I offer [album type] starting at $[amount]. I handle the entire design process — you simply approve the layout and the album ships to your door. If you&#x27;re interested, I&#x27;d love to talk through options. Just reply here or call me</p>
+<p>at [Phone]. [Your Name] | [Studio Name]</p>
+<div class="section-label">Template 22 — Elopement / Intimate Wedding Package Email</div>
+<div class="section-label">SUBJECT Elopement and intimate wedding photography — [Your Name]</div>
+<p>Hi [Names], Thank you for reaching out about your elopement / intimate wedding on [date]. I have a specific package designed exactly for this: [package name] — [hours] hours of coverage, [deliverables], for $[amount].</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Wedding Photographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Honestly, some of my favourite work comes from small, intentional weddings. The intimacy changes everything about how the day feels and photographs. Would you like to hop on a quick call? I have availability [two times]. [Your Name] | [Studio Name]</p>
+<h3>Template 23 — Off-Season Discount Campaign</h3>
+<div class="section-label">SUBJECT [Month] wedding photography — a special offer for [Names]</div>
+<p>Hi [Names], I have limited availability for weddings in [off-peak months — e.g., November through February] and I offer a [X]% discount for bookings in those months. If your date falls in that window and you haven&#x27;t confirmed your photographer</p>
+<p>yet, I&#x27;d love to have a conversation. My portfolio: [link]. Packages start at $[amount] before the discount. Happy to hop on a call any time this week: [two times]. [Your Name] | [Studio Name]</p>
+<h3>Template 24 — Referral Ask (Past Couples)</h3>
+<h3>SUBJECT A quick ask — [Names]</h3>
+<p>Hi [Names], I hope you&#x27;re both doing wonderfully — it&#x27;s been [timeframe] since your wedding and I still love looking at your gallery. A personal ask: if you know any couples who are recently engaged and</p>
+<p>looking for a photographer, I&#x27;d so appreciate the mention. Word-of-mouth from couples I&#x27;ve loved working with is genuinely how I build my business. A simple &#x27;my photographer was amazing, you should talk to her&#x27; goes further than you might think.</p>
+<p>Thank you for even thinking of it. [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">11</span></div></section></main></body></html>

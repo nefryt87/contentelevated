@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Insurance Agents</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>INSURANCE AGENT</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a professional, consistent brand that earns trust before you say a word.</p>
+<h3>SECTION 1: BRAND POSITIONING</h3>
+<p>Your brand is not your logo. It&#x27;s how people feel when they interact with you. For insurance agents, trust is the product. Everything visual should reinforce that you are reliable, clear, and human. Your Brand Promise (Fill in the Blank)</p>
+<p>I help [target client] protect [what matters most to them] so they can [emotional benefit — e.g., &#x27;sleep at night knowing their family is covered&#x27;]. Example: &#x27;I help young families protect their home and income so they can focus</p>
+<p>on building their life — not worrying about what could go wrong.&#x27;</p>
+<h3>Brand Personality (Pick 2–3)</h3>
+<p class="template-line">• Trustworthy — You do what you say</p>
+<p class="template-line">• Approachable — No jargon, no pressure</p>
+<p class="template-line">• Expert — You know your stuff and share it freely</p>
+<p class="template-line">• Local — You&#x27;re part of the community</p>
+<p class="template-line">• Proactive — You reach out before clients have to ask</p>
+<h3>SECTION 2: COLOR PALETTE</h3>
+<p>Colors create instant emotional associations. Insurance brands should feel stable and trustworthy — not flashy or aggressive. Here are two recommended palettes:</p>
+<div class="section-label">Palette A: Classic Trust (Recommended for Traditional Markets)</div>
+<p>Navy Blue</p>
+<h3>#1B2D4F</h3>
+<p>Primary — Trust, Authority Gold</p>
+<h3>#C9A84C</h3>
+<p>Accent — Premium, Warmth Light Gray</p>
+<h3>#F4F6F9</h3>
+<p>Background — Clean, Open White</p>
+<h3>#FFFFFF</h3>
+<p>Text BG — Clarity, Space</p>
+<div class="section-label">Palette B: Modern Trust (For Younger or Digital-First Agents)</div>
+<p>Deep Teal</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>#2A7F7F</h3>
+<p>Primary — Calm, Growth Warm White</p>
+<h3>#FAF9F6</h3>
+<p>Background Charcoal</p>
+<h3>#2D2D2D</h3>
+<p>Body Text Soft Gold</p>
+<h3>#E8C872</h3>
+<p>CTA / Highlights</p>
+<h3>SECTION 3: TYPOGRAPHY</h3>
+<h3>USE FONT NOTES</h3>
+<p>Headlines Montserrat Bold or Raleway Bold Strong, modern, readable. Available free on</p>
+<h3>Canva &amp; Google Fonts.</h3>
+<p>Subheadings Montserrat Medium Creates clear hierarchy without competing with headlines. Body Copy Open Sans or Lato Clean and legible on both print and screen. Accent / CTA Montserrat Bold Italic Use sparingly for emphasis — one key message per design.</p>
+<h3>SECTION 4: CANVA TEMPLATE GUIDE</h3>
+<p>All templates below are available free on Canva. Search the exact term, choose a</p>
+<div class="section-label">template, then apply your brand colors and fonts. This takes about 20–30 minutes per</div>
+<h3>template set.</h3>
+<h3>Social Media Templates</h3>
+<h3>TEMPLATE TYPE CANVA SEARCH TERM BEST FOR</h3>
+<p>Instagram Post (1:1) &quot;insurance agent instagram post</p>
+<h3>template&quot;</h3>
+<p>Educational tips, client wins, myth- busting Instagram Story (9:16) &quot;professional insurance story</p>
+<h3>template&quot;</h3>
+<p>Quick tips, polls, behind the scenes Facebook Post (1.91:1) &quot;financial services facebook post&quot; Community content, referral asks, testimonials LinkedIn Banner &quot;professional linkedin banner template&quot; First impression for B2B / commercial prospects</p>
+<p>Facebook Cover Photo &quot;insurance agency facebook cover&quot; Agency branding, trust signals, contact info Print &amp; Presentation Templates</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">• Business Card — Search: &#x27;professional financial services business card&#x27; —</p>
+<p>include name, phone, email, website, and your carrier/agency logo</p>
+<p class="template-line">• Flyer — Search: &#x27;insurance agent flyer template&#x27; — great for open houses,</p>
+<p>community events, referral partners</p>
+<p class="template-line">• Rate Comparison Sheet — Search: &#x27;comparison table Canva&#x27; — customize for</p>
+<p>side-by-side coverage options</p>
+<p class="template-line">• Email Signature Banner — Search: &#x27;email signature banner Canva&#x27; — add to</p>
+<p>Gmail or Outlook for instant professionalism</p>
+<p class="template-line">• Quote Follow-Up PDF — Search: &#x27;business proposal one page Canva&#x27; — brand</p>
+<p>your quote summaries before emailing</p>
+<h3>SECTION 5: LOGO &amp; HEADSHOT GUIDELINES</h3>
+<p>Headshot Best Practices For insurance agents, your headshot IS your brand. It&#x27;s the first thing people see on Google, LinkedIn, and Facebook. Follow these guidelines:</p>
+<p class="template-line">• Background: Solid color or clean office setting — no busy backgrounds</p>
+<p class="template-line">• Outfit: Business casual or business professional — avoid busy patterns</p>
+<p class="template-line">• Expression: Genuine smile — approachable, not stiff</p>
+<p class="template-line">• Lighting: Natural light from a window or a simple ring light — avoid harsh</p>
+<p>overhead lighting</p>
+<p class="template-line">• Framing: Head and shoulders, slightly off-center — professional but not</p>
+<p>passport-photo stiff</p>
+<p class="template-line">• Consistency: Use the SAME headshot across all platforms for brand recognition</p>
+<p>Logo Usage</p>
+<p class="template-line">• Always use your agency or carrier logo at the same size relative to your</p>
+<p>headshot</p>
+<p class="template-line">• On social: Your headshot &gt; logo — people buy from people</p>
+<p class="template-line">• On print: Logo gets equal or more prominence — print is about the agency brand</p>
+<p class="template-line">• Minimum logo size: Never display smaller than 1 inch wide in print; 100px on</p>
+<p>digital</p>
+<p class="template-line">• File formats: Keep a PNG with transparent background for flexibility</p>
+<h3>SECTION 6: LAUNCH CHECKLIST</h3>
+<p>Use this checklist to launch or refresh your brand in under a week.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Insurance Agents Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>DAY 1 — Foundation</h3>
+<p class="template-line">✓ Choose your color palette (A or B from this guide)</p>
+<p class="template-line">✓ Select your 2 fonts and install on Canva (brand kit feature)</p>
+<p class="template-line">✓ Write your Brand Promise statement</p>
+<p class="template-line">✓ Update your headshot if more than 2 years old</p>
+<h3>DAY 2–3 — Build Your Canva Templates</h3>
+<p class="template-line">✓ Create Instagram post template (search: insurance agent post)</p>
+<p class="template-line">✓ Create Facebook cover photo</p>
+<p class="template-line">✓ Design business card</p>
+<p class="template-line">✓ Build email signature banner</p>
+<p class="template-line">✓ Create 1 story template for quick-tip content</p>
+<h3>DAY 4–5 — Update Your Profiles</h3>
+<p class="template-line">✓ Update Facebook profile + cover photo</p>
+<p class="template-line">✓ Update LinkedIn banner + bio</p>
+<p class="template-line">✓ Update Google Business Profile with new headshot and description</p>
+<p class="template-line">✓ Add email signature banner to Gmail or Outlook</p>
+<p class="template-line">✓ Update any print materials or business cards</p>
+<h3>DAY 6–7 — Create Your First Week of Content</h3>
+<p class="template-line">✓ Batch-create 3 posts using your new templates</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri using Facebook Creator Studio or Buffer (free)</p>
+<p class="template-line">✓ Write captions using the AI prompt from your 90-Day Calendar</p>
+<p class="template-line">✓ Post your first piece and engage with every comment for the first hour</p>
+<p>Consistency beats perfection. Show up with the same look, the same message, and the same value — and trust compounds.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

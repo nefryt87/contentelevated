@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90 Day Social Calendar · Month 3</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">90-Day Calendar</p>
+  <h1>90 Day Social Calendar · Month 3</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Financial Advisors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>90 Day Social Calendar · Month 3</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>POST: Long-term client story — a financial journey over many years (Deep</p>
+<h3>Social Proof)</h3>
+<p>FRIDAY POST: Charitable giving and tax strategy — seasonal, high-interest topic (Edu)</p>
+<h3>Week 11</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: How inflation actually affects your retirement plan (Edu — evergreen)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>STORY: Poll — &#x27;Where are you in your financial journey?&#x27; (Engage + Lead Intel) FRIDAY POST: &#x27;My philosophy on wealth — what I believe financial planning is really about&#x27; (Brand)</p>
+<h3>Week 12</h3>
+<h3>DAY CONTENT IDEA</h3>
+<p>MONDAY POST: New year financial goals guide — &#x27;Here&#x27;s where to start&#x27; (Seasonal)</p>
+<h3>WEDNESDA</h3>
+<h3>Y</h3>
+<p>POST: Thank-you post — celebrating clients, referrals, and milestones (Relationship) FRIDAY POST: Book a complimentary financial review — &#x27;Start the year with a clear</p>
+<h3>plan&#x27; (Final CTA)</h3>
+<p>AI Caption Prompt for This Month Write 12 social media captions for a financial advisor/wealth manager for deepen relationships &amp; generate referrals. Mix: 4 educational posts, 4 trust/story posts, 4 engagement or CTA posts.</p>
+<p>Each under 200 words, plain language, no specific investment advice. Ends with a question or CTA. Firm: [Firm Name]. Advisor: [Your Name]. Compliance note: for review before posting. Number them 1–12.</p>
+<h3>PLATFORM QUICK GUIDE</h3>
+<p>LinkedIn (Primary Platform for Financial Advisors)</p>
+<p class="template-line">• Best for: HNW prospects, business owners, professionals, referral partners</p>
+<p>(CPAs, attorneys)</p>
+<p class="template-line">• Post type: Long-form thought leadership, market commentary, financial planning</p>
+<p>insights, client stories</p>
+<p class="template-line">• Best time: Tuesday–Thursday, 7–9am or 12–1pm</p></div>
+  <div class="footer"><span>90 Day Social Calendar · Month 3</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Financial Advisors Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p class="template-line">• Tip: Long-form posts (500–1000 words) consistently outperform short posts on</p>
+<p>LinkedIn for advisors — depth signals expertise Facebook</p>
+<p class="template-line">• Best for: Mass affluent clients (45–65), community trust, local reputation</p>
+<p class="template-line">• Post type: Educational tips, market updates, community involvement, client</p>
+<p>milestone celebrations</p>
+<p class="template-line">• Best time: Tuesday–Thursday, 10am–2pm</p>
+<p class="template-line">• Tip: Facebook Groups for local business owners or retirees can be high-value</p>
+<p>lead sources YouTube / Video</p>
+<p class="template-line">• Highest-trust content format for financial advisors — a 3-minute market update</p>
+<p>video builds more trust than 10 text posts</p>
+<p class="template-line">• Recommended cadence: monthly market update video + occasional financial</p>
+<p>planning explainer</p>
+<p class="template-line">• AI writes your video scripts — you record once, repurpose as podcast,</p>
+<p>newsletter, and social clips</p></div>
+  <div class="footer"><span>90 Day Social Calendar · Month 3</span><span class="page-number">04</span></div>
+</section></main></body></html>

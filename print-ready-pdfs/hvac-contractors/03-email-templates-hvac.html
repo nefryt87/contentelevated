@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Communication Template Pack</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#07111d; --panel:#0d1a28; --panel2:#132539; --steel:#627286; --muted:#516174; --paper:#fff4ea; --cool:#ff8a3d; --heat:#ffd0a8; --line:rgba(7,17,29,.16); }
+      * { box-sizing:border-box; } body { margin:0; background:#cfd8e3; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; } .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:radial-gradient(circle at 14% 9%, color-mix(in srgb,var(--cool) 20%,transparent), transparent 2.35in), radial-gradient(circle at 96% 16%, color-mix(in srgb,var(--heat) 16%,transparent), transparent 2.4in), linear-gradient(135deg,var(--paper),#fff 56%,#e9eef5); }
+      .page::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(7,17,29,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(7,17,29,.045) 1px,transparent 1px); background-size:.34in .34in; mask-image:radial-gradient(circle at 50% 42%, black, transparent 78%); pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.05in; top:-.35in; width:3.4in; height:10.4in; border-radius:999px; background:linear-gradient(180deg,color-mix(in srgb,var(--cool) 10%,transparent),transparent 45%,color-mix(in srgb,var(--heat) 10%,transparent)); transform:rotate(-12deg); pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; } .wordmark { color:var(--ink); font-size:12px; font-weight:950; letter-spacing:.18em; text-transform:uppercase; } .wordmark small { display:block; margin-top:8px; color:var(--steel); font-size:8.5px; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--cool) 38%,transparent); background:rgba(255,255,255,.58); color:var(--panel); border-radius:999px; padding:10px 14px; font-size:9px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+      .kicker,.eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; margin:0 0 17px; color:var(--cool); font-size:9px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; } .kicker::before,.eyebrow-line::before { content:""; width:44px; height:1px; background:linear-gradient(90deg,var(--cool),var(--heat)); }
+      h1,h2 { position:relative; z-index:2; margin:0; font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; } h1 { max-width:6.3in; margin-top:.82in; font-size:58px; line-height:.9; } h1 span { color:var(--heat); } h2 { margin:16px 0 12px; font-size:29px; line-height:1; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--muted); font-size:11px; line-height:1.48; } .lead { max-width:5.15in; margin-top:.28in; font-size:15px; line-height:1.5; color:#334458; }
+      .cover-panel { position:absolute; left:.58in; right:.58in; bottom:.76in; z-index:2; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; } .dark-card { border-radius:22px; background:linear-gradient(135deg,var(--panel),var(--panel2)); padding:24px; color:#edf7ff; box-shadow:0 28px 72px rgba(7,17,29,.18); } .dark-card p { color:rgba(237,247,255,.72); }
+      .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; } .stat { border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:13px; background:rgba(255,255,255,.045); } .stat strong { display:block; color:var(--cool); font-size:22px; font-weight:950; } .stat span { display:block; margin-top:6px; color:rgba(237,247,255,.7); font-size:8px; font-weight:900; letter-spacing:.12em; line-height:1.35; text-transform:uppercase; }
+      .footer { position:absolute; left:.58in; right:.58in; bottom:.31in; z-index:2; display:flex; justify-content:space-between; color:rgba(81,97,116,.78); font-size:8px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.38in; border:1px solid rgba(7,17,29,.12); border-radius:22px; background:rgba(255,255,255,.72); padding:25px; box-shadow:0 20px 58px rgba(7,17,29,.08); }
+      .system-title { margin:17px 0 10px; border-radius:14px; border:1px solid color-mix(in srgb,var(--cool) 24%,transparent); background:linear-gradient(135deg,rgba(13,26,40,.96),rgba(19,37,57,.94)); color:#edf7ff; padding:12px 14px; font-size:10px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
+      .label-line { color:var(--heat); font-weight:950; letter-spacing:.11em; text-transform:uppercase; font-size:9px; margin-top:13px; } .tip { margin:12px 0; border-left:3px solid var(--heat); padding:10px 0 10px 13px; background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 12%,transparent),transparent 76%); color:#415268; font-size:10px; line-height:1.45; }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; border-radius:50%; margin-top:7px; background:var(--cool); } .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; border:1px solid color-mix(in srgb,var(--cool) 30%,transparent); border-radius:8px; color:var(--cool); font-weight:950; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book"><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><p class="kicker" style="margin-top:.78in;">Field-Ready Growth System</p><h1>Client Communication Template Pack</h1><p class="lead">Done-for-you emails and texts for estimates, service agreements, seasonal campaigns, reviews, and referrals.</p><div class="cover-panel"><div class="dark-card"><p style="font-size:10px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--heat);margin-bottom:12px;">Built for service companies</p><p>Turn follow-up, seasonal demand, reviews, content, and customer communication into a repeatable operating system.</p></div><div class="dark-card"><div class="stat-grid"><div class="stat"><strong>24</strong><span>templates</span></div><div class="stat"><strong>90</strong><span>days</span></div><div class="stat"><strong>AI</strong><span>assisted</span></div><div class="stat"><strong>0</strong><span>guesswork</span></div></div></div></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>01</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><h2>HOW TO USE THESE TEMPLATES</h2>
+<p class="bullet"><span></span>Replace all [brackets] with customer name, job details, and company</p>
+<p>information.</p>
+<p class="bullet"><span></span>Works as email, SMS text, and customer portal messages — shorten to 2-3</p>
+<p>sentences for texts.</p>
+<p class="bullet"><span></span>The best HVAC communication feels like it comes from a neighbor who</p>
+<p>happens to be an expert — warm, plain-spoken, and straight to the point.</p>
+<p class="bullet"><span></span>Always personalize the first line. AI does this in seconds.</p>
+<p class="eyebrow-line">SECTION 1: ESTIMATES &amp; CONVERSION</p>
+<h2>Estimate Confirmation — Same Day</h2>
+<p>SUBJECT Your HVAC estimate from [Company Name], [First Name]</p>
+<p>BODY Hi [First Name],</p>
+<h2>Thanks for having us out today — it was great meeting you and seeing your</h2>
+<p>setup.</p>
+<p>Here&#x27;s a summary of what we discussed:</p>
+<p>Job: [brief description]</p>
+<p>Estimate: $[amount]</p>
+<p>Timeline: We could have this done by [timeframe]</p>
+<p>If you have any questions about what&#x27;s included or want to talk through</p>
+<p>options, just call or text me at [Phone] — happy to walk you through it.</p>
+<p>Looking forward to helping you out.</p>
+<h2>[Your Name] | [Company Name] | [Phone]</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>02</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><h2>Estimate Follow-Up — Day 2</h2>
+<h2>SUBJECT Checking in on your estimate — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>Just wanted to follow up on the estimate I left you for [job type]. Did you have a</p>
+<p>chance to look it over?</p>
+<p>Happy to answer any questions, go over financing options, or adjust the scope</p>
+<p>if needed. Just give me a call or text.</p>
+<h2>[Your Name] | [Company Name] | [Phone]</h2>
+<h2>Estimate Follow-Up — Day 5 (Value Add)</h2>
+<h2>SUBJECT A couple of things worth knowing — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>Following up again on the estimate for [job type].</p>
+<p>A few things that might be helpful:</p>
+<p class="bullet"><span></span>[Energy savings point — e.g., &#x27;A high-efficiency system typically saves</p>
+<p>homeowners $300-600/year on energy costs&#x27;]</p>
+<p class="bullet"><span></span>[Financing option if available — e.g., &#x27;We offer 0% financing for 18 months on</p>
+<p>qualifying installs&#x27;]</p>
+<p class="bullet"><span></span>[Urgency note if relevant — e.g., &#x27;We&#x27;re booking [season] installs about 2-3</p>
+<p>weeks out right now&#x27;]</p>
+<h2>No pressure at all — just wanted to make sure you had everything you need to</h2>
+<p>make the decision that&#x27;s right for you.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>03</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><h2>[Your Name] | [Company Name] | [Phone]</h2>
+<h2>Estimate Follow-Up — Day 14 (Final)</h2>
+<h2>SUBJECT Last check-in on your estimate — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>I wanted to reach out one last time about the estimate for [job type].</p>
+<p>If you&#x27;ve decided to go another direction, no worries at all — I just didn&#x27;t want</p>
+<p>to let it fall through the cracks in case you still needed it.</p>
+<p>If timing was the issue, we can also talk about a phased approach. Either way,</p>
+<p>we&#x27;re here when you&#x27;re ready.</p>
+<h2>[Your Name] | [Company Name] | [Phone]</h2>
+<p class="eyebrow-line">SECTION 2: SERVICE AGREEMENTS &amp;</p>
+<h2>RETENTION</h2>
+<h2>Post-Repair Service Agreement Offer</h2>
+<h2>SUBJECT A way to avoid this happening again — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>Really glad we could get your [system type] back up and running today.</p>
+<p>I wanted to mention something while it&#x27;s fresh: what you experienced today —</p>
+<p>[brief description of what failed] — is one of the most common things we catch</p>
+<p>on routine maintenance before it becomes an emergency call.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>04</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><p>Our service agreement covers:</p>
+<p class="bullet"><span></span>Annual tune-up (spring and fall)</p>
+<p class="bullet"><span></span>Priority scheduling — you jump the queue during peak season</p>
+<p class="bullet"><span></span>[X]% discount on parts and labor</p>
+<p class="bullet"><span></span>[Any warranty extension]</p>
+<p>Annual investment: $[amount]. For most of our customers that&#x27;s less than one</p>
+<p>emergency call.</p>
+<p>Interested? I can set you up over the phone right now. Just call [Phone] or</p>
+<p>reply here.</p>
+<h2>[Your Name] | [Company Name]</h2>
+<h2>New Install Agreement Offer</h2>
+<h2>SUBJECT Protecting your new investment — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<h2>Your new [system] is all set — thanks again for choosing [Company Name]!</h2>
+<p>Now that your equipment is installed, I wanted to make sure you knew about</p>
+<p>our maintenance agreement. New systems that are maintained annually last 4-</p>
+<h2>6 years longer on average and run significantly more efficiently — which</h2>
+<p>means lower energy bills and fewer repairs.</p>
+<h2>Our agreement: $[amount]/year. It covers everything you&#x27;d want — annual</h2>
+<p>tune-up, priority booking, and a discount on any parts or labor if something</p>
+<p>does come up.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>05</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><p>Reply here or call [Phone] to get it set up. Takes about 2 minutes.</p>
+<h2>[Your Name] | [Company Name]</h2>
+<h2>Agreement Renewal — 60 Days Out</h2>
+<p>SUBJECT Your maintenance agreement is coming up for renewal, [First Name]</p>
+<p>BODY Hi [First Name],</p>
+<p>Your HVAC maintenance agreement with [Company Name] renews in about</p>
+<p>60 days — I wanted to give you plenty of notice.</p>
+<p>As a loyal customer, your renewal rate is $[amount] — same as last year. We&#x27;ll</p>
+<p>also honor that rate through the end of next month if you want to lock it in</p>
+<p>early.</p>
+<p>Questions? Just call or text [Phone].</p>
+<h2>[Your Name] | [Company Name]</h2>
+<h2>Seasonal Tune-Up Campaign</h2>
+<h2>SUBJECT Time to get your [AC/heating] ready for [season] — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>[Season] is right around the corner, and I wanted to reach out to our past</p>
+<p>customers before we open the schedule to new clients.</p>
+<p>We&#x27;re booking [spring AC / fall heating] tune-ups now. Last year we filled up</p>
+<h2>[timeframe] before peak season — and trust me, you don&#x27;t want to be calling</h2>
+<p>us when it&#x27;s [X] degrees outside and the wait is 3 weeks.</p>
+<p>A tune-up runs $[amount] and takes about an hour. It&#x27;s the best $[amount]</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>06</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><p>you&#x27;ll spend on your home this [season].</p>
+<p>Book here: [link] or call [Phone]. Let&#x27;s get you squared away.</p>
+<h2>[Your Name] | [Company Name]</h2>
+<h2>Lapsed Customer Win-Back</h2>
+<h2>SUBJECT Haven&#x27;t heard from you in a while — [First Name]</h2>
+<p>BODY Hi [First Name],</p>
+<p>It&#x27;s been a couple of years since we last serviced your system, and I just</p>
+<p>wanted to check in.</p>
+<p>Your [system type] would be approximately [age] years old now. Systems at</p>
+<p>that age benefit a lot from a tune-up — it can add years of life and prevent the</p>
+<p>kind of breakdown that always seems to happen on the hottest/coldest day of</p>
+<p>the year.</p>
+<p>If you&#x27;d like to get a tune-up or have us take a look at anything, reply here or</p>
+<p>call [Phone]. We&#x27;d love to earn your business back.</p>
+<h2>[Your Name] | [Company Name]</h2>
+<p class="eyebrow-line">SECTION 3: REVIEWS, REFERRALS &amp;</p>
+<h2>PARTNERSHIPS</h2>
+<h2>Post-Job Review Request</h2>
+<h2>SUBJECT Quick favor — [First Name]</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>07</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><p>BODY Hi [First Name],</p>
+<p>Really glad we could take care of that [job type] for you today.</p>
+<p>If you were happy with the work, I&#x27;d really appreciate a quick Google review —</p>
+<p>it takes about 2 minutes and it means the world to a local business like ours.</p>
+<p>Here&#x27;s the direct link: [Google Review Link]</p>
+<p>Thanks so much — it was great working with you.</p>
+<h2>[Your Name] | [Company Name]</h2>
+<h2>Referral Request</h2>
+<p>SUBJECT Know anyone who could use a great HVAC contractor?</p>
+<p>BODY Hi [First Name],</p>
+<p>Glad everything went smoothly with your [job type]!</p>
+<p>If you have a neighbor, friend, or family member who needs HVAC work —</p>
+<p>repair, installation, or just a tune-up — I&#x27;d really appreciate the referral. I&#x27;ll take</p>
+<p>great care of anyone you send our way.</p>
+<p>[Referral incentive if applicable: &#x27;And as a thank-you, we offer $X off your next</p>
+<p>service for every referral who books with us.&#x27;]</p>
+<h2>[Your Name] | [Company Name] | [Phone]</h2>
+<h2>Realtor / Property Manager Introduction</h2>
+<h2>SUBJECT Introduction — [Company Name], HVAC Contractor, [City]</h2>
+<p>BODY Hi [Name],</p>
+<h2>My name is [Your Name] — I run [Company Name], an HVAC contractor</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>08</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Template Pack</div></div><div class="content-card"><p>serving [City/area]. We specialize in [services — e.g., residential service and</p>
+<p>installation / commercial HVAC / multi-unit buildings].</p>
+<p>I work with a lot of homeowners and property owners, and I wanted to reach</p>
+<p>out because I know [real estate agents / property managers] often need a</p>
+<p>reliable HVAC contractor they can call on for their clients and properties.</p>
+<p>I&#x27;d love to be on your short list. Happy to answer any questions or stop by to</p>
+<p>introduce ourselves properly.</p>
+<h2>[Your Name] | [Company Name] | [Phone]</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>09</span></div></section></main></body></html>

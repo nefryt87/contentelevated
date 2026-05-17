@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Patient Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f0f4ed; --paper:#fbfcf7; --ink:#141a17; --muted:#5f6c61;
+  --accent:#6e8a77; --accent2:#b7c7bb; --dark:#17211b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Complete Growth Bundle</span></div></div><div class="pill">Care growth system</div></div><p class="kicker">Premium business system</p><h1>Patient Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Dentists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Dentists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>DENTAL PRACTICE</h3>
+<h3>PATIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>26 done-for-you templates for every stage of the patient journey Reminders • Reactivation • Case Acceptance • Reviews • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your patient&#x27;s name, treatment, and practice</p>
+<p>details.</p>
+<p class="template-line">• Keep the tone warm and human — patients respond to empathy, not</p>
+<p>clinical formality.</p>
+<p class="template-line">• These work as emails, SMS texts, and patient portal messages — shorten</p>
+<p>to 2–3 sentences for text.</p>
+<p class="template-line">• Always personalize the first line — AI does this in seconds.</p>
+<p class="template-line">• Save top performers as templates in your practice management software</p>
+<p>(Dentrix, Eaglesoft, etc.).</p>
+<h3>SECTION 1: APPOINTMENT REMINDERS &amp; NO-</h3>
+<h3>SHOW RECOVERY</h3>
+<p>Reminder — 72 Hours Before</p>
+<div class="section-label">SUBJECT Your appointment at [Practice Name] — [Date]</div>
+<p>BODY Hi [First Name], Just a friendly reminder that you have an appointment with Dr. [Name] at [Practice Name] on [Date] at [Time]. If you need to reschedule, please give us a call at [Phone] or reply to this</p>
+<p>message at least 24 hours in advance — we&#x27;d love to find a time that works better for you. We&#x27;re looking forward to seeing you! [Practice Name] | [Phone] | [Address] Reminder — 24 Hours Before</p>
+<h3>SUBJECT See you tomorrow, [First Name]!</h3>
+<p>BODY Hi [First Name], Just a quick reminder that your appointment is tomorrow, [Date] at [Time]. A few things to note:</p>
+<p class="template-line">- Please arrive 5 minutes early</p>
+<p class="template-line">- If you have dental insurance, bring your insurance card</p></div><div class="footer"><span>Patient Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Let us know if anything has changed with your health history since your last</p>
+<p>visit If you have any last-minute questions or need to reschedule, call us at [Phone]. See you tomorrow! The [Practice Name] Team Anxiety-Reducing Pre-Visit Email</p>
+<div class="section-label">SUBJECT What to expect at your appointment — [First Name]</div>
+<p>BODY Hi [First Name], We know dental visits can feel a little nerve-wracking — you&#x27;re not alone, and we want you to feel completely comfortable before you arrive. Here&#x27;s exactly what will happen at your visit:</p>
+<p>1. A warm welcome at the front desk (no clipboard marathon — we&#x27;ll make it quick) 2. A conversation with Dr. [Name] about how you&#x27;ve been feeling and any concerns 3. [Cleaning / exam / treatment] — we&#x27;ll explain everything as we go and check</p>
+<p>in with you throughout If you feel anxious at any point, just let us know. We can adjust the pace, take breaks, or talk through what we&#x27;re doing. Your comfort is always our priority. See you [Date] at [Time]. Dr. [Name] &amp; the [Practice Name] Team</p>
+<p>No-Show Recovery</p>
+<div class="section-label">SUBJECT We missed you today — hope you&#x27;re okay, [First Name]</div>
+<p>BODY Hi [First Name], We noticed you weren&#x27;t able to make your appointment today — no worries at all, life happens. Whenever you&#x27;re ready to rebook, just reply here or call us at [Phone] and we&#x27;ll find a time that works for you.</p>
+<p>If something made it difficult to come in — whether it&#x27;s scheduling, cost, or something else — please let us know. We want to make sure you get the care you need. Looking forward to seeing you soon. The [Practice Name] Team Waitlist Activation — Open Slot</p>
+<div class="section-label">SUBJECT Good news — we have an opening [Date], [First Name]</div>
+<p>BODY Hi [First Name], Great news — we just had a cancellation and have an opening on [Date] at [Time]. Would you like to take this slot? If so, just reply &#x27;yes&#x27; or call us at [Phone] and we&#x27;ll get you confirmed right away. Hope to see you soon!</p>
+<p>[Practice Name] | [Phone]</p>
+<h3>SECTION 2: PATIENT REACTIVATION</h3>
+<h3>SEQUENCES</h3></div><div class="footer"><span>Patient Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Reactivation — 12 Months Lapsed</h3>
+<div class="section-label">SUBJECT It&#x27;s been a while — we&#x27;ve been thinking of you, [First Name]</div>
+<p>BODY Hi [First Name], It&#x27;s been about a year since your last visit at [Practice Name] and we wanted to reach out and check in. Regular cleanings and check-ups are the best way to catch small issues</p>
+<p>before they become big (and expensive) ones — and it&#x27;s always easier to stay on top of things than to play catch-up. We&#x27;d love to get you back in. Reply here or call [Phone] to schedule — we&#x27;ll work around your schedule. Hope you&#x27;re doing well!</p>
+<p>The [Practice Name] Team</p>
+<h3>Reactivation — 18+ Months Lapsed</h3>
+<h3>SUBJECT A personal note from Dr. [Name]</h3>
+<p>BODY Hi [First Name], I wanted to reach out personally — it&#x27;s been over a year since we last saw you at [Practice Name] and I just wanted to check in. If life got in the way (it always does), I completely understand. If there&#x27;s a</p>
+<p>specific reason you haven&#x27;t been back — cost, anxiety, scheduling — please let me know. I&#x27;d rather talk it through than have you go without care. We have flexible scheduling, payment plan options, and a team that genuinely</p>
+<p>cares about making your visit comfortable. I hope to see you soon. Dr. [Name] | [Practice Name] | [Phone] End-of-Year Insurance Benefits</p>
+<div class="section-label">SUBJECT Your dental benefits expire December 31 — use them or lose them</div>
+<p>BODY Hi [First Name], Quick heads-up — your dental insurance benefits reset on January 1, which means any unused benefits expire December 31. If you haven&#x27;t used your benefits for a cleaning, exam, or any outstanding treatment this year, now is the time.</p>
+<p>Here&#x27;s what your plan likely covers before year-end:</p>
+<p class="template-line">- Routine cleaning and exam (usually 100% covered)</p>
+<p class="template-line">- X-rays</p>
+<p class="template-line">- Any treatment you&#x27;ve been putting off (fillings, crowns, etc. — often 50–80%</p></div><div class="footer"><span>Patient Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>covered) We have limited availability in December — call [Phone] or book online at [link] to grab a slot before they fill up. The [Practice Name] Team Back-to-School Recall</p>
+<div class="section-label">SUBJECT Time for the kids&#x27; back-to-school dental checkup!</div>
+<p>BODY Hi [First Name], With school starting soon, it&#x27;s a great time to get the kids&#x27; dental checkups done before the busy season kicks in. Regular checkups catch cavities early, make sure teeth are developing</p>
+<p>properly, and (bonus) teach kids that going to the dentist is no big deal. We have family appointment slots available — we can often see siblings back- to-back to save you trips. Call [Phone] or book online at [link].</p>
+<p>Hope everyone&#x27;s ready for a great school year! The [Practice Name] Team</p>
+<h3>SECTION 3: CASE ACCEPTANCE &amp; TREATMENT</h3>
+<h3>FOLLOW-UP</h3>
+<p>Treatment Plan Follow-Up — Day 3</p>
+<div class="section-label">SUBJECT Following up on your treatment plan, [First Name]</div>
+<p>BODY Hi [First Name], I wanted to follow up after your visit and see if you have any questions about the treatment plan we discussed. I know it can be a lot to take in during an appointment — so if anything is</p>
+<p>unclear, or if you&#x27;d like me to walk through it again, please don&#x27;t hesitate to reach out. A quick note: [Most common concern for this treatment — e.g., &#x27;A crown protects a tooth that&#x27;s vulnerable to fracture. The longer we wait, the more</p>
+<p>likely a fracture becomes — which can turn a crown into an extraction.&#x27;] Whenever you&#x27;re ready to schedule, just reply here or call [Phone]. We&#x27;ll take great care of you. Dr. [Name] | [Practice Name] Financing Options Email</p>
+<div class="section-label">SUBJECT Making your treatment more manageable — payment options</div>
+<p>BODY Hi [First Name], I wanted to make sure you&#x27;re aware of the payment options we offer at [Practice Name] — we never want cost to be a barrier to getting the care you need. We currently offer:</p>
+<p class="template-line">- In-office payment plans: [details]</p>
+<p class="template-line">- CareCredit financing: 0% interest for [X months] on qualifying treatments</p></div><div class="footer"><span>Patient Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Insurance maximization: we&#x27;ll help you use your benefits strategically to</p>
+<p>minimize out-of-pocket costs If you&#x27;d like to talk through the numbers before scheduling, just call us at [Phone] and we can walk through it together. Dr. [Name] | [Practice Name] Treatment Plan — Day 21 (Final Follow-Up)</p>
+<div class="section-label">SUBJECT One last check-in on your treatment plan, [First Name]</div>
+<p>BODY Hi [First Name], I don&#x27;t want to flood your inbox, so this will be my last follow-up on the treatment plan we discussed. I simply want to make sure you have everything you need to make a decision</p>
+<p>that&#x27;s right for you. If the timing isn&#x27;t right now, that&#x27;s completely okay — we&#x27;ll keep your chart on file and you can reach out whenever you&#x27;re ready. If you do have questions — about the procedure, the cost, the timeline, or anything else — I&#x27;m here.</p>
+<p>Wishing you well either way. Dr. [Name] | [Practice Name] | [Phone]</p>
+<h3>SECTION 4: REVIEWS, REFERRALS &amp; NEW</h3>
+<h3>PATIENT WELCOME</h3>
+<p>Google Review Request</p>
+<div class="section-label">SUBJECT A small favour — it makes a real difference</div>
+<p>BODY Hi [First Name], We hope you had a great experience at [Practice Name] today! If you have 2 minutes, we&#x27;d be incredibly grateful if you left us a Google review. It helps other families in [City] find a dentist they can trust — and it</p>
+<p>means a lot to our team. Here&#x27;s the direct link: [Google Review Link] Thank you so much! The [Practice Name] Team</p>
+<h3>Referral Request — Post Positive Visit</h3>
+<h3>SUBJECT Know someone who needs a great dentist?</h3>
+<p>BODY Hi [First Name], It was so great to see you today — thank you for trusting us with your care. If you have a friend, family member, or coworker who&#x27;s been putting off finding a dentist, we&#x27;d love to take care of them the same way we take care of you.</p>
+<p>We&#x27;re always welcoming new patients and do our best to make first-timers feel completely comfortable — especially anyone who&#x27;s been anxious about dental visits. Thanks for being such a wonderful patient. Dr. [Name] &amp; the [Practice Name] Team</p></div><div class="footer"><span>Patient Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dentists<span>Patient Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>New Patient Welcome — Pre-Visit</p>
+<div class="section-label">SUBJECT Welcome to [Practice Name] — we&#x27;re so glad you chose us</div>
+<p>BODY Hi [First Name], We&#x27;re thrilled to welcome you to [Practice Name]! Your first appointment is on [Date] at [Time] and we&#x27;re already looking forward to meeting you. To help you feel prepared:</p>
+<p class="template-line">- Arrive 10 minutes early to complete a brief intake form</p>
+<p class="template-line">- Bring your insurance card if you have dental coverage</p>
+<p class="template-line">- Bring a list of any medications you currently take</p>
+<p class="template-line">- Feel free to bring a list of questions — no question is too small</p>
+<p>If you experience any dental anxiety, please let us know when you arrive. We have a calm, unhurried approach and will make sure you feel comfortable throughout. See you soon! Dr. [Name] &amp; the [Practice Name] Team New Patient Welcome — Post First Visit</p>
+<div class="section-label">SUBJECT It was so great to meet you, [First Name]</div>
+<p>BODY Hi [First Name], It was a genuine pleasure meeting you today — thank you for choosing [Practice Name] for your dental care. Here&#x27;s a quick recap from today&#x27;s visit:</p>
+<p class="template-line">- What we found: [brief clinical summary in plain language]</p>
+<p class="template-line">- What we recommend: [next steps — cleaning, treatment, or &#x27;all looks great,</p>
+<p>see you in 6 months&#x27;]</p>
+<p class="template-line">- Your next appointment: [date if scheduled / &#x27;call us at [Phone] to book&#x27;]</p>
+<p>If you have any questions between now and your next visit, don&#x27;t hesitate to reach out. We&#x27;re always here. Looking forward to taking care of you for years to come. Dr. [Name] | [Practice Name] | [Phone]</p></div><div class="footer"><span>Patient Templates</span><span class="page-number">08</span></div></section></main></body></html>

@@ -1,0 +1,161 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Personal Stylists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Personal Stylists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PERSONAL STYLIST</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to close-out, package presentation, referral partnerships, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING CONVERSION</h3>
+<h3>Template 1 — Same-Day Inquiry Response</h3>
+<div class="section-label">SUBJECT Re: Your personal styling inquiry — [First Name]</div>
+<p>Hi [First Name], Thank you so much for reaching out — what you shared about [one specific detail from their inquiry] really resonated with me. That&#x27;s exactly the kind of [wardrobe challenge / style goal / life change] I love working with.</p>
+<p>A little about how I&#x27;d approach your situation: [2-3 sentences on your specific approach for their stated goal]. I&#x27;d love to learn more about what you&#x27;re hoping to achieve. Would a 20-</p>
+<p>minute discovery call work for you this week? I have availability [two specific times]. [Your Name] | [Business Name] | [Phone]</p>
+<h3>Template 2 — Follow-Up Day 3</h3>
+<div class="section-label">SUBJECT Checking in on your styling inquiry — [First Name]</div>
+<p>Hi [First Name], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get lost! I was thinking about what you mentioned about [their goal/challenge] and had one thought: [one specific, genuinely useful insight about their situation].</p>
+<p>Still available for a call [two times] this week. [Your Name] | [Business Name]</p>
+<h3>Template 3 — Follow-Up Day 8</h3>
+<h3>SUBJECT One more note — [First Name]</h3>
+<p>Hi [First Name], One last follow-up before I close out my inquiry folder for the month. I put together a few thoughts on [their specific situation] that I think would be useful whether or not we end up working together: [brief, genuine style insight</p>
+<p>relevant to what they shared]. If the timing isn&#x27;t right just now, please do reach back out whenever it is — I&#x27;d genuinely love to work with you. [Your Name] | [Business Name]</p>
+<h3>Template 4 — Post-Discovery Call Follow-Up</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SUBJECT Following our call — [First Name]</h3>
+<p>Hi [First Name], It was so wonderful speaking with you today — I loved hearing about [their goal/situation]. What I heard you most needing: [mirror back their 3 key points in their own words]. That&#x27;s exactly what I&#x27;m best at helping with.</p>
+<p>I&#x27;d recommend [service/package name] at $[amount]. Here&#x27;s what it includes: [brief description]. Here&#x27;s what changes for you: [outcome description]. To confirm your booking: [next step — pay deposit / sign agreement / book</p>
+<p>session]. I&#x27;ll send everything over once you confirm. Can&#x27;t wait to get started. [Your Name] | [Business Name]</p>
+<h3>SECTION 2: CLIENT EXPERIENCE &amp; SESSION</h3>
+<h3>MANAGEMENT</h3>
+<h3>Template 5 — Wardrobe Audit Prep Email</h3>
+<div class="section-label">SUBJECT Getting ready for your wardrobe audit — [First Name]</div>
+<p>Hi [First Name], Your wardrobe audit is on [date] at [time] — I&#x27;m so excited! Before we meet, a few things to help us make the most of our time together: Your wardrobe: Make sure everything is accessible — nothing packed away,</p>
+<p>all drawers openable. The messier it is, the better — that&#x27;s what we&#x27;re here for. Before I arrive, spend 5 minutes thinking about:</p>
+<p class="template-line">- Three pieces you reach for every week without thinking</p>
+<p class="template-line">- Three pieces you never wear but can&#x27;t let go of</p>
+<p class="template-line">- One outfit you wish you had</p>
+<p>What to expect: [brief description of the audit process — how long, what we&#x27;ll do, what decisions you&#x27;ll make together]. It&#x27;s an exciting process, not a stressful one. See you on [date]! [Your Name] | [Business Name]</p>
+<h3>Template 6 — Pre-Shopping Session Prep</h3>
+<div class="section-label">SUBJECT Your personal shopping session — what to know, [First Name]</div>
+<p>Hi [First Name], Your personal shopping session is on [date] at [time], starting at [location/store]. What to wear: Something easy to take on and off — a simple bodysuit or fitted t-shirt and leggings works best.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>What to bring: [list — measurements if we discussed, any specific items you want to match to, your phone for photos] What to expect: We&#x27;re aiming for [X] complete looks. I&#x27;ll have done research</p>
+<p>in advance and we&#x27;ll move efficiently — but we&#x27;ll also enjoy the process! Budget: We discussed $[budget] — I&#x27;ll keep everything within this unless we find something exceptional worth discussing. See you on [date]! [Your Name] | [Business Name]</p>
+<h3>Template 7 — Post-Wardrobe-Audit Follow-Up</h3>
+<div class="section-label">SUBJECT Your wardrobe audit — recap and next steps, [First Name]</div>
+<p>Hi [First Name], What a session! I&#x27;m still thinking about [one specific thing that stood out about their wardrobe or their goals]. Here&#x27;s a quick recap of what we accomplished:</p>
+<p class="template-line">- Reviewed [X] pieces — [Y] to keep, [Z] to donate/sell, [W] to mend/alter</p>
+<p class="template-line">- Identified your core capsule: [brief description]</p>
+<p class="template-line">- Key gaps we found: [list 2-3 specific gaps]</p>
+<p>The gaps I&#x27;m most excited to fill for you: [describe why these specific gaps matter for their stated goals]. The natural next step is [shopping session / virtual shopping / capsule planning call]. I have availability [timeframe]. Want to lock it in?</p>
+<p>[Your Name] | [Business Name]</p>
+<h3>Template 8 — Post-Package Completion Email</h3>
+<div class="section-label">SUBJECT What we&#x27;ve built together — [First Name]</div>
+<p>Hi [First Name], I&#x27;m genuinely proud of what we&#x27;ve created for you. Let me summarise what you now have: [List what was accomplished — wardrobe audited, shopping done, outfits built, capsule established]</p>
+<p>What this means for you: [2-3 sentences on the practical change in their daily life — getting dressed in the morning, showing up to work with confidence, having the right thing to wear for any occasion].</p>
+<p>A few resources to keep the momentum going: [any apps, books, or principles you recommend] I&#x27;d love to continue working with you on [next service / seasonal update / ongoing styling]. Happy to discuss if the timing is right.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Thank you for trusting me with your wardrobe — and your confidence. [Your Name] | [Business Name]</p>
+<h3>SECTION 3: PACKAGES &amp; PRICING</h3>
+<h3>Template 9 — Pricing Enquiry Response</h3>
+<div class="section-label">SUBJECT Personal styling investment — [First Name]</div>
+<p>Hi [First Name], Thanks for asking — I&#x27;d love to walk you through how my services work. [Service 1 — e.g., Wardrobe Audit]: $[amount]. [One sentence on what&#x27;s included and the outcome]. [Service 2 — e.g., Personal Shopping Session]: $[amount]. [One sentence].</p>
+<p>[Service 3 — e.g., Total Style Transformation Package]: $[amount]. [One sentence — describe the transformation, not just the components]. What guides my investment: [1-2 sentences on your experience, the</p>
+<p>preparation you do, the lasting transformation clients experience]. The best way to know which is right for you is a quick discovery call — I can usually get a clear sense of what will make the most difference in about 10 minutes.</p>
+<p>Would [two specific times] work for a call this week? [Your Name] | [Business Name]</p>
+<h3>Template 10 — Gift Voucher Email</h3>
+<div class="section-label">SUBJECT Gift styling sessions for [Name/occasion] — [First Name]</div>
+<p>Hi [First Name], A styling session makes one of the most thoughtful gifts — it&#x27;s personal, lasting, and genuinely changes how someone feels about themselves every morning. Gift vouchers are available for any of my services: [List services and values]</p>
+<p>The gift process: purchase a voucher, I&#x27;ll send a beautifully presented digital voucher via email, and your recipient books their session whenever they&#x27;re ready (valid for 12 months). To arrange: reply here or call [Phone]. Payment by [payment methods]. [Your</p>
+<p>Name] | [Business Name]</p>
+<h3>Template 11 — Seasonal Package / Limited Offer</h3>
+<div class="section-label">SUBJECT [Season] styling — a time-limited offer, [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [First Name], With [season] approaching, I&#x27;m offering a [season] wardrobe edit — specifically designed to [outcome: refresh your wardrobe for the new season / transition your capsule without buying everything new / build 10 new outfits</p>
+<p>from pieces you already own]. What&#x27;s included: [brief description]. Investment: $[amount] — [X]% less than my standard [service]. Available for [X] clients this [month/season]. If you&#x27;ve been thinking about working with a stylist, this is a great starting</p>
+<p>point. Interested? Reply here or book a call: [link]. [Your Name] | [Business Name]</p>
+<div class="section-label">Template 12 — Package Renewal / Ongoing Styling Offer</div>
+<div class="section-label">SUBJECT Keeping the momentum going — [First Name]</div>
+<p>Hi [First Name], It&#x27;s been [timeframe] since we worked together on your [service], and I&#x27;ve been thinking about you! A lot of my clients find that a [seasonal check-in / quarterly style update /</p>
+<p>annual wardrobe refresh] keeps the momentum going and prevents the wardrobe from quietly drifting back to its old habits. I offer a [service name] specifically for returning clients — $[amount]. It&#x27;s a</p>
+<p>lighter touch than a full audit but keeps everything intentional and working for your current life. Interested? Happy to find time for a quick call to discuss. [Your Name] | [Business Name]</p>
+<h3>SECTION 4: REFERRAL PARTNER OUTREACH</h3>
+<div class="section-label">Template 13 — Photographer Partnership Introduction</div>
+<div class="section-label">SUBJECT Introduction — [Your Name] + [Photographer Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a personal stylist based in [City] specialising in [niche]. I&#x27;ve been admiring your [headshot / branding / wedding] photography — your work is stunning. I reach out because I think we could genuinely help each other&#x27;s clients. So</p>
+<p>many of my clients are booking photography sessions, and so many photographers have clients who arrive unsure of what to wear. I&#x27;d love to explore a mutual referral arrangement or even a combined &#x27;style + shoot&#x27; package.</p>
+<p>Would you be open to a quick call? [Your Name] | [Business Name] | [Instagram]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 14 — Executive Coach Introduction</h3>
+<div class="section-label">SUBJECT Personal styling for executive presence — [Your Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a personal stylist specialising in [corporate / executive / professional] styling for [women / professionals] in [City]. I reached out because I believe our work is deeply complementary. You help</p>
+<p>clients develop their executive presence from the inside out. I help them from the outside in — so that how they show up visually reflects the confidence and authority they&#x27;re building with you.</p>
+<p>I&#x27;d love to explore either a referral relationship or a guest styling session for your clients. [Your Name] | [Business Name] | [Phone] | [Instagram]</p>
+<h3>Template 15 — Monthly Partner Value Touch</h3>
+<h3>SUBJECT [Month] styling note — [Your Name]</h3>
+<p>Hi [Name], Quick note this month with something that might be useful for your clients: [One specific styling insight relevant to their audience — e.g., for a photographer: &#x27;The 3 colours that always photograph badly regardless of</p>
+<p>lighting — worth mentioning to clients before a shoot&#x27; / for an executive coach: &#x27;One wardrobe signal that unconsciously undermines executive presence in a room&#x27;]. Happy to be a resource if any of your clients need styling support.</p>
+<p>[Your Name] | [Business Name]</p>
+<h3>Template 16 — Post-Referral Thank-You</h3>
+<div class="section-label">SUBJECT Thank you for the introduction — [First Name]</div>
+<p>Hi [Name], Thank you so much for introducing me to [Client Name] — that meant a lot and I&#x27;m going to take excellent care of them. I&#x27;ll make sure their experience reflects the standard you set by recommending me. [Your Name] | [Business Name]</p>
+<h3>SECTION 5: REPUTATION MANAGEMENT</h3>
+<div class="section-label">Template 17 — Post-Service Google Review Request</div>
+<h3>SUBJECT A personal ask — [First Name]</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [First Name], Working with you on your [service] has been such a pleasure — I&#x27;m still thinking about [one specific thing from their session or transformation]. A personal ask: if you&#x27;re happy with how everything came together, a Google</p>
+<p>review would genuinely help other people in [City] find a stylist they can trust. It takes about 2 minutes. Direct link: [Google Review Link] No pressure at all. Thank you for being such a wonderful client. [Your Name] | [Business Name]</p>
+<h3>Template 18 — Instagram Testimonial Request</h3>
+<div class="section-label">SUBJECT A small ask about your transformation — [First Name]</div>
+<p>Hi [First Name], You look absolutely incredible and I&#x27;m so proud of what you&#x27;ve built. Would you be open to sharing a brief testimonial — even just a sentence or two — about your experience? I&#x27;d love to feature it on my Instagram. You&#x27;re</p>
+<p>welcome to share before/after photos if you&#x27;re comfortable, or keep it text- only. It helps other women who are where you were six months ago find the courage to invest in themselves. No pressure — I just wanted to ask. [Your Name] | [Business Name]</p>
+<h3>Template 19 — Positive Review Response</h3>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [First Name]! It was such a joy working with you on your [service] — [one specific personal detail if their review mentions it]. Your transformation genuinely made my week. — [Your Name], [Business Name]</p>
+<p>[Respond within 24 hours. Personal, warm, include business name for SEO.]</p>
+<h3>Template 20 — Negative Review Response</h3>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hi [First Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client. I take this seriously and I&#x27;d love the opportunity to understand what happened and</p>
+<p>make it right. Please reach out directly at [Phone] or [Email]. — [Your Name], [Business Name] [Never argue publicly. Move it offline. Your composure builds trust even out of a negative review.]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 21 — Virtual Styling Introduction</h3>
+<h3>SUBJECT Virtual personal styling — [Your Name]</h3>
+<p>Hi [First Name], Thank you for your enquiry! I&#x27;d love to let you know that I offer virtual styling sessions for clients who aren&#x27;t based in [City] or who prefer to work remotely. Virtual services include: [list your virtual offerings — e.g., virtual wardrobe</p>
+<p>audit via video call, digital lookbook creation, online personal shopping with curated links]. The process is surprisingly effective — many of my clients prefer it for its flexibility. Would a discovery call work to talk through what would make the most</p>
+<p>difference for you? [link / two times] [Your Name] | [Business Name]</p>
+<h3>Template 22 — Corporate / Team Styling Workshop</h3>
+<div class="section-label">SUBJECT Corporate styling workshop — [Your Name]</div>
+<p>Hi [Name], I&#x27;m reaching out about a service I offer for corporate teams: professional presence and personal styling workshops. A [60/90]-minute session covering: building a professional wardrobe that</p>
+<p>works for your role, dressing with authority and intention, and practical capsule wardrobe strategies for busy professionals. These work particularly well for [onboarding programmes / leadership development / team building / women&#x27;s ERG events].</p>
+<p>Happy to discuss a customised session for your team. [Your Name] | [Business Name] | [Phone]</p>
+<div class="section-label">Template 23 — Style Challenge Email (Lead Nurture)</div>
+<div class="section-label">SUBJECT A free 5-day style challenge — [First Name]</div>
+<p>Hi [First Name], I&#x27;m running a free [5-Day Capsule Wardrobe Challenge / Style Confidence</p>
+<div class="section-label">Week / Get Dressed Without Stress Challenge] starting [date].</div>
+<p>Each day I&#x27;ll send you one practical action and one insight that will change how you approach your wardrobe. To join: [link / reply here] It&#x27;s completely free and takes about 10 minutes a day. Perfect if you&#x27;ve been</p>
+<p>curious about personal styling but aren&#x27;t sure where to start. [Your Name] | [Business Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Stylists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 24 — Annual Style Review Invitation</h3>
+<h3>SUBJECT Your annual style review — [First Name]</h3>
+<p>Hi [First Name], It&#x27;s been about a year since we worked together on your [service], and I&#x27;d love to schedule your annual style review. Your life and wardrobe both change over the course of a year — and what</p>
+<p>worked 12 months ago may need a refresh. An annual review keeps your wardrobe intentional and working for your current life rather than your past one. [Service details and price for returning clients]. Available [timeframe]. Here&#x27;s</p>
+<h3>how to book: [link]</h3>
+<p>Looking forward to seeing you again. [Your Name] | [Business Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">11</span></div></section></main></body></html>

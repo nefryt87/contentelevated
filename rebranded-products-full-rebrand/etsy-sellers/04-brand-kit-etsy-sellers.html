@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #111618; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfdfc,#edf5f4 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#3e9a9f 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff946d 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#3e9a9f,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #5c6668; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#3e9a9f 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #3e9a9f; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #3e9a9f; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #3e9a9f; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #3e9a9f; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #3e9a9f; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #5c6668; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#3e9a9f 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#11191c,color-mix(in srgb,#11191c 76%,#3e9a9f)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff946d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#3e9a9f 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #3e9a9f; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#3e9a9f 18%,transparent); color: #3e9a9f; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #3e9a9f; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#3e9a9f 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #5c6668; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #3e9a9f; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Shop growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for commerce-ready momentum</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Etsy Sellers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>ETSY SELLER</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, handmade-premium typography, 8 Canva template strategies, and a 7-</p>
+<h3>day brand launch checklist</h3>
+<h3>WHY YOUR BRAND MAKES BUYERS CHOOSE</h3>
+<h3>YOU OVER 7 MILLION OTHER SELLERS</h3>
+<p>On Etsy, buyers frequently find multiple listings for similar products. Your brand — your shop banner, your product photography style, your social media aesthetic — is what makes them choose you. A cohesive, distinctive visual identity communicates</p>
+<p>professionalism, care, and quality before a buyer reads a single word of your listing. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for Etsy sellers.</p>
+<h3>PALETTE 1: HANDMADE WARMTH</h3>
+<p>For sellers whose brand is warm, artisan, and authentically handcrafted. Think craft paper, natural textures, warm neutrals, and the feeling of something made by hand with care.</p>
+<h3>DEEP NAVY</h3>
+<h3>#1A3A5C</h3>
+<h3>WARM AMBER</h3>
+<h3>#E8892A</h3>
+<h3>WARM SAND</h3>
+<h3>#D4C4A0</h3>
+<h3>CREAM</h3>
+<h3>#FFF8F0</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Navy (#1A3A5C): shop banner, logo, primary text — trustworthy and</p>
+<p>established</p>
+<p class="template-line">• Warm Amber (#E8892A): accent for CTAs, sale announcements, star elements,</p>
+<p>seasonal highlights</p>
+<p class="template-line">• Warm Sand (#D4C4A0): background for product flat lays, secondary graphic</p>
+<p>elements</p>
+<p class="template-line">• Cream (#FFF8F0): all backgrounds — warm and inviting, beautiful behind</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>product photography</p>
+<h3>Typography</h3>
+<p>HEADINGS: Playfair Display — sophisticated serif. Communicates quality and craftsmanship. BODY: Lato — clean, warm, professional. Reads perfectly on mobile, where most Etsy buyers browse. ACCENT: Playfair Display Italic — for product names, seasonal collection titles, thank-</p>
+<p>you card text.</p>
+<h3>PALETTE 2: MODERN MAKER</h3>
+<p>For sellers with a cleaner, more contemporary, design-led aesthetic. Think white space, bold contrast, and the confidence of a premium independent brand.</p>
+<h3>CHARCOAL</h3>
+<h3>#2A2A2A</h3>
+<h3>TERRACOTTA</h3>
+<h3>#C4714A</h3>
+<h3>LIGHT STONE</h3>
+<h3>#F0EBE3</h3>
+<h3>WHITE</h3>
+<h3>#FFFFFF</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Charcoal (#2A2A2A): all primary text and strong elements — bold and modern</p>
+<p class="template-line">• Terracotta (#C4714A): primary accent — warm, contemporary, highly giftable</p>
+<p>aesthetic</p>
+<p class="template-line">• Light Stone (#F0EBE3): all backgrounds — warm neutral that photographs</p>
+<p>beautifully</p>
+<p class="template-line">• White (#FFFFFF): maximum clean space around product photos</p>
+<h3>Typography</h3>
+<p>HEADINGS: Montserrat Bold — strong and modern. Works for both print (packaging) and digital (social). BODY: Open Sans — clean and professional across all sizes and platforms. ACCENT: Montserrat Light (wide tracking) — for collection names, product labels, minimal overlays.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Etsy Shop Banner</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;Etsy shop banner template&#x27; or &#x27;online store banner&#x27;. 3360×840px (Etsy shop banner size). Your shop name in your heading font, a brief tagline describing what you sell, a beautiful product photo or lifestyle image as background. Update seasonally — a</p>
+<p>fresh banner signals an active, current shop.</p>
+<h3>Template 2: Product Flat Lay Post</h3>
+<p>Search &#x27;product flat lay Instagram&#x27; or &#x27;handmade product post&#x27;. Your product styled beautifully on a clean background (white, linen, marble, wood — whatever suits your aesthetic). Your shop name in small type, bottom corner. No cluttered backgrounds —</p>
+<p>the product is the hero. Create 10+ of these for your core products.</p>
+<h3>Template 3: Gift Guide Carousel</h3>
+<p>Search &#x27;gift guide Instagram carousel&#x27; or &#x27;product collection slideshow&#x27;. Cover slide: &#x27;[Occasion] Gift Guide from [Shop Name]&#x27;. 1 product per slide: product name, price, brief benefit. Final slide: &#x27;Shop at [Etsy link]&#x27;. Create one for every major gift occasion —</p>
+<p>Christmas, Mother&#x27;s Day, Valentine&#x27;s Day, birthdays. These save at very high rates.</p>
+<h3>Template 4: Behind-the-Scenes Story</h3>
+<p>Search &#x27;process story Instagram&#x27; or &#x27;maker behind the scenes&#x27;. Your hands at work, materials laid out, work in progress. Brief text overlay: &#x27;Making your [product] with love.&#x27; or &#x27;This week in the studio.&#x27; Your shop name. Post to Instagram stories 3-5x per week</p>
+<p>— this humanises your brand more than any other content.</p>
+<h3>Template 5: Pinterest Product Pin</h3>
+<p>Search &#x27;Pinterest product pin template&#x27; or &#x27;Etsy product Pinterest&#x27;. Tall format (2:3 ratio — 1000×1500px). Product photo at top, product name and your shop name below, price optional, CTA: &#x27;Shop at [Etsy link]&#x27;. This is the standard Pinterest pin format — create</p>
+<p>one for every product and pin to relevant boards.</p>
+<h3>Template 6: Sale / Promotion Announcement</h3>
+<p>Search &#x27;sale announcement Instagram&#x27; or &#x27;discount post template&#x27;. Bold, eye-catching. &#x27;[X]% OFF&#x27; in large text. Brief details of what&#x27;s on sale and for how long. Shop name and link. Use your accent colour (Amber or Terracotta) heavily for these — high contrast drives attention.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Etsy Sellers Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Customer Review Graphic</h3>
+<p>Search &#x27;customer review Instagram&#x27; or &#x27;testimonial post handmade&#x27;. Feature the most specific and emotional line from a 5-star review. Customer&#x27;s first name or just &#x27;5-star review&#x27;. Your shop name. These are incredibly powerful social proof — schedule one</p>
+<p>per week. Buyers read other buyers&#x27; words more than any other content.</p>
+<h3>Template 8: Packaging Reveal / Unboxing Post</h3>
+<p>Search &#x27;product packaging Instagram&#x27; or &#x27;unboxing post template&#x27;. Show your packaging beautifully — tissue paper, stickers, ribbon, thank-you card. Your shop name in corner. &#x27;Every order packed with love.&#x27; These build perceived value and make buyers</p>
+<p>excited about the full experience of ordering from you.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit. Order any packaging</p>
+<p>materials that need to match (ribbon, tissue, stickers).</p>
+<p class="template-line">✓ Day 2: Update your Etsy shop banner using Template 1. Update your shop logo if</p>
+<p>applicable.</p>
+<p class="template-line">✓ Day 3: Update your Instagram bio, profile photo, and create 3 Instagram highlight</p>
+<p>covers: Shop, Behind the Scenes, Reviews.</p>
+<p class="template-line">✓ Day 4: Create 10 product flat lay post overlays using Template 2 — apply to your 10</p>
+<p>best product photos.</p>
+<p class="template-line">✓ Day 5: Set up or refresh your Pinterest profile. Create 5 boards and pin 10 products</p>
+<p>to each with keyword-rich descriptions.</p>
+<p class="template-line">✓ Day 6: Create 5 customer review graphics using Template 7 — schedule one per</p>
+<h3>week for 5 weeks.</h3>
+<p class="template-line">✓ Day 7: Design your packaging thank-you card / insert using your palette. Get it</p>
+<p>printed at [local print shop / Moo / Vistaprint].</p>
+<p class="template-line">✓ [A consistent brand across your Etsy shop, Instagram, and Pinterest is the visual</p>
+<p>shorthand that tells buyers they are dealing with a professional, established seller who cares about every detail.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

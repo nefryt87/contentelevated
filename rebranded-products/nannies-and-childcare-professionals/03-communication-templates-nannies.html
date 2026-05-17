@@ -1,0 +1,205 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates Nannies</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #18130f; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8ef,#f2e8dc 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7657 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6b888 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7657,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #6c6256; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7657 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7657; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7657; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7657; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7657; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #6c6256; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7657 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#211810,color-mix(in srgb,#211810 76%,#9b7657)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6b888; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7657 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7657; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7657 18%,transparent); color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7657; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7657 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #6c6256; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7657; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Client experience system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Communication Templates Nannies</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for warm service polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nannies &amp; Childcare Professionals</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>NANNY</h3>
+<p>Professional Communication Template Pack 24 done-for-you templates: family inquiries, interview follow-ups, daily updates, agreements, difficult conversations, and references</p>
+<h3>SECTION 1: FAMILY INQUIRIES &amp; INTERVIEWS</h3>
+<p>T1 — Family Inquiry Response</p>
+<h3>SUBJECT Re: Nanny inquiry — [Your Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for reaching out — your family sounds wonderful and the role you&#x27;ve described is exactly the kind of placement I love being part of. [2-3 sentences showing you&#x27;ve read their inquiry carefully — reference their</p>
+<p>children&#x27;s ages, the hours, anything specific they mentioned.] A few questions before we go further: [2-3 specific questions — e.g., &#x27;What does a typical day look like for your children?&#x27; / &#x27;Are there any specific</p>
+<p>routines or approaches that are important to you?&#x27; / &#x27;Is there anything particular you are looking for beyond the basics?&#x27;] I would love to arrange a call to learn more about your children and your family&#x27;s needs. I am available [two specific times] this week.</p>
+<p>Warm regards, [Your Name] | [Phone] | [Email] T2 — Platform First Message</p>
+<h3>SUBJECT Care platform — send directly</h3>
+<p>Hello [Name]! I came across your listing and I think I could be a wonderful fit for your family. [One specific sentence showing you read their listing — e.g., &#x27;I have extensive experience with the [age] stage and your approach to routine really resonates with me.&#x27;]</p>
+<p>A little about me: [2-3 sentences — experience, qualifications, approach]. I would love to learn more about your children and discuss the role. Would a call this week work? [Your Name] T3 — Interview Confirmation</p>
+<h3>SUBJECT Looking forward to meeting you — [Your Name]</h3>
+<p class="template-line">Dear [Name], I&#x27;m so looking forward to our meeting on [date] at [time] at [location / video call]. I&#x27;ll make sure to bring: [list — e.g., my CV, reference letters, first aid certificate, DBS/background check].</p>
+<p>Is there anything specific you&#x27;d like me to prepare or think about before we meet? I want to make the most of our time together. See you [day]! [Your Name] | [Phone] T4 — Post-Interview Follow-Up</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Thank you for meeting with me — [Your Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for taking the time to meet with me [today/yesterday] — it was genuinely lovely to learn about your children and your family. [One or two specific things you loved — e.g., &#x27;The way [Child&#x27;s Name]</p>
+<p>immediately showed me their drawing collection was just the sweetest thing&#x27; / &#x27;Your approach to [specific parenting value they shared] really resonated with me.&#x27;] I left feeling genuinely excited about this role and I believe my experience</p>
+<p>with [relevant age/area] would be a wonderful fit for your family. I am ready to move forward at any time and happy to discuss any remaining questions. Please do not hesitate to reach out. Warm regards, [Your Name] | [Phone]</p>
+<h3>SECTION 2: RATES &amp; AGREEMENTS</h3>
+<p>T5 — Rate Discussion Email</p>
+<h3>SUBJECT Rate discussion — [Your Name]</h3>
+<p class="template-line">Dear [Name], I am delighted to be in conversation about this role — I wanted to address the rate question directly so we are both clear. My rate is $[amount] gross per hour / $[amount] gross per week. This reflects</p>
+<p>[brief explanation — e.g., my [X] years of experience with children of your children&#x27;s ages, my first aid certification, and my commitment to ongoing professional development]. For this rate you can expect: [brief description — hours covered, activities,</p>
+<p>any additional duties included]. Before I can give you a final number, it would help to know your budget range — that way we can be honest with each other about whether this is likely to work. Warm regards, [Your Name] T6 — Working Agreement Introduction</p>
+<h3>SUBJECT Working agreement — let&#x27;s make this formal</h3>
+<p class="template-line">Dear [Name], I am so excited to be moving forward with this role — I genuinely believe we are going to work wonderfully together. Before we start, I would love for us to put a simple working agreement in place. It does not need to be complicated — it just means we are both clear</p>
+<p>from day one on hours, duties, pay, holiday entitlement, sick leave, and notice period. This protects both of us and prevents the small misunderstandings that can sometimes arise in even the best nanny-family relationships.</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>I can send a draft for you to review, or we can go through it together on a call. Which would you prefer? Warm regards, [Your Name] T7 — Rate Increase Notice</p>
+<h3>SUBJECT Rate review — [Your Name]</h3>
+<p class="template-line">Dear [Name], I have so enjoyed my time with your family and I am grateful for the trust you place in me every day. I wanted to have a professional conversation about my rate. It has been [X months/years] since we last reviewed it, and given [rising cost of living /</p>
+<p>additional responsibilities I have taken on / my continued professional development], I would like to propose a rate of $[new amount] from [date]. I wanted to give you plenty of notice and the opportunity to discuss this</p>
+<p>openly. I hope we can find an arrangement that works for everyone. With warmth, [Your Name]</p>
+<h3>SECTION 3: DAILY FAMILY COMMUNICATION</h3>
+<p>T8 — End of Day Update</p>
+<h3>SUBJECT Text / WhatsApp — send at end of each day</h3>
+<p>Hi [Name]! Here is [Child&#x27;s Name]&#x27;s day: Morning: [brief activity summary] Lunch: [what they ate and how much] Nap: [time and duration if applicable] Afternoon: [activity] Highlight of the day: [one specific sweet or funny moment]</p>
+<p>[Any practical notes — e.g., &#x27;They finished their antibiotics at 2pm — dose given.&#x27; / &#x27;They were a little tired this afternoon — early night might be good.&#x27;] See you [tomorrow / day]! [Your Name] T9 — Developmental Observation Note</p>
+<div class="section-label">SUBJECT Lovely moment I wanted to share — [Child&#x27;s Name]</div>
+<p>Hi [Name]! I just had to share this with you — today [Child&#x27;s Name] [describe the developmental moment — e.g., &#x27;used the word [word] completely unprompted and in the right context for the first time&#x27; / &#x27;independently did [task] without any</p>
+<p>help from me — they were so proud of themselves&#x27;]. I know these moments go by so fast — I did not want you to miss it. [Your Name] 🌟 T10 — Concern Communication</p>
+<h3>SUBJECT Something I wanted to share with you</h3>
+<p class="template-line">Dear [Name], I hope everything is well with you. I wanted to share something I have noticed over the past [few days/week] — not because I am alarmed, but because I believe in keeping you fully informed about your children.</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>[Describe the observation specifically and calmly — e.g., &#x27;I have noticed [Child&#x27;s Name] seems more withdrawn than usual and has been reluctant to engage in activities they normally love.&#x27; / &#x27;I have noticed [Child&#x27;s Name] has had some difficulty with [specific area] this week.&#x27;]</p>
+<p>I may of course be reading it wrong — you know them best. But I wanted to share it so we can keep an eye on it together. Let me know if you would like to talk through it. [Your Name] T11 — Sick Child Notification</p>
+<h3>SUBJECT Important — [Child&#x27;s Name] is unwell</h3>
+<p>Hi [Name], I wanted to let you know immediately that [Child&#x27;s Name] is not feeling well today. [Specific symptoms — e.g., &#x27;They have a temperature of [X]°F / 38°C and have been quite lethargic since about [time].&#x27; / &#x27;They vomited once at [time] and haven&#x27;t eaten lunch.&#x27;]</p>
+<p>[What I have done: &#x27;I have given them Calpol at [time] as per your instructions / I am keeping them comfortable and resting / I have not given any medication and am waiting to hear from you.&#x27;] Please call me on [Phone] when you see this. I am here with them and they</p>
+<p>are comfortable. [Your Name]</p>
+<h3>SECTION 4: REFERENCES &amp; PROFESSIONAL</h3>
+<h3>MATERIALS</h3>
+<p>T12 — Reference Request Email</p>
+<h3>SUBJECT Reference request — [Your Name]</h3>
+<p class="template-line">Dear [Name], I hope you and the children are doing wonderfully. I am currently [exploring new opportunities / being considered for a wonderful new role] and the family has asked for professional references.</p>
+<p>I would be so grateful if you would be willing to either write a brief letter of reference or speak with them directly. Your perspective on my work with [Child&#x27;s Name(s)] would mean a great deal. If it would help, I am happy to send a few prompting questions or even draft</p>
+<p>something for you to review and adjust. Thank you so much for considering this. [Your Name] | [Phone] T13 — Agency Introduction Email</p>
+<h3>SUBJECT Nanny registration enquiry — [Your Name]</h3>
+<p class="template-line">Dear [Name], I am writing to enquire about registering with [Agency Name] as a professional nanny. About me: [Your Name], [X years] experience working with children aged [age range]. Qualifications: [first aid / DBS cleared / relevant education]. My</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>preferred role: [live-in / live-out / full-time / part-time / location]. I am available from [start date] and am currently seeking a long-term placement with a [type of family/setup]. I would be grateful for information about your registration process and any</p>
+<p>current placements that might be a good fit. I am happy to provide references, certificates, and a full CV on request. Warm regards, [Your Name] | [Phone] | [Email]</p>
+<h3>SECTION 5: CHALLENGING SITUATIONS</h3>
+<p>T14 — Scope Creep Conversation</p>
+<h3>SUBJECT Our arrangement — [Your Name]</h3>
+<p class="template-line">Dear [Name], I hope you know how much I value our relationship — working with your children has been one of the genuine privileges of my professional life. I wanted to have a straightforward conversation about something before it</p>
+<p>becomes a source of friction. Over the past [timeframe], my duties have expanded to include [specific examples — e.g., school run for an additional child / additional household management / weekend cover on top of my contracted hours].</p>
+<p>I am happy to continue with these additional duties — I just think it would be fair for us to formally update my working agreement to reflect them. Could we find 20 minutes to discuss this week? I want this arrangement to work brilliantly for all of us, long term.</p>
+<p>Warm regards, [Your Name] T15 — Notice of Resignation</p>
+<h3>SUBJECT My resignation — [Your Name]</h3>
+<p class="template-line">Dear [Name], This is one of the hardest messages I have written professionally. After [timeframe] with your family, I have made the difficult decision to move on, and I wanted to tell you personally rather than formally.</p>
+<p>[Genuine reason — keep it warm and honest: new opportunity / relocation / career change / further study / personal reasons]. This is not a decision I have made lightly. I will give my full [X weeks] notice and I am committed to making the</p>
+<p>transition as smooth as possible. I will write a detailed handover document and I am happy to be involved in meeting any potential replacement if you would find that helpful. Working with [children&#x27;s names] has been one of the genuine joys of my</p>
+<p>professional life. Thank you for trusting me with them. With warmth and gratitude, [Your Name] T16 — Sudden Unavailability / Sick Day</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Important — I am unable to work today</h3>
+<p class="template-line">Dear [Name], I am so sorry to message you with this news — I am unwell this morning and unable to come in today. [Brief description if appropriate — e.g., &#x27;I have a temperature and do not want to risk bringing this to the children.&#x27;]</p>
+<p>I have contacted [colleague/cover nanny name] who [is / is not] available to help — [relevant info]. I will update you as soon as I know about tomorrow. I am so sorry for the disruption to your day. [Your Name] | [Phone]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T17 — Nanny Share Inquiry Response</p>
+<h3>SUBJECT Re: Nanny share inquiry — [Your Name]</h3>
+<p class="template-line">Dear [Name], Thank you for reaching out about a nanny share arrangement — I love this model and have experience making them work brilliantly for all the families involved. [2-3 sentences on your experience with nanny shares or how you would approach one.]</p>
+<p>Before we go further, a few things that would help me understand the fit: [2-3 questions — the ages and temperaments of the children, how the families know each other, proposed hours and location, pay arrangement].</p>
+<p>A joint meet-and-greet with both families is usually the best first step. Would that be possible? [Your Name] | [Phone] T18 — Emergency Childcare Availability</p>
+<h3>SUBJECT Emergency childcare available — [Your Name]</h3>
+<p>Hi [Name]! I wanted to reach out because I have some unexpected availability [today / this week] and I am able to offer emergency childcare cover if needed. I am available [hours and dates]. Please pass this on to anyone in your</p>
+<p>network who might need a trusted, experienced hand at short notice. [Your Name] | [Phone] | DBS cleared / first aid certified T19 — Activity Planning Email to Parents</p>
+<h3>SUBJECT This week&#x27;s activities — [Child&#x27;s Name]</h3>
+<p>Hi [Name]! Here is a quick overview of what I am planning for [Child&#x27;s Name] this week: Monday: [activity and brief reason — e.g., &#x27;sensory play with water and containers — great for fine motor development&#x27;] Tuesday: [activity] Wednesday: [outing if applicable]</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Thursday: [activity] Friday: [activity or free play] Let me know if there is anything you would like me to focus on or if anything needs adjusting. [Your Name] T20 — Holiday / Time Off Request</p>
+<h3>SUBJECT Holiday request — [Your Name]</h3>
+<p class="template-line">Dear [Name], I wanted to let you know as early as possible that I am hoping to take [X days] holiday from [date] to [date]. [If within contracted holiday entitlement: &#x27;This falls within my annual leave entitlement as per our agreement.&#x27;] [If additional: &#x27;I understand this may</p>
+<p>require arrangement — I am happy to discuss how we can make this work for you.&#x27;] I wanted to give you as much notice as possible so you have plenty of time to</p>
+<h3>plan. Please let me know if you have any questions.</h3>
+<p>Thank you, [Your Name] T21 — Positive Family Reference (Template for Past Employers to Adapt)</p>
+<h3>SUBJECT Reference for [Your Name] — provided by request</h3>
+<p>To whom it may concern, I am writing to provide a reference for [Nanny Name], who worked as our family&#x27;s nanny from [dates]. [Nanny Name] cared for our [number] children aged [ages] and was an outstanding professional in every respect. [She/He/They] brought warmth,</p>
+<p>patience, and genuine expertise to every aspect of the role. I would particularly highlight [2-3 specific strengths — e.g., &#x27;an exceptional ability to manage our toddler&#x27;s big emotions with compassion and</p>
+<p>consistency&#x27; / &#x27;a wonderful natural rapport with our baby from the very first</p>
+<h3>week&#x27;].</h3>
+<p>I recommend [Nanny Name] without reservation and would welcome any enquiries at [contact details]. Yours sincerely, [Parent Name and details] T22 — Background Check / DBS Request Response</p>
+<h3>SUBJECT Re: Background check — [Your Name]</h3>
+<p class="template-line">Dear [Name], Of course — I completely understand and support the need for a thorough background check. The safety of the children in my care is my top priority. I am [DBS checked / background checked] as of [date]. My certificate number</p>
+<p>is [number] and I am happy to show the original or arrange an online check through the Update Service if preferred. Please let me know what you need from me and I will arrange it as quickly as possible. [Your Name] T23 — First Aid / Certification Expiry Notice</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">09</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Certification update — [Your Name]</h3>
+<p class="template-line">Dear [Name], I just wanted to let you know that my [First Aid / Paediatric CPR / other] certification is due for renewal in [month]. I have already booked my refresher course for [date], so I will remain fully</p>
+<p>certified throughout. I will send you my updated certificate once I receive it. Keeping my certifications current is something I take very seriously — I want you to always have complete confidence in my preparedness. [Your Name] T24 — Gratitude / Long-Term Thank-You</p>
+<h3>SUBJECT Thank you — [Your Name]</h3>
+<p class="template-line">Dear [Name], I just wanted to take a moment to say thank you. Working with [children&#x27;s names] has been one of the most meaningful things I have done professionally. Watching [specific example of growth or moment that touched you] — these are the moments I will carry with me.</p>
+<p>Thank you for the trust, the warmth, and for making me feel part of your family. With genuine gratitude, [Your Name]</p></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span class="page-number">10</span></div>
+</section></main></body></html>

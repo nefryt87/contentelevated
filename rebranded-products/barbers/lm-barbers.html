@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Free</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #f8f1e7; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#0d0a08,#16100c 70%,#070504); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c4954f 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#efcc8d 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.11) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c4954f,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #c5b7a6; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c4954f 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c4954f; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.04); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c4954f; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c4954f; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c4954f; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #c5b7a6; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c4954f 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.045); box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+.cover-panel.dark { background: linear-gradient(135deg,#070504,color-mix(in srgb,#070504 76%,#c4954f)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #efcc8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.05); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c4954f 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.05); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c4954f; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c4954f 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.052); box-shadow: 0 22px 62px rgba(0,0,0,.18); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c4954f 18%,transparent); color: #c4954f; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c4954f; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c4954f 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #c5b7a6; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c4954f; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Chair growth system</div></div>
+  <p class="kicker">Lead Magnet</p>
+  <h1>Free</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for dark shop authority</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Barbers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Free</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><h3>BARBER</h3>
+<p>5 Free AI Prompts to Fill Your Chair Copy-paste into Claude or ChatGPT — replace [brackets] — done in under 5 minutes each</p>
+<h3>How to use these prompts</h3>
+<p class="template-line">Copy and paste into Claude or ChatGPT. Replace every [bracket] with your details. Each prompt replaces 30-60 minutes of writing.</p>
+<h3>PROMPT 1: New Client DM Response</h3>
+<p class="template-line">Write a warm, professional DM response for my barbershop. A potential new client [Name] messaged asking about [booking / prices / availability / a specific style]. I want to: (1) make them feel welcome and confident they are coming to the right place, (2) answer their</p>
+<p>question directly, (3) make it easy to book. My booking process: [how clients book]. My price range: $[X]-$[X]. Under 100 words. Sign as [Your Name], [Barbershop Name].</p>
+<h3>PROMPT 2: 24-Hour Appointment Reminder</h3>
+<p class="template-line">Write a 24-hour appointment reminder message for my barbershop. Client [Name], appointment tomorrow [date] at [time]. I want to: (1) remind them warmly, (2) confirm the key details, (3) mention my cancellation policy briefly, (4) share my direct number. Under 60 words.</p>
+<p>Sign as [Your Name], [Barbershop Name].</p>
+<h3>PROMPT 3: Rebooking Reminder at Optimal Window</h3>
+<p class="template-line">Write a rebooking reminder message for a barbershop client. Client [Name] had their last cut [X weeks ago]. I want to: (1) mention their hair is at the point where a fresh cut will look sharp again, (2) make it easy to book, (3) feel personal not automated. Under 70</p>
+<p>words. Sign as [Your Name], [Barbershop Name].</p>
+<h3>PROMPT 4: Google Review Request</h3>
+<p class="template-line">Write a post-appointment Google review request message for my barbershop. Client [Name] just had [service]. I want to: (1) thank them for coming in, (2) make a warm personal ask for a Google review, (3) include the direct link, (4) make it feel personal not automated.</p>
+<p>Under 80 words. Sign as [Your Name], [Barbershop Name].</p>
+<h3>PROMPT 5: TikTok / Reel Concept Ideas (5 concepts)</h3></div>
+  <div class="footer"><span>Free</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Barbers Growth Bundle</div></div><div class="document-pill">Lead Magnet</div></div>
+  <div class="content"><p>Write 5 TikTok or Instagram Reel concept ideas for a barber. Each should have: (1) a scroll-stopping hook for the first 2 seconds, (2) a brief description of the content, (3) a caption. Topics: a transformation video, a technique breakdown, a</p>
+<p>what-to-tell-your-barber guide, a day-in-the-life at the barbershop, a style guide for a specific hair type or face shape. Barbershop name: [Barbershop Name]. Want the full system? The Barber Growth Bundle includes the AI Playbook, 90-Day Content</p>
+<p>Calendar, 24 Communication Templates, Brand Kit, and Client Intake &amp; Loyalty System. $197 at [your-link]</p></div>
+  <div class="footer"><span>Free</span><span class="page-number">04</span></div>
+</section></main></body></html>

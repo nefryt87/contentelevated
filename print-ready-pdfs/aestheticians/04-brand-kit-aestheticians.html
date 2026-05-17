@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Brand Kit</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Aestheticians Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Aestheticians Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>MED SPA AESTHETICIAN</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, premium typography, 8 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND BUILDS TRUST BEFORE</h3>
+<h3>YOUR CLIENT EVEN BOOKS</h3>
+<p>Clients choosing an aesthetician evaluate your Instagram brand before they read a single review. A polished, consistent visual identity communicates the same thing as a spotless treatment room: precision, professionalism, and a standard of care worth</p>
+<p>paying for. This kit gives you two palettes, typography pairings, and Canva template strategies built specifically for med spa aestheticians and skin specialists.</p>
+<h3>PALETTE 1: CLINICAL LUXURY</h3>
+<p>For aestheticians positioning at the premium clinical end. Think clean whites, sage, soft gold, and the quiet confidence of medical-grade skincare.</p>
+<h3>DEEP TEAL</h3>
+<h3>#2D4A5A</h3>
+<h3>CHAMPAGNE</h3>
+<h3>GOLD</h3>
+<h3>#C9A86C</h3>
+<h3>SAGE MIST</h3>
+<h3>#A8B8A8</h3>
+<h3>BLUSH WHITE</h3>
+<h3>#F5F0FA</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Teal (#2D4A5A): logo, headlines, primary text — clinical authority and</p>
+<p>premium positioning</p>
+<p class="template-line">• Champagne Gold (#C9A86C): accent for CTAs, treatment names, price</p>
+<p>presentation, VIP elements</p>
+<p class="template-line">• Sage Mist (#A8B8A8): secondary accents, background textures, dividers,</p>
+<p>wellness-adjacent content</p>
+<p class="template-line">• Blush White (#F5F0FA): all backgrounds — soft and premium, perfect for</p>
+<p>skincare aesthetics</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Typography</h3>
+<p>HEADINGS: Cormorant Garamond — editorial luxury serif. Used across high-end skincare and wellness brands globally. BODY: Jost — clean geometric sans-serif. Reads professionally across Instagram,</p>
+<h3>email, and print.</h3>
+<p>ACCENT: Playfair Display Italic — for client names in testimonials, treatment taglines, and soft luxury moments.</p>
+<h3>PALETTE 2: MODERN WELLNESS</h3>
+<p>For aestheticians with a warmer, more approachable, lifestyle-forward aesthetic. Think neutral tones, terracotta, and the warmth of a trusted skin expert.</p>
+<h3>WARM BROWN</h3>
+<h3>#4A3728</h3>
+<h3>TERRACOTTA</h3>
+<h3>#C4714A</h3>
+<h3>SAND</h3>
+<h3>#F0E8DC</h3>
+<h3>SAGE</h3>
+<h3>#8A9E8A</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Warm Brown (#4A3728): primary text and logo — earthy, trustworthy, distinct</p>
+<p>from clinical white</p>
+<p class="template-line">• Terracotta (#C4714A): accent for CTAs, seasonal campaigns, warm glow content</p>
+<p class="template-line">• Sand (#F0E8DC): backgrounds — warm and inviting, natural wellness aesthetic</p>
+<p class="template-line">• Sage (#8A9E8A): secondary accent for botanical, natural, and holistic skincare</p>
+<h3>content</h3>
+<h3>Typography</h3>
+<p>HEADINGS: Libre Baskerville — authoritative serif with warmth. Trustworthy and professional. BODY: Nunito — friendly rounded sans-serif. Warm and approachable across all platforms. ACCENT: Libre Baskerville Italic — for testimonial quotes, treatment names, and</p>
+<p>empathetic messaging.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Before &amp; After Result Post</h3></div><div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Search &#x27;before after skin Instagram&#x27; or &#x27;skincare transformation post&#x27;. Two-panel layout: before skin on left, after on right (or describe in text if not showing client photos). Brief</p>
+<p>description of treatment and timeframe. Your name and studio. HIPAA/consent note: always get explicit written consent before sharing any client photos. These are the highest-converting post type for aestheticians.</p>
+<h3>Template 2: Skin Education Carousel</h3>
+<p>Search &#x27;skincare tips carousel&#x27; or &#x27;educational slides Instagram&#x27;. 5-7 slides: cover slide with bold question or hook (&#x27;Is your SPF actually working?&#x27;), one tip or insight per slide,</p>
+<p>final CTA slide with your name and booking link. Carousels with genuine educational value save at very high rates — clients bookmark them and share them.</p>
+<h3>Template 3: Treatment Spotlight Post</h3>
+<p>Search &#x27;beauty treatment Instagram&#x27; or &#x27;facial treatment post&#x27;. Clean layout: treatment name in large heading, a brief plain-language description, who it is for, the outcome, your booking link. Create one of these for each of your treatments and use them as</p>
+<p>evergreen content throughout the year.</p>
+<h3>Template 4: Client Testimonial Graphic</h3>
+<p>Search &#x27;testimonial quote wellness&#x27; or &#x27;client review skin&#x27;. Feature the most specific and emotional line from a review. First name and treatment type below. Your studio name. These build trust before any conversation starts — schedule one per week.</p>
+<h3>Template 5: Instagram Story — Booking CTA</h3>
+<p>Search &#x27;Instagram story booking wellness&#x27; or &#x27;appointment available story&#x27;. Vertical. A soft, clean treatment room or product flat lay as background. Text: &#x27;Now booking [month] appointments&#x27; + &#x27;limited availability&#x27;. Your name and booking link. Post every</p>
+<p>time you open new booking windows.</p>
+<h3>Template 6: Google Business Profile Post</h3></div><div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Search &#x27;Google business post template&#x27; or &#x27;local business update&#x27;. Clean, professional. Treatment name, brief benefit, price point, booking link. Every GBP post improves your local search ranking — post weekly. A 10-minute investment per post generates</p>
+<p>significantly more local visibility over time.</p>
+<h3>Template 7: Skincare Myth Graphic</h3>
+<p>Search &#x27;myth vs fact social media&#x27; or &#x27;debunk graphic&#x27;. Bold &#x27;MYTH&#x27; header, the myth in quotes, the truth below in clear language. Your name. These attract significant shares and saves — skin misinformation is everywhere and clients appreciate an expert voice</p>
+<p>that&#x27;s clear and evidence-based.</p>
+<h3>Template 8: Instagram Highlight Covers</h3>
+<p>Search &#x27;highlight cover wellness&#x27; or &#x27;spa Instagram icons&#x27;. Create 8 round covers: Treatments, Reviews, Before &amp; After, Skin Tips, About Me, Booking, Homecare, Skincare FAQs. Consistent palette. First thing profile visitors see after your photo.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 8 highlight covers using</p>
+<h3>Template 8.</h3>
+<p class="template-line">✓ Day 3: Create 3 treatment spotlight posts using Template 3 — one for each of your</p>
+<p>top treatments.</p>
+<p class="template-line">✓ Day 4: Create a Google Business Profile post using Template 6 — post it</p>
+<p>immediately.</p>
+<p class="template-line">✓ Day 5: Create 5 testimonial graphics using Template 4 — schedule one per week</p>
+<p>for the next 5 weeks.</p>
+<p class="template-line">✓ Day 6: Create a booking CTA story template using Template 5 — post to stories this</p>
+<h3>week.</h3>
+<p class="template-line">✓ Day 7: Create a skin education carousel using Template 2 — schedule it for next</p>
+<h3>week.</h3></div><div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Aestheticians<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ [A consistent brand across Instagram, Google, and email creates a premium</p>
+<p>impression that justifies premium treatment pricing and builds trust before a client ever contacts you.]</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">07</span></div></section></main></body></html>

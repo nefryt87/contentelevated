@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Chiropractors</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>THE CHIROPRACTOR&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<h3>How to Fill Your Schedule, Reduce No-Shows,</h3>
+<p>and Grow Your Practice Using AI A Complete Guide for Chiropractors &amp; Chiropractic Clinics</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the Chiropractor&#x27;s Practice Growth Tool 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Filling Your Schedule and Reducing No-Shows 4. Chapter 4: Patient Retention — Turning One-Visit Patients Into Long- Term Care Plans</p>
+<p>5. Chapter 5: Building Your Referral Engine With AI 6. Chapter 6: Social Content That Educates and Attracts New Patients 7. Chapter 7: Your 30-Day AI Implementation Plan 8. BONUS: AI Prompt Cheat Sheet for Chiropractors</p>
+<h3>Chapter 1: Why AI Is the Chiropractor&#x27;s Practice</h3>
+<p>Growth Tool Most chiropractors are exceptional at patient care — and overwhelmed by everything else. Appointment reminders, follow-up calls, re-engagement outreach, social media, patient education, review requests — the list never ends. AI doesn&#x27;t treat patients. But it</p>
+<p>handles every task that prevents you from focusing on the ones who need treating.</p>
+<p class="template-line">• The No-Show Problem: The average chiropractic practice loses 15–20% of</p>
+<p>appointments to no-shows and last-minute cancellations. AI-powered reminder and reconfirmation messages cut that number significantly.</p>
+<p class="template-line">• The Drop-Off Gap: Most new chiropractic patients attend 2–3 visits before</p>
+<p>dropping off — regardless of their care plan. Poor communication between visits is the #1 reason. AI keeps you present without demanding more of your time.</p>
+<p class="template-line">• The Referral Silence: Happy patients refer — but only when prompted. Most</p>
+<p>practices never ask systematically. AI builds that ask into every patient journey automatically.</p>
+<p class="template-line">• What AI Handles vs. What You Handle: AI communicates, educates, follows</p>
+<p>up, and reminds. You diagnose, treat, and build relationships. The boundary matters.</p>
+<h3>Chapter 2: Your First 3 AI Wins — This Week</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Start here. These three quick wins take under an hour to implement and will impact your practice immediately.</p>
+<p class="template-line">• Win #1 — Appointment Reminder Sequence: Use AI to write a 3-message</p>
+<p>reminder sequence: 48 hours before, morning of, and a no-show re-engagement message. Reduce cancellations and fill gaps faster.</p>
+<p class="template-line">• Win #2 — New Patient Welcome Email: Every new patient should receive a</p>
+<p>warm, informative welcome email before their first visit — what to expect, what to bring, and why chiropractic care works. AI writes this in 2 minutes. Patient anxiety drops. Show-up rates improve.</p>
+<p class="template-line">• Win #3 — Review Request Message: Google reviews drive new patient</p>
+<p>acquisition more than almost any other factor. AI writes a friendly, non-pushy review request that goes out after a patient&#x27;s 3rd visit — the sweet spot for authentic positive reviews.</p>
+<h3>Chapter 3: Filling Your Schedule and Reducing</h3>
+<p>No-Shows A full schedule doesn&#x27;t happen by accident. It&#x27;s the result of consistent communication that keeps existing patients engaged and makes it easy for new patients to say yes.</p>
+<p class="template-line">• The New Patient Welcome Sequence: A 3-email sequence that goes out</p>
+<p>before and after a new patient&#x27;s first visit — setting expectations, reinforcing the value of their care plan, and prompting them to book their next appointment.</p>
+<p class="template-line">• The Reactivation Campaign: Every practice has a list of patients who stopped</p>
+<p>coming in. AI writes a 3-message reactivation sequence that feels personal, not mass-marketed — and converts dormant patients back to active at a meaningful rate.</p>
+<p class="template-line">• The Cancellation Recovery Message: When a patient cancels, most practices</p>
+<p>just update the schedule. AI writes a same-day recovery message that acknowledges the cancellation, offers a rebooking option, and keeps the relationship warm.</p>
+<p class="template-line">• Seasonal Outreach: AI helps you write targeted seasonal messages — back-to-</p>
+<p>school posture checks, sports injury prevention in fall, winter wellness care, spring activity prep. Timely, relevant, and high-converting.</p>
+<h3>Chapter 4: Patient Retention — Turning One-Visit</h3></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>Patients Into Long-Term Care Plans The lifetime value of a patient who completes a full care plan vs. one who drops off after 2 visits is enormous. The difference is almost always communication — specifically, what happens between visits.</p>
+<p class="template-line">• The Between-Visit Check-In: A short message 2–3 days after each visit asking</p>
+<p>how the patient is feeling and reinforcing their home care instructions. Takes 90 seconds with AI. Patients feel supported. Drop-off rates fall.</p>
+<p class="template-line">• The Care Plan Progress Email: At the midpoint of any care plan, AI writes a</p>
+<p>progress check-in that recaps improvements, reinforces why continuing matters, and addresses the most common reason patients stop: &#x27;I feel better now.&#x27;</p>
+<p class="template-line">• The Wellness Transition Message: When a patient completes their acute care</p>
+<div class="section-label">plan, most chiropractors lose them. AI writes a transition message that</div>
+<p>introduces maintenance/wellness care naturally — not as an upsell, but as the logical next step.</p>
+<p class="template-line">• The Missed Appointment Sequence: When a patient misses without</p>
+<p>cancelling, AI writes a 2-message sequence: a same-day check-in, and a 3-day</p>
+<div class="section-label">follow-up. Warm, not guilt-inducing. Reschedules more patients than silence</div>
+<p>does.</p>
+<h3>Chapter 5: Building Your Referral Engine With AI</h3>
+<p>Referrals are the most cost-effective source of new patients for any chiropractic practice. But most chiropractors never ask — not because they don&#x27;t want to, but because they don&#x27;t have a system. AI builds that system.</p>
+<p class="template-line">• The Post-Milestone Referral Ask: The best time to ask for a referral is right</p>
+<p>after a patient hits a meaningful milestone — reduced pain, improved mobility, first full night&#x27;s sleep. AI writes a milestone celebration + referral ask in one natural message.</p>
+<p class="template-line">• The Professional Referral Network: Primary care physicians, physical</p>
+<p>therapists, personal trainers, and massage therapists are your best referral sources. AI writes introduction emails and monthly value touchpoints that build those relationships without cold-calling.</p>
+<p class="template-line">• The Family Referral Prompt: When a patient mentions a family member with a</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>relevant condition, that&#x27;s a referral opportunity. AI writes a follow-up message that makes suggesting chiropractic care to a loved one feel natural and easy.</p>
+<p class="template-line">• The Review-to-Referral Pipeline: Patients who leave positive Google reviews</p>
+<p>are primed to refer. AI writes a thank-you message that acknowledges the review and gently introduces the idea of referring a friend or family member.</p>
+<h3>Chapter 6: Social Content That Educates and</h3>
+<p>Attracts New Patients Patients research chiropractors online before they ever call. The practices with consistent, educational social content get more inquiries, more trust, and more patients who show up already sold on care. AI makes that content effortless.</p>
+<p class="template-line">• The 3-Post Formula: One educational post (condition, technique, or wellness</p>
+<p>tip), one trust post (patient story, behind the scenes, your philosophy), one engagement post (myth-bust, question, seasonal tip). Post Mon/Wed/Fri.</p>
+<p class="template-line">• High-Converting Topic Categories: Posture and desk ergonomics, headache</p>
+<p>and migraine relief, sports injury recovery, pregnancy and pediatric chiropractic, sciatica and lower back pain, sleep and chiropractic, myth-busting (cracking knuckles, adjustments are dangerous, etc.).</p>
+<p class="template-line">• Batch Creating in 30 Minutes: Use AI to generate a full month of captions in</p>
+<p>one session. Your 90-Day Calendar has the post ideas — the monthly AI prompt generates all 12 captions at once.</p>
+<p class="template-line">• Patient Education Videos: Short-form video is the highest-reach format. AI</p>
+<p>writes your 30–60 second scripts — you record once, post to Instagram Reels, TikTok, and Facebook. Education builds trust faster than any other content type.</p>
+<h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+<p>Don&#x27;t try to implement everything at once. This plan gets you from reading to real results in 30 days without disrupting your clinical schedule.</p>
+<p class="template-line">• Week 1 — Patient Communication Foundation: Set up Claude or ChatGPT.</p>
+<p>Write your new patient welcome email and appointment reminder sequence. Build your no-show recovery message.</p>
+<p class="template-line">• Week 2 — Retention System: Build your between-visit check-in template. Write</p>
+<p>your care plan progress email. Create your wellness transition message.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Week 3 — Referrals and Reviews: Write your post-milestone referral ask. Set</p>
+<p>up your review request message. Draft 2 professional referral outreach emails.</p>
+<p class="template-line">• Week 4 — Social Content: Create 2 weeks of posts using your 90-Day</p>
+<p>Calendar. Batch captions with the monthly AI prompt. Schedule Mon/Wed/Fri.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for</h3>
+<p class="template-line">Copy and paste these into Claude or ChatGPT. Replace [brackets] with your practice details. Patient Communication Prompts Write a 3-message appointment reminder sequence for a chiropractic patient named [Name] who has an appointment on [Date] at [Time].</p>
+<p>Message 1: 48 hours before. Message 2: morning of. Message 3: post no-show re-engagement (if applicable). Tone: warm, professional, brief. Sign as [Dr. Name], [Practice Name]. Write a new patient welcome email for [Name] who has their first</p>
+<p>appointment at [Practice Name] on [Date]. Include: what to bring, what to expect during the first visit, a brief reassurance about the adjustment process, and an encouraging close. Keep it warm and under 200 words.</p>
+<h3>Retention &amp; Referral Prompts</h3>
+<p class="template-line">Write a between-visit check-in message for my patient [Name] who had an adjustment [X days ago] for [condition — e.g., lower back pain / neck tension / sciatica]. Ask how they&#x27;re feeling, remind them of one home care tip, and encourage them to reach out if they</p>
+<p>have questions before their next visit. Under 80 words. Write a reactivation message for a patient named [Name] who last visited [Practice Name] approximately [X months] ago for [condition]. Make it warm and personal — not a mass marketing</p>
+<div class="section-label">email. Reference their previous progress if possible. Include a</div>
+<p>soft CTA to book a check-up. Sign as [Dr. Name].</p>
+<h3>Social Media Prompts</h3>
+<p>Write 5 educational social media posts for a chiropractor. Topics: the real cause of most lower back pain, how chiropractic helps headaches, posture tips for desk workers, what to expect at your first chiropractic adjustment, and the difference between</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Chiropractors Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>chiropractic and physical therapy. Each under 150 words, ends with a question or CTA. Practice: [Practice Name], [City]. Better communication doesn&#x27;t just fill schedules. It helps patients commit to the care that actually changes their health.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div>
+</section></main></body></html>

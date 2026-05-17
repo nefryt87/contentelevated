@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Interior Designers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Interior Designers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>INTERIOR DESIGNER</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to close-out, scope conversations, referral asks, and review requests</p>
+<h3>SECTION 1: INQUIRY &amp; LEAD CONVERSION</h3>
+<h3>Template 1 — Same-Day Inquiry Response</h3>
+<div class="section-label">SUBJECT Re: Your interior design inquiry — [First Name]</div>
+<p>Hi [First Name], Thank you so much for reaching out — your [project description] sounds absolutely beautiful, and what you shared about [one specific detail from their inquiry] is exactly the kind of brief I love working with.</p>
+<p>A few quick questions before I put together a proposal: What&#x27;s your rough timeline? And do you have a sense of your investment range for the project? In the meantime, here&#x27;s a link to some recent work that might be relevant to your vision: [portfolio link]</p>
+<p>Would a 20-minute discovery call work for you this week? I have availability [two specific times]. Looking forward to connecting. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 2 — Follow-Up Day 3</h3>
+<div class="section-label">SUBJECT Checking in on your [project type] — [First Name]</div>
+<p>Hi [First Name], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get buried in your inbox! I&#x27;ve been thinking about your [project description] and had one thought worth</p>
+<p>sharing: [one relevant insight — e.g., &#x27;for open-plan living areas like yours, I&#x27;ve found that the furniture arrangement decisions early on save significant cost later&#x27;]. Happy to share more on a call.</p>
+<p>Still available [two specific times] this week if any of those work. [Your Name] | [Studio Name]</p>
+<h3>Template 3 — Follow-Up Day 7 (Value Add)</h3>
+<div class="section-label">SUBJECT Something that might be useful for your [project type], [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [First Name], One more follow-up before I close out my inquiry folder for the month. I just finished a [similar project type] that I think would be relevant to what you&#x27;re planning — here&#x27;s a quick look: [link or brief description of a relevant project].</p>
+<p>If you&#x27;d like to chat through your project, I&#x27;m still happy to find some time. If the timing isn&#x27;t right just now, feel free to reach back out whenever it is — I&#x27;d love to work together. All the best, [Your Name] | [Studio Name]</p>
+<h3>Template 4 — Post-Discovery Call Follow-Up</h3>
+<div class="section-label">SUBJECT Following our call — your [project type], [First Name]</div>
+<p>Hi [First Name], Really enjoyed our conversation today — your [project description] is a genuinely exciting brief and I can already see exactly how I&#x27;d approach it. What I heard you most wanting: [mirror their 3 key goals in their own words].</p>
+<p>That&#x27;s exactly the kind of project I do my best work on. I&#x27;ll have a full proposal to you by [date]. It will cover scope, process, timeline, and investment in detail. In the meantime, if anything comes up or you have questions, I&#x27;m always</p>
+<p>reachable at [Phone] or [Email]. Looking forward to working together. [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: PROJECT MANAGEMENT &amp; CLIENT</h3>
+<h3>EXPERIENCE</h3>
+<h3>Template 5 — Project Kick-Off Email</h3>
+<div class="section-label">SUBJECT We&#x27;re officially underway — your [project name], [First Name]</div>
+<p>Hi [First Name], I&#x27;m so excited to officially kick off your [project name]! Here&#x27;s everything you need to know to get us started: Project timeline: [start date] → [estimated completion] Key phases: [Phase 1 name and timeline] → [Phase 2] → [Phase 3]</p>
+<p>Your primary point of contact: [Your Name] at [Phone] / [Email] Best way to share feedback: [email / shared folder / project management tool] What I need from you this week: [1-2 specific items — signed agreement, deposit, access to the space, etc.]</p>
+<p>I&#x27;ll send a progress update at the end of each phase so you always know exactly where we are. Let&#x27;s do something beautiful together. [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 6 — Phase Completion Update</h3>
+<div class="section-label">SUBJECT [Phase name] complete — what comes next, [First Name]</div>
+<p>Hi [First Name], Quick update: [Phase name] is now complete. Here&#x27;s where we are: Completed: [2-3 specific accomplishments in plain language] Coming next: [next phase and what it involves] Timeline: [expected start and end of next phase]</p>
+<p>One thing I need from you before we move forward: [specific decision or approval if applicable]. [Timeframe needed.] Everything is tracking beautifully. I&#x27;ll be in touch as we move into [next phase]. As always — any questions, just reach out.</p>
+<p>[Your Name] | [Studio Name]</p>
+<h3>Template 7 — Sourcing Update (Items on Order)</h3>
+<div class="section-label">SUBJECT Sourcing update — your [project name], [First Name]</div>
+<p>Hi [First Name], Quick update on your items currently on order: [Item 1]: ordered [date] — estimated arrival [date] ✓ [Item 2]: ordered [date] — estimated arrival [date] ✓ [Item 3]: lead time [X weeks] — tracking closely</p>
+<p>Everything is progressing on schedule. [If any delays: &#x27;One item has a slightly longer lead time than expected — I&#x27;m actively monitoring it and will let you know immediately if it affects our install date.&#x27;] Next update: [date]. [Your Name] | [Studio Name]</p>
+<h3>Template 8 — Scope Expansion Email</h3>
+<div class="section-label">SUBJECT A note on your project scope, [First Name]</div>
+<p>Hi [First Name], I want to address something directly before it becomes a bigger conversation. Your enthusiasm for the project is genuinely wonderful — and the additions you&#x27;ve been discussing ([describe additions]) would look incredible. Here&#x27;s</p>
+<p>the reality: they fall outside our original agreement, which covered [original scope]. Two options I&#x27;d suggest: Option A: Add [description] to the current project scope at an additional fee of $[amount]. Timeline impact: [if any].</p>
+<p>Option B: Defer [description] to a second phase after the current project completes — I&#x27;ll give you priority scheduling. Both are great options. Just let me know which direction you&#x27;d like to go and I&#x27;ll update our agreement accordingly.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Warmly, [Your Name] | [Studio Name]</p>
+<h3>Template 9 — Delay Notification</h3>
+<div class="section-label">SUBJECT Update on your [project name] timeline, [First Name]</div>
+<p>Hi [First Name], I want to keep you fully informed: [specific item or phase] is running [X weeks] behind the original schedule due to [brief reason — e.g., supplier lead time extension / trade schedule change / custom order delay].</p>
+<p>Here&#x27;s how this affects your overall timeline: [honest assessment]. Here&#x27;s what I&#x27;m doing about it: [specific action being taken]. Revised completion estimate: [updated date]. I know this isn&#x27;t the news you were hoping for, and I&#x27;m genuinely sorry for the</p>
+<p>inconvenience. These situations are rare in my projects, and I&#x27;m managing it as efficiently as possible. I&#x27;ll update you again by [specific date]. As always, call me directly if you&#x27;d like to talk through it: [Phone]. [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: CLOSE-OUT &amp; REFERRAL SYSTEM</h3>
+<h3>Template 10 — Project Close-Out Email</h3>
+<div class="section-label">SUBJECT Your [project name] is complete — a few final things, [First Name]</div>
+<p>Hi [First Name], It&#x27;s done — and it&#x27;s everything we planned it to be. Working with you on [project name] has been a genuine highlight. Watching [specific transformation — e.g., &#x27;that living room come to life from the bare</p>
+<p>bones we started with&#x27;] never gets old. A few final things:</p>
+<p class="template-line">- Final invoice attached (if applicable)</p>
+<p class="template-line">- Care guide for [any specific materials — e.g., marble surfaces, upholstered</p>
+<p>pieces]</p>
+<p class="template-line">- Warranty information for [any applicable items]</p>
+<p>Photography: I&#x27;d love to professionally photograph the completed space for my portfolio. I&#x27;ll cover all costs and share the images with you. Are you open to that? Finally — a personal ask: if you&#x27;re happy with how everything turned out, a</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Google review would mean the world to me: [Google Review Link]. Takes 2 minutes and helps other clients find me. Thank you for trusting me with your space. It was a true privilege. [Your Name] | [Studio Name]</p>
+<h3>Template 11 — Referral Ask Email</h3>
+<h3>SUBJECT A small ask — [First Name]</h3>
+<p>Hi [First Name], It&#x27;s been [timeframe] since we finished your [project name] and I&#x27;ve been thinking about how much you&#x27;ve enjoyed the space — [one specific thing if they mentioned it]. I have a personal ask: if you know anyone — a friend, family member, or</p>
+<p>colleague — who is thinking about a home design project, I would love the</p>
+<div class="section-label">introduction. Word-of-mouth referrals from clients I&#x27;ve loved working with are</div>
+<p>truly how I build my business. Even a simple &#x27;my designer is amazing, you should talk to her&#x27; makes a difference. Thank you for thinking of me. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 12 — Annual Check-In Email</h3>
+<div class="section-label">SUBJECT Checking in on your [project name], [First Name]</div>
+<p>Hi [First Name], It&#x27;s been about a year since we finished your [project name] — I love doing these check-ins because the spaces that were once just plans on paper are now fully lived-in and I always love hearing how they&#x27;re serving you.</p>
+<p>How is everything holding up? Anything that needs attention, a refresh, or a conversation? I also have a couple of spaces coming up that might interest you if you&#x27;ve been thinking about [adjacent project — e.g., &#x27;the master bedroom&#x27; / &#x27;the</p>
+<p>home office&#x27;]. Happy to chat if the timing is right. [Your Name] | [Studio Name] | [Phone]</p>
+<h3>SECTION 4: REFERRAL PARTNER OUTREACH</h3>
+<h3>Template 13 — New Realtor Introduction</h3>
+<div class="section-label">SUBJECT Introduction — [Your Name], Interior Designer, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name], an interior designer based in [City] specializing in [specialty — e.g., luxury residential / renovation design / new build finishing]. I came across your work and I&#x27;m impressed by [one specific genuine thing —</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>e.g., your market knowledge / the calibre of properties you represent]. I&#x27;d love to explore a mutual referral relationship — I regularly work with clients who are buying or selling, and my staging and design work consistently helps</p>
+<p>properties present at their absolute best. If you&#x27;re open to a quick coffee or 15-minute call, I&#x27;d genuinely enjoy getting to know your approach. [Your Name] | [Studio Name] | [Phone] | [Instagram]</p>
+<h3>Template 14 — Monthly Realtor Value Touch</h3>
+<h3>SUBJECT [Month] design update — [Your Name]</h3>
+<p>Hi [Name], Quick update from my studio this month that I thought might be useful for your conversations with clients: [Design insight 1 — e.g., &#x27;I&#x27;m seeing buyers increasingly prioritize home office</p>
+<p>functionality over formal dining rooms — worth keeping in mind when staging or advising on layout&#x27;] [Design trend worth knowing — e.g., &#x27;Warm oak tones are replacing grey- washed timber in nearly every brief I&#x27;m seeing — listings that still feature</p>
+<p>dated grey floors are taking longer to move&#x27;] If any of your clients are planning a renovation or redesign before listing, or after purchasing, I&#x27;d love to be your go-to. Happy to do a quick consultation for anyone you refer.</p>
+<p>[Your Name] | [Studio Name] | [Phone]</p>
+<div class="section-label">Template 15 — New Architect / Builder Introduction</div>
+<div class="section-label">SUBJECT Introduction — [Your Name], Interior Design, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name] from [Studio Name] in [City]. I specialize in [specialty] and work primarily with [client type — e.g., residential renovation clients / new builds / developers].</p>
+<p>I&#x27;ve admired [one specific genuine thing about their work] and wanted to introduce myself as a potential design partner. I&#x27;ve found that designers and architects who coordinate early in a project produce consistently better</p>
+<p>outcomes — and I&#x27;m always looking for professionals whose quality of work I can stand behind. Would you be open to a brief call or coffee to see if there&#x27;s alignment? I&#x27;d love to learn more about the kind of work you typically take on.</p>
+<p>[Your Name] | [Studio Name] | [Phone]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>Template 16 — Post-Referral Thank-You</h3>
+<h3>SUBJECT Thank you for the introduction, [Name]</h3>
+<p>Hi [Name], Thank you so much for introducing me to [Client Name] — I really appreciated the trust that took, and I want you to know I&#x27;ll take excellent care of them. I&#x27;ll make sure their experience reflects the standard you set by recommending me.</p>
+<p>Let me know if there&#x27;s anything I can ever do in return. [Your Name] | [Studio Name]</p>
+<h3>SECTION 5: REVIEW &amp; REPUTATION</h3>
+<h3>MANAGEMENT</h3>
+<h3>Template 17 — Google Review Request</h3>
+<h3>SUBJECT A quick favour — [First Name]</h3>
+<p>Hi [First Name], Working on your [project name] was genuinely one of the highlights of my year — I&#x27;m so glad you love how it all came together. One small favour: a Google review from a client I&#x27;ve loved working with</p>
+<p>means more to my business than almost anything else. It takes about 2 minutes and directly helps other homeowners in [City] find a designer they can trust. Direct link: [Google Review Link]</p>
+<p>Thank you for even considering it. And thank you for being such a wonderful</p>
+<div class="section-label">client to work with. [Your Name] | [Studio Name]</div>
+<h3>Template 18 — Houzz / Yelp Review Request</h3>
+<h3>SUBJECT A small ask — [First Name]</h3>
+<p>Hi [First Name], I hope you&#x27;re still loving your [space name]! I wanted to ask a small favour: if you&#x27;ve had a positive experience working with [Studio Name], a review on [Houzz / Yelp] would be enormously helpful.</p>
+<p>It&#x27;s one of the main ways high-quality clients find me — and it helps me continue doing the kind of work I love. Direct link: [Houzz / Yelp link] Thank you so much — and thank you for being such a great client. [Your Name] | [Studio Name]</p>
+<h3>Template 19 — Positive Review Response</h3>
+<h3>SUBJECT Google / Houzz — respond directly</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Thank you so much, [First Name]! Working on your [project name] was a genuine highlight — [one specific personal detail if their review mentions it]. Clients like you are exactly why I love this work. It was a true privilege. — [Your Name], [Studio Name]</p>
+<p>[Respond within 24 hours. Be specific and personal. Include studio name for local SEO.]</p>
+<h3>Template 20 — Negative Review Response</h3>
+<h3>SUBJECT Google / Houzz — respond directly</h3>
+<p>Hi [First Name], thank you for taking the time to share this. I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client. I take every piece of feedback seriously and I&#x27;d really like the opportunity to</p>
+<p>understand what happened and make it right. Please contact me directly at [Phone] or [Email]. — [Your Name], [Studio Name] [Never argue publicly. Move it offline. Your response is read by every future</p>
+<h3>client who searches you.]</h3>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<h3>Template 21 — Photography Permission Request</h3>
+<div class="section-label">SUBJECT A quick ask about photographing your space, [First Name]</div>
+<p>Hi [First Name], Now that your [project name] is complete, I&#x27;d love to professionally photograph the finished space for my portfolio and social media. I&#x27;d cover all costs — typically a half-day with a professional photographer — and I&#x27;d share</p>
+<p>all high-resolution images with you as well. The only ask: permission to use the photos in my portfolio, website, and</p>
+<div class="section-label">social channels (without identifying your address or personal details unless</div>
+<p>you&#x27;re comfortable with that). Would you be open to it? Happy to discuss any questions or preferences around privacy. [Your Name] | [Studio Name]</p>
+<h3>Template 22 — Waitlist Notification</h3>
+<div class="section-label">SUBJECT A space has opened up in my schedule, [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Interior Designers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [First Name], A space has just opened up in my schedule for [timeframe], and I wanted to reach out to you first given our earlier conversation about your [project type]. If the timing works, I&#x27;d love to revisit your brief and get started. Could we find</p>
+<p>20 minutes this week for a quick call? [Your Name] | [Studio Name] | [Phone]</p>
+<h3>Template 23 — Press / Feature Outreach</h3>
+<div class="section-label">SUBJECT Project feature — [Studio Name] + [Project Name]</div>
+<p>Hi [Editor/Writer Name], I&#x27;m [Your Name], an interior designer based in [City] specializing in [specialty]. I recently completed a [project description] that I think would resonate with [Publication]&#x27;s audience.</p>
+<p>The brief: [2 sentences on the client&#x27;s goals]. The result: [2 sentences on what was achieved — be specific about the design challenges solved]. I have professional photography available. Would you be open to taking a</p>
+<p>look? [Your Name] | [Studio Name] | [Portfolio Link]</p>
+<div class="section-label">Template 24 — New Builder / Developer Introduction</div>
+<div class="section-label">SUBJECT Interior design partnership — [Your Name] + [Company Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name] from [Studio Name] in [City]. I specialize in [specialty — e.g., spec home finishing / multi-unit residential / luxury new builds] and have worked with developers and builders who want interiors that command</p>
+<p>premium pricing and sell faster. I&#x27;d love to learn more about your upcoming projects and explore whether there&#x27;s an opportunity to work together. Even a brief call to understand your process would be valuable.</p>
+<p>[Your Name] | [Studio Name] | [Phone] | [Portfolio Link]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">11</span></div></section></main></body></html>

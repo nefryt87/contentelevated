@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Mortgage Brokers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>THE MORTGAGE BROKER&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<h3>How to Close More Loans, Build a Referral Engine,</h3>
+<p>and Reclaim Your Week Using AI A Complete Guide for Mortgage Brokers &amp; Loan Officers</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the Mortgage Broker&#x27;s Unfair Advantage 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Automating Lead Nurture From First Touch to Clear to Close 4. Chapter 4: Realtor Relationship Building at Scale</p>
+<p>5. Chapter 5: Social Media Content Without the Time Commitment 6. Chapter 6: Your 30-Day AI Implementation Plan 7. BONUS: AI Prompt Cheat Sheet for Mortgage Brokers</p>
+<h3>Chapter 1: Why AI Is the Mortgage Broker&#x27;s</h3>
+<p>Unfair Advantage The average loan officer juggles 30–50 active files at once while simultaneously nurturing leads, maintaining realtor relationships, and trying to stay visible online. Something always gets dropped. AI doesn&#x27;t close loans — but it handles every task that</p>
+<p>prevents you from focusing on the ones that do.</p>
+<p class="template-line">• The Pipeline Problem: Why most brokers are either feast or famine — and how</p>
+<p>consistent AI-powered nurture eliminates the dry spells.</p>
+<p class="template-line">• The Realtor Relationship Gap: Most LOs say relationships are their #1 source</p>
+<p>of business — but have no system for actually maintaining them. AI fixes that.</p>
+<p class="template-line">• The Response Time Advantage: Studies show responding to a lead within 5</p>
+<p>minutes increases conversion by 900%. AI-assisted templates let you respond faster without sacrificing quality.</p>
+<p class="template-line">• What AI Handles vs. What You Handle: AI writes, follows up, and nurtures.</p>
+<p>You advise, build trust, and close. Never confuse the two.</p>
+<h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+<p>Start here. These three quick wins will save you hours in your first week and show you exactly what AI can do for your business.</p>
+<p class="template-line">• Win #1 — Pre-Approval Follow-Up: Use AI to write a personalized 5-email</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>sequence for every pre-approval application. Set it and forget it. Never let a warm lead go cold again.</p>
+<p class="template-line">• Win #2 — Realtor Check-In Emails: Stop waiting to have something &#x27;worth</p>
+<p>sharing&#x27; before reaching out to your realtor partners. Use AI to write a weekly market update or rate alert email in under 3 minutes.</p>
+<p class="template-line">• Win #3 — Condition Request Emails: Every file has conditions. Writing clear,</p>
+<p>professional, non-intimidating condition request emails to borrowers is a daily time drain. AI does this in 60 seconds.</p>
+<h3>Chapter 3: Automating Lead Nurture From First</h3>
+<p>Touch to Clear to Close The mortgage journey from first inquiry to closing can take 30–90 days. Most brokers touch their leads 1–2 times. The ones writing big numbers touch them 8–12 times. AI makes consistent nurture effortless.</p>
+<p class="template-line">• The 6-Stage Nurture Framework: Inquiry → Pre-Qual → Application →</p>
+<p>Processing → Approval → Closing. Each stage needs specific communication. Templates for all 6 are in your Email Pack.</p>
+<p class="template-line">• The Not-Ready Lead System: 60% of mortgage leads aren&#x27;t ready to buy for 3–</p>
+<p>18 months. AI helps you stay in front of them with monthly value touches — so when they&#x27;re ready, they call you.</p>
+<p class="template-line">• Credit Repair Nurture: For leads who don&#x27;t qualify yet, AI writes a 90-day credit</p>
+<p>improvement check-in sequence that positions you as their advisor — and earns you the deal when they&#x27;re ready.</p>
+<p class="template-line">• Closing Day and Beyond: The closing isn&#x27;t the end of the relationship. AI helps</p>
+<p>you write post-close check-ins, 1-year anniversary emails, and refinance opportunity alerts that generate repeat and referral business.</p>
+<h3>Chapter 4: Realtor Relationship Building at Scale</h3>
+<p>Realtors are your most valuable referral source — but they have 10 LOs competing for their attention. The ones who win stay visible, add value consistently, and make realtors&#x27; lives easier. AI lets you do all three at scale.</p>
+<p class="template-line">• The Weekly Realtor Touch: A short, valuable weekly email to your realtor</p>
+<p>partners — market rate update, new program alert, or relevant industry news. Takes 3 minutes with AI. Builds top-of-mind awareness over months.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• The New Realtor Outreach Sequence: AI-written 4-message sequence for</p>
+<p>newly licensed realtors in your market — the best time to form a partnership before they&#x27;ve committed to another LO.</p>
+<p class="template-line">• Co-Marketing Content: Use AI to write social media captions and email content</p>
+<p>that realtors can share — making you easy to refer and keeping your name in front of their clients.</p>
+<p class="template-line">• The Closed Deal Thank-You System: Every closed deal with a realtor referral</p>
+<p>should get a personalized thank-you. AI writes these in 30 seconds. Small touch, massive relationship ROI.</p>
+<h3>Chapter 5: Social Media Content Without the</h3>
+<p>Time Commitment Loan officers who show up consistently online get inbound leads. Realtors refer LOs they&#x27;ve seen posting credible, helpful content. You don&#x27;t need to post every day — you need to post the right things consistently.</p>
+<p class="template-line">• The 3-Post Formula: One educational post (rate/market/product insight), one</p>
+<p>trust post (client story, behind the scenes, your process), one engagement post (question, poll, myth-bust). Rotate weekly.</p>
+<p class="template-line">• Topics That Build Credibility: Rate updates and what they actually mean, first-</p>
+<p>time buyer myths, down payment assistance programs, credit score tips, self- employed borrower guidance, market timing insights.</p>
+<p class="template-line">• Batch Creating in 30 Minutes: Use AI to generate a full month of captions in</p>
+<p>one Sunday session. Exact prompts included in your prompt cheat sheet.</p>
+<p class="template-line">• Reels and Video Scripts: Short-form video is the highest-reach format on every</p>
+<p>platform. AI writes your 30-60 second scripts — you just record and post.</p>
+<h3>Chapter 6: Your 30-Day AI Implementation Plan</h3>
+<p>Implementation beats information. This 30-day plan gets you from reading to results without overwhelming your existing workflow.</p>
+<p class="template-line">• Week 1 — Email Foundation: Set up Claude or ChatGPT. Write your first 10</p>
+<p>borrower emails using AI. Build your pre-approval follow-up sequence.</p>
+<p class="template-line">• Week 2 — Realtor System: Build your weekly realtor touch template. Write your</p>
+<p>new realtor outreach sequence. Identify 10 realtors to send it to.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Mortgage Brokers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• Week 3 — Social Content: Create 2 weeks of posts using your 90-Day</p>
+<p>Calendar. Batch captions using the monthly AI prompt. Schedule using Facebook Creator Studio (free).</p>
+<p class="template-line">• Week 4 — Optimize &amp; Systematize: Review response rates on your emails.</p>
+<p>Identify your top 3 AI use cases. Build a monthly rhythm you can sustain.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Mortgage</h3>
+<p>Brokers Copy and paste these prompts into Claude or ChatGPT. Replace [brackets] with your details. Lead Nurture Prompts Write a 5-email follow-up sequence for a lead named [Name] who submitted a pre-approval inquiry for a [purchase/refinance] loan</p>
+<p>of approximately $[Amount]. They haven&#x27;t responded to my first call. Space emails over 21 days. Tone: helpful, not pushy. Sign as [Your Name], [Company]. Write a 90-day check-in sequence (monthly touches) for a lead who</p>
+<p>wants to buy but needs 6 more months to save their down payment. Each email should provide one piece of genuinely useful advice for first-time buyers. Sign as [Your Name]. Realtor Relationship Prompts Write a short weekly market update email I can send to my realtor</p>
+<p>partners. This week&#x27;s key point: [rate movement or market note]. Keep it under 100 words, professional but conversational, and end with one insight they can share with their clients. Sign as [Your Name], [NMLS#], [Company].</p>
+<p class="template-line">Write a 4-message outreach sequence for a newly licensed real estate agent in [City]. I want to introduce myself, offer value (not just pitch), and propose a coffee meeting. Tone: peer-to- peer, not salesy. My name is [Name], NMLS# [#], specializing in [purchase/FHA/jumbo/etc.].</p>
+<h3>Social Media Prompts</h3>
+<p>Write 5 educational social media posts for a mortgage broker. Topics: how credit scores affect your rate, what &#x27;clear to close&#x27; actually means, 3 myths about down payments, when to lock your rate, and self-employed borrower tips. Each post under 150 words.</p>
+<p>End each with a question or CTA. The brokers who communicate best win the most business. AI makes communication consistent. Consistency builds trust. Trust closes loans.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section></main></body></html>

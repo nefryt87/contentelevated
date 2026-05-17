@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Massage Therapists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>MASSAGE THERAPIST</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE PACK</h3>
+<p>22 done-for-you templates for every stage of the client journey Reminders • Rebooking • Retention • Packages • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, treatment type, and business</p>
+<p>details.</p>
+<p class="template-line">• Keep the tone warm, therapeutic, and personal — clients return to</p>
+<p>therapists they feel genuinely cared for by.</p>
+<p class="template-line">• Works as email, SMS, and practice portal messages — shorten to 2-3</p>
+<p>sentences for text.</p>
+<p class="template-line">• Always personalize the opening line using AI for the best response rates.</p>
+<h3>SECTION 1: APPOINTMENTS &amp; REBOOKING</h3>
+<p>Appointment Reminder — 24 Hours Before</p>
+<h3>SUBJECT Your massage tomorrow — [First Name]</h3>
+<p>BODY Hi [First Name], Just a reminder that your massage appointment is tomorrow, [Date] at [Time] at [Business Name]. A few quick prep tips to make the most of your session:</p>
+<p class="template-line">- Stay hydrated today and tomorrow morning</p>
+<p class="template-line">- Arrive 5 minutes early so you can settle in before we start</p>
+<p class="template-line">- Let me know of any new areas of tension or discomfort since your last visit</p>
+<p>If you need to reschedule, please give me at least 24 hours notice. See you tomorrow! [Your Name] | [Business Name] | [Phone] Post-Appointment Rebooking Email</p>
+<h3>SUBJECT How are you feeling, [First Name]?</h3>
+<p>BODY Hi [First Name], I hope you&#x27;re still floating from your session today — it was so wonderful working with you! A quick self-care note: [one specific tip relevant to their treatment area — e.g., &#x27;Stay well hydrated today to help your muscles flush toxins.&#x27; / &#x27;A warm bath</p>
+<p>tonight will help extend the relaxation and ease any residual soreness.&#x27;] For your goals, I&#x27;d suggest your next session in approximately [timeframe — e.g., 2-3 weeks]. Would you like to lock in a time now while you&#x27;re feeling the benefits?</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Book here: [booking link] or reply and I&#x27;ll check availability for you. [Your Name] | [Business Name] No-Show Recovery</p>
+<div class="section-label">SUBJECT We missed you today — hope everything is okay, [First Name]</div>
+<p>BODY Hi [First Name], We missed you for your appointment today — I hope everything is okay on your end! Whenever you&#x27;re ready to rebook, just use my online booking at [link] or reply here and I&#x27;ll find a time that works for you. Your body will thank you for rescheduling soon!</p>
+<p>[Your Name] | [Business Name] Waitlist Activation</p>
+<h3>SUBJECT Good news — we have an opening, [First Name]</h3>
+<p>BODY Hi [First Name], I just had a cancellation and have an opening on [Date] at [Time]. Would you like to take this slot? Just reply or book at [link] and I&#x27;ll confirm it for you right away. [Your Name] | [Business Name]</p>
+<h3>SECTION 2: RETENTION &amp; PACKAGES</h3>
+<p>Package Offer</p>
+<div class="section-label">SUBJECT A smarter way to invest in your wellness — [First Name]</div>
+<p>BODY Hi [First Name], I wanted to share something that a lot of my regular clients take advantage of — my massage package options. Here&#x27;s what&#x27;s available: [Package 1 — e.g., 3-session package: $X — save $X vs. individual sessions]</p>
+<p>[Package 2 — e.g., Monthly membership: $X/month — priority booking + consistent self-care] The benefits beyond the savings: priority scheduling, better long-term results, and a committed routine. Interested? Reply here or book directly at [link]. [Your Name] | [Business Name]</p>
+<p>Wellness Check-In</p>
+<div class="section-label">SUBJECT Quick mid-month check-in — how are you feeling, [First Name]?</div>
+<p>BODY Hi [First Name], Just a quick check-in between sessions — how has your [body area / general wellness] been since we last worked together? Any new areas of tension I should know about before your next visit? Or any questions about your home care routine?</p>
+<p>Looking forward to seeing you on [next appointment date]! [Your Name] Lapsed Client Win-Back — 8 Weeks</p>
+<div class="section-label">SUBJECT It&#x27;s been a while — I&#x27;ve been thinking about you, [First Name]</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], It&#x27;s been [timeframe] since your last session and I just wanted to check in — how has your [treatment area] been treating you? If life has gotten in the way of your regular self-care (as it does for all of us), I&#x27;d</p>
+<p>love to help you reset. I have availability this week. Book at [link] or reply and I&#x27;ll find a time that works. [Your Name] | [Business Name] Seasonal Campaign</p>
+<div class="section-label">SUBJECT [Season/Occasion] is coming — let me take care of you, [First Name]</div>
+<p>BODY Hi [First Name], With [Mother&#x27;s Day / Christmas / Valentine&#x27;s Day / the holiday season] just around the corner, I wanted to reach out to my favourite clients first before opening my calendar publicly.</p>
+<p>Gift certificates are also available for any of my services — the perfect gift for someone who deserves a moment of real self-care. Book or purchase at [link], or reply and I&#x27;ll sort it out directly. [Your Name] | [Business Name]</p>
+<h3>SECTION 3: REVIEWS, REFERRALS &amp;</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Google Review Request</p>
+<div class="section-label">SUBJECT A small favour that means everything to a small business</div>
+<p>BODY Hi [First Name], I hope you&#x27;re still feeling the benefits of your last session! If you enjoyed your experience at [Business Name], I&#x27;d be so grateful if you took 2 minutes to leave a Google review. It genuinely helps other people in [City] find quality massage therapy.</p>
+<p>Here&#x27;s the direct link: [Google Review Link] Thank you so much — it truly means the world to me. [Your Name]</p>
+<h3>Referral Request</h3>
+<h3>SUBJECT Know anyone who could use some real relief?</h3>
+<p>BODY Hi [First Name], Working with you is honestly one of the highlights of my week — thank you for being such a wonderful client. If you have a friend, partner, or coworker who&#x27;s been dealing with tension,</p>
+<p>stress, or pain, I&#x27;d love to take care of them the same way I take care of you. I&#x27;ll always make sure anyone you refer has a genuinely great experience. [Your Name] | [Business Name] Healthcare Provider Introduction</p>
+<h3>SUBJECT Introduction — [Your Name], Massage Therapist</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Massage Therapists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Dear [Dr./Name], My name is [Your Name] — I&#x27;m a registered massage therapist specializing in [specialty — e.g., therapeutic deep tissue / sports massage / prenatal massage] based in [City]. I work with many clients who overlap with your patient or client base,</p>
+<p>particularly those dealing with [relevant condition — e.g., chronic musculoskeletal tension / sports injuries / prenatal discomfort]. I&#x27;d love to explore a mutual referral relationship where we can better support our shared clients.</p>
+<p>Happy to schedule a quick call or coffee if you&#x27;re open to it. [Your Name] | [Business Name] | [Phone]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section></main></body></html>

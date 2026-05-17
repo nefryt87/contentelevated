@@ -1,0 +1,827 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90-Day Salon Content Calendar</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#17110f; --soft:#5d504b; --muted:#8e7a72; --paper:#f4f7ef; --cream:#fffaf4; --accent:#7f936f; --accent2:#dfe8d4; --line:rgba(91,67,58,.16); }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#e8d7ca; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; }
+      .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.62in; background:radial-gradient(circle at 14% 8%, color-mix(in srgb, var(--accent2) 58%, transparent), transparent 2.2in), radial-gradient(circle at 90% 12%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 2.5in), linear-gradient(135deg,var(--paper),#fffaf4 54%,color-mix(in srgb,var(--accent2) 26%,#fffaf4)); }
+      .page::before { content:""; position:absolute; inset:.28in; border:1px solid rgba(91,67,58,.12); border-radius:28px; pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.1in; top:-.3in; width:3.2in; height:9.8in; background:linear-gradient(180deg,rgba(23,17,15,.045),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--accent2) 42%,transparent),transparent 64%); transform:rotate(-10deg); border-radius:999px; pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; align-items:flex-start; justify-content:space-between; }
+      .wordmark { font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; }
+      .wordmark small { display:block; margin-top:8px; color:var(--accent); font-size:9px; font-weight:700; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--accent) 24%,transparent); border-radius:999px; padding:10px 14px; color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; background:rgba(255,250,244,.64); }
+      .kicker, .eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; margin:0 0 18px; }
+      .kicker::before, .eyebrow-line::before { content:""; width:42px; height:1px; background:var(--accent); }
+      h1,h2,h3 { position:relative; z-index:2; margin:0; font-family:"Didot","Bodoni 72","Times New Roman",serif; font-weight:400; letter-spacing:-.045em; }
+      h1 { max-width:6.1in; margin-top:.82in; font-size:64px; line-height:.93; }
+      h1 span, h2 span { color:var(--accent); font-style:italic; }
+      h2 { margin-top:18px; font-size:34px; line-height:1.02; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--soft); font-size:11.2px; line-height:1.5; }
+      .lead { max-width:5.05in; margin-top:.28in; font-size:16px; line-height:1.55; }
+      .cover-meta { position:absolute; left:.62in; right:.62in; bottom:.74in; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .meta-item { padding:17px 12px; border-left:1px solid var(--line); } .meta-item:first-child { border-left:0; padding-left:0; }
+      .meta-item strong { display:block; font-family:"Didot","Bodoni 72","Times New Roman",serif; color:var(--accent); font-size:27px; font-weight:400; line-height:1; }
+      .meta-item span { display:block; margin-top:8px; color:var(--muted); font-size:8px; font-weight:800; letter-spacing:.14em; line-height:1.4; text-transform:uppercase; }
+      .footer { position:absolute; left:.62in; right:.62in; bottom:.34in; z-index:2; display:flex; justify-content:space-between; color:rgba(93,80,75,.72); font-size:8px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.42in; border:1px solid var(--line); border-radius:24px; background:rgba(255,250,244,.66); padding:26px; box-shadow:0 18px 52px rgba(95,61,51,.07); }
+      .callout-title { margin:18px 0 10px; border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:16px; background:rgba(255,250,244,.72); padding:12px 14px; color:var(--accent); font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+      .tip { margin:12px 0 12px; border-left:3px solid var(--accent); padding:9px 0 9px 13px; color:var(--soft); font-size:10.2px; line-height:1.48; background:linear-gradient(90deg,color-mix(in srgb,var(--accent2) 22%,transparent),transparent 78%); }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; margin-top:7px; border-radius:50%; background:var(--accent); }
+      .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; margin:8px 0; border:1px solid color-mix(in srgb,var(--accent) 28%,transparent); border-radius:50%; color:var(--accent); font-family:"Didot","Bodoni 72","Times New Roman",serif; font-size:16px; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book">
+      <section class="page">
+        <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+        <p class="kicker" style="margin-top:.78in;">Beauty Business System</p>
+        <h1>90-Day Salon Content Calendar</h1>
+        <p class="lead">Plan the next quarter of content with prompts, post ideas, stylist notes, and weekly campaign direction.</p>
+        <div class="cover-meta"><div class="meta-item"><strong>90</strong><span>Ready-to-post days</span></div><div class="meta-item"><strong>3</strong><span>Platforms covered</span></div><div class="meta-item"><strong>7</strong><span>Content pillars</span></div><div class="meta-item"><strong>12</strong><span>Weekly themes</span></div></div>
+        <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>01</span></div>
+      </section>
+      <section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>How to Use This Calendar</p>
+<p>This calendar gives you 90 days of content — one post per day — for Instagram, Facebook, and</p>
+<p>TikTok. Each entry includes a content type, caption, and stylist tip so you know exactly what to</p>
+<p>post and why it works. You don&#x27;t need to post every single day — pick what fits your schedule and</p>
+<p>adapt captions to your voice and services.</p>
+<h2>Platform</h2>
+<h2>Best Post Types</h2>
+<h2>Ideal Frequency</h2>
+<h2>Best Times</h2>
+<h2>Instagram</h2>
+<h2>Reels, Carousels, Stories</h2>
+<p>4–5x / week</p>
+<p>Tue–Fri, 9am &amp; 6pm</p>
+<h2>Facebook</h2>
+<p>Long-form posts, Lives</p>
+<p>3–4x / week</p>
+<p>Wed–Fri, 1–4pm</p>
+<p>TikTok</p>
+<p>Reels, Process videos</p>
+<p>3–5x / week</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>02</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Daily, 7–9pm</p>
+<h2>The 7 Content Pillars</h2>
+<h2>Pillar</h2>
+<h2>Description</h2>
+<h2>Approx. Posts</h2>
+<h2>Transformation</h2>
+<p>Before/afters, reveals, dramatic changes</p>
+<p>~22 posts</p>
+<h2>Educational</h2>
+<p>Tips, how-tos, myth-busting, industry knowledge</p>
+<p>~18 posts</p>
+<h2>Engagement</h2>
+<p>Polls, questions, hot takes, games</p>
+<p>~14 posts</p>
+<h2>Promotional</h2>
+<p>Offers, scarcity, gift cards, bundles</p>
+<p>~12 posts</p>
+<p>Behind the Scenes</p>
+<p>Process, setup, tools, daily life</p>
+<p>~10 posts</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>03</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>Testimonial</h2>
+<p>Client quotes, reviews, milestones</p>
+<p>~8 posts</p>
+<h2>Personal/Brand</h2>
+<p>Story, values, why, vulnerability</p>
+<p>~6 posts</p>
+<p>Hashtag Sets by Content Type</p>
+<p>Transformation: #hairtransformation #beforeandafter #hairgoals #behindthechair #salonresults</p>
+<p>Educational: #hairtips #haircare #haireducation #knowyourhair #stylistadvice</p>
+<p>Engagement: #hairpoll #askastylist #hairobsessed #salonlife #hairlove</p>
+<p>Promotional: #bookme #hairappointment #salonbooking #openings #hairsalon</p>
+<p>Behind the Scenes: #salonlife #dayinthelife #hairstylist #behindthescenes #salonbts</p>
+<p>Testimonial: #clientlove #hairreview #happyclients #trustyourstylist #salonresults</p>
+<p>Personal/Brand: #stylistlife #myjourney #hairbusiness #salonowner #smallbusiness</p>
+<h2>The 90-Day Calendar</h2>
+<p>One post per day. Adapt every caption to your voice, your services, and your clients.</p>
+<p class="eyebrow-line">Week 1 — Introduce &amp; Attract</p>
+<div class="mini-num">1</div>
+<h2>IG</h2>
+<h2>Before &amp; After Reveal</h2>
+<p>The glow-up is REAL. Swipe to see what a fresh [service] can do. Ready for yours? Book the</p>
+<p>link in bio.</p>
+<p>Stylist tip: Post a dramatic before/after. Use natural light. Side-by-side in one frame.</p>
+<div class="mini-num">2</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>04</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>FB</h2>
+<p>5 Signs You Need a Trim</p>
+<p>If your ends are splitting, your style isn&#x27;t holding, or your hair feels like straw — it&#x27;s time. Here</p>
+<p>are 5 signs you&#x27;re overdue for a trim (and why waiting makes it worse).</p>
+<p>Stylist tip: Educational post. Add a poll: &#x27;When did you last get a trim?&#x27;</p>
+<div class="mini-num">3</div>
+<h2>TT</h2>
+<h2>This or That — Hair Edition</h2>
+<p>Beach waves OR sleek blowout? Comment below! (We can do both btw)</p>
+<p>Stylist tip: Film a quick reel showing both styles. Fast cut. Add trending audio.</p>
+<div class="mini-num">4</div>
+<h2>IG</h2>
+<h2>Your Morning Setup</h2>
+<p>This is what 6am looks like behind the chair. The prep, the tools, the vibe. What questions do</p>
+<p>you have about what I use?</p>
+<p>Stylist tip: Story-style reel. Authentic. No need to be perfect — relatable wins here.</p>
+<div class="mini-num">5</div>
+<h2>ALL</h2>
+<h2>Book This Week</h2>
+<p>A few spots just opened up this week. If you&#x27;ve been thinking about [service] — this is your</p>
+<p>sign. DM me or tap the link to grab yours before they&#x27;re gone.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>05</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Stylist tip: Simple graphic + urgency. Don&#x27;t over-discount. Use scarcity authentically.</p>
+<div class="mini-num">6</div>
+<h2>IG</h2>
+<h2>Client Love</h2>
+<p>&quot;I&#x27;ve never felt more confident walking out of a salon.&quot; — [Client first name] This is why I do</p>
+<p>what I do. Tag a friend who deserves a glow-up.</p>
+<p>Stylist tip: Screenshot or quote card. Always get permission first.</p>
+<div class="mini-num">7</div>
+<h2>FB</h2>
+<p>Why I Became a Stylist</p>
+<p>I didn&#x27;t just want a job. I wanted to change how people feel when they look in the mirror.</p>
+<p>Here&#x27;s the real story of why I picked up my first pair of shears…</p>
+<p>Stylist tip: Longer-form post. Storytelling builds loyalty. Don&#x27;t be afraid to go deep.</p>
+<p class="eyebrow-line">Week 2 — Build Trust</p>
+<div class="mini-num">8</div>
+<h2>IG</h2>
+<h2>Color Myth Busted</h2>
+<p>MYTH: Going blonde ruins your hair forever. TRUTH: With the right technique and aftercare,</p>
+<p>you can go light AND keep your hair healthy. Here&#x27;s what actually matters.</p>
+<p>Stylist tip: Carousel works great here. One myth per slide, busted with the truth.</p>
+<div class="mini-num">9</div>
+<h2>TT</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>06</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>Color Melt Process</h2>
+<p>Watch a muddy base turn into a butterscotch dream. The whole process from start to finish.</p>
+<p>#colormelt #haircolor #salonlife</p>
+<p>Stylist tip: Time-lapse or sped-up video of a color service. Add trending audio.</p>
+<div class="mini-num">10</div>
+<h2>IG</h2>
+<p>Poll: What&#x27;s Your Biggest Hair Struggle?</p>
+<p>Real talk — what&#x27;s your hair&#x27;s biggest nemesis? Vote below and I&#x27;ll create a reel answering</p>
+<p>the top answer this week!</p>
+<p>Stylist tip: Use IG Stories poll sticker. Follow up with content based on the winner.</p>
+<div class="mini-num">11</div>
+<h2>FB</h2>
+<p>How to Make Your Color Last Longer</p>
+<p>You just left the salon feeling amazing. Let&#x27;s keep it that way. 5 things to do (and 3 to NEVER</p>
+<p>do) to protect your color investment.</p>
+<p>Stylist tip: List-style post. Highly shareable. Pin it to your page.</p>
+<div class="mini-num">12</div>
+<h2>ALL</h2>
+<h2>Tool Tour</h2>
+<p>Not all tools are created equal. Here&#x27;s what&#x27;s actually in my kit and why I spent the money on</p>
+<p>these specific ones. The difference is in the details.</p>
+<p>Stylist tip: Flat lay photo or quick reel. Authentic recommendation &gt; hard sell.</p>
+<div class="mini-num">13</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>07</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>IG</h2>
+<h2>Referral Reward</h2>
+<p>Send a friend my way and you BOTH get $[X] off your next service. No catch. Just good hair</p>
+<p>and good vibes. DM me &#x27;FRIEND&#x27; to get your referral code.</p>
+<p>Stylist tip: Clean graphic. Simple offer. Make it easy to act on immediately.</p>
+<div class="mini-num">14</div>
+<h2>TT</h2>
+<p>Day in the Life</p>
+<p>5am wake-up → 6 clients → continuing education → dinner. This is what a Tuesday looks like</p>
+<p>as a stylist. Worth it every single time. #salonlife</p>
+<p>Stylist tip: Authentic DITL content performs well. No fancy editing needed.</p>
+<p class="eyebrow-line">Week 3 — Educate &amp; Entertain</p>
+<div class="mini-num">15</div>
+<h2>IG</h2>
+<h2>Scalp Health 101</h2>
+<p>Your scalp is skin. And most people are treating it wrong. Here&#x27;s what a healthy scalp actually</p>
+<p>needs — and what&#x27;s probably causing your buildup, flakes, or thinning.</p>
+<p>Stylist tip: Carousel. Highly saveable. Strong hook on slide 1.</p>
+<div class="mini-num">16</div>
+<h2>FB</h2>
+<h2>Trivia Tuesday</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>08</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Hair trivia time! How many individual hairs does the average person have on their head? A)</p>
+<p>50,000 B) 100,000 C) 200,000. Answer in the comments!</p>
+<p>Stylist tip: Fun engagement driver. Answer in comments a few hours later.</p>
+<div class="mini-num">17</div>
+<h2>TT</h2>
+<h2>The Chop — Emotional Reveal</h2>
+<p>She came in wanting 2 inches. She left with a whole new identity. With full permission to</p>
+<h2>share — watch her reaction. #haircut #salonreaction #transformation</h2>
+<p>Stylist tip: Client reaction reels get massive reach. Always get signed consent.</p>
+<div class="mini-num">18</div>
+<h2>IG</h2>
+<p>How I Prep for a Big Color Day</p>
+<p>5 hours. 3 foiling techniques. 1 very happy client. Here&#x27;s exactly how I set up and plan for a</p>
+<p>complex color appointment so nothing goes wrong.</p>
+<p>Stylist tip: Process content builds serious credibility. Great for attracting high-ticket clients.</p>
+<div class="mini-num">19</div>
+<h2>ALL</h2>
+<h2>Seasonal Special</h2>
+<p>Summer hair is having a MOMENT and your appointment is the only thing standing between</p>
+<p>you and your best hair yet. Limited slots — tap the link.</p>
+<p>Stylist tip: Tie promotions to seasons. Feels timely, not pushy.</p>
+<div class="mini-num">20</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>09</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>IG</h2>
+<h2>Results Speak</h2>
+<p>&quot;I cried when I saw it.&quot; No really — she did. This was [client]&#x27;s first time going platinum and</p>
+<p>we took our time to do it RIGHT. The patience paid off.</p>
+<p>Stylist tip: Emotional testimonials outperform discount posts every time.</p>
+<div class="mini-num">21</div>
+<h2>FB</h2>
+<h2>My Biggest Lesson This Year</h2>
+<p>The most important thing I&#x27;ve learned in [X] years behind the chair isn&#x27;t a technique. It&#x27;s this:</p>
+<p>[lesson]. What&#x27;s the best advice you&#x27;ve ever received?</p>
+<p>Stylist tip: Invite conversation. Respond to every comment. This builds community.</p>
+<p class="eyebrow-line">Week 4 — Convert &amp; Close</p>
+<div class="mini-num">22</div>
+<h2>TT</h2>
+<p>What NOT to Say to Your Stylist</p>
+<p>Please. I am begging you. Stop saying these 4 things. We want to help you — but these</p>
+<p>requests make it impossible. #hairstylist #salonhumor #hairadvice</p>
+<p>Stylist tip: Relatable humor drives massive shares. Keep it lighthearted, not mean.</p>
+<div class="mini-num">23</div>
+<h2>IG</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>10</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>Rate My Work</h2>
+<p>Be honest — rate this look! Drop a heart if you love it or tell me what you&#x27;d change. I can take</p>
+<p>it. (I think.)</p>
+<p>Stylist tip: Vulnerability + humor = engagement. Works especially well on Reels.</p>
+<div class="mini-num">24</div>
+<h2>FB</h2>
+<h2>The Truth About Box Dye</h2>
+<p>I&#x27;m not here to shame you. But I am here to explain exactly what box dye does to the hair</p>
+<p>shaft — and why it makes salon corrections harder AND more expensive. Knowledge is power.</p>
+<p>Stylist tip: This type of educational post gets saved AND shared constantly.</p>
+<div class="mini-num">25</div>
+<h2>IG</h2>
+<h2>Texture Transformation</h2>
+<p>From flat and lifeless to full and bouncy. This is what the right cut + product combo can do</p>
+<p>for fine hair. No filter. No fluff. Just technique.</p>
+<p>Stylist tip: Fine hair transformations get enormous reach because it&#x27;s a huge pain point.</p>
+<div class="mini-num">26</div>
+<h2>ALL</h2>
+<h2>Last Spots This Month</h2>
+<p>I have [X] openings left before the end of the month. Once they&#x27;re gone, next availability is</p>
+<p>[date]. If your hair is on your mind — now&#x27;s the time.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>11</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Stylist tip: Authentic scarcity. Only use if true. Credibility is everything.</p>
+<div class="mini-num">27</div>
+<h2>TT</h2>
+<h2>How I Self-Educate</h2>
+<p>No one taught me this in school. I spent [X] on education this year because staying sharp is</p>
+<p>non-negotiable. Here&#x27;s what I invest in and why it matters for YOUR hair.</p>
+<p>Stylist tip: Education content positions you as a premium provider. Great for price</p>
+<p>justification.</p>
+<div class="mini-num">28</div>
+<h2>IG</h2>
+<h2>Long-Term Client Love</h2>
+<p>Some clients have been with me for [X] years. This is [name]&#x27;s [X]-year anniversary with the</p>
+<p>chair. Relationships like this are what I built this business for.</p>
+<p>Stylist tip: Long-term client stories are incredibly powerful social proof.</p>
+<p class="eyebrow-line">Week 5 — Consistency Builds</p>
+<div class="mini-num">29</div>
+<h2>FB</h2>
+<h2>Understanding Hair Porosity</h2>
+<p>High porosity. Low porosity. Normal. Do you know yours? Because it determines EVERYTHING</p>
+<p>— what products work, how long color lasts, how you should be moisturizing. Let&#x27;s break it</p>
+<p>down.</p>
+<p>Stylist tip: Deep-dive educational. Save-worthy.</p>
+<div class="mini-num">30</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>12</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>IG</h2>
+<h2>Tell Me Your Hair Goals</h2>
+<p>Drop your hair goals in the comments and I&#x27;ll tell you exactly what service would get you</p>
+<p>there. Free advice Friday. Go.</p>
+<p>Stylist tip: Free advice = massive comment engagement. DM conversations = bookings.</p>
+<div class="mini-num">31</div>
+<h2>TT</h2>
+<h2>Highlight Placement Magic</h2>
+<p>The placement IS the technique. Watch how strategic highlights create dimension that looks</p>
+<p>completely natural. No chunky 90s stripes here. #highlights #haircolor #technique</p>
+<p>Stylist tip: Process Reels showing technique outperform finished looks.</p>
+<div class="mini-num">32</div>
+<h2>ALL</h2>
+<h2>Gift Cards Available</h2>
+<p>Know someone who deserves a little luxury? Gift cards are available and honestly the most</p>
+<p>thoughtful gift you can give. DM to grab one.</p>
+<p>Stylist tip: Gift card posts work year-round. Spike them around holidays.</p>
+<div class="mini-num">33</div>
+<h2>IG</h2>
+<h2>What I Wish I Knew Earlier</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>13</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>5 things I wish someone had told me in my first year behind the chair. If you&#x27;re a new stylist,</p>
+<p>save this. If you&#x27;re a client, this gives you a peek into the journey.</p>
+<p>Stylist tip: Dual audience appeal — both stylists and clients engage with this.</p>
+<div class="mini-num">34</div>
+<h2>FB</h2>
+<p>How Often Should You ACTUALLY Wash Your Hair?</p>
+<p>The answer is: it depends. And I&#x27;m tired of the one-size-fits-all advice online. Here&#x27;s how to</p>
+<p>figure out your actual wash schedule based on your hair type, lifestyle, and goals.</p>
+<p>Stylist tip: Highly searchable topic. Pin this one.</p>
+<div class="mini-num">35</div>
+<h2>TT</h2>
+<p>Guess the Service</p>
+<p>Can you guess what service I just did? Comment before the reveal at the end! #hairgame</p>
+<p>#salonchallenge</p>
+<p>Stylist tip: Interactive Reels drive comments. Use a quick reveal cut at the end.</p>
+<p class="eyebrow-line">Week 6 — Deepen Relationships</p>
+<div class="mini-num">36</div>
+<h2>IG</h2>
+<p>Brunette to Balayage</p>
+<p>She wanted warmth without looking too done. We went in with a soft money piece and</p>
+<p>face-frame balayage. The result? Chef&#x27;s kiss. #balayage #brunette #naturalhair</p>
+<p>Stylist tip: Natural-looking color transformations are consistently high-performing.</p>
+<div class="mini-num">37</div>
+<h2>FB</h2>
+<p>Setting Up for a Full Day</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>14</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Here&#x27;s what my station looks like before the first client walks in. Everything has a place.</p>
+<p>Everything has a reason. Preparation is professionalism.</p>
+<p>Stylist tip: Process + professionalism content attracts quality clients.</p>
+<div class="mini-num">38</div>
+<h2>ALL</h2>
+<h2>New Service Alert</h2>
+<p>Introducing [service name] — [one line on what it does]. I&#x27;ve been trained in this technique</p>
+<p>and I&#x27;m obsessed. First 5 bookings get [offer]. Details in bio.</p>
+<p>Stylist tip: New service launches should feel like events. Build excitement over 3–5 posts.</p>
+<div class="mini-num">39</div>
+<h2>IG</h2>
+<h2>Hot Take</h2>
+<p>Unpopular opinion: [hot take about hair, trends, or salon etiquette]. Agree or disagree? I&#x27;ll die</p>
+<p>on this hill. Comment below.</p>
+<p>Stylist tip: Hot takes get comments. Controversial (but kind) opinions spark dialogue.</p>
+<div class="mini-num">40</div>
+<h2>TT</h2>
+<h2>Protect Your Hair This Season</h2>
+<p>The season is [season] and your hair is suffering. Here are 4 things I tell every single client to</p>
+<p>do right now to prevent damage. Free advice from your stylist.</p>
+<p>Stylist tip: Seasonal tips are timely and highly shareable.</p>
+<div class="mini-num">41</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>15</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>IG</h2>
+<h2>The Confidence Shift</h2>
+<p>&quot;I forgot what it felt like to feel like myself.&quot; This is what a haircut can do. It&#x27;s never just a</p>
+<p>haircut. Thank you [name] for trusting me.</p>
+<p>Stylist tip: Emotional outcome posts outperform service feature posts every time.</p>
+<div class="mini-num">42</div>
+<h2>FB</h2>
+<p>My Favorite Service to Do &amp; Why</p>
+<p>If I could do one service every single day for the rest of my career it would be [service]. Here&#x27;s</p>
+<p>why — and what makes it so satisfying to execute well.</p>
+<p>Stylist tip: Passion content is magnetic. Clients book stylists they believe in.</p>
+<p class="eyebrow-line">Week 7 — Show Your Expertise</p>
+<div class="mini-num">43</div>
+<h2>TT</h2>
+<h2>Keratin Smooth</h2>
+<p>Frizz who? Watch the before and after of this keratin treatment. We filmed the whole</p>
+<p>process so you can see exactly what happens. #keratin #frizz #smoothhair</p>
+<p>Stylist tip: Keratin content gets massive views. Huge pain point for a big audience.</p>
+<div class="mini-num">44</div>
+<h2>IG</h2>
+<p>Why Your Hair Breaks at the Ends</p>
+<p>Breaking ends are a symptom. Here&#x27;s what&#x27;s actually causing it — and no, the answer isn&#x27;t</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>16</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>&#x27;just a trim&#x27; (though that helps). The real issue is usually one of these 4 things.</p>
+<p>Stylist tip: Problem/solution format. Highly saveable.</p>
+<div class="mini-num">45</div>
+<h2>FB</h2>
+<p>What&#x27;s Your Hair Personality?</p>
+<p>Are you: A) Low-maintenance B) High-maintenance C) &#x27;I just want it to work&#x27; D) Send help.</p>
+<h2>Vote and tell me why — I&#x27;ll respond to everyone!</h2>
+<p>Stylist tip: Fun personality polls drive comments and character. Builds brand voice.</p>
+<div class="mini-num">46</div>
+<h2>ALL</h2>
+<h2>Loyalty Appreciation</h2>
+<p>To every client who has sat in my chair — thank you. As a small thank you this [month],</p>
+<p>existing clients get [perk]. Details in bio or DM me.</p>
+<p>Stylist tip: Loyalty rewards make clients feel seen. Retention &gt; acquisition.</p>
+<div class="mini-num">47</div>
+<h2>IG</h2>
+<h2>Continuing Education</h2>
+<p>Just got back from [class/event/training]. Here&#x27;s what I learned and why it matters for every</p>
+<p>client in my chair going forward. Staying sharp is a commitment.</p>
+<p>Stylist tip: Education content = premium positioning.</p>
+<div class="mini-num">48</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>17</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>TT</h2>
+<p>The Hardest Day Behind the Chair</p>
+<p>I&#x27;m not going to pretend this job is always glamorous. This was the hardest kind of day — and</p>
+<p>here&#x27;s what I do to reset. #salonlife #hairstylistlife #realtalk</p>
+<p>Stylist tip: Vulnerability content builds deep loyalty.</p>
+<div class="mini-num">49</div>
+<h2>IG</h2>
+<h2>Repeat Client Milestone</h2>
+<p>This is [client]&#x27;s [X]th appointment. [X] years. [X] transformations. Some relationships just</p>
+<p>stick — and I&#x27;m grateful every single time.</p>
+<p>Stylist tip: Milestones + gratitude = shareable, emotional content.</p>
+<p class="eyebrow-line">Week 8 — Drive Decisions</p>
+<div class="mini-num">50</div>
+<h2>FB</h2>
+<p>The Difference Between a $40 and $200 Haircut</p>
+<p>Spoiler: it&#x27;s not just the name on the door. Here&#x27;s what you&#x27;re actually paying for when you</p>
+<p>invest in a higher-end salon experience — and why it&#x27;s worth it for the right person.</p>
+<p>Stylist tip: Price justification content is gold. Attracts value-aligned clients.</p>
+<div class="mini-num">51</div>
+<h2>TT</h2>
+<p>Stylist vs. Client Expectations</p>
+<p>&#x27;I want something low maintenance.&#x27; [Shows extremely high-maintenance inspiration photo.]</p>
+<p>Every. Single. Time. Who can relate? Tag your stylist! #salonhumor</p>
+<p>Stylist tip: Relatable humor gets massive shares.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>18</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><div class="mini-num">52</div>
+<h2>IG</h2>
+<p>Short Hair, Don&#x27;t Care</p>
+<p>She went from shoulder-length to a pixie. No hesitation. Pure confidence. This is the energy</p>
+<p>we&#x27;re bringing to every appointment. Are you brave enough?</p>
+<p>Stylist tip: Short hair transformations are viral-prone.</p>
+<div class="mini-num">53</div>
+<h2>ALL</h2>
+<h2>Bundle &amp; Save</h2>
+<p>Pair [Service A] + [Service B] together this month and save $[X]. My most popular combo —</p>
+<p>booked together, they work better and last longer. Details in bio.</p>
+<p>Stylist tip: Bundles increase average ticket and drive rebooking on both services.</p>
+<div class="mini-num">54</div>
+<h2>FB</h2>
+<h2>The Client Who Changed How I Work</h2>
+<p>I had a client years ago who taught me something I still carry with me every single day. Here&#x27;s</p>
+<p>the story — and the lesson I try to pass on to every new stylist I mentor.</p>
+<p>Stylist tip: Story-driven content about growth builds deep brand loyalty.</p>
+<div class="mini-num">55</div>
+<h2>IG</h2>
+<p>Detangling Without the Damage</p>
+<p>The way most people detangle is silently destroying their hair. Here&#x27;s the right way — tools,</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>19</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>technique, and which products actually help vs. make it worse.</p>
+<p>Stylist tip: Practical how-to. Highly saveable.</p>
+<div class="mini-num">56</div>
+<h2>TT</h2>
+<p>My Favorite Product and Why</p>
+<p>I&#x27;ve tried hundreds of products. This one stays on my shelf no matter what. Here&#x27;s why I</p>
+<p>reach for it every single day and what it does that others can&#x27;t.</p>
+<p>Stylist tip: Authentic product reviews &gt; sponsored content.</p>
+<p class="eyebrow-line">Week 9 — Reward &amp; Retain</p>
+<div class="mini-num">57</div>
+<h2>IG</h2>
+<p>Dream Hair vs. Reality Hair</p>
+<p>Show me your dream hair inspo in the comments and I&#x27;ll tell you how achievable it is with</p>
+<p>your natural hair type. Let&#x27;s be real AND supportive.</p>
+<p>Stylist tip: Consultation-style engagement. Drives DMs and booking conversations.</p>
+<div class="mini-num">58</div>
+<h2>FB</h2>
+<h2>The Gray Blend</h2>
+<p>Going gray isn&#x27;t giving up. It&#x27;s a choice — and when done right, it&#x27;s stunning. Here&#x27;s how we</p>
+<p>helped [client] embrace her natural color transition beautifully.</p>
+<p>Stylist tip: Gray blending content speaks to a huge, underserved, high-spending demographic.</p>
+<div class="mini-num">59</div>
+<h2>ALL</h2>
+<p>Refer a Friend Month</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>20</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>This month only: refer a friend and you BOTH get [reward]. Your friend gets a great first</p>
+<p>experience, you get rewarded for the love. This is how real community grows.</p>
+<p>Stylist tip: Referral campaigns work best as a dedicated, time-limited push.</p>
+<div class="mini-num">60</div>
+<h2>TT</h2>
+<p>3 Reasons Your Blowout Doesn&#x27;t Last</p>
+<p>You paid for a blowout and it fell by the next morning. Here&#x27;s exactly why — and what to do</p>
+<p>differently every single time. #blowout #haircare #hairtips</p>
+<p>Stylist tip: Problem-solving content about common frustrations = very high save rate.</p>
+<div class="mini-num">61</div>
+<h2>IG</h2>
+<p>What I&#x27;m Working On Right Now</p>
+<p>Behind the chair and behind the scenes — here&#x27;s what I&#x27;m currently learning, building, and</p>
+<p>excited about. Things are evolving and I wanted to bring you along.</p>
+<p>Stylist tip: Business transparency builds investment from your audience.</p>
+<div class="mini-num">62</div>
+<h2>FB</h2>
+<p>How to Talk to Your Stylist</p>
+<p>The single most important skill for getting the haircut you actually want? Communication.</p>
+<p>Here&#x27;s exactly what to say — and how to bring in inspo photos that actually help.</p>
+<p>Stylist tip: Client education content gets shared TO clients by other clients.</p>
+<div class="mini-num">63</div>
+<h2>TT</h2>
+<h2>Grown-Out Highlights Fix</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>21</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>6 months of grow-out, zero maintenance. Watch the rescue. We worked with what was there</p>
+<p>and the result is honestly better than the original. #highlights #hairfix</p>
+<p>Stylist tip: Relatable starting point + great result = massive reach.</p>
+<p class="eyebrow-line">Week 10 — Ask &amp; Engage</p>
+<div class="mini-num">64</div>
+<h2>IG</h2>
+<h2>Ask Me Anything — Hair Edition</h2>
+<p>I&#x27;m opening up the floor. Ask me anything about hair, the salon, my process, products —</p>
+<p>anything. Drop your questions below and I&#x27;ll answer every single one.</p>
+<p>Stylist tip: AMA posts drive comments AND give you content ideas for the next 2 weeks.</p>
+<div class="mini-num">65</div>
+<h2>FB</h2>
+<p>What a Slow Day Looks Like</p>
+<p>Slow days aren&#x27;t wasted days. Here&#x27;s how I use lighter booking days to prep, learn, and set</p>
+<p>myself up for a great rest of the month.</p>
+<p>Stylist tip: Humanizes the business. Clients appreciate the behind-the-scenes reality.</p>
+<div class="mini-num">66</div>
+<h2>ALL</h2>
+<h2>Holiday Pre-Booking Open</h2>
+<p>Holiday season is COMING and my books fill up fast. If you want to look and feel amazing for</p>
+<p>[holiday], now is the time to lock in your appointment. Don&#x27;t wait.</p>
+<p>Stylist tip: Open holiday pre-booking 8–10 weeks in advance.</p>
+<div class="mini-num">67</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>22</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>TT</h2>
+<p>Root Touch-Up vs. Full Color</p>
+<p>Not every appointment needs to be a full color service. Here&#x27;s how to know which one you</p>
+<p>actually need — and how to have that conversation with your stylist.</p>
+<p>Stylist tip: Helps clients feel empowered and reduces booking friction.</p>
+<div class="mini-num">68</div>
+<h2>IG</h2>
+<h2>The Lived-In Color</h2>
+<p>Low maintenance. High impact. This is the look that grows out beautifully and never looks</p>
+<p>&#x27;done.&#x27; The secret? Placement. #livedincolor #balayage #naturalhair</p>
+<p>Stylist tip: Lived-in color is consistently one of the most searched and saved styles.</p>
+<div class="mini-num">69</div>
+<h2>FB</h2>
+<h2>Review Spotlight</h2>
+<p>&quot;Five stars doesn&#x27;t cover it.&quot; Share a glowing review. Thank [name] — this is the kind of</p>
+<p>review that makes every early morning and long day worth it.</p>
+<p>Stylist tip: Screenshot of Google/Yelp reviews performs well.</p>
+<div class="mini-num">70</div>
+<h2>IG</h2>
+<p>How I Unwind After a Big Week</p>
+<p>Self-care isn&#x27;t a luxury — it&#x27;s maintenance. Here&#x27;s how I reset after a full week behind the</p>
+<p>chair so I can show up at my best for every client. What&#x27;s your reset ritual?</p>
+<p>Stylist tip: Lifestyle content builds personal connection.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>23</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p class="eyebrow-line">Week 11 — Authority Content</p>
+<div class="mini-num">71</div>
+<h2>TT</h2>
+<p>Bleach &amp; Tone Step-by-Step</p>
+<p>The full process of going from dark to platinum. Nothing hidden. Every step, every product,</p>
+<p>every timing explained. Spoiler: it took 6 hours and was worth every minute.</p>
+<p>Stylist tip: Long-form process content gets massive saves. Trust builder for high-ticket</p>
+<p>clients.</p>
+<div class="mini-num">72</div>
+<h2>IG</h2>
+<h2>Why Your Hair Color Fades Fast</h2>
+<p>It&#x27;s not just the shampoo. Here are the 5 real reasons your color is fading faster than it</p>
+<p>should — and exactly what to change starting tonight.</p>
+<p>Stylist tip: High-search topic. Pin this one.</p>
+<div class="mini-num">73</div>
+<h2>FB</h2>
+<h2>Caption This</h2>
+<p>[Post a funny or dramatic mid-process photo.] I dare you to caption this. Best one gets</p>
+<p>featured in my next post. GO.</p>
+<p>Stylist tip: Caption contests drive comments.</p>
+<div class="mini-num">74</div>
+<h2>ALL</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>24</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>Treat Yourself Tuesday</h2>
+<p>You work hard. Your hair should show it. Treat Yourself Tuesday — book before midnight</p>
+<p>tonight and get [small perk]. Don&#x27;t miss it.</p>
+<p>Stylist tip: Weekly micro-promotions train your audience to watch for deals.</p>
+<div class="mini-num">75</div>
+<h2>TT</h2>
+<h2>Why I Almost Quit</h2>
+<p>Year two almost ended my career. Here&#x27;s what happened, how I got through it, and what it</p>
+<p>taught me about building a sustainable business behind the chair. #stylistlife</p>
+<p>Stylist tip: Vulnerable story content builds the deepest loyalty.</p>
+<div class="mini-num">76</div>
+<h2>IG</h2>
+<h2>The Consultation Process</h2>
+<p>A consultation isn&#x27;t just small talk — it&#x27;s everything. Here&#x27;s what I&#x27;m actually doing and</p>
+<p>listening for in the first 10 minutes with every new client.</p>
+<p>Stylist tip: Process transparency attracts premium, prepared clients.</p>
+<div class="mini-num">77</div>
+<h2>FB</h2>
+<p>Protective Styles and Hair Health</p>
+<p>Protective styles work — but only when done right. Here&#x27;s what to know before your next</p>
+<p>braids, twists, or updo so your natural hair stays healthy underneath.</p>
+<p>Stylist tip: Inclusive content that speaks to textured hair clients.</p>
+<p class="eyebrow-line">Week 12 — Close Strong</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>25</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><div class="mini-num">78</div>
+<h2>IG</h2>
+<p>Year in Review: Best Looks</p>
+<p>Some of my favorite work from this year. Swipe through — each one is a story. Each one is a</p>
+<p>person who trusted me with their look. Grateful doesn&#x27;t cover it.</p>
+<p>Stylist tip: Year-end round-ups get high saves.</p>
+<div class="mini-num">79</div>
+<h2>TT</h2>
+<p>Hair Emergency? I&#x27;ve Seen Worse</p>
+<p>Tell me your hair horror story in the comments and I&#x27;ll rate how fixable it is on a scale of</p>
+<p>1–10. Nothing is truly unfixable. Probably.</p>
+<p>Stylist tip: Interactive + humorous. Drives conversation.</p>
+<div class="mini-num">80</div>
+<h2>FB</h2>
+<p>New Year, New Hair: How to Plan Your Look</p>
+<p>January is for fresh starts — including your hair. Here&#x27;s how to think through a new-year hair</p>
+<p>refresh: what to consider, how to communicate it, and what&#x27;s actually achievable.</p>
+<p>Stylist tip: Post this in late December.</p>
+<div class="mini-num">81</div>
+<h2>ALL</h2>
+<h2>New Year Pre-Book Special</h2>
+<p>New year. New chair. Same amazing results. Book your January appointment now and lock in</p>
+<p>[offer]. My regulars already know — January fills up faster than any other month.</p>
+<p>Stylist tip: New Year push with genuine offer.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>26</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><div class="mini-num">82</div>
+<h2>IG</h2>
+<h2>First-Time Client Turned Regular</h2>
+<p>&quot;I was nervous coming in for the first time. Now I won&#x27;t go anywhere else.&quot; The best</p>
+<p>compliment I can get. Thank you [name] for trusting the process from day one.</p>
+<p>Stylist tip: First-timer-to-regular story is powerful social proof.</p>
+<div class="mini-num">83</div>
+<h2>TT</h2>
+<p>How to Maintain Your Look Between Appointments</p>
+<p>What you do at home between appointments matters just as much as what I do in the chair.</p>
+<p>Here are my top 5 recommendations for [service type] maintenance.</p>
+<p>Stylist tip: Post-appointment tips keep clients invested in their results.</p>
+<div class="mini-num">84</div>
+<h2>FB</h2>
+<p>Setting Goals for the New Year</p>
+<p>I&#x27;m sharing my salon goals for this year — new services, education, client experience</p>
+<p>improvements. Accountability is powerful. What are you working toward this year?</p>
+<p>Stylist tip: Transparency about growth builds community investment in your success.</p>
+<p class="eyebrow-line">Week 13 — Bonus: Repeat Cycle</p>
+<div class="mini-num">85</div>
+<h2>IG</h2>
+<h2>Thank You Post</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>27</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>To every single person who sat in my chair, referred a friend, left a review, or just sent a kind</p>
+<p>DM — thank you. This career is a privilege and I don&#x27;t take it for granted.</p>
+<p>Stylist tip: Gratitude posts get enormous organic engagement.</p>
+<div class="mini-num">86</div>
+<h2>ALL</h2>
+<p>Valentine&#x27;s Day Preview</p>
+<p>Valentine&#x27;s Day hair should be booked NOW — not February 12th. Whether it&#x27;s for a date, a</p>
+<p>Galentine&#x27;s, or just because you deserve it — lock in your appointment early.</p>
+<p>Stylist tip: Seasonal pre-book posts. Swap for relevant holiday based on your schedule.</p>
+<div class="mini-num">87</div>
+<h2>TT</h2>
+<h2>The Most Requested Look Right Now</h2>
+<p>This is the look I&#x27;ve done more than any other this month — and here&#x27;s exactly why it works</p>
+<p>on almost everyone. #trending #hairtrend #salonrequest</p>
+<p>Stylist tip: Trend content performs well when tied to a specific real transformation.</p>
+<div class="mini-num">88</div>
+<h2>IG</h2>
+<p>Style Quiz in the Comments</p>
+<p>Answer these 3 questions and I&#x27;ll tell you your perfect haircut: 1) How much time do you</p>
+<p>spend on your hair daily? 2) What&#x27;s your vibe — classic or trendy? 3) Long or short?</p>
+<p>Stylist tip: Mini consultation in the comments. Drives DMs and booking conversations.</p>
+<div class="mini-num">89</div>
+<h2>FB</h2>
+<p>The Investment Mindset for Hair</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>28</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><p>Your hair is the one accessory you wear every single day. Here&#x27;s how I think about pricing —</p>
+<p>and why &#x27;expensive&#x27; and &#x27;overpriced&#x27; are two very different things.</p>
+<p>Stylist tip: Price justification content. Attracts clients aligned with your value.</p>
+<div class="mini-num">90</div>
+<h2>ALL</h2>
+<p>The Journey: Day 1 to Day 90</p>
+<p>90 days ago I started showing up differently for my online presence. Here&#x27;s what changed —</p>
+<p>in my business and for my clients. Thank you for being here. Here&#x27;s to what&#x27;s next.</p>
+<p>Stylist tip: Meta-reflection post. Celebrates the journey. Authentic sign-off for the calendar</p>
+<p>cycle.</p>
+<h2>Bonus: 30 Extra Post Ideas</h2>
+<p>Use these when you want to go beyond the 90 days, fill gaps, or swap out any post that doesn&#x27;t fit</p>
+<p>your current season or situation.</p>
+<div class="mini-num">1</div>
+<h2>Meet the team — introduce every staff member with a fun fact</h2>
+<div class="mini-num">2</div>
+<p>Client&#x27;s first appointment anniversary post</p>
+<div class="mini-num">3</div>
+<h2>Product spotlight — your #1 recommended product right now</h2>
+<div class="mini-num">4</div>
+<h2>Behind the booking — how clients can prepare for their appointment</h2>
+<div class="mini-num">5</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>29</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><h2>Seasonal look trends — what&#x27;s hot this [season]</h2>
+<div class="mini-num">6</div>
+<p>Studio/salon redesign reveal or upgrade announcement</p>
+<div class="mini-num">7</div>
+<p>Collaboration post with a local business (photographer, boutique, etc.)</p>
+<div class="mini-num">8</div>
+<h2>Live demo — go live on Instagram showing a technique</h2>
+<div class="mini-num">9</div>
+<h2>Throwback Thursday — compare your work from year 1 to today</h2>
+<div class="mini-num">10</div>
+<p>Share a client&#x27;s own photo (with permission) wearing their look</p>
+<div class="mini-num">11</div>
+<h2>FAQ round-up — answer your 5 most common DM questions</h2>
+<div class="mini-num">12</div>
+<p>New product launch or restocked favorite</p>
+<div class="mini-num">13</div>
+<p>Charity or community involvement highlight</p>
+<div class="mini-num">14</div>
+<h2>Holiday greeting — personalized with your salon branding</h2>
+<div class="mini-num">15</div>
+<p>&#x27;Just booked&#x27; countdown for an upcoming sold-out week</p>
+<div class="mini-num">16</div>
+<h2>Color swatch of the season — show what&#x27;s trending in your chair</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>30</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><div class="mini-num">17</div>
+<p>Reaction video to a wild hair transformation (with consent)</p>
+<div class="mini-num">18</div>
+<p>Share your Spotify or playlist for a behind-the-chair vibe</p>
+<div class="mini-num">19</div>
+<p>Show a speed round of your fastest service</p>
+<div class="mini-num">20</div>
+<h2>Introduce your kit — walk through every tool in your arsenal</h2>
+<div class="mini-num">21</div>
+<h2>Client consultation walkthrough — what questions do you ask?</h2>
+<div class="mini-num">22</div>
+<p>Re-share your best performing post from last month</p>
+<div class="mini-num">23</div>
+<h2>Relatable stylist meme — humor always lands</h2>
+<div class="mini-num">24</div>
+<p>Show a color correction from start to finish</p>
+<div class="mini-num">25</div>
+<p>Feature a client&#x27;s long-term hair journey across multiple visits</p>
+<div class="mini-num">26</div>
+<h2>Announce a price increase — transparently and confidently</h2>
+<div class="mini-num">27</div>
+<p>Post about a cause you care about and your salon&#x27;s values</p>
+<div class="mini-num">28</div>
+<p>Walk through your continuing education investment this year</p>
+<div class="mini-num">29</div>
+<p>Ask: &#x27;What do you wish more stylists knew?&#x27; for research and engagement</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>31</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Content System</div></div>
+          <div class="content-card"><div class="mini-num">30</div>
+<p>Post your booking link with a simple, direct call to action</p>
+<p>5 Rules for Making This Work</p>
+<p>1 Batch your content</p>
+<p>Set aside 2 hours each week to write captions for the next 7 days. Schedule with Buffer, Later, or</p>
+<p>Meta Business Suite.</p>
+<p>2 Adapt, don&#x27;t copy</p>
+<p>These captions are starting points. Add your personality, local references, and client stories to</p>
+<p>make them yours.</p>
+<p>3 Repurpose everything</p>
+<p>Every Reel can become a Story. Every Story can become a caption. Every caption can become a</p>
+<p>Facebook post.</p>
+<p>4 Track what works</p>
+<p>After 30 days, note which post types get the most saves, comments, and DMs. Double down on</p>
+<p>those.</p>
+<p>5 Your story is the product</p>
+<p>Clients don&#x27;t just book a service. They book a person. The more of yourself you show, the more</p>
+<p>they trust you.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>32</span></div>
+        </section>
+    </main></body></html>

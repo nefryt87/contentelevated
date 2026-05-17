@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#eef3f7; --paper:#fbfdff; --ink:#07111d; --muted:#526171;
+  --accent:#348bb9; --accent2:#f08245; --dark:#0e1b28;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Complete Growth Bundle</span></div></div><div class="pill">Field growth system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Plumbers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Plumbers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PLUMBING CONTRACTOR</h3>
+<h3>CLIENT COMMUNICATION TEMPLATE</h3>
+<h3>PACK</h3>
+<p>24 done-for-you templates for every stage of the customer relationship Estimates • Maintenance plans • Seasonal campaigns • Reviews • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with customer name, job details, and company</p>
+<p>information.</p>
+<p class="template-line">• Works as email, SMS, and customer portal messages — shorten to 2-3</p>
+<p>sentences for texts.</p>
+<p class="template-line">• The best plumbing communication is plain-spoken, local, and feels like a</p>
+<p>neighbor who&#x27;s also a professional.</p>
+<p class="template-line">• Always personalize the first line. It takes 30 seconds with AI and makes a</p>
+<p>real difference.</p>
+<h3>SECTION 1: ESTIMATES &amp; CONVERSION</h3>
+<p>Estimate Confirmation</p>
+<div class="section-label">SUBJECT Your plumbing estimate from [Company Name] — [First Name]</div>
+<p>BODY Hi [First Name], Thanks for having me out today — I appreciate the opportunity. Here&#x27;s a quick summary of what we discussed: Job: [brief description] Estimate: $[amount] Timeline: [when you could start/complete]</p>
+<p>If you have questions about what&#x27;s included, want to talk through options, or need to adjust scope, just call or text me: [Phone]. Happy to help any way I can. [Your Name] | [Company Name] | [Phone] Estimate Follow-Up — Day 2</p>
+<h3>SUBJECT Checking in — [First Name]</h3>
+<p>BODY Hi [First Name], Just following up on the estimate for [job type]. Did you have a chance to look it over? Happy to answer any questions or go over anything. Just call or text: [Phone]. [Your Name] | [Company Name] Estimate Follow-Up — Day 5</p>
+<div class="section-label">SUBJECT A couple things worth knowing — [First Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>BODY Hi [First Name], Following up one more time on the [job type] estimate. A quick note: [one value-add point — e.g., &#x27;Water heaters that aren&#x27;t replaced proactively often fail during peak demand — winter mornings and summer heat</p>
+<p>waves are the most common times.&#x27; OR &#x27;We offer [X] months of interest-free financing if that helps with timing.&#x27;] No pressure — just want to make sure you have everything you need. [Your Name] | [Company Name] | [Phone] Estimate Follow-Up — Day 14</p>
+<h3>SUBJECT Last check-in — [First Name]</h3>
+<p>BODY Hi [First Name], One last check-in on the estimate for [job type]. If you&#x27;ve decided to go another direction, totally understand — no hard feelings. If timing or budget was the issue, I&#x27;m happy to talk through options. We&#x27;re here when you need us.</p>
+<p>[Your Name] | [Company Name] | [Phone]</p>
+<h3>SECTION 2: MAINTENANCE PLANS &amp;</h3>
+<h3>RETENTION</h3>
+<p>Post-Emergency Maintenance Plan Offer</p>
+<div class="section-label">SUBJECT A way to prevent this from happening again — [First Name]</div>
+<p>BODY Hi [First Name], Really glad we could get that sorted today. That kind of [issue type] is exactly what we catch with regular maintenance before it turns into an emergency. We offer an annual plumbing maintenance plan that covers:</p>
+<p class="template-line">- Annual whole-home plumbing inspection</p>
+<p class="template-line">- Water heater flush and check</p>
+<p class="template-line">- Drain flow test and cleaning</p>
+<p class="template-line">- Priority scheduling — you jump the queue during busy periods</p>
+<p>Annual investment: $[amount]. For most customers, that&#x27;s less than one emergency call. Want me to set you up? Just call [Phone] or reply here. [Your Name] | [Company Name] Water Heater Age Alert</p>
+<div class="section-label">SUBJECT Your water heater — worth knowing, [First Name]</div>
+<p>BODY Hi [First Name], I&#x27;m reaching out because our records show the water heater we last serviced at your home is now approximately [X] years old. Water heaters typically last 8-12 years. At [age] years, yours is [approaching /</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>past] the average lifespan — which means the question isn&#x27;t if it will be replaced, but when. The good news: replacing it proactively (on your timeline, with financing options) is far less disruptive than an emergency replacement on a Sunday morning.</p>
+<p>Happy to come take a look and give you an honest assessment. Just call [Phone] or reply here. [Your Name] | [Company Name] Seasonal Campaign — Winterization</p>
+<div class="section-label">SUBJECT Get your plumbing ready for winter — [First Name]</div>
+<p>BODY Hi [First Name], Winter is coming, and frozen pipes are the most expensive plumbing emergency there is. I&#x27;m reaching out to our past customers first before we open the schedule to new clients. A winter plumbing check covers:</p>
+<p class="template-line">- Pipe insulation assessment</p>
+<p class="template-line">- Outdoor faucet winterization</p>
+<p class="template-line">- Water heater efficiency check</p>
+<p class="template-line">- Sump pump test</p>
+<p>$[amount] | Takes about an hour | Could save you thousands. Book here: [link] or call [Phone]. Last year we filled up [X] weeks before the first freeze. [Your Name] | [Company Name] Spring Drain Cleaning Campaign</p>
+<div class="section-label">SUBJECT Spring is the right time to deal with your drains — [First Name]</div>
+<p>BODY Hi [First Name], Spring is drain season — and not in a good way if you&#x27;re not prepared. After a winter of minimal use, drains and sewer lines are at peak clog risk in spring. A professional drain cleaning now is much cheaper than an emergency call later.</p>
+<p>Spring drain cleaning special: $[amount] | Available [dates] Book here: [link] or text [Phone]. [Your Name] | [Company Name] Lapsed Customer Win-Back</p>
+<div class="section-label">SUBJECT It&#x27;s been a while — checking in, [First Name]</div>
+<p>BODY Hi [First Name], It&#x27;s been a couple of years since we&#x27;ve been out to your place, and I just wanted to check in. If you&#x27;ve been on top of things — great. If there&#x27;s been anything nagging at you</p>
+<p>that you&#x27;ve been putting off (dripping faucet, slow drain, water heater making noise), now&#x27;s a good time to get ahead of it before it becomes an emergency. Reply here or call [Phone]. Happy to take a quick look at anything. [Your Name] | [Company Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Plumbers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 3: REVIEWS, REFERRALS &amp;</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Post-Job Review Request</p>
+<h3>SUBJECT Quick favor — [First Name]</h3>
+<p>BODY Hi [First Name], Really glad we could take care of that [job type] for you today. If you were happy with the work, I&#x27;d really appreciate a Google review — it takes 2 minutes and it means everything to a local business like ours.</p>
+<p>Here&#x27;s the direct link: [Google Review Link] Thanks so much. It was great working with you. [Your Name] | [Company Name]</p>
+<h3>Referral Request</h3>
+<h3>SUBJECT Know anyone who needs a good plumber?</h3>
+<p>BODY Hi [First Name], Thanks again for letting us take care of [job type] at your place. If you have a neighbor, family member, or coworker who needs plumbing work — repair, installation, or just a checkup — I&#x27;d really appreciate the referral.</p>
+<p>[If applicable: &#x27;As a thank-you, we offer $X off your next service for every</p>
+<h3>referral who books with us.&#x27;]</h3>
+<p>[Your Name] | [Company Name] | [Phone] Realtor / Home Inspector Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Company Name], Licensed Plumber, [City]</div>
+<p>BODY Hi [Name], My name is [Your Name] — I run [Company Name], a licensed plumbing contractor serving [City/area]. I work with a lot of homeowners and know that [realtors / home inspectors]</p>
+<p>regularly encounter plumbing issues during transactions. I&#x27;d love to be on your short list of reliable contractors you can call or recommend with confidence. We&#x27;re known for honest pricing, fast response, and not creating more problems than we solve.</p>
+<p>Happy to connect and introduce ourselves properly. Just call or text [Phone]. [Your Name] | [Company Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section></main></body></html>

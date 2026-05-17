@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Videographers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Videographers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>VIDEOGRAPHER</h3>
+<p>The AI Playbook for Videographers Convert more inquiries, close premium packages, build vendor partnerships, and create a client experience that generates referrals — for wedding, corporate, and commercial work</p>
+<h3>INTRODUCTION</h3>
+<p>The videographers booking premium projects consistently aren&#x27;t just the best behind the lens. They respond to inquiries the same day with copy that makes a client feel understood. They follow up on ghosted leads. They maintain photographer and planner</p>
+<p>relationships that fill their calendar without advertising. They present their packages with confidence. And they deliver films with an experience that turns clients into raving referrers. This playbook covers every high-leverage scenario — wedding, corporate,</p>
+<p>and commercial — with copy-paste AI prompts throughout.</p>
+<h3>CHAPTER 1: INQUIRY RESPONSE &amp; PACKAGE</h3>
+<h3>CONVERSION</h3>
+<p>The Same-Day Response System Clients booking videographers — especially for weddings — often contact 3-5 studios simultaneously. The first professional, personalised, and enthusiastic response wins a disproportionate number of consultations.</p>
+<h3>PROMPT — WEDDING VIDEOGRAPHY INQUIRY RESPONSE</h3>
+<p class="template-line">Write a warm, enthusiastic inquiry response email for my videography studio. The couple [Names] reached out about wedding videography for their [date] wedding at [venue]. They mentioned: [paste details — style they want, what matters to them,</p>
+<p>any specific moments they mentioned]. My videography style is [your style — e.g., cinematic documentary / romantic film / editorial]. I want to: (1) make them feel like I genuinely read their inquiry, (2) briefly describe how I&#x27;d approach their specific day,</p>
+<p>(3) mention my packages, (4) invite them to a video call or phone call. Warm, excited, under 200 words. Sign as [Your Name], [Studio Name].</p>
+<div class="section-label">PROMPT — CORPORATE / COMMERCIAL INQUIRY RESPONSE</div></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Write a professional inquiry response email for my videography business. The client [Name] from [Company] reached out about [project type — e.g., brand video / event coverage / product launch / corporate training]. They mentioned: [paste key details].</p>
+<p>I want to: (1) demonstrate I understand their business objective, (2) briefly outline how I&#x27;d approach the project, (3) propose a discovery call to discuss scope and timeline. Professional and confident, under 200 words. Sign as [Your Name], [Studio Name].</p>
+<p>The Follow-Up Sequence</p>
+<h3>PROMPT — 3-TOUCH FOLLOW-UP SEQUENCE</h3>
+<p class="template-line">Write a 3-message follow-up sequence for a videography inquiry that hasn&#x27;t responded. Client: [Names/Company], project: [type], date: [if applicable]. Message 1 (Day 3): warm check-in, add one specific insight relevant to their project. Message</p>
+<p>2 (Day 8): share a relevant example from your portfolio or a tip for their project type. Message 3 (Day 14): soft close. Each under 80 words. Sign as [Your Name], [Studio Name]. Package Presentation &amp; Pricing Confidence</p>
+<p>Videographers who struggle with pricing conversations almost always present the number before establishing the value. By the time you share your fee, the client should already understand what transformation or deliverable they&#x27;re investing in.</p>
+<h3>PROMPT — PACKAGE PRESENTATION EMAIL</h3>
+<p class="template-line">Write a package presentation email for my videography studio. Client [Names/Company] is enquiring about [project type]. My packages: Package 1: [name, what&#x27;s included, price]. Package 2: [name, included, price]. Package 3:</p>
+<p>[name, included, price]. I want to: (1) present each package clearly with what&#x27;s different between them, (2) make a recommendation based on what they&#x27;ve shared, (3) invite them to a call to discuss. Confident, not salesy. Under 250 words. Sign as</p>
+<p>[Your Name], [Studio Name].</p>
+<h3>PROMPT — BUDGET OBJECTION RESPONSE</h3>
+<p class="template-line">Write a response to a client who said my videography fee is higher than their budget. My lowest package is $[amount], their budget is $[amount]. Options I can genuinely offer: [e.g., smaller package / shorter coverage / payment plan]. I want to:</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>(1) acknowledge their honesty, (2) briefly explain what my fee reflects, (3) present any genuine options without devaluing the work. Warm but confident. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+<h3>CHAPTER 2: CLIENT EXPERIENCE &amp; DELIVERY</h3>
+<p>Pre-Production Communication The most stressful part of working with a videographer — for the client — is not knowing what to expect. Pre-production communication that sets clear expectations builds confidence and produces better final films.</p>
+<h3>PROMPT — PRE-WEDDING QUESTIONNAIRE EMAIL</h3>
+<p class="template-line">Write a pre-wedding video questionnaire email for my videography studio. Couple [Names], wedding [date]. I want to ask: their favourite moments to capture, any special songs, any moments or people they want prioritised, their timeline, whether</p>
+<p>they want a same-day edit, their vibe and style preferences, and any logistical notes (venue restrictions, ceremony timing). Warm and practical. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+<h3>PROMPT — PRE-PRODUCTION BRIEF (CORPORATE)</h3>
+<p class="template-line">Write a pre-production brief email for a corporate video project. Client: [Company/Name], project: [type]. I want to cover: project goals, target audience, key messages, tone and style direction, any footage or assets they&#x27;ll provide, interview</p>
+<p>subjects if applicable, deadline, and approval process. Professional and thorough. Under 200 words. Sign as [Your Name], [Studio Name]. Film Delivery Experience Film delivery is the single most important moment for generating reviews and referrals.</p>
+<p>Most videographers send a link. The videographers generating consistent 5-star reviews build a moment around the delivery.</p>
+<h3>PROMPT — FILM DELIVERY EMAIL (WEDDING)</h3>
+<p class="template-line">Write a wedding film delivery email for my videography studio. Couple [Names], wedding [date] at [venue]. The film is [length] and delivered via [platform]. I want to: (1) build anticipation before giving the link, (2) share 2-3 personal observations from</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>their day that made it special to film, (3) explain how to download and share, (4) plant the seed for the review ask without asking yet. Emotional, personal, specific. Under 300 words. Sign as [Your Name], [Studio Name].</p>
+<h3>PROMPT — FILM DELIVERY EMAIL (CORPORATE)</h3>
+<p class="template-line">Write a film delivery email for a corporate video project. Client [Name] at [Company]. Project: [description]. I want to: (1) confirm the project is delivered, (2) summarise what&#x27;s included in the delivery package — master file, social cuts, any extras, (3)</p>
+<p>outline the revision process if applicable, (4) express genuine pride in the outcome. Professional and warm. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+<h3>CHAPTER 3: VENDOR &amp; REFERRAL</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Wedding Photographer Partnerships One strong photographer referral relationship maintained well can generate 10-20 wedding leads per year. The videographers on the most preferred vendor lists show up</p>
+<p>consistently, communicate professionally, and make the photographer&#x27;s job easier — then stay in touch.</p>
+<h3>PROMPT — PHOTOGRAPHER INTRODUCTION EMAIL</h3>
+<p class="template-line">Write a professional introduction email from a wedding videographer to a wedding photographer named [Name]. I want to: (1) introduce my studio and style, (2) mention how well-coordinated photo and video teams produce better results for</p>
+<p>couples, (3) propose a mutual referral relationship or a styled shoot. Warm and professional. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+<h3>PROMPT — MONTHLY PHOTOGRAPHER VALUE TOUCH</h3>
+<p class="template-line">Write a monthly value email from a videographer to a photographer referral partner named [Name]. Share: (1) one insight useful for their couples or their working relationship — e.g., a tip about audio capturing that helps video without disrupting</p>
+<p>photos, or a wedding timeline recommendation that helps both teams. Short, genuine, under 100 words. Sign as [Your Name], [Studio Name]. Corporate &amp; Commercial Referral Network</p>
+<h3>PROMPT — MARKETING AGENCY INTRODUCTION</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Write a professional introduction email from a videographer to a marketing agency named [Agency] whose contact is [Name]. I want to: (1) briefly introduce my commercial and brand video capabilities, (2) mention my experience with [relevant</p>
+<p>work type — e.g., brand storytelling / product launch / testimonial videos], (3) propose a subcontracting or referral arrangement. Professional and direct. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+<h3>CHAPTER 4: SOCIAL CONTENT STRATEGY</h3>
+<p>Instagram &amp; YouTube Content for Videographers Instagram is your primary booking platform for weddings and personal brand work. YouTube builds long-term SEO and positions you as an authority. The content pillars</p>
+<p>that convert: film reveals (emotional, high-quality clips), behind-the-scenes (process and gear), education (tips for couples and brands), and social proof.</p>
+<h3>PROMPT — INSTAGRAM CAPTION BATCH</h3>
+<p>Write 5 Instagram captions for a videographer specialising in [wedding / commercial / both]. Topics: (1) a wedding day story — one moment from a recent film that stayed with you (change names), (2) what separates a good wedding video</p>
+<p>from a great one — specific, genuine insight, (3) what brands get wrong about video</p>
+<div class="section-label">content — for your commercial audience, (4) behind-the-scenes: what goes into a</div>
+<p>wedding day as a videographer, (5) a direct booking CTA for current season. Each under 150 words, emotional and specific. Studio name: [Studio Name].</p>
+<h3>CHAPTER 5: REVIEWS &amp; REPUTATION</h3>
+<p>The Post-Delivery Review Request System</p>
+<h3>PROMPT — POST-FILM REVIEW REQUEST</h3>
+<p class="template-line">Write a post-film review request email for my videography studio. Client [Names/Company], project [type]. Send 5-7 days after film delivery. I want to: (1) check in on how they&#x27;re feeling about the film, (2) share one personal note about</p>
+<p>working with them, (3) make a warm personal ask for a Google review with direct link. Emotional and personal. Under 150 words. Sign as [Your Name], [Studio Name].</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>CHAPTER 6: CORPORATE &amp; COMMERCIAL</h3>
+<h3>BUSINESS DEVELOPMENT</h3>
+<p>Building a Recurring Corporate Client Base One corporate client with regular video needs is worth 5-10 individual wedding bookings in terms of annual revenue and predictability. The videographers with strong corporate</p>
+<p>books proactively pitch for retainer and recurring work.</p>
+<h3>PROMPT — CORPORATE RETAINER PROPOSAL EMAIL</h3>
+<p class="template-line">Write a corporate video retainer proposal email for my videography business. Client [Name] at [Company] has used me for [previous work]. I want to propose a monthly or quarterly retainer: [X] videos per [period] at a preferential rate of $[amount] vs. $</p>
+<p>[individual rate]. Benefits: priority scheduling, faster turnaround, consistent brand visual identity across all content. Professional and confident. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+<div class="section-label">PROMPT — PROSPECTING EMAIL (NEW CORPORATE CLIENT)</div>
+<p class="template-line">Write a prospecting email from a videographer to a business named [Company] whose contact is [Name]. They&#x27;re a [type of business] and I can see they&#x27;d benefit from [type of video content — e.g., brand story / product demo / team culture video].</p>
+<p>I want to: (1) introduce my commercial video capability briefly, (2) mention one specific type of video that works well for businesses like theirs, (3) offer a no- obligation discovery call. Professional and direct. Under 150 words. Sign as [Your</p>
+<p>Name], [Studio Name].</p>
+<h3>CHAPTER 7: 30-DAY IMPLEMENTATION PLAN</h3>
+<h3>Week 1: Inquiry System</h3>
+<p class="template-line">• Build your wedding and corporate inquiry response templates using Chapter 1</p>
+<p>prompts</p>
+<p class="template-line">• Write your 3-touch follow-up sequence and save as drafts</p>
+<p class="template-line">• Set a reminder: check all unanswered inquiries every Monday and Thursday</p>
+<h3>Week 2: Vendor &amp; Client Outreach</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• List 10 photographers, planners, or agencies you want referral relationships with</p>
+<p class="template-line">• Write 5 personalised introduction emails using Chapter 3 prompts</p>
+<p class="template-line">• Build your monthly vendor value touch template</p>
+<h3>Week 3: Content Batch</h3>
+<p class="template-line">• Use Chapter 4 Instagram prompt to batch 10 captions in one session</p>
+<p class="template-line">• Schedule 3-4 posts per week for the next 3 weeks</p>
+<p class="template-line">• Identify 2 recent films worth featuring as a full Instagram carousel or Reel</p>
+<h3>Week 4: Review &amp; Corporate Development</h3>
+<p class="template-line">• Identify 10 past clients who haven&#x27;t reviewed — write personal review requests</p>
+<p class="template-line">• Identify 3 corporate clients to pitch a retainer using the Chapter 6 prompt</p>
+<p class="template-line">• Set film delivery review request as a standard step 5-7 days after every delivery</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">09</span></div></section></main></body></html>

@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Public Speakers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>PUBLIC SPEAKER</h3>
+<h3>Email &amp; Communication Template Pack</h3>
+<p>24 done-for-you templates: enquiry responses, proposals, fee negotiation, post-engagement</p>
+<h3>follow-up, and bureau outreach</h3>
+<h3>SECTION 1: ENQUIRY RESPONSE &amp; PROPOSAL</h3>
+<p>T1 — Speaking Enquiry Response</p>
+<h3>SUBJECT Re: Speaking enquiry — [Event Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for reaching out — [event name] sounds like a genuinely exciting opportunity and exactly the kind of audience my work resonates most strongly with. [2-3 sentences showing you understand their audience and event objective — be specific, not generic.]</p>
+<p>Before I put together a full proposal, it would help to know: [2-3 specific questions — talk duration, any other speakers on the bill, specific outcomes the organiser is hoping for]. In the meantime, I have attached my speaker one-sheet and a link to my</p>
+<p>speaker reel: [link]. My speaking fee for a keynote of this length is typically in the range of $[X]-$[X], depending on format and logistics. Would a 20-minute call this week work to discuss further? I have availability [two specific times]. Warm regards, [Your Name]</p>
+<p>T2 — Post-Discovery Call Proposal</p>
+<h3>SUBJECT Speaking proposal — [Event Name] — [Your Name]</h3>
+<p class="template-line">Dear [Name], It was wonderful speaking with you today — I am genuinely excited about [event name] and the opportunity to work with [audience description]. PROPOSED TALK: [Talk Title] [2-3 paragraphs describing the talk — what it covers, how it is structured, the</p>
+<p>key outcomes audiences leave with, why it is particularly relevant to this audience right now. Be specific and compelling.] FORMAT: [Keynote / Workshop / Panel] — [Duration] DELIVERY: [In-person / Virtual / Hybrid] INVESTMENT: $[amount], which includes:</p>
+<p class="template-line">- Pre-event discovery call with [Name] to customise for your audience</p>
+<p class="template-line">- Full keynote/workshop delivery</p>
+<p class="template-line">- [Any post-event resources you provide — e.g., summary slide deck /</p>
+<p>reading list / follow-up Q&amp;A]</p>
+<p class="template-line">- [Travel if applicable: or &#x27;plus reasonable travel and accommodation costs&#x27;]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>TO CONFIRM: I ask for [deposit amount] on signing, with the balance due [timeline]. I will hold [date] on my calendar for [X days] while you review. Any questions, I am just a message away. Warm regards, [Your Name] T3 — Fee Negotiation Response</p>
+<h3>SUBJECT Re: Speaking fee — [Event Name]</h3>
+<p class="template-line">Dear [Name], Thank you for being upfront about your budget — I really appreciate that. I understand that $[their budget] is what you are working with, and I want to find a way to make this work if I can. My standard fee reflects the customisation I bring to every talk — the pre-</p>
+<p>event research, the tailoring to your specific audience, and the post-event materials. For an audience of [size] at [type of event], I genuinely believe the return on a $[your fee] investment is significant. That said, let me explore what might be possible:</p>
+<p>[Option if you can flex]: If a [shorter format / virtual option / shared session with another speaker] would work, I could potentially deliver that at $[adjusted amount]. [If you cannot flex]: Unfortunately I am unable to reduce my fee further for this</p>
+<p>format, but I would be happy to discuss a different scope that fits your budget. I would love to be at [event name] — let me know what direction you would like to explore. Warm regards, [Your Name] T4 — Unavailable / Waitlist Response</p>
+<h3>SUBJECT Re: [Event Name] — [Your Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for thinking of me for [event name] — I am genuinely flattered. Unfortunately I am already committed on [date] and cannot double-book. I would be glad to: (1) add your event to my waitlist in case anything changes,</p>
+<p>or (2) recommend a colleague whose topic and style might suit your audience equally well — [Colleague Name] comes to mind specifically for [reason]. If your date ever shifts or you are planning a future event, please do not</p>
+<p>hesitate to reach out — I would love to be part of [Organisation]&#x27;s events in the future. Warm regards, [Your Name]</p>
+<h3>SECTION 2: SPEAKER MATERIALS &amp;</h3>
+<h3>OUTREACH</h3>
+<p>T5 — Speaker Bureau Introduction</p>
+<h3>SUBJECT Speaker introduction — [Your Name] — [Topic]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">Dear [Name], I am reaching out to introduce myself as a professional speaker who I believe would be a strong fit for [Bureau Name]&#x27;s roster. My name is [Your Name] and I speak on [topic]. My talks are built around</p>
+<p>[brief unique angle — e.g., &#x27;the intersection of neuroscience and leadership&#x27; / &#x27;practical resilience frameworks for high-pressure teams&#x27;]. I typically work with [audience types — e.g., Fortune 500 leadership teams, industry associations, public sector].</p>
+<p>My speaking fee range: $[X]-$[X] for keynote engagements. Recent notable engagements: [2-3 relevant past bookings — company/conference name and approximate audience size]. I have attached my one-sheet and a link to my speaker reel: [link]. I would</p>
+<p>love to explore whether there is a fit. Would a brief call work this week? [Your Name] | [Phone] | [Website] T6 — Conference Prospecting Email</p>
+<div class="section-label">SUBJECT Speaker proposal for [Conference Name] — [Your Name]</div>
+<p class="template-line">Dear [Name], I have been following [Conference Name] for several years and I believe my talk on [topic] would resonate strongly with your [audience description] audience. My proposed session: &#x27;[Talk Title]&#x27; — [one compelling sentence describing the talk and its key insight].</p>
+<div class="section-label">Why now: [1-2 sentences on why this topic is particularly relevant to this</div>
+<p>audience at this moment — reference industry trends or challenges if you can]. I have attached my speaker one-sheet and here is a link to my reel: [link]. My speaker fee for a keynote of this type is $[amount].</p>
+<p>Would you be open to a brief call to discuss whether there is a fit for [year] or future events? [Your Name] | [Phone] | [Website] T7 — Monthly Value Touch (Past Clients)</p>
+<div class="section-label">SUBJECT Something worth reading on [topic] — [Your Name]</div>
+<p class="template-line">Dear [Name], Quick note with something I thought you might find interesting given [their organisation]&#x27;s work in [relevant area]: [One specific, genuinely useful insight, trend, or piece of research from your speaking topic — 2-3 sentences. Link to a source if relevant.]</p>
+<p>I have also recently updated my keynote to include [brief update if applicable]. If you are ever planning an event where [topic] would be relevant, I would love to be on your list. [Your Name]</p>
+<h3>SECTION 3: POST-ENGAGEMENT &amp;</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>TESTIMONIALS</h3>
+<p>T8 — Post-Engagement Follow-Up (48 Hours)</p>
+<h3>SUBJECT Thank you — [Event Name]</h3>
+<p class="template-line">Dear [Name], I just wanted to say thank you for [event name] — it was a genuine privilege to speak to your [audience description] audience. [One specific personal observation from the event — e.g., &#x27;The question the</p>
+<p>audience member asked about [topic] at the end genuinely made me think differently about part of my talk. I will be incorporating that into future sessions.&#x27;] I would love to hear any feedback you have — what landed best, what could</p>
+<p>be refined. Honest input is how I keep improving. And if you are planning future events or know of organisations who could benefit from a talk on [topic], I would be grateful for any introductions. With warm regards, [Your Name] T9 — Testimonial Request Email</p>
+<h3>SUBJECT A small favour — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you again for [event name] — it was one of my favourite engagements of the year. I have a personal ask: a written testimonial or LinkedIn recommendation from you would mean an enormous amount to my speaking business.</p>
+<p>Testimonials from event organisers of your seniority and credibility carry real weight. To make it as easy as possible — if it helps, here are a few prompts to guide you:</p>
+<p class="template-line">- What was the audience&#x27;s response to the talk?</p>
+<p class="template-line">- What specifically did the talk deliver for your event&#x27;s objectives?</p>
+<p class="template-line">- Would you recommend me to other organisers, and if so, why?</p>
+<p>A paragraph is more than enough — whatever you are comfortable sharing. I would display it on my website and one-sheet with your name and title (with your approval). Thank you for even considering it. [Your Name] T10 — LinkedIn Recommendation Request</p>
+<h3>SUBJECT LinkedIn recommendation — [Name]</h3>
+<p class="template-line">Dear [Name], I hope you are well! I am building out my LinkedIn presence and would be genuinely grateful if you would be willing to leave a recommendation for our work together on [event name]. A brief paragraph about the talk, the audience&#x27;s response, and whether you</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>would recommend me to other organisers would be incredibly helpful. Here is a direct link to recommend me on LinkedIn: [LinkedIn URL] No pressure at all — and thank you for your time. [Your Name] T11 — Repeat Booking Outreach</p>
+<h3>SUBJECT 2025 speaking — reconnecting, [Name]</h3>
+<p class="template-line">Dear [Name], I hope [Organisation] is going well — it has been [timeframe] since [event name] and I have been thinking about how much I enjoyed that audience. I am putting together my [next year / next season] speaking calendar and wanted to reach out to past clients first.</p>
+<p>I have also developed a new talk: &#x27;[New Talk Title]&#x27; — [one sentence description]. Given [Organisation]&#x27;s focus on [relevant area], I think it could be particularly timely. Would you be planning any events in [timeframe] where a speaker on [topic]</p>
+<p>would add value? I would love to be your first call. Warm regards, [Your Name]</p>
+<h3>SECTION 4: SPEAKING LOGISTICS &amp;</h3>
+<h3>PRACTICAL</h3>
+<p>T12 — Pre-Event Technical Requirements Email</p>
+<h3>SUBJECT Technical requirements — [Event Name], [Date]</h3>
+<p class="template-line">Dear [Name], Thank you for confirming my engagement at [event name]. To ensure everything runs perfectly on the day, here are my technical requirements: Presentation: I present from my own laptop (Mac, [Year]). I will need [HDMI / USB-C adapter if you have one / clicker].</p>
+<p>Audio: Lapel microphone preferred. If not available, a handheld works well. Slides: I will send my presentation by [date] for AV testing. Format: [PowerPoint / Keynote / PDF backup]. Run of show: Could you send me the event schedule and the name of my AV contact on the day?</p>
+<p>For virtual engagements: I use [Zoom / Teams / WebEx] and have a professional studio setup with [ring light / professional microphone / dedicated camera]. Happy to do a technical run-through [48 hours before the event] if helpful. [Your Name] T13 — Speaker Introduction Script</p>
+<h3>SUBJECT Introduction script — [Event Name]</h3>
+<p class="template-line">Dear [Name], As requested, here is the introduction script for [event name]. Feel free to adapt it to your style — I just ask that you include the key credentialing points so the audience understands the context for my talk.</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>--- INTRODUCTION SCRIPT ---</h3>
+<p>Today&#x27;s speaker has [key credential — e.g., spent 20 years working with Fortune 500 CEOs / trained over 10,000 professionals across 30 countries / authored [book title]]. [He/She/They] speaks internationally on [topic], helping [audience type] to [key outcome].</p>
+<p>[He/She/They] has spoken at [2-3 notable events or clients]. Please welcome [Your Full Name].</p>
+<h3>--- END SCRIPT ---</h3>
+<p>[Your Name] T14 — Post-Event Invoice</p>
+<h3>SUBJECT Invoice — [Event Name] — [Your Name]</h3>
+<p class="template-line">Dear [Name], Thank you again for [event name] — it was a privilege. Please find my invoice attached for professional speaking services: Event: [Event Name] Date: [Date] Service: [Keynote / Workshop / Panel — duration] Speaker fee: $[amount]</p>
+<p>Travel and accommodation (if applicable): $[amount] (receipts attached) TOTAL: $[amount] Payment due within [X] days to: [payment details]. I hope the event exceeded your expectations. [Your Name]</p>
+<h3>SECTION 5: REPUTATION &amp; ADDITIONAL</h3>
+<p>T15 — Review / Testimonial Response</p>
+<h3>SUBJECT LinkedIn / email — respond directly</h3>
+<p class="template-line">Dear [Name], thank you so much for this — your words genuinely mean a great deal to me. It was an honour to speak for [Organisation] and your audience was one of my favourites this year. I hope we get to work together again. — [Your Name]</p>
+<p>T16 — Speaking Awards / Press Enquiry Response</p>
+<h3>SUBJECT Re: [Award / Press Enquiry]</h3>
+<p class="template-line">Dear [Name], Thank you for reaching out — I am genuinely honoured to be considered. [If award:] I would be delighted to submit / accept the nomination. Here are the materials you requested: [list]. [If press:] I would be happy to contribute. My area of expertise is [topic] and I</p>
+<p>am available for [interview / quote / comment] by [deadline]. My preferred contact: [Phone / Email]. Please let me know what else you need. [Your Name] T17 — Conference Programme Bio Submission</p>
+<div class="section-label">SUBJECT Re: Speaker bio and materials — [Conference Name]</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">Dear [Name], Thank you — please find my speaker materials below for [Conference Name]: HEADSHOT: [link to high-resolution headshot] SHORT BIO (50 words): [paste short bio] MEDIUM BIO (100 words): [paste medium bio] TALK TITLE: [Title]</p>
+<p>TALK DESCRIPTION: [100-word description suitable for programme]</p>
+<div class="section-label">SOCIAL HANDLES: LinkedIn: [link] | Twitter/X: [handle] | Instagram: [handle]</div>
+<p>WEBSITE: [website] Please let me know if you need anything else. I am looking forward to [Conference Name]! [Your Name] T18 — Podcast / Media Appearance Pitch</p>
+<h3>SUBJECT Speaking on [Podcast/Show Name] — [Your Name]</h3>
+<p class="template-line">Dear [Name], I am a big admirer of [Podcast/Show Name] — [one specific genuine observation about the show]. I am reaching out because I believe I could bring genuine value to your audience on [topic]. My specific angle: [your unique take — 2-3 sentences].</p>
+<p>A few things I could speak to: [3 specific topic areas or questions your audience would find valuable]. My background: [2-3 credentialing sentences]. Speaker reel: [link]. One- sheet: [link]. Happy to record at your convenience. [Your Name] | [Phone]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T19 — Workshop Follow-Up Resources Email</p>
+<h3>SUBJECT Resources from today&#x27;s workshop — [Name]</h3>
+<p class="template-line">Dear [Name / All], Thank you so much for joining today&#x27;s workshop — it was genuinely one of the most engaged groups I have worked with on [topic]. As promised, here are the resources from today:</p>
+<p class="template-line">- Slides: [link]</p>
+<p class="template-line">- Recommended reading: [list]</p>
+<p class="template-line">- [Framework / worksheet / tool mentioned]: [link]</p>
+<p class="template-line">- My contact details for any follow-up questions: [Email / LinkedIn]</p>
+<p>I would love to hear how you apply [key framework or takeaway] over the coming weeks. Please feel free to reach out with questions. With warmth and appreciation, [Your Name] T20 — Co-Speaker / Panel Invitation Response</p>
+<h3>SUBJECT Re: [Conference] panel invitation</h3>
+<p class="template-line">Dear [Name], Thank you for the invitation to join the [topic] panel at [Conference] — I am delighted to accept. A few practical questions before we confirm:</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">09</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">- Who are the other panellists?</p>
+<p class="template-line">- Will there be a moderator or will the panel be self-facilitated?</p>
+<p class="template-line">- Approximate audience size and demographic?</p>
+<p class="template-line">- Is there a specific angle or question you want me to be ready to address?</p>
+<p>Please send over the logistics form when ready. Looking forward to it! [Your Name] T21 — Student / Unpaid Engagement Decline</p>
+<h3>SUBJECT Re: Speaking invitation — [Event Name]</h3>
+<p class="template-line">Dear [Name], Thank you for thinking of me for [event name] — [Organisation/University] is doing genuinely important work and I appreciate the invitation. I need to be transparent: I am unable to accept unpaid speaking</p>
+<p>engagements at this stage of my career. My speaking fees fund the research, preparation, and intellectual development that makes my talks valuable. If budget becomes available in the future, I would genuinely love to speak for</p>
+<p>your audience. And if it would help, I am happy to recommend a colleague who may be available for student events. Thank you for your understanding. [Your Name] T22 — Referral Thank-You</p>
+<h3>SUBJECT Thank you for the referral — [Name]</h3>
+<p class="template-line">Dear [Name], [Contact Name] just reached out and mentioned you recommended me — thank you so much. Referrals from people whose professional judgement I respect are genuinely the most meaningful way my practice grows. I will take excellent care of [their event].</p>
+<p>With gratitude, [Your Name] T23 — Speaking Testimonial Display Permission</p>
+<h3>SUBJECT Permission to display your testimonial — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for the kind words about [event name] — I am genuinely grateful. I would love to display your testimonial on my website and speaker one- sheet, attributed to you by name and title, if you are comfortable with that.</p>
+<p>Please let me know if you would like to review the exact wording before it goes live, and whether you would prefer to be listed as [Name, Title, Organisation] or differently. Thank you again. [Your Name] T24 — Annual Booking Update to Network</p>
+<div class="section-label">SUBJECT [Year] speaking — what I am working on, [Your Name]</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">10</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Public Speakers Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">Dear [Name], I hope [year] has started well for you. A quick update from my end: I am now booking speaking engagements for [the rest of the year / upcoming quarter / next year]. My current talks and workshops cover: [Talk 1]: [one sentence description and ideal audience]</p>
+<p>[Talk 2]: [one sentence description and ideal audience] [New offering if applicable]: [description] If you are planning an event where [topic] would be relevant — or if you know someone who is — I would be grateful for the introduction. With warm regards, [Your Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">11</span></div>
+</section></main></body></html>

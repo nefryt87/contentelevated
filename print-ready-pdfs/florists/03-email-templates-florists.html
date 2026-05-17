@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Florists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Florists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>FLORIST</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to post-installation, proposals, corporate accounts, vendor partnerships, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; PROPOSAL</h3>
+<h3>CONVERSION</h3>
+<p>T1 — Wedding Floral Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your wedding floral enquiry — [Name]</div>
+<p class="template-line">Dear [Name], Thank you so much for reaching out — your wedding sounds absolutely beautiful and I immediately connected with the [style/aesthetic/mood] you described. [2-3 evocative sentences describing how you&#x27;d interpret their vision — use</p>
+<p>their language back to them, show you understood their aesthetic.] Before I put together a proposal, a few questions: [1-2 specific clarifying questions — e.g., &#x27;Do you have a sense of which arrangements matter most</p>
+<p>to you — bouquet, ceremony, or reception?&#x27; / &#x27;Are you open to seasonal alternatives if a specific flower isn&#x27;t available in [month]?&#x27;] I&#x27;d love to book a 30-minute design consultation — in-studio or via video. Would [two specific times] work?</p>
+<p>Warm regards, [Your Name] | [Studio Name] | [Phone] T2 — Event / Corporate Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your floral enquiry — [Name] / [Company]</div>
+<p class="template-line">Dear [Name], Thank you for reaching out about florals for [event description] — it sounds like a wonderful event and I&#x27;d love to be part of it. [2-3 sentences on your initial interpretation of their aesthetic/brand/brief —</p>
+<p>show you understand what they&#x27;re going for.] A few things that would help me put together an accurate proposal: [1-2 clarifying questions — venue, budget indication, date confirmed?] Happy to jump on a brief call or respond over email, whatever works best for</p>
+<p>you. [Your Name] | [Studio Name] T3 — Budget Conversation Email</p>
+<div class="section-label">SUBJECT Talking through your floral vision and investment — [Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Dear [Name], Thank you for sharing your budget — it&#x27;s always helpful to have this conversation early so we can plan the most beautiful flowers possible within the numbers. With $[their budget] for your wedding, here is what I&#x27;d suggest prioritising:</p>
+<p>[Arrangement type 1 — e.g., Your bouquet]: this is what guests photograph most, and it travels through every photo. I&#x27;d recommend investing here. [Arrangement type 2 — e.g., Ceremony florals]: creates the backdrop for your most important moment.</p>
+<p>[What to scale back]: [honest suggestion about where to simplify without losing impact] [One alternative if their budget is significantly below your minimum]: &#x27;If the investment feels like a stretch, one option is to focus entirely on [key element]</p>
+<p>and keep the rest very simple — sometimes restraint creates the most elegant result.&#x27; I&#x27;d love to talk through the options on a call if that would help. [Your Name] | [Studio Name] T4 — Post-Consultation Proposal Follow-Up</p>
+<h3>SUBJECT Your wedding floral proposal — [Name]</h3>
+<p class="template-line">Dear [Name], It was such a pleasure speaking with you today — your vision for [date] at [venue] is genuinely beautiful and I can already picture exactly how we&#x27;d bring it to life. I&#x27;ve put together a full proposal attached. In brief:</p>
+<p>[2-3 evocative sentences describing the floral direction agreed on — make them see it] Key arrangements included: [brief list of primary pieces] Investment: $[amount], which covers [what&#x27;s included — design, flowers, vases, delivery, installation, collection]</p>
+<p>To confirm your booking: [deposit amount / next step]. I&#x27;ll hold your date for [X days] while you review. Any questions — I&#x27;m just a message away. [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: WEDDING CLIENT EXPERIENCE</h3>
+<p>T5 — Wedding Questionnaire Email</p>
+<div class="section-label">SUBJECT Your wedding floral questionnaire — [Name]</div>
+<p class="template-line">Dear [Name], With [X months] until your wedding, it&#x27;s time to get into the details so we can finalise your design and begin sourcing. Please complete this by [date]: [link] Key things I&#x27;ll ask: final colour palette direction, any flowers you love or want</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>to avoid, any seasonal substitutions to approve, final guest count, ceremony layout, reception setup, and any personal flowers for additional guests or family. The more detail you give me now, the more seamlessly everything will come</p>
+<p>together on the day. [Your Name] | [Studio Name] T6 — Installation Day Confirmation Email</p>
+<div class="section-label">SUBJECT Installation day confirmation — [Name], [date]</div>
+<p class="template-line">Dear [Name], One week to your wedding — I am so excited for your flowers! Installation plan: My arrival at [venue]: [time] at [address / loading entrance] Ceremony florals installed by: [time] Reception florals installed by: [time]</p>
+<p>My team: [number] people including me</p>
+<div class="section-label">Day-of contact: [Your Name] at [Phone] — please use this for anything that</div>
+<p>comes up. The florist contact at the venue is [Name] at [Phone] — I&#x27;ve already been in touch with them. Everything is confirmed and I cannot wait for you to see it all come together. [Your Name] | [Studio Name] T7 — Post-Wedding Follow-Up</p>
+<h3>SUBJECT Your flowers — [Name]</h3>
+<p class="template-line">Dear [Name], I&#x27;ve been thinking about your wedding since [date] and I hope you are still floating on the joy of it. [One specific personal memory from installation or seeing the finished florals</p>
+<p>— e.g., &#x27;The ceremony arch was one of the most beautiful things I have installed this year — I kept thinking about it all the way home.&#x27;] If you&#x27;ve had a chance to see any photos yet, I would absolutely love to see</p>
+<p>them — and if you&#x27;re ever happy to share, a review on Google or WeddingWire would mean the world to my small studio. Thank you for trusting me with your flowers. Congratulations again. [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: CORPORATE &amp; SUBSCRIPTION</h3>
+<h3>CLIENTS</h3>
+<p>T8 — Corporate Subscription Proposal</p>
+<div class="section-label">SUBJECT Weekly flower subscription for [Company] — [Studio Name]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Dear [Name], Thank you for your interest in a weekly flower service for [Company]. What I propose: Service: [X] fresh arrangements per week for [locations — e.g., reception, boardroom, client meeting rooms] Delivery: every [day] morning before [time]</p>
+<p>Investment: $[amount] per week / $[amount] per month, which covers design, fresh seasonal flowers, delivery, vase maintenance, and replacement of any arrangements that have passed their best.</p>
+<p>Beautiful flowers change the atmosphere of a professional space — they communicate care to clients and wellbeing to staff in a way that&#x27;s immediately felt. I&#x27;d love to bring a sample arrangement for your team to see and approve</p>
+<p>before committing. Would [date] work? [Your Name] | [Studio Name] T9 — Residential Subscription Proposal</p>
+<h3>SUBJECT Weekly flowers for your home — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you for reaching out about a home flower subscription — it&#x27;s one of my favourite services to offer because the impact on daily life is genuinely transformative. Here&#x27;s how my home subscription works:</p>
+<p>Weekly or bi-weekly seasonal arrangements delivered to your home every [day] Each arrangement is designed around what&#x27;s at its peak — always seasonal, always fresh Investment: $[amount] per week / $[amount] per fortnight, which covers</p>
+<p>design, premium seasonal flowers, and delivery No commitment — you can pause or cancel anytime. Would you like to start with a one-off arrangement to see if it feels right? Happy to bring something to you this week. [Your Name] | [Studio Name]</p>
+<p>T10 — Corporate Monthly Value Touch</p>
+<div class="section-label">SUBJECT [Month] flowers — a note from [Studio Name]</div>
+<p class="template-line">Dear [Name], Quick monthly note from [Studio Name]: This month we&#x27;re working with [beautiful seasonal flower or theme] — it&#x27;s absolutely stunning right now and particularly suited to professional spaces</p>
+<p>because [brief reason — long-lasting, neutral palette, etc.]. If you&#x27;ve been thinking about adding florals to your [office/hotel/restaurant] for a specific event this [season], I&#x27;d love to help. I have limited slots available for [month].</p>
+<p>[Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 4: VENDOR PARTNERSHIP</h3>
+<h3>OUTREACH</h3>
+<p>T11 — Wedding Planner Introduction</p>
+<div class="section-label">SUBJECT Floral studio introduction — [Your Name], [City]</div>
+<p class="template-line">Dear [Name], I&#x27;m [Your Name], the founder of [Studio Name] — a floral design studio in [City] specialising in [your aesthetic — e.g., romantic garden / wild meadow / architectural modern] wedding and event florals.</p>
+<p>I reach out to wedding planners whose work I admire because I believe the planners and florists who work together most effectively produce the most seamless and beautiful weddings. My approach: I&#x27;m a meticulous communicator, reliable on timeline, and I</p>
+<p>genuinely love making a planner&#x27;s job easier rather than harder. I&#x27;d love to explore whether there&#x27;s a fit. Would a brief coffee or video call work? [Your Name] | [Studio Name] | [Phone] T12 — Venue Coordinator Introduction</p>
+<div class="section-label">SUBJECT Floral studio introduction — [Your Name]</div>
+<p class="template-line">Dear [Name], I&#x27;m [Your Name] from [Studio Name] — a floral designer based in [City] with a speciality in [your style] wedding and event florals. I&#x27;ve admired [Venue Name] for a long time — [one specific genuine</p>
+<p>observation about the venue — its architecture, its garden, the light at a particular time of day]. It is exactly the kind of venue that makes flowers look extraordinary. I would love to be considered for your preferred vendor recommendations</p>
+<p>and would be happy to send a full portfolio, references, or visit the venue at your convenience. [Your Name] | [Studio Name] | [Portfolio Link] T13 — Photographer Introduction</p>
+<div class="section-label">SUBJECT Floral studio + photography partnership — [Your Name]</div>
+<p class="template-line">Dear [Name], I&#x27;m [Your Name] from [Studio Name] — a floral designer in [City] with a [your style] aesthetic. I came across your photography and it immediately resonated with me — [one specific genuine observation about their shooting style or portfolio].</p>
+<p>I reach out to photographers whose work I love because I believe the best wedding vendor relationships are built before the actual wedding — on shared aesthetic and genuine mutual respect.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Would you be open to a styled shoot collaboration or simply to being each other&#x27;s go-to recommendation? I&#x27;d love to connect. [Your Name] | [Studio Name] | [Instagram Handle] T14 — Post-Wedding Vendor Thank-You</p>
+<h3>SUBJECT Thank you — [Wedding Name]</h3>
+<p class="template-line">Dear [Name], I just wanted to drop a genuine note of thanks after [couple&#x27;s] wedding. [One specific observation about what they contributed — e.g., &#x27;The photographs captured every arrangement exactly as I hoped — I almost cried</p>
+<p>when I saw the ceremony arch images.&#x27; / &#x27;The way you managed the day made the installation so calm and easy — I really appreciated it.&#x27;] I hope we get to work together again soon. [Your Name] | [Studio Name]</p>
+<h3>SECTION 5: REPUTATION MANAGEMENT</h3>
+<p>T15 — Google Review Request</p>
+<h3>SUBJECT A personal ask — [Name]</h3>
+<p class="template-line">Dear [Name], I hope the photos are starting to arrive and you&#x27;re reliving every beautiful moment of your wedding! A personal ask: if the flowers played a role in making your day feel magical, a</p>
+<p>Google review would genuinely help other couples in [City] find a florist they can trust. It takes about 2 minutes. Direct link: [Google Review Link] Thank you from the bottom of my heart for trusting me with your day. [Your Name] | [Studio Name]</p>
+<p>T16 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [Name]! Designing your flowers was such a privilege — [one specific personal detail if their review mentions it]. It meant the world to be part of your day. Congratulations again on your beautiful wedding. — [Your Name], [Studio Name]</p>
+<p>T17 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p class="template-line">Dear [Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client. I take every piece of feedback seriously and I would love the chance to speak with you directly.</p>
+<p>Please reach out at [Phone] or [Email]. — [Your Name], [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T18 — Styled Shoot Collaboration Pitch</p>
+<div class="section-label">SUBJECT Styled shoot collaboration — [Your Name] + [Name]</div>
+<p class="template-line">Dear [Name], I&#x27;ve been thinking about a styled shoot collaboration and your work immediately came to mind. Concept I have in mind: [2-3 sentences on venue, aesthetic, mood, season]. I</p>
+<p>would handle all floral design. What I&#x27;m looking for: [photographer / venue / dress designer / stationery]. What I can offer: full high-resolution images for your portfolio, complete usage rights, a credit in any editorial submissions, and a genuine referral</p>
+<p>relationship built on actually working together. Interested in a quick call? [Your Name] | [Studio Name] | [Phone] T19 — Seasonal Floral Workshop Announcement</p>
+<h3>SUBJECT Workshop announcement — [Studio Name]</h3>
+<p class="template-line">Dear [Name], I&#x27;m thrilled to announce I&#x27;m hosting a [type] flower arranging workshop at [Studio Name]. Date: [date] at [time] Duration: [X] hours What you&#x27;ll create: [brief description]</p>
+<p>What&#x27;s included: all flowers and materials, guidance throughout, a beautiful arrangement to take home Investment: $[amount] per person Capacity: [X] places To book: [link / reply here]. This always fills quickly — [X] places remaining.</p>
+<p>[Your Name] | [Studio Name] T20 — Gift Voucher Campaign Email</p>
+<div class="section-label">SUBJECT Give the gift of flowers — [Studio Name]</div>
+<p class="template-line">Dear [Name], With [occasion] approaching, I wanted to share something beautiful — [Studio Name] gift vouchers. A flower arrangement is one of those gifts that transforms a room the moment</p>
+<p>it arrives. Gift vouchers are available for any amount or specific arrangement type — from a single seasonal bouquet to a full home delivery subscription. To purchase: [link / reply here]. I&#x27;ll send a beautiful digital gift card with a personalised message.</p>
+<p>[Your Name] | [Studio Name] T21 — Waitlist / Unavailable Date Response</p>
+<h3>SUBJECT Re: Your floral enquiry for [date]</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Dear [Name], Thank you so much for reaching out — unfortunately [date] is already committed in my diary. I&#x27;d love to add you to my waitlist in case anything changes. I also have availability for [alternative months] if there&#x27;s any flexibility with your timing.</p>
+<p>For [next available season], I&#x27;m now accepting bookings. If you&#x27;d like to secure a date, I&#x27;m happy to hold it provisionally for [X days] while you confirm with your other vendors. [Your Name] | [Studio Name] T22 — Flower Care Guide Email</p>
+<h3>SUBJECT Your flower care guide — [Name]</h3>
+<p class="template-line">Dear [Name], Alongside your beautiful arrangement today, here is a quick guide to keeping your flowers looking their best: On arrival: trim the stems at a 45-degree angle, remove any leaves below the waterline, and place in fresh cool water.</p>
+<p>Daily: top up the water and re-trim the stems every 2-3 days. Placement: keep away from direct sunlight, heat sources, and fruit (ethylene gas speeds wilting). Temperature: flowers last longest in a cool room — below 18°C is ideal overnight.</p>
+<p>Expected vase life: [X days] for most of the varieties in your arrangement. [Any specific notes on particular flowers included.] [Your Name] | [Studio Name] T23 — Referral Thank-You</p>
+<h3>SUBJECT Thank you for the referral — [Name]</h3>
+<p class="template-line">Dear [Name], [Client Name] just reached out and mentioned you recommended me — thank you so much. Referrals from people whose taste I respect are the absolute foundation of my business and I never take them for granted.</p>
+<p>I&#x27;m going to make sure their flowers are as beautiful as you&#x27;ve promised. [Your Name] | [Studio Name] T24 — Press / Editorial Submission</p>
+<div class="section-label">SUBJECT Wedding submission — [Studio Name] + [Wedding Name]</div>
+<p class="template-line">Dear [Editor Name], I&#x27;d love to submit a recent wedding for consideration in [Publication]. The wedding: [couple names], [date], at [venue]. Style: [2-sentence aesthetic description]. The florals: [2-3 sentences on the floral design — key</p>
+<p>arrangements, palette, botanical highlights]. I have professional photography available (photographer: [name]), and the couple has given permission for publication. Happy to send a full press pack with vendor credits.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Florists<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>[Your Name] | [Studio Name] | [Portfolio Link]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">11</span></div></section></main></body></html>

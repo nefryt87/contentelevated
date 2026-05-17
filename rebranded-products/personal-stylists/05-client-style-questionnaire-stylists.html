@@ -1,0 +1,175 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Style Questionnaire Stylists</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Style Questionnaire Stylists</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Personal Stylists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Style Questionnaire Stylists</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>PERSONAL STYLIST</h3>
+<h3>Client Style Questionnaire &amp; Discovery System Kit</h3>
+<p>Style assessment questionnaire, body confidence intake, capsule wardrobe planner, shopping brief template, and partnership co-marketing kit</p>
+<h3>SECTION 1: COMPREHENSIVE STYLE</h3>
+<h3>ASSESSMENT QUESTIONNAIRE</h3>
+<p>Send before every new client engagement. The more detailed the intake, the more personalised the session — and the higher the client&#x27;s satisfaction and referral rate.</p>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Age:</p>
+<p class="template-line">✓ City / Location:</p>
+<p class="template-line">✓ How did you hear about [Business Name]?</p>
+<h3>✓ SERVICE THEY&#x27;VE BOOKED:</h3>
+<p class="template-line">✓ Wardrobe Audit / Personal Shopping / Total Style Transformation / Other:</p>
+<h3>✓ LIFESTYLE &amp; GOALS</h3>
+<p class="template-line">✓ Profession and typical work environment:</p>
+<p class="template-line">✓ Describe a typical week in your life (work, social, weekends):</p>
+<p class="template-line">✓ Upcoming events or life changes that are driving this decision:</p>
+<p class="template-line">✓ What does getting dressed feel like for you right now? (e.g., stressful, time-</p>
+<p>consuming, confusing, exciting):</p>
+<h3>✓ STYLE HISTORY</h3>
+<p class="template-line">✓ How would you describe your current style in 3 words?</p>
+<p class="template-line">✓ How would you describe your ideal style in 3 words?</p>
+<p class="template-line">✓ 3 people whose style you admire (celebrity, colleague, Instagram account):</p>
+<p class="template-line">✓ 3 things in your wardrobe you love and reach for often:</p>
+<p class="template-line">✓ 3 things you own but never wear — why not?</p>
+<h3>✓ BODY &amp; COMFORT</h3>
+<p class="template-line">✓ Are there any areas of your body you prefer to minimise or draw attention away</p>
+<p>from?</p>
+<p class="template-line">✓ Are there areas you love and want to highlight?</p>
+<p class="template-line">✓ Any physical comfort considerations (movement, temperature, sensory sensitivity)?</p></div>
+  <div class="footer"><span>Client Style Questionnaire Stylists</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>✓ PRACTICAL PARAMETERS</h3>
+<p class="template-line">✓ Approximate investment for [this service]:</p>
+<p class="template-line">✓ Stores you love shopping at:</p>
+<p class="template-line">✓ Stores you avoid and why:</p>
+<p class="template-line">✓ Any brand or style direction you absolutely don&#x27;t want to go in:</p>
+<h3>✓ SUCCESS</h3>
+<p class="template-line">✓ What does a successful outcome look like to you from this service?</p>
+<p class="template-line">✓ How will you know it worked?</p>
+<p class="template-line">✓ [This questionnaire produces a session that feels effortlessly personalised —</p>
+<p>clients often say &#x27;it&#x27;s like you knew exactly what I needed&#x27; before the session even starts.]</p>
+<h3>SECTION 2: CAPSULE WARDROBE PLANNER</h3>
+<h3>TEMPLATE</h3>
+<h3>Client Capsule Wardrobe Planning Sheet</h3>
+<h3>CATEGO</h3>
+<h3>RY</h3>
+<h3>CURRENT PIECES</h3>
+<h3>(KEEPING)</h3>
+<h3>GAPS TO FILL NOTES</h3>
+<p>Tops / Blouses Trousers / Skirts Dresses Outerwear Shoes (work) Shoes (casual) Shoes (occasion ) Bags (work) Bags (casual) Accessori es Occasion wear Loungewe ar / WFH</p>
+<h3>SECTION 3: PERSONAL SHOPPING BRIEF</h3>
+<h3>TEMPLATE</h3>
+<h3>✓ CLIENT NAME:</h3>
+<h3>✓ SESSION DATE:</h3>
+<h3>✓ SESSION LOCATION / STORES:</h3>
+<p class="template-line">✓ CLIENT&#x27;S CAPSULE GAPS (from wardrobe audit or intake):</p>
+<p class="template-line">✓ Gap 1 — [category: what&#x27;s needed, in what colour/style, for what occasion]</p>
+<p class="template-line">✓ Gap 2:</p>
+<p class="template-line">✓ Gap 3:</p>
+<p class="template-line">✓ Gap 4:</p>
+<p class="template-line">✓ Gap 5:</p>
+<h3>✓ COLOUR PALETTE CONFIRMED:</h3></div>
+  <div class="footer"><span>Client Style Questionnaire Stylists</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">✓ Primary neutrals:</p>
+<p class="template-line">✓ Accent colours:</p>
+<p class="template-line">✓ Colours to avoid:</p>
+<h3>✓ FIT NOTES:</h3>
+<p class="template-line">✓ Prefers [fitted / relaxed / structured]:</p>
+<p class="template-line">✓ Avoids [specific cuts, styles, lengths]:</p>
+<p class="template-line">✓ Sizing by category: Tops [X] / Bottoms [X] / Dresses [X] / Shoes [X]</p>
+<h3>✓ BUDGET ALLOCATION:</h3>
+<p class="template-line">✓ Total budget: $[amount]</p>
+<p class="template-line">✓ Tops: $[X-Y per piece / X pieces]</p>
+<p class="template-line">✓ Bottoms: $[X-Y]</p>
+<p class="template-line">✓ Shoes: $[X-Y]</p>
+<p class="template-line">✓ Accessories: $[X-Y]</p>
+<p class="template-line">✓ MUST-HAVE ITEMS (high priority):</p>
+<p class="template-line">✓ Nice-to-have items (if budget allows):</p>
+<p class="template-line">✓ STORES TO HIT (in order of priority):</p>
+<p class="template-line">✓ 1. [Store] — for [category]</p>
+<p class="template-line">✓ 2. [Store] — for [category]</p>
+<p class="template-line">✓ 3. [Store] — for [category]</p>
+<h3>✓ SESSION NOTES:</h3>
+<p class="template-line">✓ [Complete this brief the evening before every shopping session. A prepared stylist</p>
+<p>creates a faster, better, more confident shopping experience — and clients notice.]</p>
+<h3>SECTION 4: PHOTOGRAPHER CO-MARKETING</h3>
+<h3>PACKAGE PROPOSAL</h3>
+<p>Combined Style + Shoot Package Proposal Email</p>
+<div class="section-label">SUBJECT A combined offering idea — [Your Name] + [Photographer Name]</div>
+<p>Hi [Name], I&#x27;ve been thinking about how many of our clients overlap and I wanted to propose something specific. What if we created a combined &#x27;Style + Shoot&#x27; package? How it would work: the client books both services together (potentially at a</p>
+<p>slight combined discount to incentivise the bundle). I style them 1-2 weeks before their shoot — wardrobe audit if needed, outfit selection for the session, shopping if required. They arrive at your lens completely ready. The photos</p>
+<p>look dramatically better. The client is thrilled with both services. Package idea:</p>
+<p class="template-line">- [2-hour styling session] + [1-hour headshot/branding shoot] — combined: $</p></div>
+  <div class="footer"><span>Client Style Questionnaire Stylists</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Stylists Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>[amount] (vs. $[individual total] separately)</p>
+<p class="template-line">- We each receive our full individual fee; the bundle is presented as added</p>
+<p>value not a discount I think this could be particularly powerful for [executives / entrepreneurs / women in transition] who need both but wouldn&#x27;t have thought to book them together. Would a quick call to explore this work for you? [Your Name] | [Business Name] | [Phone]</p></div>
+  <div class="footer"><span>Client Style Questionnaire Stylists</span><span class="page-number">06</span></div>
+</section></main></body></html>

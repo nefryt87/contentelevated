@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Intake</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #14181b; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#faf8f1,#ece9df 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#6e8892 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#b6c6c4 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#6e8892,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #636a6e; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#6e8892 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #6e8892; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #6e8892; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #6e8892; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #6e8892; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #636a6e; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#6e8892 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#192127,color-mix(in srgb,#192127 76%,#6e8892)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #b6c6c4; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#6e8892 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #6e8892; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#6e8892 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#6e8892 18%,transparent); color: #6e8892; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #6e8892; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#6e8892 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #636a6e; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #6e8892; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Trust operating system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Intake</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for advisory-grade clarity</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Attorneys</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>ATTORNEY &amp; LAW FIRM</h3>
+<div class="section-label">Client Intake, Consultation Prep &amp; Difficult Client Templates</div>
+<div class="section-label">Intake questionnaire, consultation confirmation, managing difficult situations, and pre-hearing prep</div>
+<p>All templates should be reviewed for compliance with your state bar&#x27;s rules on advertising, solicitation, and client communication before use.</p>
+<h3>SECTION 1: INTAKE &amp; CONSULTATION PREP</h3>
+<h3>New Client Intake Questionnaire</h3>
+<p class="template-line">✓ Full legal name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Address:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ Preferred contact method (call / text / email):</p>
+<p class="template-line">✓ Emergency contact name and relationship:</p>
+<p class="template-line">✓ Matter type / practice area:</p>
+<p class="template-line">✓ How did you hear about our firm?</p>
+<p class="template-line">✓ Brief description of your legal matter in your own words:</p>
+<p class="template-line">✓ Have you consulted with any other attorneys? If yes, who and when?</p>
+<p class="template-line">✓ Any urgent deadlines or time-sensitive issues?</p>
+<p class="template-line">✓ Do you have relevant documents? If yes, please list them:</p>
+<p class="template-line">✓ Anything else you&#x27;d like us to know before the consultation?</p>
+<p class="template-line">✓ [Send this 24 hours before the consultation. Completed intake dramatically</p>
+<p>improves consultation quality and the client&#x27;s first impression of your firm.] Consultation Confirmation Email</p>
+<div class="section-label">SUBJECT Your consultation at [Firm Name] — what to bring and expect</div>
+<p class="template-line">Dear [First Name], Looking forward to our consultation on [date] at [time]. What to bring:</p>
+<p class="template-line">- Any relevant documents (contracts, correspondence, court papers, photos)</p>
+<p class="template-line">- Written timeline of key events if your matter is complex</p>
+<p class="template-line">- Completed intake form (attached / link)</p>
+<p>What to expect:</p>
+<p class="template-line">- I&#x27;ll review your situation and ask questions to understand the full picture</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">- I&#x27;ll explain your legal options and recommended approach in plain language</p>
+<p class="template-line">- We&#x27;ll discuss fees and next steps</p>
+<p>Please arrive 5-10 minutes early. If you need to reschedule, give 24 hours notice. See you on [date]. [Attorney Name] | [Firm Name] | [Phone]</p>
+<h3>SECTION 2: DIFFICULT CLIENT</h3>
+<h3>COMMUNICATION</h3>
+<p>Managing Unrealistic Expectations</p>
+<h3>SUBJECT RE: Your legal matter — important update</h3>
+<p class="template-line">Dear [First Name], I want to make sure we&#x27;re aligned on the likely outcomes of your matter, because accurate expectations matter more than comfortable ones. Based on my review of the facts, documents, and applicable law, here is my</p>
+<p>honest assessment: [plain-language assessment including realistic best-case and worst-case outcomes]. I understand this may not be what you were hoping to hear. My role is to give you the most accurate guidance possible — not simply to confirm what you&#x27;d like to be true.</p>
+<p>I remain fully committed to achieving the best possible outcome. I&#x27;d welcome a call to discuss this if you have questions. Sincerely, [Attorney Name] | [Firm Name] [Review for bar compliance before sending.] Following Up on Delayed Client Response</p>
+<div class="section-label">SUBJECT Following up — action required by [date], [First Name]</div>
+<p class="template-line">Dear [First Name], I&#x27;m following up on my message from [date]. I haven&#x27;t heard back and want to make sure you received it. Your matter has a deadline / upcoming hearing on [date]. To meet this, I need specific action from you by [date].</p>
+<p>Please contact me at [Phone] or reply to this email as soon as possible. Sincerely, [Attorney Name] | [Firm Name] Pre-Hearing Client Prep Email</p>
+<div class="section-label">SUBJECT Preparing for [hearing / deposition / trial] on [date]</div>
+<p class="template-line">Dear [First Name], Your hearing / deposition / trial / mediation is on [date] at [time] at [location]. What to bring: [relevant documents, ID, items discussed] What to wear: Professional business attire — first impressions matter in legal proceedings.</p>
+<p>What to expect: [2-3 sentence plain-language description of what will happen] Key reminders:</p>
+<p class="template-line">- Answer only what is asked. Do not volunteer information.</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Attorneys Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">- If you don&#x27;t understand a question, say so. Do not guess.</p>
+<p class="template-line">- If you need a moment to think, take it. Silence is fine.</p>
+<p class="template-line">- Do not discuss our strategy with anyone outside this office.</p>
+<p>We will review everything the day before. Please confirm receipt of this email. My direct number is [Phone] if anything comes up. — [Attorney Name] | [Firm Name] Post-Matter Close-Out + Referral Ask</p>
+<div class="section-label">SUBJECT Your matter is resolved — a personal note from [Attorney Name]</div>
+<p class="template-line">Dear [First Name], I&#x27;m pleased to let you know that your matter has been successfully resolved. What we accomplished: [1-2 sentences in plain language]. It has been a genuine privilege helping you through this.</p>
+<p>One small ask: if you know anyone who needs this type of legal help, I would be honoured to assist them the same way I assisted you. A Google review also helps others in [City] find trusted representation: [Google Review Link] With appreciation, [Attorney Name] | [Firm Name]</p></div>
+  <div class="footer"><span>Client Intake</span><span class="page-number">05</span></div>
+</section></main></body></html>

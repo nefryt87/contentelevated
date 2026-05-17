@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Videographers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Videographers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>VIDEOGRAPHER</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to film delivery, corporate development, vendor partnerships, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING CONVERSION</h3>
+<p>T1 — Wedding Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your wedding videography inquiry — [Names]</div>
+<p>Hi [Names], Thank you so much for reaching out — your wedding on [date] at [venue] sounds absolutely beautiful. [One specific detail they mentioned] really stood out to me. A little about how I&#x27;d approach your day: [2-3 sentences on your style and</p>
+<p>approach for their specific wedding]. Here&#x27;s a quick overview of my packages: [brief summary or link]. I&#x27;d love to walk you through them on a quick call. Would [two specific times] work this week? [Your Name] | [Studio Name] | [Phone]</p>
+<p>T2 — Corporate Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your video project inquiry — [Name/Company]</div>
+<p>Hi [Name], Thank you for reaching out — the [project type] for [Company] sounds like a great project and exactly the kind of work I love taking on. To make sure I give you the most useful response: [1-2 clarifying questions</p>
+<p>— timeline, budget range, deliverables needed]. I&#x27;d love to jump on a quick discovery call to understand the full scope and put together an accurate proposal. Would [two specific times] work? [Your Name] | [Studio Name] | [Phone] T3 — Follow-Up Day 3</p>
+<div class="section-label">SUBJECT Checking in on your [project type] inquiry — [Name]</div>
+<p>Hi [Name], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get buried! One thought I had about your [project/wedding]: [one specific, genuine insight relevant to their situation].</p>
+<p>Still available for a call [two times] this week. [Your Name] | [Studio Name] T4 — Post-Consultation Booking Follow-Up</p>
+<h3>SUBJECT Following our call — [Name]</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], Really enjoyed our conversation — [their project] is going to be an incredible [film / campaign / piece]. As discussed: I&#x27;ll hold your date until [date/time]. To confirm: [deposit amount] + signed contract. Contract here: [link].</p>
+<p>Any questions before signing, I&#x27;m a quick message away. [Your Name] | [Studio Name] T5 — Package Pricing Email</p>
+<h3>SUBJECT Your videography packages — [Name]</h3>
+<p>Hi [Name], Here are my packages for [project type]: [Package 1 Name] — $[amount]: [what&#x27;s included in 2 sentences] [Package 2 Name] — $[amount]: [what&#x27;s included] [Package 3 Name] — $[amount]: [what&#x27;s included]</p>
+<p>Based on what you&#x27;ve shared about [their situation], I&#x27;d recommend [Package X] because [specific reason]. Happy to walk through any questions on a quick call. Would [two times] work? [Your Name] | [Studio Name]</p>
+<h3>SECTION 2: PRE-PRODUCTION &amp; CLIENT PREP</h3>
+<p>T6 — Wedding Pre-Production Questionnaire Email</p>
+<div class="section-label">SUBJECT Your wedding video questionnaire — [Names]</div>
+<p>Hi [Names], With your wedding on [date] coming up, it&#x27;s time to get into the details so I can plan your film perfectly. Please complete this by [date]: [questionnaire link] Key things I&#x27;ll ask about: favourite moments to prioritise, any special songs,</p>
+<p>ceremony and reception timeline, whether you want a same-day edit, any vendor contacts I should have, and any logistical notes. The more you share, the more I can be invisibly in the right place at the right moment. [Your Name] | [Studio Name]</p>
+<p>T7 — Corporate Pre-Production Brief Email</p>
+<div class="section-label">SUBJECT Pre-production brief — [Project Name], [Company]</div>
+<p>Hi [Name], Excited to get started on [project name]. Before we dive in, I&#x27;d like to align on a few things to make sure the final film hits every mark. Please review and respond to this brief by [date]:</p>
+<p>Project goal: what should the viewer feel, know, or do after watching? Target audience: who exactly is this for? Key messages: the 2-3 things that must come across Tone and style: [examples or references if you have them] Interviews: who and how many?</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Deliverables: master file specs, social cut lengths needed Deadline: hard deadline for final delivery Reply with your answers or let&#x27;s run through this on a call. [Your Name] | [Studio Name] T8 — Week-Before Wedding Confirmation</p>
+<h3>SUBJECT One week to go! Final details — [Names]</h3>
+<p>Hi [Names], One week! I am so excited for your day. Confirming my details: Arrival time: [time] at [getting-ready address] My assistant/second shooter (if applicable): [Name] My direct number on the day: [Phone]</p>
+<p>One tip for the morning: if possible, have a window in your getting-ready space — natural light makes a huge difference to both video and photos. See you on [date]! [Your Name] | [Studio Name]</p>
+<h3>SECTION 3: FILM DELIVERY &amp; POST-WEDDING</h3>
+<p>T9 — Wedding Film Delivery Email</p>
+<h3>SUBJECT Your wedding film is ready — [Names]✨</h3>
+<p>Hi [Names], Before I give you the link — I want you to know that filming your wedding was a genuine privilege. [One specific personal observation from their day — e.g., &#x27;The moment [Name] first saw [Name] walking down the aisle — I knew that was going to</p>
+<p>be the heart of your film.&#x27;] Your film is ready: [link] It&#x27;s [length], fully edited and colour-graded. To download: [brief instructions]. A few things to know:</p>
+<p class="template-line">- Your film is available for [timeframe] — I recommend downloading it</p>
+<p>promptly</p>
+<p class="template-line">- Social sharing: please tag me [Instagram handle] if you post any clips</p>
+<p class="template-line">- Higher resolution version: [details if applicable]</p>
+<p>I&#x27;ll check in again in a few days. For now — enjoy it with people you love. [Your Name] | [Studio Name] T10 — Corporate Film Delivery Email</p>
+<h3>SUBJECT [Project name] — delivered, [Name]</h3>
+<p>Hi [Name], [Project name] is delivered and ready for review. What&#x27;s in your delivery package:</p>
+<p class="template-line">- Master file: [specs] at [link/location]</p>
+<p class="template-line">- [Social cut 1 — e.g., 60-second version]: [link]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- [Social cut 2 — e.g., 15-second teaser]: [link]</p>
+<p class="template-line">- Raw audio tracks (if applicable): [link]</p>
+<p>Revision process: [X] rounds of revisions are included. Please consolidate all feedback into one document and send by [date] to maintain the delivery schedule. It was a pleasure working on this. I&#x27;m proud of how it came together. [Your Name] | [Studio Name]</p>
+<p>T11 — Post-Film Review Request</p>
+<h3>SUBJECT A personal ask — [Names/Name]</h3>
+<p>Hi [Names/Name], I&#x27;ve been thinking about [the wedding / the project] since delivery and I genuinely hope you love the film. A personal ask: if you&#x27;re happy with the work, a Google review means the</p>
+<p>world to a small studio like mine. It helps other [couples / businesses] find a videographer they can trust. Direct link: [Google Review Link]. Takes about 2 minutes. Thank you for trusting me with [your story / your brand]. [Your Name] | [Studio Name]</p>
+<p>T12 — 1-Year Anniversary / Project Check-In</p>
+<h3>SUBJECT Checking in — [Names/Company]</h3>
+<p>Hi [Names/Name], It&#x27;s been [a year / X months] since [your wedding / we delivered your film] and I&#x27;ve been thinking about you. [Wedding: &#x27;I still look back at your film and feel proud of every frame. I hope</p>
+<p>your first year has been full of joy.&#x27;] [Corporate: &#x27;I&#x27;d love to hear how the video has been performing and whether there are any new projects I can help with.&#x27;] With appreciation, [Your Name] | [Studio Name]</p>
+<h3>SECTION 4: VENDOR &amp; CORPORATE</h3>
+<h3>PARTNERSHIPS</h3>
+<p>T13 — Photographer Partnership Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], Videographer, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a videographer based in [City] specialising in [wedding / commercial / both]. I&#x27;ve been following your photography and it&#x27;s genuinely stunning — [one specific genuine compliment].</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I reach out because coordinated photo and video teams produce dramatically better results for couples, and I&#x27;d love to explore a mutual referral relationship. Would a quick call or coffee work? [Your Name] | [Studio Name] | [Phone] | [Instagram]</p>
+<p>T14 — Wedding Planner Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], Videography, [City]</div>
+<p>Hi [Name], I&#x27;m [Your Name] from [Studio Name] — a videography studio in [City] specialising in [style — e.g., cinematic documentary wedding films / corporate and commercial video]. I&#x27;ve admired [Planning Company]&#x27;s events and I&#x27;d love to introduce myself as</p>
+<p>a potential vendor recommendation. I&#x27;m always professional, unobtrusive, and I make the job easier for every vendor I work alongside. Happy to send a portfolio or meet briefly. [Your Name] | [Studio Name] | [Phone] T15 — Marketing Agency Introduction</p>
+<div class="section-label">SUBJECT Videography partnership — [Your Name] + [Agency]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a commercial videographer based in [City] with experience in [brand video / product / testimonials / event coverage]. I reach out to agencies like [Agency] who occasionally need a trusted video</p>
+<p>production partner for client projects — whether that&#x27;s for overflow work, specific campaign needs, or specialist video production. Here&#x27;s my portfolio: [link]. Happy to discuss rates and availability for any upcoming projects.</p>
+<p>[Your Name] | [Studio Name] | [Phone] T16 — Monthly Vendor Value Touch</p>
+<h3>SUBJECT [Month] — a note from [Your Name]</h3>
+<p>Hi [Name], Quick monthly note — something that came up recently that might be useful for your [couples / clients]: [One specific, genuine insight — e.g., for a photographer: &#x27;I&#x27;ve found that</p>
+<p>keeping 5-10 minutes between the end of family formals and the start of couple portraits dramatically reduces the stress both teams feel — and produces better work from everyone.&#x27; / for a planner: &#x27;Pre-ceremony 30-</p>
+<p>minute buffer for vendors to set up and test audio is one of the most underused timeline improvements I&#x27;d recommend to any couple.&#x27;] Hope your bookings are going well. [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 5: CORPORATE BUSINESS</h3>
+<h3>DEVELOPMENT</h3>
+<p>T17 — Corporate Retainer Proposal</p>
+<div class="section-label">SUBJECT Video retainer proposal — [Your Name] + [Company]</div>
+<p>Hi [Name], It&#x27;s been a pleasure working with [Company] on [previous project] and I wanted to put a specific idea on the table. A monthly or quarterly video retainer would mean:</p>
+<p class="template-line">- [X] videos per [month/quarter] at $[amount] (vs. $[rate] individually)</p>
+<p class="template-line">- Priority scheduling — you&#x27;re always first on my calendar</p>
+<p class="template-line">- Consistent visual style across all your content</p>
+<p class="template-line">- Faster turnaround as I understand your brand deeply</p>
+<p>This works best for brands producing [type of content] regularly. Based on [Company]&#x27;s content needs, I think this could be a great fit. Would you be open to a 20-minute call to discuss? [Your Name] | [Studio Name] T18 — New Corporate Client Prospecting Email</p>
+<div class="section-label">SUBJECT Video content for [Company] — [Your Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name], a commercial videographer based in [City] specialising in [your speciality — e.g., brand storytelling / product video / event coverage]. I came across [Company] and noticed [one specific, genuine observation</p>
+<p>about their content or brand — e.g., &#x27;your product line looks incredible and I think a short-form product video series would perform really well on Instagram and TikTok&#x27;]. I&#x27;d love to offer a complimentary 30-minute call to discuss what video content</p>
+<p>could do for your brand. No obligation — just a genuine conversation. [Your Name] | [Studio Name] | [Portfolio Link]</p>
+<h3>SECTION 6: REPUTATION MANAGEMENT &amp;</h3>
+<h3>ADDITIONAL TEMPLATES</h3>
+<p>T19 — 5-Star Review Response</p>
+<h3>SUBJECT Google — respond directly</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Thank you so much, [Name]! It was a genuine privilege working on [their project] — [add one specific detail if their review mentions it]. Reviews like yours mean the world to a small studio. — [Your Name], [Studio Name]</p>
+<p>[Respond within 24 hours. Personal, warm, include studio name for SEO.] T20 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Hi [Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every project. I&#x27;d really appreciate the chance to understand what happened and make it right. Please call me</p>
+<p>directly at [Phone]. — [Your Name], [Studio Name] [Never argue publicly. Move it offline. Your response is read by every future</p>
+<h3>client who searches you.]</h3>
+<p>T21 — Styled Shoot Collaboration Pitch</p>
+<div class="section-label">SUBJECT Styled shoot collaboration — [Your Name] + [Name]</div>
+<p>Hi [Name], I&#x27;ve been thinking about a collaboration and your work immediately came to mind. I&#x27;m planning a styled [wedding / editorial] shoot: [brief concept — venue, mood, style]. I&#x27;d handle videography. What I&#x27;m looking for: [photographer /</p>
+<p>florist / dress designer / venue]. What I can offer: a full highlight film for your portfolio, complete usage rights, and a co-marketing relationship built on actually working together. Interested in a quick call? [Your Name] | [Studio Name] | [Instagram]</p>
+<p>T22 — Unavailable Date Response</p>
+<div class="section-label">SUBJECT Re: Your [date] videography inquiry — [Name]</div>
+<p>Hi [Name], Thank you so much for thinking of me for [date] — unfortunately I&#x27;m already booked for that day. I&#x27;d hate for you to be without a great videographer, so I wanted to suggest two colleagues whose work I genuinely admire: [Name 1 — link] and [Name 2</p>
+<p>— link]. If your date changes or you need videography for another occasion, please don&#x27;t hesitate to reach out. Congratulations on [your wedding / your project]! [Your Name] | [Studio Name] T23 — Same-Day Edit Upsell Email</p>
+<div class="section-label">SUBJECT Same-day edit for your wedding — [Names]</div></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Videographers<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Names], I wanted to mention something worth considering before your wedding: a same-day edit. A same-day edit is a 3-5 minute film I cut during your reception and play at your venue during the evening. The reaction from guests — and the couple</p>
+<p>— is always extraordinary. It&#x27;s one of the most memorable moments of the entire day. It requires an additional [X] hours of my time and costs $[amount] added to your package. I have [limited / one remaining] slot available for your date.</p>
+<p>Interested? Just reply here. [Your Name] | [Studio Name] T24 — Referral Thank-You</p>
+<h3>SUBJECT Thank you for the referral — [Name]</h3>
+<p>Hi [Name], Thank you so much for referring [Client Name] to me — I genuinely appreciate the trust that takes and I&#x27;m going to make sure their experience is everything you promised. Referrals from people whose work I respect are the foundation of what I do.</p>
+<p>Thank you. [Your Name] | [Studio Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section></main></body></html>

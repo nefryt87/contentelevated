@@ -1,0 +1,191 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90-Day Content Calendar</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#07111d; --panel:#0d1a28; --panel2:#132539; --steel:#627286; --muted:#516174; --paper:#edf8ff; --cool:#4bbcff; --heat:#92d7ff; --line:rgba(7,17,29,.16); }
+      * { box-sizing:border-box; } body { margin:0; background:#cfd8e3; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; } .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:radial-gradient(circle at 14% 9%, color-mix(in srgb,var(--cool) 20%,transparent), transparent 2.35in), radial-gradient(circle at 96% 16%, color-mix(in srgb,var(--heat) 16%,transparent), transparent 2.4in), linear-gradient(135deg,var(--paper),#fff 56%,#e9eef5); }
+      .page::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(7,17,29,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(7,17,29,.045) 1px,transparent 1px); background-size:.34in .34in; mask-image:radial-gradient(circle at 50% 42%, black, transparent 78%); pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.05in; top:-.35in; width:3.4in; height:10.4in; border-radius:999px; background:linear-gradient(180deg,color-mix(in srgb,var(--cool) 10%,transparent),transparent 45%,color-mix(in srgb,var(--heat) 10%,transparent)); transform:rotate(-12deg); pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; } .wordmark { color:var(--ink); font-size:12px; font-weight:950; letter-spacing:.18em; text-transform:uppercase; } .wordmark small { display:block; margin-top:8px; color:var(--steel); font-size:8.5px; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--cool) 38%,transparent); background:rgba(255,255,255,.58); color:var(--panel); border-radius:999px; padding:10px 14px; font-size:9px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+      .kicker,.eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; margin:0 0 17px; color:var(--cool); font-size:9px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; } .kicker::before,.eyebrow-line::before { content:""; width:44px; height:1px; background:linear-gradient(90deg,var(--cool),var(--heat)); }
+      h1,h2 { position:relative; z-index:2; margin:0; font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; } h1 { max-width:6.3in; margin-top:.82in; font-size:58px; line-height:.9; } h1 span { color:var(--heat); } h2 { margin:16px 0 12px; font-size:29px; line-height:1; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--muted); font-size:11px; line-height:1.48; } .lead { max-width:5.15in; margin-top:.28in; font-size:15px; line-height:1.5; color:#334458; }
+      .cover-panel { position:absolute; left:.58in; right:.58in; bottom:.76in; z-index:2; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; } .dark-card { border-radius:22px; background:linear-gradient(135deg,var(--panel),var(--panel2)); padding:24px; color:#edf7ff; box-shadow:0 28px 72px rgba(7,17,29,.18); } .dark-card p { color:rgba(237,247,255,.72); }
+      .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; } .stat { border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:13px; background:rgba(255,255,255,.045); } .stat strong { display:block; color:var(--cool); font-size:22px; font-weight:950; } .stat span { display:block; margin-top:6px; color:rgba(237,247,255,.7); font-size:8px; font-weight:900; letter-spacing:.12em; line-height:1.35; text-transform:uppercase; }
+      .footer { position:absolute; left:.58in; right:.58in; bottom:.31in; z-index:2; display:flex; justify-content:space-between; color:rgba(81,97,116,.78); font-size:8px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.38in; border:1px solid rgba(7,17,29,.12); border-radius:22px; background:rgba(255,255,255,.72); padding:25px; box-shadow:0 20px 58px rgba(7,17,29,.08); }
+      .system-title { margin:17px 0 10px; border-radius:14px; border:1px solid color-mix(in srgb,var(--cool) 24%,transparent); background:linear-gradient(135deg,rgba(13,26,40,.96),rgba(19,37,57,.94)); color:#edf7ff; padding:12px 14px; font-size:10px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
+      .label-line { color:var(--heat); font-weight:950; letter-spacing:.11em; text-transform:uppercase; font-size:9px; margin-top:13px; } .tip { margin:12px 0; border-left:3px solid var(--heat); padding:10px 0 10px 13px; background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 12%,transparent),transparent 76%); color:#415268; font-size:10px; line-height:1.45; }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; border-radius:50%; margin-top:7px; background:var(--cool); } .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; border:1px solid color-mix(in srgb,var(--cool) 30%,transparent); border-radius:8px; color:var(--cool); font-weight:950; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book"><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><p class="kicker" style="margin-top:.78in;">Field-Ready Growth System</p><h1>90-Day Content Calendar</h1><p class="lead">Twelve weeks of done-for-you post ideas for Google Business Profile, Facebook, Instagram, and seasonal service demand.</p><div class="cover-panel"><div class="dark-card"><p style="font-size:10px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--heat);margin-bottom:12px;">Built for service companies</p><p>Turn follow-up, seasonal demand, reviews, content, and customer communication into a repeatable operating system.</p></div><div class="dark-card"><div class="stat-grid"><div class="stat"><strong>24</strong><span>templates</span></div><div class="stat"><strong>90</strong><span>days</span></div><div class="stat"><strong>AI</strong><span>assisted</span></div><div class="stat"><strong>0</strong><span>guesswork</span></div></div></div></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>01</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>MONTH 1: BUILD TRUST &amp; ESTABLISH LOCAL</h2>
+<h2>AUTHORITY</h2>
+<p>Position your HVAC company as the knowledgeable, trustworthy, local expert.</p>
+<p>Educate homeowners on system care, costs, and what great HVAC service looks</p>
+<p>like — before they need to call.</p>
+<p class="eyebrow-line">Week 1</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: &#x27;Signs your [AC/heating] system is telling you something is wrong&#x27; —</p>
+<p>the warning signs homeowners miss (Edu + Hook)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Your story — how you got into HVAC and what you love about the work</h2>
+<h2>(Trust)</h2>
+<h2>FRIDAY POST: &#x27;What&#x27;s actually included in an HVAC tune-up?&#x27; — the honest</h2>
+<p>breakdown (Edu)</p>
+<p class="eyebrow-line">Week 2</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>02</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: Before/after job photo — old system vs. new installation with caption</p>
+<h2>(Social Proof)</h2>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: &#x27;How often should you change your HVAC filter?&#x27; — simple, practical</h2>
+<p>(Edu + GBP)</p>
+<p>FRIDAY POST: 5-star Google review highlight — screenshot or quote with a thank-you</p>
+<h2>(Social Proof)</h2>
+<p class="eyebrow-line">Week 3</p>
+<h2>DAY CONTENT IDEA</h2>
+<h2>MONDAY POST: &#x27;What does a new HVAC system actually cost in [City]?&#x27; — honest</h2>
+<p>pricing overview (Trust + FAQ)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>03</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>STORY/POST: Technician spotlight — introduce a member of your team</h2>
+<h2>(Trust)</h2>
+<h2>FRIDAY POST: Ask us anything — HVAC questions answered (Engage)</h2>
+<p class="eyebrow-line">Week 4</p>
+<h2>DAY CONTENT IDEA</h2>
+<h2>MONDAY POST: &#x27;The most common HVAC mistake homeowners make — and how to</h2>
+<p>avoid it&#x27; (Edu + Hook)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Completed job feature — system installed, customer story (Social</h2>
+<h2>Proof)</h2>
+<p>FRIDAY POST: Service / tune-up booking CTA — &#x27;Is your system ready for [season]?&#x27;</p>
+<h2>(CTA)</h2>
+<p>AI Caption Prompt for This Month</p>
+<p>Write 12 social media posts for an HVAC contractor for build trust</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>04</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>&amp; establish local authority. Mix: 4 educational posts (tips,</h2>
+<p>system care, costs), 4 trust/social proof posts (jobs, reviews,</p>
+<p>team), 4 engagement or CTA posts (seasonal offers, booking</p>
+<p>prompts). Each under 150 words, local and conversational, ends</p>
+<p>with a question or CTA. Company: [Company Name], [City]. Number 1-</p>
+<p>12.</p>
+<h2>MONTH 2: SEASONAL CAMPAIGN &amp; DRIVE</h2>
+<h2>SERVICE CALLS</h2>
+<p>Capitalize on seasonal urgency. Spring and fall are peak tune-up seasons — use</p>
+<p>content to drive inbound calls, fill your tune-up schedule, and position service</p>
+<p>agreements as the smart choice.</p>
+<p class="eyebrow-line">Week 5</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: Seasonal alert — &#x27;Before [summer heat/winter cold] hits, here&#x27;s what to</p>
+<p>check&#x27; (Timely + CTA)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Energy savings tip — &#x27;How to lower your bill this [season] without</h2>
+<p>replacing your system&#x27; (Practical Value)</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>05</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><p>FRIDAY POST: &#x27;What&#x27;s the difference between a repair and a replacement?&#x27; — honest</p>
+<p>guide (Edu + Trust)</p>
+<p class="eyebrow-line">Week 6</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: Service agreement spotlight — &#x27;What our maintenance plan customers</p>
+<p>never worry about&#x27; (Retention + Upsell)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Job photo — challenging install or repair with a brief story (Social</h2>
+<h2>Proof)</h2>
+<h2>FRIDAY POST: &#x27;Your AC is X years old — here&#x27;s what to expect&#x27; — age-based</h2>
+<p>education (Lead Qualifier)</p>
+<p class="eyebrow-line">Week 7</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: Financing spotlight — &#x27;New system, no big upfront cost — here&#x27;s how&#x27;</p>
+<h2>(Conversion)</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>06</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Review roundup — 3 recent Google reviews compiled into one post</h2>
+<h2>(Social Proof)</h2>
+<p>FRIDAY POST: &#x27;Emergency AC/heat call? Here&#x27;s what to check before you call us&#x27; —</p>
+<p>builds trust (Practical + Trust)</p>
+<p class="eyebrow-line">Week 8</p>
+<h2>DAY CONTENT IDEA</h2>
+<h2>MONDAY POST: &#x27;Why [City] homeowners choose [Company Name]&#x27; — your</h2>
+<p>differentiators (Brand + Trust)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Seasonal offer — tune-up special or service agreement discount (CTA)</h2>
+<p>FRIDAY POST: Booking/estimate CTA — &#x27;Don&#x27;t wait for the hottest/coldest day of the</p>
+<p>year. Book now.&#x27; (Urgency CTA)</p>
+<p>AI Caption Prompt for This Month</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>07</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><p>Write 12 social media posts for an HVAC contractor for seasonal</p>
+<h2>campaign &amp; drive service calls. Mix: 4 educational posts (tips,</h2>
+<p>system care, costs), 4 trust/social proof posts (jobs, reviews,</p>
+<p>team), 4 engagement or CTA posts (seasonal offers, booking</p>
+<p>prompts). Each under 150 words, local and conversational, ends</p>
+<p>with a question or CTA. Company: [Company Name], [City]. Number 1-</p>
+<p>12.</p>
+<h2>MONTH 3: RETAIN, REFER &amp; BUILD YOUR</h2>
+<h2>PIPELINE</h2>
+<p>Turn satisfied customers into loyal agreement holders and active referral sources.</p>
+<p>Build the local reputation that means your phone rings before the competition&#x27;s</p>
+<p>does.</p>
+<p class="eyebrow-line">Week 9</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: &#x27;Why regular maintenance is cheaper than emergency repair&#x27; — the</p>
+<p>numbers (Retention Edu)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Referral appreciation — &#x27;Most of our calls come from neighbors</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>08</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><p>recommending us&#x27; (Referral Prompt)</p>
+<p>FRIDAY POST: Seasonal campaign — fall/spring tune-up push, limited slots (Urgency</p>
+<h2>CTA)</h2>
+<p class="eyebrow-line">Week 10</p>
+<h2>DAY CONTENT IDEA</h2>
+<p>MONDAY POST: New equipment feature — smart thermostat, high-efficiency unit, EV-</p>
+<p>ready HVAC (Timely + Tech)</p>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Long-term customer story — their system history and how you&#x27;ve</h2>
+<p>helped (Deep Social Proof)</p>
+<p>FRIDAY POST: &#x27;What to look for when hiring an HVAC contractor&#x27; — positions you as</p>
+<p>the obvious choice (Trust)</p>
+<p class="eyebrow-line">Week 11</p>
+<h2>DAY CONTENT IDEA</h2>
+<h2>MONDAY POST: Energy efficiency tip — &#x27;Small changes that reduce your</h2>
+<p>[summer/winter] energy bill&#x27; (Practical Value)</p>
+<h2>WEDNESDA</h2></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>09</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><h2>Y</h2>
+<p>POST/POLL: &#x27;What&#x27;s your biggest HVAC concern heading into [season]?&#x27;</p>
+<h2>(Engage + Lead Intel)</h2>
+<h2>FRIDAY POST: &#x27;Our promise to every customer&#x27; — your service standards and</h2>
+<p>guarantee (Brand)</p>
+<p class="eyebrow-line">Week 12</p>
+<h2>DAY CONTENT IDEA</h2>
+<h2>MONDAY POST: Year-end home maintenance checklist — includes HVAC items</h2>
+<h2>(Seasonal + Practical)</h2>
+<h2>WEDNESDA</h2>
+<h2>Y</h2>
+<h2>POST: Thank-you post — celebrating customers, team, and another great</h2>
+<p>year (Relationship)</p>
+<h2>FRIDAY POST: CTA — &#x27;New year, comfortable home. Book your [season] tune-up</h2>
+<p>now.&#x27; (Final CTA)</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>10</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><p>AI Caption Prompt for This Month</p>
+<p>Write 12 social media posts for an HVAC contractor for retain,</p>
+<h2>refer &amp; build your pipeline. Mix: 4 educational posts (tips,</h2>
+<p>system care, costs), 4 trust/social proof posts (jobs, reviews,</p>
+<p>team), 4 engagement or CTA posts (seasonal offers, booking</p>
+<p>prompts). Each under 150 words, local and conversational, ends</p>
+<p>with a question or CTA. Company: [Company Name], [City]. Number 1-</p>
+<p>12.</p>
+<h2>PLATFORM QUICK GUIDE</h2>
+<h2>Google Business Profile (Most Important)</h2>
+<p class="bullet"><span></span>GBP is the #1 platform for HVAC — &#x27;HVAC near me&#x27; and &#x27;AC repair [city]&#x27; are</p>
+<p>high-intent, emergency searches</p>
+<p class="bullet"><span></span>Post weekly job updates, seasonal tips, and equipment features</p>
+<p class="bullet"><span></span>Respond to every review within 24 hours — how you respond to negative</p>
+<p>reviews is as trust-building as the 5-stars</p>
+<p class="bullet"><span></span>Upload job photos consistently — before/after installs perform especially well</p>
+<p class="bullet"><span></span>Practices with 50+ reviews and active GBP posting receive 3-4x more organic</p>
+<p>inbound calls</p>
+<h2>Facebook</h2>
+<p class="bullet"><span></span>Best for: Local homeowner community, 35-65 demographic, neighborhood</p>
+<p>groups</p>
+<p class="bullet"><span></span>Post type: Seasonal tips, job photos, review highlights, financing offers,</p>
+<p>community involvement</p>
+<p class="bullet"><span></span>Tip: Joining local neighborhood Facebook groups and providing genuine value</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>11</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">Content Schedule</div></div><div class="content-card"><p>drives significant referral traffic</p>
+<h2>Instagram / Nextdoor</h2>
+<p class="bullet"><span></span>Instagram: Before/after photos and short Reels of installs perform well — tag the</p>
+<p>neighborhood</p>
+<p class="bullet"><span></span>Nextdoor: Highly underutilized by HVAC contractors — local recommendations</p>
+<p>are extremely high-trust</p>
+<p class="bullet"><span></span>Short-form video showing a technician explaining a common issue (&#x27;why your AC</p>
+<p>is blowing warm air&#x27;) drives consistent views</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>12</span></div></section></main></body></html>

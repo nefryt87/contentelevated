@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit Nannies</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #18130f; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8ef,#f2e8dc 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7657 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6b888 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7657,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #6c6256; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7657 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7657; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7657; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7657; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7657; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #6c6256; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7657 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#211810,color-mix(in srgb,#211810 76%,#9b7657)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6b888; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7657 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7657; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7657 18%,transparent); color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7657; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7657 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #6c6256; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7657; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Client experience system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit Nannies</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for warm service polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Nannies &amp; Childcare Professionals</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit Nannies</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>NANNY</h3>
+<h3>Brand Kit + Professional Profile Guide</h3>
+<p>Two signature palettes, warm-professional typography, 7 Canva and platform template strategies, and a 7-day profile launch checklist</p>
+<h3>WHY YOUR PROFESSIONAL PRESENCE GETS</h3>
+<h3>YOU SHORTLISTED</h3>
+<p>Families shortlist nannies based on their profile, their photo, and the first impression of their communication before they ever have a conversation. A polished, warm, and consistent professional presence — on platforms, on LinkedIn, and in your written</p>
+<p>materials — communicates the same qualities that make a great nanny: care, organisation, warmth, and professionalism. This kit gives you two palettes, typography pairings, and template strategies built specifically for nannies and childcare professionals.</p>
+<h3>PALETTE 1: WARM PROFESSIONAL</h3>
+<p>For nannies positioning at the warm, trusted, family-focused end. Think plum, gold, and the feeling of someone you would immediately trust with your children.</p>
+<h3>SOFT PLUM</h3>
+<h3>#3A2A5C</h3>
+<h3>WARM GOLD</h3>
+<h3>#C9922A</h3>
+<h3>LAVENDER MIST</h3>
+<h3>#C8C0E0</h3>
+<h3>WARM WHITE</h3>
+<h3>#F8F5FF</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Soft Plum (#3A2A5C): logo, headlines, primary text — sophisticated and</p>
+<p>trustworthy</p>
+<p class="template-line">• Warm Gold (#C9922A): accent for CTAs, certification highlights, key credential</p>
+<p>callouts</p>
+<p class="template-line">• Lavender Mist (#C8C0E0): backgrounds for graphics, story templates, profile</p>
+<p>headers</p>
+<p class="template-line">• Warm White (#F8F5FF): all backgrounds — soft and premium</p></div>
+  <div class="footer"><span>Brand Kit Nannies</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Typography</h3>
+<p>HEADINGS: Nunito Bold — friendly, rounded, warm. Approachable but professional. BODY: Open Sans — clean and readable across all platforms and sizes. ACCENT: Nunito ExtraBold — for credentials callouts, availability notices, key information.</p>
+<h3>PALETTE 2: CLEAN MODERN</h3>
+<p>For nannies with a cleaner, more contemporary professional positioning — particularly suited for those targeting high-profile or corporate families.</p>
+<h3>DEEP TEAL</h3>
+<h3>#1A4A5C</h3>
+<h3>WARM SAND</h3>
+<h3>#C8A878</h3>
+<h3>SOFT GREY</h3>
+<h3>#F0EEE8</h3>
+<h3>WHITE</h3>
+<h3>#FFFFFF</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Deep Teal (#1A4A5C): logo, primary text, professional graphic elements</p>
+<p class="template-line">• Warm Sand (#C8A878): accent — warm, trusted, premium</p>
+<p class="template-line">• Soft Grey (#F0EEE8): backgrounds for graphics and documents</p>
+<p class="template-line">• White (#FFFFFF): primary backgrounds — clean and modern</p>
+<h3>Typography</h3>
+<p>HEADINGS: Libre Baskerville — authoritative and warm. Professional and trustworthy. BODY: Lato — clean and professional. Used across LinkedIn, profile platforms, and print materials. ACCENT: Libre Baskerville Italic — for testimonial quotes, certification descriptions,</p>
+<p>personal taglines.</p>
+<h3>7 TEMPLATE STRATEGIES</h3>
+<h3>Template 1: LinkedIn Profile Banner</h3>
+<p>Search &#x27;LinkedIn banner childcare professional&#x27; or &#x27;nanny LinkedIn cover&#x27;. 1584×396px. A warm, professional photo of you (with children if consented) or a clean graphic. Your name, your speciality (&#x27;Professional Nanny | Early Childhood Specialist | [City]&#x27;), and</p></div>
+  <div class="footer"><span>Brand Kit Nannies</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>your key certifications. Every parent or agency who visits your LinkedIn sees this first — make it professional, warm, and immediately credible.</p>
+<h3>Template 2: Nanny CV / Profile Document</h3>
+<p>Search &#x27;nanny CV template&#x27; or &#x27;childcare professional resume&#x27;. Clean, warm layout. Your photo (professional, warm). Your name and contact. Your summary (use your platform bio). Experience (reverse chronological, with ages of children cared for).</p>
+<p>Qualifications and certifications. References available on request. Keep to 1-2 pages — concise and readable. Update it every 6 months.</p>
+<h3>Template 3: Credential / Certification Graphic</h3>
+<p>Search &#x27;certification badge Instagram&#x27; or &#x27;professional credentials post&#x27;. A clean graphic featuring your key credentials: &#x27;First Aid Certified&#x27;, &#x27;DBS Cleared&#x27;, &#x27;Paediatric CPR&#x27;, &#x27;[X] Years Experience&#x27;. Your name. Use as a pinned Instagram post, on your LinkedIn, and</p>
+<p>in your platform profile. Parents scan this type of content quickly — make it visually easy to read.</p>
+<h3>Template 4: Activity Idea Post</h3>
+<p>Search &#x27;children activity Instagram&#x27; or &#x27;parenting tip post&#x27;. A clean, engaging graphic: &#x27;[Age] Activity: [Activity Name]&#x27; with a brief description. Your name or handle. Post these regularly — parents save them, share them, and remember the professional who</p>
+<p>consistently provides value. Positions you as an expert, not just a carer.</p>
+<h3>Template 5: Testimonial / Reference Graphic</h3>
+<p>Search &#x27;professional testimonial Instagram&#x27; or &#x27;nanny review post&#x27;. Feature a specific, warm quote from a past family (with their permission). Their first name and children&#x27;s ages (optional). Your name. These are your most powerful trust signals — post every</p>
+<p>new reference or testimonial you receive. Parents trust other parents more than any other marketing.</p>
+<h3>Template 6: Availability Announcement</h3>
+<p>Search &#x27;professional available post&#x27; or &#x27;nanny available LinkedIn&#x27;. Clean graphic: &#x27;NOW AVAILABLE: [Role Type] in [Area] from [Date]&#x27;. Your key credentials (experience level, certifications, DBS). Your contact details. Post this on LinkedIn, Instagram, and update</p>
+<p>your platform profile simultaneously every time you open for new inquiries.</p></div>
+  <div class="footer"><span>Brand Kit Nannies</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Nannies &amp; Childcare Professionals Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Instagram Story — Daily Dispatch</h3>
+<p>Search &#x27;daily update story template&#x27; or &#x27;professional story&#x27;. Vertical. Your name or business name small at top. &#x27;Today&#x27;s adventures:&#x27; with a safe, consent-appropriate image or graphic (no identifiable children unless fully consented). A warm caption. Post</p>
+<p>daily when working — parents of prospective clients follow nannies to see their day-to-</p>
+<h3>day, and this builds enormous trust over time.</h3>
+<h3>7-DAY PROFESSIONAL PROFILE LAUNCH</h3>
+<h3>CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette. Arrange a professional headshot if your current photo</p>
+<p>is not warm and current.</p>
+<p class="template-line">✓ Day 2: Rewrite your Care.com / UrbanSitter / Sittercity profile using the bio from</p>
+<h3>Chapter 3 of Doc 1.</h3>
+<p class="template-line">✓ Day 3: Update your LinkedIn — new headline, new summary (Chapter 5 prompt</p>
+<p>from Doc 1), and your new banner (Template 1).</p>
+<p class="template-line">✓ Day 4: Create your credential graphic using Template 3 — add to Instagram,</p>
+<p>LinkedIn, and your platform profile.</p>
+<p class="template-line">✓ Day 5: Create 5 activity idea posts using Template 4 — schedule one per week for 5</p>
+<p>weeks.</p>
+<p class="template-line">✓ Day 6: Request written references from 2-3 past families using the Chapter 3</p>
+<h3>template from Doc 3.</h3>
+<p class="template-line">✓ Day 7: Post your availability announcement using Template 6 — LinkedIn,</p>
+<p>Instagram, and update all platform statuses.</p>
+<p class="template-line">✓ [A professional, consistent online presence does not guarantee the right family —</p>
+<p>but it gets you in front of them. Families are making a high-trust decision and your professional presentation is the first signal they use to decide who to shortlist.]</p></div>
+  <div class="footer"><span>Brand Kit Nannies</span><span class="page-number">06</span></div>
+</section></main></body></html>

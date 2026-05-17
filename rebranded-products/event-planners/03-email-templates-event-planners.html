@@ -1,0 +1,160 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Event Planners</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>EVENT PLANNER</h3>
+<h3>CLIENT &amp; VENDOR COMMUNICATION</h3>
+<h3>TEMPLATE PACK</h3>
+<p>24 done-for-you templates for every stage of the planning journey Inquiries • Client management • Vendor relationships • Reviews • Referrals</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, event details, and your</p>
+<p>business information.</p>
+<p class="template-line">• Keep the tone aspirational, professional, and genuinely excited — clients</p>
+<p>hire planners who make them feel their event is the most important one on your calendar.</p>
+<p class="template-line">• Always personalize the opening line using AI for the best first impression.</p>
+<p class="template-line">• Works as email and as messaging through planning platforms like Aisle</p>
+<p>Planner or Honeybook.</p>
+<h3>SECTION 1: CLIENT ACQUISITION &amp;</h3>
+<h3>ONBOARDING</h3>
+<p>Inquiry Response — Same Day</p>
+<h3>SUBJECT Re: Your [wedding/event] inquiry — [Your Name]</h3>
+<p>BODY Hi [First Name], Thank you so much for reaching out — your [event type] sounds absolutely beautiful and I&#x27;m so excited to learn more! I loved what you shared about [one specific element from their inquiry — their</p>
+<p>vision, venue choice, or date]. That&#x27;s exactly the kind of event I love creating. I&#x27;d love to schedule a discovery call so we can talk through your vision, get a feel for whether we&#x27;d be a great fit, and make sure I understand exactly what you&#x27;re dreaming of.</p>
+<p>Here&#x27;s my booking link: [link] — grab whatever time works best for you. Can&#x27;t wait to connect! [Your Name] | [Business Name] | [Phone] Post-Discovery Call Conversion</p>
+<div class="section-label">SUBJECT Your event — what I&#x27;m envisioning for you, [First Name]</div>
+<p>BODY Hi [First Name], It was such a pleasure talking with you today — your vision for [event description] is genuinely stunning and I can absolutely make it happen. Based on what you shared, here&#x27;s what I&#x27;d propose: Package: [Package Name] What&#x27;s included: [Key inclusions]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Investment: [Price] [One sentence on why this package is specifically right for their event based on the call] To move forward, simply [clear next step — reply, sign contract link, or pay deposit]. I&#x27;m so excited about this one. Let&#x27;s create something extraordinary.</p>
+<p>[Your Name] | [Business Name] Onboarding Welcome Email</p>
+<div class="section-label">SUBJECT Welcome to [Business Name] — the planning begins, [First Name]!</div>
+<p>BODY Hi [First Name], I am SO excited to officially be your event planner for [event name/date]! Here&#x27;s how our planning process works: 1. [Phase 1 — e.g., &#x27;Vision and concept development: we&#x27;ll lock in the aesthetic, key vendors, and overall direction&#x27;]</p>
+<p>2. [Phase 2 — e.g., &#x27;Vendor booking and logistics: I&#x27;ll manage all vendor communication on your behalf&#x27;] 3. [Phase 3 — e.g., &#x27;Final details and day-of execution: I&#x27;ve got every detail handled so you can fully enjoy your day&#x27;]</p>
+<p>Your planning portal is [link]. That&#x27;s where you&#x27;ll find all documents, inspiration boards, and checklists. Our first planning session is scheduled for [date]. In the meantime, start saving inspiration to [Pinterest board / planning portal] — the more you share, the</p>
+<p>better I can bring your vision to life. This is going to be incredible. [Your Name] | [Business Name] Monthly Planning Check-In</p>
+<h3>SUBJECT Your [month] planning update — [First Name]</h3>
+<p>BODY Hi [First Name], Here&#x27;s a quick update on where we are with your [event]: Completed this month:</p>
+<p class="template-line">- [Item 1]</p>
+<p class="template-line">- [Item 2]</p>
+<p>Coming up next:</p>
+<p class="template-line">- [Item 1 — with date/deadline if applicable]</p>
+<p class="template-line">- [Item 2]</p>
+<p>One decision you need to make: [specific pending decision with a light deadline] Overall status: Everything is tracking beautifully. [Any reassurance or excitement note] Reach out any time if you have questions — that&#x27;s what I&#x27;m here for. [Your Name]</p>
+<p>Pre-Event Countdown — 30 Days Out</p>
+<div class="section-label">SUBJECT 30 days to go — here&#x27;s what&#x27;s happening, [First Name]</div>
+<p>BODY Hi [First Name], Can you believe it&#x27;s only 30 days away?! I&#x27;m getting so excited for you! Here&#x27;s where everything stands:</p>
+<p class="template-line">- Venue: Confirmed for [Date]</p>
+<p class="template-line">- Catering: Final menu confirmed</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p class="template-line">- [Other vendor]: [Status]</p>
+<p class="template-line">- Outstanding: [Any pending items — be specific]</p>
+<p>One thing I need from you in the next week: [specific ask] The next time we speak will be for our final details call on [Date]. Between now and then, take a deep breath — you&#x27;re in good hands. Everything is under control. [Your Name] Post-Event Follow-Up</p>
+<h3>SUBJECT How are you feeling, [First Name]?</h3>
+<p>BODY Hi [First Name], I&#x27;ve been thinking about [event name] since [day/yesterday] and I just have to say — it turned out absolutely beautifully. Watching [couple / client] experience everything we&#x27;d planned together was genuinely one of the highlights of my year.</p>
+<p>I&#x27;d love to hear how you&#x27;re feeling about the day and whether there&#x27;s anything you&#x27;d change. If you&#x27;re willing, a Google review means the world to a small business like mine — and it helps other couples/clients find a planner they can trust. Here&#x27;s the link: [Google Review Link]</p>
+<p>And if you know anyone planning a special event, I&#x27;d love to be introduced. Working with incredible clients like you is how I built this business. Thank you for trusting me with something so important. [Your Name] | [Business Name]</p>
+<h3>SECTION 2: VENDOR RELATIONSHIPS</h3>
+<p>Post-Event Vendor Thank-You</p>
+<div class="section-label">SUBJECT Thank you — it was a privilege working with you, [Vendor Name]</div>
+<p>BODY Hi [Name], I just wanted to take a moment to say a genuine thank you for [what they contributed] at [Event Name] on [Date]. [One specific thing they did that stood out — be personal and specific.] Working with vendors who care as much as you do makes every event better.</p>
+<p>I&#x27;ll absolutely be recommending you to future clients, and I hope we get to collaborate again soon. Warmly, [Your Name] | [Business Name] New Vendor Introduction</p>
+<div class="section-label">SUBJECT Introduction — [Your Name], Event Planner, [Business Name]</div>
+<p>BODY Hi [Name], My name is [Your Name] — I&#x27;m an event planner at [Business Name] specializing in [wedding / corporate / social / luxury events] in [City/Region]. I came across [their work/business] and I&#x27;m genuinely impressed — [one specific, genuine compliment].</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>I&#x27;d love to add you to my preferred vendor network and explore whether there might be opportunities to work together on future events. I refer vendors consistently to clients who are a great fit for their style and specialty.</p>
+<p>Happy to connect for a quick call or coffee if you&#x27;re open to it. [Your Name] | [Business Name] | [Phone] Vendor Co-Marketing Proposal</p>
+<div class="section-label">SUBJECT Collaboration idea — [Your Name] + [Vendor Name]</div>
+<p>BODY Hi [Name], I&#x27;ve been thinking about how we might collaborate beyond individual events — and I wanted to put an idea on the table. A few options that might work well for both of us:</p>
+<p class="template-line">- Styled shoot collaboration: we each promote the imagery to our respective</p>
+<p>audiences</p>
+<p class="template-line">- Social media cross-promotion: tagging each other on shared events and</p>
+<h3>content</h3>
+<p class="template-line">- Joint venue open day or showcase: presenting to prospective clients together</p>
+<p>I think our audiences overlap beautifully and there&#x27;s a genuine opportunity to create something that benefits both of our businesses. Would you be open to a quick call to explore it? [Your Name] | [Business Name]</p>
+<h3>SECTION 3: REVIEWS &amp; REFERRALS</h3>
+<p>Review Request — 48 Hours Post-Event</p>
+<div class="section-label">SUBJECT A small ask — you&#x27;d be helping so much, [First Name]</div>
+<p>BODY Hi [First Name], I hope the glow is still very much alive after [event name]! If you had a wonderful experience working with [Business Name], I&#x27;d be so grateful if you took 2–3 minutes to share it on Google. It genuinely helps other</p>
+<p>couples and clients find a planner they can trust. Here&#x27;s the direct link: [Google Review Link] Thank you from the bottom of my heart — it&#x27;s clients like you that make this work so meaningful. [Your Name]</p>
+<h3>Client Referral Ask — Post Event</h3>
+<div class="section-label">SUBJECT Do you know anyone planning something extraordinary?</div>
+<p>BODY Hi [First Name], Working with you on [event name] was such an honour — thank you for trusting me with something so special. If you have friends, family, or colleagues planning a wedding or event, I&#x27;d be</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Event Planners Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>so grateful for an introduction. I promise to take care of anyone you send my way with the same love and attention I gave to yours. Thank you for being such a wonderful client. [Your Name] | [Business Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section></main></body></html>

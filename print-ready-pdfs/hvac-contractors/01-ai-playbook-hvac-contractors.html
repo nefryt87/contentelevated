@@ -1,0 +1,170 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>HVAC Contractor AI Playbook</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#07111d; --panel:#0d1a28; --panel2:#132539; --steel:#627286; --muted:#516174; --paper:#eef7ff; --cool:#4bbcff; --heat:#ff8a3d; --line:rgba(7,17,29,.16); }
+      * { box-sizing:border-box; } body { margin:0; background:#cfd8e3; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; } .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:radial-gradient(circle at 14% 9%, color-mix(in srgb,var(--cool) 20%,transparent), transparent 2.35in), radial-gradient(circle at 96% 16%, color-mix(in srgb,var(--heat) 16%,transparent), transparent 2.4in), linear-gradient(135deg,var(--paper),#fff 56%,#e9eef5); }
+      .page::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(7,17,29,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(7,17,29,.045) 1px,transparent 1px); background-size:.34in .34in; mask-image:radial-gradient(circle at 50% 42%, black, transparent 78%); pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.05in; top:-.35in; width:3.4in; height:10.4in; border-radius:999px; background:linear-gradient(180deg,color-mix(in srgb,var(--cool) 10%,transparent),transparent 45%,color-mix(in srgb,var(--heat) 10%,transparent)); transform:rotate(-12deg); pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; } .wordmark { color:var(--ink); font-size:12px; font-weight:950; letter-spacing:.18em; text-transform:uppercase; } .wordmark small { display:block; margin-top:8px; color:var(--steel); font-size:8.5px; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--cool) 38%,transparent); background:rgba(255,255,255,.58); color:var(--panel); border-radius:999px; padding:10px 14px; font-size:9px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+      .kicker,.eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; margin:0 0 17px; color:var(--cool); font-size:9px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; } .kicker::before,.eyebrow-line::before { content:""; width:44px; height:1px; background:linear-gradient(90deg,var(--cool),var(--heat)); }
+      h1,h2 { position:relative; z-index:2; margin:0; font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; } h1 { max-width:6.3in; margin-top:.82in; font-size:58px; line-height:.9; } h1 span { color:var(--heat); } h2 { margin:16px 0 12px; font-size:29px; line-height:1; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--muted); font-size:11px; line-height:1.48; } .lead { max-width:5.15in; margin-top:.28in; font-size:15px; line-height:1.5; color:#334458; }
+      .cover-panel { position:absolute; left:.58in; right:.58in; bottom:.76in; z-index:2; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; } .dark-card { border-radius:22px; background:linear-gradient(135deg,var(--panel),var(--panel2)); padding:24px; color:#edf7ff; box-shadow:0 28px 72px rgba(7,17,29,.18); } .dark-card p { color:rgba(237,247,255,.72); }
+      .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; } .stat { border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:13px; background:rgba(255,255,255,.045); } .stat strong { display:block; color:var(--cool); font-size:22px; font-weight:950; } .stat span { display:block; margin-top:6px; color:rgba(237,247,255,.7); font-size:8px; font-weight:900; letter-spacing:.12em; line-height:1.35; text-transform:uppercase; }
+      .footer { position:absolute; left:.58in; right:.58in; bottom:.31in; z-index:2; display:flex; justify-content:space-between; color:rgba(81,97,116,.78); font-size:8px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.38in; border:1px solid rgba(7,17,29,.12); border-radius:22px; background:rgba(255,255,255,.72); padding:25px; box-shadow:0 20px 58px rgba(7,17,29,.08); }
+      .system-title { margin:17px 0 10px; border-radius:14px; border:1px solid color-mix(in srgb,var(--cool) 24%,transparent); background:linear-gradient(135deg,rgba(13,26,40,.96),rgba(19,37,57,.94)); color:#edf7ff; padding:12px 14px; font-size:10px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
+      .label-line { color:var(--heat); font-weight:950; letter-spacing:.11em; text-transform:uppercase; font-size:9px; margin-top:13px; } .tip { margin:12px 0; border-left:3px solid var(--heat); padding:10px 0 10px 13px; background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 12%,transparent),transparent 76%); color:#415268; font-size:10px; line-height:1.45; }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; border-radius:50%; margin-top:7px; background:var(--cool); } .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; border:1px solid color-mix(in srgb,var(--cool) 30%,transparent); border-radius:8px; color:var(--cool); font-weight:950; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book"><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><p class="kicker" style="margin-top:.78in;">Field-Ready Growth System</p><h1><span>HVAC</span> Contractor AI Playbook</h1><p class="lead">Use AI to fill your schedule year-round, sell more service agreements, and run sharper marketing without adding admin hours.</p><div class="cover-panel"><div class="dark-card"><p style="font-size:10px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--heat);margin-bottom:12px;">Built for service companies</p><p>Turn follow-up, seasonal demand, reviews, content, and customer communication into a repeatable operating system.</p></div><div class="dark-card"><div class="stat-grid"><div class="stat"><strong>24</strong><span>templates</span></div><div class="stat"><strong>90</strong><span>days</span></div><div class="stat"><strong>AI</strong><span>assisted</span></div><div class="stat"><strong>0</strong><span>guesswork</span></div></div></div></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>01</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><p>Chapter 1: Why AI Is the HVAC Contractor&#x27;s</p>
+<h2>Competitive Edge</h2>
+<p>The HVAC contractors dominating their local markets aren&#x27;t just better technicians.</p>
+<p>They respond to estimates faster. They follow up on quotes that go cold. They send</p>
+<p>maintenance reminders before a unit fails instead of waiting for the emergency call.</p>
+<p>They stay visible on Google and social media without hiring a marketing agency. AI</p>
+<p>makes all of that possible — and at a cost that makes sense for a service business.</p>
+<p class="bullet"><span></span>The Estimate Follow-Up Problem: Industry data shows that 60-70% of HVAC</p>
+<p>estimates that don&#x27;t convert within 48 hours are never followed up on. The</p>
+<p>competitor who follows up twice wins the job — even if their price is higher.</p>
+<p class="bullet"><span></span>The Service Agreement Opportunity: HVAC companies with a strong service</p>
+<p>agreement base generate 40-60% more revenue per customer and experience</p>
+<p>dramatically smoother cash flow between peak seasons. AI writes the offer, the</p>
+<p>follow-up, and the renewal system.</p>
+<p class="bullet"><span></span>The Google Review Machine: For HVAC contractors, Google reviews are the</p>
+<p>single highest-ROI marketing asset. Customers search &#x27;HVAC near me&#x27; or &#x27;AC</p>
+<p>repair [city]&#x27; and hire whoever has the most reviews and the highest rating. AI</p>
+<p>writes the review request that actually gets sent — and actually gets results.</p>
+<p class="bullet"><span></span>What AI Does vs. What You Do: AI handles communication, follow-up, and</p>
+<p>content. Your technicians handle diagnosis, installation, and service. Never</p>
+<p>confuse the tools with the craft.</p>
+<p>Chapter 2: Your First 3 AI Wins This Week</p>
+<p>Start with one this week. Each takes under an hour and produces immediate,</p>
+<p>measurable results.</p>
+<p class="bullet"><span></span>Win #1 — Estimate Follow-Up Sequence: AI writes a 3-message follow-up</p>
+<p>sequence for every estimate that doesn&#x27;t convert in 48 hours: a Day 2 check-in, a</p>
+<p class="eyebrow-line">Day 5 value-add (energy savings data, financing options), and a Day 14 final</p>
+<p>offer. Most HVAC contractors send zero follow-ups. This sequence alone</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>02</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><p>converts 20-30% more estimates.</p>
+<p class="bullet"><span></span>Win #2 — Post-Service Review Request: Sent 24 hours after every completed</p>
+<p>job, AI writes a personal review request that links directly to your Google</p>
+<p>Business Profile. HVAC companies with 50+ reviews receive 3-4x more organic</p>
+<p>inbound calls than competitors with fewer than 20.</p>
+<p class="bullet"><span></span>Win #3 — Service Agreement Offer Email: For every customer after a repair</p>
+<p>call, AI writes a service agreement offer that calculates their expected savings,</p>
+<p>explains what&#x27;s covered, and makes signing up feel like the smart financial</p>
+<p>decision.</p>
+<h2>Chapter 3: Filling Your Schedule — Reactive</h2>
+<p>AND Proactive</p>
+<p>The most profitable HVAC companies don&#x27;t wait for the phone to ring. They have a</p>
+<p>systematic outreach calendar that fills the slow weeks before they become slow.</p>
+<p class="bullet"><span></span>Seasonal Tune-Up Campaign: Spring AC tune-up and fall heating tune-up</p>
+<p>campaigns — sent to your entire customer list in February and September — are</p>
+<p>the single most reliable revenue generator in HVAC. AI writes the email, the text,</p>
+<p>and the social post for each campaign.</p>
+<p class="bullet"><span></span>The Maintenance Reminder System: For customers on service agreements, AI</p>
+<h2>writes automated reminder messages — filter change reminders, annual tune-up</h2>
+<h2>scheduling, and system age notifications — that keep your existing customers</h2>
+<p>engaged and your schedule full.</p>
+<p class="bullet"><span></span>The Lapsed Customer Win-Back: For customers who haven&#x27;t called in 2+</p>
+<p>years, AI writes a win-back message tied to a seasonal offer or a unit age alert:</p>
+<p>&#x27;Your system is 10+ years old — here&#x27;s what to watch for and how we can help.&#x27;</p>
+<p class="bullet"><span></span>New Homeowner Outreach: New homeowners are among the highest-value</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>03</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><h2>HVAC prospects — they don&#x27;t know the history of the system and they&#x27;re often</h2>
+<p>anxious about it. AI writes an outreach sequence targeting new homeowners in</p>
+<p>your service area.</p>
+<h2>Chapter 4: Service Agreements — Your Most</h2>
+<h2>Valuable Revenue Asset</h2>
+<p>A service agreement base worth $50K-$200K annually changes everything about an</p>
+<p>HVAC business: cash flow, scheduling, customer lifetime value, and resale value of the</p>
+<p>company itself.</p>
+<p class="bullet"><span></span>The Post-Repair Upsell: The highest-conversion moment for a service</p>
+<h2>agreement sale is immediately after a repair — when the customer has just</h2>
+<p>experienced system failure and is most motivated to prevent it happening again.</p>
+<p>AI writes the post-repair agreement offer that capitalizes on that moment.</p>
+<p class="bullet"><span></span>The New Install Agreement Offer: Every new installation should include a</p>
+<p>service agreement offer. AI writes the post-install follow-up that explains ongoing</p>
+<p>maintenance, what&#x27;s covered, and why customers who maintain their systems</p>
+<p>save $800-1,200 over the equipment&#x27;s lifetime.</p>
+<p class="bullet"><span></span>The Annual Renewal Sequence: For existing agreement customers</p>
+<h2>approaching renewal, AI writes a renewal reminder sequence — 60 days out, 30</h2>
+<p>days out, and expiration day — with increasing urgency and a loyalty discount for</p>
+<p>long-term customers.</p>
+<p class="bullet"><span></span>The Lapsed Agreement Win-Back: For customers whose agreements lapsed,</p>
+<p>AI writes a win-back offer that acknowledges the gap, explains what they may</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>04</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><p>have missed, and makes renewing easy.</p>
+<p>Chapter 5: Building a Referral and Review</p>
+<h2>Engine</h2>
+<p>For HVAC contractors, word of mouth and Google reviews are the two most cost-</p>
+<p>effective customer acquisition channels. AI makes both systematic.</p>
+<p class="bullet"><span></span>The Post-Job Review Request: Sent 24 hours after every completed service</p>
+<p>call or installation, this message thanks the customer, links directly to Google,</p>
+<p>and asks for their honest feedback. Contractors who do this consistently see 5-</p>
+<p>10 new Google reviews per week.</p>
+<p class="bullet"><span></span>The Referral Ask: Happy customers refer. But only when asked. AI writes a</p>
+<p>referral request that goes out 1-2 weeks after a positive service call — warm,</p>
+<p>personal, and with a clear incentive if you offer one.</p>
+<p class="bullet"><span></span>The Realtor and Property Manager Partnership: Real estate agents and</p>
+<p>property managers are repeat HVAC customers with ongoing needs. AI writes a</p>
+<p>professional introduction and a quarterly check-in that puts you at the top of their</p>
+<p>referral list.</p>
+<p class="bullet"><span></span>The Home Builder Relationship: New construction HVAC is consistent, high-</p>
+<p>volume work. AI writes a contractor introduction that positions your company as</p>
+<p>the reliable, professional choice for local homebuilders.</p>
+<h2>Chapter 6: Social Content That Builds Local</h2>
+<h2>Authority</h2>
+<p>HVAC contractors who post consistently on Google Business Profile and Facebook get</p>
+<p>more calls — period. The research shows customers search, read reviews, look at</p>
+<p>recent posts, and then call. AI makes consistent posting achievable alongside a full</p>
+<p>service schedule.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>05</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><p class="bullet"><span></span>The 3-Post Formula: One educational post (system tip, energy savings,</p>
+<p>seasonal advice), one social proof post (completed job, review highlight,</p>
+<p>before/after), one seasonal/timely post (weather alert, tune-up reminder, new</p>
+<p>equipment feature). Mon/Wed/Fri.</p>
+<p class="bullet"><span></span>High-Converting Content Topics: &#x27;Signs your AC is about to fail,&#x27; &#x27;What a tune-</p>
+<p>up actually includes,&#x27; &#x27;How much a new system actually costs in [city],&#x27; &#x27;The most</p>
+<p>common HVAC mistake homeowners make,&#x27; &#x27;Why your energy bill is high in</p>
+<p>summer.&#x27;</p>
+<p class="bullet"><span></span>Google Business Profile as Your #1 Platform: For HVAC, GBP is more</p>
+<p>valuable than Instagram or Facebook. Weekly posts, responding to every review,</p>
+<p>keeping hours and services updated, and uploading job photos consistently</p>
+<p>drives significant organic call volume.</p>
+<p class="bullet"><span></span>Before/After Job Photos: The simplest, highest-performing HVAC content. Old</p>
+<p>dirty system vs. clean new installation. Technician at work. Job complete. AI</p>
+<p>writes the caption — you take the photo on your phone.</p>
+<p>Chapter 7: Your 30-Day AI Implementation Plan</p>
+<p>One system per week.</p>
+<p class="bullet"><span></span>Week 1: Write 3-message estimate follow-up sequence + post-job review</p>
+<p>request + Google Business Profile post template.</p>
+<p class="bullet"><span></span>Week 2: Service agreement offer email + renewal reminder sequence + post-</p>
+<p>repair upsell template.</p>
+<p class="bullet"><span></span>Week 3: Spring/fall tune-up campaign emails + lapsed customer win-back +</p>
+<p>referral request template.</p>
+<p class="bullet"><span></span>Week 4: Batch 2 weeks of social content using 90-Day Calendar + AI caption</p>
+<p>prompt + realtor/property manager introduction email.</p>
+<p>BONUS: AI Prompt Cheat Sheet for HVAC</p>
+<h2>Contractors</h2>
+<p>Copy and paste into Claude or ChatGPT. Replace [brackets] with your details.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>06</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><h2>Estimate Follow-Up</h2>
+<p>Write a 3-message estimate follow-up sequence for an HVAC</p>
+<p>contractor. The customer [Name] received an estimate for [job type</p>
+<p>— e.g., new AC installation / furnace replacement / duct cleaning]</p>
+<p>for $[amount] on [date]. Message 1 (Day 2): warm check-in, ask if</p>
+<p>they have questions, keep it brief. Message 2 (Day 5): add value —</p>
+<p>mention energy savings, financing options, or the cost of waiting.</p>
+<p>Message 3 (Day 14): final soft close with a small incentive or</p>
+<p>urgency. Sign as [Your Name], [Company Name], [Phone].</p>
+<h2>Service Agreement Offer</h2>
+<p>Write a service agreement offer email for an HVAC contractor. The</p>
+<p>customer [Name] just had a [repair type] completed on [date].</p>
+<p>Their system is [age] years old. Our agreement covers: [list 3-4</p>
+<p>key benefits]. Annual cost: $[amount]. Emphasize: what they just</p>
+<p>paid for repairs, what they could have caught early with a</p>
+<p>maintenance plan, and the peace of mind value. Keep it under 200</p>
+<p>words. Warm, professional. Sign as [Your Name], [Company Name].</p>
+<p>Social / GBP Content</p>
+<p>Write 5 Google Business Profile posts for an HVAC contractor in</p>
+<p>[City]. Topics: signs your AC needs a tune-up before summer,</p>
+<p>what&#x27;s included in a standard HVAC tune-up, how to lower your</p>
+<p>energy bill this [season], why you should replace your HVAC filter</p>
+<p>every [timeframe], and one recent job highlight (describe: [job</p>
+<p>type, neighborhood, outcome]). Each under 150 words, local and</p>
+<p>conversational. Company: [Name].</p>
+<p>The best HVAC companies aren&#x27;t just the best technicians.</p>
+<p>They follow up. They stay visible. They make it easy to say yes. AI helps you do</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>07</span></div></section><section class="page"><div class="brand"><div class="wordmark">HVAC Contractor <small>Complete Growth Bundle</small></div><div class="badge">AI Dispatch System</div></div><div class="content-card"><p>all three.</p></div><div class="footer"><span>HVAC Contractor Complete Growth Bundle</span><span>08</span></div></section></main></body></html>

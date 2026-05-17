@@ -1,0 +1,171 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">AI Playbook</p>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Personal Trainers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>THE PERSONAL TRAINER&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<h3>How to Fill Your Schedule, Keep Clients Longer,</h3>
+<p>and Grow Your Fitness Business Using AI A Complete Guide for Personal Trainers &amp; Fitness Coaches</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the Fitness Coach&#x27;s Competitive Edge 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Filling Your Schedule With the Right Clients 4. Chapter 4: Keeping Clients Longer With Smarter Communication</p>
+<p>5. Chapter 5: Content That Builds Your Brand on Autopilot 6. Chapter 6: Your 30-Day AI Implementation Plan 7. BONUS: AI Prompt Cheat Sheet for Personal Trainers</p>
+<h3>Chapter 1: Why AI Is the Fitness Coach&#x27;s</h3>
+<p>Competitive Edge Most personal trainers are great at coaching — but spend hours every week on tasks that have nothing to do with coaching: writing programs, following up with leads, creating content, answering the same questions over and over. AI handles those tasks</p>
+<p>so you can focus on what you&#x27;re actually good at.</p>
+<p class="template-line">• The Time Drain: The average PT spends 15+ hours per week on admin,</p>
+<div class="section-label">content, and follow-up. That&#x27;s 15 hours not coaching, not selling, not resting.</div>
+<p class="template-line">• The Retention Problem: Most trainers lose clients not because of bad coaching</p>
+<p>— but because of poor communication between sessions. AI keeps you present without demanding more of your time.</p>
+<p class="template-line">• The Content Gap: Trainers who post consistently get more inbound leads and</p>
+<p>charge higher rates. AI makes consistent posting effortless.</p>
+<p class="template-line">• What AI Does vs. What You Do: AI writes, follows up, and creates content. You</p>
+<p>coach, motivate, and build relationships. Never mix the two up.</p>
+<h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+<p>These three quick wins take under an hour to set up and will immediately change how you spend your time.</p>
+<p class="template-line">• Win #1 — Lead Follow-Up: Use AI to write a 5-message follow-up sequence for</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p>every new inquiry. Most trainers follow up once. This keeps you top of mind through 5 touches without any extra effort.</p>
+<p class="template-line">• Win #2 — Program Design Assistance: AI can&#x27;t replace your expertise — but it</p>
+<p>can draft a base program structure in 60 seconds that you refine in 5 minutes. Cut program writing time by 70%.</p>
+<p class="template-line">• Win #3 — Check-In Messages: AI writes your weekly client check-in messages</p>
+<p>personalized to each client&#x27;s goals in under 2 minutes. Clients feel seen.</p>
+<h3>Retention goes up.</h3>
+<h3>Chapter 3: Filling Your Schedule With the Right</h3>
+<p>Clients A full schedule starts with consistent lead follow-up and a clear message about who you help and how. AI gives you both.</p>
+<p class="template-line">• The Ideal Client Profile: Before AI can help you attract clients, you need clarity</p>
+<p>on who you serve: age range, goal type (weight loss, performance, rehab, body recomp), lifestyle, and budget. AI helps you write messaging that speaks directly to that person.</p>
+<p class="template-line">• The Inquiry Response System: Most trainers take hours to respond to inquiries</p>
+<p>— or don&#x27;t respond at all. An AI-written 5-part follow-up sequence means every lead gets a professional, warm response within minutes.</p>
+<p class="template-line">• The Discovery Call Framework: AI writes your discovery call script, your intake</p>
+<div class="section-label">questionnaire, and your post-call follow-up email — all personalized to the</div>
+<p>prospect&#x27;s stated goal.</p>
+<p class="template-line">• Trial Session Conversion: After a trial session, most trainers say &#x27;let me know if</p>
+<p>you want to start.&#x27; AI writes a conversion email that recaps the session, maps out a 12-week plan, and makes joining feel like the obvious next step.</p>
+<p class="template-line">• Referral Generation: Your happiest clients are your best salespeople. AI writes</p>
+<p>a referral request message so good they&#x27;ll want to forward it.</p>
+<h3>Chapter 4: Keeping Clients Longer With Smarter</h3>
+<p>Communication The average personal training client stays for 3–6 months. Trainers with strong communication systems keep clients for 12–24 months. That&#x27;s the difference between $1,500 and $6,000+ per client. AI is the system.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><p class="template-line">• The Weekly Check-In: A short, personalized message every week between</p>
+<p>sessions — asking about recovery, energy, and adherence. Takes 2 minutes with AI. Clients feel supported. Cancellations drop.</p>
+<p class="template-line">• The Milestone Celebration System: First 5 lbs lost. First unassisted pull-up.</p>
+<p>First 5K. AI writes a personalized celebration message for every milestone. Clients feel seen. They share it on social media. You get free marketing.</p>
+<p class="template-line">• The Plateau Handler: When progress stalls, most clients go quiet and then</p>
+<p>cancel. AI helps you write a proactive &#x27;let&#x27;s reassess&#x27; message that reframes the plateau as part of the process.</p>
+<p class="template-line">• The Renewal Conversation: When a package is ending, AI writes a natural,</p>
+<p>non-pushy renewal email that recaps their progress and maps out what&#x27;s next — making continuing feel like the easy choice.</p>
+<p class="template-line">• The Win-Back Sequence: For clients who&#x27;ve gone quiet or cancelled, AI writes</p>
+<p>a 3-message win-back sequence — warm, personal, and focused on their original goal.</p>
+<h3>Chapter 5: Content That Builds Your Brand on</h3>
+<p>Autopilot Personal trainers who post consistently get inbound leads, charge higher rates, and attract better clients. You don&#x27;t need to post every day — you need to post the right things on a reliable schedule.</p>
+<p class="template-line">• The 3-Post Formula: One educational post (exercise, nutrition, or mindset tip),</p>
+<p>one trust post (client transformation, your story, behind the scenes), one engagement post (question, poll, myth-bust, challenge). Rotate every week.</p>
+<p class="template-line">• Reels and Short-Form Video: Video is the highest-reach format on Instagram</p>
+<p>and TikTok. AI writes your 30–60 second scripts — you record once and post everywhere.</p>
+<p class="template-line">• Transformation Posts Done Right: Client transformation content converts —</p>
+<p>but needs to be done ethically. AI helps you write captions that celebrate the</p>
+<h3>client&#x27;s journey without objectifying the result.</h3>
+<p class="template-line">• Batch Creating in One Session: Use AI to generate a full month of captions on</p>
+<p>a Sunday afternoon. Your 90-Day Calendar has the post ideas — AI writes the words. Done in under an hour.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Chapter 6: Your 30-Day AI Implementation Plan</h3>
+<p>One tool. One system. One week at a time. Here&#x27;s how to go from reading this to actually using it.</p>
+<p class="template-line">• Week 1 — Lead System: Set up Claude or ChatGPT. Build your inquiry follow-</p>
+<p>up sequence. Write your discovery call script and post-trial email.</p>
+<p class="template-line">• Week 2 — Client Communication: Build your weekly check-in template. Write</p>
+<p>milestone celebration messages for 5 common wins. Create your renewal email.</p>
+<p class="template-line">• Week 3 — Content: Create 2 weeks of social posts using your 90-Day Calendar.</p>
+<p>Batch captions with the monthly AI prompt. Schedule in advance.</p>
+<p class="template-line">• Week 4 — Optimize: Review what&#x27;s converting. Identify your top 3 AI use cases.</p>
+<p>Build a monthly routine you can sustain alongside your coaching schedule.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Personal</h3>
+<p>Trainers Copy and paste these into Claude or ChatGPT. Replace [brackets] with your client&#x27;s info. Lead &amp; Inquiry Prompts Write a 5-message follow-up sequence for a lead named [Name] who inquired about personal training for [goal: weight loss/muscle</p>
+<p>gain/general fitness]. They haven&#x27;t responded to my first message. Space messages over 14 days. Tone: warm, motivating, not pushy. Sign as [Your Name], [Business Name]. Write a post-trial session email for [Name] who completed a trial</p>
+<p>session today. Their goal is [goal]. Highlights from the session: [2–3 things they did well or struggled with]. Propose a 12-week</p>
+<div class="section-label">plan and include a soft CTA to get started. Keep it warm and</div>
+<p>personal.</p>
+<h3>Client Retention Prompts</h3>
+<p class="template-line">Write a weekly check-in message for my client [Name] who is working toward [goal]. They had a session [X days ago]. Ask about their energy levels, how their nutrition has been, and whether they completed their homework workout. Keep it under 80 words and conversational.</p>
+<p class="template-line">Write a milestone celebration message for my client [Name] who just [achievement — e.g., lost their first 10 lbs / completed their first unassisted pull-up / ran their first 5K]. Make it personal and specific to their journey. End with an encouraging note about what&#x27;s next.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Trainers Growth Bundle</div></div><div class="document-pill">AI Playbook</div></div>
+  <div class="content"><h3>Content Creation Prompts</h3>
+<p>Write 5 Instagram captions for a personal trainer. Topics: the truth about spot reduction, why consistency beats perfection, the most underrated recovery tool, 3 signs your workout isn&#x27;t challenging you enough, and what to eat before a morning workout.</p>
+<p>Each under 150 words, ends with a question or CTA. You became a trainer to change lives. AI handles the business side so you can focus on exactly that.</p></div>
+  <div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div>
+</section></main></body></html>

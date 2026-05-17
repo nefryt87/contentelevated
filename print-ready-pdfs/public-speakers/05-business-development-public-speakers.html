@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Business Development</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Business Development</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Public Speakers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Public Speakers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Business Development</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PUBLIC SPEAKER</h3>
+<p>Speaker Business Development &amp; Booking System Talk development template, speaker fee guide, bureau submission kit, post-engagement review</p>
+<h3>system, and annual booking pipeline planner</h3>
+<h3>SECTION 1: TALK DEVELOPMENT TEMPLATE</h3>
+<p>Use this framework to develop any new talk from a clear brief. A well-developed talk is far easier to sell, easier to customise, and delivers better audience outcomes.</p>
+<p class="template-line">✓ TALK TITLE: [Working title — change this as the talk evolves]</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE CORE PREMISE (one sentence): What is the single most important thing your</p>
+<p>audience will leave knowing? Write it in one sentence. If you cannot, your talk is not yet clear enough.</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE AUDIENCE PROBLEM: What problem does your audience have that this talk</p>
+<p>addresses? Be specific — &#x27;leaders who manage hybrid teams and struggle with accountability&#x27; is better than &#x27;business leaders&#x27;.</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE TRANSFORMATION: What changes for an audience member between the</p>
+<p>beginning and the end of this talk? Write the before and after.</p>
+<p class="template-line">✓ Before: [what they believe / feel / know when they sit down]</p>
+<p class="template-line">✓ After: [what they believe / feel / know when they stand up]</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE 3 KEY INSIGHTS OR FRAMEWORKS: What are the 3 things you want every</p>
+<p>audience member to remember? (Not 5. Not 7. Three.)</p>
+<p class="template-line">✓ 1.</p>
+<p class="template-line">✓ 2.</p>
+<p class="template-line">✓ 3.</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE STORY: Every great talk has one central story that anchors the message.</p></div><div class="footer"><span>Business Development</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Business Development</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>What is yours? [Describe the story briefly — the situation, the conflict, the resolution, the lesson]</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE DATA: What research, statistic, or evidence supports your central premise?</p>
+<p>[List 2-3 key data points with sources]</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE CALL TO ACTION: What do you want the audience to DO differently after your</p>
+<p>talk? Be specific — one concrete action is worth 10 vague ones.</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ IDEAL AUDIENCE: [Who gets the most from this talk? Be specific.]</p>
+<p class="template-line">✓ IDEAL EVENT TYPE: [Conference keynote / corporate workshop / leadership day /</p>
+<p>industry association / other]</p>
+<p class="template-line">✓ TALK DURATION OPTIONS: [e.g., 20 min / 45 min / 60 min / half-day workshop]</p>
+<p class="template-line">✓ [The best talks are built around one clear idea expressed compellingly. The</p>
+<p>framework above forces that clarity. Revisit it every time your talk evolves.]</p>
+<h3>SECTION 2: SPEAKER FEE GUIDE</h3>
+<h3>How to Set and Hold Your Speaking Fee</h3>
+<div class="section-label">SPEAKER LEVEL TYPICAL FEE RANGE WHAT GETS YOU HERE</div>
+<p>Emerging / New Speaker $500 — $2,500 Active speaking calendar, developing signature talk, building testimonials. Local and regional bookings. Established Speaker $2,500 — $7,500 Recognised expertise, 20+ paid engagements, strong testimonials, active</p>
+<p>LinkedIn presence, professional reel. Professional Speaker $7,500 — $20,000 Published author OR media profile OR significant industry credibility. National conference bookings. Bureau representation. Celebrity / Authority Speaker</p>
+<p>$20,000+ Major media presence, bestselling book, C- suite credibility, international demand. Bureau representation essential.</p>
+<h3>✓ FEE-SETTING PRINCIPLES:</h3></div><div class="footer"><span>Business Development</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Business Development</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ 1. Set a fee you can hold. If you quote it and immediately reduce it when pushed, it</p>
+<p>was never your real fee.</p>
+<p class="template-line">✓ 2. Your fee is not just for the 45 minutes on stage. It is for years of expertise, hours</p>
+<p>of preparation, customisation for their specific audience, and the intellectual property you are sharing.</p>
+<p class="template-line">✓ 3. Raise your fee after every 10 paid engagements. Each booking is evidence that</p>
+<p>the market values your work at that rate. Demand above that rate is evidence it will bear more.</p>
+<p class="template-line">✓ 4. Have a non-negotiables list: expenses (travel, accommodation) are always in</p>
+<p>addition to your fee. Never include expenses in your fee quote.</p>
+<p class="template-line">✓ 5. Pro-bono engagements: limit to 2-3 per year, always for strategic reasons —</p>
+<p>exposure to a key audience, a high-profile event, or a cause you genuinely believe in.</p>
+<h3>SECTION 3: ANNUAL BOOKING PIPELINE</h3>
+<h3>PLANNER</h3>
+<p>12-Month Speaking Pipeline — Key Planning Periods</p>
+<h3>QUARTER TYPICAL EVENT</h3>
+<h3>SEASON</h3>
+<h3>BOOKING WINDOW YOUR ACTIONS NOW</h3>
+<p>Q1 (Jan- Mar) Corporate new-year kick- offs, leadership days, sales conferences Sep-Nov prior year Follow up Q4 prospects. New year outreach to past clients. January budget conversations. Q2 (Apr- Jun) Industry conferences, association events,</p>
+<p>graduation season Dec-Feb Submit to conference CFPs. Reach out to associations planning AGMs and conferences. Q3 (Jul-Sep) Quieter — use for</p>
+<h3>content, reel updates,</h3>
+<p>bureau outreach Ongoing Update speaker reel. Refresh one- sheet. Submit to new bureaus. Create Q4 outreach campaign. Q4 (Oct- Dec)</p>
+<h3>Year-end leadership</h3></div><div class="footer"><span>Business Development</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Public Speakers<span>Business Development</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>events, awards, gala dinners, team days Jun-Sep Heavy outreach to corporate event planners. Urgency on remaining</p>
+<h3>year-end slots. Budget decisions</h3>
+<p>happen now for next year.</p></div><div class="footer"><span>Business Development</span><span class="page-number">06</span></div></section></main></body></html>

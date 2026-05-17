@@ -1,0 +1,160 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Wedding Day Questionnaire Photographers</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171211; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f1,#f0e7de 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7d8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d4b989 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7d8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #71635d; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7d8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7d8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7d8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7d8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7d8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #71635d; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7d8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#1c1615,color-mix(in srgb,#1c1615 76%,#9b7d8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d4b989; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7d8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7d8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7d8d 18%,transparent); color: #9b7d8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7d8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7d8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #71635d; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7d8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Creative demand system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Wedding Day Questionnaire Photographers</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for editorial business polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Wedding Photographers</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Wedding Day Questionnaire Photographers</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>WEDDING PHOTOGRAPHER</h3>
+<p>Wedding Day Questionnaire &amp; Booking System Kit Pre-booking questionnaire, wedding day questionnaire, shot list guide, timeline templates, and vendor communication scripts</p>
+<h3>SECTION 1: PRE-BOOKING DISCOVERY</h3>
+<h3>QUESTIONNAIRE</h3>
+<p>Send this before or during the consultation call. Completed responses let you personalise your pitch to their specific day — and signal to couples that you&#x27;re thorough.</p>
+<p class="template-line">✓ Your names:</p>
+<p class="template-line">✓ Wedding date:</p>
+<p class="template-line">✓ Venue (ceremony):</p>
+<p class="template-line">✓ Venue (reception — if different):</p>
+<p class="template-line">✓ Ceremony start time:</p>
+<p class="template-line">✓ How many guests?</p>
+<p class="template-line">✓ How did you hear about [Studio Name]?</p>
+<p class="template-line">✓ How would you describe the overall vibe of your wedding? (3 words)</p>
+<p class="template-line">✓ What is the ONE photo moment that matters most to you?</p>
+<p class="template-line">✓ Is there anything you&#x27;re worried about from a photography perspective?</p>
+<p class="template-line">✓ Have you seen work from other photographers you love? Share links if so.</p>
+<p class="template-line">✓ Do you want a second shooter? (helps with coverage at large or multi-location</p>
+<p>weddings)</p>
+<p class="template-line">✓ Are you planning a first look? (seeing each other before the ceremony)</p>
+<p class="template-line">✓ What is your approximate photography investment budget?</p>
+<p class="template-line">✓ Is there a specific timeline pressure we should know about? (sunset, venue</p>
+<p>restrictions, travel)</p>
+<p class="template-line">✓ Any other context that would help us understand your day?</p>
+<p class="template-line">✓ [This questionnaire pre-qualifies and pre-warms every consultation. Couples who</p>
+<p>complete it close at a significantly higher rate.]</p>
+<h3>SECTION 2: WEDDING DAY QUESTIONNAIRE</h3>
+<p>Send this 6-8 weeks before the wedding. The more detail you have, the less you have to ask on the day — and the more invisibly you can work.</p>
+<h3>✓ LOGISTICS</h3>
+<p class="template-line">✓ Final ceremony start time:</p>
+<p class="template-line">✓ Final reception start time:</p></div>
+  <div class="footer"><span>Wedding Day Questionnaire Photographers</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">✓ Address of getting-ready location:</p>
+<p class="template-line">✓ Expected finish time for photography coverage:</p>
+<p class="template-line">✓ Is there a venue curfew or noise restriction that affects timing?</p>
+<h3>✓ PEOPLE</h3>
+<p class="template-line">✓ Names of both partners (and correct spelling for any cards, albums, or social posts):</p>
+<p class="template-line">✓ Names of bridal party members:</p>
+<p class="template-line">✓ Who is the best person to coordinate family formals with you on the day?</p>
+<p class="template-line">✓ Are there any family members with mobility limitations we should know about for</p>
+<p>group photos?</p>
+<p class="template-line">✓ Are there any family dynamics (separated parents, estrangements) I should be</p>
+<p>aware of? (confidential)</p>
+<h3>✓ MOMENTS</h3>
+<p class="template-line">✓ Ceremony: Are there any specific vows or readings you want captured closely?</p>
+<p class="template-line">✓ First dances: List all first dances and who they are with:</p>
+<p class="template-line">✓ Speeches: Who is speaking and approximately how many?</p>
+<h3>✓ DETAILS</h3>
+<p class="template-line">✓ Are there any specific detail items you want photographed? (heirlooms, custom</p>
+<p>elements, meaningful gifts)</p>
+<p class="template-line">✓ Is there a wedding hashtag?</p>
+<p class="template-line">✓ Any other venue restrictions I should know about? (no flash in ceremony, restricted</p>
+<p>areas)</p>
+<h3>✓ FAMILY FORMALS</h3>
+<p class="template-line">✓ List the specific group photos you want. Be as detailed as possible:</p>
+<p class="template-line">✓ Example format: &#x27;Bride + Groom + Bride&#x27;s parents&#x27; / &#x27;Groom + Groom&#x27;s parents +</p>
+<p>siblings&#x27;</p>
+<p class="template-line">✓ [Tip: Keep family formals to under 20 minutes by pre-planning no more than 10-12</p>
+<p>groupings. The family formals list is the single most important logistics document for a smooth wedding day.]</p>
+<h3>SECTION 3: WEDDING DAY TIMELINE</h3>
+<h3>TEMPLATES</h3>
+<p>Ceremony + Reception Timeline Template</p>
+<h3>TIME PHOTOGRAPHY FOCUS</h3></div>
+  <div class="footer"><span>Wedding Day Questionnaire Photographers</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>[Time - 3hrs] Photographer arrives at getting-ready location — detail shots begin [Time - 2.5hrs] Bridal party getting ready candids — key moments: dress on, veil, shoes, first look at self [Time - 2hrs] Groom preparation photos (if coverage requested)</p>
+<p>[Time - 1.5hrs] First look (if planned) — private couple portraits [Time - 1hr] Bridal party portraits [Time - 30min] Family formals — follow the pre-planned grouping list [Ceremony time] Ceremony begins — photographer in position before guests enter [Ceremony +30min]</p>
+<p>Cocktail hour — candid guest moments, venue details, couple portraits [Reception start] Grand entrance — photographer at door [Reception +30min] First dance / parent dances [Reception +1hr] Speeches — close coverage [Reception +2hrs] Cake cutting</p>
+<p>[Sunset time] Golden hour portraits — 15-20 minute window, highest priority [Reception end - 1hr] Dance floor / open dancing — low light, flash if venue permits [Coverage end] Last shots — couple portraits, venue detail close-outs</p>
+<h3>SECTION 4: VENDOR COMMUNICATION</h3>
+<h3>SCRIPTS</h3>
+<h3>Day-Before Venue Coordinator Check-In</h3>
+<div class="section-label">SUBJECT Quick check-in — [Your Name], photographer for [Couple Names] tomorrow</div>
+<p>Hi [Name], Just a quick check-in ahead of [Couple Names]&#x27; wedding tomorrow. Confirming: I&#x27;ll be arriving at [time] at [address]. My second shooter [Name] will also be with me. A couple of quick questions if you have a moment:</p>
+<p class="template-line">- Is there anything about tomorrow&#x27;s setup that has changed since the last</p>
+<p>time we spoke?</p>
+<p class="template-line">- Is there a specific area you&#x27;d like us to avoid during the ceremony?</p>
+<p class="template-line">- What&#x27;s the best way to reach you tomorrow if I need anything quickly?</p>
+<p>Thank you — looking forward to tomorrow. [Your Name] | [Studio Name] | [Phone] Post-Wedding Vendor Thank-You</p>
+<h3>SUBJECT Thank you — [Names]&#x27; wedding — [Your Name]</h3>
+<p>Hi [Name], I just wanted to drop a quick note to say thank you for [what they specifically contributed] at [Names]&#x27; wedding. [One specific genuine observation — e.g., &#x27;The florals were absolutely stunning to photograph — the ceremony arch especially.&#x27; / &#x27;The way you</p></div>
+  <div class="footer"><span>Wedding Day Questionnaire Photographers</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Wedding Photographers Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>managed the timeline made my job significantly easier.&#x27;] I&#x27;d love to stay in touch. If any of your future couples are looking for a photographer, I&#x27;d genuinely appreciate the mention — and I&#x27;ll always return the favour. [Your Name] | [Studio Name] | [Instagram Handle]</p></div>
+  <div class="footer"><span>Wedding Day Questionnaire Photographers</span><span class="page-number">06</span></div>
+</section></main></body></html>

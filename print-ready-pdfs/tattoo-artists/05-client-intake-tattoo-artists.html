@@ -1,0 +1,140 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Intake</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Client Intake</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Tattoo Artists Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Tattoo Artists Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>TATTOO ARTIST</h3>
+<div class="section-label">Client Intake, Consultation System &amp; Flash Day Kit</div>
+<div class="section-label">New client intake questionnaire, consultation guide, flash day planning kit, aftercare card</div>
+<h3>template, and studio policy document</h3>
+<h3>SECTION 1: NEW CLIENT INTAKE</h3>
+<h3>QUESTIONNAIRE</h3>
+<p>Send before every consultation. The more you know in advance, the more productive the consultation — and the more professional you appear.</p>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Age (must be 18+ or have parental consent if applicable):</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you find [Studio Name]?</p>
+<h3>✓ TATTOO IDEA:</h3>
+<p class="template-line">✓ Describe your tattoo idea as clearly as you can:</p>
+<p class="template-line">✓ Do you have reference images? (attach or send via DM)</p>
+<p class="template-line">✓ Do you have a specific placement in mind?</p>
+<p class="template-line">✓ Do you have a size in mind? (approximate — we can discuss in consultation)</p>
+<p class="template-line">✓ Is this a new design, a cover-up, or an addition to existing work?</p>
+<p class="template-line">✓ If cover-up: please share a photo of the existing tattoo</p>
+<h3>✓ STYLE PREFERENCES:</h3>
+<p class="template-line">✓ What style are you interested in? (e.g., blackwork, fine line, realism, Japanese, neo-</p>
+<p>traditional, colour)</p>
+<p class="template-line">✓ Artists whose work you admire (names or Instagram handles):</p>
+<p class="template-line">✓ Anything you definitely don&#x27;t want in terms of style or approach:</p>
+<h3>✓ PRACTICAL:</h3>
+<p class="template-line">✓ Do you have any skin conditions, allergies, or medical considerations I should know</p>
+<p>about? (certain medications, blood conditions, skin sensitivities)</p></div><div class="footer"><span>Client Intake</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Are you currently pregnant or breastfeeding?</p>
+<p class="template-line">✓ Is this your first tattoo?</p>
+<p class="template-line">✓ Do you have a timeline or date you need this completed by?</p>
+<p class="template-line">✓ Budget range you&#x27;re working with: $[X]-$[X]</p>
+<p class="template-line">✓ Any other information that would help me prepare for our consultation?</p>
+<p class="template-line">✓ [A completed intake form means the consultation is productive from minute one —</p>
+<p>less time gathering basics, more time designing your tattoo.]</p>
+<h3>SECTION 2: CONSULTATION PROCESS GUIDE</h3>
+<h3>How to Run a Productive Consultation</h3>
+<h3>✓ BEFORE THE CONSULTATION:</h3>
+<p class="template-line">✓ Review the intake form completely — come with specific questions</p>
+<p class="template-line">✓ Look up any reference styles or artists the client mentioned</p>
+<p class="template-line">✓ Have your portfolio ready to show relevant examples</p>
+<p class="template-line">✓ Prepare rough size/pricing estimates for the type of work</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ THE CONSULTATION (20-30 minutes):</p>
+<p class="template-line">✓ 1. Start with open questions: &#x27;Tell me more about the idea — what drew you to it?&#x27;</p>
+<p class="template-line">✓ 2. Show relevant portfolio examples: &#x27;This is similar to what you&#x27;re describing —</p>
+<p>does this feel right?&#x27;</p>
+<p class="template-line">✓ 3. Discuss placement together: &#x27;For this type of design, these placements work</p>
+<p>particularly well because...&#x27;</p>
+<p class="template-line">✓ 4. Talk size honestly: &#x27;For the level of detail you want, this would work better at [X</p>
+<p>size] — here&#x27;s why...&#x27;</p>
+<p class="template-line">✓ 5. Cover timeline: &#x27;A piece like this would take approximately [X] hours. We could do</p>
+<p>it in one session or split it.&#x27;</p></div><div class="footer"><span>Client Intake</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ 6. Give the quote: &#x27;For everything we&#x27;ve discussed, I&#x27;d quote $[amount]. This</p>
+<p>includes [what&#x27;s covered].&#x27;</p>
+<p class="template-line">✓ 7. Address concerns: &#x27;Any questions before you decide?&#x27;</p>
+<p class="template-line">✓ 8. Next steps: &#x27;To confirm your booking, I&#x27;ll need a deposit of $[amount] via</p>
+<p>[method]. I&#x27;ll send you a design preview [X days] before the appointment.&#x27;</p>
+<p class="template-line">✓</p>
+<h3>✓ AFTER THE CONSULTATION:</h3>
+<p class="template-line">✓ Send the post-consultation follow-up email within 24 hours</p>
+<p class="template-line">✓ Hold the spot for [X days] maximum before opening to others</p>
+<p class="template-line">✓ If they don&#x27;t respond to follow-up, do one gentle check-in after [X days]</p>
+<p class="template-line">✓ [The consultation that ends without a clear next step rarely converts. Always close</p>
+<p>with a clear action: send the deposit link to confirm.]</p>
+<h3>SECTION 3: FLASH DAY PLANNING KIT</h3>
+<p>Flash Day Checklist</p>
+<h3>✓ 4 WEEKS BEFORE:</h3>
+<p class="template-line">✓ Design your flash sheet — [X] designs, each to be done once only</p>
+<p class="template-line">✓ Photograph or scan designs clearly</p>
+<p class="template-line">✓ Set your pricing range for each design</p>
+<p class="template-line">✓ Choose your date and confirm studio availability</p>
+<h3>✓ 2 WEEKS BEFORE:</h3>
+<p class="template-line">✓ Announce on Instagram and TikTok — post flash preview images</p>
+<p class="template-line">✓ Open bookings: DM, online form, or first-come-first-served walk-in</p>
+<p class="template-line">✓ Email past clients with early access announcement</p>
+<h3>✓ 1 WEEK BEFORE:</h3>
+<p class="template-line">✓ Post daily countdowns on stories</p>
+<p class="template-line">✓ Share individual design previews — one per day</p></div><div class="footer"><span>Client Intake</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Confirm booked appointments and send prep instructions</p>
+<h3>✓ DAY OF:</h3>
+<p class="template-line">✓ Arrive early — set up organised workspace</p>
+<p class="template-line">✓ Have flash sheet visible and accessible</p>
+<p class="template-line">✓ Prep stencils in advance for booked designs</p>
+<p class="template-line">✓ Track which designs are done — mark them off publicly on stories</p>
+<h3>✓ AFTER THE DAY:</h3>
+<p class="template-line">✓ Post photos of completed flash work (with permission)</p>
+<p class="template-line">✓ Thank clients publicly — story or post</p>
+<p class="template-line">✓ Request reviews from flash day clients 4-6 weeks later</p>
+<p class="template-line">✓ [Flash days are one of the most effective ways to fill a calendar, create urgency,</p>
+<p>and attract new clients — run one quarterly at minimum.]</p>
+<h3>SECTION 4: AFTERCARE CARD TEMPLATE</h3>
+<p>Printable / Digital Aftercare Card</p>
+<h3>[STUDIO NAME] — TATTOO AFTERCARE</h3>
+<p>IMMEDIATE CARE (first 2-3 hours):</p>
+<p class="template-line">• Leave wrap on for 2-3 hours (or as instructed)</p>
+<p class="template-line">• Remove wrap, wash gently with fragrance-free soap and warm water</p>
+<p class="template-line">• Pat dry with a clean paper towel — never rub</p>
+<h3>DAYS 1-7:</h3>
+<p class="template-line">• Wash 2x daily with fragrance-free soap</p>
+<p class="template-line">• Apply a thin layer of [recommended product] 3-4x daily</p>
+<p class="template-line">• Keep clean and dry between applications</p>
+<h3>WHAT&#x27;S NORMAL:</h3>
+<p class="template-line">• Redness, swelling, and soreness for 24-48 hours</p>
+<p class="template-line">• Peeling and flaking from day 4-14 — DO NOT PICK</p>
+<p class="template-line">• Itching as it heals — this is normal</p>
+<h3>AVOID:</h3></div><div class="footer"><span>Client Intake</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Tattoo Artists<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Direct sunlight on the fresh tattoo</p>
+<p class="template-line">• Swimming, soaking in baths, or hot tubs</p>
+<p class="template-line">• Tight clothing on the tattooed area</p>
+<p class="template-line">• Picking, scratching, or peeling</p>
+<p>Questions or concerns: [Phone / DM / Email] Healed photo: send it in 4-6 weeks — we&#x27;d love to see it!</p></div><div class="footer"><span>Client Intake</span><span class="page-number">07</span></div></section></main></body></html>

@@ -46,11 +46,11 @@ const processSteps = [
 ];
 
 const testimonials = [
-  ["Brielle Tanaka", "Nail studio owner · Austin", "I went from 6 fills a week to a 3-week waitlist. The 90-day calendar alone is worth ten times what I paid.", "bg-[#9a7b3c]"],
-  ["Marisol Vega", "Bridal MUA · Miami", "It is a brand-in-a-box. The Canva files alone made my Instagram look like I hired an agency.", "bg-[#a15a67]"],
-  ["Devon Marsh", "Personal trainer · Brooklyn", "The AI playbook is the unfair advantage. I write a week of content in 30 minutes, and it actually sounds like me.", "bg-[#3d765b]"],
-  ["Sasha Renaud", "Med spa founder · Scottsdale", "Two weekends with Content Elevated and the consult-to-client rate jumped to 78%.", "bg-[#d8d3bf]"],
-  ["Jordan Pak", "Stylist · Los Angeles", "The retention kit helped me stop losing clients quietly. Within a month, rebooking felt automatic.", "bg-[#b58a32]"]
+  ["Brielle Tanaka", "Nail studio owner · Austin", "I went from 6 fills a week to a 3-week waitlist. The 90-day calendar alone is worth ten times what I paid.", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&crop=faces&w=160&h=160&q=80"],
+  ["Marisol Vega", "Bridal MUA · Miami", "It is a brand-in-a-box. The Canva files alone made my Instagram look like I hired an agency.", "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=faces&w=160&h=160&q=80"],
+  ["Devon Marsh", "Personal trainer · Brooklyn", "The AI playbook is the unfair advantage. I write a week of content in 30 minutes, and it actually sounds like me.", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&w=160&h=160&q=80"],
+  ["Sasha Renaud", "Med spa founder · Scottsdale", "Two weekends with Content Elevated and the consult-to-client rate jumped to 78%.", "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&crop=faces&w=160&h=160&q=80"],
+  ["Jordan Pak", "Stylist · Los Angeles", "The retention kit helped me stop losing clients quietly. Within a month, rebooking felt automatic.", "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=160&h=160&q=80"]
 ];
 
 const faqs = [
@@ -199,19 +199,6 @@ function Hero() {
             <a href="#process" className="inline-flex items-center justify-center rounded-full border border-white/8 px-7 py-4 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#f4f7fb] transition duration-300 hover:border-[#6f7a89]/50 hover:bg-white/[0.03] sm:px-8 sm:text-xs sm:tracking-[0.22em]">
               How it works
             </a>
-          </motion.div>
-          <motion.div variants={heroReveal} className="mt-8 flex items-center gap-4 sm:mt-10 sm:gap-5">
-            <div className="flex -space-x-3">
-              {["bg-[#a78b4c]", "bg-[#c6929f]", "bg-[#d8d3bf]", "bg-[#3d765b]"].map((color) => (
-                <span key={color} className={`h-10 w-10 rounded-full border-2 border-[#05070b] ${color}`} />
-              ))}
-            </div>
-            <div>
-              <div className="mb-1 flex text-[#b8f3ff]">
-                {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" />)}
-              </div>
-              <p className="text-sm text-[#aeb7c3]">Trusted by modern service brands</p>
-            </div>
           </motion.div>
         </div>
 
@@ -450,7 +437,7 @@ function Process() {
 
 function CategoryShowcase() {
   return (
-    <Section id="categories">
+    <Section id="categories" fadeOnly>
       <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1fr] lg:items-end">
         <div>
           <Eyebrow>Choose Your World</Eyebrow>
@@ -467,11 +454,11 @@ function CategoryShowcase() {
           <motion.a
             key={category.slug}
             href={`/categories/${category.slug}`}
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             whileTap={{ scale: 0.985 }}
-            viewport={{ once: true, margin: "-90px" }}
-            transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-70px" }}
+            transition={{ duration: 0.56, delay: index * 0.035, ease: "easeOut" }}
             className="category-card group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 sm:p-7 lg:min-h-[14rem]"
           >
             <span className="category-card__glow" />
@@ -508,7 +495,7 @@ function Results() {
         </div>
       </div>
       <div className="grid gap-4 lg:grid-cols-3 lg:gap-6">
-        {testimonials.map(([name, role, quote, color], index) => (
+        {testimonials.map(([name, role, quote, avatar], index) => (
           <motion.article
             key={name}
             initial={{ opacity: 0, y: 18 }}
@@ -521,7 +508,13 @@ function Results() {
             <p className="editorial-serif text-[2rem] leading-none text-[#b8f3ff]">"</p>
             <p className="mt-4 text-base leading-7 text-[#c9d0da]">{quote}</p>
             <div className="mt-8 border-t border-gradient-soft pt-6 flex items-center gap-4">
-              <span className={`h-10 w-10 rounded-full ${color}`} />
+              <img
+                src={avatar}
+                alt={`${name} profile`}
+                className="h-11 w-11 rounded-full border border-[#6f7a89]/18 object-cover shadow-[0_0_0_4px_rgba(255,255,255,0.025)]"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
               <div>
                 <p className="text-sm font-semibold">{name}</p>
                 <p className="text-xs text-[#737f8f]">{role}</p>
@@ -695,14 +688,14 @@ function FooterList({ title, items }) {
   );
 }
 
-function Section({ id, children, compactTop = false }) {
+function Section({ id, children, compactTop = false, fadeOnly = false }) {
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={fadeOnly ? { opacity: 0 } : { opacity: 0, y: 22 }}
+      whileInView={fadeOnly ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-120px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: fadeOnly ? 0.72 : 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`section-fade relative px-5 sm:px-8 ${compactTop ? "pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12" : "py-16 sm:py-20 lg:py-24"}`}
     >
       <div className="mx-auto max-w-[94rem]">{children}</div>

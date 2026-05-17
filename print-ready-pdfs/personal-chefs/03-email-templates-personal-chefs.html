@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4efe6; --paper:#fffaf1; --ink:#171410; --muted:#6b6256;
+  --accent:#9a7654; --accent2:#c6a987; --dark:#211a14;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Complete Growth Bundle</span></div></div><div class="pill">Guest experience system</div></div><p class="kicker">Premium business system</p><h1>Email Templates</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Personal Chefs Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Personal Chefs Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PERSONAL CHEF</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: inquiry to post-event, proposals, meal prep, vendor partnerships, and reputation management</p>
+<h3>SECTION 1: INQUIRY &amp; PROPOSAL</h3>
+<h3>CONVERSION</h3>
+<p>T1 — Private Dining Inquiry Response</p>
+<h3>SUBJECT Re: Your private chef inquiry — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for reaching out — your [event description] sounds like a truly special occasion and exactly the kind of dinner I love creating. A little about how I&#x27;d approach it: [2-3 sentences on your culinary angle for</p>
+<p>their specific event — mention their cuisine preferences or dietary needs if they shared them]. Before I put together a proposal, a few quick questions: [1-2 clarifying questions — e.g., &#x27;Do you have a venue in mind or would you like help</p>
+<p>thinking through the space?&#x27; / &#x27;Are there any key dietary needs beyond what you mentioned?&#x27;] I&#x27;d love to jump on a 20-minute call this week to discuss your vision in more detail. Does [two specific times] work?</p>
+<p>Warm regards, [Your Name] | [Business Name] | [Phone] T2 — Weekly Meal Prep Inquiry Response</p>
+<div class="section-label">SUBJECT Re: Your personal chef meal prep inquiry — [Name]</div>
+<p class="template-line">Dear [Name], Thank you for reaching out — a weekly personal chef service is a genuinely life-changing arrangement and I&#x27;d love to tell you how it works. My weekly meal prep service: I come to your home on [your day], handle all</p>
+<p>grocery shopping, prepare [X] meals for the week, package everything clearly with reheating instructions, and leave your kitchen clean. You never have to think about &#x27;what&#x27;s for dinner&#x27; again.</p>
+<p>For a household like yours [if they shared details — mention], I&#x27;d typically suggest starting with [brief menu scope suggestion]. Could we find 20 minutes this week for a quick call? I&#x27;d love to understand</p>
+<p>your family&#x27;s palate and lifestyle. [Two specific times] work for me. [Your Name] | [Business Name] | [Phone] T3 — Post-Discovery Call Proposal Follow-Up</p></div><div class="footer"><span>Email Templates</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SUBJECT Your private chef proposal — [Name]</h3>
+<p class="template-line">Dear [Name], It was a genuine pleasure speaking with you today — your [event/service description] is exactly the kind of [dinner/project] I love creating. Attached is a full proposal covering the menu, service details, logistics, and investment. In brief:</p>
+<p>Menu: [3-4 sentence evocative description of the menu direction] Service: [what&#x27;s included — prep, service, cleanup, grocery sourcing] Date: [date and timing] Investment: $[amount] which includes [brief breakdown]</p>
+<p>To confirm: [next step — deposit, signed agreement, etc.] I&#x27;ll hold this date for [X days] before opening it to other enquiries. Any questions before you decide, I&#x27;m always a quick message away. [Your Name] | [Business Name] T4 — Pricing Enquiry Response</p>
+<h3>SUBJECT Personal chef rates — [Business Name]</h3>
+<p class="template-line">Dear [Name], Great question — here&#x27;s how my pricing works. Private dinner events: typically $[X]-$[X] depending on guest count, menu complexity, service duration, and location. This always includes grocery shopping, full preparation, service, and cleanup.</p>
+<p>Weekly meal prep: from $[X] per week for a household of [X], covering [number] meals. Includes grocery shopping, all prep, packaging, and cleanup. Corporate and event catering: from $[X] per person, minimum [X] guests.</p>
+<p>The best way to give you an accurate number is a short discovery call — 20 minutes tells me everything I need to quote precisely. Would [two specific times] work? [Your Name] | [Business Name]</p>
+<h3>SECTION 2: PRE-EVENT &amp; CLIENT PREP</h3>
+<p>T5 — Pre-Dinner Questionnaire Email</p>
+<div class="section-label">SUBJECT A few details before your dinner — [Name]</div>
+<p class="template-line">Dear [Name], With your private dinner on [date] coming up, I&#x27;d like to gather a few final details to make sure everything is perfect. Please take a few minutes to fill this out by [date]: [questionnaire link or include questions inline]</p>
+<p>Key things I&#x27;ll ask about:</p>
+<p class="template-line">- Any dietary restrictions or allergies I haven&#x27;t already noted (guests included)</p>
+<p class="template-line">- Preferred service pace and formality level</p></div><div class="footer"><span>Email Templates</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">- Any specific requests for courses or dishes</p>
+<p class="template-line">- Venue access time and kitchen equipment available</p>
+<p class="template-line">- Any surprise elements or special moments you&#x27;re planning that I should be</p>
+<p>aware of The more I know, the more invisible and effortless the evening will feel. [Your Name] | [Business Name] T6 — Event Confirmation Email (Week Before)</p>
+<div class="section-label">SUBJECT Your private dinner — final confirmation, [Name]</div>
+<p class="template-line">Dear [Name], I&#x27;m so excited for your dinner on [date] — here are the final confirmed details: Menu: [final menu — courses listed] My arrival: [time] at [address] Service begins: [time] Dietary accommodations confirmed: [list]</p>
+<p>Grocery budget: $[amount] — I&#x27;ll send a final receipt What I&#x27;ll need: [any specific kitchen equipment / access details / parking] My direct number: [Phone] — please use it for any last-minute details.</p>
+<p>It&#x27;s going to be a wonderful evening. [Your Name] | [Business Name] T7 — Weekly Meal Prep Schedule Email</p>
+<h3>SUBJECT This week&#x27;s menu — [Name]</h3>
+<p class="template-line">Dear [Name], Here is what I&#x27;m preparing for you this week: [Day] — [Meal 1]: [brief description and key ingredients] [Day] — [Meal 2]: [brief description] [Day] — [Meal 3]: [brief description] [Day] — [Meal 4]: [brief description]</p>
+<p>[Day] — [Meal 5]: [brief description] Reheating notes: [any specific reheating instructions for dishes that need it] Fridge organisation: [where things are stored / order to eat them in]</p>
+<p>Anything you&#x27;d love me to change for next week? I&#x27;m always happy to adjust based on what&#x27;s working and what isn&#x27;t. [Your Name] | [Business Name]</p>
+<h3>SECTION 3: POST-EVENT &amp; RETENTION</h3>
+<p>T8 — Post-Event Follow-Up</p>
+<h3>SUBJECT Thank you for having me — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for having me in your home last [day] — it was a genuine privilege to cook for you and your guests. [One specific personal observation — e.g., &#x27;The moment everyone fell silent</p></div><div class="footer"><span>Email Templates</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>when the [dish] arrived was one of those moments I live for as a chef.&#x27;] I&#x27;d love to hear any feedback — whether there was anything you&#x27;d adjust for next time, or anything that particularly resonated.</p>
+<p>And whenever you&#x27;re planning your next gathering, I would love to be your first call. I also have [X] weeks available in [upcoming months] for ongoing meal prep if that&#x27;s ever something you&#x27;d like to explore. With gratitude, [Your Name] | [Business Name]</p>
+<p>T9 — Review Request Email</p>
+<h3>SUBJECT A personal ask — [Name]</h3>
+<p class="template-line">Dear [Name], It&#x27;s been a few days since your dinner and I&#x27;ve been hoping you&#x27;ve been enjoying the memory of a wonderful evening! A personal ask: if the experience meant as much to you as cooking it did to</p>
+<p>me, a Google review would genuinely help other clients find me. Most of my best clients come through word of mouth and reviews — it makes an enormous difference. Direct link: [Google Review Link]. Takes about 2 minutes.</p>
+<p>Thank you for the trust of inviting me into your home. [Your Name] | [Business Name] T10 — Seasonal Menu Update (Ongoing Clients)</p>
+<h3>SUBJECT What I&#x27;m cooking this [season] — [Name]</h3>
+<p class="template-line">Dear [Name], As we move into [season], I&#x27;ve been building my new seasonal menu and wanted to share what I&#x27;m most excited about. [2-3 seasonal dishes or ingredients I&#x27;m featuring and why]. [One brief note on what&#x27;s changed from last season.]</p>
+<p>If you&#x27;ve been thinking about booking a dinner or refreshing your weekly meal prep menu, this is a beautiful time to do it — [seasonal ingredients] are at their absolute peak right now. Would love to cook for you again soon. [Your Name] | [Business Name]</p>
+<p>T11 — Gift Voucher Campaign</p>
+<h3>SUBJECT The most personal gift — [Name]</h3>
+<p class="template-line">Dear [Name], With [occasion] coming up, I wanted to let you know I offer private dining gift experiences — a genuinely memorable alternative to anything that comes in a box. A private chef dinner for 4, 6, or 8 guests, gifted to someone you love. I</p></div><div class="footer"><span>Email Templates</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>handle every detail — menu design, groceries, preparation, service, and cleanup. The recipient simply shows up to a beautifully set table. Experiences start from $[amount]. To arrange: [link / reply here]. I&#x27;ll send a</p>
+<p>beautiful digital gift card with a personalised message. [Your Name] | [Business Name] T12 — Referral Ask</p>
+<h3>SUBJECT A small favour — [Name]</h3>
+<p class="template-line">Dear [Name], I hope you&#x27;re still savouring the memory of your [event] — I certainly am. A personal ask: if you know anyone — a friend, colleague, or family member — who would love a private dining experience or weekly chef service, I would</p>
+<p>be so grateful for the introduction. Even a simple mention of your experience over dinner goes a very long way. Thank you for the trust of inviting me into your home. [Your Name] | [Business Name]</p>
+<h3>SECTION 4: VENDOR &amp; PARTNERSHIP</h3>
+<h3>OUTREACH</h3>
+<p>T13 — Luxury Realtor Introduction</p>
+<h3>SUBJECT Private chef partnership — [Your Name]</h3>
+<p class="template-line">Dear [Name], I&#x27;m [Your Name], a private chef based in [City] specialising in [your culinary style]. I reach out to luxury realtors because our clients overlap significantly — the clients purchasing and selling premium homes are exactly the people who</p>
+<p>love and value private chef experiences. A few ways we might work together: I&#x27;m happy to cater a client appreciation event, provide a private chef experience as a housewarming gift for a new</p>
+<p>buyer, or simply be a recommendation when clients ask about local luxury services. Would you be open to a brief coffee or call? [Your Name] | [Business Name] | [Phone] T14 — Event Planner Introduction</p>
+<h3>SUBJECT Private chef partnership — [Your Name]</h3>
+<p class="template-line">Dear [Name], I&#x27;m [Your Name], a private chef in [City] specialising in intimate private dining — rehearsal dinners, wedding brunches, anniversary celebrations, corporate</p>
+<h3>client entertaining.</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>I believe the best events have deeply personal food experiences at their heart — not catering trays but menus designed for the specific occasion and the specific people at the table. I&#x27;d love to explore a referral relationship. My clients often need planning</p>
+<p>expertise; your clients often need a chef who can create something special and personal. [Your Name] | [Business Name] | [Portfolio/Website] T15 — Monthly Partner Value Touch</p>
+<h3>SUBJECT [Month] — a note from [Your Name]</h3>
+<p class="template-line">Dear [Name], Quick monthly note with something that might interest your clients: [One specific, genuine culinary or dining insight relevant to their audience — e.g., for a realtor: &#x27;I&#x27;ve been doing a series of housewarming dinners for new</p>
+<p>homeowners this month — if any of your recent buyers would love a private chef experience to celebrate their new home, I would love to be your recommendation.&#x27; / for an event planner: &#x27;With [season] here, intimate</p>
+<p>rehearsal dinners have been incredibly popular — if any of your couples are looking for something more personal than a restaurant, I have availability in [months].&#x27;] [Your Name] | [Business Name]</p>
+<h3>SECTION 5: REPUTATION MANAGEMENT</h3>
+<p>T16 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [Name]! It was such a privilege to cook for you — [one specific personal detail if their review mentions it]. Moments like [specific memory if they mention it] are why I love this work. Hope to be back in your</p>
+<p>kitchen soon. — [Your Name], [Business Name] T17 — Negative Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p class="template-line">Dear [Name], thank you for taking the time to share this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every client. I take all feedback seriously and I&#x27;d love to understand what happened. Please</p>
+<p>reach out at [Phone] or [Email] so I can address it personally. — [Your Name], [Business Name]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T18 — Vacation / Travel Chef Proposal</p></div><div class="footer"><span>Email Templates</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT Private chef for your [destination] trip — [Name]</div>
+<p class="template-line">Dear [Name], Thank you for reaching out about your trip to [destination] in [dates]. I specialise in vacation chef experiences — bringing the private dining experience directly to your villa, yacht, or rental property. Here&#x27;s how it</p>
+<p>typically works: I shop locally, prepare [X] dinners and/or [breakfasts/lunches], and create menus that reflect the local cuisine and ingredients of [destination]. For your trip of [X nights with X guests], I&#x27;d typically propose [brief scope].</p>
+<p>Investment: from $[amount] per day/week, which includes grocery sourcing and all preparation. Would a brief call to discuss your vision work this week? [Your Name] | [Business Name] T19 — Corporate Dining Proposal</p>
+<div class="section-label">SUBJECT Private chef dinner for your team — [Company Name]</div>
+<p class="template-line">Dear [Name], Thank you for reaching out about a private dining experience for [Company]&#x27;s [occasion — team dinner / client entertainment / retreat]. A bespoke private chef dinner is one of the most memorable and effective</p>
+<p>ways to host important clients or celebrate your team — far more personal than a restaurant, far more impressive than catering. For a group of [X guests], I&#x27;d propose [menu direction] at $[amount] per person / $[flat rate], which includes [what&#x27;s covered].</p>
+<p>I have availability on [two dates]. Would either work? [Your Name] | [Business Name] T20 — Cooking Class / Experience Proposal</p>
+<h3>SUBJECT Private cooking class — [Name]</h3>
+<p class="template-line">Dear [Name], What a wonderful idea — a private cooking class is one of my favourite experiences to host. Here&#x27;s how I structure them: [X hours], [X guests], we cook [X courses] together using [your style / seasonal ingredients]. Everyone eats together at</p>
+<p>the end. The experience is casual, educational, and delicious. Investment: $[amount] for up to [X] guests at [location]. I bring everything — ingredients, equipment, and all the patience in the world.</p>
+<p>Available dates this month: [2-3 options]. To confirm: [deposit / reply here]. [Your Name] | [Business Name] T21 — Menu Design Consultation Email</p>
+<h3>SUBJECT Your menu for [event] — [Name]</h3></div><div class="footer"><span>Email Templates</span><span class="page-number">09</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Dear [Name], Following our conversation, here is a proposed menu for your [event description] on [date]: [Course 1 — e.g., Amuse-bouche]: [dish name and brief evocative description] [Course 2 — e.g., Starter]: [dish and description]</p>
+<p>[Course 3 — e.g., Main]: [dish and description — note protein and accompaniments] [Course 4 — e.g., Dessert]: [dish and description] Dietary accommodations: [list all accommodations for specific guests] Wine pairing suggestion (optional): [brief note]</p>
+<p>Please let me know if you&#x27;d like to adjust any element — I can go in any direction based on your preferences or what excites you most. [Your Name] | [Business Name] T22 — Allergy &amp; Dietary Confirmation Email</p>
+<div class="section-label">SUBJECT Dietary confirmation for your [event] — [Name]</div>
+<p class="template-line">Dear [Name], Before your dinner on [date], I want to confirm the dietary requirements for all guests to make sure every person at your table is fully taken care of: [Guest 1 — Name or description]: [dietary requirement — e.g., severe nut</p>
+<p>allergy / vegetarian / coeliac] [Guest 2]: [requirement] [Guest 3]: [requirement] Please confirm this is accurate and let me know if anything has changed or if I&#x27;ve missed anyone. I take dietary requirements extremely seriously — every dish will be prepared</p>
+<p>with complete awareness of the above. [Your Name] | [Business Name] T23 — Post-Event Invoice Email</p>
+<h3>SUBJECT Invoice for your [event] — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you again for a wonderful evening on [date]. Here is your invoice: Service: [description] Date: [date] Guests: [X] Chef service fee: $[amount] Grocery and ingredient cost: $[amount] (receipts attached) Travel fee (if applicable): $[amount]</p>
+<p>TOTAL: $[amount] Payment due by [date] via [payment methods]. It was a genuine pleasure. [Your Name] | [Business Name] T24 — Waitlist / Unavailable Date Response</p>
+<h3>SUBJECT Re: Your enquiry for [date] — [Name]</h3>
+<p class="template-line">Dear [Name], Thank you so much for reaching out — unfortunately I&#x27;m fully booked for [date/month]. I&#x27;d love to add you to my waitlist in case anything opens up, and I also have availability on [alternative dates] if any of those could work.</p></div><div class="footer"><span>Email Templates</span><span class="page-number">10</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Email Templates</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>If you&#x27;d like to plan ahead for a future date, I&#x27;m taking bookings for [next available period]. Just reply here to secure your preferred date. [Your Name] | [Business Name]</p></div><div class="footer"><span>Email Templates</span><span class="page-number">11</span></div></section></main></body></html>

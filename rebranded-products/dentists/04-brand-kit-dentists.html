@@ -1,0 +1,206 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #151d18; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fbfcf6,#edf4ea 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#789881 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#c5d3b8 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#789881,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #617066; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#789881 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #789881; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #789881; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #789881; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #789881; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #617066; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#789881 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#17231b,color-mix(in srgb,#17231b 76%,#789881)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #c5d3b8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#789881 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #789881; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#789881 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#789881 18%,transparent); color: #789881; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #789881; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#789881 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #617066; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #789881; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Care growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for calm clinical trust</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Dentists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>DENTAL PRACTICE</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a practice brand that makes patients feel safe before they arrive. Color palettes • Fonts • Canva templates • Video guide • 7-day launch checklist</p>
+<h3>SECTION 1: PRACTICE POSITIONING</h3>
+<p>Dental anxiety affects 36% of the population. Your brand — before patients ever walk through the door — either amplifies that anxiety or reduces it. The most successful dental brands feel warm, modern, and trustworthy rather than clinical and cold. Every</p>
+<p>visual and messaging choice should reinforce: this is a safe, comfortable place. Your Practice Promise We help [patient type — e.g., families / adults with dental anxiety / busy professionals] [achieve outcome — e.g., maintain a healthy smile for life / finally</p>
+<p>feel comfortable at the dentist / get the smile they&#x27;ve always wanted] in a [your approach — e.g., gentle, judgment-free environment / modern, comfortable practice / caring family atmosphere]. Example: &#x27;We help families in [City] keep their smiles healthy for life in a warm,</p>
+<p>judgment-free practice where everyone — especially nervous patients — feels completely at ease.&#x27;</p>
+<h3>Brand Personality (Pick 2–3)</h3>
+<p class="template-line">• Gentle — You meet patients where they are, especially anxious ones</p>
+<p class="template-line">• Trustworthy — You explain everything and never recommend unnecessary</p>
+<p>treatment</p>
+<p class="template-line">• Modern — Your practice is up to date with technology and technique</p>
+<p class="template-line">• Family — You treat patients like people you genuinely care about</p>
+<p class="template-line">• Expert — Your team is highly trained and stays current with continuing education</p>
+<h3>SECTION 2: COLOR PALETTES</h3>
+<p>Dental branding should feel clean, calm, and trustworthy — not sterile and corporate. Two proven directions:</p>
+<div class="section-label">Palette A: Modern Clinical Trust (Contemporary Practice)</div>
+<p>Deep Navy</p>
+<h3>#0B2545</h3>
+<p>Primary — Trust, Authority Clear Blue</p>
+<h3>#1565C0</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Accent — Clean, Professional Light Blue</p>
+<h3>#E3F0FC</h3>
+<p>Background — Airy, Fresh White</p>
+<h3>#FFFFFF</h3>
+<p>Base BG — Clean, Clinical</p>
+<h3>Palette B: Warm &amp; Welcoming (Family / Anxiety-Focused</h3>
+<p>Practice) Warm Teal</p>
+<h3>#0B7A75</h3>
+<p>Primary — Calm, Trust Soft Cream</p>
+<h3>#FAF6EE</h3>
+<p>Background — Warm, Safe Sage Green</p>
+<h3>#6B9E78</h3>
+<p>Accent — Natural, Gentle Warm White</p>
+<h3>#FFFFFF</h3>
+<p>Base BG</p>
+<h3>SECTION 3: TYPOGRAPHY</h3>
+<h3>USE FONT NOTES</h3>
+<p>Headlines Libre Baskerville Bold Elegant and authoritative — conveys clinical expertise without feeling cold. Free on Google Fonts. Subheadings Lato SemiBold Clean and modern — bridges clinical authority with approachability.</p>
+<p>Body Copy Lato Regular Highly readable across all sizes — excellent for patient-facing communications. CTA / Callouts Lato Bold Used for appointment CTAs, key statistics, and urgent messages only.</p>
+<h3>SECTION 4: CANVA TEMPLATE GUIDE</h3>
+<p>All templates below are free on Canva. Search the exact term, apply your brand colors and fonts. Budget 20–30 minutes per template set.</p>
+<h3>Social &amp; Digital Templates</h3>
+<h3>TEMPLATE CANVA SEARCH TERM BEST USE</h3>
+<p>Instagram Post (1:1) &quot;dental office instagram post</p>
+<h3>template&quot;</h3>
+<p>Education, myth-busting, team highlights Instagram Story (9:16) &quot;dentist story template canva&quot; Before/after, polls, appointment reminders Facebook Cover &quot;dental practice facebook cover&quot; First impression — warm, modern, welcoming</p>
+<p>Before/After Smile &quot;smile transformation before after</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>template&quot;</h3>
+<p>Cosmetic case results (with patient consent) Google Business Post &quot;local healthcare business post</p>
+<h3>canva&quot;</h3>
+<p>Seasonal campaigns, recall reminders, team news Review Highlight Card &quot;patient testimonial quote</p>
+<h3>template&quot;</h3>
+<p>Turn Google reviews into social proof graphics Educational Infographic &quot;oral health infographic template&quot; Shareable patient education</p>
+<h3>content</h3>
+<p>Print &amp; In-Practice Templates</p>
+<p class="template-line">• Business Card — Search: &#x27;dental office business card&#x27; — include name,</p>
+<p>credentials, phone, website, and tagline</p>
+<p class="template-line">• New Patient Welcome Card — Search: &#x27;welcome card template canva&#x27; — hand</p>
+<p>to new patients at first visit</p>
+<p class="template-line">• Recall Postcard — Search: &#x27;appointment reminder postcard&#x27; — for physical recall</p>
+<p>mailings</p>
+<p class="template-line">• Referral Card — Search: &#x27;refer a friend card dental&#x27; — for front desk and hygiene</p>
+<p>bags</p>
+<p class="template-line">• Treatment Menu — Search: &#x27;services menu template canva&#x27; — display services</p>
+<p>and technology in waiting room Short-Form Video Ideas (Instagram Reels / TikTok / Facebook)</p>
+<p class="template-line">• &#x27;What happens at your first visit&#x27; — most searched dental question, highest</p>
+<p>converting video</p>
+<p class="template-line">• &#x27;Is a dental cleaning painful?&#x27; — addresses the #1 anxiety before it becomes a</p>
+<p>no-show</p>
+<p class="template-line">• &#x27;Before and after smile transformation&#x27; — with patient consent, highest</p>
+<p>engagement content</p>
+<p class="template-line">• &#x27;Meet Dr. [Name]&#x27; — 30-second intro video, humanizes the practice and reduces</p>
+<p>fear</p>
+<p class="template-line">• &#x27;3 things your teeth are telling you&#x27; — educational hook format, high share rate</p>
+<h3>SECTION 5: PRACTICE PHOTOGRAPHY GUIDE</h3>
+<p>What to Photograph</p>
+<p class="template-line">• Reception and waiting area — clean, bright, modern — patients preview comfort</p>
+<p>before visiting</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">• Treatment rooms — show clean, well-equipped spaces — reduces clinical</p>
+<p>anxiety</p>
+<p class="template-line">• Team photos — genuine smiles, approachable — patients want to see who will</p>
+<p>treat them</p>
+<p class="template-line">• Technology — digital X-rays, CEREC, iTero scanner, etc. — signals modernity</p>
+<p>and expertise</p>
+<p class="template-line">• Before/after smile results — with explicit written patient consent — highest-</p>
+<p>converting content Photography Tips</p>
+<p class="template-line">• Natural light from windows wherever possible — avoids the cold, clinical</p>
+<p>fluorescent look</p>
+<p class="template-line">• Remove clutter before shooting — clean backgrounds signal professionalism</p>
+<p class="template-line">• Team photos: matching scrubs or white coats, genuine relaxed expressions</p>
+<p class="template-line">• Hire a local photographer for a half-day shoot — worth every dollar for the</p>
+<p>impression it creates</p>
+<p class="template-line">• Refresh photos every 2–3 years — outdated photos signal a stagnant practice</p>
+<h3>SECTION 6: 7-DAY BRAND LAUNCH CHECKLIST</h3>
+<h3>Day 1 — Foundation</h3>
+<p class="template-line">✓ Choose your color palette (A or B)</p>
+<p class="template-line">✓ Select fonts and add to Canva Brand Kit</p>
+<p class="template-line">✓ Write your Practice Promise</p>
+<p class="template-line">✓ Schedule a practice photo session</p>
+<p>Days 2–3 — Build Templates</p>
+<p class="template-line">✓ Create Instagram post template</p>
+<p class="template-line">✓ Design Facebook cover photo</p>
+<p class="template-line">✓ Build review highlight card template</p>
+<p class="template-line">✓ Create one educational infographic</p>
+<p class="template-line">✓ Design Google Business post template</p>
+<p>Days 4–5 — Update All Profiles</p>
+<p class="template-line">✓ Update Google Business Profile (new photos, updated description, confirm hours)</p>
+<p class="template-line">✓ Update Facebook profile + cover photo</p>
+<p class="template-line">✓ Update Instagram bio with Practice Promise + booking link</p>
+<p class="template-line">✓ Update website hero image and team photos if needed</p>
+<p class="template-line">✓ Update email signatures for all staff</p>
+<p>Days 6–7 — First Week of Content</p>
+<p class="template-line">✓ Batch-create 3 posts using your 90-Day Calendar</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Dentists Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p class="template-line">✓ Generate captions with the monthly AI prompt</p>
+<p class="template-line">✓ Film one short-form video (30–60 seconds)</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri</p>
+<p class="template-line">✓ Respond to any existing Google reviews if not already done</p>
+<p>Patients remember how you made them feel. Your brand starts communicating that feeling before they ever sit in the chair.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">07</span></div>
+</section></main></body></html>

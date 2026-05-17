@@ -1,0 +1,401 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon Brand Kit</title><style>
+      @page { size: Letter; margin: 0; }
+      :root { --ink:#17110f; --soft:#5d504b; --muted:#8e7a72; --paper:#fbf2e6; --cream:#fffaf4; --accent:#a67a58; --accent2:#ead8c3; --line:rgba(91,67,58,.16); }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#e8d7ca; color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; }
+      .book { width:8.5in; margin:0 auto; }
+      .page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.62in; background:radial-gradient(circle at 14% 8%, color-mix(in srgb, var(--accent2) 58%, transparent), transparent 2.2in), radial-gradient(circle at 90% 12%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 2.5in), linear-gradient(135deg,var(--paper),#fffaf4 54%,color-mix(in srgb,var(--accent2) 26%,#fffaf4)); }
+      .page::before { content:""; position:absolute; inset:.28in; border:1px solid rgba(91,67,58,.12); border-radius:28px; pointer-events:none; }
+      .page::after { content:""; position:absolute; right:-1.1in; top:-.3in; width:3.2in; height:9.8in; background:linear-gradient(180deg,rgba(23,17,15,.045),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--accent2) 42%,transparent),transparent 64%); transform:rotate(-10deg); border-radius:999px; pointer-events:none; }
+      .brand { position:relative; z-index:2; display:flex; align-items:flex-start; justify-content:space-between; }
+      .wordmark { font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; }
+      .wordmark small { display:block; margin-top:8px; color:var(--accent); font-size:9px; font-weight:700; letter-spacing:.18em; }
+      .badge { border:1px solid color-mix(in srgb,var(--accent) 24%,transparent); border-radius:999px; padding:10px 14px; color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; background:rgba(255,250,244,.64); }
+      .kicker, .eyebrow-line { position:relative; z-index:2; display:flex; align-items:center; gap:12px; color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; margin:0 0 18px; }
+      .kicker::before, .eyebrow-line::before { content:""; width:42px; height:1px; background:var(--accent); }
+      h1,h2,h3 { position:relative; z-index:2; margin:0; font-family:"Didot","Bodoni 72","Times New Roman",serif; font-weight:400; letter-spacing:-.045em; }
+      h1 { max-width:6.1in; margin-top:.82in; font-size:64px; line-height:.93; }
+      h1 span, h2 span { color:var(--accent); font-style:italic; }
+      h2 { margin-top:18px; font-size:34px; line-height:1.02; }
+      p { position:relative; z-index:2; margin:0 0 9px; color:var(--soft); font-size:11.2px; line-height:1.5; }
+      .lead { max-width:5.05in; margin-top:.28in; font-size:16px; line-height:1.55; }
+      .cover-meta { position:absolute; left:.62in; right:.62in; bottom:.74in; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .meta-item { padding:17px 12px; border-left:1px solid var(--line); } .meta-item:first-child { border-left:0; padding-left:0; }
+      .meta-item strong { display:block; font-family:"Didot","Bodoni 72","Times New Roman",serif; color:var(--accent); font-size:27px; font-weight:400; line-height:1; }
+      .meta-item span { display:block; margin-top:8px; color:var(--muted); font-size:8px; font-weight:800; letter-spacing:.14em; line-height:1.4; text-transform:uppercase; }
+      .footer { position:absolute; left:.62in; right:.62in; bottom:.34in; z-index:2; display:flex; justify-content:space-between; color:rgba(93,80,75,.72); font-size:8px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+      .content-card { position:relative; z-index:2; margin-top:.42in; border:1px solid var(--line); border-radius:24px; background:rgba(255,250,244,.66); padding:26px; box-shadow:0 18px 52px rgba(95,61,51,.07); }
+      .callout-title { margin:18px 0 10px; border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:16px; background:rgba(255,250,244,.72); padding:12px 14px; color:var(--accent); font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+      .tip { margin:12px 0 12px; border-left:3px solid var(--accent); padding:9px 0 9px 13px; color:var(--soft); font-size:10.2px; line-height:1.48; background:linear-gradient(90deg,color-mix(in srgb,var(--accent2) 22%,transparent),transparent 78%); }
+      .bullet { display:grid; grid-template-columns:12px 1fr; gap:8px; } .bullet span { width:5px; height:5px; margin-top:7px; border-radius:50%; background:var(--accent); }
+      .mini-num { display:inline-grid; place-items:center; width:31px; height:31px; margin:8px 0; border:1px solid color-mix(in srgb,var(--accent) 28%,transparent); border-radius:50%; color:var(--accent); font-family:"Didot","Bodoni 72","Times New Roman",serif; font-size:16px; }
+      @media print { body { background:white; } .book { margin:0; } }
+    </style></head><body><main class="book">
+      <section class="page">
+        <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+        <p class="kicker" style="margin-top:.78in;">Beauty Business System</p>
+        <h1>Salon Brand Kit</h1>
+        <p class="lead">Define the positioning, voice, visuals, and content pillars that make a salon brand feel consistent and premium.</p>
+        <div class="cover-meta"><div class="meta-item"><strong>5</strong><span>Brand pillars</span></div><div class="meta-item"><strong>3</strong><span>Voice tones</span></div><div class="meta-item"><strong>30+</strong><span>Caption templates</span></div><div class="meta-item"><strong>$197</strong><span>Bundle price</span></div></div>
+        <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>01</span></div>
+      </section>
+      <section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Why Your Brand Is Worth More Than Your</h2>
+<h2>Skills</h2>
+<p>Two stylists can have identical technical ability. The one with a stronger brand charges more, fills</p>
+<p>their books faster, attracts better clients, and weathers slow seasons without panicking. Brand is</p>
+<p>not about logos or fonts — it is about how people feel when they interact with you, and how</p>
+<p>consistently you communicate who you are.</p>
+<p>This kit walks you through building every layer of your brand: your positioning, your voice, your</p>
+<p>visual identity guidelines, and the content templates that make showing up consistently effortless.</p>
+<p>What Is a Brand Kit?</p>
+<p>A brand kit is a reference document that captures all the decisions about how your business</p>
+<p>presents itself. When you have one, every piece of content you create — a caption, a price increase</p>
+<p>email, a job posting, a TikTok script — sounds and looks like it came from the same place. Without</p>
+<p>one, you are reinventing yourself every time you post.</p>
+<p>This kit covers:</p>
+<h2>Section</h2>
+<h2>What You Will Build</h2>
+<h2>1 Brand Foundation</h2>
+<p>Your positioning statement, target client, and the problem you solve</p>
+<h2>2 Brand Voice</h2>
+<p>Your tone, word choices, and communication style — written down so you can replicate it</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>02</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>3 Visual Identity Guidelines</h2>
+<p>Color palette, font choices, imagery direction — even without a designer</p>
+<h2>4 Content Pillars &amp; Templates</h2>
+<p>The 7 content pillars with fill-in-the-blank caption frameworks for each</p>
+<h2>5 Bio &amp; Profile Copy</h2>
+<p>Ready-to-adapt copy for your Instagram bio, Google profile, and booking page</p>
+<p class="eyebrow-line">Section 1</p>
+<h2>Brand Foundation</h2>
+<p>Your brand foundation is the strategic layer that everything else is built on. Get this right and your</p>
+<p>voice, visuals, and content will feel coherent naturally.</p>
+<h2>Step 1 — Your Positioning Statement</h2>
+<p>A positioning statement is one or two sentences that capture who you serve, what you do, and</p>
+<p>what makes you different. It is not your tagline — it is the internal compass you use when making</p>
+<p>brand decisions.</p>
+<h2>The Formula:</h2>
+<p>I help [target client] achieve [desired outcome] through [your approach/differentiator] — without</p>
+<p>[common pain point they want to avoid].</p>
+<p>Example (fill this in for your own salon):</p>
+<p>I help busy women in their 30s and 40s get low-maintenance color that grows out beautifully —</p>
+<p>through techniques that prioritize the health of their hair, without the commitment of 6-week</p>
+<p>touch-ups.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>03</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Step 2 — Your Target Client Profile</h2>
+<p>Fill in each field for your ideal client. Be specific — a specific client profile produces better content</p>
+<p>than a vague one.</p>
+<h2>Field</h2>
+<p>Your Answer (fill in)</p>
+<h2>Age Range</h2>
+<h2>Lifestyle</h2>
+<p>What They Care About Most at a Salon</p>
+<h2>Their Biggest Hair Frustration</h2>
+<p>What They Do Before Booking a New Stylist</p>
+<h2>Where They Spend Time Online</h2>
+<h2>What Would Make Them Switch Salons</h2>
+<h2>What Would Make Them Stay Forever</h2>
+<h2>Brands They Like / Aesthetic They Gravitate Toward</h2>
+<h2>Step 3 — Your Differentiators (What Makes You Different)</h2>
+<p>Brainstorm 5–10 things that are true about your work or your client experience that your</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>04</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>competitors cannot easily claim. Then circle the top 3.</p>
+<p class="bullet"><span></span>Your specialization (what you do better than anyone else in your area)</p>
+<p class="bullet"><span></span>Your process (how you approach consultations, services, or client relationships differently)</p>
+<p class="bullet"><span></span>Your client experience (what people say about being in your chair)</p>
+<p class="bullet"><span></span>Your education or training (certifications, techniques, continuing education)</p>
+<p class="bullet"><span></span>Your values (sustainability, inclusion, client empowerment, etc.)</p>
+<p class="bullet"><span></span>Your personality (the intangible thing clients keep coming back for)</p>
+<p class="eyebrow-line">Section 2</p>
+<h2>Brand Voice</h2>
+<p>Your brand voice is how your business sounds when it speaks. It is consistent across every caption,</p>
+<p>text, email, and response to a review. Clients who love your voice will come looking for it — and it</p>
+<p>is one of the hardest things for competitors to copy.</p>
+<h2>Step 1 — Choose Your 3 Voice Attributes</h2>
+<p>Pick 3 adjectives from the list below that describe how you want your brand to sound. For each</p>
+<p>one, add what it means in practice and what it does NOT mean:</p>
+<p>Warm · Direct · Expert · Playful · Confident · Nurturing · Edgy · Premium · Approachable · Educational ·</p>
+<h2>Empowering · Honest · Witty · Calm · Energetic</h2>
+<h2>Voice Attribute</h2>
+<p>In Practice This Means...</p>
+<p>This Does NOT Mean...</p>
+<h2>Example: Warm</h2>
+<p>Using first names, asking follow-up questions, writing like a text to a friend</p>
+<p>Being unprofessional, over-sharing, or losing authority</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>05</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Your Attribute 1:</h2>
+<h2>Your Attribute 2:</h2>
+<h2>Your Attribute 3:</h2>
+<h2>Step 2 — Voice Do&#x27;s and Don&#x27;ts</h2>
+<h2>ALWAYS</h2>
+<h2>NEVER</h2>
+<h2>Use contractions — &quot;you&#x27;re&quot;, &quot;I&#x27;m&quot;, &quot;we&#x27;ve&quot;</h2>
+<p>Start captions with &quot;I&quot; (Instagram algorithm penalizes this)</p>
+<p>Write like you talk behind the chair</p>
+<p>Use corporate words: &quot;utilize&quot;, &quot;leverage&quot;, &quot;solutions&quot;</p>
+<p>Use the second person: &quot;you&quot;, &quot;your hair&quot;</p>
+<p>Over-apologize or hedge everything with qualifiers</p>
+<p>Be specific: &quot;balayage that grows out for 12 weeks&quot; not &quot;amazing color&quot;</p>
+<p>Write in passive voice: &quot;appointments are available&quot; vs. &quot;I have openings&quot;</p>
+<p>End with one clear call to action</p>
+<p>Stack multiple CTAs at the end of a post</p>
+<p>Reference specific client types or hair concerns</p>
+<p>Generic statements that could apply to any salon anywhere</p>
+<h2>Step 3 — Train AI to Write in Your Voice</h2>
+<p>Use this prompt in ChatGPT before writing any content. Do this once per session:</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>06</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>I am a hair stylist with a [warm / direct / expert] brand voice. Here are 3 examples of how I actually</p>
+<p>write: [paste 3 captions or texts you have already written]. Study the tone, sentence length, word</p>
+<p>choice, and personality. For the rest of this conversation, write all content in this exact voice. Confirm</p>
+<p>you understand by describing my voice in 2-3 sentences.</p>
+<p class="eyebrow-line">Section 3</p>
+<h2>Visual Identity Guidelines</h2>
+<p>You do not need a designer to have a consistent visual identity. You need a small set of intentional</p>
+<p>decisions made once, then followed consistently. This section helps you make those decisions.</p>
+<h2>Your Color Palette (3–5 Colors)</h2>
+<p>Choose 3–5 colors that represent your brand. Every graphic, Story template, and Canva design uses</p>
+<p>only these colors. Consistency is the goal — not perfection.</p>
+<h2>Role</h2>
+<h2>Color Name</h2>
+<h2>Hex Code</h2>
+<p>Where to Use</p>
+<h2>Primary</h2>
+<p>Your main brand color</p>
+<p>#______</p>
+<p>Backgrounds, headers, primary buttons</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>07</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Secondary</h2>
+<p>Complements your primary</p>
+<p>#______</p>
+<p>Accents, borders, secondary elements</p>
+<h2>Accent</h2>
+<p>Used sparingly for contrast</p>
+<p>#______</p>
+<p>Calls to action, highlights, key stats</p>
+<h2>Neutral Light</h2>
+<p>Off-white or light cream</p>
+<p>#______</p>
+<p>Page/slide backgrounds, text boxes</p>
+<h2>Neutral Dark</h2>
+<p>Deep brown, navy, or black</p>
+<p>#______</p>
+<p>Body text, dark backgrounds</p>
+<p>Sample Palette Direction by Brand Personality</p>
+<h2>Brand Personality</h2>
+<h2>Suggested Palette Direction</h2>
+<h2>Warm &amp; Approachable</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>08</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Terracotta, blush, cream, warm brown, gold — earthy and inviting</h2>
+<h2>Clean &amp; Modern</h2>
+<p>White, soft gray, dusty sage, black, one warm accent — minimal and sleek</p>
+<h2>Edgy &amp; Bold</h2>
+<p>Deep charcoal, electric teal or coral, off-white, matte black — high contrast</p>
+<h2>Luxe &amp; Premium</h2>
+<p>Deep navy or black, champagne gold, ivory, bronze — rich and sophisticated</p>
+<h2>Natural &amp; Organic</h2>
+<p>Forest green, warm beige, terracotta, cream, soft white — earthy and grounded</p>
+<h2>Your Typography (2 Fonts Maximum)</h2>
+<p>Choose one heading font and one body font. Use them everywhere. Two fonts is professional. Four</p>
+<p>fonts is chaos.</p>
+<h2>Role</h2>
+<h2>Recommended Free Options (Google Fonts)</h2>
+<p>Where to Use</p>
+<h2>Heading Font</h2></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>09</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>Playfair Display / Cormorant / Libre Baskerville / Lora</h2>
+<p>Canva headers, Story titles, graphic overlays</p>
+<h2>Body Font</h2>
+<h2>Montserrat / Nunito / Work Sans / Jost</h2>
+<p>Captions, body text, descriptions, labels</p>
+<h2>Photography &amp; Imagery Direction</h2>
+<p>Your photo aesthetic should be consistent. Answer these questions and you will have a</p>
+<p>photography brief you can use forever:</p>
+<p>Lighting: Natural light or warm artificial? Bright and airy or moody and dramatic?</p>
+<p>Background: Clean white/cream, salon setting, outdoor, or dark backdrop?</p>
+<p>Color grading: Warm tones, cool tones, desaturated film look, or true-to-life color?</p>
+<p>Composition: Close-up detail shots, full head, client facing forward or turned?</p>
+<p>Props &amp; Setting: Minimalist (just the hair), styled flat lays, tools in frame?</p>
+<p>Client styling: Styled and polished, or natural/undone — which fits your brand?</p>
+<p class="eyebrow-line">Section 4</p>
+<h2>Content Pillars &amp; Caption Templates</h2>
+<p>Your 7 content pillars define the categories of content you post. Within each pillar, these</p>
+<p>fill-in-the-blank frameworks give you a starting structure you can adapt in minutes.</p>
+<h2>1 Transformation</h2>
+<p>Before/afters, reveals, dramatic changes</p>
+<div class="callout-title">Template 1:</div></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>10</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>From [starting point] to [result]. This is what [service] can do when [brief expert note about</p>
+<p>technique]. Ready for yours? [CTA]</p>
+<div class="callout-title">Template 2:</div>
+<p>She wanted [client goal]. Here is what we did: [brief process note]. The result? [emotional outcome].</p>
+<h2>[CTA]</h2>
+<div class="callout-title">Template 3:</div>
+<p>Not all [service types] are the same. Here is the difference technique makes. Swipe to see [before]</p>
+<p>become [after]. [CTA]</p>
+<h2>2 Educational</h2>
+<p>Tips, how-tos, myth-busting, industry knowledge</p>
+<div class="callout-title">Template 1:</div>
+<p>Most people do not know this about [hair topic]. Here is what actually [works/happens/matters]: [tip].</p>
+<p>Save this for later.</p>
+<div class="callout-title">Template 2:</div>
+<p>MYTH: [common hair myth]. TRUTH: [the real answer]. Here is why it matters for your hair: [brief</p>
+<p>explanation].</p>
+<div class="callout-title">Template 3:</div>
+<p>The [#] things I tell every client about [topic]: [short list]. Which one surprised you?</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>11</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><h2>3 Engagement</h2>
+<p>Polls, questions, hot takes, conversation starters</p>
+<div class="callout-title">Template 1:</div>
+<p>[Easy question about hair preference]? Drop your answer in the comments — I read every single one.</p>
+<div class="callout-title">Template 2:</div>
+<p>Unpopular opinion: [your hot take about hair or salon culture]. Agree or disagree? I will defend this.</p>
+<div class="callout-title">Template 3:</div>
+<p>Tell me your hair struggle and I will tell you the one thing that would actually fix it. Go.</p>
+<h2>4 Promotional</h2>
+<p>Offers, availability, services, bookings</p>
+<div class="callout-title">Template 1:</div>
+<p>I have [#] openings this week for [service]. If your hair has been on your mind — this is your sign.</p>
+<h2>[CTA]</h2>
+<div class="callout-title">Template 2:</div>
+<p>[Service] is one of my most requested appointments for a reason: [brief value prop]. Book before</p>
+<p>[date/availability closes]. [CTA]</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>12</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><div class="callout-title">Template 3:</div>
+<p>This month only: [offer]. Here is who it is for: [specific client type]. Here is how to book: [CTA].</p>
+<p>5 Behind the Scenes</p>
+<p>Process, daily life, tools, preparation</p>
+<div class="callout-title">Template 1:</div>
+<p>This is what [time] looks like before the first client walks in. [Brief description of what you do/show].</p>
+<p>Preparation is everything.</p>
+<div class="callout-title">Template 2:</div>
+<p>Here is what is actually in my kit and why I use each one. The difference between good tools and</p>
+<p>great ones is [brief insight].</p>
+<div class="callout-title">Template 3:</div>
+<p>Behind every [result] is [the prep work clients never see]. Here is what went into today.</p>
+<h2>6 Testimonial</h2>
+<p>Client quotes, reviews, social proof</p>
+<div class="callout-title">Template 1:</div>
+<p>&quot;[Direct client quote].&quot; This is why I do this work. Thank you [first name] for trusting me. [CTA for</p>
+<p>others]</p>
+<div class="callout-title">Template 2:</div>
+<p>[Client first name] came in for [service] and said [quote or paraphrase]. This is the reaction I work for</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>13</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>every single day.</p>
+<div class="callout-title">Template 3:</div>
+<p>5 stars. Again. Here is what [first name] said about their experience: [review snippet]. If you have been</p>
+<h2>thinking about booking — this is your sign. [CTA]</h2>
+<h2>7 Personal/Brand</h2>
+<p>Your story, values, journey, vulnerability</p>
+<div class="callout-title">Template 1:</div>
+<p>I did not get into this industry to [wrong reason]. I got into it because [real reason]. That is still what</p>
+<p>drives me every single day.</p>
+<div class="callout-title">Template 2:</div>
+<p>The hardest part of this job that nobody talks about: [honest truth]. Here is how I handle it.</p>
+<div class="callout-title">Template 3:</div>
+<p>[X] things I have learned in [X] years behind the chair that I wish someone had told me earlier: [short</p>
+<p>list].</p>
+<p class="eyebrow-line">Section 5</p>
+<h2>Bio &amp; Profile Copy</h2>
+<p>Your bio is the first thing a potential client reads. It needs to communicate who you are, who you</p>
+<p>serve, and what to do next — in under 150 words. These templates give you a framework to adapt.</p>
+<p>Instagram Bio (150 characters maximum)</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>14</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>Format: What you do | Who you do it for | Location | Call to action (link in bio)</p>
+<p>Specialist approach:</p>
+<p>Balayage specialist | Natural, lived-in color for low-maintenance women | [City] | Book below ↓</p>
+<p>Full-service studio:</p>
+<p>Hair color + cuts for [client type] | [City], [State] | [X] years behind the chair | New clients welcome ↓</p>
+<p>Personality-forward:</p>
+<p>[Your specialty] by appointment | I make [client type] feel like their best selves | [City] | Book your seat</p>
+<p>↓</p>
+<p>Google Business Profile Description (150–250 words)</p>
+<p>Structure: Who you are → What you specialize in → Who your ideal client is → What makes your</p>
+<p>experience different → How to book.</p>
+<p>[SALON NAME] is a [hair salon / suite / independent stylist] based in [CITY, STATE] specializing in [TOP</p>
+<p>1-2 SERVICES]. We work with [CLIENT DESCRIPTION: e.g., women who want low-maintenance color</p>
+<p>that looks expensive, clients with textured hair who want healthy natural styles, brides and wedding</p>
+<p>parties] — and we take the time to do it right. [WHAT MAKES YOU DIFFERENT: e.g., Every appointment</p>
+<p>starts with a thorough consultation because we believe the best results come from truly</p>
+<p>understanding what you want and what your hair can realistically achieve.] [ADDITIONAL</p>
+<p>DIFFERENTIATOR: e.g., We use only professional-grade color lines and invest in continuing education</p>
+<p>every year to bring the latest techniques to our clients.] [CLOSING CTA: Book your appointment online</p>
+<h2>or give us a call — we would love to meet you.]</h2>
+<p>Booking Page / Website About Section (100–150 words)</p>
+<p>[YOUR NAME] is a [specialty] hair stylist based in [CITY] with [X] years of experience [brief description</p>
+<p>of specialty and approach]. Known for [what clients say about you most], [your name] believes that</p>
+<p>[your philosophy in one sentence]. Past clients describe the experience as [2-3 words from your best</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>15</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>reviews]. Whether you are looking for [service 1], [service 2], or [service 3], every appointment is</p>
+<p>approached with [your value: precision, artistry, education, care]. [Your name] is currently accepting</p>
+<p>new clients. [CTA: Book online / Call to schedule / DM on Instagram].</p>
+<p>Using AI to Finalize Your Copy</p>
+<p>Once you have filled in the templates above, use this prompt to polish them:</p>
+<p>Here is my draft bio / profile description: [PASTE YOUR DRAFT]. My brand voice is [your 3 voice</p>
+<p>attributes]. My target client is [1-2 sentences from your client profile]. Please refine this to sound</p>
+<p>more natural and on-brand, keeping it under [word count]. Do not add generic phrases like &#x27;passion</p>
+<p>for hair&#x27; or &#x27;love what I do&#x27; — make every word specific and intentional.</p>
+<h2>Your Brand Kit Completion Checklist</h2>
+<p>Use this as your working document. Return to it whenever you create new content, write a bio, or</p>
+<p>train AI on your voice.</p>
+<h2>Brand Foundation</h2>
+<p>Positioning statement written</p>
+<p>Target client profile filled in (all 9 fields)</p>
+<p>Top 3 differentiators identified</p>
+<h2>Brand Voice</h2>
+<p>3 voice attributes chosen and defined</p>
+<p>Voice Do&#x27;s and Don&#x27;ts table completed</p>
+<p>3 example captions saved for AI voice training</p>
+<h2>Visual Identity</h2>
+<p>Primary color chosen and hex code noted</p>
+<p>Full 3–5 color palette decided</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>16</span></div>
+        </section><section class="page">
+          <div class="brand"><div class="wordmark">Hair Stylist <small>Complete Growth Bundle</small></div><div class="badge">Brand System</div></div>
+          <div class="content-card"><p>Heading font chosen</p>
+<p>Body font chosen</p>
+<p>Photography direction written out</p>
+<p>Canva brand kit created (free on Canva) with colors and fonts saved</p>
+<h2>Content Pillars</h2>
+<p>7 pillars understood and tagged in content plan</p>
+<p>At least 1 template adapted per pillar to your voice</p>
+<p>Adapted templates saved as Canva text presets or note</p>
+<h2>Profile Copy</h2>
+<p>Instagram bio written and live</p>
+<p>Google Business description written and live</p>
+<p>Booking page about section written</p>
+<p>Once completed, this document is your brand bible. Share it with anyone who helps you create</p>
+<p>content — a VA, a social media helper, or an AI tool. The more consistently you reference it, the</p>
+<p>stronger your brand becomes.</p></div>
+          <div class="footer"><span>Hair Stylist Complete Growth Bundle</span><span>17</span></div>
+        </section>
+    </main></body></html>

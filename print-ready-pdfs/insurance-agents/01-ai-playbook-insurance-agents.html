@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f2f0e8; --paper:#fbfaf5; --ink:#121417; --muted:#61666d;
+  --accent:#536f78; --accent2:#8aa5a2; --dark:#1d252c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Complete Growth Bundle</span></div></div><div class="pill">Trust operating system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Insurance Agents Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Insurance Agents Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>THE INSURANCE AGENT&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<div class="section-label">How to Save 10+ Hours a Week, Close More Policies,</div>
+<p>and Grow Your Book of Business with AI A Complete Guide for Independent &amp; Captive Agents</p>
+<h3>WHAT&#x27;S INSIDE</h3>
+<p>1. Chapter 1: Why AI Is the Insurance Agent&#x27;s Secret Weapon 2. Chapter 2: Your First 3 AI Wins (This Week) 3. Chapter 3: Automating Lead Follow-Up 4. Chapter 4: Social Media Content Without the Stress</p>
+<p>5. Chapter 5: Winning Renewals and Reactivating Lost Clients 6. Chapter 6: Your 30-Day AI Implementation Plan</p>
+<h3>Chapter 1: Why AI Is the Insurance Agent&#x27;s</h3>
+<p>Secret Weapon The average insurance agent spends 60% of their time on administrative work — quoting, following up, writing emails, and chasing renewals. AI doesn&#x27;t replace your</p>
+<p>relationships or your expertise. It removes everything that gets in the way of them.</p>
+<p class="template-line">• The Attention Problem: Why most agents lose clients not to competitors — but</p>
+<p>to silence. Clients who don&#x27;t hear from you assume you don&#x27;t care.</p>
+<p class="template-line">• The Time Trap: Why doing everything manually keeps you stuck at the same</p>
+<p>production level year after year.</p>
+<p class="template-line">• The AI Advantage: How agents using AI tools are handling 2x the clients in the</p>
+<p>same working hours.</p>
+<p class="template-line">• What AI Can and Can&#x27;t Do: AI writes, reminds, and follows up. YOU build trust</p>
+<p>and close.</p>
+<h3>Chapter 2: Your First 3 AI Wins (This Week)</h3>
+<p>You don&#x27;t need to overhaul your entire workflow. Start with these three quick wins and you&#x27;ll save hours in your first week.</p>
+<p class="template-line">• Win #1 — Email Drafting: Use Claude or ChatGPT to write every client email in</p>
+<p>seconds. Give it the context, it writes the draft. You edit and send. Cut email time by 80%.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Win #2 — Quote Follow-Up Sequences: Feed your prospect&#x27;s info into AI and</p>
+<p>get a 5-email follow-up sequence written in 2 minutes. Personalized, professional, done.</p>
+<p class="template-line">• Win #3 — Renewal Reminders: Never let a renewal slip again. Use AI to write</p>
+<p>personalized renewal check-ins for your entire book of business in under an hour.</p>
+<h3>Chapter 3: Automating Lead Follow-Up</h3>
+<p>The money is in the follow-up. Studies show 80% of sales happen after the 5th contact — but most agents quit after 1 or 2. AI makes consistent follow-up effortless.</p>
+<p class="template-line">• The Perfect Follow-Up Cadence: Day 1 (immediate), Day 3 (value touchpoint),</p>
+<div class="section-label">Day 7 (check-in), Day 14 (objection handler), Day 30 (long-game nurture).</div>
+<p class="template-line">• AI Prompt Templates: Exact prompts to paste into Claude or ChatGPT to</p>
+<p>generate each follow-up email for any lead type: auto, home, life, commercial.</p>
+<p class="template-line">• Personalizing at Scale: How to make AI-generated emails feel handwritten</p>
+<p>using the client&#x27;s name, carrier context, and life event triggers.</p>
+<p class="template-line">• CRM + AI Integration: How to combine your CRM (AgencyZoom, HawkSoft,</p>
+<p>Applied Epic) with AI tools for a semi-automated follow-up engine.</p>
+<h3>Chapter 4: Social Media Content Without the</h3>
+<p>Stress Being visible on social media builds trust with prospects and keeps you top of mind with existing clients. But creating content daily is exhausting — unless you use AI.</p>
+<p class="template-line">• The 3-Post Framework: Every week, post one Educational post, one Trust-</p>
+<p>builder, and one Call-to-action. Rotate these 3 types and you never run out of</p>
+<h3>content.</h3>
+<p class="template-line">• Batch Creating with AI: Spend 30 minutes on Sunday generating your entire</p>
+<div class="section-label">week&#x27;s content using AI. Exact prompts included.</div></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Best Topics for Insurance Agents: Open enrollment reminders, myth-busting</p>
+<p>posts, client win stories (anonymized), life event prompts (new baby, home purchase, business launch), seasonal risk tips.</p>
+<p class="template-line">• Platform Strategy: Facebook for referrals and community. LinkedIn for</p>
+<p>commercial lines and professional relationships. Instagram for younger demographics and brand presence.</p>
+<h3>Chapter 5: Winning Renewals and Reactivating</h3>
+<p>Lost Clients Your existing book of business is your biggest untapped revenue source. Most agents focus only on new business — AI lets you work both simultaneously.</p>
+<p class="template-line">• The Renewal Conversation Framework: Don&#x27;t just send a renewal notice. Use</p>
+<p>AI to write a personalized &#x27;annual review&#x27; message that opens a conversation and positions you as a trusted advisor.</p>
+<p class="template-line">• Cross-Sell Triggers: AI-generated prompts for identifying and reaching out to</p>
+<p>clients who likely need additional coverage based on life stage.</p>
+<p class="template-line">• Reactivating Lost Clients: A 3-message sequence for clients who didn&#x27;t renew.</p>
+<p>Written with empathy, not desperation.</p>
+<p class="template-line">• The Birthday &amp; Life Event System: Set up AI-assisted touchpoints for</p>
+<p>birthdays, home anniversaries, and business milestones. Takes 1 hour to set up, runs forever.</p>
+<h3>Chapter 6: Your 30-Day AI Implementation Plan</h3>
+<p>Don&#x27;t try to do everything at once. This 30-day plan gets you up and running without overwhelm.</p>
+<p class="template-line">• Week 1 — Foundation: Set up Claude or ChatGPT. Practice writing 10 client</p>
+<p>emails with AI. Build your first follow-up sequence.</p>
+<p class="template-line">• Week 2 — Content: Create 2 weeks of social content using the 3-post</p>
+<p>framework. Schedule everything in advance.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Insurance Agents<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Week 3 — Renewals: Write AI-assisted renewal messages for your next 30</p>
+<p>upcoming renewals. Set up birthday/life event templates.</p>
+<p class="template-line">• Week 4 — Optimize: Review what&#x27;s working. Identify your top 3 AI use cases.</p>
+<p>Build a system you can repeat monthly.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Insurance</h3>
+<p>Agents Copy and paste these prompts directly into Claude or ChatGPT. Replace the [brackets] with your client&#x27;s info. Lead Follow-Up Prompts Write a friendly follow-up email to [Name] who requested a quote</p>
+<p>for [auto/home/life] insurance 3 days ago. They haven&#x27;t responded. Keep it short, warm, and end with a soft call to action. My name is [Your Name] and I&#x27;m an agent at [Agency Name]. Write a 5-email follow-up sequence for a prospect who requested a</p>
+<p>commercial liability quote for their [business type]. Space the emails over 30 days. Tone: professional and consultative. Agency: [Agency Name]. Renewal &amp; Cross-Sell Prompts Write a renewal check-in message for a client named [Name] whose</p>
+<p>auto policy renews in 45 days. Mention I&#x27;d like to do a quick annual review to make sure their coverage still fits their life. Keep it conversational and under 150 words. Write a cross-sell message to a home insurance client who just had</p>
+<p>a baby. Suggest they consider a life insurance review. Tone: warm, not pushy. Sign off as [Your Name], [Agency Name].</p>
+<h3>Social Media Content Prompts</h3>
+<p>Write 5 educational Facebook posts for an insurance agent. Topics: umbrella insurance myths, when to update your home coverage, what renters insurance actually covers, understanding deductibles, and</p>
+<p>life insurance for young families. Each post should be under 150 words and end with a question to drive comments. You&#x27;re ready. Start with one prompt today. Small consistent actions build big books of business.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section></main></body></html>

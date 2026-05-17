@@ -1,0 +1,217 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #081421; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#f4faff,#e8f1f7 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#55bde8 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#ff9b5c 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#55bde8,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #536475; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#55bde8 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #55bde8; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #55bde8; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #55bde8; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #55bde8; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #536475; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#55bde8 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#0d1b29,color-mix(in srgb,#0d1b29 76%,#55bde8)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #ff9b5c; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#55bde8 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #55bde8; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#55bde8 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#55bde8 18%,transparent); color: #55bde8; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #55bde8; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#55bde8 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #536475; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #55bde8; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Local service system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for field-ready precision</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Electricians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>ELECTRICIAN</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: estimates, commercial outreach, campaigns, and reputation management</p>
+<h3>SECTION 1: ESTIMATE FOLLOW-UP &amp;</h3>
+<h3>CONVERSION</h3>
+<h3>Template 1 — Estimate Follow-Up (Day 2)</h3>
+<div class="section-label">SUBJECT Following up on your electrical estimate — [First Name]</div>
+<p>Hi [First Name], Just following up on the estimate I left for [job type] on [date]. Wanted to make sure you got it and see if you had any questions before you make a decision. One thing worth mentioning: our quote includes [licensed work / permit if</p>
+<p>required / [X]-year workmanship guarantee / insured for up to $[amount]]. Not every quote you receive will include all of these — it&#x27;s worth asking. Happy to chat through anything. Call or text [Phone], or reply here. [Your Name] | [Company Name] | License #[number]</p>
+<h3>Template 2 — Estimate Follow-Up (Day 5 — Value Add)</h3>
+<div class="section-label">SUBJECT One more thing about your [job type] estimate, [First Name]</div>
+<p>Hi [First Name], One more follow-up before I close out my estimate queue for the month. I wanted to mention: [relevant value point — e.g., &#x27;for a job like yours, pulling the permit is required by code. If another quote doesn&#x27;t mention this, it may</p>
+<p>not be included — which creates a risk at resale.&#x27; OR &#x27;this type of job qualifies for a [utility/government] rebate — I can walk you through it if you&#x27;d like.&#x27;] Happy to answer any questions. [Phone]. [Your Name] | [Company Name]</p>
+<h3>Template 3 — Estimate Won — Booking Confirmation</h3>
+<h3>SUBJECT Your electrical job is confirmed — [First Name]</h3>
+<p>Hi [First Name], Great news — your [job type] is confirmed for [date] at [time]. Here&#x27;s what to expect: Arrival: our crew will arrive at [time]. If anything changes, I&#x27;ll call ahead. Duration: approximately [X] hours.</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>What to have ready: [access to panel / clear path to work area / etc.] Any questions before then? Call or text [Phone]. [Your Name] | [Company Name] | License #[number]</p>
+<h3>Template 4 — Post-Job Follow-Up</h3>
+<h3>SUBJECT How did everything go, [First Name]?</h3>
+<p>Hi [First Name], Just wanted to check in after yesterday&#x27;s [job type] — I hope everything is working perfectly and the crew left things clean and tidy. If there&#x27;s anything at all that needs attention, please don&#x27;t hesitate to call me directly: [Phone]. We stand behind our work.</p>
+<p>And if you were happy with the job — a quick Google review means the world to a local business like ours: [Google Review Link] [Your Name] | [Company Name]</p>
+<h3>SECTION 2: PROACTIVE CAMPAIGN</h3>
+<h3>TEMPLATES</h3>
+<h3>Template 5 — EV Charger Campaign</h3>
+<div class="section-label">SUBJECT Charge your EV at home — faster and cheaper than you think, [First Name]</div>
+<p>Hi [First Name], With EV ownership growing fast in [City], a lot of homeowners are still charging on a standard 120V outlet — which takes 40-70 hours for a full charge. A Level 2 home charger takes this down to 4-8 hours. Installation by a</p>
+<p>licensed electrician typically runs $[X]-$[X] depending on your panel and garage setup. If you own or are considering an EV, I&#x27;d love to give you a free assessment. No obligation — just an honest look at what your home needs.</p>
+<p>Call or text [Phone], or reply here. [Your Name] | [Company Name]</p>
+<h3>Template 6 — Whole-Home Inspection Campaign</h3>
+<div class="section-label">SUBJECT When did you last have your home&#x27;s wiring checked, [First Name]?</div>
+<p>Hi [First Name], Most homeowners never have their electrical system inspected — until something goes wrong. We offer a whole-home electrical safety inspection for $[amount]. It typically takes [X] hours and covers: panel condition and capacity, wiring age and</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>safety, GFCI compliance, smoke detector placement, and any code issues. We&#x27;re booking limited inspection slots this month. If your home is more than 15 years old, this is worth doing. Reply here or call [Phone] to schedule. [Your Name] | [Company Name]</p>
+<h3>Template 7 — Panel Upgrade Campaign</h3>
+<div class="section-label">SUBJECT Is your electrical panel keeping up with your home, [First Name]?</div>
+<p>Hi [First Name], Most panels installed before 2000 weren&#x27;t designed for today&#x27;s electrical loads — multiple EVs, home offices, smart appliances, and air conditioning all add up. Signs your panel might need upgrading: breakers tripping frequently,</p>
+<p>flickering lights, limited capacity for new circuits, or a panel that&#x27;s more than 25 years old. A panel upgrade typically runs $[X]-$[X] and enables faster EV charging, smart home integration, and significantly more electrical capacity.</p>
+<p>We offer a free panel assessment with no obligation. Call or text [Phone]. [Your Name] | [Company Name]</p>
+<h3>Template 8 — Seasonal Maintenance Campaign</h3>
+<div class="section-label">SUBJECT [Season] electrical checklist for your home, [First Name]</div>
+<p>Hi [First Name], A quick [season] note from [Company Name]: [3 seasonal electrical tips relevant to the season — e.g., winter: &#x27;Test your smoke and CO detectors before the heating season. Check your outdoor outlets and GFCI protection. Consider surge protectors for your heating</p>
+<div class="section-label">system.&#x27; / summer: &#x27;Air conditioning puts significant load on older panels. If</div>
+<p>your breakers are tripping, it&#x27;s worth having us take a look.&#x27;] If anything on this list prompts a question about your home, I&#x27;m happy to take a look — free assessment, no obligation. [Phone] | [Your Name] | [Company Name]</p>
+<h3>SECTION 3: COMMERCIAL ACCOUNT</h3>
+<h3>TEMPLATES</h3>
+<h3>Template 9 — Property Manager Introduction</h3>
+<div class="section-label">SUBJECT Electrical contractor introduction — [Your Name], [City]</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [Name], I&#x27;m [Your Name] from [Company Name] — a licensed electrical contractor based in [City] serving commercial and residential properties. I specialise in [commercial services — e.g., code compliance, emergency</p>
+<p>response, multi-unit residential, office buildouts]. For property managers, we</p>
+<div class="section-label">offer: same-day emergency response, after-hours availability, licensed and</div>
+<p>insured crew, and competitive rates for ongoing account work. If your current electrical contractor isn&#x27;t meeting your response time needs, I&#x27;d welcome a brief call to discuss what we can offer. [Your Name] | [Company Name] | [Phone] | License #[number]</p>
+<h3>Template 10 — Commercial Monthly Value Touch</h3>
+<h3>SUBJECT [Month] electrical update — [Your Name]</h3>
+<p>Hi [Name], Quick monthly note from [Company Name]: [Relevant electrical safety or code update for commercial properties — e.g., &#x27;OSHA released updated guidelines on [topic] this month — worth reviewing if you manage commercial spaces&#x27; / &#x27;With [season] coming, it&#x27;s a good time to</p>
+<p>test emergency lighting and exit signs across your properties&#x27;]. Reminder: we&#x27;re available for emergency electrical calls 24/7 at [Phone]. As always, we prioritise our ongoing account clients for scheduling. [Your Name] | [Company Name]</p>
+<h3>Template 11 — Commercial Proposal Follow-Up</h3>
+<div class="section-label">SUBJECT Following up on the [Company] electrical proposal, [First Name]</div>
+<p>Hi [First Name], Following up on the proposal I submitted on [date] for [project description]. Wanted to make sure you received it and see if there were any questions. One thing I should have mentioned: we have availability to start [timeframe],</p>
+<p>which may be relevant to your project timeline. Happy to walk through the scope on a quick call if that would be helpful. [Phone]. [Your Name] | [Company Name]</p>
+<h3>Template 12 — Post-Commercial Job Review</h3>
+<h3>SUBJECT Thank you — and a quick ask, [First Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [First Name], Just wanted to follow up on the [job description] we completed at [property]. I hope everything is working as expected — please let us know immediately if there&#x27;s anything to address. A personal ask: if you were satisfied with our team&#x27;s work and</p>
+<p>professionalism, a Google review from a commercial client genuinely helps us stand out to other property managers and business owners. Direct link: [Google Review Link] Thank you for the opportunity to work with you. [Your Name] | [Company Name]</p>
+<h3>SECTION 4: SERVICE AGREEMENT &amp;</h3>
+<h3>RETENTION TEMPLATES</h3>
+<h3>Template 13 — Post-Job Maintenance Plan Offer</h3>
+<div class="section-label">SUBJECT A way to prevent this from happening again, [First Name]</div>
+<p>Hi [First Name], Really glad we got your [issue] sorted. What happened today is exactly what our annual maintenance plan is designed to catch before it becomes an emergency. For $[amount]/year, the plan covers: annual whole-home electrical inspection,</p>
+<p>priority scheduling (no waiting during busy season), [X]% off parts and labour, and 24/7 emergency call priority. For most homeowners, it pays for itself the first time something gets caught early. Want to set it up? Reply here or call [Phone]. [Your Name] | [Company Name]</p>
+<h3>Template 14 — Service Agreement Renewal</h3>
+<div class="section-label">SUBJECT Your electrical maintenance plan is up for renewal, [First Name]</div>
+<p>Hi [First Name], Your annual electrical maintenance plan with [Company Name] renews [date]. As a loyal customer, your rate stays at $[amount] — same as last year. To renew, just call or text [Phone] — takes about 2 minutes.</p>
+<p>If you have any questions about what&#x27;s covered or want to upgrade your plan, I&#x27;m happy to walk you through the options. Thank you for being a [Company Name] customer. [Your Name] | [Company Name]</p>
+<h3>Template 15 — Lapsed Customer Win-Back</h3>
+<h3>SUBJECT It&#x27;s been a while — [First Name]</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [First Name], It&#x27;s been about [X months/years] since we last worked on your home at [address], and I just wanted to check in. Electrical systems that haven&#x27;t been looked at in a few years are worth reviewing — especially if your home is older or you&#x27;ve added new appliances,</p>
+<p>EVs, or a home office. If anything has been on your mind — flickering lights, tripping breakers, an outlet that doesn&#x27;t work — I&#x27;d be happy to take a look. Free assessment, no obligation. [Phone] | [Your Name] | [Company Name]</p>
+<h3>Template 16 — Referral Ask</h3>
+<h3>SUBJECT A small ask — [First Name]</h3>
+<p>Hi [First Name], I hope everything has been working perfectly since we finished your [job type]. A small ask: if you know a neighbour, friend, or family member who needs electrical work, I&#x27;d genuinely appreciate the mention. Word-of-mouth from</p>
+<p>customers I&#x27;ve done good work for is the foundation of our business. Even a &#x27;my electrician is great, you should call him&#x27; goes a long way. Thank you. [Your Name] | [Company Name] | [Phone]</p>
+<h3>SECTION 5: REPUTATION MANAGEMENT</h3>
+<h3>TEMPLATES</h3>
+<h3>Template 17 — Post-Job Google Review Request (SMS)</h3>
+<h3>SUBJECT SMS — send directly</h3>
+<p>Hi [First Name]! [Your Name] from [Company Name] — just following up after today&#x27;s [job type]. Hope everything is working great! If you were happy with the work, a quick Google review would mean the world to us: [Google Review Link]. Thanks! 😊</p>
+<h3>Template 18 — Post-Job Google Review Request (Email)</h3>
+<h3>SUBJECT A quick favour — [First Name]</h3>
+<p>Hi [First Name], Hope the [job type] is working perfectly! If you were happy with [Company Name]&#x27;s work, a Google review genuinely helps local homeowners find a contractor they can trust. Direct link (takes about 2 minutes): [Google Review Link]</p>
+<p>No pressure at all — and thank you for letting us into your home. [Your Name] | [Company Name]</p>
+<h3>Template 19 — Positive Google Review Response</h3></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">08</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Thank you so much, [First Name]! It was a pleasure taking care of your [job type] — [add one specific detail if they mention it]. We really appreciate you taking the time to share your experience. If you ever need us again, we&#x27;re just</p>
+<p>a call or text away. — [Your Name], [Company Name] [Respond within 24 hours. Include company name for local SEO. Specific and warm.]</p>
+<h3>Template 20 — Negative Google Review Response</h3>
+<h3>SUBJECT Google Business Profile — respond directly</h3>
+<p>Hi [First Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I&#x27;d really like to understand what happened and make it right. Please call me directly at</p>
+<p>[Phone] so we can talk about it. We stand behind our work and I take every piece of feedback seriously. — [Your Name], Owner, [Company Name] [Never argue publicly. Never explain defensively. Move it offline. Prospects</p>
+<p>read how you respond to criticism — composure and accountability build more trust than the complaint destroys.]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<h3>Template 21 — Subcontractor / Builder Introduction</h3>
+<div class="section-label">SUBJECT Electrical contractor introduction — [Your Name]</div>
+<p>Hi [Name], I&#x27;m [Your Name] from [Company Name] — a licensed electrical contractor in [City] specialising in [new construction / renovation / commercial buildout]. I&#x27;m reaching out because I work well with builders who need a reliable</p>
+<p>electrical trade partner — someone who communicates clearly, pulls permits correctly, and shows up when they say they will. I&#x27;d welcome a brief call to see if there&#x27;s a fit. [Phone] | [Your Name] | [Company Name] | License #[number]</p>
+<div class="section-label">Template 22 — Home Inspector / Real Estate Agent Introduction</div>
+<div class="section-label">SUBJECT Electrical contractor for your clients — [Your Name]</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">09</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Electricians Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>Hi [Name], I&#x27;m [Your Name] from [Company Name]. I wanted to introduce myself as a licensed electrical resource for your clients — both buyers who need electrical issues addressed before closing, and sellers who need repairs or upgrades to pass inspection.</p>
+<p>We offer quick turnaround assessments and competitive rates, and I can usually get on-site within [X] days. Would it be useful to have my contact in your referral list? [Phone] | [Your Name] | [Company Name] | License #[number]</p>
+<h3>Template 23 — Emergency / After-Hours Confirmation</h3>
+<h3>SUBJECT Emergency call confirmed — [First Name]</h3>
+<p>Hi [First Name], Confirming: [Your Name] from [Company Name] is on the way. ETA: approximately [X] minutes. In the meantime: [any immediate safety guidance — e.g., &#x27;if you smell burning, exit the home immediately and call 911. If it&#x27;s just a tripped breaker,</p>
+<p>it&#x27;s safe to stay — just avoid the affected circuit until we arrive.&#x27;] My direct number: [Phone]. See you shortly. [Your Name] | [Company Name]</p>
+<h3>Template 24 — Insurance / Permit Documentation Email</h3>
+<div class="section-label">SUBJECT Documentation for your [job type] — [First Name]</div>
+<p>Hi [First Name], As promised, attached to this email you&#x27;ll find:</p>
+<p class="template-line">- Certificate of insurance (valid through [date])</p>
+<p class="template-line">- Contractor license number: [number]</p>
+<p class="template-line">- [Permit number and inspection status if applicable]</p>
+<p class="template-line">- [Warranty documentation if applicable]</p>
+<p>Please keep these for your records — you may need them for your homeowner&#x27;s insurance, future resale, or any permit inspections. If you need anything else, just let me know. [Your Name] | [Company Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">10</span></div>
+</section></main></body></html>

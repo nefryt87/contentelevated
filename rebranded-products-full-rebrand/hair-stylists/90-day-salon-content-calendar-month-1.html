@@ -1,0 +1,184 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Day Salon Content Calendar · Month 1</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">90-Day Calendar</p>
+  <h1>Day Salon Content Calendar · Month 1</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Hair Stylists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<h3>90-DAY SALON</h3>
+<h3>CONTENT CALENDAR</h3>
+<p>Done-for-You Posts for Instagram, Facebook &amp; TikTok 90 Ready-to-post days 3 Platforms covered 7</p>
+<h3>Content pillars</h3>
+<p>12 Weekly themes © 2026 · 90-Day Salon Content Calendar · All rights reserved · For single-business use only</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+<h3>How to Use This Calendar</h3>
+<p>This calendar gives you 90 days of content — one post per day — for Instagram, Facebook, and TikTok. Each entry includes a content type, caption, and stylist tip so you know exactly what to</p>
+<p>post and why it works. You don&#x27;t need to post every single day — pick what fits your schedule and adapt captions to your voice and services. Platform Best Post Types Ideal Frequency Best Times Instagram Reels, Carousels, Stories 4–5x / week Tue–Fri, 9am &amp; 6pm Facebook</p>
+<p>Long-form posts, Lives 3–4x / week Wed–Fri, 1–4pm TikTok Reels, Process videos 3–5x / week Daily, 7–9pm The 7 Content Pillars Pillar Description Approx. Posts Transformation Before/afters, reveals, dramatic changes ~22 posts Educational</p>
+<p>Tips, how-tos, myth-busting, industry knowledge ~18 posts Engagement Polls, questions, hot takes, games ~14 posts Promotional Offers, scarcity, gift cards, bundles ~12 posts Behind the Scenes Process, setup, tools, daily life ~10 posts Testimonial</p>
+<h3>Client quotes, reviews, milestones</h3>
+<p>~8 posts Personal/Brand Story, values, why, vulnerability ~6 posts Hashtag Sets by Content Type Transformation: #hairtransformation #beforeandafter #hairgoals #behindthechair #salonresults Educational: #hairtips #haircare #haireducation #knowyourhair #stylistadvice</p>
+<p>Engagement: #hairpoll #askastylist #hairobsessed #salonlife #hairlove Promotional: #bookme #hairappointment #salonbooking #openings #hairsalon Behind the Scenes: #salonlife #dayinthelife #hairstylist #behindthescenes #salonbts</p></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Testimonial: #clientlove #hairreview #happyclients #trustyourstylist #salonresults Personal/Brand: #stylistlife #myjourney #hairbusiness #salonowner #smallbusiness</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only The 90-Day Calendar One post per day. Adapt every caption to your voice, your services, and your clients.</p>
+<h3>Week 1 — Introduce &amp; Attract</h3>
+<p>1</p>
+<h3>IG</h3>
+<p>Before &amp; After Reveal The glow-up is REAL. Swipe to see what a fresh [service] can do. Ready for yours? Book the link in bio. Stylist tip: Post a dramatic before/after. Use natural light. Side-by-side in one frame. 2</p>
+<h3>FB</h3>
+<p>5 Signs You Need a Trim If your ends are splitting, your style isn&#x27;t holding, or your hair feels like straw — it&#x27;s time. Here are 5 signs you&#x27;re overdue for a trim (and why waiting makes it worse). Stylist tip: Educational post. Add a poll: &#x27;When did you last get a trim?&#x27; 3</p>
+<h3>TT</h3>
+<p>This or That — Hair Edition Beach waves OR sleek blowout? Comment below! (We can do both btw) Stylist tip: Film a quick reel showing both styles. Fast cut. Add trending audio. 4</p>
+<h3>IG</h3>
+<p>Your Morning Setup This is what 6am looks like behind the chair. The prep, the tools, the vibe. What questions do you have about what I use? Stylist tip: Story-style reel. Authentic. No need to be perfect — relatable wins here. 5</p>
+<h3>ALL</h3>
+<p>Book This Week A few spots just opened up this week. If you&#x27;ve been thinking about [service] — this is your sign. DM me or tap the link to grab yours before they&#x27;re gone. Stylist tip: Simple graphic + urgency. Don&#x27;t over-discount. Use scarcity authentically. 6</p>
+<h3>IG</h3>
+<h3>Client Love</h3>
+<p>&quot;I&#x27;ve never felt more confident walking out of a salon.&quot; — [Client first name] This is why I do what I do. Tag a friend who deserves a glow-up. Stylist tip: Screenshot or quote card. Always get permission first. 7</p></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><h3>FB</h3>
+<h3>Why I Became a Stylist</h3>
+<p>I didn&#x27;t just want a job. I wanted to change how people feel when they look in the mirror. Here&#x27;s the real story of why I picked up my first pair of shears… Stylist tip: Longer-form post. Storytelling builds loyalty. Don&#x27;t be afraid to go deep.</p>
+<h3>Week 2 — Build Trust</h3>
+<p>8</p>
+<h3>IG</h3>
+<p>Color Myth Busted MYTH: Going blonde ruins your hair forever. TRUTH: With the right technique and aftercare, you can go light AND keep your hair healthy. Here&#x27;s what actually matters. Stylist tip: Carousel works great here. One myth per slide, busted with the truth.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only 9</p>
+<h3>TT</h3>
+<p>Color Melt Process Watch a muddy base turn into a butterscotch dream. The whole process from start to finish. #colormelt #haircolor #salonlife Stylist tip: Time-lapse or sped-up video of a color service. Add trending audio. 10</p>
+<h3>IG</h3>
+<p>Poll: What&#x27;s Your Biggest Hair Struggle? Real talk — what&#x27;s your hair&#x27;s biggest nemesis? Vote below and I&#x27;ll create a reel answering the top answer this week! Stylist tip: Use IG Stories poll sticker. Follow up with content based on the winner. 11</p>
+<h3>FB</h3>
+<h3>How to Make Your Color Last Longer</h3>
+<p>You just left the salon feeling amazing. Let&#x27;s keep it that way. 5 things to do (and 3 to NEVER do) to protect your color investment. Stylist tip: List-style post. Highly shareable. Pin it to your page. 12</p>
+<h3>ALL</h3>
+<p>Tool Tour Not all tools are created equal. Here&#x27;s what&#x27;s actually in my kit and why I spent the money on these specific ones. The difference is in the details. Stylist tip: Flat lay photo or quick reel. Authentic recommendation &gt; hard sell. 13</p>
+<h3>IG</h3></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><h3>Referral Reward</h3>
+<p>Send a friend my way and you BOTH get $[X] off your next service. No catch. Just good hair and good vibes. DM me &#x27;FRIEND&#x27; to get your referral code. Stylist tip: Clean graphic. Simple offer. Make it easy to act on immediately. 14</p>
+<h3>TT</h3>
+<h3>Day in the Life</h3>
+<p>5am wake-up → 6 clients → continuing education → dinner. This is what a Tuesday looks like as a stylist. Worth it every single time. #salonlife Stylist tip: Authentic DITL content performs well. No fancy editing needed.</p>
+<h3>Week 3 — Educate &amp; Entertain</h3>
+<p>15</p>
+<h3>IG</h3>
+<p>Scalp Health 101 Your scalp is skin. And most people are treating it wrong. Here&#x27;s what a healthy scalp actually needs — and what&#x27;s probably causing your buildup, flakes, or thinning. Stylist tip: Carousel. Highly saveable. Strong hook on slide 1. 16</p>
+<h3>FB</h3>
+<p>Trivia Tuesday Hair trivia time! How many individual hairs does the average person have on their head? A) 50,000 B) 100,000 C) 200,000. Answer in the comments! Stylist tip: Fun engagement driver. Answer in comments a few hours later. 17</p>
+<h3>TT</h3>
+<p>The Chop — Emotional Reveal She came in wanting 2 inches. She left with a whole new identity. With full permission to share — watch her reaction. #haircut #salonreaction #transformation Stylist tip: Client reaction reels get massive reach. Always get signed consent. 18</p>
+<h3>IG</h3>
+<p>How I Prep for a Big Color Day 5 hours. 3 foiling techniques. 1 very happy client. Here&#x27;s exactly how I set up and plan for a complex color appointment so nothing goes wrong. Stylist tip: Process content builds serious credibility. Great for attracting high-ticket clients.</p>
+<h3>HAIRSTYLIST COMPLETE GROWTH BUNDLE</h3>
+<p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only 19</p>
+<h3>ALL</h3></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">06</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Seasonal Special Summer hair is having a MOMENT and your appointment is the only thing standing between you and your best hair yet. Limited slots — tap the link. Stylist tip: Tie promotions to seasons. Feels timely, not pushy. 20</p>
+<h3>IG</h3>
+<p>Results Speak &quot;I cried when I saw it.&quot; No really — she did. This was [client]&#x27;s first time going platinum and we took our time to do it RIGHT. The patience paid off. Stylist tip: Emotional testimonials outperform discount posts every time. 21</p>
+<h3>FB</h3>
+<p>My Biggest Lesson This Year The most important thing I&#x27;ve learned in [X] years behind the chair isn&#x27;t a technique. It&#x27;s this: [lesson]. What&#x27;s the best advice you&#x27;ve ever received? Stylist tip: Invite conversation. Respond to every comment. This builds community.</p>
+<h3>Week 4 — Convert &amp; Close</h3>
+<p>22</p>
+<h3>TT</h3>
+<p>What NOT to Say to Your Stylist Please. I am begging you. Stop saying these 4 things. We want to help you — but these requests make it impossible. #hairstylist #salonhumor #hairadvice Stylist tip: Relatable humor drives massive shares. Keep it lighthearted, not mean. 23</p>
+<h3>IG</h3>
+<p>Rate My Work Be honest — rate this look! Drop a heart if you love it or tell me what you&#x27;d change. I can take it. (I think.) Stylist tip: Vulnerability + humor = engagement. Works especially well on Reels. 24</p>
+<h3>FB</h3>
+<p>The Truth About Box Dye I&#x27;m not here to shame you. But I am here to explain exactly what box dye does to the hair shaft — and why it makes salon corrections harder AND more expensive. Knowledge is power. Stylist tip: This type of educational post gets saved AND shared constantly.</p>
+<p>25</p>
+<h3>IG</h3>
+<p>Texture Transformation From flat and lifeless to full and bouncy. This is what the right cut + product combo can do for fine hair. No filter. No fluff. Just technique. Stylist tip: Fine hair transformations get enormous reach because it&#x27;s a huge pain point. 26</p>
+<h3>ALL</h3></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">07</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Hair Stylists Growth Bundle</div></div><div class="document-pill">90-Day Calendar</div></div>
+  <div class="content"><p>Last Spots This Month I have [X] openings left before the end of the month. Once they&#x27;re gone, next availability is [date]. If your hair is on your mind — now&#x27;s the time. Stylist tip: Authentic scarcity. Only use if true. Credibility is everything. 27</p>
+<h3>TT</h3>
+<p>How I Self-Educate No one taught me this in school. I spent [X] on education this year because staying sharp is non-negotiable. Here&#x27;s what I invest in and why it matters for YOUR hair. Stylist tip: Education content positions you as a premium provider. Great for price</p>
+<p>justification. 28</p>
+<h3>IG</h3>
+<p>Long-Term Client Love Some clients have been with me for [X] years. This is [name]&#x27;s [X]-year anniversary with the chair. Relationships like this are what I built this business for. Stylist tip: Long-term client stories are incredibly powerful social proof.</p></div>
+  <div class="footer"><span>Day Salon Content Calendar · Month 1</span><span class="page-number">08</span></div>
+</section></main></body></html>

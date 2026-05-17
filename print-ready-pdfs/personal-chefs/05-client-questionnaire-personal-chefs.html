@@ -1,0 +1,112 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Questionnaire</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4efe6; --paper:#fffaf1; --ink:#171410; --muted:#6b6256;
+  --accent:#9a7654; --accent2:#c6a987; --dark:#211a14;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Complete Growth Bundle</span></div></div><div class="pill">Guest experience system</div></div><p class="kicker">Premium business system</p><h1>Client Questionnaire</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Personal Chefs Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Personal Chefs Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Client Questionnaire</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PERSONAL CHEF</h3>
+<h3>Client Questionnaire, Menu Planning &amp; Business</h3>
+<p>Development Kit</p>
+<div class="section-label">New client intake questionnaire, dietary needs assessment, menu planning template, proposal</div>
+<p>structure guide, and realtor co-marketing proposal</p>
+<h3>SECTION 1: NEW CLIENT QUESTIONNAIRE</h3>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you find [Business Name]?</p>
+<h3>✓ SERVICE REQUESTED:</h3>
+<p class="template-line">✓ Private dining event / Weekly meal prep / Vacation chef / Corporate catering /</p>
+<p>Cooking class / Other:</p>
+<p class="template-line">✓ EVENT DETAILS (if applicable):</p>
+<p class="template-line">✓ Event date:</p>
+<p class="template-line">✓ Event type (birthday / anniversary / dinner party / corporate / other):</p>
+<p class="template-line">✓ Number of guests:</p>
+<p class="template-line">✓ Venue / location (home address or venue name):</p>
+<p class="template-line">✓ Indoor / outdoor dining:</p>
+<p class="template-line">✓ DIETARY REQUIREMENTS (for all guests):</p>
+<p class="template-line">✓ List all dietary restrictions, allergies, and intolerances — please be specific:</p>
+<p class="template-line">✓ [Space for detailed dietary notes]</p>
+<p class="template-line">✓ Any guests with severe or anaphylactic allergies? If yes, please specify:</p>
+<p class="template-line">✓ Any guests with particularly strong likes or dislikes worth knowing?</p>
+<h3>✓ CULINARY PREFERENCES:</h3>
+<p class="template-line">✓ Cuisine preferences (e.g., Mediterranean / Asian / French / plant-based / no</p>
+<p>preference):</p>
+<p class="template-line">✓ Cuisine types or ingredients you dislike or want to avoid:</p></div><div class="footer"><span>Client Questionnaire</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Client Questionnaire</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ How adventurous are your guests? (conservative and familiar / open to new flavours</p>
+<p>/ very adventurous):</p>
+<p class="template-line">✓ For events: formal sit-down dinner / relaxed family-style / cocktail and canapés:</p>
+<h3>✓ PRACTICAL DETAILS:</h3>
+<p class="template-line">✓ What equipment is available in the kitchen? (professional range / basic domestic /</p>
+<p>outdoor grill):</p>
+<p class="template-line">✓ Do you have sufficient serving ware, plates, and glassware or do you need me to</p>
+<p>arrange rentals?</p>
+<p class="template-line">✓ Parking or access details for delivery and setup:</p>
+<p class="template-line">✓ Budget range for this service (including groceries): $</p>
+<p class="template-line">✓ Any additional context that would help me plan the perfect menu:</p>
+<p class="template-line">✓ [Send this questionnaire before every first consultation. The detail it captures</p>
+<p>makes the entire process smoother — and clients who complete it in detail tend to be the most engaged and satisfied.]</p>
+<h3>SECTION 2: MENU PLANNING TEMPLATE</h3>
+<p>Event Menu Planning Worksheet</p>
+<h3>COURSE DISH / DIRECTION NOTES / ACCOMMODATIONS</h3>
+<p>Amuse- bouche Canapés (if cocktail) Starter / First course Soup (if included) Fish course (if included) Palate cleanser (if included) Main course Side dishes Cheese course (if included) Dessert Petits fours (if included)</p>
+<h3>SECTION 3: PROPOSAL STRUCTURE GUIDE</h3>
+<h3>How to Write a Proposal That Closes</h3>
+<p class="template-line">✓ SECTION 1 — OPEN WITH THE VISION (not the price):</p>
+<p class="template-line">✓ Write 2-3 evocative sentences that paint the picture of the dining experience. Use</p>
+<p>sensory language. Make the client see, smell, and taste it before they read a single detail.</p>
+<p class="template-line">✓ Example: &#x27;Imagine your guests arriving to the scent of slow-roasted lamb and wild</p></div><div class="footer"><span>Client Questionnaire</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Client Questionnaire</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>herbs, a table set with candlelight and fresh flowers, and an evening that unfolds as naturally as conversation between old friends.&#x27;</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 2 — THE MENU:</h3>
+<p class="template-line">✓ List each course with a brief, evocative description. Use proper culinary language</p>
+<p>but make it accessible. Mention key ingredients and the flavour profile, not just the technique.</p>
+<p class="template-line">✓ Note dietary accommodations clearly — show that you&#x27;ve genuinely listened.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 3 — THE SERVICE:</h3>
+<p class="template-line">✓ Describe exactly what is included: grocery sourcing, preparation timeline, service</p>
+<p>style (plated / family-style / buffet), course timing, cleanup. Remove all ambiguity.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 4 — THE INVESTMENT:</h3>
+<p class="template-line">✓ Present the investment confidently and clearly. Break it into components if helpful —</p>
+<p>chef fee, grocery budget, travel. Never apologise for the price. State what it includes.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 5 — THE NEXT STEP:</h3>
+<p class="template-line">✓ A proposal without a clear next step rarely closes. State exactly what happens next:</p>
+<p>&#x27;To confirm your booking, I require a [X]% deposit of $[amount] via [method]. I&#x27;ll hold [date] for [X days] while you review.&#x27;</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ [The chef who writes a proposal that makes the client feel the experience before</p>
+<p>they see the price is the chef who closes. Vision first, investment second — always.]</p>
+<h3>SECTION 4: REALTOR CO-MARKETING</h3>
+<h3>PROPOSAL</h3>
+<p>Luxury Realtor Partnership Proposal Email</p>
+<div class="section-label">SUBJECT A private dining partnership idea — [Your Name] + [Realtor Name]</div></div><div class="footer"><span>Client Questionnaire</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Chefs<span>Client Questionnaire</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">Dear [Name], I&#x27;ve been thinking about how our client bases overlap and wanted to put a specific idea on the table. The clients purchasing luxury homes through you are, almost by definition, exactly the clients who value premium private chef experiences. And a</p>
+<p>private chef dinner is one of the most genuinely memorable gifts a realtor can</p>
+<h3>offer a new homeowner.</h3>
+<p>What I&#x27;m proposing: Option A — New homeowner gift: I offer a private dinner for 4-6 as a housewarming gift through you. You cover the cost (from $[amount]) and gift it to your buyer. It creates an exceptional and memorable client experience —</p>
+<p>and ensures your name stays top of mind in their new home. Option B — Client appreciation event: I host a private dinner for 8-12 of your best clients. You provide the venue; I handle everything else. An evening that makes your clients feel genuinely valued.</p>
+<p>Option C — Mutual referral: When my clients are buying or selling, I mention your name. When your clients are looking for luxury lifestyle services, you mention mine. Would any of these interest you? Happy to explore whichever feels most aligned.</p>
+<p>Warm regards, [Your Name] | [Business Name] | [Phone]</p></div><div class="footer"><span>Client Questionnaire</span><span class="page-number">06</span></div></section></main></body></html>

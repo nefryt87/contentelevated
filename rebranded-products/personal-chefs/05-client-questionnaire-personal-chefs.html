@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Questionnaire</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #18130f; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8ef,#f2e8dc 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#9b7657 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#d6b888 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#9b7657,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #6c6256; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#9b7657 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #9b7657; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #9b7657; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #9b7657; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #9b7657; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #6c6256; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#9b7657 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#211810,color-mix(in srgb,#211810 76%,#9b7657)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #d6b888; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#9b7657 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #9b7657; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#9b7657 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#9b7657 18%,transparent); color: #9b7657; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #9b7657; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#9b7657 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #6c6256; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #9b7657; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Client experience system</div></div>
+  <p class="kicker">Growth System</p>
+  <h1>Client Questionnaire</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for warm service polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Personal Chefs</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Client Questionnaire</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><h3>PERSONAL CHEF</h3>
+<h3>Client Questionnaire, Menu Planning &amp; Business</h3>
+<p>Development Kit</p>
+<div class="section-label">New client intake questionnaire, dietary needs assessment, menu planning template, proposal</div>
+<p>structure guide, and realtor co-marketing proposal</p>
+<h3>SECTION 1: NEW CLIENT QUESTIONNAIRE</h3>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you find [Business Name]?</p>
+<h3>✓ SERVICE REQUESTED:</h3>
+<p class="template-line">✓ Private dining event / Weekly meal prep / Vacation chef / Corporate catering /</p>
+<p>Cooking class / Other:</p>
+<p class="template-line">✓ EVENT DETAILS (if applicable):</p>
+<p class="template-line">✓ Event date:</p>
+<p class="template-line">✓ Event type (birthday / anniversary / dinner party / corporate / other):</p>
+<p class="template-line">✓ Number of guests:</p>
+<p class="template-line">✓ Venue / location (home address or venue name):</p>
+<p class="template-line">✓ Indoor / outdoor dining:</p>
+<p class="template-line">✓ DIETARY REQUIREMENTS (for all guests):</p>
+<p class="template-line">✓ List all dietary restrictions, allergies, and intolerances — please be specific:</p>
+<p class="template-line">✓ [Space for detailed dietary notes]</p>
+<p class="template-line">✓ Any guests with severe or anaphylactic allergies? If yes, please specify:</p>
+<p class="template-line">✓ Any guests with particularly strong likes or dislikes worth knowing?</p>
+<h3>✓ CULINARY PREFERENCES:</h3>
+<p class="template-line">✓ Cuisine preferences (e.g., Mediterranean / Asian / French / plant-based / no</p>
+<p>preference):</p>
+<p class="template-line">✓ Cuisine types or ingredients you dislike or want to avoid:</p>
+<p class="template-line">✓ How adventurous are your guests? (conservative and familiar / open to new flavours</p>
+<p>/ very adventurous):</p>
+<p class="template-line">✓ For events: formal sit-down dinner / relaxed family-style / cocktail and canapés:</p>
+<h3>✓ PRACTICAL DETAILS:</h3>
+<p class="template-line">✓ What equipment is available in the kitchen? (professional range / basic domestic /</p></div>
+  <div class="footer"><span>Client Questionnaire</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>outdoor grill):</p>
+<p class="template-line">✓ Do you have sufficient serving ware, plates, and glassware or do you need me to</p>
+<p>arrange rentals?</p>
+<p class="template-line">✓ Parking or access details for delivery and setup:</p>
+<p class="template-line">✓ Budget range for this service (including groceries): $</p>
+<p class="template-line">✓ Any additional context that would help me plan the perfect menu:</p>
+<p class="template-line">✓ [Send this questionnaire before every first consultation. The detail it captures</p>
+<p>makes the entire process smoother — and clients who complete it in detail tend to be the most engaged and satisfied.]</p>
+<h3>SECTION 2: MENU PLANNING TEMPLATE</h3>
+<p>Event Menu Planning Worksheet</p>
+<h3>COURSE DISH / DIRECTION NOTES / ACCOMMODATIONS</h3>
+<p>Amuse- bouche Canapés (if cocktail) Starter / First course Soup (if included) Fish course (if included) Palate cleanser (if included) Main course Side dishes Cheese course (if included) Dessert Petits fours (if included)</p>
+<h3>SECTION 3: PROPOSAL STRUCTURE GUIDE</h3>
+<h3>How to Write a Proposal That Closes</h3>
+<p class="template-line">✓ SECTION 1 — OPEN WITH THE VISION (not the price):</p>
+<p class="template-line">✓ Write 2-3 evocative sentences that paint the picture of the dining experience. Use</p>
+<p>sensory language. Make the client see, smell, and taste it before they read a single detail.</p>
+<p class="template-line">✓ Example: &#x27;Imagine your guests arriving to the scent of slow-roasted lamb and wild</p>
+<p>herbs, a table set with candlelight and fresh flowers, and an evening that unfolds as naturally as conversation between old friends.&#x27;</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 2 — THE MENU:</h3>
+<p class="template-line">✓ List each course with a brief, evocative description. Use proper culinary language</p>
+<p>but make it accessible. Mention key ingredients and the flavour profile, not just the technique.</p>
+<p class="template-line">✓ Note dietary accommodations clearly — show that you&#x27;ve genuinely listened.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 3 — THE SERVICE:</h3></div>
+  <div class="footer"><span>Client Questionnaire</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p class="template-line">✓ Describe exactly what is included: grocery sourcing, preparation timeline, service</p>
+<p>style (plated / family-style / buffet), course timing, cleanup. Remove all ambiguity.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 4 — THE INVESTMENT:</h3>
+<p class="template-line">✓ Present the investment confidently and clearly. Break it into components if helpful —</p>
+<p>chef fee, grocery budget, travel. Never apologise for the price. State what it includes.</p>
+<p class="template-line">✓</p>
+<h3>✓ SECTION 5 — THE NEXT STEP:</h3>
+<p class="template-line">✓ A proposal without a clear next step rarely closes. State exactly what happens next:</p>
+<p>&#x27;To confirm your booking, I require a [X]% deposit of $[amount] via [method]. I&#x27;ll hold [date] for [X days] while you review.&#x27;</p>
+<p class="template-line">✓</p>
+<p class="template-line">✓ [The chef who writes a proposal that makes the client feel the experience before</p>
+<p>they see the price is the chef who closes. Vision first, investment second — always.]</p>
+<h3>SECTION 4: REALTOR CO-MARKETING</h3>
+<h3>PROPOSAL</h3>
+<p>Luxury Realtor Partnership Proposal Email</p>
+<div class="section-label">SUBJECT A private dining partnership idea — [Your Name] + [Realtor Name]</div>
+<p class="template-line">Dear [Name], I&#x27;ve been thinking about how our client bases overlap and wanted to put a specific idea on the table. The clients purchasing luxury homes through you are, almost by definition, exactly the clients who value premium private chef experiences. And a</p>
+<p>private chef dinner is one of the most genuinely memorable gifts a realtor can</p>
+<h3>offer a new homeowner.</h3>
+<p>What I&#x27;m proposing: Option A — New homeowner gift: I offer a private dinner for 4-6 as a housewarming gift through you. You cover the cost (from $[amount]) and gift it to your buyer. It creates an exceptional and memorable client experience —</p>
+<p>and ensures your name stays top of mind in their new home. Option B — Client appreciation event: I host a private dinner for 8-12 of your best clients. You provide the venue; I handle everything else. An evening that makes your clients feel genuinely valued.</p></div>
+  <div class="footer"><span>Client Questionnaire</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Personal Chefs Growth Bundle</div></div><div class="document-pill">Growth System</div></div>
+  <div class="content"><p>Option C — Mutual referral: When my clients are buying or selling, I mention your name. When your clients are looking for luxury lifestyle services, you mention mine. Would any of these interest you? Happy to explore whichever feels most aligned.</p>
+<p>Warm regards, [Your Name] | [Business Name] | [Phone]</p></div>
+  <div class="footer"><span>Client Questionnaire</span><span class="page-number">06</span></div>
+</section></main></body></html>

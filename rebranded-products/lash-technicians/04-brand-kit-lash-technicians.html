@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Brand Kit</p>
+  <h1>Brand Kit</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Lash Technicians</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>LASH TECHNICIAN</h3>
+<h3>Brand Kit + Canva Template Guide</h3>
+<p>Two signature palettes, elegant typography, 8 Canva template strategies, and a 7-day brand launch checklist</p>
+<h3>WHY YOUR BRAND BOOKS CLIENTS BEFORE</h3>
+<h3>THEY SEE YOUR PORTFOLIO</h3>
+<p>Lash clients choose their technician based on Instagram aesthetics before they examine a single before/after. Your brand signals your taste, your standard, and whether you are the right fit — in the first 5 seconds of visiting your profile. A cohesive,</p>
+<p>professional visual identity justifies premium pricing and attracts clients who understand the value of quality work. This kit gives you two palettes, typography pairings, and</p>
+<div class="section-label">Canva strategies built specifically for lash technicians and combined lash/brow</div>
+<p>specialists.</p>
+<h3>PALETTE 1: NATURAL LUXURY</h3>
+<p>For lash techs with a natural, organic, premium aesthetic. Think sage, champagne, linen, and the quiet confidence of expert technique.</p>
+<h3>DEEP FOREST</h3>
+<h3>#1A2E1A</h3>
+<h3>CHAMPAGNE</h3>
+<h3>GOLD</h3>
+<h3>#C9A86C</h3>
+<h3>SAGE MIST</h3>
+<h3>#A8B8A0</h3>
+<h3>WARM LINEN</h3>
+<h3>#F5F0E8</h3>
+<h3>Palette 1 Usage</h3>
+<p class="template-line">• Deep Forest (#1A2E1A): logo, headlines, strong text elements — natural and</p>
+<p>premium</p>
+<p class="template-line">• Champagne Gold (#C9A86C): CTAs, accent details, price presentation, highlight</p>
+<p>elements</p>
+<p class="template-line">• Sage Mist (#A8B8A0): secondary accents, background textures, brow/wellness-</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>adjacent content</p>
+<p class="template-line">• Warm Linen (#F5F0E8): all backgrounds — organic and premium, perfect for</p>
+<p>natural lash aesthetics</p>
+<h3>Typography</h3>
+<p>HEADINGS: Cormorant Garamond — editorial luxury serif. Widely used across premium beauty and wellness brands. BODY: Jost — clean geometric sans. Beautiful on mobile, which is where your clients discover you.</p>
+<p>ACCENT: Playfair Display Italic — for testimonials, lash style names, and soft luxury moments.</p>
+<h3>PALETTE 2: MODERN MINIMAL</h3>
+<p>For lash techs with a clean, minimal, editorial aesthetic — the feed that feels like a premium beauty magazine.</p>
+<h3>SOFT BLACK</h3>
+<h3>#2A2A2A</h3>
+<h3>DUSTY ROSE</h3>
+<h3>#C4978A</h3>
+<h3>OFF WHITE</h3>
+<h3>#FAF8F5</h3>
+<h3>TAUPE</h3>
+<h3>#C8B89A</h3>
+<h3>Palette 2 Usage</h3>
+<p class="template-line">• Soft Black (#2A2A2A): all primary text, logo — clean and high contrast</p>
+<p class="template-line">• Dusty Rose (#C4978A): primary accent — warm, feminine, distinctly beauty-</p>
+<p>industry</p>
+<p class="template-line">• Off White (#FAF8F5): primary backgrounds — soft, premium, editorial</p>
+<p class="template-line">• Taupe (#C8B89A): secondary accent for muted content, natural lash education,</p>
+<p>neutral design posts</p>
+<h3>Typography</h3>
+<p>HEADINGS: Libre Baskerville — authoritative serif with elegance. Clean, readable, premium. BODY: Nunito — friendly rounded sans. Warm and approachable across all platforms. ACCENT: Josefin Sans Light ALL CAPS (wide tracking) — for service labels, pricing, and graphic overlays.</p>
+<h3>8 CANVA TEMPLATE STRATEGIES</h3>
+<h3>Template 1: Before &amp; After Lash Post</h3></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><p>Search &#x27;before after beauty Instagram&#x27; or &#x27;eye transformation post&#x27;. Two-panel: bare eye on left, lashed eye on right. Minimal text: your studio name and the lash style used. This is your most important content type — it proves results instantly. Create one for every</p>
+<p>style you offer (classic, hybrid, volume, lift) and rotate them throughout your content calendar.</p>
+<h3>Template 2: Lash Style Comparison Carousel</h3>
+<p>Search &#x27;comparison carousel Instagram&#x27; or &#x27;beauty guide slides&#x27;. 4-5 slides comparing classic vs. hybrid vs. volume lashes. Each slide: style name, brief description, who it suits, a relevant photo. Final slide: your booking CTA. These save at extremely high</p>
+<p>rates — potential clients use them to decide which style to book.</p>
+<h3>Template 3: Lash Education Graphic</h3>
+<p>Search &#x27;eye tutorial graphic&#x27; or &#x27;beauty education Instagram post&#x27;. A single educational fact or tip about lash care. &#x27;Oily skin and lash retention: here is what I do differently.&#x27; Clean, informative, easy to read at a glance. Share regularly — these build authority</p>
+<p>and trust over time.</p>
+<h3>Template 4: Instagram Story — Availability Open</h3>
+<p>Search &#x27;booking available story&#x27; or &#x27;beauty appointment story&#x27;. Vertical. A soft lash close-up photo as background. Dark or light overlay panel. &#x27;LASH FILLS AVAILABLE [MONTH]&#x27;. Your DM or booking link. Post every time you open new fill slots — at least weekly.</p>
+<h3>Template 5: Testimonial Graphic</h3>
+<p>Search &#x27;client review beauty&#x27; or &#x27;testimonial quote lash&#x27;. Feature the most specific and emotional line from a review — something about their morning routine changing, their confidence, or their reaction to seeing the results. First name below. Your studio name.</p>
+<p>Schedule one per week.</p>
+<h3>Template 6: TikTok / Reel Cover Frame</h3>
+<p>Search &#x27;beauty TikTok thumbnail&#x27; or &#x27;Reel first frame template&#x27;. For the first frame of every video: your hook text in large font (&#x27;I tried mega volume for the first time&#x27;, &#x27;The worst lash aftercare mistake&#x27;), your studio name small at bottom, your brand colour as</p>
+<p>background. This determines click-through — make it irresistible.</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Lash Technicians Growth Bundle</div></div><div class="document-pill">Brand Kit</div></div>
+  <div class="content"><h3>Template 7: Lash Aftercare Card</h3>
+<p>Search &#x27;beauty aftercare card&#x27; or &#x27;client card template&#x27;. Design a digital (and optionally printable) aftercare reference card: the do&#x27;s and don&#x27;ts for the first 24-48 hours, ongoing care, what&#x27;s normal to expect. Share via email and stories after every appointment.</p>
+<p>Clients who follow aftercare have better retention and better outcomes.</p>
+<h3>Template 8: Instagram Highlight Covers</h3>
+<p>Search &#x27;highlight cover beauty&#x27; or &#x27;lash studio icons&#x27;. Create 8 round covers: Portfolio, Before/After, Reviews, Services, Aftercare, Booking, About Me, Brows (if you offer brow services). Consistent palette. First thing profile visitors see.</p>
+<h3>7-DAY BRAND LAUNCH CHECKLIST</h3>
+<p class="template-line">✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved).</p>
+<p class="template-line">✓ Day 2: Update Instagram bio, profile photo, and create 8 highlight covers using</p>
+<h3>Template 8.</h3>
+<p class="template-line">✓ Day 3: Create 3 before/after post graphics using Template 1 — one for each of your</p>
+<p>main services.</p>
+<p class="template-line">✓ Day 4: Create a lash style comparison carousel using Template 2 — schedule it for</p>
+<p>next week.</p>
+<p class="template-line">✓ Day 5: Create 5 testimonial graphics using Template 5 — schedule one per week</p>
+<p>for 5 weeks.</p>
+<p class="template-line">✓ Day 6: Create your aftercare card using Template 7 — send to your next 5 clients</p>
+<p>after their appointment.</p>
+<p class="template-line">✓ Day 7: Create a TikTok cover frame using Template 6 — apply to your next 5</p>
+<p>videos.</p>
+<p class="template-line">✓ [Your Instagram grid is your most powerful marketing tool — and it costs nothing</p>
+<p>but consistency. A professional, beautiful, cohesive grid attracts premium clients before they ever read a caption.]</p></div>
+  <div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div>
+</section></main></body></html>

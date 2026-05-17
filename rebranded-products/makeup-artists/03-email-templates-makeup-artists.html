@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #d6d6d3; color: #171214; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.book { width: 8.5in; margin: 0 auto; }
+.page { position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: linear-gradient(145deg,#fff8f5,#f7ece8 72%,#ebe5dc); }
+.page::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(circle at 86% 12%, color-mix(in srgb,#c78f8d 18%,transparent), transparent 2.35in),
+  radial-gradient(circle at 10% 92%, color-mix(in srgb,#f0c6b6 14%,transparent), transparent 2.85in),
+  linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: auto, auto, .42in .42in, .42in .42in;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }
+.page::after { content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,#c78f8d,transparent); opacity: .38; }
+.brand { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.brand-name { font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+.brand-sub { margin-top: 8px; color: #736366; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.document-pill { border: 1px solid color-mix(in srgb,#c78f8d 28%,transparent); border-radius: 999px; padding: 10px 13px; color: #c78f8d; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,.38); }
+.kicker { position: relative; z-index: 3; margin: .72in 0 18px; color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+.kicker::before { content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: #c78f8d; }
+h1 { position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }
+h1 em { color: #c78f8d; font-style: italic; }
+h2 { margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+h3 { margin: 20px 0 9px; color: #c78f8d; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+p { margin: 0 0 9px; color: #736366; font-size: 10.4px; line-height: 1.45; }
+.lead { position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }
+.cover-system { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+.cover-panel { border: 1px solid color-mix(in srgb,#c78f8d 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,.55); box-shadow: 0 24px 70px rgba(0,0,0,.07); }
+.cover-panel.dark { background: linear-gradient(135deg,#201619,color-mix(in srgb,#201619 76%,#c78f8d)); color: #f8f3ed; }
+.cover-panel.dark p { color: rgba(248,243,237,.76); }
+.smallcaps { color: #f0c6b6; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+.metric { min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }
+.metric b { display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }
+.metric span { display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }
+.intro-card { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(0,0,0,.06); }
+.steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }
+.step { border: 1px solid color-mix(in srgb,#c78f8d 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,.44); }
+.step b { display: block; margin-bottom: 9px; font-family: Georgia, serif; color: #c78f8d; font-size: 23px; font-weight: 400; }
+.content { position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,.62); box-shadow: 0 22px 62px rgba(0,0,0,.065); }
+.section-label { margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,#c78f8d 18%,transparent); color: #c78f8d; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.template-line { border-left: 2px solid #c78f8d; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,#c78f8d 10%,transparent),transparent 76%); }
+.footer { position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: #736366; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.page-number { color: #c78f8d; font-family: Georgia, serif; }
+@media print { body { background: white; } .book { margin: 0; } }
+</style></head><body><main class="book"><section class="page cover">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Appointment growth system</div></div>
+  <p class="kicker">Templates</p>
+  <h1>Email Templates</h1>
+  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
+  <div class="cover-system">
+    <div class="cover-panel dark"><p class="smallcaps">Designed for soft studio polish</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
+    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  </div>
+  <div class="footer"><span>Makeup Artists</span><span class="page-number">01</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
+  <p class="kicker">Implementation Notes</p>
+  <h2>Turn this file into action.</h2>
+  <div class="intro-card">
+    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
+    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+  </div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">02</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>MAKEUP ARTIST</h3>
+<h3>EMAIL &amp; CLIENT COMMUNICATION</h3>
+<h3>TEMPLATE PACK</h3>
+<p>22 done-for-you templates for every stage of the client journey Inquiries • Bridal booking • Retention • Reviews • Vendor partnerships</p>
+<h3>HOW TO USE THESE TEMPLATES</h3>
+<p class="template-line">• Replace all [brackets] with your client&#x27;s name, event, and your business</p>
+<p>details.</p>
+<p class="template-line">• Keep the tone warm, professional, and excited — clients want to feel</p>
+<p>special, not processed.</p>
+<p class="template-line">• Works as email, DM, and SMS — shorten to 2–3 sentences for text</p>
+<p>messages.</p>
+<p class="template-line">• Always personalize the first line using AI — 30 seconds, huge difference in</p>
+<p>response rate.</p>
+<h3>SECTION 1: INQUIRY &amp; BOOKING</h3>
+<p>Inquiry Response — Same Day</p>
+<h3>SUBJECT Re: Your makeup inquiry — [Your Name]</h3>
+<p>BODY Hi [First Name], Thank you so much for reaching out — I&#x27;m thrilled you&#x27;re considering me for [event type]! Here&#x27;s a quick overview:</p>
+<p class="template-line">- Services: [list key services]</p>
+<p class="template-line">- Investment: Starting from $[amount] for [service]</p>
+<p class="template-line">- Availability: I&#x27;m currently [available/checking] for [date/season]</p>
+<p>I&#x27;d love to learn more about your vision. Would you like to book a quick consultation call or shall I send over my full pricing guide? [Your Name] | [Business Name] | [Instagram Handle] Bridal Inquiry Follow-Up — Day 3</p>
+<div class="section-label">SUBJECT Your wedding makeup — a few things worth knowing</div>
+<p>BODY Hi [First Name], Just following up on my previous message — I wanted to share a couple of things that might be helpful as you&#x27;re choosing your makeup artist: [One genuine value point — e.g., &#x27;I specialize in long-wear bridal looks that</p>
+<p>photograph beautifully both in natural and flash photography.&#x27; / &#x27;All my bridal packages include a full trial so you know exactly what to expect on the day.&#x27;] I&#x27;d love to be part of your wedding day. Are you free for a quick call this week? [Your Name] | [Business Name]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">03</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>Booking Confirmation</h3>
+<div class="section-label">SUBJECT You&#x27;re booked — so excited for [event], [First Name]!</div>
+<p>BODY Hi [First Name], Wonderful news — your booking is confirmed! Here are your details: Date: [Date] Time: [Time] Location: [Location or &#x27;I&#x27;ll come to you&#x27;] Service: [Service booked] Deposit paid: $[Amount] ✓ Remaining balance: $[Amount] due [when]</p>
+<p>A few things to note before your appointment: [link to prep guide or include prep tips] If anything changes or you have questions before then, please don&#x27;t hesitate to reach out. I cannot wait to make you feel incredible! [Your Name] | [Business Name] | [Phone]</p>
+<p>Pre-Appointment Prep Email</p>
+<h3>SUBJECT How to prep for your appointment — [First Name]</h3>
+<p>BODY Hi [First Name], Your [bridal trial / appointment] is coming up on [Date] at [Time] — I&#x27;m so excited! To help us get the most out of our time together, here&#x27;s how to prepare:</p>
+<p class="template-line">- Moisturize well the night before and morning of (no heavy serums right</p>
+<p>before)</p>
+<p class="template-line">- Come with a clean, product-free face</p>
+<p class="template-line">- Wear a front-opening top or button-down</p>
+<p class="template-line">- Bring any inspo photos you love</p>
+<p class="template-line">- If you have any skin sensitivities or allergies, please let me know in advance</p>
+<p>See you soon — this is going to be beautiful. [Your Name] Post-Appointment Follow-Up</p>
+<h3>SUBJECT How did everything go, [First Name]?</h3>
+<p>BODY Hi [First Name], I&#x27;ve been thinking about you since [your appointment / your big day] — I hope everything went absolutely perfectly! I&#x27;d love to know how it all went and whether you were happy with your look.</p>
+<p>If you have a moment, a review on [Google / Instagram / The Knot] means the world to me — it helps other brides and clients find me. Here&#x27;s the link: [link] And if you have any friends or family getting married or celebrating a special</p>
+<p>occasion, I&#x27;d be honoured if you sent them my way. Thank you for trusting me with such an important moment. [Your Name]</p>
+<h3>SECTION 2: RETENTION &amp; RE-ENGAGEMENT</h3>
+<p>Past Client Win-Back — 6 Months</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">04</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><h3>SUBJECT It&#x27;s been a while — checking in, [First Name]</h3>
+<p>BODY Hi [First Name], It&#x27;s been a little while and I just wanted to pop in and say hi! With [season / upcoming event] coming up, I&#x27;d love to help you get glam again if you have anything special on the horizon.</p>
+<p>I&#x27;m currently booking for [dates/season] — reply here or grab a slot at [booking link]. [Your Name] | [Business Name] Anniversary Touch — 1 Year Post Wedding</p>
+<h3>SUBJECT Happy 1st anniversary, [First Name]!</h3>
+<p>BODY Hi [First Name], One year ago today — can you believe it?! I still think about [something specific from their wedding day — their look, a moment, their reaction]. Wishing you and [partner&#x27;s name] the most beautiful anniversary.</p>
+<p>If you ever need a glam refresh, anniversary portraits, or have a friend who&#x27;s getting married, I&#x27;d love to be your go-to. With love, [Your Name] Seasonal Booking Outreach</p>
+<div class="section-label">SUBJECT Glam season is coming — are you ready, [First Name]?</div>
+<p>BODY Hi [First Name], [Season] is just around the corner and I&#x27;m already booking up for [holiday parties / prom / NYE / weddings]. I wanted to reach out to my past clients first before opening up my calendar publicly — because you&#x27;re always my priority.</p>
+<p>Interested in booking? Reply here or grab a spot at [booking link]. I&#x27;d love to make you feel incredible again. [Your Name] | [Business Name]</p>
+<h3>SECTION 3: REVIEWS, REFERRALS &amp; VENDOR</h3>
+<h3>PARTNERSHIPS</h3>
+<p>Review Request — Post Appointment</p>
+<h3>SUBJECT A small favour — means everything to me</h3>
+<p>BODY Hi [First Name], I hope you&#x27;re still glowing from [your appointment / your wedding day]! If you loved your look and have 2 minutes, I&#x27;d be so grateful if you left me a review on [Google / The Knot / WeddingWire / Instagram]. It genuinely helps</p>
+<p>other clients find me and trust my work. Here&#x27;s the direct link: [link] Thank you so much — you&#x27;re the best! [Your Name] Bridal Referral Ask</p>
+<div class="section-label">SUBJECT Do you know anyone getting married, [First Name]?</div></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">05</span></div>
+</section>
+<section class="page">
+  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">Makeup Artists Growth Bundle</div></div><div class="document-pill">Templates</div></div>
+  <div class="content"><p>BODY Hi [First Name], I just wanted to say — working with you on your wedding day was such a privilege. Thank you for trusting me with something so special. If you know any friends or family who are newly engaged or planning a special</p>
+<p>event, I&#x27;d love to be introduced. I&#x27;ll take great care of anyone you send my way. You&#x27;re officially one of my favourite clients! [Your Name] | [Business Name] Vendor Partnership — Wedding Photographer</p>
+<div class="section-label">SUBJECT Fellow wedding vendor — introduction from [Your Name]</div>
+<p>BODY Hi [Name], I came across your work and I&#x27;m absolutely obsessed — your photography is stunning. I&#x27;m [Your Name], a makeup artist based in [City] specializing in [bridal / editorial / etc.]. I work with a lot of wedding clients and I&#x27;m always looking for</p>
+<p>incredible photographers to recommend. I&#x27;d love to explore a mutual referral relationship — both of us sharing each other&#x27;s work with our clients. I think our styles complement each other beautifully. Would you be open to a quick coffee or call?</p>
+<p>[Your Name] | [Business Name] | [Instagram]</p></div>
+  <div class="footer"><span>Email Templates</span><span class="page-number">06</span></div>
+</section></main></body></html>

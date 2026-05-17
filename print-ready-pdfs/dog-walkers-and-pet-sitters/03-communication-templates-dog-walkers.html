@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates Dog Walkers</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4efe6; --paper:#fffaf1; --ink:#171410; --muted:#6b6256;
+  --accent:#9a7654; --accent2:#c6a987; --dark:#211a14;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Complete Growth Bundle</span></div></div><div class="pill">Guest experience system</div></div><p class="kicker">Premium business system</p><h1>Communication Templates Dog Walkers</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Dog Walkers &amp; Pet Sitters Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Dog Walkers &amp; Pet Sitters Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>DOG WALKER</h3>
+<h3>Client Communication Template Pack</h3>
+<p>24 done-for-you templates: new client inquiries, walk updates, incident reports, reviews, referrals, and policies</p>
+<h3>SECTION 1: INQUIRY &amp; ONBOARDING</h3>
+<p>T1 — New Client Inquiry Response</p>
+<h3>SUBJECT Re: Dog walking inquiry — [Dog&#x27;s Name]</h3>
+<p>Hi [Name]! Thank you so much for reaching out — [Dog&#x27;s Name] sounds absolutely wonderful and exactly the kind of pup I love working with. A little about how I work: [2-3 sentences on your approach — routine, communication style, safety protocols].</p>
+<p>Before we confirm anything, I love doing a free meet-and-greet so [Dog&#x27;s Name] and I can get to know each other and you can see exactly how I operate. It takes about 30 minutes and there&#x27;s no obligation.</p>
+<p>A few quick questions: How old is [Dog&#x27;s Name]? Any specific quirks I should know about — other dogs, leash behaviour, anything? And what days/times are you typically looking for? Looking forward to hearing from you! [Your Name] | [Business Name] | [Phone]</p>
+<p>T2 — Meet-and-Greet Confirmation</p>
+<div class="section-label">SUBJECT Meet-and-greet confirmed — [Your Name] + [Dog&#x27;s Name]!</div>
+<p>Hi [Name]! Wonderful — your meet-and-greet is confirmed for [date] at [time] at [their address / my location]. What we&#x27;ll cover: my walking routine and safety approach, [Dog&#x27;s Name]&#x27;s specific needs, emergency protocols, and any questions you have for me.</p>
+<p>Could you have the following handy if possible:</p>
+<p class="template-line">- Your vet&#x27;s name and contact number</p>
+<p class="template-line">- [Dog&#x27;s Name]&#x27;s vaccination records (especially rabies and bordetella if</p>
+<p>applicable)</p>
+<p class="template-line">- Any medications or health conditions I should know about</p>
+<p>There&#x27;s no obligation at the meet-and-greet — it&#x27;s just about making sure we&#x27;re a great fit. I&#x27;m really looking forward to meeting [Dog&#x27;s Name]! [Your Name] | [Business Name] | [Phone] T3 — Post-Meet-and-Greet Follow-Up</p></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><div class="section-label">SUBJECT So lovely to meet [Dog&#x27;s Name]! — [Your Name]</div>
+<p>Hi [Name]! What a wonderful [breed/dog description] — [one specific, genuine observation about the dog from the visit]. I had such a lovely time getting to know them. As discussed, I&#x27;d love to [service description — e.g., start with daily 60-</p>
+<p>minute walks on weekday mornings]. Here&#x27;s how to confirm:</p>
+<p class="template-line">- [Next step — e.g., complete my client form / make a deposit / sign my</p>
+<p>service agreement]</p>
+<p class="template-line">- [Link or instructions]</p>
+<p>Once confirmed, I&#x27;ll send over my full new client information pack. Looking forward to having [Dog&#x27;s Name] on my roster! [Your Name] | [Business Name] T4 — Pricing Enquiry Response</p>
+<h3>SUBJECT Dog walking rates — [Business Name]</h3>
+<p>Hi [Name]! Happy to share my rates: 30-minute walk: $[amount] 60-minute walk: $[amount] Drop-in visit (30 min): $[amount] Puppy visits (20 min): $[amount] Overnight pet sitting: $[amount] per night Weekend / holiday rate: [details]</p>
+<p>I also offer a [5-walk / monthly] package at $[amount] — saving you $[X]. The best first step is a free meet-and-greet so I can meet your dog and we can discuss exactly what would work best. Would you like to set one up? [Your Name] | [Business Name]</p>
+<h3>SECTION 2: WALK UPDATES &amp; CLIENT</h3>
+<h3>COMMUNICATION</h3>
+<p>T5 — Walk Update Message (Mid-Walk)</p>
+<h3>SUBJECT Text / WhatsApp — send during walk</h3>
+<p>Hi [Name]! [Dog&#x27;s Name] is doing brilliantly today — [one specific genuine moment from the walk, e.g., &#x27;absolutely demolished a puddle at [park name] and is now the happiest, muddiest boy alive&#x27;]. [Photo attached] All good —</p>
+<p>home in about [X] minutes. [Your Name] T6 — Walk Completion Message</p>
+<h3>SUBJECT Text / WhatsApp — send after walk</h3></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name]! [Dog&#x27;s Name] is home safe and sound after a great [X]-minute walk. [Brief walk summary — route, energy level, any notable moments]. They&#x27;ve had fresh water and are having a well-deserved rest. [Your Name] 🐾 T7 — Pet Sitting Daily Update</p>
+<h3>SUBJECT Text / WhatsApp — send daily during sit</h3>
+<p>Hi [Name]! Day [X] update on [Pet&#x27;s Name] — [brief warm summary: meals eaten, activity, mood, any funny moments]. They are happy, comfortable, and clearly at home here. [Photo attached] All is well — speak tomorrow! [Your Name]</p>
+<p>T8 — Boarding / Overnight Check-In</p>
+<h3>SUBJECT Text / WhatsApp — send first night</h3>
+<p>Hi [Name]! Just to let you know [Dog&#x27;s Name] has settled in beautifully. [Brief personalised note — e.g., &#x27;They explored every corner of the house, had a big dinner, and are now snoozing on my sofa like they own the place&#x27;]. Enjoy</p>
+<p>your [trip/evening] — they are in great hands. [Your Name] 🐾</p>
+<h3>SECTION 3: INCIDENTS &amp; DIFFICULT</h3>
+<h3>SITUATIONS</h3>
+<p>T9 — Minor Incident Report</p>
+<div class="section-label">SUBJECT Quick update on today&#x27;s walk — [Dog&#x27;s Name]</div>
+<p>Hi [Name], I wanted to let you know about something that happened on today&#x27;s walk so you have the full picture. [Describe the incident calmly and specifically — what happened, where, when.]</p>
+<p>What I did: [your immediate response — e.g., &#x27;I separated them immediately and moved to a quieter area&#x27; / &#x27;I checked them over thoroughly — no injuries&#x27;]. [Dog&#x27;s Name] is home safe and appears completely fine. I&#x27;m monitoring them</p>
+<p>and will let you know immediately if I notice anything further. Please call me if you&#x27;d like to talk through it: [Phone]. I always want you to have complete transparency. [Your Name] | [Business Name] T10 — Dog Unwell During Walk</p>
+<h3>SUBJECT Update on [Dog&#x27;s Name] — important</h3>
+<p>Hi [Name], I wanted to reach out immediately — [Dog&#x27;s Name] seems a little off today. [Specific description — e.g., &#x27;They have been reluctant to walk and vomited once about 20 minutes into our walk&#x27; / &#x27;They seem lethargic and are not</p></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>interested in their usual sniffs&#x27;]. I have ended the walk early and [Dog&#x27;s Name] is safely home / with me now. I would recommend keeping a close eye on them and contacting your vet if the symptoms continue.</p>
+<p>Please call me now on [Phone] if you need to discuss. I am nearby and happy to help however I can. [Your Name] | [Business Name] T11 — Cancellation by Walker</p>
+<h3>SUBJECT Important — [Dog&#x27;s Name]&#x27;s walk today</h3>
+<p>Hi [Name], I&#x27;m so sorry to do this — I need to cancel [Dog&#x27;s Name]&#x27;s walk today due to [brief reason — illness / personal emergency / severe weather]. [If you can arrange cover: &#x27;I have contacted [Colleague Name] who I trust</p>
+<p>completely and they are available to step in — would that work for you?&#x27;] I will of course not charge for today&#x27;s walk. I am so sorry for the inconvenience and will be back to normal tomorrow. [Your Name] | [Business Name] | [Phone]</p>
+<h3>SECTION 4: REVIEWS &amp; REFERRALS</h3>
+<p>T12 — Google Review Request</p>
+<h3>SUBJECT A quick favour — [Name]</h3>
+<p>Hi [Name]! I have loved walking [Dog&#x27;s Name] these past [timeframe] — they genuinely make my day every walk. Quick ask: if you have been happy with my service, a Google review would mean the world to my small business. It helps other dog owners in [Area] find</p>
+<p>me and honestly just makes my day. Direct link: [Google Review Link]. Takes 2 minutes. Thank you! [Your Name] | [Business Name] T13 — Rover / Wag Review Request</p>
+<h3>SUBJECT Text / app message — send directly</h3>
+<p>Hi [Name]! Hope [Dog&#x27;s Name] is doing well after their [service]. If you enjoyed working with me, a review on [Rover / Wag] would help me reach more lovely dogs in [Area]. Takes just a minute and means so much! [Your Name] T14 — Referral Ask</p>
+<h3>SUBJECT Text / message — send to loyal clients</h3>
+<p>Hi [Name]! Really appreciate your loyalty — working with [Dog&#x27;s Name] is always a highlight of my week. Quick ask: if you know any dog owners in [Area] looking for a reliable walker, I would so appreciate the mention. Most of my best clients come from</p></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>recommendations from people like you. [If offering incentive: &#x27;I offer [X] off your next booking for every new client you refer to me.&#x27;] Thank you! [Your Name] | [Business Name] T15 — Vet / Groomer Partnership Introduction</p>
+<h3>SUBJECT Dog walking partnership — [Your Name]</h3>
+<p>Hi [Name], I&#x27;m [Your Name], a professional dog walker and pet sitter serving [Area]. I&#x27;ve been working with dogs in this area for [X years] and have a strong base of regular clients. I reach out to local [vets / groomers / trainers] because our clients are the</p>
+<p>same people — dedicated dog owners who prioritise their pets&#x27; wellbeing. I&#x27;d love to explore a mutual referral arrangement — I&#x27;m happy to recommend your services to my clients and leave my cards with your front desk if you&#x27;re open to it.</p>
+<p>[Your Name] | [Business Name] | [Phone] | [Website] T16 — Positive Review Response</p>
+<h3>SUBJECT Google — respond directly</h3>
+<p>Thank you so much, [Name] — [Dog&#x27;s Name] is an absolute joy to walk! Reviews like this genuinely make my day and help other dog owners in [Area] find me. See you next week! — [Your Name], [Business Name]</p>
+<h3>SECTION 5: POLICIES &amp; OPERATIONS</h3>
+<p>T17 — Service Agreement Reminder</p>
+<div class="section-label">SUBJECT Quick reminder — [Business Name] booking policy</div>
+<p>Hi [Name]! Just a quick reminder of my booking policy before we get started: Cancellations: I require [X] hours notice. Late cancellations within [X] hours are charged [X]% of the service.</p>
+<p>Key safety: I keep dogs on lead in all unfenced areas unless we&#x27;ve explicitly agreed otherwise. I never walk more than [X] dogs at once. Updates: I send a photo and update message on every walk.</p>
+<p>Emergencies: My vet contact is [local emergency vet name and number]. I will always contact you immediately. Any questions — always ask! [Your Name] | [Business Name] T18 — Holiday Availability Notice</p>
+<div class="section-label">SUBJECT [Business Name] — [holiday period] availability</div></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">07</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name]! Just a note to let you know about my availability over [holiday period]: I will be unavailable from [dates]. [If cover available: &#x27;My trusted colleague [Name] will be covering my clients</p>
+<p>during this time — they are fully insured and I will personally introduce you before I go.&#x27;] If you need coverage during this period please book by [date] to guarantee a slot. Thank you for your understanding! [Your Name] | [Business Name]</p>
+<p>T19 — Rate Increase Notice</p>
+<h3>SUBJECT Service rate update — [Business Name]</h3>
+<p>Hi [Name], I wanted to give you plenty of notice: from [date], my rates will be adjusting to reflect increases in insurance, fuel, and business costs. New rates from [date]: [Service]: $[new amount] (currently $[old amount])</p>
+<p>Your first [X] bookings at the current rate are locked in until [date]. Thank you so much for your continued trust and loyalty — it genuinely means everything. [Your Name] | [Business Name] T20 — New Service Announcement</p>
+<h3>SUBJECT New at [Business Name] — [service name]</h3>
+<p>Hi [Name]! Exciting news — I am now offering [new service description, e.g., puppy socialisation walks / group adventure walks / holiday boarding]. [2-3 sentences describing the service and who it&#x27;s perfect for.]</p>
+<p>As an existing client, you get first access before I open it publicly. Interested? Just reply here or call [Phone]. [Your Name] | [Business Name]</p>
+<h3>SECTION 6: ADDITIONAL TEMPLATES</h3>
+<p>T21 — Client Birthday / Pet Birthday Message</p>
+<h3>SUBJECT Happy [birthday] — [Dog&#x27;s Name]!</h3>
+<p>Happy birthday to the wonderful [Dog&#x27;s Name]! It has been such a joy 🐾 walking them this past [timeframe] — they bring so much happiness to every single walk. Hope you all have a brilliant day celebrating! [Your Name] | [Business Name]</p>
+<p>T22 — Long-Term Client Appreciation</p>
+<h3>SUBJECT Thank you — [Name] + [Dog&#x27;s Name]</h3></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">08</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Dog Walkers &amp; Pet Sitters<span>Communication Templates Dog Walkers</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Hi [Name], I just wanted to take a moment to say thank you. Working with [Dog&#x27;s Name] for the past [timeframe] has been one of the genuine highlights of my work — they are [one specific, genuine thing you love about the dog].</p>
+<p>Thank you for trusting me with them. It means more than I can say. [Your Name] | [Business Name] T23 — Waitlist Response</p>
+<div class="section-label">SUBJECT Re: Dog walking availability — [Business Name]</div>
+<p>Hi [Name]! Thank you so much for reaching out — I am genuinely touched by the interest. Unfortunately I am fully booked for [timeframe] at the moment, but I would love to add [Dog&#x27;s Name] to my waitlist. I will contact you as soon as a slot opens up.</p>
+<p>In the meantime, I am happy to recommend [trusted colleague] who has availability and whose work I know well: [contact details]. [Your Name] | [Business Name] T24 — End-of-Service Farewell</p>
+<h3>SUBJECT Thank you — [Dog&#x27;s Name] + [Name]</h3>
+<p>Hi [Name], It has been such a privilege walking [Dog&#x27;s Name] — I am going to miss them enormously. [One specific, genuine memory from your time together.] Wishing you and [Dog&#x27;s Name] all the very best. Please do not hesitate to</p>
+<p>reach out if circumstances change and you need me again — I would always welcome them back. With warmth, [Your Name] | [Business Name]</p></div><div class="footer"><span>Communication Templates Dog Walkers</span><span class="page-number">09</span></div></section></main></body></html>

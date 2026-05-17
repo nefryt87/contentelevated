@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Med Spas Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Med Spas Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>THE MED SPA&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<div class="section-label">How to Fill Your Treatment Schedule, Build Client Loyalty,</div>
+<p>and Grow Your Aesthetic Practice Using AI A Complete Guide for Med Spa Owners, Injectors &amp; Aesthetic Practitioners</p>
+<h3>Chapter 1: Why AI Is the Med Spa&#x27;s Growth</h3>
+<p>Engine Med spas compete in one of the most visually-driven, referral-dependent, and retention- critical industries in aesthetics. The practices building waitlists aren&#x27;t just delivering</p>
+<p>better results — they communicate better before, during, and after every appointment. AI makes that communication effortless at scale.</p>
+<p class="template-line">• The Rebooking Gap: Most med spa clients intend to return for maintenance —</p>
+<p>but only do so when prompted. A post-treatment rebooking nudge sent within 48 hours converts significantly more one-time clients into loyal regulars.</p>
+<p class="template-line">• The Pre-Treatment Anxiety: First-time clients for injectables, laser, or body</p>
+<p>treatments often have significant anxiety about what to expect. A pre- appointment education email reduces cancellations, improves results (they arrive prepared), and dramatically improves satisfaction.</p>
+<p class="template-line">• The Referral Opportunity: Med spa clients who are delighted with their results</p>
+<p>are highly likely to refer friends — but only if they&#x27;re asked. A timely referral ask, sent when their results are fresh and visible, generates your highest-quality new</p>
+<h3>client inquiries.</h3>
+<p class="template-line">• What AI Does vs. What You Do: AI handles communication, education, and</p>
+<div class="section-label">follow-up. Your injectors, laser technicians, and estheticians deliver the clinical</div>
+<p>artistry. Never confuse the tools with the talent.</p>
+<h3>Chapter 2: Your First 3 AI Wins This Week</h3>
+<p>Start here. Each takes under an hour and produces immediate results.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Win #1 — Pre-Treatment Prep Email: For every injectable, laser, or body</p>
+<p>treatment appointment, AI writes a pre-appointment education email — what to expect, how to prepare, what to avoid, and why. First-time clients arrive calmer, better prepared, and more satisfied with results.</p>
+<p class="template-line">• Win #2 — Post-Treatment Rebooking Email: Sent 48 hours post-appointment</p>
+<p>— how results are progressing, care tips, and a gentle prompt to book their next treatment or package. Converts one-time clients into regulars.</p>
+<p class="template-line">• Win #3 — Content Batch: Use the monthly AI prompt from your 90-Day</p>
+<p>Calendar to write a full month of Instagram and TikTok captions in one session.</p>
+<h3>Chapter 3: Filling Your Treatment Schedule</h3>
+<p>A full schedule at a med spa requires a combination of new client acquisition, rebooking of existing clients, and strategic seasonal campaigns.</p>
+<p class="template-line">• The New Client Inquiry Response: First-time med spa clients are often</p>
+<p>researching multiple practices. AI writes a warm, informative inquiry response that addresses their specific treatment interest, explains what makes your practice different, and makes booking a consultation feel safe and easy.</p>
+<p class="template-line">• The Consultation Conversion Email: After a new client consultation, AI writes</p>
+<p>a personalized follow-up that recaps their treatment plan, reinforces the expected results, and makes booking their first appointment straightforward.</p>
+<p class="template-line">• Seasonal Campaign Planning: Bridal season, summer body prep, holiday glow,</p>
+<p>New Year refresh — AI writes targeted email and social campaigns for every aesthetic booking peak, sent to your existing client list.</p>
+<p class="template-line">• The Lapsed Client Win-Back: For clients who haven&#x27;t been in for 3-6 months,</p>
+<p>AI writes a warm reactivation message — a seasonal offer, a new treatment announcement, or a personal check-in.</p>
+<h3>Chapter 4: Client Retention and the Lifetime</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Value of a Loyal Aesthetic Client A loyal med spa client who comes in 3-4 times per year and refers 2-3 friends is worth thousands of dollars annually. Retention is built through education and consistent post- treatment communication.</p>
+<p class="template-line">• Post-Treatment Follow-Up: 48 hours after every appointment, AI writes a</p>
+<div class="section-label">follow-up message — checking on results, providing care reminders, and</div>
+<p>planting the seed for their next visit or maintenance schedule.</p>
+<p class="template-line">• Treatment Plan Adherence: For clients on multi-session treatment plans (laser</p>
+<p>packages, CoolSculpting series, etc.), AI writes mid-plan encouragement messages that keep clients committed to completing their full protocol.</p>
+<p class="template-line">• The Maintenance Reminder: For Botox clients: &#x27;Your results typically last 3-4</p>
+<p>months — time to book your touch-up.&#x27; For filler clients: &#x27;6 months post-treatment is the ideal time for your maintenance appointment.&#x27; AI sends these automatically based on treatment date.</p>
+<p class="template-line">• The New Treatment Introduction: When you add a new treatment or</p>
+<p>technology, AI writes a personalized introduction to your existing client list — connecting the new service to each client&#x27;s known treatment history and goals.</p>
+<h3>Chapter 5: Building a Referral Machine</h3>
+<p>Med spa referrals are gold — they arrive pre-sold, they trust the practice, and they convert at the highest rate of any acquisition channel.</p>
+<p class="template-line">• The Post-Results Referral Ask: 2-3 weeks after treatment, when results are</p>
+<p>visible and the client is glowing, AI writes a warm referral request that makes sharing feel natural and rewarding.</p>
+<p class="template-line">• The Referral Reward System: AI writes the communication framework for a</p>
+<div class="section-label">referral rewards program — the welcome email, the reward confirmation, and the</div>
+<p>monthly reminder that the program exists.</p>
+<p class="template-line">• The Dermatologist and Primary Care Partnership: Dermatologists and PCPs</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>are excellent referral sources for medical-grade aesthetic treatments. AI writes a professional introduction and a quarterly educational touch.</p>
+<p class="template-line">• The Bridal Referral Network: Wedding planners, photographers, and bridal</p>
+<p>boutiques can be significant referral sources for bridal beauty packages. AI writes the introduction and co-marketing proposal.</p>
+<h3>Chapter 6: Social Content That Converts</h3>
+<p>Followers Into Clients Instagram and TikTok are the primary discovery platforms for aesthetic treatments. Med spas that post educational, results-forward content consistently build significant inbound inquiry volume.</p>
+<p class="template-line">• The 3-Post Formula: One results/transformation post (with consent), one</p>
+<p>educational post (treatment explainer, myth-bust, prep tips), one engagement post (poll, question, seasonal tip). Mon/Wed/Fri.</p>
+<p class="template-line">• High-Converting Content Categories: Before and after transformations (with</p>
+<p>full consent), &#x27;what to expect at your first Botox appointment,&#x27; treatment explainers, staff spotlights, client testimonials, seasonal treatment recommendations, product education.</p>
+<p class="template-line">• Instagram vs. TikTok: Instagram for portfolio-quality results and luxury</p>
+<p>positioning. TikTok for treatment demystification, behind-the-scenes, and reaching first-time aesthetic clients. Both platforms require educational content that normalizes aesthetic treatments.</p>
+<p class="template-line">• GBP and Local SEO: For med spas, local search drives significant inquiry</p>
+<p>volume. Post weekly to GBP, respond to every review, and keep treatment menu and photos current.</p>
+<h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+<p>One system at a time.</p>
+<p class="template-line">• Week 1: Pre-treatment prep email by treatment type + post-treatment rebooking</p>
+<h3>email + no-show recovery message.</h3>
+<p class="template-line">• Week 2: New client inquiry response + consultation conversion email + lapsed</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Med Spas<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>client win-back.</h3>
+<p class="template-line">• Week 3: Post-results referral ask + maintenance reminder templates by</p>
+<p>treatment + new treatment introduction email.</p>
+<p class="template-line">• Week 4: 2 weeks of social content batched using 90-Day Calendar + monthly AI</p>
+<p>caption prompt + GBP post.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Med Spas</h3>
+<p class="template-line">Copy and paste into Claude or ChatGPT. Replace [brackets] with your details.</p>
+<h3>Client Communication Prompts</h3>
+<p class="template-line">Write a pre-treatment education email for a med spa client named [Name] who has a [treatment — e.g., Botox / dermal filler / laser resurfacing / CoolSculpting] appointment on [Date] at [Time]. Include: how to prepare (what to avoid beforehand), what to expect</p>
+<p>during the treatment, what results to expect and when, and post- care instructions. Keep it warm, reassuring, and educational. Under 250 words. Sign as [Practitioner Name], [Spa Name].</p>
+<h3>Social Media Content Prompts</h3>
+<p>Write 5 educational Instagram captions for a med spa. Topics: what first-time Botox clients should know, the difference between Botox and filler, how to choose the right med spa, why results look more</p>
+<p>natural than people expect, and one treatment that&#x27;s underrated for [skin concern]. Each under 150 words, educational and reassuring, ends with a question or soft CTA. Spa: [Spa Name], [City]. Number 1-5.</p>
+<p>You create transformations. AI helps you build the practice that sustains them. Consistent communication. Consistent results. Consistently full schedule.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section></main></body></html>

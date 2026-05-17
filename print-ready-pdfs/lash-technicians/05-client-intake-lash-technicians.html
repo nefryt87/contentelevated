@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Intake</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f8f1ef; --paper:#fffaf6; --ink:#191313; --muted:#736464;
+  --accent:#b77a7d; --accent2:#d8b6a9; --dark:#21191a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Complete Growth Bundle</span></div></div><div class="pill">Client experience system</div></div><p class="kicker">Premium business system</p><h1>Client Intake</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Lash Technicians Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Lash Technicians Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>LASH TECHNICIAN</h3>
+<div class="section-label">Client Intake, Consultation System &amp; Lash Service Guide</div>
+<div class="section-label">New client intake form, eye health assessment, lash mapping guide, patch test protocol, and fill</div>
+<p>cycle management system</p>
+<h3>SECTION 1: NEW CLIENT INTAKE FORM</h3>
+<p class="template-line">✓ Full name:</p>
+<p class="template-line">✓ Date of birth:</p>
+<p class="template-line">✓ Phone:</p>
+<p class="template-line">✓ Email:</p>
+<p class="template-line">✓ How did you find [Studio Name]?</p>
+<h3>✓ SERVICE REQUESTED:</h3>
+<p class="template-line">✓ What service are you interested in today? (classic extensions / hybrid / volume /</p>
+<p>mega volume / lash lift / lash tint / brow lamination / other):</p>
+<p class="template-line">✓ Have you had lash extensions before? If yes: where, which style, and when?</p>
+<p class="template-line">✓ If yes: did you have any reactions or issues with a previous set?</p>
+<h3>✓ EYE HEALTH:</h3>
+<p class="template-line">✓ Do you wear contact lenses?</p>
+<p class="template-line">✓ Do you have any eye conditions? (dry eye, blepharitis, conjunctivitis, allergies):</p>
+<p class="template-line">✓ Are you currently on any eye medications?</p>
+<p class="template-line">✓ Do you have any known sensitivities to adhesives, latex, or formaldehyde?</p>
+<h3>✓ LIFESTYLE &amp; PREFERENCES:</h3>
+<p class="template-line">✓ How would you describe your lifestyle? (active and sweaty / mostly desk-based /</p>
+<p>combination):</p>
+<p class="template-line">✓ How much makeup do you typically wear on your eyes?</p>
+<p class="template-line">✓ Do you use oily skincare products or cleansing oils on your face?</p>
+<p class="template-line">✓ Do you sleep face-down?</p>
+<h3>✓ LOOK PREFERENCES:</h3>
+<p class="template-line">✓ How would you describe the lash look you want in 3 words?</p></div><div class="footer"><span>Client Intake</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Length preference: natural (11-13mm) / medium (13-15mm) / dramatic (15mm+):</p>
+<p class="template-line">✓ Thickness/curl preference (if you know): [C curl / D curl / L curl]:</p>
+<p class="template-line">✓ Any reference photos? (paste link or bring printed)</p>
+<p class="template-line">✓ Anything you definitely do not want:</p>
+<h3>✓ CONSENT:</h3>
+<p class="template-line">✓ I confirm that all the above information is accurate. I understand that withholding</p>
+<p>relevant health information may affect the safety or outcome of my treatment.</p>
+<p class="template-line">✓ Signature: _________________________ Date: ___</p>
+<p class="template-line">✓ [Always adapt consent and intake forms to meet your licensing jurisdiction&#x27;s</p>
+<p>requirements. This is a reference document, not legal advice.]</p>
+<h3>SECTION 2: PATCH TEST PROTOCOL</h3>
+<p>When to Patch Test</p>
+<p class="template-line">✓ ALL new clients — before their first ever lash extension appointment</p>
+<p class="template-line">✓ Clients who have not had lash extensions in more than 6 months</p>
+<p class="template-line">✓ Clients who have had a recent change in medication or health status</p>
+<p class="template-line">✓ Clients with a known history of sensitive skin or allergies</p>
+<p class="template-line">✓ Clients switching to a new adhesive type</p>
+<p class="template-line">✓ [Patch testing protects your clients and protects your business. A sensitivity</p>
+<p>reaction after a full set is preventable — a patch test takes 15 minutes.] Patch Test Process</p>
+<p class="template-line">✓ Step 1: Apply 5-10 lash extensions to the outer corner of one eye</p>
+<p class="template-line">✓ Step 2: Document the date, adhesive brand/batch number, and client name in your</p>
+<p>records</p>
+<p class="template-line">✓ Step 3: Advise the client to monitor for redness, itching, swelling, or irritation over</p>
+<p>the next 24-48 hours</p></div><div class="footer"><span>Client Intake</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Step 4: Ask them to contact you immediately if they notice any reaction</p>
+<p class="template-line">✓ Step 5: If no reaction occurs: proceed with the full appointment</p>
+<p class="template-line">✓ Step 6: If a reaction occurs: remove extensions, do not rebook for lash extensions,</p>
+<p>recommend the client see a GP if reaction is significant</p>
+<h3>✓ WHAT TO TELL THE CLIENT:</h3>
+<p class="template-line">✓ &#x27;We are applying a small number of lashes to check that your skin and eyes are</p>
+<p>happy with the adhesive. This is a routine step I do with all new clients — it takes about 15 minutes and I will follow up with you in 24-48 hours.&#x27;</p>
+<p class="template-line">✓ [Document every patch test. Include: date, adhesive used, client name, outcome.</p>
+<p>This is important for your professional records.]</p>
+<h3>SECTION 3: LASH MAPPING GUIDE</h3>
+<p>Choosing the Right Lash Map for the Eye</p>
+<h3>EYE SHAPE RECOMMENDED MAP AVOID</h3>
+<p>Almond / balanced Most maps work beautifully — cat eye, doll, natural all suit this shape Nothing particularly to avoid Round Cat eye or elongated map — adds length to outer corner to create oval illusion Avoid doll eye / heavy centre</p>
+<p>weight — emphasises roundness Hooded Longer lengths in centre/outer, avoid very long inner corner Avoid very dramatic curl on hooded lid — lashes touch the lid Monolid Open eye or doll map works well — lifts the eye Avoid very thick lashes close to</p>
+<p>the lash line Deep set L curl or L+ — creates visible lift out of the socket Avoid heavy weight that sits inside the socket Wide set Emphasise inner corner — longer inner lashes to bring eyes closer Avoid heavy outer corner emphasis</p>
+<p>Close set Emphasise outer corner — longer towards outer edge Avoid heavy inner corner emphasis Upturned Natural map or slight cat eye — match the natural lift Avoid very dramatic cat eye — can exaggerate the upturn</p>
+<p>Downturned Cat eye or lifted outer corner map — lifts the outer corner Avoid doll or natural maps that follow the natural downward line</p></div><div class="footer"><span>Client Intake</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Lash Technicians<span>Client Intake</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 4: FILL CYCLE MANAGEMENT</h3>
+<h3>SYSTEM</h3>
+<p>Fill Timing Reference by Style</p>
+<h3>SERVICE OPTIMAL FILL MAX BEFORE</h3>
+<h3>REMOVAL</h3>
+<h3>NOTES</h3>
+<p>Classic extensions 2-3 weeks 4-5 weeks After 5 weeks typically charge as a new set Hybrid extensions 2-3 weeks 4-5 weeks Mix of classic and volume — slightly more forgiving Volume extensions 3 weeks 4-5 weeks More lashes per fan = slightly longer lasting look</p>
+<p>Mega volume 2-3 weeks 4 weeks High density = more obvious when shedding Lash lift 6-8 weeks 10-12 weeks Fades naturally — avoid rebooking too soon Lash tint 3-4 weeks 6 weeks Fades with shampooing and sun exposure</p>
+<p>Brow lamination 4-6 weeks 8 weeks Rebooking too soon risks over- processing</p></div><div class="footer"><span>Client Intake</span><span class="page-number">06</span></div></section></main></body></html>

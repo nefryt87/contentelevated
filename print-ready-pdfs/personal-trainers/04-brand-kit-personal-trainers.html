@@ -1,0 +1,140 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1>Brand Kit</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Personal Trainers Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Personal Trainers Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>PERSONAL TRAINER</h3>
+<h3>BRAND KIT &amp; CANVA TEMPLATE GUIDE</h3>
+<p>Build a fitness brand that attracts the right clients and charges what you&#x27;re worth. Color palettes • Fonts • Canva templates • 7-day launch checklist</p>
+<h3>SECTION 1: BRAND POSITIONING</h3>
+<p>The most successful personal trainers aren&#x27;t the most credentialed — they&#x27;re the most clearly positioned. When someone visits your profile, they should immediately know who you help, what result you deliver, and why you&#x27;re different. Your Brand Promise</p>
+<p>I help [specific person — e.g., busy moms / men over 40 / new runners / postpartum women] [achieve specific result — e.g., lose their first 20 lbs / build functional strength / run their first half marathon] without [biggest fear — e.g.,</p>
+<p>spending hours in the gym / giving up the foods they love / getting injured]. Example: &#x27;I help busy moms over 35 get strong and lose the baby weight — without crash diets or 2-hour workouts.&#x27;</p>
+<h3>Brand Personality (Pick 2–3)</h3>
+<p class="template-line">• Motivating — You push clients to do what they didn&#x27;t think was possible</p>
+<p class="template-line">• Real — No filters, no fake transformations, no BS</p>
+<p class="template-line">• Expert — You explain the science simply and clearly</p>
+<p class="template-line">• Supportive — You&#x27;re in their corner on the hard days</p>
+<p class="template-line">• Results-focused — You care about outcomes, not just effort</p>
+<p>Niche Clarity — The Most Important Brand Decision You&#x27;ll Make Generalist trainers compete on price. Specialist trainers command premium rates. You don&#x27;t have to turn anyone away — but your marketing should speak to one specific person.</p>
+<p class="template-line">• Postpartum fitness</p>
+<p class="template-line">• Men over 40 / strength and longevity</p>
+<p class="template-line">• Weight loss for busy professionals</p>
+<p class="template-line">• Athletic performance / sport-specific</p>
+<p class="template-line">• Seniors / functional fitness</p>
+<p class="template-line">• Online coaching (any niche, fully remote)</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 2: COLOR PALETTES</h3>
+<p>Fitness brands should feel energetic, credible, and motivating. Avoid pastels that feel soft when your brand needs to feel strong. Two proven options:</p>
+<div class="section-label">Palette A: High Performance (Athletic / Results-Focused)</div>
+<p>Matte Black</p>
+<h3>#0F0F0F</h3>
+<p>Primary — Power, Authority Electric Orange</p>
+<h3>#E8500A</h3>
+<p>Accent — Energy, Drive Light Gray</p>
+<h3>#F5F5F3</h3>
+<p>Background — Clean White</p>
+<h3>#FFFFFF</h3>
+<p>Text BG</p>
+<div class="section-label">Palette B: Wellness &amp; Lifestyle (Holistic / Female-Focused /</div>
+<p>Online Coaching) Deep Forest</p>
+<h3>#2C4A2E</h3>
+<p>Primary — Growth, Grounded Warm Sand</p>
+<h3>#E8D5B0</h3>
+<p>Background — Soft, Inviting Terracotta</p>
+<h3>#C4623A</h3>
+<p>Accent — Warmth, Energy Off White</p>
+<h3>#FAF7F2</h3>
+<p>Base BG</p>
+<h3>SECTION 3: TYPOGRAPHY</h3>
+<h3>USE FONT NOTES</h3>
+<p>Headlines (Palette</p>
+<h3>A)</h3>
+<p>Barlow Condensed ExtraBold Athletic and bold — feels like a sports brand. Free on Google Fonts. Headlines (Palette</p>
+<h3>B)</h3>
+<p>Cormorant Garamond Bold Elegant and editorial — perfect for wellness or premium positioning. Body Copy DM Sans Regular Modern, clean, highly readable on screens and print. CTA / Emphasis Barlow SemiBold or DM Sans Bold Used for buttons, stat callouts, and key</p>
+<p>messages only.</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>SECTION 4: CANVA TEMPLATE GUIDE</h3>
+<p>All templates below are free on Canva. Search the exact term, apply your palette and fonts. Budget 20–30 minutes per template set.</p>
+<h3>Social &amp; Digital Templates</h3>
+<h3>TEMPLATE CANVA SEARCH TERM BEST USE</h3>
+<p>Instagram Post (1:1) &quot;personal trainer instagram post&quot; Tips, transformations, motivational</p>
+<h3>content</h3>
+<p>Instagram Reel Cover &quot;fitness reel cover template&quot; Thumbnails that stop the scroll Instagram Story (9:16) &quot;fitness coach story template&quot; Polls, tips, client shoutouts TikTok Video Overlay &quot;workout video overlay canva&quot; Text overlays for fitness clips</p>
+<p>Transformation Post &quot;fitness before after template&quot; Client results with ethical framing Facebook Cover &quot;personal trainer facebook cover&quot; First impression, niche statement, contact Print &amp; Business Templates</p>
+<p class="template-line">• Business Card — Search: &#x27;personal trainer business card&#x27; — keep it simple:</p>
+<p>name, niche, phone, Instagram handle</p>
+<p class="template-line">• Client Intake Form — Search: &#x27;fitness client form template&#x27; — customize with</p>
+<p>your screening questions</p>
+<p class="template-line">• Program Template — Search: &#x27;workout plan template Canva&#x27; — brand your</p>
+<p>weekly programs before sending to clients</p>
+<p class="template-line">• Referral Card — Search: &#x27;referral card template&#x27; — &#x27;Refer a friend, get a free</p>
+<p>session&#x27; printed card for gym bags</p>
+<h3>SECTION 5: HEADSHOT &amp; CONTENT PHOTO</h3>
+<h3>GUIDE</h3>
+<p>Profile Photo Best Practices</p>
+<p class="template-line">• Background: Gym setting or clean solid color — your environment signals your</p>
+<p>niche</p>
+<p class="template-line">• Outfit: What you&#x27;d wear to train a client — professional but authentic</p>
+<p class="template-line">• Expression: Approachable and confident — genuine smile OR focused intensity,</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>match your brand</p>
+<p class="template-line">• Framing: Head and shoulders for profile photo; full body for fitness credibility</p>
+<p>posts</p>
+<p class="template-line">• Lighting: Natural light from a window or a ring light — avoid gym overhead</p>
+<p>fluorescents</p>
+<p class="template-line">• Consistency: Same photo across Instagram, TikTok, Facebook, and your website</p>
+<h3>Content Photo Tips</h3>
+<p class="template-line">• Action shots convert better than posed photos — film yourself coaching or</p>
+<p>training</p>
+<p class="template-line">• Use a tripod and your phone — you don&#x27;t need a professional photographer to</p>
+<p>start</p>
+<p class="template-line">• Batch shoot: One Sunday afternoon of content photos can last you 4–6 weeks</p>
+<p class="template-line">• Show your face in at least 50% of posts — people follow people, not brands</p>
+<h3>SECTION 6: 7-DAY BRAND LAUNCH CHECKLIST</h3>
+<h3>Day 1 — Foundation</h3>
+<p class="template-line">✓ Choose your color palette (A or B)</p>
+<p class="template-line">✓ Select your fonts in Canva Brand Kit</p>
+<p class="template-line">✓ Write your Brand Promise (one sentence)</p>
+<p class="template-line">✓ Book a batch content photo session this week</p>
+<p>Days 2–3 — Build Templates</p>
+<p class="template-line">✓ Create Instagram post template</p>
+<p class="template-line">✓ Create Instagram Reel cover template</p>
+<p class="template-line">✓ Design Facebook cover photo</p>
+<p class="template-line">✓ Build email signature</p>
+<p class="template-line">✓ Create one transformation/results post template</p>
+<p>Days 4–5 — Update All Profiles</p>
+<p class="template-line">✓ Update Instagram bio with your Brand Promise + CTA link</p>
+<p class="template-line">✓ Update TikTok bio</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Personal Trainers<span>Brand Kit</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">✓ Update Facebook profile + cover photo</p>
+<p class="template-line">✓ Add email signature to Gmail</p>
+<p class="template-line">✓ Update Google Business Profile if you have one</p>
+<p>Days 6–7 — First Week of Content</p>
+<p class="template-line">✓ Batch-create 3 posts using your 90-Day Calendar</p>
+<p class="template-line">✓ Generate captions with the monthly AI prompt</p>
+<p class="template-line">✓ Film one short-form video (even 30 seconds)</p>
+<p class="template-line">✓ Schedule Mon/Wed/Fri</p>
+<p class="template-line">✓ Engage with every comment in the first hour after posting</p>
+<p>Your brand is what people say about you when you&#x27;re not in the room. Show up consistently, deliver real results, and let the work speak.</p></div><div class="footer"><span>Brand Kit</span><span class="page-number">07</span></div></section></main></body></html>

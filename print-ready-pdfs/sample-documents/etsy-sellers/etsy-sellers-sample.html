@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Etsy Sellers Sample Document</title>
+  <style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfcfb; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#4f8f94 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#ff8f61 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfcfb 94%,white), color-mix(in srgb,#fbfcfb 86%,#4f8f94)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#4f8f94; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#4f8f94 32%,transparent); border-radius:999px; color:#4f8f94; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Inter, 'Helvetica Neue', Arial, sans-serif; font-size:54px; line-height:.96; font-weight:950; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#4f8f94; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#4f8f94 38%,transparent); border-bottom:1px solid color-mix(in srgb,#4f8f94 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#4f8f94 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#4f8f94 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#4f8f94 52%,transparent); border-bottom:1px solid color-mix(in srgb,#4f8f94 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#4f8f94 32%,transparent); }
+.metric b { display:block; color:#4f8f94; font-size:22px; margin-bottom:10px; font-family:Inter, 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#11191b; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#4f8f94 18%,transparent), transparent 2in), linear-gradient(135deg, #11191b, color-mix(in srgb,#11191b 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#4f8f94; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Inter, 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#4f8f94 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#4f8f94 56%,transparent); color:#4f8f94; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#4f8f94 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#4f8f94 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfcfb; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#11191b; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#11191b; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #4f8f94; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfcfb; }
+.layout-protocol .work { background:#fbfbf5; color:#11191b; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#4f8f94 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#11191b; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#11191b; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#4f8f94 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#11191b; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#4f8f94 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#11191b; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+</style>
+</head>
+<body>
+<main class="book layout-commerce">
+  <section class="page cover">
+    <div class="brand">
+      <div class="brand-stack">
+        <div class="brand-line">CONTENT ELEVATED</div>
+        <div class="doc-label">Done-for-you AI prompts for etsy sellers</div>
+      </div>
+    </div>
+    
+    <h1>5 AI Prompts for a Stronger Shop</h1>
+    <p class="lead">A premium, niche-specific sample document built from the real product content. Review this direction before we apply it to the full bundle.</p>
+    <div class="metrics">
+      <div class="metric"><b>01</b><span>Copy and paste<br/>client prompts</span></div>
+      <div class="metric"><b>02</b><span>Designed for<br/>Shop</span></div>
+      <div class="metric"><b>03</b><span>Fast to use<br/>easy to customize</span></div>
+    </div>
+    <div class="footer"><span>Etsy Sellers sample document</span><span>01</span></div>
+  </section>
+  <section class="page work">
+    <div class="brand"><div>Content Elevated</div><div></div></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Prompt System</p><h2>Start with the client moment.</h2></div>
+      <p class="intro">Use these prompts when the customer is asking, deciding, rebooking, reviewing, or needing a reason to say yes.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>Etsy Listing Title Optimisation (5 Options)</h3>
+        <p>Write 5 optimised Etsy listing title options for my product: [describe your product in detail — material, style, size, what it is, who it is for]. My current title is: [paste current title if you have one]. I want titles that: (1) lead with the most searched keywords, (2) include specific descriptors buyers use when searching — material, style, occasion, recipient, (3) are under 140 characters, (4) feel natural to read. Include a mix — some leading with product type, some with occasion or recipient. Provide each title on its own line.</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>Etsy Listing Description</h3>
+        <p>Write a compelling Etsy listing description for my product: [describe product — what it is, materials, dimensions, variations, what makes it special]. Target buyer: [describe your ideal customer — e.g., a bride looking for personalised wedding gifts / a home decorator who loves minimalist style]. I want the description to: (1) open with a hook addressing the buyer&#x27;s need or occasion, (2) describe the product clearly with all key details, (3) answer the most common buyer questions, (4) include relevant keywords naturally, (5) end with a reassuring next step. Under 400 words. Shop name: [Shop Name].</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>Post-Delivery Follow-Up Message (Review Request)</h3>
+        <p>Write a post-delivery follow-up Etsy message for my shop. The customer [Name] ordered [product] and it should have arrived approximately [X days ago]. I want to: (1) check in and make sure they received it and are happy, (2) provide any relevant care or use instructions briefly, (3) make a warm personal ask for a review explaining why it matters to a small shop, (4) invite them to contact me if anything is not perfect. Warm and genuine, under 150 words. Sign as [Your Name], [Shop Name].</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="footer"><span>Etsy Sellers</span><span>02</span></div>
+  </section>
+  <section class="page work">
+    <div class="brand"><div>Content Elevated</div><div></div></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Follow-up / Content / Trust</p><h2>Turn attention into action.</h2></div>
+      <p class="intro">This final page shows how the visual system handles longer prompt text, CTA structure, and bundle positioning.</p>
+    </div>
+    <div class="prompt-grid">
+      
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>Seasonal Sale Social Media Posts (3 Posts)</h3>
+        <p>Write 3 social media posts announcing a seasonal sale on my Etsy shop. Sale: [X]% off everything / [specific products] for [duration]. Occasion: [e.g., Black Friday / Christmas / Valentine&#x27;s Day / Spring launch]. I want the posts to: (1) create genuine excitement and urgency, (2) highlight the best products in the sale, (3) include a clear CTA with my shop link. One post for Instagram, one for Pinterest, one for Facebook. Each under 150 words. Shop name: [Shop Name].</p>
+      </div>
+    </article>
+    
+      
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Copy / paste prompt</p>
+        <h3>Instagram Caption Batch (5 Captions)</h3>
+        <p>Write 5 Instagram captions for my Etsy shop. Products or topics: [list 5 things to feature — e.g., a specific product, behind-the-scenes making, a customer photo, a seasonal gift guide, a shop CTA]. For each: (1) tell the story behind the product or post, (2) include relevant keywords or hashtag suggestions, (3) end with a CTA pointing to my Etsy shop. Each under 150 words, warm and personal. Shop name: [Shop Name], Etsy link: [link].</p>
+      </div>
+    </article>
+    
+    </div>
+    <div class="cta">
+      <p class="eyebrow">Full bundle direction</p>
+      <h2>Etsy Sellers Growth Bundle</h2>
+      <p class="intro">Once this sample is approved, the same niche-specific art direction can be applied across the AI Playbook, 30-day calendar files, templates, brand kit, and client system documents.</p>
+    </div>
+    <div class="footer"><span>Approval sample</span><span>03</span></div>
+  </section>
+</main>
+</body>
+</html>

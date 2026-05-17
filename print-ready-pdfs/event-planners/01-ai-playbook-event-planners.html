@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+:root {
+  --bg:#f4eee8; --paper:#fffaf3; --ink:#171211; --muted:#6f625d;
+  --accent:#8f6a7a; --accent2:#c5a66f; --dark:#191414;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d8d8d5;color:var(--ink);font-family:Inter,Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;page-break-after:always;padding:.62in;background:
+  radial-gradient(circle at 84% 10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 2.45in),
+  radial-gradient(circle at 10% 90%, color-mix(in srgb,var(--accent2) 22%,transparent), transparent 2.65in),
+  linear-gradient(135deg,var(--paper),var(--bg) 67%,#e5e3dc);overflow:hidden}
+.page:before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(20,20,20,.042) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(20,20,20,.032) 1px,transparent 1px);background-size:.42in .42in;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.08));pointer-events:none}
+.page:after{content:"";position:absolute;right:-.82in;top:.72in;width:2.8in;height:8.6in;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:999px;transform:rotate(-12deg);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.mark{display:flex;gap:12px;align-items:center}.seal{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--ink));border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:14px;background:rgba(255,255,255,.34)}.word{font-size:10px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}.word span{display:block;margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.17em}.pill{border:1px solid rgba(20,20,20,.13);border-radius:999px;padding:10px 14px;background:rgba(255,255,255,.36);font-size:8px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kicker{position:relative;z-index:2;margin:.76in 0 18px;display:flex;gap:12px;align-items:center;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h1{position:relative;z-index:2;margin:0;max-width:6.28in;font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:.96;font-weight:400;letter-spacing:-.04em}h1 em{font-style:italic;color:var(--accent)}h2{position:relative;z-index:2;margin:0 0 15px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.02;font-weight:400;letter-spacing:-.035em}h3{margin:18px 0 8px;font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}p{margin:0 0 8px;color:var(--muted);font-size:10.5px;line-height:1.42}.lead{position:relative;z-index:2;max-width:5.55in;margin:.24in 0 0;font-size:14px;line-height:1.52}
+.cover-grid{position:absolute;left:.62in;right:.62in;bottom:.8in;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.panel{border:1px solid rgba(20,20,20,.12);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 24px 62px rgba(30,30,30,.08);padding:24px}.dark{background:linear-gradient(135deg,var(--dark),color-mix(in srgb,var(--dark) 82%,var(--accent)));color:#f8f4eb}.dark p{color:rgba(248,244,235,.76)}.smallcaps{font-size:8.5px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:13px;background:rgba(255,255,255,.045)}.stat strong{display:block;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#f3efe7}.stat span{display:block;margin-top:6px;font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:rgba(246,243,235,.62)}
+.content{position:relative;z-index:2;margin-top:.44in;border:1px solid rgba(20,20,20,.12);border-radius:24px;background:rgba(255,255,255,.62);padding:27px;box-shadow:0 18px 52px rgba(20,24,27,.07)}.section-label{margin:20px 0 10px;border-top:1px solid rgba(20,20,20,.12);padding-top:14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.template-line{border-left:2px solid var(--accent);padding:7px 0 7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 74%)}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:.34in}.toc-item{border:1px solid rgba(20,20,20,.11);border-radius:18px;padding:17px;background:rgba(255,255,255,.44)}.toc-item b{display:block;margin-bottom:7px;font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--dark)}.toc-item span{color:var(--muted);font-size:9.5px;line-height:1.4}.footer{position:absolute;left:.62in;right:.62in;bottom:.3in;z-index:2;display:flex;justify-content:space-between;color:rgba(75,82,88,.7);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.page-number{font-family:Georgia,serif;color:var(--accent)}
+@media print{body{background:white}.book{margin:0}}
+</style></head><body><main class="book"><section class="page cover"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Complete Growth Bundle</span></div></div><div class="pill">Creative demand system</div></div><p class="kicker">Premium business system</p><h1><em>AI</em> Playbook</h1><p class="lead">A premium, ready-to-use business growth asset redesigned for clarity, conversion, and day-to-day action.</p><div class="cover-grid"><div class="panel dark"><p class="smallcaps">Built for the way this business actually works</p><p>Use this file to move faster: plan better content, send stronger client communication, create more trust, and turn the included prompts into real business action.</p></div><div class="panel dark"><div class="stat-grid"><div class="stat"><strong>AI</strong><span>assisted system</span></div><div class="stat"><strong>30</strong><span>day action rhythm</span></div><div class="stat"><strong>CE</strong><span>premium file</span></div><div class="stat"><strong>PDF</strong><span>print ready</span></div></div></div></div><div class="footer"><span>Event Planners Growth Bundle</span><span class="page-number">01</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>Complete Growth Bundle</span></div></div><div class="pill">Start here</div></div><p class="kicker">How to use this</p><h2>Turn the system into motion.</h2><p class="lead">Pick the section closest to the next revenue moment, customize the brackets, and save the finished version into your client workflow. This design is built to be printed, exported, or used as an internal operating document.</p><div class="toc"><div class="toc-item"><b>01</b><span>Read the strategy once so the system makes sense.</span></div><div class="toc-item"><b>02</b><span>Customize the language for your market, offer, and client type.</span></div><div class="toc-item"><b>03</b><span>Batch the prompts, templates, and scripts into your weekly workflow.</span></div><div class="toc-item"><b>04</b><span>Keep the pages you use most close to your daily operations.</span></div></div><div class="footer"><span>Event Planners Growth Bundle</span><span class="page-number">02</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><h3>THE EVENT PLANNER&#x27;S</h3>
+<h3>AI PLAYBOOK</h3>
+<div class="section-label">How to Win More Clients, Deliver Flawless Events,</div>
+<p>and Build a Referral-Driven Planning Business Using AI A Complete Guide for Wedding &amp; Event Planners</p>
+<h3>Chapter 1: Why AI Is the Event Planner&#x27;s</h3>
+<p>Competitive Edge Event planning is a relationship business built on trust, creativity, and flawless execution. The planners building thriving businesses aren&#x27;t just the most talented —</p>
+<p>they&#x27;re the most responsive, the most systematic, and the most visible. AI makes all three effortless without replacing what makes you irreplaceable.</p>
+<p class="template-line">• The Inquiry Speed Problem: Engaged couples and corporate clients research</p>
+<p>multiple planners at the same time. The first to respond warmly and professionally — with a clear proposal or discovery call invite — wins the relationship.</p>
+<p class="template-line">• The Vendor Network Advantage: Your vendor relationships are your</p>
+<p>competitive edge. AI helps you maintain and deepen those relationships systematically — weekly value touches, co-marketing proposals, thank-you notes after every event.</p>
+<p class="template-line">• The Content Gap: Event planners who post consistently showcase their work,</p>
+<p>build their reputation, and attract inquiries from exactly the client type they want to work with. AI makes consistent posting achievable.</p>
+<p class="template-line">• What AI Does vs. What You Do: AI handles communication, follow-up, and</p>
+<div class="section-label">content. You create the vision, manage the chaos, and deliver the magic. Never</div>
+<p>confuse the two.</p>
+<h3>Chapter 2: Your First 3 AI Wins This Week</h3>
+<p>Start here. Three quick wins that immediately improve your business.</p>
+<p class="template-line">• Win #1 — Inquiry Response Template: AI writes a warm, professional</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">03</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>response to every new inquiry — acknowledging their event vision, explaining your approach, and inviting them to a discovery call. First response quality and speed converts inquiries to consultations.</p>
+<p class="template-line">• Win #2 — Vendor Thank-You System: After every event, AI writes</p>
+<p>personalized thank-you messages to every vendor who contributed to making it special. These notes are relationship gold — most planners never send them systematically.</p>
+<p class="template-line">• Win #3 — Content Batch: Use AI to write an entire month of Instagram,</p>
+<p>Pinterest, and LinkedIn captions in one session. Your 90-Day Calendar has the post ideas — AI writes the words.</p>
+<h3>Chapter 3: Winning Clients — From Inquiry to</h3>
+<p>Signed Contract The planners booking the most dream clients have a systematic process from first inquiry to signed contract. AI supports every stage.</p>
+<p class="template-line">• The Inquiry Response Sequence: A 3-message sequence from first inquiry to</p>
+<p>booked discovery call — warm acknowledgement, portfolio highlight, and a personal note that mirrors their stated vision. Most planners send one generic response. This sequence sends three personalized ones.</p>
+<p class="template-line">• Post-Discovery Call Conversion: After a discovery call, AI writes a</p>
+<p>personalized proposal follow-up that recaps their vision, proposes your package, and makes signing feel like the natural next step.</p>
+<p class="template-line">• The Not-Yet-Ready Nurture: For couples or clients who are 6–18 months out</p>
+<p>from their event, AI writes a quarterly touchpoint sequence — inspiration, planning tips, and personal check-ins — that keeps you top of mind until they&#x27;re ready to book.</p>
+<p class="template-line">• Objection Handling: When a prospect says they&#x27;re considering other planners</p>
+<p>or the investment is a concern, AI writes a confident, non-defensive response that reinforces your value without pressure.</p>
+<h3>Chapter 4: Client Communication That Creates</h3></div><div class="footer"><span>AI Playbook</span><span class="page-number">04</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p>Raving Fans The events that generate the most referrals aren&#x27;t always the most expensive. They&#x27;re the ones where the client felt most cared for throughout the entire planning journey.</p>
+<p class="template-line">• The Onboarding Welcome Sequence: After a contract is signed, AI writes a</p>
+<p>multi-message onboarding sequence that sets expectations, introduces your process, and builds excitement — turning a signed contract into the start of a relationship.</p>
+<p class="template-line">• The Monthly Planning Check-In: AI writes a monthly progress update for every</p>
+<p>active planning client — what&#x27;s been completed, what&#x27;s coming up, and what decisions they need to make. Clients feel informed and confident, not anxious.</p>
+<p class="template-line">• The Pre-Event Countdown Email: 30 days, 1 week, and 48 hours before the</p>
+<p>event — AI writes countdown emails that build anticipation, confirm logistics, and manage last-minute anxiety with warmth and professionalism.</p>
+<p class="template-line">• The Post-Event Follow-Up: Within 48 hours of the event, AI writes a personal</p>
+<div class="section-label">follow-up thanking the client, asking how they feel about how the day went, and</div>
+<p>making a gentle request for a review and referral.</p>
+<h3>Chapter 5: Vendor Relationships That Fill Your</h3>
+<h3>Referral Pipeline</h3>
+<p>Your vendor relationships are your most valuable business asset. The planners who get the most referrals are the ones who take care of their vendor network. AI makes systematic care effortless.</p>
+<p class="template-line">• Post-Event Vendor Thank-You: After every event, AI writes a personal thank-</p>
+<p>you message to every vendor — acknowledging their specific contribution. Most planners never do this consistently. The ones who do get far more referrals.</p>
+<p class="template-line">• The Vendor Co-Marketing Proposal: AI writes a co-marketing proposal for your</p>
+<p>top vendor partners — social media takeovers, styled shoot collaborations, venue open day features. These relationships build your portfolio and your reputation simultaneously.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">05</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• The Monthly Vendor Value Touch: AI writes a monthly email to your active</p>
+<p>vendor network — a relevant tip, a content resource, or a mutual referral opportunity. Keeps you top of mind as the planner every vendor wants to work with.</p>
+<p class="template-line">• The New Vendor Introduction: When you want to add a new venue,</p>
+<p>photographer, or caterer to your network, AI writes a warm professional</p>
+<div class="section-label">introduction that gets you on their preferred vendor list.</div>
+<h3>Chapter 6: Social Content That Showcases Your</h3>
+<p>Work and Attracts Dream Clients Your social media is your portfolio, your reputation, and your client acquisition engine. Event planners who post consistently with purpose attract inquiries from exactly the type of events they want to plan.</p>
+<p class="template-line">• The 3-Post Formula: One showcase post (real event imagery with story), one</p>
+<p>educational post (planning tip, industry insight, myth-bust), one engagement post (question, poll, vendor spotlight). Mon/Wed/Fri.</p>
+<p class="template-line">• High-Converting Content Categories: Real event reveals, behind-the-scenes</p>
+<p>planning moments, vendor spotlight features, planning tip carousels, before-and- after transformations, styled shoot content, real couple/client stories with consent.</p>
+<p class="template-line">• Pinterest as a Lead Generation Tool: Pinterest is the #1 discovery platform for</p>
+<p>wedding and event planning. AI writes optimized pin descriptions and board titles that drive consistent inbound inquiries from high-intent searchers.</p>
+<p class="template-line">• Batch Creating in One Session: Use the monthly AI prompt in your 90-Day</p>
+<p>Calendar to generate all 12 captions in one sitting. Content done for 4 weeks in under 45 minutes.</p>
+<h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+<p>One week at a time.</p>
+<p class="template-line">• Week 1: Write inquiry response template + discovery call follow-up + onboarding</p>
+<p>welcome email.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">06</span></div></section>
+<section class="page"><div class="brand"><div class="mark"><div class="seal">CE</div><div class="word">Event Planners<span>AI Playbook</span></div></div><div class="pill">Working pages</div></div><div class="content"><p class="template-line">• Week 2: Build monthly planning check-in template + pre-event countdown emails</p>
+<p>+ post-event follow-up.</p>
+<p class="template-line">• Week 3: Write post-event vendor thank-you template + new vendor introduction</p>
+<p>+ vendor co-marketing proposal.</p>
+<p class="template-line">• Week 4: Batch 2 weeks of social content using the 90-Day Calendar + generate</p>
+<p>captions + schedule everything.</p>
+<h3>BONUS: AI Prompt Cheat Sheet for Event</h3>
+<p>Planners Copy and paste these into Claude or ChatGPT. Replace [brackets] with your details.</p>
+<h3>Client Acquisition Prompts</h3>
+<p>Write an inquiry response email for an event planning business. The prospect is [Name] who is inquiring about [wedding / corporate event / social event] planning for [date/season] in [city]. Their</p>
+<p>vision: [brief description from their inquiry]. Acknowledge their vision specifically, briefly describe my planning approach, and invite them to a discovery call. Warm, excited tone. Sign as [Your Name], [Business Name]. Vendor &amp; Partnership Prompts</p>
+<p class="template-line">Write a post-event thank-you message for my vendor [Vendor Name] who provided [service — e.g., florals / photography / catering] at [Event Name] on [Date]. Acknowledge one specific thing they did</p>
+<p>that made a difference. Mention you&#x27;d love to work together again and that you&#x27;ll be recommending them to future clients. Warm and personal, under 100 words.</p>
+<h3>Social Media Prompts</h3>
+<p>Write 5 social media captions for an event planner. Topics: 3 questions to ask before hiring an event planner, the most common wedding planning mistake, what a day-of coordinator actually does,</p>
+<div class="section-label">how to create a cohesive event aesthetic, and one thing I wish</div>
+<p>every client knew before we started working together. Each under 150 words, conversational, ends with a question or CTA. Business: [Your Name / Business Name]. You create unforgettable moments. AI helps you build the business that makes more of them possible.</p></div><div class="footer"><span>AI Playbook</span><span class="page-number">07</span></div></section></main></body></html>
