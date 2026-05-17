@@ -468,6 +468,12 @@ a:hover .brand-logo {
 }
 
 @media (hover: none), (pointer: coarse) {
+  a:hover,
+  button:hover,
+  .group:hover {
+    transform: none !important;
+  }
+
   .luxe-card,
   .premium-edge,
   .category-card {

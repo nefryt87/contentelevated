@@ -180,7 +180,7 @@ export default function ProductPage({ params }) {
                 className="group rounded-[24px] border border-[#6f7a89]/10 bg-white/[0.018] p-4 transition hover:border-[#6f7a89]/28 hover:bg-white/[0.035]"
               >
                 <div className="aspect-[1.55] overflow-hidden rounded-[18px] bg-[radial-gradient(circle_at_50%_20%,rgba(107,124,255,0.08),transparent_18rem),#0b0f14]">
-                  <img src={item.image} alt="" className="h-full w-full object-contain p-2 transition group-hover:scale-[1.03]" />
+                  <img src={item.image} alt="" className="h-full w-full object-contain p-2 transition sm:group-hover:scale-[1.03]" />
                 </div>
                 <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[#8bd7ff]">{item.price}</p>
                 <h3 className="editorial-serif mt-2 text-xl leading-tight text-[#f7f8fb]">{item.title}</h3>
