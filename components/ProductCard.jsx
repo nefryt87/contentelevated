@@ -3,16 +3,35 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import ProductMockup from "./ProductMockup";
 
+function useHoverCapable() {
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(query.matches);
+
+    update();
+    query.addEventListener("change", update);
+
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return canHover;
+}
+
 export default function ProductCard({ product, index }) {
+  const canHover = useHoverCapable();
+
   return (
     <motion.article
-      whileHover={{ y: -5 }}
+      whileHover={canHover ? { y: -5 } : undefined}
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       className="premium-edge group relative min-h-[22rem] overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] p-3 shadow-[0_18px_58px_rgba(0,0,0,0.24)] sm:min-h-[25rem] sm:rounded-[1.75rem] sm:p-4 sm:shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,rgba(107,124,255,0.12),transparent_36%),radial-gradient(circle_at_85%_18%,rgba(188,245,255,0.035),transparent_30%)] opacity-80 transition duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,rgba(107,124,255,0.12),transparent_36%),radial-gradient(circle_at_85%_18%,rgba(188,245,255,0.035),transparent_30%)] opacity-80 transition duration-500 sm:group-hover:opacity-100" />
       <div className="shine" />
       <div className="relative flex h-full flex-col">
         <Link
@@ -25,11 +44,11 @@ export default function ProductCard({ product, index }) {
               <img
                 src={product.image}
                 alt={`${product.title} product mockup`}
-                className="absolute inset-0 h-full w-full object-contain p-2 opacity-95 transition duration-700 group-hover:scale-[1.01] sm:group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-contain p-2 opacity-95 transition duration-700 sm:group-hover:scale-[1.03]"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_8%,rgba(188,245,255,0.09),transparent_26%),linear-gradient(180deg,transparent,rgba(5,7,11,0.2))]" />
-              <div className="absolute bottom-4 right-4 translate-y-3 rounded-full border border-[#6f7a89]/22 bg-[#05070b]/72 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#b8f3ff] opacity-0 backdrop-blur transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="absolute bottom-4 right-4 hidden translate-y-3 rounded-full border border-[#6f7a89]/22 bg-[#05070b]/72 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#b8f3ff] opacity-0 backdrop-blur transition duration-300 sm:block sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                 Open Bundle
               </div>
             </>

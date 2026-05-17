@@ -1,0 +1,535 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#f8f3e9; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#080707; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#9a6c65 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c8963d 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#080707 94%,white), color-mix(in srgb,#080707 86%,#9a6c65)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.3; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(248,243,233,.72); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#f8f3e9; letter-spacing:.26em; }
+.doc-label { color:#9a6c65; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#9a6c65 32%,transparent); border-radius:999px; color:#9a6c65; background:rgba(255,255,255,.035); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
+.gold { color:#9a6c65; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(248,243,233,.72); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#9a6c65 38%,transparent); border-bottom:1px solid color-mix(in srgb,#9a6c65 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#9a6c65 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#9a6c65 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#9a6c65 52%,transparent); border-bottom:1px solid color-mix(in srgb,#9a6c65 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#9a6c65 32%,transparent); }
+.metric b { display:block; color:#9a6c65; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(248,243,233,.72); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#080707; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#9a6c65 18%,transparent), transparent 2in), linear-gradient(135deg, #080707, color-mix(in srgb,#080707 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#9a6c65; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#9a6c65 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#9a6c65 56%,transparent); color:#9a6c65; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(248,243,233,.72); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#9a6c65 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#9a6c65 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#0c0a0a; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#080707; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#080707; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #9a6c65; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#0c0a0a; }
+.layout-protocol .work { background:#fbfbf5; color:#080707; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#9a6c65 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#080707; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#080707; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#9a6c65 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#080707; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#9a6c65 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#080707; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #9a6c65; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#9a6c65 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#9a6c65 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-dark-shop"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for tattoo artists</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Tattoo</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Tattoo Artists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tattoo Artist</h3>
+        <p>The AI Playbook for Tattoo Artists Convert more consultation requests, fill your books with ideal clients, build your Instagram following, and create a client experience that generates referrals and repeat bookings</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The tattoo artists with fully booked calendars aren&#x27;t just the most technically skilled. They respond to every inquiry professionally and specifically. They follow up on clients who expressed interest but didn&#x27;t book. They post consistently on Instagram with</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content That Attracts Their Ideal Clients — Not Just Likes. They Have A Consultation</h3>
+        <p>process that builds trust before the needle touches skin. And they create a client experience that makes every person they tattoo become a walking advertisement. This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Playbook Gives You 7 Chapters Covering Every High-Leverage Scenario — With Copy-</h3>
+        <p>paste AI prompts throughout.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Consultation Booking</h3>
+        <p>The DM &amp; Email Response System Instagram DMs are how most tattoo clients first make contact. The response speed and tone of your first reply determines whether that conversation becomes a booking. A warm, specific, professional response within a few hours converts dramatically better than a delayed or generic one.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram Dm Inquiry Response</h3>
+        <p>Write a warm, professional Instagram DM response for my tattoo studio. The client [Name] reached out about [tattoo type/idea — e.g., a floral sleeve / a blackwork geometric piece / a fine line portrait]. They mentioned: [paste key details from their message]. My style is [your style — e.g., blackwork / fine line / neo-traditional / realism / Japanese]. I want to: (1) make them feel like I genuinely read their message, (2) briefly describe how I&#x27;d approach their idea, (3) ask 1-2 qualifying questions to move the conversation forward, (4) invite them to book a consultation. Warm and confident, under 150 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a professional inquiry response email for my tattoo studio. Client [Name] reached out about [tattoo description]. They mentioned: [details]. My style: [style]. I want to: (1) acknowledge their idea specifically, (2) briefly describe my approach, (3) outline the consultation and booking process, (4) include a link to my booking form or calendar. Professional and warm, under 200 words. Sign as [Your Name], [Studio Name]. Handling Pricing Conversations</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Pricing Is One Of The Most Common Friction Points In Tattoo Bookings. Artists Who Handle</h3>
+        <p>it proactively — with context, not defensiveness — convert more inquiries into consultations.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Price Enquiry Response</h3>
+        <p>Write a response to someone who asked &#x27;how much does a tattoo like this cost?&#x27; for a [tattoo type/description]. My minimum is $[amount] / I charge $[X] per hour. I want to: (1) give them a realistic range without committing to a final price before the consultation, (2) briefly explain what affects the price (size, detail, placement, session length), (3) invite them to book a consultation where I can give an accurate quote. Confident and non-defensive. Under 150 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 2: Consultation &amp; Client Prep</h3>
+        <p>The Consultation as a Trust-Building System The consultation is where bookings are won or lost. A client who leaves a consultation fully informed, excited, and clear on the process books. A client who leaves with unanswered questions ghosts. Your consultation communication before and after the session is as important as the session itself.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Consultation Confirmation Email</h3>
+        <p>Write a consultation confirmation email for my tattoo studio. Client [Name], consultation on [date] at [time] at [studio address]. I want to: (1) confirm the details, (2) tell them what to bring (reference images, ideas about placement, anything they&#x27;ve gathered), (3) tell them what we&#x27;ll cover (design direction, size, placement,</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Pricing, Timeline), (4) Build Excitement. Warm And Practical. Under 200 Words. Sign</h3>
+        <p>as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Consultation Follow-Up Email</h3>
+        <p>Write a post-consultation follow-up email for my tattoo studio. Client [Name], we discussed: [tattoo description, placement, rough size]. I want to: (1) recap what we agreed on, (2) outline the next steps (deposit to book, design approval process, session date options), (3) let them know how long I&#x27;ll hold their spot before opening it to others. Warm but clear about next steps. Under 200 words. Sign as [Your Name], [Studio Name]. Appointment Preparation Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Appointment Prep Email</h3>
+        <p>Write an appointment preparation email for my tattoo studio. Client [Name], appointment on [date] at [time]. I want to cover: (1) how to prepare their skin (moisturise, no sunburn, no alcohol the night before), (2) what to eat and drink before the session (meal beforehand, bring snacks and water for longer sessions), (3) what to wear (loose clothing for the tattooed area), (4) what to bring (ID, deposit receipt, any final reference images), (5) pain management options if applicable. Practical and reassuring. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>System</h3>
+        <p>The Post-Session Follow-Up System The client experience doesn&#x27;t end when the tattoo is finished. A thoughtful post-session</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>System Provides Aftercare Guidance, Invites Healed Photos, Asks For The Review, And</h3>
+        <p>plants the seed for the next piece. This is the most underused retention system in tattooing.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Session Aftercare Email</h3>
+        <p>Write a post-session aftercare email for my tattoo studio. Client [Name] just got their [tattoo description] today. I want to cover: (1) immediate aftercare instructions (wrap removal, washing, moisturising), (2) what&#x27;s normal in the first few days (redness, swelling, peeling), (3) what to avoid (sun, swimming, tight clothing), (4) when to contact me if something seems wrong. Clear, reassuring, and professional. Under 250 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a 4-6 week follow-up message for my tattoo studio. Client [Name] got their [tattoo description] on [date]. I want to: (1) check in on how the healing went, (2) ask for a healed photo so I can feature it in my portfolio, (3) make a warm personal ask for a Google or Instagram review. Warm and genuine. Under 150 words. Sign as [Your Name / Studio Name]. The Rebooking System Clients who&#x27;ve already been tattooed by you are your warmest possible prospect for the next piece. Most artists never proactively reach out. The ones with full books do.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Rebooking Outreach (Multi-Piece Clients)</h3>
+        <p>Write a rebooking outreach message for a past client [Name] who got their [tattoo description] on [date]. I remember they mentioned wanting to add [next piece they mentioned / continue the sleeve]. I want to: (1) check in warmly, (2) mention their idea for the next piece, (3) let them know I have availability in [timeframe]. Warm and personal — not a blast. Under 100 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Flash Day Announcement Email</h3>
+        <p>Write a flash day announcement email for my tattoo studio. I&#x27;m running a flash day on [date]. Designs available: [brief description — e.g., 20 original flash designs in my signature style, each done once only]. Price range: $[X]-$[X]. How to book: [process — first come first served / pre-book / walk-ins]. I want this email to create genuine excitement and urgency. Fun, enthusiastic, under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars That Fill Your Books</h3>
+        <p>Instagram is where tattoo clients discover, vet, and decide on their artist. The accounts that stay fully booked post consistently across 4 content pillars: finished work (healed and fresh), process content (stencils, in-progress, setup), personal story (your journey, your style, your values), and education (aftercare tips, placement advice, style explanations).</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>Write 5 Instagram captions for a tattoo artist with a [style — e.g., blackwork / fine line / Japanese / realism] aesthetic. Topics: (1) a tattoo you&#x27;re most proud of this</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Month — Describe It Emotionally And Technically, (2) Your Approach To Consulting</h3>
+        <p>with a new client — what you ask and why, (3) a common misconception about [your style] that you&#x27;d like to correct, (4) your favourite placement for [type of design] and why it makes the tattoo better, (5) a direct booking CTA with a description of what you&#x27;re taking on right now. Each under 150 words, specific and genuine. Studio name: [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Flash Design Post Captions</h3>
+        <p>Write 3 Instagram captions for announcing flash tattoo designs. I&#x27;ve created [number] original flash designs in my [style] style. They&#x27;re available on [date / first come first served / DM to claim]. Price: $[amount] each. I want the captions to: (1) create genuine excitement, (2) show why flash designs are a different experience from custom work, (3) drive DMs and bookings. Fun and enthusiastic. Under 100 words each. Studio: [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Studio Reputation &amp; Reviews</h3>
+        <p>The Review Generation System</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Google Review Request</h3>
+        <p>Write a Google review request message (DM and email versions) for my tattoo studio. Client [Name] got their [tattoo description] on [date]. Send 4-6 weeks after session when healed. DM version: under 60 words. Email version: under 100 words. Both: personal, non-automated, include direct Google review link, express genuine appreciation. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Responding To Reviews</h3>
+        <p>Write a warm, specific response to a 5-star Google review for my tattoo studio. The reviewer said: [paste their review]. Respond personally using their name, reference one detail from their review, express genuine thanks, mention [Studio Name] naturally. Under 80 words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Situations</h3>
+        <p>Communicating Policies Professionally</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a deposit and cancellation policy explanation email for my tattoo studio to send with every booking confirmation. Policy: deposit is $[amount], non-refundable if cancelled within [X] days / if no-show. I want to: (1) explain the policy clearly, (2) explain why deposits exist (design time, holding the spot), (3) tell them what happens if they need to reschedule vs. cancel outright. Professional and matter-of- fact — no apology for having policies. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Declining An Inquiry</h3>
+        <p>Write a professional, warm response to a tattoo inquiry I need to decline because [reason — e.g., the design is outside my style / I&#x27;m fully booked for the foreseeable future / I don&#x27;t feel I&#x27;m the right artist for this piece]. I want to: (1) be honest without being harsh, (2) if appropriate, suggest they consider a different artist type, (3) leave the door open for future work that is more aligned. Under 100 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Inquiry &amp; Consultation System</h3>
+        <p>• Build your DM and email inquiry response templates using Chapter 1 prompts • Write your consultation confirmation and post-consultation follow-up emails • Set a reminder: check all unanswered DMs and emails every morning</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Aftercare &amp; Rebooking System</h3>
+        <p>• Build your post-session aftercare email using the Chapter 3 prompt • Write your 4-6 week healed photo and review request • Identify 10 past clients who mentioned a next piece — use rebooking outreach</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Instagram Content Batch</h3>
+        <p>• Use Chapter 4 Instagram prompt to batch 10 captions in one session • Schedule 4-5 posts per week for the next 3 weeks • Plan a flash day for the coming month using the Chapter 3 flash day announcement prompt</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Identify past clients who haven&#x27;t reviewed — write personal review request DMs • Set healed photo + review request as a standard step 4-6 weeks after every session • Respond to all existing Google reviews using the Chapter 5 response prompt</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>09</span></div>
+</section></main></body></html>

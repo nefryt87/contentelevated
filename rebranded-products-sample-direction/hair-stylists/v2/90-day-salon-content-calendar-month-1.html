@@ -1,0 +1,595 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>90-Day Salon Content Calendar · Month 1</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b98378; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#241a1a; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#241a1a; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f3; }
+.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#241a1a; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#241a1a; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#241a1a; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #b98378; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b98378 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b98378 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you 90-day calendar for hair stylists</div>
+    </div>
+  </div>
+  <h1>90-Day Salon Content Calendar · Month 1</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Hair Stylists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Beauty Business System</h3>
+        <p>90-Day Salon ContentCalendar</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Plan The Next Quarter Of Content With Prompts, Post Ideas, Stylist</h3>
+        <p>notes, and weekly campaign direction. 90</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ready-To-Post Days</h3>
+        <p>3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Platforms Covered</h3>
+        <p>7</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars</h3>
+        <p>12</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use This Calendar</h3>
+        <p>This calendar gives you 90 days of content — one post per day — for Instagram, Facebook, and TikTok. Each entry includes a content type, caption, and stylist tip so you know exactly what to post and why it works. You don&#x27;t need to post every single day — pick what fits your schedule and adapt captions to your voice and services. Platform Best Post Types Ideal Frequency Best Times Instagram Reels, Carousels, Stories 45x / week Tue–Fri, 9am &amp; 6pm Facebook Long-form posts, Lives 34x / week Wed–Fri, 14pm TikTok Reels, Process videos 35x / week</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Daily, 79pm The 7 Content Pillars Pillar Description Approx. Posts Transformation Before/afters, reveals, dramatic changes 22 posts Educational Tips, how-tos, myth-busting, industry knowledge 18 posts Engagement Polls, questions, hot takes, games 14 posts Promotional Offers, scarcity, gift cards, bundles 12 posts Behind the Scenes Process, setup, tools, daily life 10 posts</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>1 2 Testimonial</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Quotes, Reviews, Milestones</h3>
+        <p>8 posts Personal/Brand Story, values, why, vulnerability 6 posts Hashtag Sets by Content Type Transformation: #hairtransformation #beforeandafter #hairgoals #behindthechair #salonresults Educational: #hairtips #haircare #haireducation #knowyourhair #stylistadvice Engagement: #hairpoll #askastylist #hairobsessed #salonlife #hairlove Promotional: #bookme #hairappointment #salonbooking #openings #hairsalon Behind the Scenes: #salonlife #dayinthelife #hairstylist #behindthescenes #salonbts Testimonial: #clientlove #hairreview #happyclients #trustyourstylist #salonresults Personal/Brand: #stylistlife #myjourney #hairbusiness #salonowner #smallbusiness The 90-Day Calendar One post per day. Adapt every caption to your voice, your services, and your clients.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Before &amp; After Reveal The glow-up is REAL. Swipe to see what a fresh [service] can do. Ready for yours? Book the link in bio. Stylist tip: Post a dramatic before/after. Use natural light. Side-by-side in one frame.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>3 4 5</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>5 Signs You Need a Trim If your ends are splitting, your style isn&#x27;t holding, or your hair feels like straw — it&#x27;s time. Here are 5 signs you&#x27;re overdue for a trim (and why waiting makes it worse). Stylist tip: Educational post. Add a poll: &#x27;When did you last get a trim?&#x27;</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tt</h3>
+        <p>This or That — Hair Edition Beach waves OR sleek blowout? Comment below! We can do both btw) Stylist tip: Film a quick reel showing both styles. Fast cut. Add trending audio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Your Morning Setup This is what 6am looks like behind the chair. The prep, the tools, the vibe. What questions do you have about what I use? Stylist tip: Story-style reel. Authentic. No need to be perfect — relatable wins here.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>All</h3>
+        <p>Book This Week A few spots just opened up this week. If you&#x27;ve been thinking about [service] — this is your sign. DM me or tap the link to grab yours before they&#x27;re gone.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>6 7 8 9 Stylist tip: Simple graphic + urgency. Don&#x27;t over-discount. Use scarcity authentically.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Love</h3>
+        <p>&quot;I&#x27;ve never felt more confident walking out of a salon.&quot; — Client first name] This is why I do what I do. Tag a friend who deserves a glow-up. Stylist tip: Screenshot or quote card. Always get permission first.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why I Became A Stylist</h3>
+        <p>I didn&#x27;t just want a job. I wanted to change how people feel when they look in the mirror. Here&#x27;s the real story of why I picked up my first pair of shears… Stylist tip: Longer-form post. Storytelling builds loyalty. Don&#x27;t be afraid to go deep.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Color Myth Busted MYTH Going blonde ruins your hair forever. TRUTH With the right technique and aftercare, you can go light AND keep your hair healthy. Here&#x27;s what actually matters. Stylist tip: Carousel works great here. One myth per slide, busted with the truth.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>10 11 12 Color Melt Process Watch a muddy base turn into a butterscotch dream. The whole process from start to finish. #colormelt #haircolor #salonlife Stylist tip: Time-lapse or sped-up video of a color service. Add trending audio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Poll: What&#x27;s Your Biggest Hair Struggle? Real talk — what&#x27;s your hair&#x27;s biggest nemesis? Vote below and I&#x27;ll create a reel answering the top answer this week! Stylist tip: Use IG Stories poll sticker. Follow up with content based on the winner.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Make Your Color Last Longer</h3>
+        <p>You just left the salon feeling amazing. Let&#x27;s keep it that way. 5 things to do (and 3 to NEVER do) to protect your color investment. Stylist tip: List-style post. Highly shareable. Pin it to your page.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>All</h3>
+        <p>Tool Tour Not all tools are created equal. Here&#x27;s what&#x27;s actually in my kit and why I spent the money on these specific ones. The difference is in the details. Stylist tip: Flat lay photo or quick reel. Authentic recommendation &gt; hard sell. 13</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>14 15 16</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Send a friend my way and you BOTH get $X] off your next service. No catch. Just good hair and good vibes. DM me &#x27;FRIEND&#x27; to get your referral code. Stylist tip: Clean graphic. Simple offer. Make it easy to act on immediately.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day In The Life</h3>
+        <p>5am wake-up → 6 clients → continuing education → dinner. This is what a Tuesday looks like as a stylist. Worth it every single time. #salonlife Stylist tip: Authentic DITL content performs well. No fancy editing needed.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Scalp Health 101 Your scalp is skin. And most people are treating it wrong. Here&#x27;s what a healthy scalp actually needs — and what&#x27;s probably causing your buildup, flakes, or thinning. Stylist tip: Carousel. Highly saveable. Strong hook on slide 1.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Fb</h3>
+        <p>Trivia Tuesday</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>17 18 19 Hair trivia time! How many individual hairs does the average person have on their head? A 50,000 B 100,000 C 200,000. Answer in the comments! Stylist tip: Fun engagement driver. Answer in comments a few hours later.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tt</h3>
+        <p>The Chop — Emotional Reveal She came in wanting 2 inches. She left with a whole new identity. With full permission to share — watch her reaction. #haircut#salonreaction #transformation Stylist tip: Client reaction reels get massive reach. Always get signed consent.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>How I Prep for a Big Color Day 5 hours. 3 foiling techniques. 1 very happy client. Here&#x27;s exactly how I set up and plan for a complex color appointment so nothing goes wrong. Stylist tip: Process content builds serious credibility. Great for attracting high-ticket clients.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Seasonal Special Summer hair is having a MOMENT and your appointment is the only thing standing between you and your best hair yet. Limited slots — tap the link. Stylist tip: Tie promotions to seasons. Feels timely, not pushy. 20</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>21 22 23</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Results Speak &quot;I cried when I saw it.&quot; No really — she did. This was [client]&#x27;s first time going platinum and we took our time to do it RIGHT. The patience paid off. Stylist tip: Emotional testimonials outperform discount posts every time.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Fb</h3>
+        <p>My Biggest Lesson This Year The most important thing I&#x27;ve learned in X] years behind the chair isn&#x27;t a technique. It&#x27;s this: [lesson]. What&#x27;s the best advice you&#x27;ve ever received? Stylist tip: Invite conversation. Respond to every comment. This builds community.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tt</h3>
+        <p>What NOT to Say to Your Stylist Please. I am begging you. Stop saying these 4 things. We want to help you — but these requests make it impossible. #hairstylist #salonhumor #hairadvice Stylist tip: Relatable humor drives massive shares. Keep it lighthearted, not mean.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content System</h3>
+        <p>24 25 26 Rate My Work Be honest — rate this look! Drop a heart if you love it or tell me what you&#x27;d change. I can take it. I think.) Stylist tip: Vulnerability + humor = engagement. Works especially well on Reels.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">90-Day Calendar</p><h2>90-Day Salon Content Calendar · Month 1</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>The Truth About Box Dye I&#x27;m not here to shame you. But I am here to explain exactly what box dye does to the hair shaft — and why it makes salon corrections harder AND more expensive. Knowledge is power. Stylist tip: This type of educational post gets saved AND shared constantly.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ig</h3>
+        <p>Texture Transformation From flat and lifeless to full and bouncy. This is what the right cut + product combo can do for fine hair. No filter. No fluff. Just technique. Stylist tip: Fine hair transformations get enormous reach because it&#x27;s a huge pain point.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>All</h3>
+        <p>Last Spots This Month I have X] openings left before the end of the month. Once they&#x27;re gone, next availability is [date]. If your hair is on your mind — now&#x27;s the time.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>90-Day Salon Content Calendar · Month 1</span><span>09</span></div>
+</section></main></body></html>

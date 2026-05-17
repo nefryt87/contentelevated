@@ -1,0 +1,401 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8fbf8; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6e8f89 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#b9cbc4 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8fbf8 94%,white), color-mix(in srgb,#f8fbf8 86%,#6e8f89)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6e8f89; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6e8f89 32%,transparent); border-radius:999px; color:#6e8f89; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6e8f89; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6e8f89 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6e8f89 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6e8f89 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6e8f89 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6e8f89 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6e8f89 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6e8f89 32%,transparent); }
+.metric b { display:block; color:#6e8f89; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#17211f; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6e8f89 18%,transparent), transparent 2in), linear-gradient(135deg, #17211f, color-mix(in srgb,#17211f 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6e8f89; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6e8f89 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6e8f89 56%,transparent); color:#6e8f89; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6e8f89 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6e8f89 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8fbf8; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#17211f; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#17211f; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6e8f89; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8fbf8; }
+.layout-protocol .work { background:#fbfbf5; color:#17211f; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6e8f89 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#17211f; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#17211f; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6e8f89 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#17211f; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6e8f89 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#17211f; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6e8f89; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6e8f89 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6e8f89 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for physical therapists</div>
+    </div>
+  </div>
+  <h1>Brand Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>PT</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Physical Therapists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit &amp; Canva Template Guide</h3>
+        <p>Build a PT brand that earns trust, drives referrals, and fills your schedule. Color palettes • Fonts • Canva templates • Video guide • 7-day checklist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Practice Positioning</h3>
+        <p>Physical therapy is chosen twice — once by the referring physician and once by the patient. Your brand needs to work for both audiences. Physicians want to refer to a competent, communicative, outcomes-focused clinician. Patients want to go somewhere approachable, effective, and worth their time and insurance co-pay. Your brand can speak to both. Your Practice Promise We help [patient type — e.g., active adults / post-surgical patients / athletes / seniors] [recover from or manage — condition type] so they can [return to meaningful activity — e.g., get back to sport / live without chronic pain / move independently again] through [your approach — e.g., evidence-based, hands-on physical therapy / individualized plans of care that go beyond symptom management]. Example: &#x27;We help active adults in [City] recover from injury and get back to the activities they love — through individualized, hands-on physical therapy that treats the root cause, not just the symptoms.&#x27; Spec</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Color Palettes</h3>
+        <p>PT branding should feel clinical without being cold, and active without being aggressive. Blues and teals signal trustworthiness and movement. Two proven directions:</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette A: Active Clinical (Orthopedic / Sports Focus)</h3>
+        <p>Deep Blue</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Primary — Trust, Expertise Active Teal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#0F7B6C</h3>
+        <p>Accent — Movement, Vitality Light Blue</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#E8F2Fa</h3>
+        <p>Background — Clean, Open White</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Ffffff</h3>
+        <p>Base BG — Clinical, Clear</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette B: Warm Rehabilitation (Neuro / Pelvic / Geriatric Focus)</h3>
+        <p>Warm Orange</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#D4601A</h3>
+        <p>Primary — Energy, Warmth Sand</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#E8D5A8</h3>
+        <p>Background — Calm, Safe Slate Blue</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#4A6B8A</h3>
+        <p>Accent — Trust, Calm Off White</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Faf7F2</h3>
+        <p>Base BG — Warm, Clean</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Use Font Notes</h3>
+        <p>Headlines Montserrat Bold Strong, clean, and active — conveys clinical expertise with a modern edge. Free on Google Fonts. Subheadings Montserrat Medium Consistent hierarchy — familiar enough to read easily, distinct enough to organize</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">11</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content.</h3>
+        <p>Body Copy Open Sans Regular Universally readable — excellent for patient- facing communications and print materials. CTA / Emphasis Montserrat SemiBold For appointment CTAs, key outcomes, and important callouts. Use purposefully.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">12</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 4: Canva Template Guide</h3>
+        <p>All templates below are free on Canva. Search the exact term, apply your brand colors and fonts.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">13</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Canva Search Term Best Use</h3>
+        <p>Instagram Post (1:1) &quot;physical therapy instagram post</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Education, exercise tips, patient stories Exercise Demo Reel Cover &quot;fitness exercise reel cover</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template&quot;</h3>
+        <p>Thumbnails for exercise demonstration videos Instagram Story (9:16) &quot;health clinic story template</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva&quot;</h3>
+        <p>Tips, polls, appointment reminders Facebook Cover &quot;physical therapy clinic facebook cover&quot; First impression — active, professional, welcoming Google Business Post &quot;local healthcare post template&quot; Condition-specific education, seasonal tips Patient Testimonial Card &quot;recovery testimonial quote</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template&quot;</h3>
+        <p>Turn Google reviews into social proof graphics Educational Infographic &quot;anatomy exercise infographic</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva&quot;</h3>
+        <p>Condition explainers, exercise mechanics Print &amp; In-Clinic Templates • Business Card — Search: &#x27;physical therapist business card&#x27; — include specialty and direct phone/email • HEP Template — Search: &#x27;exercise program template canva&#x27; — brand your home exercise programs • Referral Pad — Search: &#x27;referral form template canva&#x27; — branded referral forms for physician offices • New Patient Welcome Card — Search: &#x27;welcome card template canva&#x27; — hand to new patients at first visit • Waiting Room Poster — Search: &#x27;health education poster canva&#x27; — condition- specific education for your clinic Short-Form Video Ideas (Instagram Reels / TikTok / Facebook) • &#x27;What to expect at your first PT appointment&#x27; — highest-viewed video type for PT practices • &#x27;3 exercises for [common condition]&#x27; — practical value, high shareability • &#x27;Is this pain serious? When to see a PT&#x27; — addresses the most common barrier to booking • &#x27;Exercise demo: how to do [specific exercise] correctly&#x27; — builds trus</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day 1 — Foundation</h3>
+        <p>✓ Choose color palette (A or B) ✓ Select fonts in Canva Brand Kit ✓ Write your Practice Promise ✓ Update or schedule new clinic and team photos Days 2–3 — Build Templates ✓ Create Instagram post template ✓ Design exercise demo Reel cover template ✓ Build Facebook cover photo ✓ Create patient testimonial card template ✓ Design one educational infographic Days 4–5 — Update All Profiles ✓ Update Google Business Profile (photos, description, confirm hours and specialties) ✓ Update Facebook profile + cover photo ✓ Update Instagram bio with Practice Promise + booking/contact link ✓ Update website team photos and bios ✓ Update email signatures for all clinical staff Days 6–7 — First Week of Content ✓ Batch-create 3 posts using your 90-Day Calendar ✓ Generate captions with the monthly AI prompt ✓ Film one short exercise demo or &#x27;what to expect&#x27; video ✓ Schedule Mon/Wed/Fri ✓ Post first piece of content and engage with every comment in first hour Patients trust the practices</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>06</span></div>
+</section></main></body></html>

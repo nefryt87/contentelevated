@@ -1,0 +1,535 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f4f7f8; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#5f86a8 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d19a62 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f4f7f8 94%,white), color-mix(in srgb,#f4f7f8 86%,#5f86a8)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#5f86a8; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#5f86a8 32%,transparent); border-radius:999px; color:#5f86a8; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#5f86a8; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#5f86a8 38%,transparent); border-bottom:1px solid color-mix(in srgb,#5f86a8 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#5f86a8 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#5f86a8 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#5f86a8 52%,transparent); border-bottom:1px solid color-mix(in srgb,#5f86a8 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#5f86a8 32%,transparent); }
+.metric b { display:block; color:#5f86a8; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#101419; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#5f86a8 18%,transparent), transparent 2in), linear-gradient(135deg, #101419, color-mix(in srgb,#101419 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#5f86a8; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#5f86a8 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#5f86a8 56%,transparent); color:#5f86a8; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#5f86a8 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#5f86a8 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f4f7f8; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#101419; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#101419; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #5f86a8; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f4f7f8; }
+.layout-protocol .work { background:#fbfbf5; color:#101419; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#5f86a8 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#101419; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#101419; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#5f86a8 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#101419; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#5f86a8 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#101419; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #5f86a8; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#5f86a8 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#5f86a8 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for videographers</div>
+    </div>
+  </div>
+  <h1>Email Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Video</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Videographers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Communication Template Pack</h3>
+        <p>24 done-for-you templates: inquiry to film delivery, corporate development, vendor partnerships, and reputation management</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Inquiry &amp; Booking Conversion</h3>
+        <p>T1 — Wedding Inquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your Wedding Videography Inquiry — [Names]</h3>
+        <p>Hi [Names], Thank you so much for reaching out — your wedding on [date] at [venue] sounds absolutely beautiful. [One specific detail they mentioned] really stood out to me. A little about how I&#x27;d approach your day: [2-3 sentences on your style and approach for their specific wedding]. Here&#x27;s a quick overview of my packages: [brief summary or link]. I&#x27;d love to walk you through them on a quick call. Would [two specific times] work this week? [Your Name] | [Studio Name] | [Phone] T2 — Corporate Inquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your Video Project Inquiry — [Name/Company]</h3>
+        <p>Hi [Name], Thank you for reaching out — the [project type] for [Company] sounds like a great project and exactly the kind of work I love taking on. To make sure I give you the most useful response: [1-2 clarifying questions — timeline, budget range, deliverables needed]. I&#x27;d love to jump on a quick discovery call to understand the full scope and put together an accurate proposal. Would [two specific times] work? [Your Name] | [Studio Name] | [Phone] T3 — Follow-Up Day 3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Checking In On Your [Project Type] Inquiry — [Name]</h3>
+        <p>Hi [Name], Just following up on my email from [day] — wanted to make sure it didn&#x27;t get buried! One thought I had about your [project/wedding]: [one specific, genuine insight relevant to their situation]. Still available for a call [two times] this week. [Your Name] | [Studio Name] T4 — Post-Consultation Booking Follow-Up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Following Our Call — [Name]</h3>
+        <p>Hi [Name], Really enjoyed our conversation — [their project] is going to be an incredible [film / campaign / piece]. As discussed: I&#x27;ll hold your date until [date/time]. To confirm: [deposit amount] + signed contract. Contract here: [link].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Any questions before signing, I&#x27;m a quick message away. [Your Name] | [Studio Name] T5 — Package Pricing Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Videography Packages — [Name]</h3>
+        <p>Hi [Name], Here are my packages for [project type]: [Package 1 Name] — $[amount]: [what&#x27;s included in 2 sentences] [Package 2 Name] — $[amount]: [what&#x27;s included] [Package 3 Name] — $[amount]: [what&#x27;s included] Based on what you&#x27;ve shared about [their situation], I&#x27;d recommend [Package X] because [specific reason]. Happy to walk through any questions on a quick call. Would [two times] work? [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Pre-Production &amp; Client Prep</h3>
+        <p>T6 — Wedding Pre-Production Questionnaire Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Wedding Video Questionnaire — [Names]</h3>
+        <p>Hi [Names], With your wedding on [date] coming up, it&#x27;s time to get into the details so I can plan your film perfectly. Please complete this by [date]: [questionnaire link] Key things I&#x27;ll ask about: favourite moments to prioritise, any special songs, ceremony and reception timeline, whether you want a same-day edit, any vendor contacts I should have, and any logistical notes. The more you share, the more I can be invisibly in the right place at the right moment. [Your Name] | [Studio Name] T7 — Corporate Pre-Production Brief Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Pre-Production Brief — [Project Name], [Company]</h3>
+        <p>Hi [Name], Excited to get started on [project name]. Before we dive in, I&#x27;d like to align on a few things to make sure the final film hits every mark. Please review and respond to this brief by [date]: Project goal: what should the viewer feel, know, or do after watching? Target audience: who exactly is this for? Key messages: the 2-3 things that must come across Tone and style: [examples or references if you have them] Interviews: who and how many? Deliverables: master file specs, social cut lengths needed Deadline: hard deadline for final delivery Reply with your answers or let&#x27;s run through this on a call. [Your Name] | [Studio Name] T8 — Week-Before Wedding Confirmation</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Names], One week! I am so excited for your day. Confirming my details: Arrival time: [time] at [getting-ready address] My assistant/second shooter (if applicable): [Name] My direct number on the day: [Phone] One tip for the morning: if possible, have a window in your getting-ready space — natural light makes a huge difference to both video and photos. See you on [date]! [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3: Film Delivery &amp; Post-Wedding</h3>
+        <p>T9 — Wedding Film Delivery Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Wedding Film Is Ready — [Names]✨</h3>
+        <p>Hi [Names], Before I give you the link — I want you to know that filming your wedding was a genuine privilege. [One specific personal observation from their day — e.g., &#x27;The moment [Name] first saw [Name] walking down the aisle — I knew that was going to be the heart of your film.&#x27;] Your film is ready: [link] It&#x27;s [length], fully edited and colour-graded. To download: [brief instructions]. A few things to know: - Your film is available for [timeframe] — I recommend downloading it promptly - Social sharing: please tag me [Instagram handle] if you post any clips - Higher resolution version: [details if applicable] I&#x27;ll check in again in a few days. For now — enjoy it with people you love. [Your Name] | [Studio Name] T10 — Corporate Film Delivery Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Project Name] — Delivered, [Name]</h3>
+        <p>Hi [Name], [Project name] is delivered and ready for review. What&#x27;s in your delivery package: - Master file: [specs] at [link/location] - [Social cut 1 — e.g., 60-second version]: [link] - [Social cut 2 — e.g., 15-second teaser]: [link] - Raw audio tracks (if applicable): [link] Revision process: [X] rounds of revisions are included. Please consolidate all feedback into one document and send by [date] to maintain the delivery schedule. It was a pleasure working on this. I&#x27;m proud of how it came together. [Your Name] | [Studio Name] T11 — Post-Film Review Request</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Names/Name], I&#x27;ve been thinking about [the wedding / the project] since delivery and I genuinely hope you love the film. A personal ask: if you&#x27;re happy with the work, a Google review means the world to a small studio like mine. It helps other [couples / businesses] find a videographer they can trust. Direct link: [Google Review Link]. Takes about 2 minutes. Thank you for trusting me with [your story / your brand]. [Your Name] | [Studio Name] T12 — 1-Year Anniversary / Project Check-In</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Checking In — [Names/Company]</h3>
+        <p>Hi [Names/Name], It&#x27;s been [a year / X months] since [your wedding / we delivered your film] and I&#x27;ve been thinking about you. [Wedding: &#x27;I still look back at your film and feel proud of every frame. I hope your first year has been full of joy.&#x27;] [Corporate: &#x27;I&#x27;d love to hear how the video has been performing and whether there are any new projects I can help with.&#x27;] With appreciation, [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Partnerships</h3>
+        <p>T13 — Photographer Partnership Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], Videographer, [City]</h3>
+        <p>Hi [Name], I&#x27;m [Your Name], a videographer based in [City] specialising in [wedding / commercial / both]. I&#x27;ve been following your photography and it&#x27;s genuinely stunning — [one specific genuine compliment]. I reach out because coordinated photo and video teams produce dramatically better results for couples, and I&#x27;d love to explore a mutual referral relationship. Would a quick call or coffee work? [Your Name] | [Studio Name] | [Phone] | [Instagram] T14 — Wedding Planner Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], Videography, [City]</h3>
+        <p>Hi [Name], I&#x27;m [Your Name] from [Studio Name] — a videography studio in [City] specialising in [style — e.g., cinematic documentary wedding films / corporate and commercial video]. I&#x27;ve admired [Planning Company]&#x27;s events and I&#x27;d love to introduce myself as a potential vendor recommendation. I&#x27;m always professional, unobtrusive, and I make the job easier for every vendor I work alongside. Happy to send a portfolio or meet briefly. [Your Name] | [Studio Name] | [Phone] T15 — Marketing Agency Introduction</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Videography Partnership — [Your Name] + [Agency]</h3>
+        <p>Hi [Name], I&#x27;m [Your Name], a commercial videographer based in [City] with experience in [brand video / product / testimonials / event coverage]. I reach out to agencies like [Agency] who occasionally need a trusted video production partner for client projects — whether that&#x27;s for overflow work, specific campaign needs, or specialist video production. Here&#x27;s my portfolio: [link]. Happy to discuss rates and availability for any upcoming projects. [Your Name] | [Studio Name] | [Phone] T16 — Monthly Vendor Value Touch</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Month] — A Note From [Your Name]</h3>
+        <p>Hi [Name], Quick monthly note — something that came up recently that might be useful for your [couples / clients]: [One specific, genuine insight — e.g., for a photographer: &#x27;I&#x27;ve found that keeping 5-10 minutes between the end of family formals and the start of couple portraits dramatically reduces the stress both teams feel — and produces better work from everyone.&#x27; / for a planner: &#x27;Pre-ceremony 30- minute buffer for vendors to set up and test audio is one of the most underused timeline improvements I&#x27;d recommend to any couple.&#x27;] Hope your bookings are going well. [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Development</h3>
+        <p>T17 — Corporate Retainer Proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Video Retainer Proposal — [Your Name] + [Company]</h3>
+        <p>Hi [Name], It&#x27;s been a pleasure working with [Company] on [previous project] and I wanted to put a specific idea on the table. A monthly or quarterly video retainer would mean: - [X] videos per [month/quarter] at $[amount] (vs. $[rate] individually) - Priority scheduling — you&#x27;re always first on my calendar - Consistent visual style across all your content - Faster turnaround as I understand your brand deeply This works best for brands producing [type of content] regularly. Based on [Company]&#x27;s content needs, I think this could be a great fit. Would you be open to a 20-minute call to discuss? [Your Name] | [Studio Name] T18 — New Corporate Client Prospecting Email</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Video Content For [Company] — [Your Name]</h3>
+        <p>Hi [Name], I&#x27;m [Your Name], a commercial videographer based in [City] specialising in [your speciality — e.g., brand storytelling / product video / event coverage]. I came across [Company] and noticed [one specific, genuine observation about their content or brand — e.g., &#x27;your product line looks incredible and I think a short-form product video series would perform really well on Instagram and TikTok&#x27;]. I&#x27;d love to offer a complimentary 30-minute call to discuss what video content could do for your brand. No obligation — just a genuine conversation. [Your Name] | [Studio Name] | [Portfolio Link]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Additional Templates</h3>
+        <p>T19 — 5-Star Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Thank you so much, [Name]! It was a genuine privilege working on [their project] — [add one specific detail if their review mentions it]. Reviews like yours mean the world to a small studio. — [Your Name], [Studio Name] [Respond within 24 hours. Personal, warm, include studio name for SEO.] T20 — Negative Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Hi [Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard I hold for every project. I&#x27;d really appreciate the chance to understand what happened and make it right. Please call me directly at [Phone]. — [Your Name], [Studio Name] [Never argue publicly. Move it offline. Your response is read by every future</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Who Searches You.]</h3>
+        <p>T21 — Styled Shoot Collaboration Pitch</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Styled Shoot Collaboration — [Your Name] + [Name]</h3>
+        <p>Hi [Name], I&#x27;ve been thinking about a collaboration and your work immediately came to mind. I&#x27;m planning a styled [wedding / editorial] shoot: [brief concept — venue, mood, style]. I&#x27;d handle videography. What I&#x27;m looking for: [photographer / florist / dress designer / venue].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>What I can offer: a full highlight film for your portfolio, complete usage rights, and a co-marketing relationship built on actually working together. Interested in a quick call? [Your Name] | [Studio Name] | [Instagram] T22 — Unavailable Date Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your [Date] Videography Inquiry — [Name]</h3>
+        <p>Hi [Name], Thank you so much for thinking of me for [date] — unfortunately I&#x27;m already booked for that day. I&#x27;d hate for you to be without a great videographer, so I wanted to suggest two colleagues whose work I genuinely admire: [Name 1 — link] and [Name 2 — link]. If your date changes or you need videography for another occasion, please don&#x27;t hesitate to reach out. Congratulations on [your wedding / your project]! [Your Name] | [Studio Name] T23 — Same-Day Edit Upsell Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Same-Day Edit For Your Wedding — [Names]</h3>
+        <p>Hi [Names], I wanted to mention something worth considering before your wedding: a same-day edit. A same-day edit is a 3-5 minute film I cut during your reception and play at your venue during the evening. The reaction from guests — and the couple — is always extraordinary. It&#x27;s one of the most memorable moments of the entire day. It requires an additional [X] hours of my time and costs $[amount] added to your package. I have [limited / one remaining] slot available for your date. Interested? Just reply here. [Your Name] | [Studio Name] T24 — Referral Thank-You</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You For The Referral — [Name]</h3>
+        <p>Hi [Name], Thank you so much for referring [Client Name] to me — I genuinely appreciate the trust that takes and I&#x27;m going to make sure their experience is everything you promised. Referrals from people whose work I respect are the foundation of what I do. Thank you. [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>09</span></div>
+</section></main></body></html>

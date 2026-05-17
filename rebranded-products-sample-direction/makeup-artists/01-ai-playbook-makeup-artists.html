@@ -1,0 +1,359 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f5; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#ba7b83 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b7ac 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f5 94%,white), color-mix(in srgb,#fff7f5 86%,#ba7b83)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#ba7b83; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#ba7b83 32%,transparent); border-radius:999px; color:#ba7b83; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#ba7b83; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#ba7b83 38%,transparent); border-bottom:1px solid color-mix(in srgb,#ba7b83 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#ba7b83 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#ba7b83 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#ba7b83 52%,transparent); border-bottom:1px solid color-mix(in srgb,#ba7b83 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#ba7b83 32%,transparent); }
+.metric b { display:block; color:#ba7b83; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#24191b; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#ba7b83 18%,transparent), transparent 2in), linear-gradient(135deg, #24191b, color-mix(in srgb,#24191b 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#ba7b83; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#ba7b83 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#ba7b83 56%,transparent); color:#ba7b83; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#ba7b83 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#ba7b83 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f5; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#24191b; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#24191b; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #ba7b83; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f5; }
+.layout-protocol .work { background:#fbfbf5; color:#24191b; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#ba7b83 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#24191b; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#24191b; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#ba7b83 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#24191b; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#ba7b83 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#24191b; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #ba7b83; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#ba7b83 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#ba7b83 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for makeup artists</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>MUA</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Makeup Artists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Fill Your Calendar, Reduce No-Shows,</h3>
+        <p>and Build a Beauty Business That Books Itself A Complete Guide for Freelance MUAs &amp; Beauty Professionals</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Mua&#x27;S Business Edge</h3>
+        <p>The beauty industry rewards visibility, consistency, and trust. The MUAs building fully booked calendars aren&#x27;t always the most technically skilled — they&#x27;re the most responsive, the most consistent on social media, and the most professional in how they follow up and communicate. AI makes all three effortless. • The Booking Gap: Most MUAs lose bookings not because a client chose someone else — but because nobody followed up. A lead who doesn&#x27;t hear back in 24 hours books someone else. AI fixes response time instantly. • The No-Show Problem: Wedding and event day no-shows are rare, but trial and bridal preview cancellations aren&#x27;t. A consistent reminder sequence protects your calendar and your income. • The Content Consistency Gap: MUAs who post consistently attract more inbound inquiries, command higher rates, and build audiences that refer. AI makes consistent posting effortless alongside a full client schedule. • What AI Does vs. What You Do: AI handles communicat</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Follow-Up. You Create The Art, Build The Relationship, And Deliver The</h3>
+        <p>transformation. Never confuse the tools with the talent.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+        <p>Start here. Three quick wins that will immediately improve your business. • Win #1 — Inquiry Response Template: Use AI to write a warm, professional response to every new inquiry — pricing overview, availability check, and a link to book a consultation. Response time is the #1 factor in converting inquiries to bookings. • Win #2 — Bridal Inquiry Follow-Up Sequence: For wedding clients, AI writes a</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>3-message follow-up sequence — value add, social proof, and soft close — that converts bridal inquiries at a significantly higher rate. • Win #3 — Content Batch: Use AI to write an entire month of Instagram and TikTok captions in one session. Your 90-Day Calendar has the post ideas — AI writes the words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Filling Your Calendar With The Right</h3>
+        <p>Clients A full calendar starts with a clear message about who you serve and a system for following up with every inquiry. AI gives you both. • Niche Clarity Messaging: The most booked MUAs are clearly positioned — bridal, editorial, film/TV, special occasion, natural glam, bold/avant-garde. AI helps you write bio copy and captions that speak directly to your ideal client. • Bridal Inquiry Sequence: A 4-message sequence from first inquiry to booked trial — warm response, portfolio highlight, social proof, and a gentle booking nudge. Most MUAs follow up once. This sequence follows up four times without feeling pushy. • Off-Season Outreach: AI writes seasonal campaigns for prom season, holiday parties, New Year&#x27;s Eve, and other booking peaks — sending to your existing</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client List To Fill Gaps Before They Appear.</h3>
+        <p>• Referral Generation: Your happiest clients — especially brides — are your best source of new bookings. AI writes a referral ask that&#x27;s so warm and personal, clients are genuinely excited to forward it.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 4: Client Communication That Builds</h3>
+        <p>Loyalty Clients who feel cared for between bookings rebook faster, refer more, and leave better reviews. AI keeps you present without demanding more of your time. • The Pre-Appointment Prep Email: Sent 48 hours before any appointment, this</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email Sets Expectations, Explains How To Prep Their Skin, And Builds Excitement.</h3>
+        <p>Clients arrive prepared. The appointment runs better. They&#x27;re happier with the result. • The Post-Appointment Follow-Up: After a bridal trial or special event, AI writes</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>a personal follow-up asking how the day went and requesting a review or referral. Most MUAs never send this. The ones who do get dramatically more reviews. • The Re-Engagement Campaign: For past clients who haven&#x27;t booked in 6+ months, AI writes a warm win-back message — a seasonal offer, a new service announcement, or simply a personal check-in. • The Anniversary and Seasonal Touch: Wedding anniversaries, holiday season, prom season — AI writes timely, personal messages to past bridal and event clients that generate consistent repeat and referral bookings year-round.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Social Content That Books You Out</h3>
+        <p>Your Instagram and TikTok are your portfolio and your marketing engine. MUAs who post consistently and strategically attract more inquiries, command higher rates, and build audiences that refer. AI makes that content effortless. • The 3-Post Formula: One portfolio/transformation post, one educational or tips post, one personal/trust post. Rotate these every week for Mon/Wed/Fri and you&#x27;ll never run out of content. • High-Converting Content Categories: Before and after transformations (with consent), skin prep tips, product reviews, behind the scenes at events, bridal day</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content, Tutorials, Client Testimonials, Myth-Busting Beauty Content.</h3>
+        <p>• Reels and Short-Form Video: Get-ready-with-me videos and transformation Reels consistently outperform all other content for MUAs. AI writes your voiceover scripts and captions in minutes. • Batch Creating in One Session: Use the monthly AI prompt in your 90-Day Calendar to generate all 12 captions in one sitting. Content done for 4 weeks in under 30 minutes.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Reviews, Referrals, And Growing Your</h3>
+        <p>Reputation Your reputation is your biggest marketing asset. AI helps you systematically build it. • The Google and Instagram Review Ask: Sent 24–48 hours after any significant appointment, this is one of the highest-ROI messages an MUA can send. More reviews = more bookings from cold traffic. • The Bridal Referral System: Brides refer other brides — especially in the</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>months right after their wedding. AI writes a perfectly-timed referral ask that converts happy brides into your most productive referral source. • The Vendor Partnership: Wedding planners, photographers, and florists are your best referral network. AI writes a peer introduction email and a co-marketing proposal that builds those relationships.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+        <p>One week at a time. • Week 1 — Inquiry System: Write your inquiry response template. Build your bridal follow-up sequence. Set up your booking confirmation email. • Week 2 — Client Communication: Write your pre-appointment prep email. Build your post-appointment follow-up. Create your review request message. • Week 3 — Content: Batch 2 weeks of posts using your 90-Day Calendar. Generate captions with the monthly AI prompt. Film one Reel or GRWM video. • Week 4 — Referrals and Growth: Write your bridal referral ask. Draft 2 vendor</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bonus: AI Prompt Cheat Sheet For Muas</h3>
+        <p>Copy and paste these into Claude or ChatGPT. Replace [brackets] with your details.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking &amp; Client Communication</h3>
+        <p>Write a professional inquiry response for my makeup business [Business Name]. A potential client named [Name] is inquiring about [service — e.g., bridal makeup / special occasion / prom]. My rates start at $[amount]. I&#x27;m available on [date range]. Include a warm greeting, brief overview of my services, pricing starting point, and a CTA to book a consultation. Tone: warm, professional, excited. Write a pre-appointment prep email for my makeup client [Name] who has a [bridal trial / wedding day / special event] appointment on [Date] at [Time]. Include: how to prep their skin the night before and morning of, what to wear (front-opening top), what to bring, and one thing to look forward to about the appointment. Keep it warm and exciting.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write 5 Instagram captions for a makeup artist. Topics: 3 things clients should do before a makeup appointment, the difference between HD and airbrush foundation, how to make your makeup last all day, why a bridal trial is non-negotiable, and my favourite current product for [skin type/finish]. Each under 150 words, conversational, ends with a question or CTA. Business: [Your Name / Business Name]. You create art. AI handles the business. Together, you build a business that&#x27;s as beautiful as your work.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section></main></body></html>

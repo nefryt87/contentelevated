@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8faf2; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#798d75 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c1cbb6 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8faf2 94%,white), color-mix(in srgb,#f8faf2 86%,#798d75)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#798d75; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#798d75 32%,transparent); border-radius:999px; color:#798d75; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#798d75; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#798d75 38%,transparent); border-bottom:1px solid color-mix(in srgb,#798d75 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#798d75 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#798d75 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#798d75 52%,transparent); border-bottom:1px solid color-mix(in srgb,#798d75 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#798d75 32%,transparent); }
+.metric b { display:block; color:#798d75; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#1b2118; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#798d75 18%,transparent), transparent 2in), linear-gradient(135deg, #1b2118, color-mix(in srgb,#1b2118 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#798d75; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#798d75 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#798d75 56%,transparent); color:#798d75; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#798d75 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#798d75 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8faf2; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#1b2118; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#1b2118; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #798d75; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8faf2; }
+.layout-protocol .work { background:#fbfbf5; color:#1b2118; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#798d75 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#1b2118; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#1b2118; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#798d75 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#1b2118; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#798d75 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#1b2118; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #798d75; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#798d75 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#798d75 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for massage therapists</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Wellness</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Massage Therapists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Fill Your Schedule, Keep Clients Coming Back,</h3>
+        <p>and Build a Thriving Practice Using AI A Complete Guide for Massage Therapists &amp; Holistic Practitioners</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Massage Therapist&#x27;S</h3>
+        <p>Business Edge Massage therapy practices live and die by repeat bookings and referrals. The therapists with fully booked schedules are the most consistent at following up, reminding clients to rebook, and staying visible locally. AI makes all three effortless. • The Rebooking Gap: Studies show only 40% of massage clients rebook without a follow-up prompt. A simple post-appointment email doubles that number instantly. • The No-Show Cost: A consistent 2-touch reminder sequence reduces cancellations by 30–40% — protecting thousands in annual revenue. • The Visibility Gap: Massage therapists who post consistently attract more inbound bookings, retain clients longer, and generate more referrals. • What AI Does vs. What You Do: AI handles communication, reminders, and</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content. You Provide The Therapeutic Experience. Never Confuse The Tools With</h3>
+        <p>the talent.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 2: Your First 3 AI Wins This Week</h3>
+        <p>Start with one of these this week. Each takes under an hour to implement. • Win #1 — Rebooking Email: AI writes a post-appointment email that thanks the</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking Interval — Converting One-Time Visitors Into Regulars.</h3>
+        <p>• Win #2 — Reminder Sequence: A 24-hour and morning-of reminder. AI writes both in 3 minutes. No-shows drop significantly. • Win #3 — Content Batch: Use the monthly AI prompt in your 90-Day Calendar to write 4 weeks of social captions in one sitting.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Filling Your Schedule Year-Round</h3>
+        <p>A full schedule requires consistent rebooking follow-up, systematic outreach to lapsed clients, and enough local visibility to attract new ones consistently. • The Rebooking System: Every client gets a post-appointment nudge suggesting their optimal return interval. This single habit is the highest ROI action for any massage practice. • Lapsed Client Reactivation: AI writes a warm win-back message for clients who haven&#x27;t booked in 6–12 weeks — a seasonal offer, new service, or personal check-in. • Package and Membership Offers: AI writes an offer email for massage packages or memberships — presenting the value clearly and making signing up feel like the smart choice. • Seasonal Booking Campaigns: Mother&#x27;s Day, Valentine&#x27;s Day, holiday season, New Year wellness — AI writes targeted outreach for every booking peak of the year.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 4: Client Retention That Fills Your</h3>
+        <p>Calendar Clients who feel cared for between appointments rebook faster, refer more, and stay with you for years. AI builds that care systematically. • Post-Appointment Care Email: Sent within 24 hours — thanks the client, gives self-care tips, suggests rebooking interval. The single highest-ROI communication habit for massage therapists. • The Wellness Check-In: For recurring clients, a mid-month check-in asking how their body is feeling keeps them engaged and shows you care between sessions. • Milestone Recognition: 10th session, 1-year anniversary, a wellness goal achieved — AI writes a personal celebration message. Clients share these moments. • Package Renewal Email: As a package nears its end, AI writes a natural renewal message that makes continuing feel like the easy, obvious choice.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Building Your Referral Network</h3>
+        <p>Referrals are your most cost-effective source of new clients. AI builds the referral ask into every natural high point of the client relationship.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Post-Session Referral Ask: After a particularly positive session, AI writes a short, warm referral request that feels like a natural expression of gratitude — not a sales pitch. • Healthcare Provider Partnerships: Chiropractors, physical therapists, personal trainers, and sports medicine doctors are excellent referral sources. AI writes a professional introduction and mutual referral proposal. • Gift Certificate Campaign: Gift certificates are your best holiday revenue driver. AI writes the campaign email, the social post, and the follow-up reminder.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Social Content That Attracts Clients</h3>
+        <p>Massage therapists who post consistently attract more local clients. Educational content explaining benefits, conditions, and what to expect converts at the highest rate. • The 3-Post Formula: One educational post (technique, benefit, wellness tip), one trust post (client experience, your story, behind the scenes), one engagement post (question, poll, seasonal tip). Mon/Wed/Fri. • High-Converting Topics: Benefits of regular massage, what to expect at your first session, deep tissue vs. relaxation, massage for specific conditions, self-care tips between sessions. • Google Business Profile: For local massage discovery, GBP is your most important platform. Post weekly, respond to every review, and keep photos fresh.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+        <p>One system at a time. This plan delivers measurable results in 30 days. • Week 1: Write rebooking email + 2-touch reminder sequence + no-show recovery message. • Week 2: Wellness check-in template + package offer email + gift certificate campaign. • Week 3: Post-session referral ask + healthcare provider introduction + first lapsed client batch. • Week 4: 2 weeks of social content batched + first GBP post + schedule everything.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Therapists Copy and paste these into Claude or ChatGPT. Replace [brackets] with your details. Rebooking Email Prompt Write a post-appointment email for my massage client [Name] who had a [massage type] today focusing on [body area]. Thank them warmly, give 2 specific self-care tips relevant to their treatment area, recommend rebooking in [timeframe — e.g., 2–3 weeks], and include a booking link. Keep it warm and under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Media Content Prompt</h3>
+        <p>Write 5 educational social media captions for a massage therapist. Topics: why tight shoulders aren&#x27;t just about posture, what causes muscle knots, the difference between deep tissue and relaxation massage, how often to get a massage, and one self-care tip clients can do at home. Each under 150 words, warm conversational tone, ends with question or CTA. Business: [Your Name / Business Name], [City]. Number 1–5. Healing hands. A thriving business. Both are possible. AI handles the business side so you can focus on the healing.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section></main></body></html>

@@ -1,0 +1,377 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon Profit Calculator Guide</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b98378; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#241a1a; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#241a1a; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f3; }
+.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#241a1a; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#241a1a; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#241a1a; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #b98378; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b98378 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b98378 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for hair stylists</div>
+    </div>
+  </div>
+  <h1>Salon Profit Calculator Guide</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Hair Stylists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Calculator</h3>
+        <p>Know Your Numbers. Price With Confidence. Keep More Money. 4</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Calculator Tabs</h3>
+        <p>$197 Bundle price 1 Spreadsheet included 0 Guesswork needed © 2026 · Hairstylist Complete Growth Bundle · Salon Profit Calculator · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why Most Salon Owners Are Undercharging</h3>
+        <p>If you set your prices by looking at what competitors charge, asking around, or going with your gut — you&#x27;re not alone. Most stylists do. But here&#x27;s the problem: none of those methods actually tell you whether you&#x27;re making money.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Pricing Without Knowing Your Real Costs Means You Could Be Fully Booked And Still Not Profitable. It</h3>
+        <p>means giving discounts you can&#x27;t afford. It means never knowing if a slow week is fine or a financial emergency. This calculator fixes that. Four simple tabs. Real numbers. Total clarity on what you need to charge, what you need to earn, and whether your current business model is working. What&#x27;s Included Tab Name What It Does 1 Service Pricing Calculator Calculates your true price floor for any service based on supply costs, time, and target hourly rate 2 Break-Even Tracker Shows exactly how many services you need to sell each month to cover all your costs 3 Service Menu Planner Maps your full menu with price floors, current prices, and margin per service 4 Monthly Profit Goal Setter Works backward from your income goal to tell you exactly what you need to do each week</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 1 Service Pricing Calculator This tab answers the most important question in your business: what is the minimum you can charge for this service and still make money?</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use It:</h3>
+        <p>Enter your inputs for each service in the blue cells. The calculator does the rest. Input Field What to Enter Example Service Name The name of the service as it appears on your menu Full Balayage Supply Cost ($) All product costs for this service — color, developer, foils, gloves, toner $18.00 Service Duration (min) Total chair time including processing 180 min Target Hourly Rate ($) What you want to earn per hour of your time $65/hr Overhead Per Hour ($) Booth rent, utilities, software — divided by hours worked per day $12/hr Washout/Finish Time (min) Rinse, blow dry, style — add to total if separate from above 30 min The Formula Behind It Price Floor = Supply Cost + (Total Minutes ÷ 60) × (Hourly Rate + Overhead Per Hour) The calculator outputs three numbers for every service: • Price Floor — the absolute minimum you should charge (covers costs + hits your target rate) • Recommended Price — price floor + 20% margin buffer for slow weeks, product waste, and unbilla</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Price Floor $= 22 + (3.5 × $70) = $267 Recommended Price $267 × 1.20 = $320 Your Current Price $280 Margin at Current Price $280 − $267 = $13 per service (you&#x27;re undercharging) In this example, the stylist is charging $280 for a service that needs to be priced at $320 to hit their income goal. Multiply that by 5 balayages a week and they&#x27;re leaving $200/week — $10,400/year — on the table.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 2 Break-Even Tracker Your break-even point is the number of services you need to perform each month just to cover</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>your fixed costs. Anything above that is profit. Most salon owners have no idea what this number is. What to enter: Expense Category What to Include Booth Rent / Chair Rent Your monthly booth or suite rental fee Product &amp; Supply Budget Monthly spend on color, retail, tools, and supplies Software Subscriptions</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking System, Email Platform, Canva, Etc.</h3>
+        <p>Education &amp; Training Classes, certifications, memberships (monthly average) Marketing Budget Paid ads, printed materials, giveaways Health Insurance / Benefits If self-employed, include your monthly premium Miscellaneous / Buffer Unexpected costs — recommend 10% of total above The Formula Break-Even Services = Total Monthly Fixed Costs ÷ Average Revenue Per Service The tracker outputs: • Break-even service count — how many clients you need per month just to cover costs • Break-even per week — broken down to weekly targets for easier planning • Profit per additional service — every client above break-even earns this amount • Days to break-even — based on your average daily client count Use this number every month. It changes when your rent goes up, when you add a software tool, or when your average ticket changes. Check it quarterly at minimum.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 3 Service Menu Planner This tab is your complete menu overview — every service, its price floor, your current price, and the margin you&#x27;re earning. It&#x27;s designed to show you at a glance where you&#x27;re profitable and where you&#x27;re not.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Build Your Menu In This Tab:</h3>
+        <p>Column What to Enter Service Name Exactly as it appears on your menu or booking system Category Color / Cut / Treatment / Style / Add-On Supply Cost ($) Pulled from Tab 1 if already entered there Duration (min) Total chair time Price Floor ($) Auto-calculated from Tab 1 inputs Current Price ($) What you charge today — enter manually Margin ($) Auto-calculated: Current Price minus Price Floor Margin (%) Auto-calculated: Margin ÷ Current Price Status Auto-flagged: Healthy / Low Margin / Below Floor Understanding the Status Flags Status What It Means</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>What to Do   Healthy Margin is 20%+ above price floor No action needed. Consider raising at next price review.    Low Margin Margin is 0–20% above price floor Review supply costs or raise price at next opportunity.   Below Floor Current price is below calculated price floor Raise immediately. You are losing money on this service. Pro tip: Sort the Status column after you&#x27;ve filled in all your services. Any red flags tell you exactly which prices need to change — and by how much — before your next price increase.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tab 4 Monthly Profit Goal Setter Most stylists think about income as a result of however many clients they happen to see. This tab flips that. You start with what you want to earn — then it tells you exactly what needs to happen to get there. Step 1 — Enter Your Income Goal Enter your target take-home income for the month. This is after expenses — the money that actually lands in your pocket. Step 2 — Enter Your Working Days &amp; Hours How many days per week do you work? How many hours per day are you behind the chair? The</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Calculator Uses This To Build Your Available Appointment Slots.</h3>
+        <p>Step 3 — Enter Your Service Mix Estimate what percentage of your appointments are each service category (color, cut, treatment, etc.) and the average price for each. This doesn&#x27;t need to be perfect — a rough split gets you 90% of the way there. What the calculator outputs: Output What It Tells You Target Monthly Revenue Gross revenue needed to hit your income goal after expenses Required Weekly Revenue What you need to bring in each week — a more actionable number Required Daily Revenue Your daily target on working days Clients Needed Per Week Based on your average ticket, how many appointments per week Utilization Rate Needed What % of your available slots need to be filled Gap Analysis Difference between your current pace and your goal — shown in $ and clients 3 Ways to Close the Gap Options: raise average ticket, add clients, add days — with math for each The 3 Levers Every income goal can be reached by pulling one or more of these levers. The calculator shows yo</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only • See more clients — fill gaps in your schedule, reduce no-shows, improve rebooking rate • Work more days — add a day or extend hours if capacity is the constraint Most stylists find lever 1 (raising average ticket) is the fastest path. A $20 increase across 20 clients per week is $400/week — $20,000/year — with zero additional time in the chair.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Getting Started in 20 Minutes You don&#x27;t need to fill everything in perfectly on day one. Follow this sequence: Step 1 — Tab 1, your top 5 services (5 min) • Enter your 5 most commonly booked services • Be honest about supply costs — look at your actual product usage • Set your target hourly rate: what do you want to earn per hour of your time? • Look at the price floor vs. your current price for each service Step 2 — Tab 2, your monthly expenses (5 min) • List every fixed expense you pay monthly • Don&#x27;t forget software, education, and a buffer for surprises • Note your break-even service count — is it realistic given your current schedule? Step 3 — Tab 3, your full menu (5 min) • Add all your remaining services • Check the Status column — any red flags? • Note which services are Below Floor — these need immediate attention Step 4 — Tab 4, your income goal (5 min) • </p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Salon Profit Calculator Guide</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>$[AMOUNT]. Average service duration: [X] minutes. My overhead per service slot: $[AMOUNT]. Walk me through the math and tell me the minimum price I should charge and the recommended price with a healthy margin. Update this calculator quarterly — when your rent changes, when your supply costs shift, or after every price increase. Your numbers are a living document, not a one-time exercise.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Profit Calculator Guide</span><span>08</span></div>
+</section></main></body></html>

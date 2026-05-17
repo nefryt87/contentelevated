@@ -1,0 +1,381 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Booking System Bridal HMUA</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff8f5; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b9878d 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#dfc1b5 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff8f5 94%,white), color-mix(in srgb,#fff8f5 86%,#b9878d)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b9878d; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b9878d 32%,transparent); border-radius:999px; color:#b9878d; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b9878d; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b9878d 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b9878d 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b9878d 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b9878d 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b9878d 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b9878d 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b9878d 32%,transparent); }
+.metric b { display:block; color:#b9878d; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#24191b; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b9878d 18%,transparent), transparent 2in), linear-gradient(135deg, #24191b, color-mix(in srgb,#24191b 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b9878d; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b9878d 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b9878d 56%,transparent); color:#b9878d; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b9878d 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b9878d 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff8f5; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#24191b; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#24191b; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b9878d; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff8f5; }
+.layout-protocol .work { background:#fbfbf5; color:#24191b; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b9878d 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#24191b; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#24191b; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b9878d 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#24191b; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b9878d 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#24191b; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #b9878d; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b9878d 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b9878d 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for bridal hair &amp; makeup artists</div>
+    </div>
+  </div>
+  <h1>Booking System Bridal HMUA</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Bridal</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Bridal Hair &amp; Makeup Artists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Booking System Bridal HMUA</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bridal Hair &amp; Makeup Artist</h3>
+        <p>Bridal Booking System &amp; Contract Prep Kit Pre-booking questionnaire, trial feedback form, wedding morning checklist, contract clause guide, and vendor co-marketing proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Bridal Booking Questionnaire</h3>
+        <p>Send before or at the booking conversation. The more you know before the trial, the better the result — and the more professional you appear. ✓ Bride&#x27;s full name: ✓ Wedding date: ✓ Ceremony start time: ✓ Getting-ready venue / address: ✓ Photographer&#x27;s name (for tagging and coordination): ✓ Wedding planner (if applicable): ✓ How did you hear about [Studio Name]?</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Bridal Party Breakdown:</h3>
+        <p>✓ Number of people needing hair: ___ ✓ Number of people needing makeup: ___ ✓ Number needing both: ___ ✓ Names and roles of each person in the party (e.g., Bride, MOH, 3 x Bridesmaids, Mother of Bride): ✓ Any flower girls or junior bridesmaids?</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Bridal Look Vision:</h3>
+        <p>✓ How would you describe your dream bridal look in 3 words? ✓ Inspo photos: (link to Pinterest board or attach) ✓ Any looks you&#x27;ve seen that you definitely don&#x27;t want?</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Hair:</h3>
+        <p>✓ Current hair length and texture: ✓ Extensions (currently using / planning to use / open to discussing)? ✓ Have you had a hair trial before? ✓ Any concerns about your hair for the wedding day?</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Makeup:</h3>
+        <p>✓ Skin type: Dry / Normal / Oily / Combination ✓ Any skin conditions or sensitivities I should know about? (rosacea, eczema, allergies) ✓ Foundation shade (if known): ✓ Any makeup you&#x27;ve tried that didn&#x27;t work for you?</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Booking System Bridal HMUA</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Practical:</h3>
+        <p>✓ Preferred artist arrival time: ✓ Is there a getting-ready space with natural light? ✓ Will there be a videographer? (affects product choices) ✓ Do you have a wedding morning schedule or timeline yet? ✓ Is there anything else I should know? ✓ [A completed questionnaire means the trial is productive from minute one — no time wasted on discovery that could be used on the look itself.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Trial Run Feedback Form</h3>
+        <p>Post-Trial Sign-Off Form</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Approved Bridal Look — [Bride&#x27;S Name] — [Date]</h3>
+        <p>✓</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Hair:</h3>
+        <p>✓ Style: [description]: ✓ Parting: ✓ Volume/placement notes: ✓ Any specific adjustments for wedding day: ✓</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Makeup:</h3>
+        <p>✓ Foundation/skin prep notes: ✓ Eye look: ✓ Brow: ✓ Lip colour (shade + product): ✓ Highlight/contour notes: ✓ Setting method: ✓ Any specific adjustments for wedding day: ✓</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Timing:</h3>
+        <p>✓ Hair session duration: ___ minutes ✓ Makeup session duration: ___ minutes ✓ Total time for bride: ___ minutes ✓ ✓ PRODUCTS USED (note anything bride may react to or request): ✓</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Both Parties Confirm This Look And Agree To These Notes:</h3>
+        <p>✓ Bride signature: _________________________ Date: ___ ✓ Artist signature: _________________________ Date: ___ ✓ ✓ [This form protects both parties. A signed trial sign-off means no &#x27;that&#x27;s not what I</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Booking System Bridal HMUA</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>wanted&#x27; on the wedding morning. Build it into every trial.&#x27;]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Checklist</h3>
+        <p>Pre-Wedding Night Kit Check</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Makeup Kit:</h3>
+        <p>✓ Foundation: exact shade match(es) for each client in party ✓ Concealers: colour-correctors, under-eye, blemish ✓ Contouring: cream and powder options ✓ Eyes: full palette — neutrals, mid-tones, darks, shimmer ✓ Brows: pomade, pencil, gel, scissors, tweezers ✓ Lips: bride&#x27;s approved shade (at least 2 backups), lip liner, gloss ✓ Setting: setting spray x2, loose powder, blotting papers ✓ Lashes: bride&#x27;s approved style x2, party lash options, glue x2</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Hair Kit:</h3>
+        <p>✓ Heat tools: straightener, curling wand(s) x2 sizes, tongs ✓ Pins and grips: bobby pins (x50+), U-pins, kirby grips — all colours ✓ Elastics: multiple sizes and colours ✓ Products: volumising spray, texture spray, shine spray, hairspray (x2), dry shampoo ✓ Accessories: any pre-agreed hair accessories (confirm with bride)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Hygiene &amp; Professional:</h3>
+        <p>✓ Brush cleaner + sanitising spray ✓ Disposable applicators (wands, sponges, spatulas) ✓ Hand sanitiser ✓ Face masks if preferred ✓ Palette knives</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>✓ Admin:</h3>
+        <p>✓ Signed contract copy ✓ Balance due reminder (if applicable) ✓ Shot list of looks (from trial sign-off form) ✓ Photographer/planner contact numbers ✓ Emergency contact for bride ✓ [Review this checklist the night before every wedding. The item you forget will be the one you need.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Booking System Bridal HMUA</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Proposal</h3>
+        <p>Photographer + Bridal Artist Styled Shoot Proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Collaboration Idea — [Your Name] + [Photographer Name]</h3>
+        <p>Hi [Name], I&#x27;ve been thinking about our shared audience and I wanted to put a specific idea on the table. What I&#x27;m proposing: a styled bridal shoot collaboration. I handle all hair and makeup styling for [X] looks, you photograph them. We both walk away with a stunning portfolio set, co-branded marketing material, and a genuine referral relationship built on working together. Concept I have in mind: [brief description — venue, mood, season, number of looks, any dress/florist already in mind]. What I can offer: complete hair and makeup styling, portfolio usage rights, credit in all publications, and a genuine referral partner who actively recommends you to every bride I book. What I&#x27;m looking for: your photography talent and creative vision. Would a quick call to explore this work for you? [Your Name] | [Studio Name] | [Phone] | [Instagram]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Booking System Bridal HMUA</span><span>06</span></div>
+</section></main></body></html>

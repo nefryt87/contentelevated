@@ -1,0 +1,457 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fffaf6; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#a67a6d 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d3ad8b 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fffaf6 94%,white), color-mix(in srgb,#fffaf6 86%,#a67a6d)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#a67a6d; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#a67a6d 32%,transparent); border-radius:999px; color:#a67a6d; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#a67a6d; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#a67a6d 38%,transparent); border-bottom:1px solid color-mix(in srgb,#a67a6d 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#a67a6d 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#a67a6d 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#a67a6d 52%,transparent); border-bottom:1px solid color-mix(in srgb,#a67a6d 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#a67a6d 32%,transparent); }
+.metric b { display:block; color:#a67a6d; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#211817; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#a67a6d 18%,transparent), transparent 2in), linear-gradient(135deg, #211817, color-mix(in srgb,#211817 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#a67a6d; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#a67a6d 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#a67a6d 56%,transparent); color:#a67a6d; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#a67a6d 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#a67a6d 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fffaf6; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#211817; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#211817; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #a67a6d; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fffaf6; }
+.layout-protocol .work { background:#fbfbf5; color:#211817; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#a67a6d 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#211817; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#211817; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#a67a6d 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#211817; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#a67a6d 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#211817; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #a67a6d; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#a67a6d 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#a67a6d 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for wedding photographers</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Photo</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Wedding Photographers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Wedding Photographer</h3>
+        <p>The AI Playbook for Wedding Photographers Convert more inquiries, book premium couples, build vendor referrals, and create a gallery delivery experience that generates 5-star reviews</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The wedding photographers booking premium couples consistently aren&#x27;t just the most talented shooters. They respond to inquiries within 2 hours. They follow up on ghosted leads with the right message. They maintain venue and planner relationships that send warm referrals year-round. And they deliver galleries with an experience that makes couples feel celebrated rather than just served. This playbook gives you 7 chapters covering every scenario where AI saves you time and wins you more bookings — with copy-paste prompts throughout.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Conversion</h3>
+        <p>The 2-Hour Response Window Couples often contact 5-8 photographers simultaneously. The first professional, warm, and specific response wins a disproportionate number of consultations. Your response should feel like it was written specifically for them — because with AI, it takes 3 minutes to make it so.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Same-Day Inquiry Response</h3>
+        <p>Write a warm, enthusiastic inquiry response email for my wedding photography studio. The couple [Names] reached out about their wedding on [date] at [venue]. They mentioned: [paste 2-3 details from their inquiry — venue style, vibe, what matters to them]. My photography style is [your style — e.g., romantic documentary / bright and airy / moody film]. I want to: (1) make them feel like I genuinely read their inquiry, (2) briefly describe how I&#x27;d approach their specific wedding, (3) invite them to a discovery call with a specific time offered. Warm, excited, under 200 words. Sign as [Your Name], [Studio Name]. The Follow-Up Sequence for Ghosted Leads Most couples don&#x27;t ghost because they chose another photographer — they get overwhelmed with planning and lose track. A 3-touch follow-up recovers 30-40% of leads that go silent after your first response.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a 3-message follow-up sequence for a wedding photography inquiry that hasn&#x27;t responded. Couple [Names], wedding [date] at [venue]. Message 1 (Day 3): warm check-in, add one piece of relevant value about their venue or wedding style. Message 2 (Day 8): share a relevant before/after or portfolio piece with a brief note. Message 3 (Day 14): soft close — &#x27;closing my inquiry folder for [their month]&#x27; — leaves door open. Each under 80 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Onboarding</h3>
+        <p>The Post-Booking Welcome System The experience between booking and the wedding is where most photographers lose referrals before the wedding even happens. A thoughtful onboarding sequence sets expectations, builds excitement, and positions you as someone who is genuinely invested in their day.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Booking Welcome Email</h3>
+        <p>Write a post-booking welcome email for my wedding photography studio. The couple [Names] just signed their contract for their wedding on [date] at [venue/location]. I want to: (1) celebrate the booking with genuine excitement, (2) outline what they can expect from now until their wedding day (key touchpoints), (3) let them know the best way to reach me, (4) mention the engagement session if it&#x27;s included. Warm and personal. Under 250 words. Sign as [Your Name], [Studio Name]. The Engagement Session Prep Email Couples who are nervous before their engagement session produce awkward photos. A prep email that tells them exactly what to expect, what to wear, and how to act naturally reduces anxiety and produces dramatically better images.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Engagement Session Prep Email</h3>
+        <p>Write an engagement session prep email for my couple [Names] whose session is on [date] at [location]. Cover: what to wear (give specific guidance for their location/season), how to act naturally in front of the camera (your 2-3 best tips), what time to arrive, what the session flow looks like, and one thing that always makes sessions better. Warm, practical, and reassuring. Under 250 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Building Venue Preferred Vendor Relationships One preferred vendor listing at a busy wedding venue can generate 15-40 inquiries per year. The photographers on those lists maintain the relationship with consistent, professional communication — not just good work.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Venue Coordinator Introduction</h3>
+        <p>Write a professional introduction email from a wedding photographer to a venue coordinator named [Name] at [Venue Name]. My photography style is [style]. I want to: (1) introduce myself and my work briefly, (2) mention that I&#x27;ve photographed at or near their venue (if true) or that I&#x27;ve admired their venue, (3) ask about their preferred vendor process or list, (4) offer to send a portfolio or have a quick call. Professional, not salesy. Under 150 words. Sign as [Your Name], [Studio Name]. Monthly Value Touch for Wedding Planners Wedding planners are your single most powerful referral source. A planner who loves working with you will mention your name to every couple they work with. The key: make their job easier, not just your own.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Monthly Planner Value Touch</h3>
+        <p>Write a monthly value email from a wedding photographer to a wedding planner named [Name] at [Planning Company]. Share: (1) one insight that would help their couples during the planning process — e.g., a timeline tip, lighting consideration, or venue observation, (2) a brief mention of a recent wedding you both worked or a compliment on their recent work if applicable. Under 120 words. Colleague to colleague, not salesperson to prospect. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Generation</h3>
+        <p>The Gallery Delivery Experience Gallery delivery is the single most important moment for generating reviews and referrals. Most photographers email a link. The photographers generating consistent 5- star reviews build a moment around the delivery.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Gallery Delivery Email</h3>
+        <p>Write a gallery delivery email for my wedding photography studio. Couple [Names], wedding [date] at [venue]. The gallery contains [number] images and is delivered via [platform]. I want this email to: (1) build anticipation before giving the link, (2) share</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>2-3 personal observations from their day that made it special, (3) explain how to download and share the gallery, (4) plant the seed for the review ask without asking yet. Emotional, personal, specific. Under 300 words. Sign as [Your Name], [Studio Name]. The Review Request Follow-Up Ask 5-7 days after gallery delivery — not immediately. The couple needs time to look through the images and feel the emotion before you ask them to articulate it.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Review Request Email</h3>
+        <p>Write a review request email for my wedding photography studio, sent 5-7 days after gallery delivery. Couple [Names]. Reference one specific moment from their wedding day that I captured. Make a personal, non-transactional ask for a Google review. Include the direct link. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars That Book Premium Couples</h3>
+        <p>The Instagram and Pinterest accounts that attract high-budget couples consistently post across 4 content pillars: emotional story-telling, process transparency, education, and</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Proof. Couples Booking $5,000+ Photographers Want To See Evidence Of</h3>
+        <p>experience and emotional intelligence — not just technical skill.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>Write 5 Instagram captions for a wedding photographer with a [style — e.g., romantic documentary / bright and airy / dark and moody] aesthetic. Topics: (1) a wedding day moment that most photographers miss but I always prioritize, (2) advice for couples on how to feel natural in photos (a specific tip), (3) what to consider when choosing a wedding photographer beyond the portfolio, (4) an emotional story from a recent wedding (change the names), (5) a behind-the-scenes post about wedding day preparation. Each under 150 words, emotional and specific, ending with a question or soft CTA. Studio name: [Studio Name]. Pinterest Strategy for Wedding Photographers Pinterest drives long-tail discovery for wedding photographers — a pin from 2 years ago</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>regularly generates current inquiries if it&#x27;s properly keyworded. Each blog post or gallery should generate 10-15 pins to 5-8 boards.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Pinterest Pin Descriptions</h3>
+        <p>Write 5 Pinterest pin descriptions for a wedding photographer, each optimized for search. Pins are from a wedding at [venue] in [city]. Style: [style]. Describe: (1) overall wedding atmosphere, (2) bridal getting ready details, (3) ceremony moment, (4) first look or couple portraits, (5) reception dancing. Each description: 100-150 words, include venue name, city, style keywords (e.g., &#x27;romantic&#x27;, &#x27;candid&#x27;, &#x27;golden hour&#x27;), and end with a soft CTA to view the full gallery. Studio name: [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Pricing &amp; Fee Conversations</h3>
+        <p>Presenting Your Pricing Confidently Photographers who struggle with pricing conversations almost always do so because they present the number without enough context. Price is only uncomfortable when value hasn&#x27;t been established first.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Pricing Email Response</h3>
+        <p>Write an email response to a couple who asked &#x27;what are your packages and prices?&#x27; for wedding photography. My packages start at $[amount] and go to $ [amount]. Rather than just listing prices, I want to: (1) briefly contextualize what affects wedding photography investment, (2) describe what&#x27;s included at each level, (3) invite them to a call to discuss what fits their day. Confident, not apologetic about the price. Under 200 words. Sign as [Your Name], [Studio Name]. Handling the Budget Objection</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Budget Objection Response</h3>
+        <p>Write a response to a couple who said &#x27;we love your work but you&#x27;re a bit over our budget&#x27;. My lowest package is $[amount] and their budget is approximately $ [amount]. Options I can offer: [list any flexibility — e.g., smaller package / midweek discount / payment plan]. I want to: (1) acknowledge their honesty, (2) briefly explain what&#x27;s reflected in my price, (3) present whatever genuine options exist without devaluing my work. Warm but firm. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Build your same-day inquiry response template using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save in drafts • Set a reminder to check unanswered inquiries every Monday and Thursday</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Vendor Outreach</h3>
+        <p>• List 10 venues and planners you want referral relationships with • Use Chapter 3 prompts to write 5 personalized outreach emails • Write your monthly planner value touch template — schedule for the 1st of each</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Use the Chapter 5 Instagram prompt to batch 10 captions in one session • Schedule 3-4 posts per week for the next 3 weeks • Write 5 Pinterest pin descriptions for your last 2 weddings</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Review System</h3>
+        <p>• Audit past clients who haven&#x27;t reviewed — use Chapter 4 prompt to write personal requests • Set up gallery delivery email template as a standard workflow step • Identify your highest-traffic venue — build a relationship with their coordinator this week</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

@@ -1,0 +1,383 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit HVAC</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f4fbff; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#37a8e6 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#f1853e 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f4fbff 94%,white), color-mix(in srgb,#f4fbff 86%,#37a8e6)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#37a8e6; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#37a8e6 32%,transparent); border-radius:999px; color:#37a8e6; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
+.gold { color:#37a8e6; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#37a8e6 38%,transparent); border-bottom:1px solid color-mix(in srgb,#37a8e6 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#37a8e6 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#37a8e6 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#37a8e6 52%,transparent); border-bottom:1px solid color-mix(in srgb,#37a8e6 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#37a8e6 32%,transparent); }
+.metric b { display:block; color:#37a8e6; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#0d1a28; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#37a8e6 18%,transparent), transparent 2in), linear-gradient(135deg, #0d1a28, color-mix(in srgb,#0d1a28 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#37a8e6; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#37a8e6 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#37a8e6 56%,transparent); color:#37a8e6; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#37a8e6 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#37a8e6 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f4fbff; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#0d1a28; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#0d1a28; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #37a8e6; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f4fbff; }
+.layout-protocol .work { background:#fbfbf5; color:#0d1a28; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#37a8e6 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#0d1a28; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#0d1a28; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#37a8e6 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#0d1a28; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#37a8e6 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#0d1a28; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #37a8e6; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#37a8e6 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#37a8e6 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-field"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for hvac contractors</div>
+    </div>
+  </div>
+  <h1>Brand Kit HVAC</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>HVAC</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>HVAC Contractors product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit HVAC</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit HVAC</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit &amp; Canva Template Guide</h3>
+        <p>Build an HVAC brand that homeowners trust before they ever call. Color palettes • Fonts • Canva templates • Google Business Profile guide • 7-day checklist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Positioning</h3>
+        <p>HVAC is a trust business. Homeowners are inviting you into their homes, often during a stressful breakdown, and handing over thousands of dollars. Your brand — your truck, your uniform, your website, your Google profile — communicates whether you&#x27;re someone worth trusting before they ever speak to you. Your Brand Promise We help [homeowners / property managers / local businesses] in [City/area] [stay comfortable year-round / avoid system breakdowns / maximize the life of their HVAC investment] through [honest, reliable, expert service with no surprises]. Example: &#x27;We keep [City] families comfortable year-round — with expert HVAC service, honest pricing, and a guarantee that the job is done right the first time.&#x27; Service Positioning Angles • Residential comfort and reliability: &#x27;Your family deserves to be comfortable — whatever the weather outside&#x27; • Emergency service: &#x27;When your system fails, we answer the phone and show up fast&#x27; • Energy efficiency: &#x27;Lower energy b</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>HVAC)</h3>
+        <p>Deep Blue</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#1A3A5C</h3>
+        <p>Primary — Trust, Authority Bold Orange</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit HVAC</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit HVAC</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#D4601A</h3>
+        <p>Accent — Energy, Action Steel Gray</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#4A6A8A</h3>
+        <p>Secondary — Professional Light Blue</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Eef4Fa</h3>
+        <p>Background — Clean, Open</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette B: Bold Contrast (Stand Out In A Competitive Market)</h3>
+        <p>Charcoal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#1A2A3A</h3>
+        <p>Primary — Strong, Modern Electric Orange</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#E87A2A</h3>
+        <p>Accent — High Visibility, Energy Cool Gray</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#F0F4F8</h3>
+        <p>Background — Clean White</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Ffffff</h3>
+        <p>Base</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>Headlines: Montserrat Bold — strong, modern, highly readable on trucks, signs, and screens. Body: Open Sans Regular — clean and professional. Both free on Google Fonts and in Canva. Avoid overly decorative fonts — HVAC branding should communicate competence, not creativity.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Canva Search Term Best Use</h3>
+        <p>GBP / Facebook Post &quot;HVAC contractor facebook post</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">11</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template&quot;</h3>
+        <p>Job photos, tips, seasonal offers, reviews Before/After Post &quot;before after home improvement</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">12</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>System Installs — Old Vs. New</h3>
+        <p>Seasonal Campaign Flyer &quot;HVAC seasonal tune-up flyer</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">13</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva&quot;</h3>
+        <p>Spring/fall tune-up campaigns Service Agreement Card &quot;home service membership card</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">14</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva&quot;</h3>
+        <p>Print or digital service agreement promo Facebook Cover &quot;HVAC company facebook cover</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit HVAC</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit HVAC</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva&quot;</h3>
+        <p>Professional first impression Door Hanger &quot;home service door hanger</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Canva&quot;</h3>
+        <p>Post-job neighborhood marketing Business Card &quot;contractor business card</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Canva&quot;</h3>
+        <p>Magnetic or standard — bold and legible The Door Hanger Play • After every job, leave door hangers on the 5-6 nearest neighbors • Message: &#x27;We just serviced your neighbor at [street/neighborhood] — if you haven&#x27;t had your system checked this [season], now&#x27;s a great time&#x27; • AI writes the message. Canva formats it. Your tech leaves it. One of the highest- ROI local marketing tactics in home services.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>7-Day Brand Launch Checklist</h3>
+        <p>Days 1-2 — Foundation ✓ Choose color palette and add to Canva Brand Kit ✓ Select fonts (Montserrat + Open Sans) ✓ Write your Brand Promise ✓ Define your primary service positioning angle Days 3-4 — Build Templates &amp; Update Profiles ✓ Create GBP/Facebook post template with job photo frame ✓ Build seasonal campaign flyer (spring/fall tune-up) ✓ Update Google Business Profile — photos, description, services, hours ✓ Update Facebook page cover photo and description ✓ Design door hanger template Days 5-7 — First Week of Content ✓ Batch-create 3 posts using the 90-Day Calendar ✓ Generate captions with the monthly AI prompt ✓ Post one job photo to GBP with a keyword-rich caption ✓ Schedule Mon/Wed/Fri and engage with every comment The best HVAC brand isn&#x27;t the loudest. It&#x27;s the most trusted. Show up consistently. Do the job right. Ask for the review. Repeat.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit HVAC</span><span>05</span></div>
+</section></main></body></html>

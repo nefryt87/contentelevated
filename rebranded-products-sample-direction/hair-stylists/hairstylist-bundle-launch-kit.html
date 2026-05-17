@@ -1,0 +1,981 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Hairstylist Bundle Launch Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b98378; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#241a1a; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#241a1a; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f3; }
+.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#241a1a; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#241a1a; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#241a1a; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #b98378; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b98378 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b98378 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for hair stylists</div>
+    </div>
+  </div>
+  <h1>Hairstylist Bundle Launch Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Hair Stylists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>&amp; Sales Copy</h3>
+        <p>Hairstylist Complete Growth Bundle — Everything You Need to Sell 6 Sales copy assets 3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email Sequences</h3>
+        <p>5</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Post Scripts</h3>
+        <p>90</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day Marketing Plan</h3>
+        <p>© 2026 · Hairstylist Complete Growth Bundle · All rights reserved</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only What&#x27;s in This Launch Kit Everything you need to list, launch, and sell the Hairstylist Complete Growth Bundle — copy-paste ready across every channel.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section</h3>
+        <p>What It Covers 1 Gumroad / Stan Store Listings Bundle listing + all 6 individual product listings with full descriptions 2 Etsy Listings SEO-optimized titles, descriptions, and tag sets for each product 3 Facebook Group Launch Posts 4 posts for soft launch — announcement, value, value, CTA 4 TikTok / Reel Scripts 5 video scripts ready to film — hook, content, CTA 5 3-Email Launch Sequence Full email sequence for your list — subject lines + body copy 6 DM Scripts Cold, warm, and referral versions for outreach 7 90-Day Marketing Plan</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week-By-Week Action Plan From Launch Through Month 3</h3>
+        <p>8 Pricing Reference Full pricing ladder — individual + bundle</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1</h3>
+        <p>Gumroad / Stan Store Listings</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bundle Listing — $197</h3>
+        <p>Title: Hairstylist Complete Growth Bundle — AI Playbook + Social Calendar + Prompt Library + Profit</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Calculator + Client Retention System + Brand Kit</h3>
+        <p>Subtitle: Everything an independent stylist or salon owner needs to fill their chair, price with confidence, keep clients coming back, and build a business that runs on systems — not stress. Description: You became a stylist because you love transforming how people look and feel. The creativity, the connection, the moment someone sees their reflection and lights up. What you didn&#x27;t sign up for: posting to social media every day with no plan, guessing what to charge and wondering if you&#x27;re leaving money on the table, watching clients disappear between appointments, or spending hours writing the same emails and texts over and over. The stylists building fully booked, profitable businesses aren&#x27;t working harder. They have systems. This bundle gives you those systems. What&#x27;s included:   THE SALON AI PLAYBOOK + 57-PROMPT LIBRARY ($127 value) 6 chapters covering AI for marketing, client communications, operations, hiring, and growth — plus a 57-prompt library across 6 cat</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only 5 complete retention systems with done-for-you scripts: in-chair experience framework, rebooking scripts (in-chair + 4/6/8-week text sequences), 24-hour follow-up templates, 3-message win-back sequence, and a loyalty and referral program with 3 structures to choose from.   SALON BRAND KIT ($47 value) Build a consistent, professional brand without a designer. Positioning statement formula, target</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Profile Template, Brand Voice Framework, Visual Identity Guidelines (Color Palette, Fonts,</h3>
+        <p>photography direction), 7 content pillar caption templates (3 fill-in-the-blank frameworks each), and done-for-you Instagram bio, Google profile, and booking page copy. Total value: $385 — yours today for $197. Who this is for:   Solo stylists and booth renters who want to stop guessing and start growing   Salon owners with 1–5 staff who need systems they can actually use   Stylists who know AI could help but have no idea where to start   Anyone fully booked but not profitable — or profitable but burning out Individual Product Listings</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Salon AI Playbook + 57-Prompt Library — $127</h3>
+        <p>Title: The Salon AI Playbook — Complete AI Guide for Hair Salon Owners + 57-Prompt Library (Marketing, Client Comms, Hiring &amp; Operations) Description: Stop running your salon like it&#x27;s 2016. This is the step-by-step system for using AI to handle your marketing, client communications, hiring, and operations — even if you&#x27;ve never touched ChatGPT. 6 chapters + 57 copy-paste prompts across 6 categories. No tech skills required. $127 — or get all 5 products in the bundle for $197.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>90-Day Salon Content Calendar — $47</h3>
+        <p>Title: Hair Salon Social Media Content Calendar — 90-Day Instagram, Facebook &amp; TikTok (Done-for-You Captions + Strategy) Description: Stop staring at a blank screen. 90 days of post ideas, ready-to-use captions, and platform strategy — built specifically for hair stylists and salon owners. 7 content pillars. 30 bonus ideas. Full hashtag sets and posting time guide. $47 — or get all 5 products in the bundle for $197.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Salon Profit Calculator — $67</h3>
+        <p>Title: Salon Profit Calculator — Know Your Numbers, Price With Confidence, and Keep More Money (Google Sheets Workbook + PDF Guide) Description: If you set your prices by gut feel or by looking at competitors, you may be fully booked and still</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>not profitable. This 4-tab calculator shows your true price floor for every service, your break-even point, your margin on every menu item, and exactly how many clients you need each</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week To Hit Your Income Goal.</h3>
+        <p>$67 — or get all 5 products in the bundle for $197.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Retention System — $97</h3>
+        <p>Title: Salon Client Retention System — 5 Done-for-You Systems to Fill Your Chair, Rebook More Clients, and Build a Business That Runs on Referrals Description: Keeping the clients you have is 3–5x more valuable than finding new ones. This system covers everything: the in-chair experience framework, rebooking scripts, post-appointment follow-up templates, a 3-message win-back sequence for lapsed clients, and a full referral program with done-for-you scripts. $97 — or get all 5 products in the bundle for $197.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Salon Brand Kit — $47</h3>
+        <p>Title: Salon Brand Kit — Build a Consistent, Professional Hairstylist Brand That Attracts Better Clients and Commands Higher Prices Description: Two stylists with identical skills — the one with the stronger brand charges more, fills their books faster, and attracts better clients. This kit walks you through your positioning, voice, visual identity, content templates, and ready-to-use bio copy for Instagram, Google, and your booking page. $47 — or get all 5 products in the bundle for $197.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2</h3>
+        <p>Etsy Listings Use these optimized titles and tag sets for each product listed on Etsy. Keep titles under 140 characters. Tags: 13 max, each under 20 characters. Bundle Listing Title (140 chars): Hairstylist Complete Growth Bundle | AI Playbook Social Calendar Profit Calculator Retention</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit | Digital Download</h3>
+        <p>Tags: hairstylist bundle, salon owner tools, hair salon digital, stylist business kit, salon ai guide, hairstylist marketing, salon social media, hair business templates, stylist content plan, salon profit tool, hair salon downloads, stylist growth kit, salon systems</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>AI Playbook + Prompt Library Title (140 chars): Salon AI Playbook | ChatGPT Guide for Hair Salon Owners | Marketing Captions Hiring Templates + 57 Prompt Library | Digital Download Tags: salon AI guide, hair salon ChatGPT, salon owner marketing, hairstylist business, salon marketing guide, AI prompts salon, hair salon digital, salon owner tools, hairstylist marketing, beauty business AI, salon operations, hair salon guide, stylist productivity 90-Day Content Calendar Title (140 chars): Hair Salon Social Media Content Calendar | 90-Day Instagram Facebook TikTok Captions for Stylists and Salon Owners | Digital Download Tags: salon social media, hair stylist content, salon content calendar, hairstylist instagram, salon owner templates, social media captions, beauty salon marketing, hair salon digital, stylist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Plan, Salon Instagram, Hair Business Templates, Salon Tiktok, Beauty Social</h3>
+        <p>Profit Calculator Title (140 chars): Salon Profit Calculator Spreadsheet | Service Pricing Tool for Hair Stylists | Break Even Tracker + Menu Planner | Digital Download Tags: salon profit calculator, hair stylist pricing, salon break even, service pricing tool, hair salon spreadsheet, stylist income goal, salon menu planner, hair business finance, booth renter tools,</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only hairstylist pricing, salon owner finance, hair salon tracker, stylist calculator</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Retention System</h3>
+        <p>Title (140 chars): Salon Client Retention System | Rebooking Scripts Follow Up Templates Win Back Sequence for Hair Stylists | Digital Download Tags: salon client retention, hair stylist rebooking, salon follow up, client retention system, hairstylist scripts, salon win back, rebooking templates, hair salon texts, stylist client system, salon loyalty program, hair client follow up, booking system salon, stylist retention</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit</h3>
+        <p>Title (140 chars): Salon Brand Kit | Hair Stylist Brand Guide | Color Palette Voice Templates Instagram Bio + Caption Frameworks | Digital Download Tags: salon brand kit, hairstylist branding, hair salon brand guide, stylist brand template, salon voice</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>guide, hair business brand, salon instagram bio, stylist color palette, hair salon templates, salon</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3</h3>
+        <p>Facebook Group Launch Posts Post in salon owner and hairstylist Facebook groups. Always put the link in the FIRST COMMENT — not the post body. Space posts 2–3 days apart. POST 1 — ANNOUNCEMENT (Launch Day) For the stylists and salon owners in this group — this one&#x27;s built for you.   If you&#x27;ve ever: — Stared at a blank screen trying to come up with something to post — Wondered if you&#x27;re undercharging but had no idea how to actually calculate it — Had a client drift away and not known what to say to bring them back — Known AI could help your business but had no clue where to start I built a 5-part bundle that covers all of it:   AI Playbook + 57 Prompts — ChatGPT for marketing, client comms, hiring, and operations   90-Day Content Calendar — captions, tips, and strategy for IG, Facebook, and TikTok   Profit Calculator — see your true price floor and break-even point for every service   Client Retention System — rebooking scripts, follow-up templates, win-back sequence</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only 4. A win-back message if 90 days go by without a booking Four touchpoints. Mostly automated with AI. The difference between a client who comes twice a year and one who comes six times. All four scripts are in my Client Retention System — part of the Hairstylist Complete Growth Bundle. Link in first comment   POST 3 — VALUE (Day 5) Real talk: most stylists are undercharging by $20–$50 per service. Not because they don&#x27;t deserve more. Because they set their prices by looking at what competitors charge — which is also wrong. The only way to know if your prices are working is to calculate your actual price floor: Supply cost + (service time × your target hourly rate) + overhead = the minimum you should charge. If your current price is below that number, you&#x27;re losing money on that service. Every. Single. Time. I built a Profit Calculator that does this math for your ent</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only $197 for everything. Link in first comment  </p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>09</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>TikTok / Reel Scripts Film these as screen recordings of your products, talking-head clips, or voiceovers over transformation footage. Hook in first 2 seconds. Keep to 30–45 seconds.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script 1 — The Price Floor Hook (30 Sec)</h3>
+        <p>HOOK (0–2s): If you&#x27;re setting your prices by looking at what other stylists charge, you might be losing money on every service. BODY (2–25s): The only number that matters is your price floor — that&#x27;s supply cost plus your hourly rate plus overhead, divided across the service time. If your current price is below that number, you&#x27;re paying clients to sit in your chair. I built a calculator that does this math for your entire menu. It shows you price floor, recommended price, and flags every service where you&#x27;re undercharging. It&#x27;s part of my Hairstylist Complete Growth Bundle. CTA (25–30s): Link in bio. $197 for the full bundle.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script 2 — The Rebooking Text Hook (35 Sec)</h3>
+        <p>HOOK (0–2s): The text that books more appointments than any promotion you&#x27;ll ever run. BODY (2–28s): [Show phone screen] Four weeks after their appointment, send this: &#x27;Hey [name]! It&#x27;s been about a month since your last color — just checking in to see how it&#x27;s holding up. I have some openings coming up if you&#x27;re thinking about coming in. Just reply and I&#x27;ll send you options!&#x27; That&#x27;s it. No discount. No pressure. Just a personal text that feels like it came from a friend. I have the full rebooking sequence — 4-week, 6-week, and 8-week versions — in my Client Retention System. CTA (28–35s): Part of the Hairstylist Complete Growth Bundle. Link in bio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script 3 — The AI Demo Hook (40 Sec)</h3>
+        <p>HOOK (0–2s): I asked ChatGPT to write a week of Instagram captions for my salon in 30 seconds. Here&#x27;s what happened. BODY (2–35s): [Screen record ChatGPT] [Show the captions being generated] Before I did this I gave ChatGPT my salon name, my location, my top services, and my brand vibe — just one paragraph. Now every caption it writes sounds like me. This week I got [transformation caption], [educational</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only tip], and [engagement post] — done in under 3 minutes. There are 57 prompts like this in my</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>10</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Salon AI Prompt Library — for social media, emails, hiring, client texts, Google reviews, everything. CTA (35–40s): It&#x27;s in the Hairstylist Complete Growth Bundle. Link in bio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script 4 — The Content Calendar Hook (30 Sec)</h3>
+        <p>HOOK (0–2s): I have 90 days of Instagram, Facebook, and TikTok content written for you right now. BODY (2–25s): [Flip through calendar pages] Every single day. Caption, stylist tip, and a note on which platform it works best for. 7 content pillars — transformations, education, engagement, promotional, behind the scenes, testimonials, and personal brand. This is what the stylists who show up consistently every week actually use. A done-for-you system, not just a list of ideas. CTA (25–30s): Part of the Hairstylist Complete Growth Bundle. Link in bio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script 5 — The Bundle Overview Hook (45 Sec)</h3>
+        <p>HOOK (0–2s): Five products that cover every part of running a profitable salon business. BODY (2–38s): [Hold up fingers counting each one] One — the AI Playbook. Six chapters on using ChatGPT for marketing, client comms, operations, and growth. Plus 57 prompts. Two — the 90-Day Content Calendar. Every post written. Every caption done. Three — the Profit Calculator. Know exactly what to charge for every service and how many clients you need each week to hit your income goal. Four — the Client Retention System. Rebooking scripts, follow-up templates, win-back sequences — all done for you. Five — the Brand Kit. Voice, visuals, captions, bios — everything to look and sound like the premium stylist you are. CTA (38–45s): $197 for all five. Link in bio.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 5</h3>
+        <p>3-Email Launch Sequence Send to your email list. Space 2 days apart. Use ConvertKit or any email platform. If you don&#x27;t have a list yet, start building one with the lead magnet (5 Free Rebooking Text Templates).</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>11</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Built this for stylists like you Body: Hey [first name], Quick one — I just finished something I&#x27;ve been working on for a while and wanted you to be the first to know about it. It&#x27;s called the Hairstylist Complete Growth Bundle. Five products that cover the parts of running a salon business that nobody teaches you in cosmetology school. Here&#x27;s what&#x27;s inside:   The Salon AI Playbook + 57-Prompt Library — ChatGPT for every part of your business. Marketing, client comms, hiring, operations. No tech skills required.   90-Day Content Calendar — 90 days of captions, tips, and strategy for Instagram, Facebook, and TikTok. Done for you.   Profit Calculator — see the true price floor for every service and exactly how many clients you need each week to hit your income goal.   Client Retention System — rebooking scripts, follow-up templates, and a win-back sequence for clients who&#x27;ve gone quiet.   Brand Kit — positioning, voice, visuals, caption templates, and done-for-you cop</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>→ [Link]</h3>
+        <p>I built this because I know how much time goes into the business side of styling — the part that doesn&#x27;t happen behind the chair. This is the shortcut I wish I&#x27;d had. Talk soon,</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 14 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only [Your name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Line:</h3>
+        <p>Are you undercharging for this service? Body: Hey [first name], Quick question: how did you set the prices on your service menu? If the answer is anything like &#x27;I looked at what other stylists in my area charge&#x27; or &#x27;I went with what felt right&#x27; — you&#x27;re probably undercharging on at least a few services. The only number that actually tells you if your pricing is working is your price floor — the minimum you can charge for a service and still hit your income goals. The formula: supply cost + (service time × target hourly rate) + overhead per hour = price floor. If your current price for a service is below that number, you&#x27;re technically losing money on it. Even if the chair is full.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>12</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>I built a 4-tab Profit Calculator that does this math for your entire menu — shows you price floor, recommended price, and a status flag for every service: healthy, low margin, or below floor. It&#x27;s included in the Hairstylist Complete Growth Bundle, along with the AI Playbook, Content Calendar, Client Retention System, and Brand Kit. → [LINK] — $197 for all five. Talk soon, [Your name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Line:</h3>
+        <p>Last note on this Body: Hey [first name], Last email about this, I promise. If you&#x27;ve been thinking about the Hairstylist Complete Growth Bundle — here&#x27;s the honest case</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 15 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only for it: The five products in this bundle cover the things that determine whether a salon business grows or plateaus: → Whether your content shows up consistently (Calendar) → Whether your pricing actually covers your costs and goals (Calculator) → Whether clients rebook, refer, and come back after going quiet (Retention System) → Whether you&#x27;re using AI to save hours every week (AI Playbook + Prompts) → Whether your brand attracts the right clients or just anyone (Brand Kit) None of it requires a team, a big budget, or hours of free time. That&#x27;s the point. $197 for everything. Or grab individual pieces starting at $47.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>→ [Link]</h3>
+        <p>Either way — I hope something in here is useful for your business. Talk soon, [Your name] P.S. If you have any stylists in your network who&#x27;d find this helpful, feel free to forward this along.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 16 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 6</h3>
+        <p>DM Scripts Use these for outreach on Instagram, Facebook, and LinkedIn. Personalize the bracketed fields. Always lead with genuine interest — not a pitch. VERSION A — Cold / Warm Outreach</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>13</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hey [Name] — noticed you&#x27;re a stylist/salon owner in [area]. Just launched a 5-part bundle built specifically for hairstylists — AI playbook, 90-day content calendar, profit calculator, client</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Retention System, And Brand Kit. $197 For Everything Or Individual Pieces From $47. Would Any Of</h3>
+        <p>that be useful for where your business is right now? VERSION B — Warm (existing connection) Hey [Name]! Just finished something I&#x27;ve been building for a while — a 5-part bundle for stylists and salon owners covering AI, content, pricing, client retention, and branding. $197 all in. Thought of you — does it fit where your business is right now? VERSION C — Referral Ask Hey [Name] — quick one. I just launched a resource bundle for hairstylists and salon owners — AI guide, 90-day content calendar, profit calculator, retention scripts, and brand kit. $197 for everything. Know any stylists who are working on their content, pricing, or client retention? Happy to send a link their way. VERSION D — After Engagement (commented on your post) Hey [Name] — thanks for engaging with my post! The bundle I mentioned is the Hairstylist Complete Growth Bundle — AI playbook, content calendar, profit calculator, retention system, and brand kit. $197 for all five. Here&#x27;s the link if you</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 17 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 7</h3>
+        <p>90-Day Marketing Plan Follow this week-by-week. Consistency beats perfection. Do the minimum if you need to — but do it every week.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1 — Soft Launch</h3>
+        <p>■ Set up Gumroad store. List the bundle at $197 and all individual products. ■ Post soft launch announcement in 3 Facebook groups (link in first comment). ■ Send Email 1 to your list. ■ Film and post TikTok Script 3 (AI Demo) — easiest to make, highest reach potential. ■ Post your Gumroad link in your Instagram bio.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>14</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>■ Send Email 2 (pricing / value post). ■ Post Facebook Post 2 (the rebooking value post) in 2 more groups. ■ Film TikTok Script 1 (Price Floor Hook) — screen record the calculator. ■ List all products on Etsy using the SEO titles and tags from Section 2. ■ Reach out to 5 stylists with DM Version A or B.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3 — Etsy + Cross-Sell</h3>
+        <p>■ Send Email 3 (urgency + final CTA). ■ Post Facebook Post 3 (profit/pricing value post). ■ Film TikTok Script 2 (Rebooking Text Hook). ■ Add cross-sell lines to all individual product listings: &#x27;Get all 5 in the bundle for $197 —</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>[Link]&#x27;.</h3>
+        <p>■ Add Stylists Pay Stylists listing.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4 — Close The Launch</h3>
+        <p>■ Post Facebook Post 4 (direct CTA). ■ Film TikTok Script 5 (Bundle Overview). ■ Reply to every comment and DM. Engage with everyone who showed interest. ■ Note your first sales — which products and which channels. ■ Film TikTok Script 4 (Content Calendar Hook).</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 18 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 5–6 — Organic Content Engine</h3>
+        <p>■ Post 3–5 TikToks/Reels per week using the 90-Day Content Calendar as your guide. ■ Alternate between free-value content (tips, demos, education) and soft sells. ■ Respond to every comment — especially &#x27;how much?&#x27; or &#x27;where do I get this?&#x27; ■ DM 5 new stylists per week with Version A or C.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 7–8 — Review Push</h3>
+        <p>■ Follow up with early buyers — ask for a review or screenshot testimonial. ■ Post 1–2 testimonial-style posts or stories per week. ■ Create a simple FAQ post based on questions you&#x27;ve received. ■ Begin pitching consulting upsell to buyers who engage most with the AI Playbook.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>15</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Hairstylist Bundle Launch Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>■ Set up ConvertKit free tier if not done yet. ■ Create lead magnet: &#x27;5 Free Rebooking Text Templates&#x27; (1-page PDF). ■ Add lead magnet link to your Instagram bio and TikTok. ■ Post a dedicated free download post — &#x27;comment REBOOK and I&#x27;ll send it to you&#x27;. ■ Everyone who downloads gets the 3-email sequence pitching the bundle.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 11–12 — Consulting Upsell Launch</h3>
+        <p>■ Identify your top 5–10 most engaged bundle buyers. ■ DM each one personally: &#x27;I&#x27;m opening 3 spots for 1:1 AI implementation help at $297/mo — thought of you first. Interested?&#x27; ■ Create a simple consulting offer page (can be a Gumroad page or Notion doc). ■ Post one piece of content about the consulting offer — who it&#x27;s for and what it covers.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 13 — Review And Reset</h3>
+        <p>■ Pull your numbers: total revenue, units sold by product, top traffic sources. ■ Note which TikToks got the most views and saves — make more of those. ■ Raise individual product prices to standard pricing (Content Calendar to $57, Playbook to $147). ■ Plan Month 4: double down on what worked, cut what didn&#x27;t. ■ Start building your email sequence for the next 90-day content push.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 19 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Pricing Reference</h3>
+        <p>Product Launch Price Standard Price Scaled Price 90-Day Content Calendar $37 $47 $57 Salon AI Playbook + Prompts $97 $127 $147 Salon Profit Calculator $47 $67 —</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Retention System</h3>
+        <p>$67 $97 — Salon Brand Kit $37 $47 — Full Bundle (all 5) $147 $197 $247 1:1 AI Consulting $297/mo $497/mo — Bundle saves $71 vs. buying all 5 individually at standard pricing. Cross-Sell Line (add to bottom of every individual listing): Want everything? The Hairstylist Complete Growth Bundle includes all 5 products — AI Playbook + 57-Prompt Library, 90-Day Content Calendar, Profit Calculator, Client Retention System, and</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Hairstylist Bundle Launch Kit</span><span>16</span></div>
+</section></main></body></html>

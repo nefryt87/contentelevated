@@ -1,0 +1,555 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Accountants CPAs</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfaf4; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#5f7f86 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#a8bab5 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfaf4 94%,white), color-mix(in srgb,#fbfaf4 86%,#5f7f86)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#5f7f86; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#5f7f86 32%,transparent); border-radius:999px; color:#5f7f86; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#5f7f86; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#5f7f86 38%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#5f7f86 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#5f7f86 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#5f7f86 52%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric b { display:block; color:#5f7f86; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#161b1f; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#5f7f86 18%,transparent), transparent 2in), linear-gradient(135deg, #161b1f, color-mix(in srgb,#161b1f 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#5f7f86; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#5f7f86 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#5f7f86 56%,transparent); color:#5f7f86; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#5f7f86 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#5f7f86 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfaf4; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#161b1f; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#161b1f; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #5f7f86; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfaf4; }
+.layout-protocol .work { background:#fbfbf5; color:#161b1f; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#5f7f86 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#161b1f; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#161b1f; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#5f7f86 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#161b1f; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#5f7f86 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#161b1f; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #5f7f86; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#5f7f86 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#5f7f86 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-ledger"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for accountants &amp; cpas</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook Accountants CPAs</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>CPA</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Accountants &amp; CPAs product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Accountant &amp; CPA</h3>
+        <p>The AI Playbook for Accountants &amp; CPAs Convert more consultations, retain clients through life events, build referral partnerships with attorneys and financial advisors, and become the most trusted advisor in your clients&#x27; lives</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The CPA practices growing fastest aren&#x27;t just technically superior — they communicate better. They follow up on consultations before the prospect has time to contact anyone else. They reach out proactively when a tax law changes that affects their clients. They maintain attorney and financial advisor relationships with a monthly value touch that generates referrals year-round. And they show up digitally in ways that make their ideal clients find them before they ever search a competitor. This playbook gives you 7 chapters covering every high-leverage communication scenario — with copy-paste AI prompts throughout.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prospect Nurturing</h3>
+        <p>The Post-Consultation Follow-Up System The consultation that doesn&#x27;t convert in 48 hours rarely converts at all. Most prospects are contacting 2-3 CPAs. The first professional, specific, and action-oriented follow-up wins a disproportionate number of engagements.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Consultation Follow-Up Email</h3>
+        <p>Write a post-consultation follow-up email for my CPA practice. The prospect [Name] came in about [matter type — e.g., business tax planning / personal tax return / estate planning / new business setup]. Key things they shared: [list 2-3 things from the consultation]. I want to: (1) summarize their situation in plain language showing I listened, (2) outline my recommended approach in 2-3 sentences, (3) present a clear next step and fee expectation. Professional but warm. Under 200 words. Sign as [Your Name], [Firm Name]. Note: review for compliance with your state bar and professional standards.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a 3-message nurture sequence for a CPA prospect who said they weren&#x27;t ready to engage yet after a consultation. [Name], matter: [type]. Message 1 (2 weeks): one genuinely useful insight relevant to their situation, no pitch. Message 2 (6 weeks): a relevant development — new tax law, deadline, or planning opportunity that applies to them. Message 3 (3 months): soft check-in with an invitation to reconnect. Each under 100 words. Professional, not pushy. Sign as [Your Name], [Firm Name]. The Referral Source Introduction System One strong attorney or financial advisor relationship maintained well can send 5-15 qualified referrals per year. The difference between one who refers once and one who refers consistently is regular, professional contact.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Attorney / Financial Advisor Introduction</h3>
+        <p>Write a professional introduction email from a CPA to [an attorney / a financial advisor] named [Name] at [Firm]. I specialise in [specialty — e.g., small business tax / estate planning / high-net-worth individuals]. I want to: (1) introduce myself and my practice briefly, (2) explain how our clients likely overlap and how we can help each other&#x27;s clients, (3) propose a brief coffee or call. Under 150 words. Professional. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Monthly Professional Referral Value Touch</h3>
+        <p>Write a monthly value email from a CPA to a referral partner — [attorney / financial advisor] named [Name] at [Firm]. Include: (1) one brief tax or accounting insight relevant to their clients right now — e.g., a recent IRS update, a planning opportunity, or a common issue I&#x27;m seeing, (2) a soft mention of any relevant case type I&#x27;m available for. Professional, genuinely useful, under 150 words. Should feel like useful information from a knowledgeable colleague, not a marketing email. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Life Events</h3>
+        <p>The Life Event Outreach System CPAs who build lifelong client relationships show up at the right moments — without being asked. Five life events trigger the most valuable tax and planning conversations: marriage, divorce, new child, inheritance, and business sale. Most CPAs wait for clients to call them. The best ones reach out first.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Life Event Outreach Email</h3>
+        <p>Write a life event outreach email from a CPA to client [Name] who recently [life event — e.g., got married / had a baby / inherited assets / sold their business / went through a divorce]. Acknowledge the moment personally. Mention 1-2 specific tax or financial planning considerations relevant to this event. Invite a brief call to discuss. Warm, not salesy. Professional. Under 150 words. Review for accuracy and compliance before sending. Sign as [Your Name], [Firm Name]. The Annual Tax Season Communication System</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tax Season Is Your Highest-Touch Client Period — But Most Of The Stress Comes From</h3>
+        <p>poor communication about what&#x27;s needed and when. A proactive communication</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>System Sets Expectations, Reduces Back-And-Forth, And Positions Your Firm As Organised</h3>
+        <p>and professional.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Tax Season Kickoff Email</h3>
+        <p>Write a tax season kickoff email for my CPA practice to send to all individual and/or business clients in [January / early February]. Cover: (1) our timeline for the season, (2) what documents clients need to gather and submit, (3) our deadline for receiving documents to guarantee filing by [date], (4) how to submit documents — [portal /</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email / In Person]. Professional, Warm, And Organised. Under 200 Words. Sign As</h3>
+        <p>[Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Missing Documents Follow-Up</h3>
+        <p>Write a follow-up email to a client [Name] who hasn&#x27;t submitted their tax documents yet. Our deadline is [date]. I want to: (1) note that we haven&#x27;t received their documents, (2) remind them of the deadline clearly, (3) explain what happens if we miss the deadline — extension, etc. Professional and direct without being harsh. Under 120 words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Moving Clients From Compliance to Advisory The most profitable CPA engagements are advisory — tax planning, business consulting, wealth strategy — not just compliance. The challenge is that most clients don&#x27;t know to ask for it, and most CPAs don&#x27;t know how to introduce it without it feeling like a sales pitch.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Advisory Services Introduction Email</h3>
+        <p>Write an email introducing advisory/tax planning services to an existing compliance</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client [Name] Who Is A [Business Owner / High-Income Individual / Recent Inheritance</h3>
+        <p>recipient]. I want to frame advisory services as: &#x27;this is what we do for clients who want to get ahead of their tax situation rather than just report it.&#x27; Include 1-2 specific examples of planning opportunities relevant to their situation. Invite a 30-minute planning call. Not salesy — framed as genuinely serving their interests. Under 200 words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Fee Increase Communication</h3>
+        <p>Write a professional fee increase notification for my CPA practice to send to existing clients. Our fees are increasing by [X]% effective [date] due to [brief reason — increased complexity of regulations, cost of technology, investment in staff training]. I want to: (1) communicate the change clearly, (2) reaffirm the value of the relationship, (3) invite questions. Professional, warm, and confident. Under 150 words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Leadership</h3>
+        <p>LinkedIn Content for CPAs LinkedIn is the highest-ROI content platform for accounting professionals. Your audience — business owners, executives, attorneys, financial advisors — is there daily. One strong LinkedIn post reaches hundreds of qualified prospects and referral sources with zero ad spend.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Linkedin Post Batch</h3>
+        <p>Write 5 LinkedIn posts for a CPA specialising in [specialty]. Topics: (1) the most common tax mistake [business owners / high-income individuals] make that costs them money — be specific, (2) a recent IRS or tax law update that affects [your</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>target client type] — explain it in plain language, (3) what advisory-level accounting actually looks like vs. just filing returns, (4) a client outcome story (anonymised) — the situation, what we did, the result, (5) a question post — something your followers genuinely debate. Each under 200 words, educational and specific, ending with a question or insight. Firm name: [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email Newsletter For Client Retention</h3>
+        <p>A monthly email newsletter keeps you top of mind with every client and referral partner. CPAs who send a consistent monthly newsletter see dramatically higher retention and</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Monthly Client Newsletter</h3>
+        <p>Write a monthly email newsletter for my CPA practice for [month]. Include: (1) one relevant tax or financial planning tip for [your target client type], (2) one upcoming deadline or date worth knowing, (3) one brief practice update or team note, (4) one question clients should be asking themselves right now. Professional, warm, and genuinely useful — not a marketing email. Under 300 words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Visibility</h3>
+        <p>The Review Request System Most CPA clients would give a review if asked — but very few are ever asked. The window is immediately after filing completion, when the relief and gratitude are fresh.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Filing Review Request</h3>
+        <p>Write a post-filing review request email for my CPA practice. Client [Name] just had their [personal / business] taxes filed. I want to: (1) acknowledge that tax season is stressful and thank them for trusting us, (2) make a personal, non-automated-feeling ask for a Google review, (3) include the direct link. Warm and brief. Under 120 words. Sign as [Your Name], [Firm Name]. Responding to Reviews</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a warm, specific response to a 5-star Google review for my CPA practice. The reviewer said: [paste their review]. Respond personally using their name, reference one detail from their review, express genuine thanks, and mention [Firm Name] naturally. Under 80 words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Negative Review Response</h3>
+        <p>Write a professional, non-defensive response to a negative Google review for my CPA practice. The reviewer said: [paste their review]. Acknowledge their experience, apologise for falling short, invite them to contact me directly to resolve it, include my direct phone number. Under 80 words. Never argue publicly.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Service Launches</h3>
+        <p>Launching a New Service to Existing Clients</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — New Service Announcement Email</h3>
+        <p>Write an email announcing a new service to existing clients of my CPA practice. New service: [service name — e.g., bookkeeping / payroll / estate planning coordination / business valuation]. I want to: (1) announce the service, (2) explain which clients it&#x27;s most relevant for, (3) describe the value it adds, (4) invite them to book a brief call to discuss whether it&#x27;s right for them. Professional and warm. Under 200 words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Small Business New Client Prospecting Email</h3>
+        <p>Write a prospecting email from a CPA to a small business owner named [Name] who owns [type of business] in [city]. I want to: (1) introduce my practice briefly, (2) mention one specific tax or accounting issue common to their type of business, (3)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Offer A Free 30-Minute Consultation. Professional And Genuinely Helpful. Under 150</h3>
+        <p>words. Sign as [Your Name], [Firm Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Consultation Conversion System</h3>
+        <p>• Build your post-consultation follow-up email using the Chapter 1 prompt • Write your 3-message nurture sequence for prospects not yet ready</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Set a reminder to follow up within 24 hours after every consultation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Referral Partner Outreach</h3>
+        <p>• List 10 attorneys and financial advisors you want as referral partners • Write 5 personalized introduction emails using the Chapter 1 prompt • Build your monthly value touch template — schedule for the 1st of each month</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Use the Chapter 4 LinkedIn prompt to write 10 posts in one session • Schedule 2-3 posts per week for the next month • Write your first monthly newsletter using the Chapter 4 prompt</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Review &amp; Retention System</h3>
+        <p>• Identify 20 past clients who haven&#x27;t reviewed — use Chapter 5 prompt to write personal requests • Set up post-filing review request as a standard workflow step • Build your tax season kickoff email for the coming season</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook Accountants CPAs</span><span>09</span></div>
+</section></main></body></html>

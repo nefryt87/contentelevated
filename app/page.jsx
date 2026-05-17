@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   BrainCircuit,
@@ -72,6 +72,22 @@ const statItems = [
 ];
 
 const heroImage = "/brand/hero-5.png";
+
+function useHoverCapable() {
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(query.matches);
+
+    update();
+    query.addEventListener("change", update);
+
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return canHover;
+}
 
 const heroReveal = {
   hidden: { opacity: 0, y: 18, filter: "blur(10px)" },
@@ -168,6 +184,8 @@ function Eyebrow({ children, centered = false }) {
 }
 
 function Hero() {
+  const canHover = useHoverCapable();
+
   return (
     <section className="relative px-5 pb-6 pt-24 sm:min-h-[88vh] sm:px-8 sm:pt-28 lg:pb-8 lg:pt-32">
       <motion.div
@@ -211,7 +229,7 @@ function Hero() {
           />
           <motion.a
             href="#bundles"
-            whileHover={{ y: -4, rotateX: 0.6, rotateY: -0.6 }}
+            whileHover={canHover ? { y: -4, rotateX: 0.6, rotateY: -0.6 } : undefined}
             whileTap={{ scale: 0.985 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="luxe-card group relative block overflow-hidden rounded-[1.35rem] border border-[#6f7a89]/10 bg-[#10141b] shadow-[0_26px_80px_rgba(0,0,0,0.42)] sm:rounded-[2rem] sm:shadow-[0_50px_140px_rgba(0,0,0,0.55)]"
@@ -219,7 +237,7 @@ function Hero() {
             <div className="luxe-sheen z-20" />
             <div className="ai-scan z-20" />
             <div className="absolute -inset-10 rounded-[3rem] border border-[#6f7a89]/10" />
-            <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 group-hover:scale-[1.012] sm:group-hover:scale-[1.025]" />
+            <img src={heroImage} alt="" className="relative aspect-[1.04] w-full object-cover transition duration-700 sm:group-hover:scale-[1.025]" />
             <div className="absolute left-4 top-4 rounded-full border border-[#6f7a89]/8 bg-[#090d12]/78 px-3 py-2 text-xs text-[#f7f8fb] backdrop-blur-xl sm:left-5 sm:top-8 sm:px-4 sm:py-3 sm:text-sm">
               <span className="mr-2 text-[#b8f3ff]">★</span> Designed for growth
             </div>
@@ -311,9 +329,9 @@ function InsideBundle() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           {showcaseProducts.slice(1, 5).map((product, index) => (
-            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/8 bg-[#10141b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 hover:-translate-y-1 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
+            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/8 bg-[#10141b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
               <div className="luxe-sheen z-10" />
-              <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 group-hover:scale-[1.035]" />
+              <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 sm:group-hover:scale-[1.035]" />
             </a>
           ))}
         </div>
@@ -377,13 +395,14 @@ function BundleShowcase() {
 }
 
 function BundleCard({ product, index = 0 }) {
+  const canHover = useHoverCapable();
   const niche = product.title.replace(" Growth Bundle", "").replace("Complete ", "");
   return (
     <motion.a
       href={`/products/${product.slug}`}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, rotateX: 0.7, rotateY: -0.7 }}
+      whileHover={canHover ? { y: -5, rotateX: 0.7, rotateY: -0.7 } : undefined}
       whileTap={{ scale: 0.985 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.48, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
@@ -469,8 +488,8 @@ function CategoryShowcase() {
             </div>
             <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
             <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
-            <span className="mt-8 inline-grid h-9 w-9 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.025] text-[#b8f3ff] transition duration-500 group-hover:border-[#b8f3ff]/35 group-hover:bg-[#b8f3ff]/8">
-              <ArrowRight className="h-4 w-4 transition duration-500 group-hover:translate-x-0.5" />
+            <span className="mt-8 inline-grid h-9 w-9 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.025] text-[#b8f3ff] transition duration-500 sm:group-hover:border-[#b8f3ff]/35 sm:group-hover:bg-[#b8f3ff]/8">
+              <ArrowRight className="h-4 w-4 transition duration-500 sm:group-hover:translate-x-0.5" />
             </span>
           </motion.a>
         ))}
@@ -480,6 +499,8 @@ function CategoryShowcase() {
 }
 
 function Results() {
+  const canHover = useHoverCapable();
+
   return (
     <Section id="results">
       <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
@@ -500,7 +521,7 @@ function Results() {
             key={name}
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -3 }}
+            whileHover={canHover ? { y: -3 } : undefined}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.44, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
             className={index === 3 ? "premium-edge rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] p-5 transition-colors hover:bg-[#111722] sm:rounded-[1.5rem] sm:p-6 lg:col-span-2" : "premium-edge rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#0b0f14] p-5 transition-colors hover:bg-[#111722] sm:rounded-[1.5rem] sm:p-6"}

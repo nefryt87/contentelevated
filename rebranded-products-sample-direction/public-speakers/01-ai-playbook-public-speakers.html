@@ -1,0 +1,507 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f7f5f2; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#7d7298 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d0a75d 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f7f5f2 94%,white), color-mix(in srgb,#f7f5f2 86%,#7d7298)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#7d7298; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#7d7298 32%,transparent); border-radius:999px; color:#7d7298; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#7d7298; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#7d7298 38%,transparent); border-bottom:1px solid color-mix(in srgb,#7d7298 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#7d7298 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#7d7298 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#7d7298 52%,transparent); border-bottom:1px solid color-mix(in srgb,#7d7298 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#7d7298 32%,transparent); }
+.metric b { display:block; color:#7d7298; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#1b1824; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#7d7298 18%,transparent), transparent 2in), linear-gradient(135deg, #1b1824, color-mix(in srgb,#1b1824 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#7d7298; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#7d7298 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#7d7298 56%,transparent); color:#7d7298; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#7d7298 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#7d7298 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f7f5f2; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#1b1824; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#1b1824; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #7d7298; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f7f5f2; }
+.layout-protocol .work { background:#fbfbf5; color:#1b1824; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#7d7298 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#1b1824; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#1b1824; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#7d7298 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#1b1824; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#7d7298 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#1b1824; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #7d7298; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#7d7298 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#7d7298 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for public speakers</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Stage</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Public Speakers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Public Speaker</h3>
+        <p>The AI Playbook for Public Speakers Book more paid engagements, negotiate your fee with confidence, build the LinkedIn presence that attracts event organisers, and create the speaker brand that commands premium rates</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The professional speakers filling their calendars with paid engagements aren&#x27;t just the most inspiring on stage. They respond to every enquiry quickly with materials that make event organisers feel certain they are making the right choice. They negotiate their fee with confidence rather than apologising for it. They maintain relationships with meeting planners, speaker bureaus, and event organisers who book them year after year. They build a LinkedIn and content presence that positions them as the obvious expert in their space. And they follow up after every engagement to generate the testimonials, referrals, and repeat bookings that compound over time. This playbook gives you 7 chapters covering every high-leverage scenario for professional speakers — keynote, workshop, corporate, conference, and virtual.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Conversion</h3>
+        <p>The Enquiry Response System Event organisers and meeting planners are busy people who contact multiple speakers. A fast, professional, enthusiastic response with the right supporting materials wins a disproportionate number of bookings.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Speaking Enquiry Response Email</h3>
+        <p>Write a professional, enthusiastic response to a speaking enquiry for my speaking business. The event organiser [Name] from [Company/Organisation] reached out about speaking at [event name] on [date] for [audience description]. They mentioned: [paste key details — topic they need, format, duration, virtual/in-person]. My speaking speciality: [your topic/niche — e.g., leadership / resilience / sales / AI in business / DEI / mental health]. I want to: (1) express genuine enthusiasm for the opportunity, (2) briefly describe how my talk addresses their specific audience and objective, (3) ask 2-3 clarifying questions to build a tailored proposal, (4) mention my fee range if appropriate. Professional and warm. Under 250 words. Sign as [Your</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Name], [Business Name if applicable].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Call Proposal Email</h3>
+        <p>Write a post-call proposal email for a speaking engagement. I just spoke with [Name] from [Organisation] about speaking at [event] on [date]. Audience: [description]. Proposed talk: [talk title and brief description]. Duration: [X minutes]. Format: [keynote/workshop/panel]. My fee: $[amount] which covers [what&#x27;s included — preparation, travel, pre-event call, follow-up materials]. I want this email to: (1) confirm what we discussed in specific terms, (2) describe the talk&#x27;s value to their audience compellingly, (3) present the fee confidently, (4) outline the next steps. Professional and persuasive. Under 300 words. Sign as [Your Name]. Fee Negotiation With Confidence Fee negotiation is where many professional speakers leave significant money on the table — either accepting the first offer or apologising for their rate. A confident, value- anchored approach closes at higher fees without damaging the relationship.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Fee Negotiation Response</h3>
+        <p>Write a professional response to an event organiser who said my speaking fee is above their budget. My fee: $[amount]. Their budget: $[amount]. I want to: (1) acknowledge their constraints without apologising for my rate, (2) briefly reframe the value of my talk relative to the investment, (3) if appropriate, offer one genuine alternative — a shorter format, a virtual option, or a bundled workshop rate — without devaluing my standard fee. Confident and collaborative. Under 200 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Positioning</h3>
+        <p>Your Speaker One-Sheet A one-sheet is a single-page PDF summary of your speaking offer — your topic(s), key outcomes, social proof, and booking contact. It is the most important document a professional speaker has and most speakers have one that is either outdated or generic.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Speaker One-Sheet Copy</h3>
+        <p>Write the copy for my professional speaker one-sheet. My name: [Name]. My speaking topic/niche: [topic]. My signature talk title: [title]. The 3 key outcomes audiences leave with: [outcomes]. My background credibility: [relevant credentials,</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>experience, notable past engagements]. 3 testimonials or quotes: [paste quotes if available]. My speaking style in 2 sentences: [describe your style — e.g., &#x27;data- driven and story-led&#x27; / &#x27;high energy and immediately practical&#x27;]. I want the copy to: be punchy and skimmable, communicate value to event organisers, and end with a clear booking CTA. Under 400 words total.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Speaker Bio (3 Lengths)</h3>
+        <p>Write three versions of my professional speaker bio: (1) long form (200 words) for event programmes and websites, (2) medium form (100 words) for event introductions, (3) short form (50 words) for social media and slides. My name: [Name]. My speaking topic: [topic]. Key credentials: [your background — experience, titles, notable achievements]. Signature talk or speciality: [describe]. Style and approach: [2-3 words]. Written in third person. Professional and authoritative.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Partnerships</h3>
+        <p>Building Your Booking Pipeline The professional speakers with the fullest calendars have multiple active pipelines: direct bookings from organisations, speaker bureau relationships, repeat bookings from past clients, and a referral network of other speakers. Each requires a different outreach approach.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Speaker Bureau Introduction</h3>
+        <p>Write a professional introduction email from a public speaker to a speaker bureau. Bureau name: [name]. My speaking topic: [topic]. My credentials: [key credentials]. My fee range: $[X]-$[X]. I want to: (1) introduce myself and my speaking niche briefly, (2) explain why I would be a strong fit for their roster, (3) mention relevant past engagements, (4) attach my one-sheet and propose a brief call. Professional and specific. Under 200 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Event Organiser Prospecting Email</h3>
+        <p>Write a prospecting email from a professional speaker to an event organiser at [Company/Conference] named [Name]. Their event: [description of their annual conference or event]. My talk: [talk title and one-sentence description]. Why</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>relevant: [specific reason my talk fits their audience]. I want to: (1) demonstrate I know their event, (2) briefly pitch my talk and its relevance, (3) offer to send my one- sheet and a demo video link. Under 150 words. Professional and specific. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Monthly Value Touch (Past Clients &amp; Organisers)</h3>
+        <p>Write a monthly value email from a professional speaker to a past event organiser or booker named [Name]. I want to share: (1) one insight, trend, or piece of research relevant to my speaking topic that would be genuinely useful to them or their audience, (2) a soft mention of my upcoming speaking schedule or new talk. Under 100 words. Colleague tone — not a sales email. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 4: Linkedin &amp; Content Strategy</h3>
+        <p>LinkedIn as Your Primary Booking Channel LinkedIn is the highest-ROI content platform for professional speakers. Your audience — event organisers, HR directors, L&amp;D managers, conference chairs, CEOs — is there daily. One strong LinkedIn post reaches hundreds of potential bookers with zero ad spend. The speakers who post consistently on LinkedIn fill their calendars with inbound enquiries.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Linkedin Post Batch</h3>
+        <p>Write 5 LinkedIn posts for a professional speaker specialising in [your topic]. Topics: (1) a counterintuitive insight from your speaking topic that most people get wrong, (2) a story from a recent keynote — the moment you knew it landed (anonymise the</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client), (3) A Data Point Or Research Finding Relevant To Your Topic That Will Surprise</h3>
+        <p>your audience, (4) a practical takeaway from your talk that professionals can apply today, (5) a direct booking CTA — who you speak for, what you deliver, how to enquire. Each under 200 words, specific and thought-leading. Your name: [Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Speaker Testimonial Post</h3>
+        <p>Write a LinkedIn post sharing a testimonial or outcome from a recent speaking engagement. The testimonial: [paste or describe the feedback]. The event: [type — e.g., leadership conference / sales kick-off / industry summit]. I want to: (1) share</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>the testimonial genuinely, (2) briefly describe what made the engagement work, (3) speak to the types of events or audiences this talk suits. Under 200 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Post-Engagement System</h3>
+        <p>Turning Every Engagement into Future Bookings The period immediately after a successful speaking engagement is when you are most top-of-mind with the organiser, most likely to receive a referral, and most likely to be re- engaged. Most speakers never systematically follow up. The ones who do see compounding results.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Engagement Follow-Up Email</h3>
+        <p>Write a post-engagement follow-up email for my speaking business. Organiser [Name] from [Organisation], event on [date]. I want to: (1) express genuine gratitude and one specific personal observation about the event or audience, (2) ask for feedback — what landed, what could be adjusted, (3) make a soft ask for a testimonial or LinkedIn recommendation, (4) plant the seed for a repeat engagement or referral. Professional and warm. Under 200 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Testimonial Request Email</h3>
+        <p>Write a testimonial request email for my speaking business. Event organiser [Name], event [description]. I want to: (1) make a personal and specific ask for a written testimonial or LinkedIn recommendation, (2) make it as easy as possible —</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Offer Guiding Questions, (3) Mention How And Where I&#x27;Ll Use It. Under 150 Words. Sign</h3>
+        <p>as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Presence</h3>
+        <p>Positioning for Virtual and Hybrid Engagements Virtual and hybrid speaking engagements have become a permanent part of the speaking landscape — and they open up international bookings that were previously inaccessible. The speakers who invest in their virtual presence and technical setup consistently command higher virtual fees.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a response to an enquiry for a virtual speaking engagement. Event: [description]. Audience: [X people via [platform]]. My virtual speaking setup: [describe your studio/setup if relevant — green screen / ring light / professional mic / good backdrop]. I want to: (1) confirm I&#x27;m set up for high-quality virtual delivery, (2) briefly describe how I adapt my interactive approach for virtual audiences, (3) ask the key logistical questions (platform, time zone, recording permissions). Professional and reassuring. Under 200 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Enquiry &amp; Proposal System</h3>
+        <p>• Write your speaking enquiry response template using Chapter 1 prompt • Draft your speaker one-sheet copy using Chapter 2 prompt — design it in Canva • Write your 3 speaker bio versions using Chapter 2 prompt</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Outreach</h3>
+        <p>• Identify 5 speaker bureaus relevant to your topic — write introduction emails using Chapter 3 • List 10 conferences or corporate events in your niche — write prospecting emails for each • Build your monthly value touch template — schedule for the 1st of each month</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Linkedin Content</h3>
+        <p>• Use Chapter 4 LinkedIn prompt to write 10 posts in one session • Schedule 3 posts per week for the next month • Set a goal: respond to every LinkedIn comment within 24 hours this month</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Post-Engagement System</h3>
+        <p>• Write your post-engagement follow-up and testimonial request emails using</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5</h3>
+        <p>• Identify past engagements where you haven&#x27;t asked for a testimonial — send the request today • Set post-engagement follow-up as a standard step within 48 hours of every talk</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

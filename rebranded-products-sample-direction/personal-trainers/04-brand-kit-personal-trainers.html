@@ -1,0 +1,411 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f5f8f6; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#2d8f76 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c8ff5f 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f5f8f6 94%,white), color-mix(in srgb,#f5f8f6 86%,#2d8f76)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#2d8f76; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#2d8f76 32%,transparent); border-radius:999px; color:#2d8f76; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
+.gold { color:#2d8f76; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#2d8f76 38%,transparent); border-bottom:1px solid color-mix(in srgb,#2d8f76 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#2d8f76 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#2d8f76 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#2d8f76 52%,transparent); border-bottom:1px solid color-mix(in srgb,#2d8f76 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#2d8f76 32%,transparent); }
+.metric b { display:block; color:#2d8f76; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#111818; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#2d8f76 18%,transparent), transparent 2in), linear-gradient(135deg, #111818, color-mix(in srgb,#111818 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#2d8f76; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#2d8f76 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#2d8f76 56%,transparent); color:#2d8f76; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#2d8f76 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#2d8f76 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f5f8f6; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#111818; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#111818; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #2d8f76; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f5f8f6; }
+.layout-protocol .work { background:#fbfbf5; color:#111818; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#2d8f76 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#111818; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#111818; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#2d8f76 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#111818; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#2d8f76 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#111818; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #2d8f76; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#2d8f76 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#2d8f76 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-performance"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for personal trainers</div>
+    </div>
+  </div>
+  <h1>Brand Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Train</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Personal Trainers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit &amp; Canva Template Guide</h3>
+        <p>Build a fitness brand that attracts the right clients and charges what you&#x27;re worth. Color palettes • Fonts • Canva templates • 7-day launch checklist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Brand Positioning</h3>
+        <p>The most successful personal trainers aren&#x27;t the most credentialed — they&#x27;re the most clearly positioned. When someone visits your profile, they should immediately know who you help, what result you deliver, and why you&#x27;re different. Your Brand Promise I help [specific person — e.g., busy moms / men over 40 / new runners / postpartum women] [achieve specific result — e.g., lose their first 20 lbs / build functional strength / run their first half marathon] without [biggest fear — e.g., spending hours in the gym / giving up the foods they love / getting injured]. Example: &#x27;I help busy moms over 35 get strong and lose the baby weight — without crash diets or 2-hour workouts.&#x27;</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Personality (Pick 2–3)</h3>
+        <p>• Motivating — You push clients to do what they didn&#x27;t think was possible • Real — No filters, no fake transformations, no BS • Expert — You explain the science simply and clearly • Supportive — You&#x27;re in their corner on the hard days • Results-focused — You care about outcomes, not just effort Niche Clarity — The Most Important Brand Decision You&#x27;ll Make Generalist trainers compete on price. Specialist trainers command premium rates. You don&#x27;t have to turn anyone away — but your marketing should speak to one specific person. • Postpartum fitness • Men over 40 / strength and longevity • Weight loss for busy professionals • Athletic performance / sport-specific • Seniors / functional fitness • Online coaching (any niche, fully remote)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Color Palettes</h3>
+        <p>Fitness brands should feel energetic, credible, and motivating. Avoid pastels that feel soft when your brand needs to feel strong. Two proven options:</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette A: High Performance (Athletic / Results-Focused)</h3>
+        <p>Matte Black</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#0F0F0F</h3>
+        <p>Primary — Power, Authority Electric Orange</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#E8500A</h3>
+        <p>Accent — Energy, Drive Light Gray</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#F5F5F3</h3>
+        <p>Background — Clean White</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Ffffff</h3>
+        <p>Text BG</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette B: Wellness &amp; Lifestyle (Holistic / Female-Focused /</h3>
+        <p>Online Coaching) Deep Forest</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#2C4A2E</h3>
+        <p>Primary — Growth, Grounded Warm Sand</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#E8D5B0</h3>
+        <p>Background — Soft, Inviting Terracotta</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#C4623A</h3>
+        <p>Accent — Warmth, Energy Off White</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>#Faf7F2</h3>
+        <p>Base BG</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">11</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Use Font Notes</h3>
+        <p>Headlines (Palette</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">12</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>A)</h3>
+        <p>Barlow Condensed ExtraBold Athletic and bold — feels like a sports brand. Free on Google Fonts. Headlines (Palette</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">13</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>B)</h3>
+        <p>Cormorant Garamond Bold Elegant and editorial — perfect for wellness or premium positioning. Body Copy DM Sans Regular Modern, clean, highly readable on screens and print. CTA / Emphasis Barlow SemiBold or DM Sans Bold Used for buttons, stat callouts, and key messages only.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">14</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 4: Canva Template Guide</h3>
+        <p>All templates below are free on Canva. Search the exact term, apply your palette and fonts. Budget 20–30 minutes per template set.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Canva Search Term Best Use</h3>
+        <p>Instagram Post (1:1) &quot;personal trainer instagram post&quot; Tips, transformations, motivational</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content</h3>
+        <p>Instagram Reel Cover &quot;fitness reel cover template&quot; Thumbnails that stop the scroll Instagram Story (9:16) &quot;fitness coach story template&quot; Polls, tips, client shoutouts TikTok Video Overlay &quot;workout video overlay canva&quot; Text overlays for fitness clips Transformation Post &quot;fitness before after template&quot; Client results with ethical framing Facebook Cover &quot;personal trainer facebook cover&quot; First impression, niche statement, contact Print &amp; Business Templates • Business Card — Search: &#x27;personal trainer business card&#x27; — keep it simple: name, niche, phone, Instagram handle • Client Intake Form — Search: &#x27;fitness client form template&#x27; — customize with your screening questions • Program Template — Search: &#x27;workout plan template Canva&#x27; — brand your weekly programs before sending to clients • Referral Card — Search: &#x27;referral card template&#x27; — &#x27;Refer a friend, get a free session&#x27; printed card for gym bags</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Guide</h3>
+        <p>Profile Photo Best Practices • Background: Gym setting or clean solid color — your environment signals your niche • Outfit: What you&#x27;d wear to train a client — professional but authentic • Expression: Approachable and confident — genuine smile OR focused intensity, match your brand • Framing: Head and shoulders for profile photo; full body for fitness credibility posts • Lighting: Natural light from a window or a ring light — avoid gym overhead fluorescents • Consistency: Same photo across Instagram, TikTok, Facebook, and your website</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Photo Tips</h3>
+        <p>• Action shots convert better than posed photos — film yourself coaching or</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>training • Use a tripod and your phone — you don&#x27;t need a professional photographer to start • Batch shoot: One Sunday afternoon of content photos can last you 4–6 weeks • Show your face in at least 50% of posts — people follow people, not brands</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day 1 — Foundation</h3>
+        <p>✓ Choose your color palette (A or B) ✓ Select your fonts in Canva Brand Kit ✓ Write your Brand Promise (one sentence) ✓ Book a batch content photo session this week Days 2–3 — Build Templates ✓ Create Instagram post template ✓ Create Instagram Reel cover template ✓ Design Facebook cover photo ✓ Build email signature ✓ Create one transformation/results post template Days 4–5 — Update All Profiles ✓ Update Instagram bio with your Brand Promise + CTA link ✓ Update TikTok bio ✓ Update Facebook profile + cover photo ✓ Add email signature to Gmail ✓ Update Google Business Profile if you have one Days 6–7 — First Week of Content ✓ Batch-create 3 posts using your 90-Day Calendar ✓ Generate captions with the monthly AI prompt ✓ Film one short-form video (even 30 seconds) ✓ Schedule Mon/Wed/Fri ✓ Engage with every comment in the first hour after posting Your brand is what people say about you when you&#x27;re not in the room. Show up consistently, deliver real results, and let the</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>06</span></div>
+</section></main></body></html>

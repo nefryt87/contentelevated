@@ -1,0 +1,513 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates Accountants CPAs</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfaf4; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#5f7f86 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#a8bab5 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfaf4 94%,white), color-mix(in srgb,#fbfaf4 86%,#5f7f86)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#5f7f86; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#5f7f86 32%,transparent); border-radius:999px; color:#5f7f86; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#5f7f86; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#5f7f86 38%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#5f7f86 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#5f7f86 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#5f7f86 52%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric b { display:block; color:#5f7f86; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#161b1f; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#5f7f86 18%,transparent), transparent 2in), linear-gradient(135deg, #161b1f, color-mix(in srgb,#161b1f 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#5f7f86; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#5f7f86 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#5f7f86 56%,transparent); color:#5f7f86; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#5f7f86 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#5f7f86 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfaf4; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#161b1f; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#161b1f; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #5f7f86; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfaf4; }
+.layout-protocol .work { background:#fbfbf5; color:#161b1f; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#5f7f86 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#161b1f; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#161b1f; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#5f7f86 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#161b1f; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#5f7f86 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#161b1f; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #5f7f86; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#5f7f86 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#5f7f86 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-ledger"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for accountants &amp; cpas</div>
+    </div>
+  </div>
+  <h1>Email Templates Accountants CPAs</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>CPA</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Accountants &amp; CPAs product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Communication Template Pack</h3>
+        <p>24 done-for-you templates: consultation conversion, tax season, advisory services, referral partnerships, and reputation management</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Following Our Meeting — Your [Matter Type], [First Name]</h3>
+        <p>Dear [First Name], Thank you for coming in today — it was a pleasure learning more about your situation. Based on what you shared, here&#x27;s how I see things: [plain-language summary of their situation in 2-3 sentences, showing you listened]. My recommended approach: [2-3 sentences on what you&#x27;d do and why — clear and confident, no jargon]. To move forward: [clear next step — sign engagement letter / pay retainer / schedule follow-up call]. I can have an engagement letter to you by [date]. Happy to answer any questions before then — I&#x27;m always reachable at [Phone] or [Email]. Sincerely, [Your Name] | [Firm Name] [Note: Review for compliance with your state board&#x27;s professional standards before sending.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Something Worth Knowing About [Their Matter], [First Name]</h3>
+        <p>Dear [First Name], I&#x27;ve been thinking about our conversation and wanted to share something that might be useful regardless of what you decide about working together. [One genuinely useful tax or accounting insight relevant to their specific situation — no pitch, pure value.] When you&#x27;re ready to take action on your [matter type], I&#x27;d be glad to help. No pressure in the meantime. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Dear [First Name], A quick note — [relevant development: new IRS guidance / tax law change / deadline approaching] that applies to your situation. Specifically: [plain-language explanation of how it affects them and what action, if any, to consider]. If you&#x27;d like to discuss how this affects your planning, I&#x27;m happy to schedule a brief call. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject CPA Consultation — [First Name]</h3>
+        <p>Dear [First Name], I&#x27;m [Your Name] from [Firm Name] — a CPA practice in [City] specialising in [specialty]. I work with [target client description] and I often see [one specific, common problem relevant to them]. I&#x27;d be glad to offer a complimentary 30-minute consultation to discuss your situation — no obligation. If that would be useful, here&#x27;s my calendar link: [link] — or feel free to call [Phone]. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Tax Season [Year] — What You Need To Know, [First Name]</h3>
+        <p>Dear [First Name],</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tax Season Is Approaching And I Want To Make Sure We&#x27;Re Set Up For A</h3>
+        <p>smooth process. Our timeline this year: - Documents due to us: [date] - Target filing date for on-time submissions: [date] - If we need an extension: [brief process] What to gather: [list relevant document types for their situation — W-2s, 1099s, business P&amp;L, etc.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Submit: [Your Preferred Method — Portal / Email / Drop Off]</h3>
+        <p>Any changes in your situation this year — new job, business, major purchase, life event — please mention them when you submit. These affect your return. Questions? I&#x27;m always a quick email or call away. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject We Still Need Your Documents — Deadline [Date], [First Name]</h3>
+        <p>Dear [First Name], A quick note — we haven&#x27;t received your tax documents yet and our deadline for guaranteed on-time filing is [date]. If we don&#x27;t receive them by [date], we&#x27;ll need to file an extension on your behalf. There is no penalty for an extension itself, but any taxes owed are still due by [April 15 / relevant date]. Please submit your documents via [method] by [date]. If you have questions about what to include, I&#x27;m happy to help. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your [Year] Tax Return Has Been Filed, [First Name]</h3>
+        <p>Dear [First Name], Your [year] [personal / business] tax return has been filed successfully. [If refund:] Your expected refund of $[amount] should arrive within [X] business days via [direct deposit / cheque]. [If amount owed:] Your payment of $[amount] is due by [date]. Payment instructions: [method]. A copy of your return is available at [location / portal]. One thing worth noting for next year: [one proactive planning note based on their return — e.g., adjust withholding, consider estimated payments, a deduction they missed]. Thank you for trusting us with your taxes this year. [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Year] Year-End Tax Planning — Time To Act, [First Name]</h3>
+        <p>Dear [First Name], A quick note as we approach year-end: there&#x27;s still time to take meaningful action on your [year] tax bill. For [your situation — business owners / high-income individuals / etc.], the moves worth considering include: [list 2-3 relevant year-end strategies in plain language]. These only work before December 31 — which is why I&#x27;m reaching out now rather than in January. If you&#x27;d like to discuss your specific situation, I have availability [timeframe] for planning calls. Here&#x27;s my calendar: [link] — or call [Phone]. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Congratulations — And A Note On Your Taxes, [First Name]</h3>
+        <p>Dear [First Name], Congratulations on your recent marriage! I wanted to reach out because getting married affects your tax situation in several ways that are worth understanding early: [2-3 specific considerations — e.g., filing status options, potential marriage penalty or bonus, updating withholding, beneficiary designations]. Would it make sense to schedule a brief call to make sure you&#x27;re set up well for [year]? Happy to find a time that works for you. Warmly, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Congratulations On The New Venture — A Few Things Worth Knowing, [First</h3>
+        <p>Name] Dear [First Name], I heard about your new business — congratulations! Starting something is a significant step and I wanted to reach out. A few things that are worth addressing early from a tax and accounting standpoint: [2-3 specific items — e.g., entity structure decision, setting up for quarterly estimated taxes, bookkeeping system, separating business and personal finances]. Getting these right early is significantly cheaper than fixing them later. Happy to schedule a brief call if it would be useful. [Your Name] | [Firm Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Something Worth Considering For [Year], [First Name]</h3>
+        <p>Dear [First Name], I&#x27;ve been thinking about your situation and wanted to share something. Most of what we&#x27;ve done together has been compliance-focused — making sure your returns are accurate and filed on time. That&#x27;s important. But there&#x27;s a layer above compliance that many clients don&#x27;t know to ask about: tax planning.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Tax Planning Means Looking Ahead — Structuring Income, Timing Deductions,</h3>
+        <p>and making decisions proactively so that your tax bill next April is as low as legally possible. Given [one specific thing about their situation — their business growth / income level / upcoming transaction], I think there are real planning opportunities we haven&#x27;t yet discussed.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Would you be open to a 30-minute planning conversation? No additional cost for the call — I just want to make sure you&#x27;re not leaving money on the table. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Note On Our Fees For [Year], [First Name]</h3>
+        <p>Dear [First Name], I want to give you advance notice of a change to our fees effective [date]. Our fees for [your services] will increase by [X]% to $[new amount] per [period/service]. This reflects [brief honest reason — investment in technology, increased regulatory complexity, cost of continuing education]. Your services, quality, and our commitment to your financial success remain unchanged. If you have any questions about this change or your services, I&#x27;d be happy to discuss. I truly value our working relationship. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], CPA, [City]</h3>
+        <p>Dear [Name], I&#x27;m [Your Name], a CPA with [Firm Name] in [City] specialising in [specialty — e.g., small business / estate planning / high-net-worth individuals]. I reached out because our clients likely overlap significantly. Attorneys who work in [estate planning / business law / family law / etc.] regularly encounter clients who need tax guidance, and I often see the reverse — tax situations that need legal structure. I&#x27;d love to explore a mutual referral relationship. Would you be open to a brief coffee or call? Sincerely, [Your Name] | [Firm Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Month] — A Note From [Your Name]</h3>
+        <p>Dear [Name], Quick note this month — something that might be useful for your client conversations: [One specific, current tax or accounting insight relevant to their clients — a recent IRS update, a planning opportunity, a common issue I&#x27;m seeing. 2-3 sentences max.] If any of your clients are dealing with [relevant situation], I&#x27;m happy to be a resource. [Your Name] | [Firm Name] | [Phone]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You For The Introduction — [Client Name]</h3>
+        <p>Dear [Name], Thank you so much for introducing me to [Client Name] — I really appreciate the trust that represents and I&#x27;m going to take excellent care of them. I&#x27;ll keep you updated on how things progress. And please know — I&#x27;ll always return the favour when my clients need someone in your area of practice. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Month] Tax Update — [Your Name]</h3>
+        <p>Dear [Name], A quick monthly note from [Firm Name] — something worth knowing for your</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Conversations:</h3>
+        <p>[Relevant tax update, planning opportunity, or common issue for shared client types — 2-3 sentences. Examples: Roth conversion window, QCD opportunity for clients over 70.5, estimated tax payment deadline, year-end harvesting considerations.] Happy to be a resource if any of your clients need accounting support. [Your Name] | [Firm Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Favour — [First Name]</h3>
+        <p>Dear [First Name], With tax season behind us, I wanted to say thank you for trusting [Firm Name] with your return this year. A personal ask: if you were happy with our work, a Google review genuinely helps other people in [City] find a CPA they can trust. It takes about 2 minutes. Direct link: [Google Review Link] No pressure at all — and thank you either way. It&#x27;s a genuine pleasure working with you. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Thank you so much, [First Name]! It&#x27;s a genuine pleasure working with you and I&#x27;m really glad we could make [this process / this situation] straightforward. We look forward to continuing to support you. — [Your Name], [Firm Name] [Respond within 24 hours. Personal, warm, include firm name for SEO.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Dear [First Name], thank you for sharing this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I take every piece of feedback seriously and I&#x27;d welcome the opportunity to discuss this directly. Please call me at [Phone] so we can talk through it. — [Your Name], [Firm Name] [Never argue publicly. Move it offline. Your response is read by every future prospect who searches you.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A New Service From [Firm Name] — [First Name]</h3>
+        <p>Dear [First Name], I&#x27;m pleased to let you know that [Firm Name] now offers [bookkeeping / payroll / CFO advisory / business valuation] services. This is particularly relevant for [client type — e.g., business owners who want to consolidate their accounting under one roof / growing businesses whose bookkeeping needs have outpaced their current solution]. If you&#x27;d like to explore whether this makes sense for your situation, I&#x27;d be happy to schedule a brief call. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Annual Review — [First Name]</h3>
+        <p>Dear [First Name], It&#x27;s been a year since we last sat down to review your overall tax and financial picture, and I&#x27;d love to schedule your annual review. In our meeting we&#x27;ll cover: any changes to your situation this year, planning opportunities for the coming year, and any questions you&#x27;ve been holding onto. Here&#x27;s my calendar for scheduling: [link]. Or feel free to call [Phone]. Looking forward to it. [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>09</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates Accountants CPAs</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject You Received An Irs Notice — Here&#x27;S What To Do, [First Name]</h3>
+        <p>Dear [First Name], Thank you for forwarding the IRS notice. I&#x27;ve reviewed it and want to give you some immediate context. What the notice is: [plain-language explanation of the type of notice and what it means]. What it is NOT: [reassurance if appropriate — e.g., &#x27;This is not an audit notice. It is a routine [balance due / information request / matching notice].&#x27;] What we&#x27;ll do: [specific next steps]. I&#x27;ll handle [specific action] by [date]. What I need from you: [anything specific]. Please don&#x27;t contact the IRS directly until we&#x27;ve spoken — let me handle the response. Sincerely, [Your Name] | [Firm Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Estimated Tax Payment Due [Date] — [First Name]</h3>
+        <p>Dear [First Name], A quick reminder: your next estimated tax payment is due [date]. Amount: $[amount] (based on [safe harbor method / our projection]).</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Pay: [Irs Direct Pay Link / Eftps / Other Method].</h3>
+        <p>Please make the payment by [date] to avoid an underpayment penalty. Let me know if you have any questions. [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your File And A Note From [Your Name], [First Name]</h3>
+        <p>Dear [First Name], As discussed, I want to make sure your transition to [new firm / new arrangement] is completely smooth. Enclosed / attached: [list of documents — copies of returns, workpapers, any documents provided]. Authorisation: I&#x27;ve responded to [new CPA&#x27;s name]&#x27;s authorisation request and they will have full access to [specify scope] by [date]. It has been a genuine privilege serving you. Should you ever need anything in the future, please don&#x27;t hesitate to reach out. Sincerely, [Your Name] | [Firm Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates Accountants CPAs</span><span>10</span></div>
+</section></main></body></html>

@@ -1,0 +1,273 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Treatment Scripts</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8fcfb; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6e9eaa 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d7e8e8 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8fcfb 94%,white), color-mix(in srgb,#f8fcfb 86%,#6e9eaa)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6e9eaa; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); border-radius:999px; color:#6e9eaa; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6e9eaa; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6e9eaa 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6e9eaa 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6e9eaa 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6e9eaa 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6e9eaa 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); }
+.metric b { display:block; color:#6e9eaa; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#142023; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6e9eaa 18%,transparent), transparent 2in), linear-gradient(135deg, #142023, color-mix(in srgb,#142023 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6e9eaa; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6e9eaa 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6e9eaa 56%,transparent); color:#6e9eaa; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6e9eaa 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6e9eaa 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8fcfb; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#142023; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#142023; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6e9eaa; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8fcfb; }
+.layout-protocol .work { background:#fbfbf5; color:#142023; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6e9eaa 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#142023; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#142023; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6e9eaa 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#142023; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6e9eaa 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#142023; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6e9eaa; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6e9eaa 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6e9eaa 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for dentists</div>
+    </div>
+  </div>
+  <h1>Treatment Scripts</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Dental</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Dentists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Treatment Scripts</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Treatment Scripts</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Dental Practice</h3>
+        <p>Treatment Plan Presentation, Insurance &amp; Reputation Templates Present treatment plans that get accepted, handle insurance conversations, and respond to reviews professionally HIPAA reminder: Never reference a specific patient treatment, diagnosis, or clinical detail in any public response to a review.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Scripts</h3>
+        <p>Dentist Presenting a Major Treatment Plan</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script — Dentist Presenting Treatment Plan</h3>
+        <p>DENTIST: [First Name], I want to walk you through what I found and why I&#x27;m recommending this treatment — I want to be honest with you so you can make the best decision for your health. DENTIST: What I found: [plain-language explanation. No jargon. Use visual aids where possible.] DENTIST: Why this matters: [consequence of delaying — honest, not fear-based. E.g., Right now it&#x27;s a filling. If we wait until it&#x27;s causing pain, it becomes a root canal — more expensive and more invasive.] DENTIST: What I&#x27;d recommend: [specific treatment in plain language — what it involves, how long it takes, what they&#x27;ll feel] DENTIST: Our treatment coordinator will walk you through the investment and insurance coverage. Would you like to chat with her now? [Clinicians present. Coordinators close. Never mention total cost yourself — let the coordinator do it with full financial context and financing options.] Treatment Coordinator Cost Presentation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script — Treatment Coordinator Cost Conversation</h3>
+        <p>COORDINATOR: [First Name], Dr. [Name] has recommended [treatment]. I want to walk you through the investment and what your insurance covers. COORDINATOR: Total fee: $[amount]. Based on your insurance plan, we estimate they&#x27;ll cover approximately $[amount], leaving your estimated out-of-pocket at around $[amount]. Note — that&#x27;s an estimate pending actual insurance response. COORDINATOR: We offer payment plan / CareCredit / interest-free financing if spreading the cost would be helpful.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Treatment Scripts</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Treatment Scripts</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>COORDINATOR: Any questions about the financial side before we look at scheduling? [Present the covered amount first, then the gap — not the total first. Your insurance covers $X, leaving $Y feels more manageable than $X total, insurance pays $Y.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Templates</h3>
+        <p>Pre-Authorization Update Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Update On Your Pre-Authorization — [First Name]</h3>
+        <p>Hi [First Name], I wanted to update you on the pre-authorization we submitted to [Insurance Company] for your treatment. [Option A: Good news — your insurance has approved coverage for $ [amount]. Your estimated out-of-pocket will be $[amount].] [Option B: We&#x27;re still waiting on a response — expected within [timeframe]. We&#x27;ll contact you as soon as we hear back.] [Option C: Your insurance has returned a partial approval / denied the claim. Here&#x27;s what that means and your options: [explanation].] If you have any questions in the meantime, please call us at [Phone]. [Practice Name] | [Phone] Treatment Plan Non-Acceptance Follow-Up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Following Up On Your Treatment Plan — [First Name]</h3>
+        <p>Hi [First Name], I wanted to follow up on the treatment plan Dr. [Name] recommended at your last visit. I understand that dental treatment can feel overwhelming — whether it&#x27;s the timing, the cost, or just needing more information. Our team is here to help you find the right path forward. If it would be helpful, I can: - Walk you through financing options that spread the cost over time - Prioritize the most urgent treatment first and phase the rest - Answer any questions you have about what the treatment involves Would you like to schedule a quick call? [Coordinator Name] | [Practice Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3: Review Response Templates</h3>
+        <p>5-Star Review Response</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Treatment Scripts</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Treatment Scripts</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Thank you so much, [First Name]! [Add one personal detail if the review mentions a specific team member — e.g., So glad Dr. [Name] was able to make you comfortable.] We love having you as part of our practice. See you at your next visit! — [Practice Name] [Respond within 24 hours. Never mention specific treatments — HIPAA compliance. Keep it warm and general enough to be complaint-free.] Negative Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Hi [First Name], thank you for sharing your experience — we take every review seriously and I&#x27;m sorry to hear things didn&#x27;t go as they should have. I&#x27;d really like to speak with you personally to understand what happened and make it right. Please call our office at [Phone] and ask for [Name] — or email [Email]. — [Practice Name] [HIPAA caution: Never reference a specific treatment or clinical detail in a public response. Keep it human and action-oriented. Move the conversation offline immediately.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Treatment Scripts</span><span>05</span></div>
+</section></main></body></html>

@@ -1,0 +1,429 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#f8f3e9; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#080706; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#c8963d 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#2a2d2d 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#080706 94%,white), color-mix(in srgb,#080706 86%,#c8963d)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.3; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(248,243,233,.72); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#f8f3e9; letter-spacing:.26em; }
+.doc-label { color:#c8963d; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#c8963d 32%,transparent); border-radius:999px; color:#c8963d; background:rgba(255,255,255,.035); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
+.gold { color:#c8963d; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(248,243,233,.72); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#c8963d 38%,transparent); border-bottom:1px solid color-mix(in srgb,#c8963d 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#c8963d 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#c8963d 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#c8963d 52%,transparent); border-bottom:1px solid color-mix(in srgb,#c8963d 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#c8963d 32%,transparent); }
+.metric b { display:block; color:#c8963d; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(248,243,233,.72); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#080706; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#c8963d 18%,transparent), transparent 2in), linear-gradient(135deg, #080706, color-mix(in srgb,#080706 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#c8963d; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#c8963d 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#c8963d 56%,transparent); color:#c8963d; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(248,243,233,.72); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#c8963d 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#c8963d 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#0a0807; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#080706; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#080706; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #c8963d; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#0a0807; }
+.layout-protocol .work { background:#fbfbf5; color:#080706; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#c8963d 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#080706; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#080706; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#c8963d 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#080706; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#c8963d 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#080706; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #c8963d; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#c8963d 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#c8963d 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-dark-shop"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for barbers</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Barber</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Barbers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Barber</h3>
+        <p>The AI Playbook for Barbers Fill your chair with loyal clients, reduce no-shows, build a personal brand that keeps your DMs full, and create the client experience that makes people drive past three other barbershops to get to you</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The barbers with full appointment books and loyal clients who follow them from shop to shop aren&#x27;t just the most skilled with the clippers. They respond to every DM and</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking Inquiry The Same Day. They Reach Out At The Perfect Rebooking Window — 2-4</h3>
+        <p>weeks depending on the client — before the client has time to try someone new. They post consistently on TikTok and Instagram with content that builds genuine community. They run referral systems that turn every loyal client into a source of two or three more. And they create a client experience so consistently excellent that the chair isn&#x27;t just somewhere to get a haircut — it&#x27;s a relationship. This playbook covers every high- leverage scenario for barbers — with copy-paste AI prompts throughout.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Management</h3>
+        <p>The DM Response System Most potential clients DM before they book. Your response speed and tone determines whether that conversation becomes a booking or a visit to a competitor. A warm, specific, confident reply within an hour converts dramatically better than a delayed or generic one.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — New Client Dm Response</h3>
+        <p>Write a warm, professional DM response for my barbershop. A potential new client [Name] messaged asking about [booking / prices / availability / a specific style]. I want to: (1) make them feel welcome and confident they are coming to the right place, (2) answer their question directly, (3) make it easy to book. My booking process: [how clients book — e.g., DM to confirm / booking link / walk-ins welcome]. My price range: $[X]-$[X]. Under 100 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a DM response from a barber to a client who shared a reference photo and asked &#x27;can you do this?&#x27; Reference: [describe the style — e.g., a skin fade with textured crop / a taper with beard line-up]. I want to: (1) assess the style confidently and honestly, (2) explain how I&#x27;d approach it for them specifically, (3) ask one clarifying question if needed, (4) invite them to book. Confident and warm. Under 100 words. Sign as [Your Name]. Converting Walk-Ins to Repeat Clients Walk-ins who leave without rebooking are the most expensive missed opportunity in a barbershop. A simple, warm rebooking conversation at the end of every cut converts one-time visitors into loyal clients.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — End-Of-Cut Rebooking Script</h3>
+        <p>Write a short, natural script for a barber to use at the end of every haircut to invite the client to rebook. I want it to feel like a genuine recommendation, not a sales pitch. Include: (1) a brief comment on how the style will look its best if maintained at [X weeks], (2) a natural invitation to book the next appointment, (3) how to book. Under 60 words. Sign as [Your Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Cancellations</h3>
+        <p>The Appointment Reminder System No-shows cost barbers significant income — a 30-45 minute slot that isn&#x27;t filled is lost forever. A two-touch reminder system reduces no-shows by 60-70%.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — 24-Hour Appointment Reminder</h3>
+        <p>Write a 24-hour appointment reminder message for my barbershop. Client [Name], appointment tomorrow [date] at [time]. I want to: (1) remind them warmly, (2) confirm the key details, (3) include my cancellation/late notice policy briefly, (4) share my direct number. Under 60 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Cancellation Policy Communication</h3>
+        <p>Write a professional but friendly cancellation policy message for my barbershop to send with every booking confirmation. Policy: I require [X] hours notice to cancel or reschedule. No-shows may be charged [X]% of the service. Under 80 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>The Rebooking System The clients who come back every 2-4 weeks like clockwork aren&#x27;t just the ones who care most about their hair — they&#x27;re the ones whose barber proactively reminds them it&#x27;s time. The barbers with full chairs have this system running automatically.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Rebooking Reminder (2-4 Weeks)</h3>
+        <p>Write a rebooking reminder message for a barbershop client. Client [Name] had their last cut [X weeks ago]. I want to: (1) mention their hair is at the point where a fresh cut will look sharp again, (2) make it easy to book, (3) feel personal not automated. Under 70 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Lapsed Client Win-Back</h3>
+        <p>Write a win-back message for a client I haven&#x27;t seen in [X months]. Client [Name], last cut was [service] on [date]. I want to: (1) check in warmly, (2) mention something new — a new service, a new product, or a fresh offer, (3) invite them back with a simple next step. Under 80 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content That Builds A Chair Full Of Fans</h3>
+        <p>TikTok and Instagram are the most powerful booking tools a barber has. The accounts with full books post consistently across 4 pillars: transformations (before/after cuts), process (the technique, the tools), education (tips for clients, style guides), and personality (your vibe, your shop culture, your story). Clients book the barber they feel like they already know.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Tiktok / Reel Concept Ideas</h3>
+        <p>Write 5 TikTok or Instagram Reel concept ideas for a barber. Each should have: (1) a scroll-stopping hook for the first 2 seconds, (2) a brief description of the content, (3) a caption. Topics: a transformation video (before/after), a technique breakdown, a &#x27;what to tell your barber&#x27; guide, a day-in-the-life at the barbershop, a style guide for a specific hair type or face shape. Under 80 words each. Barbershop name: [Barbershop Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write 5 Instagram captions for a barber. Topics: (1) a recent transformation — describe the before, the brief, the cut, (2) a style tip for clients who want to maintain their cut between visits, (3) what makes your approach to cutting different, (4) a behind-the-scenes look at the shop culture, (5) a direct booking CTA. Each under 150 words, confident and specific. Barbershop: [Barbershop Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Community Building</h3>
+        <p>Turning Every Loyal Client Into a Source of New Clients Word of mouth is the most powerful marketing channel for a barber. The barbers with waitlists aren&#x27;t spending on ads — they&#x27;re systematically asking their best clients to refer their friends.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Referral Ask Message</h3>
+        <p>Write a referral ask message for my barbershop to send to loyal clients. I want to: (1) thank them for being a regular, (2) mention that most of my best new clients come from people like them, (3) make a warm, specific ask for referrals, (4) offer a</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Google Review Request</h3>
+        <p>Write a post-appointment Google review request message for my barbershop. Client [Name] just had [service]. I want to: (1) thank them for coming in, (2) make a warm personal ask for a Google review, (3) include the direct link, (4) make it feel personal not automated. Under 80 words. Sign as [Your Name], [Barbershop Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Product Sales &amp; Upselling</h3>
+        <p>Selling Barbershop Products With Confidence Product sales can add 20-30% to a barber&#x27;s revenue with zero additional time. The conversation about products works best when it&#x27;s framed as serving the client&#x27;s style goals — not selling them something.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a natural, non-pushy product recommendation script for a barber to use during or after a cut. The client has [hair type/style]. I&#x27;m recommending [product name — e.g., matte clay / pomade / beard oil]. I want to: (1) mention the product naturally while styling, (2) explain what it does for their specific hair, (3) tell them how to use it at home, (4) make the purchase feel like a logical next step, not a sales pitch. Under 80 words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Booking &amp; No-Show System</h3>
+        <p>• Build your new client DM response template using Chapter 1 prompt • Write your 24-hour reminder and cancellation policy messages • Set a reminder: check all unanswered DMs every morning</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Rebooking System</h3>
+        <p>• Write rebooking reminders for 2-week and 4-week clients • Identify clients you haven&#x27;t seen in 6+ weeks — send the Chapter 3 win-back to 10 of them • Set a standard: offer rebooking at the end of every cut</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Plan 5 TikTok/Reel concepts using the Chapter 4 prompt • Film and post 3 of them this week — transformation, technique, personality • Batch 5 Instagram captions using Chapter 4 prompt</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Referral &amp; Review System</h3>
+        <p>• Send the referral ask to your 10 most loyal clients • Set Google review request as a standard follow-up after every appointment • Respond to all existing Google reviews this week</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section></main></body></html>

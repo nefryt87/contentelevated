@@ -1,0 +1,359 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Client Onboarding</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#faf5ef; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8d7a69 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#cab8a3 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#faf5ef 94%,white), color-mix(in srgb,#faf5ef 86%,#8d7a69)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#8d7a69; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8d7a69 32%,transparent); border-radius:999px; color:#8d7a69; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#8d7a69; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8d7a69 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8d7a69 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#8d7a69 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8d7a69 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8d7a69 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8d7a69 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8d7a69 32%,transparent); }
+.metric b { display:block; color:#8d7a69; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#1c1713; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8d7a69 18%,transparent), transparent 2in), linear-gradient(135deg, #1c1713, color-mix(in srgb,#1c1713 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#8d7a69; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8d7a69 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8d7a69 56%,transparent); color:#8d7a69; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8d7a69 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8d7a69 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#faf5ef; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#1c1713; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#1c1713; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8d7a69; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#faf5ef; }
+.layout-protocol .work { background:#fbfbf5; color:#1c1713; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8d7a69 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#1c1713; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#1c1713; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8d7a69 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#1c1713; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8d7a69 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#1c1713; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #8d7a69; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8d7a69 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8d7a69 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for interior designers</div>
+    </div>
+  </div>
+  <h1>Client Onboarding</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Design</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Interior Designers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Client Onboarding</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Client Onboarding</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Onboarding, Scope &amp; Realtor Partnership Templates</h3>
+        <p>Design brief questionnaire, scope agreement scripts, onboarding system, photography permission kit, and realtor co-marketing templates</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>New Client Design Brief Questionnaire</h3>
+        <p>✓ Full name(s): ✓ Property address: ✓ Phone: ✓ Email: ✓ How did you hear about [Studio Name]? ✓ Project type: Full home design / Single room / Renovation design / New build / Staging / Other: ✓ Rooms included in this project (list all): ✓ Who lives in the space? (adults, children, ages, pets): ✓ How would you describe your current style in 3 words? ✓ How would you describe your ideal style in 3 words? ✓ Designers or spaces you love (Instagram accounts, magazines, projects): share links or images if possible ✓ Designers or spaces you dislike (equally important): what specifically bothers you? ✓ Existing pieces you want to keep (list furniture, art, or sentimental items): ✓ Existing pieces you want to remove or replace: ✓ Budget range for this project: Under $20K / $20-50K / $50-100K / $100-200K /</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>$200K+</h3>
+        <p>✓ Timeline: Is there a fixed deadline (move-in date, event, sale date)? ✓ Decision making: Who is the primary decision maker? Will both partners be involved equally? ✓ How do you prefer to communicate? Email / Phone / WhatsApp / Project portal: ✓ What does success look like to you when this project is complete — specifically? ✓ Is there anything else about your lifestyle, preferences, or concerns we should know? ✓ [Send this before every discovery call. Clients who complete it arrive aligned —</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Client Onboarding</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Client Onboarding</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>and the project starts on the right foot.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Welcome To [Studio Name] — Let&#x27;S Begin, [First Name]</h3>
+        <p>Hi [First Name], I&#x27;m so excited to officially start working together on your [project name]. This is going to be a beautiful project and I&#x27;m honoured you&#x27;ve trusted me with it. Here&#x27;s everything you need to know to get us started well: Your project portal / primary contact method: [details] How I&#x27;ll communicate: I send project updates at the end of each phase. For urgent questions, [Phone/WhatsApp] is best. What happens next: [Phase 1 description and timeline] Before our first working session, please: - Complete the Design Brief Questionnaire: [link] - Gather any inspiration images into a shared folder: [link] - Send measurements of [any specific items if needed] If anything comes up before we meet, I&#x27;m always reachable at [Phone]. Let&#x27;s make something extraordinary. [Your Name] | [Studio Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Scope Conversation Scripts</h3>
+        <p>Presenting Your Fee — The Budget Conversation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Script — Presenting Your Fee Confidently</h3>
+        <p>YOU: Before I put together the proposal, I want to have an honest conversation about investment — because it shapes everything we&#x27;ll do together. YOU: For a project like yours — [brief description of scope] — you&#x27;re typically looking at a design fee in the range of $[X] to $[X], depending on complexity. That covers [brief description of what&#x27;s included]. It doesn&#x27;t include the cost of furniture, finishes, and trades, which we&#x27;d discuss separately. YOU: The reason I&#x27;m sharing this before the proposal is that I&#x27;d rather have this conversation now than send you something that doesn&#x27;t work. Does that range feel aligned with what you were expecting? [Listen. Don&#x27;t jump in. Let them respond before you say anything else.] [If yes: &#x27;Great — I&#x27;ll put together a full proposal within [timeframe].&#x27;] [If hesitation: see below] When the Client Pushes Back on Your Fee</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Client Onboarding</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Client Onboarding</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>YOU: I hear you — it&#x27;s more than you were expecting. Can I ask: is it the total number, or is it a question of what&#x27;s included? [Let them answer. The reason shapes your response.] [If total number:] YOU: One thing that sometimes helps is approaching the project in phases. We could start with [Phase 1 — e.g., &#x27;the main living areas&#x27;] at a reduced fee of $[amount], and treat the rest as a second phase. That way you see the process and the results before committing to the full scope. [If questioning what&#x27;s included:] YOU: Let me walk you through exactly what my fee covers — because I want to make sure you&#x27;re comparing apples to apples if you&#x27;re getting other quotes. [Explain process in detail: site visits, space planning, sourcing, trade coordination, install supervision.] The designers who quote less typically hand off responsibility at some point. I stay involved through to the final styling. [Never apologize for your fee. State it, explain it, hold it.]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Marketing Kit</h3>
+        <p>Realtor Co-Marketing Proposal Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Co-Marketing Idea — [Your Name] + [Realtor Name]</h3>
+        <p>Hi [Name], I&#x27;ve been thinking about how we might build on our referral relationship and wanted to put a specific idea on the table. Option A — Joint content: I create a monthly &#x27;design + real estate&#x27; post or</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email — You Share Market Expertise, I Share Design Insight. Each Of Us Sends</h3>
+        <p>to our list. Great for building both our audiences with the same content. Option B — Buyer welcome package: For clients who purchase through you, I offer a complimentary 1-hour &#x27;new home orientation&#x27; consultation — it creates an exceptional client experience for you and gives me a warm</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction To A Potential Project.</h3>
+        <p>Option C — Staging partnership: For any listings you want staged, I provide professional staging at a preferential rate. Staged homes sell faster and at higher prices — we both benefit. Happy to do any or all of these — or if you have a better idea, I&#x27;m all ears. Would a quick call this week work? [Your Name] | [Studio Name] | [Phone] Realtor Referral Thank-You + Update</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Client Onboarding</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Client Onboarding</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Update On [Client Name] — And A Genuine Thank You, [Realtor Name]</h3>
+        <p>Hi [Name], Quick update on [Client First Name]: [brief status — e.g., &#x27;we&#x27;ve completed the design brief and are moving into the concept phase — they&#x27;re thrilled with the direction&#x27; / &#x27;the project is now underway and progressing beautifully&#x27;]. I also just want to say — thank you for the introduction. [He/She/They] is exactly the kind of client I love working with, and I&#x27;m going to take excellent care of them. That reflects on you, and I take that seriously. As always, if any of your other clients are planning a design project — whether before listing, after purchasing, or for their own home — I&#x27;d love to be your go-to. I&#x27;ll always treat your referrals as a priority. [Your Name] | [Studio Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Permission Kit</h3>
+        <p>Photography Permission Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Professional Photography For Your [Project Name] — [First Name]</h3>
+        <p>Hi [First Name], Now that your [project name] is complete, I&#x27;d love to arrange professional photography of the finished space. Here&#x27;s what that would look like: What I&#x27;d cover: the full cost of a professional photographer (typically a half-</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day Session)</h3>
+        <p>What you&#x27;d receive: a full set of high-resolution images — yours to use however you like What I&#x27;d use them for: my portfolio, website, Instagram, Pinterest, and potentially editorial submissions Your privacy: I would never identify your address or full name without your explicit permission. I typically refer to projects by neighbourhood or city (e.g., &#x27;Kensington project&#x27; or &#x27;Hamptons renovation&#x27;). Are you open to it? And are there any rooms or areas you&#x27;d prefer to keep private? I&#x27;m completely happy to work around any preferences. [Your Name] | [Studio Name] Press / Editorial Submission Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Project Submission — [Studio Name] + [Publication Name]</h3>
+        <p>Hi [Editor/Writer Name], I&#x27;m [Your Name], an interior designer based in [City] specializing in [specialty]. I recently completed a [brief project description] that I think would resonate beautifully with [Publication]&#x27;s audience.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Client Onboarding</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Client Onboarding</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>The brief: [2 sentences on the client&#x27;s goals and the design challenge]. The result: [2 sentences on what was created — be specific about materials, layout decisions, or design challenges solved]. I have professional photography available and the client has given permission for publication. Happy to share a full press pack if you&#x27;d like to take a look. [Your Name] | [Studio Name] | [Phone] | [Portfolio Link]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Client Onboarding</span><span>07</span></div>
+</section></main></body></html>

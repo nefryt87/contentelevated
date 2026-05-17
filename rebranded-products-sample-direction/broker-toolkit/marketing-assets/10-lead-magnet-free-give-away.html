@@ -1,0 +1,469 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Lead Magnet Free Give Away</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfaf4; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#5f7f86 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#a8bab5 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfaf4 94%,white), color-mix(in srgb,#fbfaf4 86%,#5f7f86)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#5f7f86; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#5f7f86 32%,transparent); border-radius:999px; color:#5f7f86; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#5f7f86; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#5f7f86 38%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#5f7f86 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#5f7f86 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#5f7f86 52%,transparent); border-bottom:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#5f7f86 32%,transparent); }
+.metric b { display:block; color:#5f7f86; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#161b1f; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#5f7f86 18%,transparent), transparent 2in), linear-gradient(135deg, #161b1f, color-mix(in srgb,#161b1f 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#5f7f86; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#5f7f86 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#5f7f86 56%,transparent); color:#5f7f86; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#5f7f86 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#5f7f86 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfaf4; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#161b1f; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#161b1f; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #5f7f86; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfaf4; }
+.layout-protocol .work { background:#fbfbf5; color:#161b1f; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#5f7f86 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#161b1f; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#161b1f; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#5f7f86 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#161b1f; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#5f7f86 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#161b1f; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #5f7f86; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#5f7f86 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#5f7f86 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-ledger"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you growth system for broker_toolkit</div>
+    </div>
+  </div>
+  <h1>Lead Magnet Free Give Away</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Growth</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>broker_toolkit product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Lead Magnet Free Give Away</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Free Resource: 5 Costly Broker Mistakes Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 1</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Free Guide</h3>
+        <p>5 Costly Mistakes Independent Brokers Make (And How to Fix Them This Week) For Solo Healthcare Insurance Brokers Who Want to Grow Their Book of Business Without Burning Out Free resource from your Healthcare Broker community The insurance industry has never been more competitive for independent brokers. Premiums are rising, clients are comparing you to online platforms, and bigger agencies have resources you don&#x27;t. But here&#x27;s the thing: most brokers lose business not because of price or coverage — they lose it because of avoidable operational mistakes. This guide walks you through the 5 most common and costly mistakes independent healthcare brokers make — and gives you a specific, actionable fix for each one you can implement this week. ESTIMATED READING TIME: 12 minutes | IMPLEMENTATION TIME: 1–2 hours to fix all 5 Free Resource: 5 Costly Broker Mistakes Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 2</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Mistake</h3>
+        <p>#1 No System for Tracking Renewals The Revenue You&#x27;re Silently Losing</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Problem</h3>
+        <p>Most solo brokers track renewals in their head, a basic spreadsheet, or not at all. The result: clients receive their renewal notice from the carrier before hearing from their broker. The carrier looks proactive. You look absent.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why It Costs You</h3>
+        <p>Industry data shows that 82% of clients are open to switching brokers when they feel underserved. A missed renewal call is the single most common trigger. Every</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client You Fail To Contact 30–60 Days Before Renewal Is A Client At Risk.</h3>
+        <p>THE FIX (Do This This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week)</h3>
+        <p>Build a renewal tracking system this week. At minimum, create a spreadsheet with every client&#x27;s renewal date. Sort by date. Set calendar reminders 90, 60, and 30 days out for each client. Your goal: no client should ever receive their renewal</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Lead Magnet Free Give Away</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>before you&#x27;ve already had a conversation. ■ IN THE TOOLKIT: The Client Renewal Tracker in the Healthcare Broker Solo Toolkit is pre-built for this — with auto color-coding by urgency and a live dashboard showing your upcoming renewals at a glance.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Mistake</h3>
+        <p>#2 Proposals That Look Like Everyone Else&#x27;s Your Proposal Is a First Impression</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Problem</h3>
+        <p>Most broker proposals are either: a plain Word document with plan options pasted in, or a carrier-generated PDF with your name slapped on the front. Neither inspires confidence.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why It Costs You</h3>
+        <p>Clients are often comparing proposals from multiple brokers simultaneously. A visually professional, well-structured proposal signals expertise and trustworthiness before the client reads a single word. A plain doc signals &#x27;I&#x27;m just another broker.&#x27; THE FIX (Do This This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week)</h3>
+        <p>Create a proposal template you&#x27;re proud to send. It should include: a professional cover page with your branding, a current situation summary, a clear plan comparison table showing cost and savings side-by-side, your recommendation with specific reasoning, and a clear next steps section. ■ IN THE TOOLKIT: The Benefits Proposal Template and Benefits Cost Calculator in the Solo Toolkit make this easy — a professional, branded proposal in under an hour. Free Resource: 5 Costly Broker Mistakes Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Mistake</h3>
+        <p>#3 Zero Consistent Digital Presence If They Can&#x27;t Find You, They Can&#x27;t Trust You</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Problem</h3>
+        <p>Most independent brokers rely almost entirely on referrals and word-of-mouth. While referrals are powerful, they create an unpredictable, feast-or-famine revenue cycle. Digital presence creates a pipeline that works while you&#x27;re in client meetings.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Lead Magnet Free Give Away</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>LinkedIn alone has over 900 million users. Your target clients — HR managers, small business owners, and CFOs — are active there. Brokers who post consistently on LinkedIn report generating 2–5 inbound inquiries per month from</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Alone.</h3>
+        <p>THE FIX (Do This This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week)</h3>
+        <p>Commit to posting 3 times per week on LinkedIn for 90 days. You don&#x27;t need to be a content creator — you need to be consistently visible and helpful. Share one insight, one client story (anonymized), or one question per post. That&#x27;s the entire strategy. ■ IN THE TOOLKIT: The 90-Day Content Calendar in the toolkit gives you 12 weeks of pre-planned content with ready-to-post caption templates. You&#x27;ll never stare at a blank screen again.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Mistake</h3>
+        <p>#4 Not Using AI — Losing 10+ Hours Per Week The Time Tax You&#x27;re Paying Unnecessarily</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Problem</h3>
+        <p>The average solo broker spends 8–12 hours per week writing emails, preparing for meetings, creating proposals, and drafting follow-up communication. Much of this work can be done in a fraction of the time with AI tools — most of which are free.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why It Costs You</h3>
+        <p>Brokers who aren&#x27;t using AI tools are working significantly harder than necessary. A renewal reminder email that takes 20 minutes to write manually takes 2 minutes with the right prompt. A pre-meeting research brief that used to require an hour of Googling can be generated in 3 minutes. THE FIX (Do This This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week)</h3>
+        <p>Start with Claude.ai or ChatGPT (both free). Use them for: drafting client emails, writing LinkedIn posts, preparing for client meetings, and generating proposal summaries. Start with one task this week — pick the most time-consuming thing you do repeatedly and ask AI to help you do it in half the time. Free Resource: 5 Costly Broker Mistakes Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 4 ■ IN THE TOOLKIT: The AI in Your Brokerage guide includes a complete prompt library with copy-paste prompts for every common broker task — emails, proposals, LinkedIn posts, and objection responses.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Lead Magnet Free Give Away</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Mistake</h3>
+        <p>#5 No Brand — Just a Name and a License Number Professionalism Is a Competitive Advantage</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>The Problem</h3>
+        <p>Many independent brokers operate without a consistent brand identity. No defined visual style, no clear brand voice, no professional digital assets. The result: every</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Touchpoint Looks Slightly Different, Which Unconsciously Signals</h3>
+        <p>inconsistency and lack of attention to detail.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why It Costs You</h3>
+        <p>Larger agencies invest heavily in brand because they know it builds trust before the first conversation. As a solo broker, you don&#x27;t need a $10,000 rebrand — you need a consistent, professional look across your LinkedIn profile, email signature, proposals, and any content you post. THE FIX (Do This This</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week)</h3>
+        <p>Define your brand this week. Choose: a color palette (2–3 colors), a font pairing (one heading font, one body font), a professional headshot, and a clear tagline that describes who you help and how. Use Canva to build your assets — it&#x27;s free and takes less than 2 hours to set up a complete brand kit. ■ IN THE TOOLKIT: The Brand Kit Guide in the toolkit walks you through exactly this process — with 3 personality archetypes, color palettes, font pairings, and a 7-asset brand checklist. Free Resource: 5 Costly Broker Mistakes Healthcare Broker Solo Toolkit Healthcare Broker Solo Toolkit | Independent Broker Resources Page 5</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Ready To Fix All 5 — In One Download?</h3>
+        <p>Every fix in this guide is already built and waiting for you inside the Healthcare Broker Solo Toolkit. ✓ Mistake #1 — Renewal Tracking: Client Renewal Tracker (Excel) — pre-built, color-coded, ready to use ✓ Mistake #2 — Proposal Quality: Benefits Proposal Template + Cost Calculator — professional in under an hour ✓ Mistake #3 — No Digital Presence: 90-Day Content Calendar — 12 weeks of posts, captions, and hashtags ✓</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Lead Magnet Free Give Away</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Mistake #4 — Not Using AI: AI in Your Brokerage — top 10 tools + complete copy-paste prompt library ✓ Mistake #5 — No Brand: Brand Kit Guide — personality archetypes, palettes, fonts, and 7-asset</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Checklist</h3>
+        <p>7 resources. 10 files. One instant download. 90-Day Content Calendar | Brand Kit Guide | AI in Your Brokerage | Client Renewal Tracker | Benefits Cost Calculator | Benefits Proposal Template | Client Onboarding Questionnaire Available now at [YOUR PRODUCT LINK] If this free guide was helpful, the full toolkit goes 10x deeper on every topic — with ready-to-use templates, spreadsheets, and tools you can open and start using today.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Lead Magnet Free Give Away</span><span>07</span></div>
+</section></main></body></html>

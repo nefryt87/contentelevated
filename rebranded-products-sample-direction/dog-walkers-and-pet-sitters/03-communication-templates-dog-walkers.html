@@ -1,0 +1,525 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates Dog Walkers</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff8ef; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#9a7a55 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d8c3a4 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff8ef 94%,white), color-mix(in srgb,#fff8ef 86%,#9a7a55)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#9a7a55; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#9a7a55 32%,transparent); border-radius:999px; color:#9a7a55; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#9a7a55; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#9a7a55 38%,transparent); border-bottom:1px solid color-mix(in srgb,#9a7a55 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#9a7a55 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#9a7a55 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#9a7a55 52%,transparent); border-bottom:1px solid color-mix(in srgb,#9a7a55 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#9a7a55 32%,transparent); }
+.metric b { display:block; color:#9a7a55; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#211a13; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#9a7a55 18%,transparent), transparent 2in), linear-gradient(135deg, #211a13, color-mix(in srgb,#211a13 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#9a7a55; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#9a7a55 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#9a7a55 56%,transparent); color:#9a7a55; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#9a7a55 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#9a7a55 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff8ef; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#211a13; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#211a13; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #9a7a55; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff8ef; }
+.layout-protocol .work { background:#fbfbf5; color:#211a13; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#9a7a55 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#211a13; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#211a13; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#9a7a55 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#211a13; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#9a7a55 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#211a13; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #9a7a55; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#9a7a55 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#9a7a55 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for dog walkers &amp; pet sitters</div>
+    </div>
+  </div>
+  <h1>Communication Templates Dog Walkers</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Local</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Dog Walkers &amp; Pet Sitters product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Communication Template Pack</h3>
+        <p>24 done-for-you templates: new client inquiries, walk updates, incident reports, reviews, referrals, and policies</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Inquiry &amp; Onboarding</h3>
+        <p>T1 — New Client Inquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Dog Walking Inquiry — [Dog&#x27;S Name]</h3>
+        <p>Hi [Name]! Thank you so much for reaching out — [Dog&#x27;s Name] sounds absolutely wonderful and exactly the kind of pup I love working with. A little about how I work: [2-3 sentences on your approach — routine, communication style, safety protocols]. Before we confirm anything, I love doing a free meet-and-greet so [Dog&#x27;s Name] and I can get to know each other and you can see exactly how I operate. It takes about 30 minutes and there&#x27;s no obligation. A few quick questions: How old is [Dog&#x27;s Name]? Any specific quirks I should know about — other dogs, leash behaviour, anything? And what days/times are you typically looking for? Looking forward to hearing from you! [Your Name] | [Business Name] | [Phone] T2 — Meet-and-Greet Confirmation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Meet-And-Greet Confirmed — [Your Name] + [Dog&#x27;S Name]!</h3>
+        <p>Hi [Name]! Wonderful — your meet-and-greet is confirmed for [date] at [time] at [their address / my location]. What we&#x27;ll cover: my walking routine and safety approach, [Dog&#x27;s Name]&#x27;s specific needs, emergency protocols, and any questions you have for me. Could you have the following handy if possible: - Your vet&#x27;s name and contact number - [Dog&#x27;s Name]&#x27;s vaccination records (especially rabies and bordetella if applicable) - Any medications or health conditions I should know about There&#x27;s no obligation at the meet-and-greet — it&#x27;s just about making sure we&#x27;re a great fit. I&#x27;m really looking forward to meeting [Dog&#x27;s Name]! [Your Name] | [Business Name] | [Phone] T3 — Post-Meet-and-Greet Follow-Up</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name]! What a wonderful [breed/dog description] — [one specific, genuine observation about the dog from the visit]. I had such a lovely time getting to know them. As discussed, I&#x27;d love to [service description — e.g., start with daily 60- minute walks on weekday mornings]. Here&#x27;s how to confirm: - [Next step — e.g., complete my client form / make a deposit / sign my service agreement] - [Link or instructions] Once confirmed, I&#x27;ll send over my full new client information pack. Looking forward to having [Dog&#x27;s Name] on my roster! [Your Name] | [Business Name] T4 — Pricing Enquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Dog Walking Rates — [Business Name]</h3>
+        <p>Hi [Name]! Happy to share my rates: 30-minute walk: $[amount] 60-minute walk: $[amount] Drop-in visit (30 min): $[amount] Puppy visits (20 min): $[amount] Overnight pet sitting: $[amount] per night Weekend / holiday rate: [details] I also offer a [5-walk / monthly] package at $[amount] — saving you $[X]. The best first step is a free meet-and-greet so I can meet your dog and we can discuss exactly what would work best. Would you like to set one up? [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Communication</h3>
+        <p>T5 — Walk Update Message (Mid-Walk)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Text / Whatsapp — Send During Walk</h3>
+        <p>Hi [Name]! [Dog&#x27;s Name] is doing brilliantly today — [one specific genuine moment from the walk, e.g., &#x27;absolutely demolished a puddle at [park name] and is now the happiest, muddiest boy alive&#x27;]. [Photo attached] All good — home in about [X] minutes. [Your Name] T6 — Walk Completion Message</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Text / Whatsapp — Send After Walk</h3>
+        <p>Hi [Name]! [Dog&#x27;s Name] is home safe and sound after a great [X]-minute walk. [Brief walk summary — route, energy level, any notable moments]. They&#x27;ve had fresh water and are having a well-deserved rest. [Your Name] 🐾 T7 — Pet Sitting Daily Update</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name]! Day [X] update on [Pet&#x27;s Name] — [brief warm summary: meals eaten, activity, mood, any funny moments]. They are happy, comfortable, and clearly at home here. [Photo attached] All is well — speak tomorrow! [Your Name] T8 — Boarding / Overnight Check-In</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Text / Whatsapp — Send First Night</h3>
+        <p>Hi [Name]! Just to let you know [Dog&#x27;s Name] has settled in beautifully. [Brief personalised note — e.g., &#x27;They explored every corner of the house, had a big dinner, and are now snoozing on my sofa like they own the place&#x27;]. Enjoy your [trip/evening] — they are in great hands. [Your Name] 🐾</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Situations</h3>
+        <p>T9 — Minor Incident Report</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Quick Update On Today&#x27;S Walk — [Dog&#x27;S Name]</h3>
+        <p>Hi [Name], I wanted to let you know about something that happened on today&#x27;s walk so you have the full picture. [Describe the incident calmly and specifically — what happened, where, when.] What I did: [your immediate response — e.g., &#x27;I separated them immediately and moved to a quieter area&#x27; / &#x27;I checked them over thoroughly — no injuries&#x27;]. [Dog&#x27;s Name] is home safe and appears completely fine. I&#x27;m monitoring them and will let you know immediately if I notice anything further. Please call me if you&#x27;d like to talk through it: [Phone]. I always want you to have complete transparency. [Your Name] | [Business Name] T10 — Dog Unwell During Walk</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Update On [Dog&#x27;S Name] — Important</h3>
+        <p>Hi [Name], I wanted to reach out immediately — [Dog&#x27;s Name] seems a little off today. [Specific description — e.g., &#x27;They have been reluctant to walk and vomited once about 20 minutes into our walk&#x27; / &#x27;They seem lethargic and are not interested in their usual sniffs&#x27;]. I have ended the walk early and [Dog&#x27;s Name] is safely home / with me now. I would recommend keeping a close eye on them and contacting your vet if the symptoms continue. Please call me now on [Phone] if you need to discuss. I am nearby and happy to help however I can. [Your Name] | [Business Name] T11 — Cancellation by Walker</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name], I&#x27;m so sorry to do this — I need to cancel [Dog&#x27;s Name]&#x27;s walk today due to [brief reason — illness / personal emergency / severe weather]. [If you can arrange cover: &#x27;I have contacted [Colleague Name] who I trust completely and they are available to step in — would that work for you?&#x27;] I will of course not charge for today&#x27;s walk. I am so sorry for the inconvenience and will be back to normal tomorrow. [Your Name] | [Business Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 4: Reviews &amp; Referrals</h3>
+        <p>T12 — Google Review Request</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Quick Favour — [Name]</h3>
+        <p>Hi [Name]! I have loved walking [Dog&#x27;s Name] these past [timeframe] — they genuinely make my day every walk. Quick ask: if you have been happy with my service, a Google review would mean the world to my small business. It helps other dog owners in [Area] find me and honestly just makes my day. Direct link: [Google Review Link]. Takes 2 minutes. Thank you! [Your Name] | [Business Name] T13 — Rover / Wag Review Request</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Text / App Message — Send Directly</h3>
+        <p>Hi [Name]! Hope [Dog&#x27;s Name] is doing well after their [service]. If you enjoyed working with me, a review on [Rover / Wag] would help me reach more lovely dogs in [Area]. Takes just a minute and means so much! [Your Name] T14 — Referral Ask</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Text / Message — Send To Loyal Clients</h3>
+        <p>Hi [Name]! Really appreciate your loyalty — working with [Dog&#x27;s Name] is always a highlight of my week. Quick ask: if you know any dog owners in [Area] looking for a reliable walker, I would so appreciate the mention. Most of my best clients come from recommendations from people like you. [If offering incentive: &#x27;I offer [X] off your next booking for every new client you refer to me.&#x27;] Thank you! [Your Name] | [Business Name] T15 — Vet / Groomer Partnership Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Dog Walking Partnership — [Your Name]</h3>
+        <p>Hi [Name], I&#x27;m [Your Name], a professional dog walker and pet sitter serving [Area]. I&#x27;ve been working with dogs in this area for [X years] and have a strong base of regular clients. I reach out to local [vets / groomers / trainers] because our clients are the</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>same people — dedicated dog owners who prioritise their pets&#x27; wellbeing. I&#x27;d love to explore a mutual referral arrangement — I&#x27;m happy to recommend your services to my clients and leave my cards with your front desk if you&#x27;re open to it. [Your Name] | [Business Name] | [Phone] | [Website] T16 — Positive Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Thank you so much, [Name] — [Dog&#x27;s Name] is an absolute joy to walk! Reviews like this genuinely make my day and help other dog owners in [Area] find me. See you next week! — [Your Name], [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 5: Policies &amp; Operations</h3>
+        <p>T17 — Service Agreement Reminder</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Quick Reminder — [Business Name] Booking Policy</h3>
+        <p>Hi [Name]! Just a quick reminder of my booking policy before we get started: Cancellations: I require [X] hours notice. Late cancellations within [X] hours are charged [X]% of the service. Key safety: I keep dogs on lead in all unfenced areas unless we&#x27;ve explicitly agreed otherwise. I never walk more than [X] dogs at once. Updates: I send a photo and update message on every walk. Emergencies: My vet contact is [local emergency vet name and number]. I will always contact you immediately. Any questions — always ask! [Your Name] | [Business Name] T18 — Holiday Availability Notice</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Business Name] — [Holiday Period] Availability</h3>
+        <p>Hi [Name]! Just a note to let you know about my availability over [holiday period]: I will be unavailable from [dates]. [If cover available: &#x27;My trusted colleague [Name] will be covering my clients during this time — they are fully insured and I will personally introduce you before I go.&#x27;] If you need coverage during this period please book by [date] to guarantee a slot. Thank you for your understanding! [Your Name] | [Business Name] T19 — Rate Increase Notice</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Service Rate Update — [Business Name]</h3>
+        <p>Hi [Name], I wanted to give you plenty of notice: from [date], my rates will be adjusting to reflect increases in insurance, fuel, and business costs. New rates from [date]: [Service]: $[new amount] (currently $[old amount])</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Your first [X] bookings at the current rate are locked in until [date]. Thank you so much for your continued trust and loyalty — it genuinely means everything. [Your Name] | [Business Name] T20 — New Service Announcement</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject New At [Business Name] — [Service Name]</h3>
+        <p>Hi [Name]! Exciting news — I am now offering [new service description, e.g., puppy socialisation walks / group adventure walks / holiday boarding]. [2-3 sentences describing the service and who it&#x27;s perfect for.] As an existing client, you get first access before I open it publicly. Interested? Just reply here or call [Phone]. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 6: Additional Templates</h3>
+        <p>T21 — Client Birthday / Pet Birthday Message</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Happy [Birthday] — [Dog&#x27;S Name]!</h3>
+        <p>Happy birthday to the wonderful [Dog&#x27;s Name]! It has been such a joy 🐾 walking them this past [timeframe] — they bring so much happiness to every single walk. Hope you all have a brilliant day celebrating! [Your Name] | [Business Name] T22 — Long-Term Client Appreciation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You — [Name] + [Dog&#x27;S Name]</h3>
+        <p>Hi [Name], I just wanted to take a moment to say thank you. Working with [Dog&#x27;s Name] for the past [timeframe] has been one of the genuine highlights of my work — they are [one specific, genuine thing you love about the dog]. Thank you for trusting me with them. It means more than I can say. [Your Name] | [Business Name] T23 — Waitlist Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Dog Walking Availability — [Business Name]</h3>
+        <p>Hi [Name]! Thank you so much for reaching out — I am genuinely touched by the interest. Unfortunately I am fully booked for [timeframe] at the moment, but I would love to add [Dog&#x27;s Name] to my waitlist. I will contact you as soon as a slot opens up. In the meantime, I am happy to recommend [trusted colleague] who has availability and whose work I know well: [contact details]. [Your Name] | [Business Name] T24 — End-of-Service Farewell</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Dog Walkers</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name], It has been such a privilege walking [Dog&#x27;s Name] — I am going to miss them enormously. [One specific, genuine memory from your time together.] Wishing you and [Dog&#x27;s Name] all the very best. Please do not hesitate to reach out if circumstances change and you need me again — I would always welcome them back. With warmth, [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates Dog Walkers</span><span>09</span></div>
+</section></main></body></html>

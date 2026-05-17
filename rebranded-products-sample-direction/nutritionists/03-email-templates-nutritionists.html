@@ -1,0 +1,417 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfcf3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6f9274 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c8d7b9 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfcf3 94%,white), color-mix(in srgb,#fbfcf3 86%,#6f9274)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6f9274; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6f9274 32%,transparent); border-radius:999px; color:#6f9274; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6f9274; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6f9274 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6f9274 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6f9274 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6f9274 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6f9274 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6f9274 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6f9274 32%,transparent); }
+.metric b { display:block; color:#6f9274; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#182218; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6f9274 18%,transparent), transparent 2in), linear-gradient(135deg, #182218, color-mix(in srgb,#182218 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6f9274; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6f9274 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6f9274 56%,transparent); color:#6f9274; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6f9274 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6f9274 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfcf3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#182218; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#182218; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6f9274; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfcf3; }
+.layout-protocol .work { background:#fbfbf5; color:#182218; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6f9274 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#182218; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#182218; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6f9274 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#182218; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6f9274 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#182218; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6f9274; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6f9274 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6f9274 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for nutritionists</div>
+    </div>
+  </div>
+  <h1>Email Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Nutrition</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Nutritionists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Pack</h3>
+        <p>24 done-for-you templates for every stage of the client journey Lead nurture • Onboarding • Retention • Referrals • Win-back</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use These Templates</h3>
+        <p>• Replace all [brackets] with your client&#x27;s name, goal, condition, and your practice details. • Keep the tone warm, science-backed, and non-judgmental — the hallmark of great nutrition counselling. • Always include your credentials in your sign-off — credibility matters in this regulated field. • These work as emails, practice portal messages, and WhatsApp/text messages — shorten for text. • Save your top performers as templates in your practice management software or Gmail.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Sequence</h3>
+        <p>Inquiry Response — Same Day</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your Nutrition Inquiry — Next Steps From [Your Name]</h3>
+        <p>BODY Hi [First Name], Thank you so much for reaching out — I&#x27;m really glad you did. Based on what you&#x27;ve shared, [brief personalized note — e.g., &#x27;managing blood sugar through nutrition is absolutely something we can work on together&#x27; / &#x27;your goal of improving your relationship with food while losing weight sustainably is exactly my area of focus&#x27;]. I&#x27;d love to learn more about your situation and see if we&#x27;re a good fit to work together. Here&#x27;s what I suggest: Let&#x27;s book a free 20-minute discovery call — no commitment, just a conversation about your goals and how I work. Here&#x27;s my booking link: [link] — pick whatever time works best for you. Looking forward to connecting. [Your Name], [Credentials] | [Practice Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>BODY Hi [First Name], I wanted to follow up on my note and share something that&#x27;s really relevant to what you mentioned: [Specific insight relevant to their stated goal — e.g., &#x27;Most people trying to manage blood sugar focus on cutting carbs — but the research shows that meal timing and protein distribution often matter just as much. That&#x27;s where we&#x27;d start.&#x27; / &#x27;One of the biggest reasons weight loss attempts stall isn&#x27;t willpower — it&#x27;s inadequate protein and poor hunger hormone signalling. Easy to fix once we know what&#x27;s happening.&#x27;] Happy to go deeper on this in a discovery call. Booking link is here if you&#x27;re ready: [link]. [Your Name], [Credentials] Post-Discovery Call Conversion</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Personalized Nutrition Plan — Next Steps</h3>
+        <p>BODY Hi [First Name], It was so great talking with you today. Based on our conversation, here&#x27;s what I&#x27;d recommend: Your primary goals: [1–2 key goals from the call] My recommended approach: [2–3 sentences on your clinical approach for their situation] Recommended package: [Package name, sessions included, investment] I genuinely believe that [specific outcome] is achievable for you within [timeframe] — I&#x27;ve helped clients with very similar situations get there. But it starts with the right plan and consistent support. To get started, simply reply here or click: [booking/payment link] I&#x27;m excited about what&#x27;s possible for you. [Your Name], [Credentials] | [Practice Name] Re-Inquiry Nurture — 30 Days</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Still Thinking Things Over? No Pressure — Just A Check-In</h3>
+        <p>BODY Hi [First Name], I know life gets busy — just wanted to pop back in and see how you&#x27;re going with [their stated goal]. If the timing wasn&#x27;t right when we last spoke, that&#x27;s completely okay. I&#x27;m still here when you&#x27;re ready. In the meantime, here&#x27;s one thing worth trying right now: [one actionable, specific nutrition tip relevant to their goal]. Small changes add up. [Your Name], [Credentials] Package Renewal Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Package Is Ending — Let&#x27;S Talk About What&#x27;S Next</h3>
+        <p>BODY Hi [First Name], Your current package wraps up after our next session — which feels like a good moment to look back at how far you&#x27;ve come. [Progress recap — 2–3 specific wins observed over the program] Based on where you are now and what&#x27;s still ahead, here&#x27;s what I&#x27;d</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>recommend for your next phase: [Next package recommendation with brief rationale] Continuing clients receive [priority scheduling / same rate locked in / bonus session — whatever applies]. Let&#x27;s make sure we keep your momentum going. Reply here or book your next package at: [link] [Your Name], [Credentials]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Welcome To [Practice Name] — I&#x27;M So Glad You&#x27;Re Here</h3>
+        <p>BODY Hi [First Name], Welcome aboard — I&#x27;m genuinely excited to work with you on [their goal]. Here&#x27;s what to expect from our time together: - [Session frequency and format] - How I&#x27;ll send your meal plans and educational resources - The best way to reach me between sessions - What makes the biggest difference for clients who achieve lasting results: [brief philosophy statement] Before our first session, it would help me to know: [1–2 intake questions or a link to your intake form]. Looking forward to this journey with you. [Your Name], [Credentials] | [Practice Name] Meal Plan Companion Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Week [X] Meal Plan — What To Know</h3>
+        <p>BODY Hi [First Name], Your Week [X] meal plan is attached/linked here: [link] A few things worth knowing about this plan:</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why These Foods: [1–2 Sentences On The Nutrition Rationale]</h3>
+        <p>Your targets: [Macro/calorie targets if applicable, in plain language] The most common question I get about this type of plan: [question + answer] What to do if you go off-plan: [brief, compassionate guidance] You&#x27;re doing great. See you [next session date]. [Your Name], [Credentials] Weekly Check-In</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Quick Check-In — How&#x27;S The Week Going, [First Name]?</h3>
+        <p>BODY Hi [First Name], Just checking in mid-week — how are things going with the plan? A few things I&#x27;m curious about: - How have your energy levels been? - Any meals that felt really good — or any that were tough to stick to?</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>- Anything you&#x27;d like to adjust or talk through at our next session? Even a quick reply helps me tailor our next session to where you actually are. [Your Name], [Credentials] Milestone Celebration</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject I Have To Say Something, [First Name]</h3>
+        <p>BODY Hi [First Name], I just wanted to take a moment to acknowledge what you&#x27;ve achieved: [Specific milestone — e.g., &#x27;You&#x27;ve completed 4 consecutive weeks of meal prep.&#x27; / &#x27;Your latest bloodwork shows your HbA1c has improved by 0.8%.&#x27; / &#x27;You&#x27;ve hit your protein targets every day this week for the first time.&#x27;] This might seem small from the inside — but from where I&#x27;m sitting, it&#x27;s significant. This kind of consistency is exactly what produces lasting change. I&#x27;m proud of you. Let&#x27;s keep going. [Your Name], [Credentials] Plateau Handler — Mid-Program</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Let&#x27;S Talk About Where You Are Right Now — I Have Some Thoughts</h3>
+        <p>BODY Hi [First Name], I&#x27;ve been thinking about your progress and I want to be proactive about something. Progress has levelled off a bit recently — and I want you to know that&#x27;s completely expected and normal. It&#x27;s not a sign that the plan isn&#x27;t working. What it usually means: [brief clinical explanation — e.g., &#x27;Your body has adapted to the calorie level and we need to reassess your targets&#x27; / &#x27;Stress and sleep quality can significantly stall fat loss even when nutrition is perfect — and based on what you&#x27;ve shared, that might be a factor here&#x27;]. I have a couple of adjustments I&#x27;d like to try. Let&#x27;s discuss at our next session — or feel free to reply if you want to talk sooner. You&#x27;re doing better than you think. [Your Name], [Credentials] Non-Adherence Recovery</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject No Judgment — Just Want To Check In, [First Name]</h3>
+        <p>BODY Hi [First Name], I noticed it&#x27;s been a little quiet — I just wanted to reach out with absolutely no judgment. Going off track is part of the process for almost every client I&#x27;ve worked with. It doesn&#x27;t mean you&#x27;ve failed — it means we need to look at what&#x27;s making adherence hard right now and adjust. Can we talk before our next session? Even 10 minutes would help me understand what&#x27;s happening so we can make the plan work better for your real life. I&#x27;m on your side — always. [Your Name], [Credentials]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Ask — And A Genuine Thank You</h3>
+        <p>BODY Hi [First Name], Watching [milestone] has been genuinely one of the highlights of my work this</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Month — Thank You For Trusting Me With Your Health.</h3>
+        <p>If you know anyone who&#x27;s been struggling with [similar challenge] or looking for a nutritionist/dietitian they can actually trust, I&#x27;d be so grateful if you pointed them my way. I&#x27;ll take great care of anyone you send to me — that&#x27;s a promise. [Your Name], [Credentials] | [Practice Name] Win-Back — 3 Months Lapsed</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Checking In On You, [First Name]</h3>
+        <p>BODY Hi [First Name], It&#x27;s been a few months and I just wanted to reach out and see how you&#x27;re doing. How has [their primary goal] been going since we last spoke? Sometimes having a plan in place makes a big difference even after sessions end — and sometimes people find they need a tune-up when life shifts. If you&#x27;d like to reconnect, I&#x27;m happy to do a quick check-in session at a returning client rate. No pressure at all — just here if you need me. [Your Name], [Credentials] | [Practice Name] Healthcare Provider Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], [Credentials], [Specialty]</h3>
+        <p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m a [RD/Registered Nutritionist/Nutrition Coach] based in [City] specializing in [specialty — e.g., diabetes and metabolic health / gut health and IBS / weight management / sports nutrition]. I wanted to introduce myself as a local clinical resource for patients who would benefit from nutritional intervention alongside their medical care. I work closely with patients to [brief description of your approach and outcomes]. I&#x27;d welcome the opportunity to discuss how we might collaborate for our shared patients — whether that&#x27;s a formal referral arrangement or simply knowing I&#x27;m available as a resource. Thank you for your time. [Your Name], [Credentials] | [Practice Name] | [Phone] | [Email]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Personal Trainer Partnership Proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Mutual Referral Partnership — [Your Name], Dietitian/Nutritionist</h3>
+        <p>BODY Hi [Name], I came across your work and wanted to reach out — I think we might be a great complement to each other&#x27;s practices. I&#x27;m a [RD/nutritionist] specializing in [specialty] based in [City/online]. A lot of my clients are also working with personal trainers — and I imagine some of your clients would benefit from nutrition support alongside their training. I&#x27;d love to explore a mutual referral relationship. I refer clients who need structured training to trusted trainers, and vice versa — both of us end up with better client outcomes and a fuller client load. Happy to jump on a quick call if that sounds interesting. Either way, keep up the great work. [Your Name], [Credentials] | [Practice Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>08</span></div>
+</section></main></body></html>

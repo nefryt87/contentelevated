@@ -1,0 +1,591 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f7f5f2; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#7d7298 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d0a75d 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f7f5f2 94%,white), color-mix(in srgb,#f7f5f2 86%,#7d7298)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#7d7298; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#7d7298 32%,transparent); border-radius:999px; color:#7d7298; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#7d7298; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#7d7298 38%,transparent); border-bottom:1px solid color-mix(in srgb,#7d7298 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#7d7298 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#7d7298 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#7d7298 52%,transparent); border-bottom:1px solid color-mix(in srgb,#7d7298 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#7d7298 32%,transparent); }
+.metric b { display:block; color:#7d7298; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#1b1824; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#7d7298 18%,transparent), transparent 2in), linear-gradient(135deg, #1b1824, color-mix(in srgb,#1b1824 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#7d7298; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#7d7298 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#7d7298 56%,transparent); color:#7d7298; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#7d7298 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#7d7298 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f7f5f2; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#1b1824; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#1b1824; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #7d7298; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f7f5f2; }
+.layout-protocol .work { background:#fbfbf5; color:#1b1824; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#7d7298 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#1b1824; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#1b1824; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#7d7298 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#1b1824; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#7d7298 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#1b1824; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #7d7298; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#7d7298 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#7d7298 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for public speakers</div>
+    </div>
+  </div>
+  <h1>Email Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Stage</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Public Speakers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email &amp; Communication Template Pack</h3>
+        <p>24 done-for-you templates: enquiry responses, proposals, fee negotiation, post-engagement</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Enquiry Response &amp; Proposal</h3>
+        <p>T1 — Speaking Enquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Speaking Enquiry — [Event Name]</h3>
+        <p>Dear [Name], Thank you so much for reaching out — [event name] sounds like a genuinely exciting opportunity and exactly the kind of audience my work resonates most strongly with. [2-3 sentences showing you understand their audience and event objective — be specific, not generic.] Before I put together a full proposal, it would help to know: [2-3 specific questions — talk duration, any other speakers on the bill, specific outcomes the organiser is hoping for]. In the meantime, I have attached my speaker one-sheet and a link to my speaker reel: [link]. My speaking fee for a keynote of this length is typically in the range of $[X]-$[X], depending on format and logistics. Would a 20-minute call this week work to discuss further? I have availability [two specific times]. Warm regards, [Your Name] T2 — Post-Discovery Call Proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Speaking Proposal — [Event Name] — [Your Name]</h3>
+        <p>Dear [Name], It was wonderful speaking with you today — I am genuinely excited about [event name] and the opportunity to work with [audience description]. PROPOSED TALK: [Talk Title] [2-3 paragraphs describing the talk — what it covers, how it is structured, the key outcomes audiences leave with, why it is particularly relevant to this audience right now. Be specific and compelling.] FORMAT: [Keynote / Workshop / Panel] — [Duration] DELIVERY: [In-person / Virtual / Hybrid] INVESTMENT: $[amount], which includes: - Pre-event discovery call with [Name] to customise for your audience - Full keynote/workshop delivery - [Any post-event resources you provide — e.g., summary slide deck / reading list / follow-up Q&amp;A] - [Travel if applicable: or &#x27;plus reasonable travel and accommodation costs&#x27;]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>TO CONFIRM: I ask for [deposit amount] on signing, with the balance due [timeline]. I will hold [date] on my calendar for [X days] while you review. Any questions, I am just a message away. Warm regards, [Your Name] T3 — Fee Negotiation Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Speaking Fee — [Event Name]</h3>
+        <p>Dear [Name], Thank you for being upfront about your budget — I really appreciate that. I understand that $[their budget] is what you are working with, and I want to find a way to make this work if I can. My standard fee reflects the customisation I bring to every talk — the pre- event research, the tailoring to your specific audience, and the post-event materials. For an audience of [size] at [type of event], I genuinely believe the return on a $[your fee] investment is significant. That said, let me explore what might be possible: [Option if you can flex]: If a [shorter format / virtual option / shared session with another speaker] would work, I could potentially deliver that at $[adjusted amount]. [If you cannot flex]: Unfortunately I am unable to reduce my fee further for this format, but I would be happy to discuss a different scope that fits your budget. I would love to be at [event name] — let me know what direction you would like to explore. Warm regards, [Yo</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: [Event Name] — [Your Name]</h3>
+        <p>Dear [Name], Thank you so much for thinking of me for [event name] — I am genuinely flattered. Unfortunately I am already committed on [date] and cannot double-book. I would be glad to: (1) add your event to my waitlist in case anything changes, or (2) recommend a colleague whose topic and style might suit your audience equally well — [Colleague Name] comes to mind specifically for [reason]. If your date ever shifts or you are planning a future event, please do not hesitate to reach out — I would love to be part of [Organisation]&#x27;s events in the future. Warm regards, [Your Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Outreach</h3>
+        <p>T5 — Speaker Bureau Introduction</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Dear [Name], I am reaching out to introduce myself as a professional speaker who I believe would be a strong fit for [Bureau Name]&#x27;s roster. My name is [Your Name] and I speak on [topic]. My talks are built around [brief unique angle — e.g., &#x27;the intersection of neuroscience and leadership&#x27; / &#x27;practical resilience frameworks for high-pressure teams&#x27;]. I typically work with [audience types — e.g., Fortune 500 leadership teams, industry associations, public sector]. My speaking fee range: $[X]-$[X] for keynote engagements. Recent notable engagements: [2-3 relevant past bookings — company/conference name and approximate audience size]. I have attached my one-sheet and a link to my speaker reel: [link]. I would love to explore whether there is a fit. Would a brief call work this week? [Your Name] | [Phone] | [Website] T6 — Conference Prospecting Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Speaker Proposal For [Conference Name] — [Your Name]</h3>
+        <p>Dear [Name], I have been following [Conference Name] for several years and I believe my talk on [topic] would resonate strongly with your [audience description] audience. My proposed session: &#x27;[Talk Title]&#x27; — [one compelling sentence describing the talk and its key insight].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why Now: [1-2 Sentences On Why This Topic Is Particularly Relevant To This</h3>
+        <p>audience at this moment — reference industry trends or challenges if you can]. I have attached my speaker one-sheet and here is a link to my reel: [link]. My speaker fee for a keynote of this type is $[amount]. Would you be open to a brief call to discuss whether there is a fit for [year] or future events? [Your Name] | [Phone] | [Website] T7 — Monthly Value Touch (Past Clients)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Something Worth Reading On [Topic] — [Your Name]</h3>
+        <p>Dear [Name], Quick note with something I thought you might find interesting given [their organisation]&#x27;s work in [relevant area]: [One specific, genuinely useful insight, trend, or piece of research from your speaking topic — 2-3 sentences. Link to a source if relevant.] I have also recently updated my keynote to include [brief update if applicable]. If you are ever planning an event where [topic] would be relevant, I would love to be on your list. [Your Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Testimonials</h3>
+        <p>T8 — Post-Engagement Follow-Up (48 Hours)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You — [Event Name]</h3>
+        <p>Dear [Name], I just wanted to say thank you for [event name] — it was a genuine privilege to speak to your [audience description] audience. [One specific personal observation from the event — e.g., &#x27;The question the audience member asked about [topic] at the end genuinely made me think differently about part of my talk. I will be incorporating that into future sessions.&#x27;] I would love to hear any feedback you have — what landed best, what could be refined. Honest input is how I keep improving. And if you are planning future events or know of organisations who could benefit from a talk on [topic], I would be grateful for any introductions. With warm regards, [Your Name] T9 — Testimonial Request Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Favour — [Name]</h3>
+        <p>Dear [Name], Thank you again for [event name] — it was one of my favourite engagements of the year. I have a personal ask: a written testimonial or LinkedIn recommendation from you would mean an enormous amount to my speaking business. Testimonials from event organisers of your seniority and credibility carry real weight. To make it as easy as possible — if it helps, here are a few prompts to guide you: - What was the audience&#x27;s response to the talk? - What specifically did the talk deliver for your event&#x27;s objectives? - Would you recommend me to other organisers, and if so, why? A paragraph is more than enough — whatever you are comfortable sharing. I would display it on my website and one-sheet with your name and title (with your approval). Thank you for even considering it. [Your Name] T10 — LinkedIn Recommendation Request</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Linkedin Recommendation — [Name]</h3>
+        <p>Dear [Name], I hope you are well! I am building out my LinkedIn presence and would be genuinely grateful if you would be willing to leave a recommendation for our work together on [event name]. A brief paragraph about the talk, the audience&#x27;s response, and whether you</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>would recommend me to other organisers would be incredibly helpful. Here is a direct link to recommend me on LinkedIn: [LinkedIn URL] No pressure at all — and thank you for your time. [Your Name] T11 — Repeat Booking Outreach</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject 2025 Speaking — Reconnecting, [Name]</h3>
+        <p>Dear [Name], I hope [Organisation] is going well — it has been [timeframe] since [event name] and I have been thinking about how much I enjoyed that audience. I am putting together my [next year / next season] speaking calendar and wanted to reach out to past clients first. I have also developed a new talk: &#x27;[New Talk Title]&#x27; — [one sentence description]. Given [Organisation]&#x27;s focus on [relevant area], I think it could be particularly timely. Would you be planning any events in [timeframe] where a speaker on [topic] would add value? I would love to be your first call. Warm regards, [Your Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Practical</h3>
+        <p>T12 — Pre-Event Technical Requirements Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Technical Requirements — [Event Name], [Date]</h3>
+        <p>Dear [Name], Thank you for confirming my engagement at [event name]. To ensure everything runs perfectly on the day, here are my technical requirements: Presentation: I present from my own laptop (Mac, [Year]). I will need [HDMI / USB-C adapter if you have one / clicker]. Audio: Lapel microphone preferred. If not available, a handheld works well. Slides: I will send my presentation by [date] for AV testing. Format: [PowerPoint / Keynote / PDF backup]. Run of show: Could you send me the event schedule and the name of my AV contact on the day? For virtual engagements: I use [Zoom / Teams / WebEx] and have a professional studio setup with [ring light / professional microphone / dedicated camera]. Happy to do a technical run-through [48 hours before the event] if helpful. [Your Name] T13 — Speaker Introduction Script</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction Script — [Event Name]</h3>
+        <p>Dear [Name], As requested, here is the introduction script for [event name]. Feel free to adapt it to your style — I just ask that you include the key credentialing points so the audience understands the context for my talk.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>--- Introduction Script ---</h3>
+        <p>Today&#x27;s speaker has [key credential — e.g., spent 20 years working with Fortune 500 CEOs / trained over 10,000 professionals across 30 countries / authored [book title]]. [He/She/They] speaks internationally on [topic], helping [audience type] to [key outcome]. [He/She/They] has spoken at [2-3 notable events or clients]. Please welcome [Your Full Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>--- End Script ---</h3>
+        <p>[Your Name] T14 — Post-Event Invoice</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Invoice — [Event Name] — [Your Name]</h3>
+        <p>Dear [Name], Thank you again for [event name] — it was a privilege. Please find my invoice attached for professional speaking services: Event: [Event Name] Date: [Date] Service: [Keynote / Workshop / Panel — duration] Speaker fee: $[amount] Travel and accommodation (if applicable): $[amount] (receipts attached) TOTAL: $[amount] Payment due within [X] days to: [payment details]. I hope the event exceeded your expectations. [Your Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 5: Reputation &amp; Additional</h3>
+        <p>T15 — Review / Testimonial Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Linkedin / Email — Respond Directly</h3>
+        <p>Dear [Name], thank you so much for this — your words genuinely mean a great deal to me. It was an honour to speak for [Organisation] and your audience was one of my favourites this year. I hope we get to work together again. — [Your Name] T16 — Speaking Awards / Press Enquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: [Award / Press Enquiry]</h3>
+        <p>Dear [Name], Thank you for reaching out — I am genuinely honoured to be considered. [If award:] I would be delighted to submit / accept the nomination. Here are the materials you requested: [list]. [If press:] I would be happy to contribute. My area of expertise is [topic] and I am available for [interview / quote / comment] by [deadline]. My preferred contact: [Phone / Email]. Please let me know what else you need. [Your Name] T17 — Conference Programme Bio Submission</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Dear [Name], Thank you — please find my speaker materials below for [Conference Name]: HEADSHOT: [link to high-resolution headshot] SHORT BIO (50 words): [paste short bio] MEDIUM BIO (100 words): [paste medium bio] TALK TITLE: [Title] TALK DESCRIPTION: [100-word description suitable for programme]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Handles: Linkedin: [Link] | Twitter/X: [Handle] | Instagram: [Handle]</h3>
+        <p>WEBSITE: [website] Please let me know if you need anything else. I am looking forward to [Conference Name]! [Your Name] T18 — Podcast / Media Appearance Pitch</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Speaking On [Podcast/Show Name] — [Your Name]</h3>
+        <p>Dear [Name], I am a big admirer of [Podcast/Show Name] — [one specific genuine observation about the show]. I am reaching out because I believe I could bring genuine value to your audience on [topic]. My specific angle: [your unique take — 2-3 sentences]. A few things I could speak to: [3 specific topic areas or questions your audience would find valuable]. My background: [2-3 credentialing sentences]. Speaker reel: [link]. One- sheet: [link]. Happy to record at your convenience. [Your Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 6: Additional Templates</h3>
+        <p>T19 — Workshop Follow-Up Resources Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Resources From Today&#x27;S Workshop — [Name]</h3>
+        <p>Dear [Name / All], Thank you so much for joining today&#x27;s workshop — it was genuinely one of the most engaged groups I have worked with on [topic]. As promised, here are the resources from today: - Slides: [link] - Recommended reading: [list] - [Framework / worksheet / tool mentioned]: [link] - My contact details for any follow-up questions: [Email / LinkedIn] I would love to hear how you apply [key framework or takeaway] over the coming weeks. Please feel free to reach out with questions. With warmth and appreciation, [Your Name] T20 — Co-Speaker / Panel Invitation Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: [Conference] Panel Invitation</h3>
+        <p>Dear [Name], Thank you for the invitation to join the [topic] panel at [Conference] — I am delighted to accept. A few practical questions before we confirm:</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>09</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>- Who are the other panellists? - Will there be a moderator or will the panel be self-facilitated? - Approximate audience size and demographic? - Is there a specific angle or question you want me to be ready to address? Please send over the logistics form when ready. Looking forward to it! [Your Name] T21 — Student / Unpaid Engagement Decline</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Speaking Invitation — [Event Name]</h3>
+        <p>Dear [Name], Thank you for thinking of me for [event name] — [Organisation/University] is doing genuinely important work and I appreciate the invitation. I need to be transparent: I am unable to accept unpaid speaking engagements at this stage of my career. My speaking fees fund the research, preparation, and intellectual development that makes my talks valuable. If budget becomes available in the future, I would genuinely love to speak for your audience. And if it would help, I am happy to recommend a colleague who may be available for student events. Thank you for your understanding. [Your Name] T22 — Referral Thank-You</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You For The Referral — [Name]</h3>
+        <p>Dear [Name], [Contact Name] just reached out and mentioned you recommended me — thank you so much. Referrals from people whose professional judgement I respect are genuinely the most meaningful way my practice grows. I will take excellent care of [their event]. With gratitude, [Your Name] T23 — Speaking Testimonial Display Permission</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Permission To Display Your Testimonial — [Name]</h3>
+        <p>Dear [Name], Thank you so much for the kind words about [event name] — I am genuinely grateful. I would love to display your testimonial on my website and speaker one- sheet, attributed to you by name and title, if you are comfortable with that. Please let me know if you would like to review the exact wording before it goes live, and whether you would prefer to be listed as [Name, Title, Organisation] or differently. Thank you again. [Your Name] T24 — Annual Booking Update to Network</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>10</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Dear [Name], I hope [year] has started well for you. A quick update from my end: I am now booking speaking engagements for [the rest of the year / upcoming quarter / next year]. My current talks and workshops cover: [Talk 1]: [one sentence description and ideal audience] [Talk 2]: [one sentence description and ideal audience] [New offering if applicable]: [description] If you are planning an event where [topic] would be relevant — or if you know someone who is — I would be grateful for the introduction. With warm regards, [Your Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>11</span></div>
+</section></main></body></html>

@@ -1,0 +1,341 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff8ef; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#947454 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d2b382 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff8ef 94%,white), color-mix(in srgb,#fff8ef 86%,#947454)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#947454; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#947454 32%,transparent); border-radius:999px; color:#947454; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#947454; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#947454 38%,transparent); border-bottom:1px solid color-mix(in srgb,#947454 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#947454 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#947454 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#947454 52%,transparent); border-bottom:1px solid color-mix(in srgb,#947454 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#947454 32%,transparent); }
+.metric b { display:block; color:#947454; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#211712; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#947454 18%,transparent), transparent 2in), linear-gradient(135deg, #211712, color-mix(in srgb,#211712 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#947454; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#947454 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#947454 56%,transparent); color:#947454; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#947454 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#947454 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff8ef; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#211712; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#211712; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #947454; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff8ef; }
+.layout-protocol .work { background:#fbfbf5; color:#211712; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#947454 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#211712; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#211712; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#947454 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#211712; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#947454 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#211712; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #947454; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#947454 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#947454 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for personal chefs</div>
+    </div>
+  </div>
+  <h1>Brand Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Chef</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Personal Chefs product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit + Canva Template Guide</h3>
+        <p>Two signature palettes, culinary typography, 7 Canva template strategies, and a 7-day brand launch checklist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Calibre Before Your Food Does</h3>
+        <p>High-value clients hiring a private chef make their first judgement based on your digital presence — your website, your Instagram, your email signature. A polished, cohesive visual identity communicates the same thing as a beautifully plated dish: precision, care, and a standard worth paying for. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for personal chefs and private dining professionals.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1: Farm-To-Table Artisan</h3>
+        <p>For chefs with a seasonal, ingredient-led, farm-to-table philosophy. Think forest green, warm earth, aged paper, and the textures of a beautiful farmer&#x27;s market.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1 Usage</h3>
+        <p>• Forest Green (#2C3A1A): logo, headlines, primary text — grounded and premium • Harvest Gold (#C9922A): accent for CTAs, price presentation, seasonal campaign highlights • Warm Earth (#8A6A4A): secondary text, captions, warm background elements • Cream Parchment (#F5F0E0): all page and email backgrounds — warm, organic, beautiful behind food photography</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>HEADINGS: Playfair Display — sophisticated serif with a culinary editorial feel. Used across premium food and hospitality brands. BODY: Lato — clean, warm, highly readable. Professional without feeling cold. ACCENT: Playfair Display Italic — for dish names, seasonal descriptions, pull quotes from client testimonials.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2: Modern Culinary Studio</h3>
+        <p>For chefs with a cleaner, more contemporary, restaurant-influenced aesthetic. Think dark backgrounds, dramatic food photography, and the confidence of a Michelin-calibre presentation.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2 Usage</h3>
+        <p>• Charcoal (#1E1E1E): primary backgrounds for dramatic food photography posts, logo on dark • Warm Gold (#D4A843): primary accent — luxury, warmth, hospitality • Stone (#C8C0B0): secondary elements, subtle dividers, tonal warmth • Off White (#FAF8F4): text on dark backgrounds, lighter graphic elements</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>HEADINGS: Cormorant Garamond — editorial luxury serif. The typography of high-end hospitality. BODY: Source Sans Pro — professional and clean. Reads beautifully at all sizes. ACCENT: Cormorant Garamond Italic — for seasonal menu titles, evocative dish descriptions, testimonials.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Search &#x27;food photography Instagram post&#x27; or &#x27;restaurant food post template&#x27;. Your best dish photography fills the frame. Minimal text overlay: your name or studio in small type, bottom corner. Clean and editorial. Food photography is your portfolio — let the image do the work. Create 10 of these with consistent overlay style.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2: Seasonal Menu Card</h3>
+        <p>Search &#x27;restaurant menu design&#x27; or &#x27;dinner menu template&#x27;. A beautifully formatted seasonal menu — courses listed elegantly. Your name at top, seasonal notation at bottom. Use Playfair Display or Cormorant Garamond for the dish names. Post as an Instagram feed image and story slide when launching a seasonal menu. Pin to Pinterest.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3: Behind-The-Scenes Story Template</h3>
+        <p>Search &#x27;food story template&#x27; or &#x27;chef behind the scenes story&#x27;. Vertical format. Your photo at a farmers market, in the kitchen, or plating. Brief overlay text: &#x27;Preparing for tonight&#x27;s private dinner&#x27; or &#x27;This morning&#x27;s market haul.&#x27; Your name. Post to stories several times per week — it humanises the experience.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 4: Client Testimonial Graphic</h3>
+        <p>Search &#x27;food testimonial quote&#x27; or &#x27;client review restaurant post&#x27;. Feature the most sensory and specific line from a client&#x27;s review. Their name (or &#x27;Private Dining Client, [City]&#x27;). Your business name. These build trust faster than any other content type — schedule one per week.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 5: Pinterest Seasonal Menu Board</h3>
+        <p>Search &#x27;dinner party menu board&#x27; or &#x27;entertaining ideas Pinterest&#x27;. Create boards for each season and occasion: &#x27;Spring Dinner Party Menus&#x27;, &#x27;Intimate Winter Dining&#x27;, &#x27;Al Fresco Summer Entertaining&#x27;. Pin your menu cards, food photography, and ingredient</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 6: Instagram Story — Availability Cta</h3>
+        <p>Search &#x27;booking story template&#x27; or &#x27;chef availability story&#x27;. Vertical. A beautiful atmospheric dining or food photo as background. Text: &#x27;Taking bookings for [month/season]&#x27; + &#x27;Private dinners, events, weekly meal prep.&#x27; + &#x27;Enquire via link.&#x27; Your</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>name. Post when you open new availability windows.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 7: Gift Experience Card</h3>
+        <p>Search &#x27;gift card elegant template&#x27; or &#x27;experience gift certificate&#x27;. A beautifully designed digital gift card: &#x27;A Private Chef Dining Experience&#x27;. Your name and style description. Investment range. How to redeem. Use for holiday and occasion campaigns — email to enquiring clients and post on Instagram and Pinterest.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>7-Day Brand Launch Checklist</h3>
+        <p>✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved). ✓ Day 2: Update Instagram bio, profile photo, and create 6 story highlight covers: Portfolio, Events, Meal Prep, Reviews, Seasonal Menus, Booking. ✓ Day 3: Create 10 food photography post overlays using Template 1 — apply to your 10 best food photos. ✓ Day 4: Create a seasonal menu card using Template 2 — your current or upcoming seasonal menu. ✓ Day 5: Create 5 testimonial graphics using Template 4 — schedule one per week for 5 weeks. ✓ Day 6: Create a gift experience card using Template 7 — share before the next occasion or holiday. ✓ Day 7: Create a Pinterest account if you don&#x27;t have one. Set up 4 seasonal boards and pin 10 images to each. ✓ [A professional brand across Instagram, Pinterest, and email communicates the premium standard of your food before a client has ever tasted it.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>06</span></div>
+</section></main></body></html>

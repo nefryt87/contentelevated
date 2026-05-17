@@ -1,0 +1,341 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#f8f3e9; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#080706; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#c8963d 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#2a2d2d 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#080706 94%,white), color-mix(in srgb,#080706 86%,#c8963d)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.3; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(248,243,233,.72); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#f8f3e9; letter-spacing:.26em; }
+.doc-label { color:#c8963d; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#c8963d 32%,transparent); border-radius:999px; color:#c8963d; background:rgba(255,255,255,.035); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
+.gold { color:#c8963d; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(248,243,233,.72); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#c8963d 38%,transparent); border-bottom:1px solid color-mix(in srgb,#c8963d 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#c8963d 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#c8963d 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#c8963d 52%,transparent); border-bottom:1px solid color-mix(in srgb,#c8963d 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#c8963d 32%,transparent); }
+.metric b { display:block; color:#c8963d; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
+.metric span { display:block; color:rgba(248,243,233,.72); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#080706; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#c8963d 18%,transparent), transparent 2in), linear-gradient(135deg, #080706, color-mix(in srgb,#080706 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#c8963d; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#c8963d 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#c8963d 56%,transparent); color:#c8963d; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(248,243,233,.72); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#c8963d 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#c8963d 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#0a0807; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#080706; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#080706; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #c8963d; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#0a0807; }
+.layout-protocol .work { background:#fbfbf5; color:#080706; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#c8963d 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#080706; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#080706; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#c8963d 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#080706; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#c8963d 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#080706; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #c8963d; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#c8963d 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#c8963d 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-dark-shop"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for barbers</div>
+    </div>
+  </div>
+  <h1>Brand Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Barber</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Barbers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit + Canva Template Guide</h3>
+        <p>Two signature palettes, bold typography, 7 Canva template strategies, and a 7-day brand launch</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Choose Your Chair</h3>
+        <p>Clients choose a barber on TikTok and Instagram before they ever step through the door. Your brand — the way your profile looks, your aesthetic, your visual consistency — communicates your skill level, your vibe, and whether you are the right barber for them. A distinctive, confident brand builds a following that walks through your door. This kit gives you two palettes, typography pairings, and Canva strategies built specifically for barbers and barbershops.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1: Bold Classic</h3>
+        <p>For barbers with a classic, masculine, old-school barbershop aesthetic. Think navy, gold, white marble, and the confidence of a traditional craft.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1 Usage</h3>
+        <p>• Deep Navy (#1A1A2E): logo, headlines, primary text, strong graphic elements • Barber Gold (#E8A020): accent — CTAs, pole icon, price highlights, seasonal announcements • Cool Grey (#8A8A9A): secondary text, captions, subtle supporting elements • Clean White (#F5F5F0): backgrounds for text graphics, story templates, price cards</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>HEADINGS: Bebas Neue — bold, impactful, instantly masculine. The barbering industry font. BODY: Open Sans — clean and readable across all platforms and sizes. ACCENT: Bebas Neue + wide tracking — for shop name overlays, service callouts, transformation labels.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2: Modern Barbershop</h3>
+        <p>For barbers with a cleaner, more contemporary aesthetic — the shop that feels like a premium grooming experience.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2 Usage</h3>
+        <p>• Charcoal (#2A2A2A): all primary text and strong design elements • Warm Copper (#B87040): primary accent — premium, warm, distinctive • Off White (#F8F6F2): all backgrounds — warmer than pure white, premium feel • Stone (#A8A090): secondary elements, subtle details</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>HEADINGS: Montserrat Bold — modern and strong. Works for both premium and street-level barbershop brands. BODY: Lato — clean, warm, professional. ACCENT: Montserrat ExtraBold ALL CAPS — for service names, price callouts, &#x27;BOOK NOW&#x27; CTAs.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1: Before/After Transformation Post</h3>
+        <p>Search &#x27;before after barbershop Instagram&#x27; or &#x27;hair transformation post&#x27;. Two-panel: before on left, after on right. Your name and barbershop small at the bottom. Clean border treatment. This is your most important recurring content type — post every transformation with client consent. These drive more DMs than any other format.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Search &#x27;TikTok thumbnail barber&#x27; or &#x27;Reel cover template&#x27;. The first frame determines whether people click or scroll. Bold text overlay on a dark background: &#x27;WATCH THIS FADE&#x27; or &#x27;THE PERFECT SKIN FADE&#x27; or &#x27;HOW I DO THIS CUT&#x27;. Your barbershop name small at the bottom. Create one master template and apply to every video.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3: Price List / Services Card</h3>
+        <p>Search &#x27;barbershop price list&#x27; or &#x27;salon menu Instagram&#x27;. Clean, bold layout. Your services listed with prices. Your barbershop name and booking info at the bottom. Use your accent colour (Gold or Copper) for service names. Post as a pinned Instagram post — clients check this before DMing.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 4: Availability / Flash Booking Story</h3>
+        <p>Search &#x27;booking available story&#x27; or &#x27;appointment open Instagram story&#x27;. Vertical. Dark background. Bold text: &#x27;SPOTS OPEN [DAY]&#x27; + time slots. Your barbershop name. Your</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking Contact. Post This Every Time Slots Open Up — It Drives Immediate Bookings From</h3>
+        <p>your existing followers.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 5: 5-Star Review Post</h3>
+        <p>Search &#x27;barber review Instagram&#x27; or &#x27;client testimonial post&#x27;. Feature your best review line. Client first name or &#x27;@handle if they consent&#x27;. Your barbershop name. These build local trust. Post every new 5-star review — aim for one per week.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 6: Educational Style Guide</h3>
+        <p>Search &#x27;hair guide Instagram&#x27; or &#x27;style tip post barber&#x27;. &#x27;Find your fade&#x27; or &#x27;Which cut suits your face shape?&#x27; — clean, informative, highly shareable. One tip or insight per slide in a carousel. These save at very high rates and attract new followers who are in the research phase.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 7: Google Business Profile Post Template</h3>
+        <p>Search &#x27;local business announcement&#x27; or &#x27;service update post&#x27;. Clean. Your barbershop name, service or availability update, booking link. Post to GBP weekly — every post improves your ranking when people search &#x27;barber near me&#x27; in your area. 10 minutes per week, significant long-term impact.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>✓ Day 1: Choose your palette and set up Canva brand kit (colours + fonts saved). ✓ Day 2: Update Instagram bio, profile photo, and create 6 story highlight covers: Portfolio, Prices, Reviews, Booking, Behind the Scenes, Transformations. ✓ Day 3: Create your price list card using Template 3 — pin it as your first Instagram post. ✓ Day 4: Create a TikTok cover frame template using Template 2 — apply it to your last 5 videos. ✓ Day 5: Create 5 before/after post templates using Template 1 — apply to your 5 best transformations. ✓ Day 6: Create 5 review post graphics using Template 5 — schedule one per week for 5 weeks. ✓ Day 7: Set up or update your Google Business Profile — add your services, photos, and first GBP post. ✓ [Your TikTok and Instagram presence is your storefront. A consistent, bold brand turns scrollers into followers and followers into clients.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit</span><span>06</span></div>
+</section></main></body></html>

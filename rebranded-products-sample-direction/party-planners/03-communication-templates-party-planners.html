@@ -1,0 +1,533 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbf5fb; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#9670a5 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e0b05e 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbf5fb 94%,white), color-mix(in srgb,#fbf5fb 86%,#9670a5)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#9670a5; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#9670a5 32%,transparent); border-radius:999px; color:#9670a5; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#9670a5; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#9670a5 38%,transparent); border-bottom:1px solid color-mix(in srgb,#9670a5 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#9670a5 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#9670a5 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#9670a5 52%,transparent); border-bottom:1px solid color-mix(in srgb,#9670a5 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#9670a5 32%,transparent); }
+.metric b { display:block; color:#9670a5; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#201724; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#9670a5 18%,transparent), transparent 2in), linear-gradient(135deg, #201724, color-mix(in srgb,#201724 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#9670a5; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#9670a5 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#9670a5 56%,transparent); color:#9670a5; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#9670a5 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#9670a5 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbf5fb; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#201724; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#201724; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #9670a5; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbf5fb; }
+.layout-protocol .work { background:#fbfbf5; color:#201724; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#9670a5 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#201724; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#201724; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#9670a5 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#201724; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#9670a5 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#201724; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #9670a5; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#9670a5 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#9670a5 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for party planners</div>
+    </div>
+  </div>
+  <h1>Communication Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Party</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Party Planners product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Communication Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Communication Template Pack</h3>
+        <p>24 done-for-you templates: inquiry responses, proposals, planning timelines, vendor outreach, and post-event follow-up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Inquiry &amp; Proposal</h3>
+        <p>T1 — Kids Party Inquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Party Planning Inquiry — [Child&#x27;S Name]&#x27;S Birthday!</h3>
+        <p>Hi [Name]! Oh my goodness — a [theme] party for [Child&#x27;s Name] turning [age]?! I am already so excited about this. [2-3 sentences showing you understood their vision — reference their theme, their child&#x27;s age, any details they shared.] A few questions so I can put something really special together: - Do you have a venue in mind, or would you like help finding one? - Roughly how many little guests are we talking? - Is there a budget range you are working with? Even a rough idea helps me tailor the proposal. Let us jump on a quick call this week and I will walk you through exactly what we could create. Would [two specific times] work? So excited for this! [Your Name] | [Business Name] | [Phone] T2 — Adult / Milestone Inquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your [Event Type] Inquiry — [Your Name]</h3>
+        <p>Dear [Name], Thank you so much for reaching out — a [40th / baby shower / anniversary] celebration is such a special occasion and I would love to help make it extraordinary. [2-3 sentences showing genuine understanding of the event — mention any details they shared, reflect their energy back]. Before I put together a proposal, it would help to know: [2-3 specific questions — venue, guest count, style/vibe they are going for, any specific elements they have in mind]. I would love to schedule a planning call this week — [two specific times]. Can I send you a calendar link? Warm regards, [Your Name] | [Business Name] | [Phone] T3 — Proposal Email</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Dear [Name], [Open with the vision: 2-3 evocative sentences describing the moment of arrival — how it will feel, what they will see, the guest of honour&#x27;s reaction. Make them feel it before they read the details.] Here is what I am proposing: THEME &amp; STYLING: [Brief description — colours, decorations, focal points, tablescapes] ENTERTAINMENT: [What is planned — e.g., character visit / magic show / craft station / photo booth] CATERING COORDINATION: [What you handle — e.g., cake sourcing, snack table, catering liaison] TIMELINE &amp; COORDINATION: [What you manage on the day] ADD-ONS (optional): [Any extras they might want] INVESTMENT: $[amount], which covers [what is included]. To confirm: [deposit amount and next step]. I will hold this date for [X days] while you review. I cannot wait to create this with you. [Your Name] | [Business Name] T4 — Pricing Enquiry Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Party Planning Investment — [Business Name]</h3>
+        <p>Hi [Name]! So glad you reached out — here is how my packages work: Styling Only — $[amount]: I design and set up your party decorations. Perfect if you have your own catering and entertainment sorted. Partial Planning — $[amount]: I handle decorations, coordinate your vendors, and manage the day-of timeline. Full Planning — $[amount]: I take care of everything from venue sourcing to final cleanup. The right option depends on how much of the planning you want to hand over. A quick 20-minute call is the best way to figure out what fits. Would [two times] work this week? [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Planning &amp; Client Experience</h3>
+        <p>T5 — Planning Timeline Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Party Planning Roadmap — [Child&#x27;S Name]&#x27;S Party!</h3>
+        <p>Hi [Name]! Now that we are confirmed, here is your planning roadmap — this is exactly how we go from today to the most magical party of the year. My job is to make this as easy as possible for you. [X months/weeks out:] Venue confirmed, theme finalised, entertainment booked [X weeks out:] Invitations sent, catering confirmed, decoration order placed [2 weeks out:] Final guest count confirmed, final run-of-show shared with you [1 week out:] Vendor briefings complete, setup plan finalised</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Party day: You arrive, you enjoy, I coordinate everything You will be updated at every stage. My job is to carry all the logistics so you can just be present and celebrate. Any questions at any time: I am always reachable at [Phone]. [Your Name] | [Business Name] T6 — Day-Before Confirmation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Tomorrow Is The Day! — Final Details</h3>
+        <p>Hi [Name]! TOMORROW IS [Child&#x27;s/Guest of Honour&#x27;s Name]&#x27;S PARTY — I am so excited! Final confirmed details: My arrival for setup: [time] at [venue address] Setup complete by: [time] Party starts: [time] Entertainment arrives: [time] (if applicable) Your only job tomorrow: arrive at [time] and enjoy every moment. I will handle everything else. My direct number on the day: [Phone] — please use it for anything. See you tomorrow! [Your Name] | [Business Name] T7 — Post-Event Follow-Up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject What A Magical Day — [Child&#x27;S Name]&#x27;S Party!</h3>
+        <p>Dear [Name], I am still smiling thinking about [Child&#x27;s Name]&#x27;s party — [one specific, genuine memory from the event — e.g., &#x27;the moment they walked in and stopped in their tracks is one I will carry with me for a long time&#x27;]. I hope you and your family are still floating on the happiness of it. A few things: 1. I would love any feedback — what worked perfectly, what you would change, anything that could be better. 2. When [Child&#x27;s Name]&#x27;s next birthday rolls around — or if any occasion comes up — please do not hesitate to reach out. I would love to create something even more magical for you. 3. If you have friends or family planning a celebration, I would be so grateful for the introduction. Thank you for trusting me with such a special day. With warmth, [Your Name] | [Business Name] T8 — Review Request</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Personal Ask — [Name]</h3>
+        <p>Hi [Name]! I hope [Child&#x27;s Name] is still talking about their party! A small personal ask: if the day was everything you hoped for, a Google review would genuinely mean the world to my small business. It helps other parents find me and it takes about 2 minutes. Direct link: [Google Review Link] Thank you so much for choosing me to be part of your family&#x27;s celebration. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3: Vendor Outreach</h3>
+        <p>T9 — Children&#x27;s Entertainer Introduction</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Party Planning Partnership — [Your Name]</h3>
+        <p>Hi [Name], I am [Your Name] from [Business Name] — a party planner in [City] specialising in [your niche — e.g., kids themed parties / milestone celebrations / luxury private events]. I reach out to [entertainers / face painters / balloon artists] like you because our clients are the same families — and I believe coordinated, trusted vendor teams create the most magical events. I would love to explore a mutual referral arrangement. When my clients need entertainment, I recommend people I trust and who deliver consistently. And when your clients need planning support, I hope you&#x27;ll think of me. Would a quick coffee or call work? [Your Name] | [Business Name] | [Phone] T10 — Venue Partnership Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Party Planner Partnership — [Your Name]</h3>
+        <p>Dear [Name], I am [Your Name] from [Business Name] — a party planner in [City] known for [your style — e.g., whimsical kids parties / elegant milestone celebrations]. I have admired [Venue Name] as a party venue for some time — [one specific genuine observation]. It is exactly the kind of space that makes my work look its best. I would love to be on your recommended vendor list for party planning, and I would be equally happy to recommend your venue to my clients when it suits their event. Could I send you a portfolio, or better yet, arrange a brief visit? [Your Name] | [Business Name] | [Phone] T11 — Bakery / Cake Maker Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Party Supplier Partnership — [Your Name]</h3>
+        <p>Hi [Name], I am [Your Name] from [Business Name] — I plan parties and celebrations in [City] and I am always looking for exceptional cake makers to recommend to my clients. Your work is genuinely beautiful — [one specific genuine observation about their cakes or style]. It is exactly the quality and aesthetic my clients are looking for. I would love to add you to my preferred supplier list and explore whether there is a mutual referral arrangement that would work for both of us. [Your Name] | [Business Name] | [Phone] T12 — Post-Event Vendor Thank-You</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name], I just wanted to drop a genuine note of thanks after [child/client name]&#x27;s party on [date]. [One specific observation about their contribution — e.g., &#x27;The cake was the centrepiece of the whole room and the birthday child could not stop staring at it before they cut it.&#x27; / &#x27;The magic show had every child completely captivated — it was exactly what the party needed.&#x27;] I hope we get to work together on many more events. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Promotions</h3>
+        <p>T13 — Seasonal Party Theme Campaign</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Season/Occasion] Parties — Now Booking, [Business Name]</h3>
+        <p>Hi [Name]! [Season/occasion] is one of my absolute favourite times to plan parties — [brief genuine reason — e.g., &#x27;the themes are so rich right now with autumn colours and magical Halloween vibes&#x27; / &#x27;Christmas parties are the most atmospheric celebrations of the year&#x27;]. I am currently booking for [timeframe] and I have [limited availability]. This season I am especially loving: [2-3 theme ideas for the season]. I would love to bring one of these to life for your family. To enquire: [link / reply here / call]. [Your Name] | [Business Name] T14 — Gift Voucher Campaign</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject The Most Magical Gift — [Business Name]</h3>
+        <p>Hi [Name]! Looking for a gift for a parent or family that truly stands out? [Business Name] gift vouchers are available for any amount or specific package — redeemable for party planning services. A professionally planned party is one of those gifts that creates a memory that lasts years. And for the parent receiving it: the gift of not having to do it themselves. To purchase: [link / reply / call]. I will send a beautifully presented digital gift card instantly. [Your Name] | [Business Name] T15 — Early Bird Campaign</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Book Early For [Season/Occasion] — [Business Name]</h3>
+        <p>Hi [Name], A heads-up for any families with birthdays, baby showers, or celebrations coming up in [timeframe]: I am now taking bookings. My [season] diary fills significantly faster than most people expect —</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>especially [peak months]. If you are thinking about a professionally planned event this [season], now is genuinely the best time to reach out. To check availability: [link / reply / call]. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 5: Additional Templates</h3>
+        <p>T16 — Unavailable Date Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Party Planning Enquiry — [Business Name]</h3>
+        <p>Hi [Name]! Thank you so much for reaching out — what a wonderful party this sounds like. Unfortunately I am already booked on [date]. I am so sorry! I would love to: (1) add you to my waitlist in case anything changes, or (2) recommend a colleague whose work I trust completely — [Colleague Name] comes to mind for this type of event: [contact]. If your date has any flexibility, I also have [alternative dates] available. Please do not hesitate to reach out. [Your Name] | [Business Name] T17 — DIY Party Tips Email (Budget Clients)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Some Party Planning Tips — [Business Name]</h3>
+        <p>Hi [Name], Thank you for reaching out — and I completely understand that a full planning service is not always the right fit for every budget. I wanted to share a few tips to help you create something magical on your own: [Tip 1 — the one thing that transforms any party space instantly] [Tip 2 — the best budget-friendly decoration source] [Tip 3 — the activity or entertainment element that children love most for the least cost] If things change and you would like support at any level — even just a styling consultation — I am always here. Wishing you the most wonderful party! [Your Name] | [Business Name] T18 — Referral Thank-You</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You For The Referral — [Name]</h3>
+        <p>Hi [Name]! [Client Name] just reached out and mentioned you sent them my way — thank you so much! Referrals from families I have had the privilege of celebrating with are genuinely how I fill my calendar. I am going to make sure their party is as magical as you promised. [Your Name] | [Business Name] T19 — Styled Shoot Collaboration Pitch</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Hi [Name], I have been thinking about a collaboration and wanted to reach out. I am planning a styled party shoot: [2-3 sentences on the concept — theme, venue, mood]. I would handle all planning and styling. What I am looking for: [photographer / venue / bakery / florist / entertainer]. What I can offer: complete editorial-quality images for both our portfolios, full usage rights, and the foundation of a referral relationship built on actually working together. Would a quick call work? [Your Name] | [Business Name] | [Phone] T20 — Positive Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Thank you so much, [Name]! Creating [Child&#x27;s Name]&#x27;s [theme] party was one of my absolute highlights — [one specific personal detail if their review mentions it]. Reviews like yours mean the world to a small business like mine. So grateful. — [Your Name], [Business Name] T21 — Negative Review Response</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Google — Respond Directly</h3>
+        <p>Hi [Name], thank you for sharing this — I am genuinely sorry the event did not meet the standard I hold for every celebration. I take this very seriously and would love to speak with you directly to understand what happened and make it right. Please contact me at [Phone] or [Email]. — [Your Name], [Business Name] T22 — Annual Booking Reminder</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject [Child&#x27;S Name]&#x27;S Birthday Is Coming Up! — [Business Name]</h3>
+        <p>Hi [Name]! I cannot believe it is almost time for [Child&#x27;s Name]&#x27;s birthday again — where does the time go! I wanted to reach out early this year so you have the best possible selection of dates. My [birthday month] availability fills quickly and I would love to create something even more magical than last year. To check availability and start planning: [link / reply here]. [Your Name] | [Business Name] T23 — New Service Announcement</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject New At [Business Name] — [Service Name]</h3>
+        <p>Hi [Name]! Exciting news — I am now offering [new service — e.g., baby shower planning / milestone party packages / virtual party coordination / party-in-a- box styling kits]. [2-3 sentences describing the new service and who it is perfect for.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>09</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>As a past client, you get first access before I announce it publicly. Interested? [link / reply / call]. [Your Name] | [Business Name] T24 — Milestone Anniversary Message</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Little Something Special — [Name]</h3>
+        <p>Hi [Name]! I just realised it has been [X years / the anniversary of] [Child&#x27;s Name]&#x27;s [first / second / milestone] birthday party that I had the honour of planning. [One genuine specific memory from the event.] Thank you for trusting me with that day. If there are any celebrations coming up in your family — big or small — I would love to be your first call. With warmth, [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Communication Templates</span><span>10</span></div>
+</section></main></body></html>

@@ -1,0 +1,389 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Patient Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8fbf8; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6e8f89 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#b9cbc4 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8fbf8 94%,white), color-mix(in srgb,#f8fbf8 86%,#6e8f89)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6e8f89; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6e8f89 32%,transparent); border-radius:999px; color:#6e8f89; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6e8f89; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6e8f89 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6e8f89 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6e8f89 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6e8f89 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6e8f89 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6e8f89 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6e8f89 32%,transparent); }
+.metric b { display:block; color:#6e8f89; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#17211f; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6e8f89 18%,transparent), transparent 2in), linear-gradient(135deg, #17211f, color-mix(in srgb,#17211f 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6e8f89; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6e8f89 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6e8f89 56%,transparent); color:#6e8f89; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6e8f89 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6e8f89 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8fbf8; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#17211f; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#17211f; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6e8f89; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8fbf8; }
+.layout-protocol .work { background:#fbfbf5; color:#17211f; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6e8f89 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#17211f; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#17211f; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6e8f89 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#17211f; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6e8f89 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#17211f; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6e8f89; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6e8f89 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6e8f89 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for physical therapists</div>
+    </div>
+  </div>
+  <h1>Patient Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>PT</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Physical Therapists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Patient Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Patient Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Pack</h3>
+        <p>25 done-for-you templates for every stage of the patient journey Reminders • HEP support • Retention • Physician outreach • Reviews • Referrals</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use These Templates</h3>
+        <p>• Replace all [brackets] with your patient&#x27;s name, condition, and practice details. • Keep the tone warm, encouraging, and clinically authoritative — patients trust practitioners who sound like they care. • Works as emails, patient portal messages, and SMS — shorten to 2–3 sentences for texts. • Always personalize the first line — AI does this in seconds. • Save top performers in your practice management system (WebPT, Clinicient, etc.) for fast reuse.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Show Recovery</h3>
+        <p>Reminder — 48 Hours Before</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Pt Appointment At [Practice Name] — [Date]</h3>
+        <p>BODY Hi [First Name], Just a friendly reminder that you have a physical therapy appointment at [Practice Name] on [Date] at [Time] with [Therapist Name]. A few things to help you prepare: - Wear comfortable clothing that allows access to the area we&#x27;re treating - Bring any relevant imaging reports (X-rays, MRI) if you haven&#x27;t already shared them - If anything has changed with your symptoms, please let us know when you arrive If you need to reschedule, please call us at [Phone] at least 24 hours in advance. See you soon! [Practice Name] | [Phone] Reminder — Morning Of</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject See You Today, [First Name]!</h3>
+        <p>BODY Hi [First Name], Your PT appointment is today at [Time] at [Practice Name]. We&#x27;re looking forward to working with you! Quick reminder: wear comfortable, loose-fitting clothing and arrive 5 minutes early if possible.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Patient Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Patient Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>You&#x27;re one session closer to [brief goal reference — e.g., &#x27;getting back to the activities you love&#x27;]. See you soon! [Practice Name] | [Phone] | [Address] Pre-Visit Anxiety Reducer</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject What To Expect At Your First Pt Appointment</h3>
+        <p>BODY Hi [First Name], We&#x27;re so glad you&#x27;ve scheduled your first appointment at [Practice Name]. We know starting PT can feel a little intimidating — you&#x27;re not alone. Here&#x27;s exactly what will happen: 1. We&#x27;ll start with a thorough evaluation — asking about your symptoms, history, and goals 2. A physical examination to assess your movement, strength, and areas of concern 3. We&#x27;ll explain what we found and recommend a plan of care together 4. Your first treatment will begin — only what you&#x27;re comfortable with You are always in control. If anything hurts or feels wrong, say so immediately — our job is to help, never to hurt. See you [Date] at [Time]. [Therapist Name] | [Practice Name] No-Show Recovery</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject We Missed You Today — Hope Everything Is Okay, [First Name]</h3>
+        <p>BODY Hi [First Name], We noticed you weren&#x27;t able to make your appointment today — no worries at all. Staying consistent with your plan of care is important for your recovery, so whenever you&#x27;re ready to rebook, just reply here or call [Phone] and we&#x27;ll get you back on the schedule. If something came up — schedule, transportation, pain levels, or anything else — please let us know. We want to find a way to make your care work. Looking forward to seeing you soon. [Practice Name] | [Phone] Waitlist Activation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Good News — We Have An Opening [Date], [First Name]</h3>
+        <p>BODY Hi [First Name], We just had a cancellation and have an opening on [Date] at [Time]. Would you like to take this slot? Just reply &#x27;yes&#x27; or call us at [Phone] and we&#x27;ll get you confirmed right away. [Practice Name] | [Phone]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Retention</h3>
+        <p>HEP Companion Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Home Exercise Program — [First Name]</h3>
+        <p>BODY Hi [First Name], Your home exercise program is attached / available in [app/portal]. Here&#x27;s a quick overview:</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Patient Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Patient Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why These Exercises: [1–2 Sentences On The Clinical Rationale In Plain</h3>
+        <p>language] The most common mistake I see: [one specific correction relevant to their exercises] How often: [frequency and duration] What to expect: [brief note on expected sensations — mild soreness is normal, sharp pain is not] Consistency with your HEP is one of the biggest factors in how fast you recover. Even 15 minutes a day makes a real difference. Any questions, just reply or ask at your next visit. [Therapist Name] | [Practice Name] Between-Visit Check-In</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Quick Check-In — How Are You Feeling, [First Name]?</h3>
+        <p>BODY Hi [First Name], Just checking in between visits — how have your symptoms been since we last saw you? A few quick questions: - Any changes in your pain level (better, worse, or the same)? - Have you been able to complete your home exercises? - Anything you want to make sure we address at your next appointment? Even a brief reply helps me prepare for our next session. [Therapist Name] | [Practice Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Halfway Through — Let&#x27;S Talk About Your Progress</h3>
+        <p>BODY Hi [First Name], You&#x27;re at the midpoint of your plan of care — and I want to take a moment to acknowledge how far you&#x27;ve come: [2–3 specific progress points — range of motion improvement, pain reduction, functional milestone] I also want to address something that comes up with almost every patient at this stage: when things start feeling better, it&#x27;s tempting to stop coming. But the improvements you&#x27;re feeling right now are the result of the work we&#x27;re doing — and stopping too early usually means the problem returns. Let&#x27;s keep the momentum going. Your next appointment is [Date]. [Therapist Name] | [Practice Name] Discharge Planning Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject You&#x27;Re Almost There, [First Name] — What Comes Next</h3>
+        <p>BODY Hi [First Name], As we approach the end of your plan of care, I wanted to share a quick summary of your progress and what I recommend going forward: What we accomplished: [2–3 specific functional outcomes]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Patient Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Patient Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Your maintenance program: [brief HEP and activity guidance for ongoing self- management] When to come back: [specific scenarios — e.g., &#x27;if symptoms return or worsen&#x27; / &#x27;for a tune-up before your season starts&#x27;] It&#x27;s been a genuine privilege helping you recover. You put in the work — I just helped direct it. [Therapist Name] | [Practice Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>&amp; Referrals</h3>
+        <p>Physician Progress Update</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Patient Update — [Patient First Name, Last Initial] — [Practice Name]</h3>
+        <p>BODY Dear Dr. [Name], I wanted to provide a progress update on [Patient Name], who was referred to [Practice Name] for [diagnosis/condition]. Current status: - Sessions completed: [X of Y prescribed] - Functional progress: [2–3 specific clinical observations in plain language] - HEP adherence: [good/improving/needs reinforcement] - Plan: [remaining sessions and goals / anticipated discharge date] Thank you for the referral — it&#x27;s always a pleasure working with your patients. Please don&#x27;t hesitate to reach out if you have any questions or would like to discuss this patient&#x27;s care. Sincerely, [Your Name], PT, [Specialty if applicable] [Practice Name] | [Phone] | [Fax] New Physician Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], Pt — [Practice Name]</h3>
+        <p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m a physical therapist and [owner/clinical director] at [Practice Name] in [City], specializing in [specialty — e.g., orthopedic / sports / neurological / pelvic floor rehabilitation]. I wanted to introduce myself and let you know we&#x27;re available as a resource for your patients who could benefit from physical therapy. Our practice focuses on [brief description of your approach and outcomes]. I&#x27;d welcome the opportunity to connect briefly — even a 10-minute call helps us serve your patients better. I&#x27;m also happy to provide you with any clinical resources or patient education materials that might be useful. Thank you for your time. [Your Name], PT | [Practice Name] | [Phone] | [Email] Google Review Request</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Patient Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Patient Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Favour — Means A Lot To Us</h3>
+        <p>BODY Hi [First Name], We hope your recovery is going well! If you&#x27;ve had a positive experience at [Practice Name], we&#x27;d be incredibly grateful if you took 2 minutes to leave us a Google review. It helps other people in [City] find the PT care they need. Here&#x27;s the direct link: [Google Review Link] Thank you so much — it means the world to our team. [Practice Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Personal Thank-You — And A Small Ask</h3>
+        <p>BODY Hi [First Name], It was such a pleasure working with you through your recovery. Watching you get back to [activity/goal] is exactly why we do this work. If you know anyone — a friend, family member, coworker, or teammate — who&#x27;s dealing with pain or recovering from an injury, we&#x27;d love to help them the way we helped you. We take great care of everyone who comes through our door. Your recommendation means everything to us. [Therapist Name] | [Practice Name] | [Phone]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Patient Templates</span><span>07</span></div>
+</section></main></body></html>

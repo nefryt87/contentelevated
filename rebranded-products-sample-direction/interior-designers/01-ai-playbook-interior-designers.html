@@ -1,0 +1,535 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#faf5ef; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8d7a69 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#cab8a3 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#faf5ef 94%,white), color-mix(in srgb,#faf5ef 86%,#8d7a69)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#8d7a69; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8d7a69 32%,transparent); border-radius:999px; color:#8d7a69; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#8d7a69; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8d7a69 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8d7a69 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#8d7a69 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8d7a69 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8d7a69 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8d7a69 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8d7a69 32%,transparent); }
+.metric b { display:block; color:#8d7a69; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#1c1713; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8d7a69 18%,transparent), transparent 2in), linear-gradient(135deg, #1c1713, color-mix(in srgb,#1c1713 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#8d7a69; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8d7a69 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8d7a69 56%,transparent); color:#8d7a69; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8d7a69 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8d7a69 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#faf5ef; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#1c1713; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#1c1713; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8d7a69; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#faf5ef; }
+.layout-protocol .work { background:#fbfbf5; color:#1c1713; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8d7a69 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#1c1713; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#1c1713; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8d7a69 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#1c1713; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8d7a69 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#1c1713; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #8d7a69; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8d7a69 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8d7a69 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for interior designers</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Design</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Interior Designers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Interior Designer</h3>
+        <p>The AI Playbook for Interior Designers Convert more leads, command premium fees, build realtor partnerships, and grow a studio that runs on referrals</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Designer&#x27;S Secret Weapon</h3>
+        <p>The interior designers building thriving studios aren&#x27;t just the most talented designers in the room. They respond to inquiries the same day. They follow up on proposals before clients ghost. They maintain the realtor and architect relationships that send project after project. And they produce content consistently enough that their ideal clients find them before they ever search a competitor. AI makes all of it faster — without making it feel impersonal. A well-prompted AI assistant writes like you, knows your niche, and handles the administrative communication that used to eat your evenings. This playbook gives you 7 chapters covering every scenario where AI can save you time and win you more business.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use This Playbook: Read Each Chapter For The Strategy, Then Use The Copy-</h3>
+        <p>paste prompts at the end of each section to implement it in Claude or ChatGPT. Replace all [brackets] with your details. Every prompt is written to produce output in your voice — not generic AI copy.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Conversion</h3>
+        <p>The first response to an inquiry wins the project more often than the best portfolio. Designers who respond within 2-4 hours convert at 3-4x the rate of those who respond the next day — because high-budget clients are often contacting 3-5 designers simultaneously. The Same-Day Response System Most designers lose projects before the first phone call — not because their work isn&#x27;t exceptional, but because the response arrived a day too late or felt too generic. Your response needs to do three things: confirm you received it, mirror their language back to show you read it, and make the next step obvious. The 4-Part Inquiry Response Formula • Acknowledge: name the project and one specific detail they mentioned • Reflect: describe their vision in better words than they used — this is the moment</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>you establish expertise • Qualify: ask one question that screens for budget and timeline without being transactional • Invite: propose a specific next step with a time — not &#x27;let me know when you&#x27;re free&#x27;</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Inquiry Response Email</h3>
+        <p>Write a warm, professional inquiry response email for my interior design studio. The potential client [Name] reached out about [project type — e.g., full home redesign / kitchen renovation / new build furnishing]. They mentioned: [paste key details from their inquiry]. My design style is [your style — e.g., warm minimalism / eclectic maximalism / transitional]. I specialize in [specialty if any]. I want to: (1) acknowledge their specific project, (2) briefly describe how I&#x27;d approach it, (3) ask one qualifying question about their timeline and investment range, (4) invite them to a 20-minute discovery call. Warm and confident. Under 200 words. Sign as [Your Name], [Studio Name]. Following Up on Unresponsive Leads Designers lose 40-60% of hot leads to silence — not rejection. Most prospects get busy, not cold. A 3-touch follow-up sequence recovers the majority of them. The 3-Touch Follow-Up Sequence • Day 3: Gentle check-in — &#x27;Wanted to make sure my email landed&#x27; • D</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Follow-Up Sequence</h3>
+        <p>Write a 3-message follow-up sequence for an interior design inquiry that hasn&#x27;t responded. Client [Name] contacted me about [project type] on [date] and hasn&#x27;t replied to my initial response. Message 1 (Day 3): brief, warm check-in that adds one new piece of value. Message 2 (Day 7): share a relevant insight or trend for their project type. Message 3 (Day 14): soft close that leaves the door open without being pushy. Each under 80 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>How you present your fee is as important as what it is. Designers who lose projects on price rarely lose because the budget isn&#x27;t there — they lose because the value wasn&#x27;t communicated clearly enough before the number landed. The Pre-Proposal Value Builder Before you ever send a proposal number, your client should already understand: what they&#x27;re paying for, why your fee reflects the scope, and what happens if they try to do it without you. This is done in the discovery call and the post-call follow-up — not in the proposal itself.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Discovery Call Follow-Up</h3>
+        <p>Write a post-discovery call follow-up email for my interior design studio. I just spoke with [Name] about their [project type]. Key things they shared: [list 3-4 things from the call — goals, concerns, lifestyle, timeline]. I&#x27;m going to propose [scope description] at [investment range or flat fee]. Before the proposal lands, I want this</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email To: (1) Mirror Back What They Said Their Goals Are, (2) Briefly Explain My</h3>
+        <p>process and why it produces better outcomes than DIY or a cheaper option, (3) set the expectation that my proposal will arrive in [timeframe]. Warm and confident. Under 250 words. Sign as [Your Name], [Studio Name]. Handling the Budget Objection</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Fee Objection Response</h3>
+        <p>Write a professional, non-defensive response to a potential interior design client who said my fee is higher than they expected. Their project is [project type]. My fee is [amount]. Key value points I want to communicate: (1) what&#x27;s included that they may not have accounted for, (2) the cost of mistakes without professional guidance, (3) how my process protects their investment. I want to offer a phased approach as an alternative if the full fee is genuinely out of reach. Confident but warm. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Partnership System</h3>
+        <p>One strong realtor relationship maintained well can send 3-8 projects per year. The designers with the most consistent project pipelines have 5-10 active referral partners — not just satisfied past clients. The Monthly Value Touch</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>The difference between a realtor who refers once and one who refers consistently is a monthly value touch. Not a sales message — a genuinely useful update about design trends, staging tips, or renovation ROI that makes them look smart in front of their clients.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Monthly Realtor Value Touch</h3>
+        <p>Write a monthly value email from an interior designer to a realtor referral partner named [Name] at [Brokerage]. I want to share: (1) one interior design or staging insight relevant to their market right now, (2) one trend their buyers or sellers should know about, (3) a soft mention of a recent project or result if relevant. Professional, genuinely useful, under 150 words. Sign as [Your Name], [Studio Name]. Note: this should feel like useful information from a knowledgeable colleague, not a marketing</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email.</h3>
+        <p>New Realtor Introduction Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Realtor Introduction</h3>
+        <p>Write a professional introduction email from an interior designer to a real estate agent named [Name] at [Brokerage] in [City]. I specialize in [specialty — e.g., luxury residential / new construction staging / renovation design]. Mention: (1) how design and staging affects sale price and days on market, (2) how I&#x27;ve helped similar realtors&#x27; clients, (3) propose a brief coffee or call. Under 150 words. Professional and warm. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Retention</h3>
+        <p>The interior design projects that generate the most referrals aren&#x27;t always the biggest — they&#x27;re the ones where the client felt the most informed, heard, and cared for throughout the process. Project Milestone Communications Clients who go quiet during a project aren&#x27;t disengaged — they&#x27;re anxious. A brief milestone update at each phase transition takes 10 minutes to write and prevents the &#x27;3-</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a project milestone update email for my interior design client [Name]. We&#x27;ve just completed [phase — e.g., space planning / sourcing / installation planning]. Key highlights: [list 2-3 specific things completed]. What&#x27;s coming next: [next phase]. Any decisions or approvals needed from the client: [list if any]. I want to communicate progress without overwhelming them with detail. Confident and warm. Under 200 words. Sign as [Your Name], [Studio Name]. Handling Scope Creep Professionally</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Scope Creep Communication</h3>
+        <p>Write a professional, non-confrontational email to my interior design client [Name] about scope that has expanded beyond our original agreement. The original scope was [description]. They&#x27;ve since asked for [additions]. I want to: (1) acknowledge their enthusiasm for the project, (2) clarify what&#x27;s outside the original scope, (3) present two options — include it at an additional fee of [amount] or defer it to a future phase. Firm but warm. No apology for the additional fee. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand</h3>
+        <p>Interior designers who post consistently attract better clients, command higher fees, and spend less on paid lead generation. The obstacle isn&#x27;t ideas — it&#x27;s finding the words. AI solves that. Pinterest &amp; Instagram Content Strategy Pinterest drives longer-term organic leads for interior designers more than any other platform — a pin from 3 years ago can generate an inquiry today. Instagram drives immediate brand awareness and social proof. Both need consistent, specific, visually- led captions.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars That Convert For Interior Designers</h3>
+        <p>• Before/After reveals — the highest engagement content category by far • Process posts — &#x27;what sourcing actually looks like&#x27; / &#x27;how I choose a color</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette&#x27;</h3>
+        <p>• Education posts — &#x27;the one thing that makes a room feel expensive&#x27; / &#x27;why your furniture layout isn&#x27;t working&#x27; • Client transformation stories — told with their permission, focusing on the emotional shift</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Trend positioning — taking a clear stance on what&#x27;s in and what&#x27;s over</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram / Pinterest Captions (Batch)</h3>
+        <p>Write 5 Instagram captions for an interior designer with a [style — e.g., warm minimalist / maximalist / transitional] aesthetic. Topics: (1) the most common furniture layout mistake clients make before hiring a designer, (2) how to choose a rug size for a living room, (3) what &#x27;timeless design&#x27; actually means vs. what&#x27;s just trendy right now, (4) a behind-the-scenes post about the sourcing process, (5) a before/after reveal framing. Each caption should be educational, specific, and end with a soft CTA or question. Under 150 words each. Studio name: [Studio Name]. LinkedIn Content for B2B &amp; Referral Positioning</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Linkedin Post For Designers</h3>
+        <p>Write 3 LinkedIn posts for an interior designer. Audiences: architects, realtors, and developers who refer clients. Topics: (1) how professional interior design increases a property&#x27;s perceived value and sale price, (2) the most common mistake developers make when specifying finishes for spec homes, (3) what to look for when choosing a design partner for a commercial or multi-unit project. Each post should be professional, specific, and end with a question or insight. Under 200 words each. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Google Reviews &amp; Reputation</h3>
+        <p>Interior design is a high-trust purchase. Clients spend $10,000–$200,000+ based significantly on reputation. A strong Google and Houzz presence isn&#x27;t optional — it&#x27;s the first thing high-budget clients check before reaching out. The Post-Project Review Request</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Project Review Request</h3>
+        <p>Write a post-project review request email for my interior design studio. Client [Name] just completed their [project type]. The project resulted in [2-3 key outcomes — e.g., &#x27;a complete transformation of your main living area&#x27;, &#x27;a kitchen that finally functions for how your family actually lives&#x27;]. I want to: (1) acknowledge what we accomplished together, (2) make a personal and genuine ask for a Google / Houzz review, (3) give them the direct link. Warm and non-transactional. Under 150 words. Sign as [Your Name], [Studio Name]. Responding to Reviews</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — 5-Star Review Response</h3>
+        <p>Write a warm, specific response to a 5-star Google review for my interior design studio. The reviewer said: [paste their review]. I want to: respond personally using their name, reference one specific detail from their review, express genuine gratitude, and mention [Studio Name] naturally for SEO. Under 80 words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: 30-Day Implementation Plan</h3>
+        <p>The designers who see results from AI tools are the ones who implement one chapter at a time — not the ones who read all seven and do nothing. Here&#x27;s your first 30 days.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Inquiry &amp; Follow-Up Systems</h3>
+        <p>• Build your same-day inquiry response template using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save it as a draft in your email client • Set a calendar reminder: check for unanswered inquiries every Monday and Thursday</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Realtor &amp; Architect Outreach</h3>
+        <p>• List 10 realtors or architects you want as referral partners • Use the Chapter 3 prompts to write personalized introduction emails to 5 of them • Write your monthly value touch template — schedule it to send on the 1st of each</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Use the Chapter 5 Instagram prompt to batch 10 captions in one session • Schedule them across the next 3 weeks — 3-4 posts per week • Write 2 LinkedIn posts for your architect and realtor audience</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Review System</h3>
+        <p>• Identify 5 past clients who haven&#x27;t left a review — use the Chapter 6 prompt to write personal review requests • Set up a post-project review request as a standard step in your project close-out</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Checklist</h3>
+        <p>• Respond to any outstanding reviews using the response prompt</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>09</span></div>
+</section></main></body></html>

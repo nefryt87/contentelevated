@@ -1,0 +1,367 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8fcfb; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6e9eaa 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d7e8e8 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8fcfb 94%,white), color-mix(in srgb,#f8fcfb 86%,#6e9eaa)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6e9eaa; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); border-radius:999px; color:#6e9eaa; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6e9eaa; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6e9eaa 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6e9eaa 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6e9eaa 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6e9eaa 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6e9eaa 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6e9eaa 32%,transparent); }
+.metric b { display:block; color:#6e9eaa; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#142023; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6e9eaa 18%,transparent), transparent 2in), linear-gradient(135deg, #142023, color-mix(in srgb,#142023 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6e9eaa; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6e9eaa 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6e9eaa 56%,transparent); color:#6e9eaa; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6e9eaa 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6e9eaa 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8fcfb; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#142023; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#142023; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6e9eaa; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8fcfb; }
+.layout-protocol .work { background:#fbfbf5; color:#142023; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6e9eaa 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#142023; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#142023; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6e9eaa 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#142023; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6e9eaa 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#142023; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6e9eaa; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6e9eaa 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6e9eaa 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for dentists</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Dental</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Dentists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Reduce No-Shows, Reactivate Patients,</h3>
+        <p>and Grow Your Practice Without Hiring More Staff A Complete Guide for Dentists &amp; Dental Practice Owners</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>What&#x27;S Inside</h3>
+        <p>1. Chapter 1: Why AI Is the Dental Practice&#x27;s Growth Engine 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Crushing No-Shows and Last-Minute Cancellations 4. Chapter 4: Reactivating Your Inactive Patient List 5. Chapter 5: Case Acceptance — Helping Patients Say Yes to Treatment 6. Chapter 6: Reviews, Referrals, and a Full New Patient Pipeline 7. Chapter 7: Social Content That Builds Trust and Attracts Patients 8. Chapter 8: Your 30-Day AI Implementation Plan 9. BONUS: AI Prompt Cheat Sheet for Dental Practices</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Dental Practice&#x27;S</h3>
+        <p>Growth Engine The average dental practice loses $50,000–$150,000 per year to preventable issues: no-shows, inactive patients who never return, treatment plans that don&#x27;t get accepted, and referrals that never get asked for. None of these are clinical problems. They&#x27;re communication problems — and AI solves communication problems. • The No-Show Tax: A single no-show costs a practice $150–$400 in lost production. Multiply that by 3–5 per week and you&#x27;re looking at $25,000– $100,000 per year in preventable lost revenue. • The Inactive Patient Gold Mine: Most dental practices have hundreds of patients who haven&#x27;t been in for 12+ months. This list is worth tens of thousands of dollars in recall revenue — and AI can reach all of them in one afternoon. • The Case Acceptance Gap: The average dental practice has a case acceptance rate of 30–40%. AI-assisted follow-up can push that to 55–65% by keeping treatment options top of mind after the appointment. • What AI Does vs. Wh</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Pick one of these and implement it this week. Each one takes under an hour to set up and will have an immediate measurable impact. • Win #1 — Appointment Reminder Sequence: A 3-message reminder sequence — 72 hours before, 24 hours before, and morning of — cuts no-shows by 25–40% in most practices. AI writes all three in under 5 minutes. • Win #2 — Inactive Patient Reactivation: Pull a list of patients who haven&#x27;t been in for 12+ months. Use AI to write a personal, warm reactivation message. Send to 50 patients this week. Expect 8–15 bookings from a list that size. • Win #3 — Post-Treatment Plan Follow-Up: When a patient leaves without scheduling treatment, AI writes a follow-up email that recaps their diagnosis, answers common concerns, and invites them to book — without pressure. Case acceptance goes up without a single sales conversation.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Crushing No-Shows And Last-Minute</h3>
+        <p>Cancellations No-shows are the single most controllable revenue leak in a dental practice. The research is clear: patients who receive 2–3 reminders before an appointment are 40% less likely to no-show. The barrier isn&#x27;t wanting to fix this — it&#x27;s having the time to do it consistently. AI removes that barrier. • The 3-Touch Reminder System: 72-hour reminder (confirm or reschedule), 24- hour reminder (logistics + anticipation), morning-of reminder (parking, what to bring, what to expect). Each one short, warm, and specific. • The Cancellation Recovery Message: When a patient cancels, most practices just update the schedule. AI writes a same-day recovery message that acknowledges the cancellation, offers easy rebooking, and keeps the relationship intact. • The Waitlist Activation Message: When a cancellation creates a gap, AI writes an immediate outreach message to your waitlist patients — filling the slot in minutes rather than hours. • Reducing Anxiety-Driven No-Sho</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Every dental practice is sitting on a goldmine — hundreds of patients who were happy with their care, life got in the way, and they simply never rebooked. They&#x27;re not lost. They just need to hear from you. AI makes reaching all of them feel personal. • The Recall Sequence: A 3-message sequence — warm check-in, value-add (oral health tip relevant to their history), and a soft urgency close — reactivates 15–25% of inactive patients when executed consistently. • Personalization at Scale: AI can write a different message for a patient overdue for a cleaning vs. one who left after a treatment estimate. The specificity makes all the difference in response rates. • Seasonal Recall Campaigns: Back-to-school dental checks, end-of-year insurance benefits reminders, and New Year wellness campaigns are proven drivers of recall bookings. AI writes all three in one session. • The &#x27;Use Your Benefits&#x27; Campaign: One of the highest-converting messages in dentistry: reminding patients</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Case Acceptance — Helping Patients</h3>
+        <p>Say Yes to Treatment Most dentists present a treatment plan and then wait. The patients who say no in the chair often say yes two weeks later — if someone follows up. AI makes systematic</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Follow-Up Effortless And Keeps Treatment Options Top Of Mind Without Any Pressure.</h3>
+        <p>• The Treatment Plan Follow-Up Sequence: A 3-email sequence sent over 21 days after a patient leaves without scheduling: Day 3 (caring check-in + answer to most common concern), Day 10 (patient story or social proof), Day 21 (gentle last invitation). • Addressing the Cost Objection: AI writes a financing options email that presents payment plan choices clearly and without awkwardness — one of the most common barriers to case acceptance. • The Before &amp; After Education Email: For cosmetic or elective procedures, AI writes a patient education email that uses before/after context, outcome framing, and answers the top 3 questions patients ask before saying yes. • The &#x27;Second Opinion&#x27; Acknowledgment: When a patient says they want to</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>think about it or get a second opinion, AI writes a gracious, confident response that positions your practice as the obvious choice without being pushy.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Reviews, Referrals, And A Full New</h3>
+        <p>Patient Pipeline New patients come from two places: Google and word of mouth. Both are driven by systematic communication — not by hoping patients remember to leave reviews or mention you to their friends. AI builds that system. • The Google Review Ask: Sent 24 hours after a positive appointment, this is one of the highest-ROI messages a dental practice can send. A practice going from 40 to 200 Google reviews sees measurable new patient increases within 90 days. • The Referral Request: Most dental patients refer when asked at the right moment — right after a great appointment or a successful treatment result. AI writes a referral request that feels like a natural extension of the relationship. • Professional Referral Outreach: GPs, orthodontists, oral surgeons, and pediatricians are your best professional referral sources. AI writes introduction emails and quarterly value touches that build those relationships. • The New Patient Welcome Sequence: The first impressio</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: Social Content That Builds Trust And</h3>
+        <p>Attracts Patients Patients research dentists online before they call. Practices with consistent, reassuring</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Content Get More Inquiries And Convert New Patients Faster Because Trust Is</h3>
+        <p>already established before the first visit. • The 3-Post Formula: One educational post (oral health tip, procedure explainer, myth-bust), one trust post (patient story with consent, team spotlight, behind the scenes), one engagement post (question, poll, seasonal tip). Mon/Wed/Fri. • High-Converting Topic Categories: Dental anxiety and how you address it,</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>teeth whitening facts vs. myths, the real cost of avoiding the dentist, what happens during a cleaning, Invisalign vs. braces, how diet affects teeth, children&#x27;s first dental visit. • Batch Creating With AI: Use the monthly AI caption prompt in your 90-Day Calendar to generate all 12 captions for the month in one session. Takes 20–30 minutes. Content is done for 4 weeks. • Short-Form Video: A 30-second &#x27;what to expect at your first visit&#x27; Reel or TikTok is the single best piece of content a dental practice can create — addresses the most common barrier to booking and works as evergreen content for months.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 8: Your 30-Day AI Implementation Plan</h3>
+        <p>One week at a time. This plan gets you from reading to real results without disrupting the clinical schedule. • Week 1 — No-Show Reduction: Write your 3-touch reminder sequence. Build your cancellation recovery message. Create your waitlist activation template. • Week 2 — Reactivation: Pull your inactive patient list (12+ months). Write your 3-message reactivation sequence. Send to your first batch of 50 patients. • Week 3 — Case Acceptance &amp; Reviews: Write your treatment plan follow-up sequence. Set up your Google review request. Draft your post-appointment</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Referral Ask.</h3>
+        <p>• Week 4 — Social Content: Create 2 weeks of posts using your 90-Day Calendar. Batch captions with the monthly AI prompt. Schedule Mon/Wed/Fri.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bonus: AI Prompt Cheat Sheet For Dental</h3>
+        <p>Practices Copy and paste these into Claude or ChatGPT. Replace [brackets] with your practice details. Appointment &amp; No-Show Prompts Write a 3-message appointment reminder sequence for a dental patient named [Name] who has an appointment on [Date] at [Time] at [Practice Name]. Message 1: 72 hours before (confirm or reschedule). Message 2: 24 hours before (logistics). Message 3: morning-of (brief, warm, anticipatory). Each under 60 words. Sign as [Practice Name] Team. Write a reactivation message for a dental patient named [Name] who</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>last visited [Practice Name] approximately [X months] ago. They came in for [last treatment/cleaning]. Make it warm and personal — not a mass marketing email. Include a soft CTA to book their next cleaning. Sign as [Dr. Name / Practice Name]. Case Acceptance &amp; Treatment Prompts Write a follow-up email for a patient named [Name] who received a treatment plan for [treatment — e.g., crown / Invisalign / implant] at [Practice Name] on [Date] but didn&#x27;t schedule. Tone: caring, not sales-y. Address the most common concern patients have about this treatment. Include a soft CTA to call or book online.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Day 3 Follow-Up.</h3>
+        <p>Write an end-of-year insurance benefits reminder email for patients of [Practice Name] who have unused dental insurance benefits expiring December 31. Explain why using benefits now matters, list 2–3 common treatments that can be done before year- end, and include a CTA to book before [date]. Urgent but not pushy. Reviews, Referrals &amp; Social Media Write a Google review request message for a dental patient named [Name] who just completed a [treatment/cleaning] at [Practice Name] and had a positive experience. Keep it under 80 words, warm and conversational. Include the direct review link placeholder [LINK]. Don&#x27;t offer incentives for the review. Write 5 educational social media posts for a dental practice. Topics: the truth about teeth whitening, why you shouldn&#x27;t ignore a cracked tooth, what causes bad breath and how to fix it, how often you actually need dental X-rays, and the link between oral health and heart disease. Each under 150 words, ends with a question or</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

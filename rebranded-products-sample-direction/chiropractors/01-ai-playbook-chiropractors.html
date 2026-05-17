@@ -1,0 +1,367 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8faf5; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#748d7a 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#b9c9bc 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8faf5 94%,white), color-mix(in srgb,#f8faf5 86%,#748d7a)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#748d7a; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#748d7a 32%,transparent); border-radius:999px; color:#748d7a; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#748d7a; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#748d7a 38%,transparent); border-bottom:1px solid color-mix(in srgb,#748d7a 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#748d7a 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#748d7a 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#748d7a 52%,transparent); border-bottom:1px solid color-mix(in srgb,#748d7a 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#748d7a 32%,transparent); }
+.metric b { display:block; color:#748d7a; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#182019; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#748d7a 18%,transparent), transparent 2in), linear-gradient(135deg, #182019, color-mix(in srgb,#182019 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#748d7a; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#748d7a 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#748d7a 56%,transparent); color:#748d7a; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#748d7a 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#748d7a 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8faf5; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#182019; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#182019; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #748d7a; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8faf5; }
+.layout-protocol .work { background:#fbfbf5; color:#182019; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#748d7a 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#182019; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#182019; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#748d7a 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#182019; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#748d7a 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#182019; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #748d7a; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#748d7a 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#748d7a 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for chiropractors</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Care</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Chiropractors product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Fill Your Schedule, Reduce No-Shows,</h3>
+        <p>and Grow Your Practice Using AI A Complete Guide for Chiropractors &amp; Chiropractic Clinics</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>What&#x27;S Inside</h3>
+        <p>1. Chapter 1: Why AI Is the Chiropractor&#x27;s Practice Growth Tool 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Filling Your Schedule and Reducing No-Shows 4. Chapter 4: Patient Retention — Turning One-Visit Patients Into Long- Term Care Plans 5. Chapter 5: Building Your Referral Engine With AI 6. Chapter 6: Social Content That Educates and Attracts New Patients 7. Chapter 7: Your 30-Day AI Implementation Plan 8. BONUS: AI Prompt Cheat Sheet for Chiropractors</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Chiropractor&#x27;S Practice</h3>
+        <p>Growth Tool Most chiropractors are exceptional at patient care — and overwhelmed by everything else. Appointment reminders, follow-up calls, re-engagement outreach, social media, patient education, review requests — the list never ends. AI doesn&#x27;t treat patients. But it handles every task that prevents you from focusing on the ones who need treating. • The No-Show Problem: The average chiropractic practice loses 15–20% of appointments to no-shows and last-minute cancellations. AI-powered reminder and reconfirmation messages cut that number significantly. • The Drop-Off Gap: Most new chiropractic patients attend 2–3 visits before dropping off — regardless of their care plan. Poor communication between visits is the #1 reason. AI keeps you present without demanding more of your time. • The Referral Silence: Happy patients refer — but only when prompted. Most practices never ask systematically. AI builds that ask into every patient journey automatically. • What AI Hand</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Start here. These three quick wins take under an hour to implement and will impact your practice immediately. • Win #1 — Appointment Reminder Sequence: Use AI to write a 3-message reminder sequence: 48 hours before, morning of, and a no-show re-engagement message. Reduce cancellations and fill gaps faster. • Win #2 — New Patient Welcome Email: Every new patient should receive a warm, informative welcome email before their first visit — what to expect, what to bring, and why chiropractic care works. AI writes this in 2 minutes. Patient anxiety drops. Show-up rates improve. • Win #3 — Review Request Message: Google reviews drive new patient acquisition more than almost any other factor. AI writes a friendly, non-pushy review request that goes out after a patient&#x27;s 3rd visit — the sweet spot for authentic positive reviews.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Filling Your Schedule And Reducing</h3>
+        <p>No-Shows A full schedule doesn&#x27;t happen by accident. It&#x27;s the result of consistent communication that keeps existing patients engaged and makes it easy for new patients to say yes. • The New Patient Welcome Sequence: A 3-email sequence that goes out before and after a new patient&#x27;s first visit — setting expectations, reinforcing the value of their care plan, and prompting them to book their next appointment. • The Reactivation Campaign: Every practice has a list of patients who stopped coming in. AI writes a 3-message reactivation sequence that feels personal, not mass-marketed — and converts dormant patients back to active at a meaningful rate. • The Cancellation Recovery Message: When a patient cancels, most practices just update the schedule. AI writes a same-day recovery message that acknowledges the cancellation, offers a rebooking option, and keeps the relationship warm. • Seasonal Outreach: AI helps you write targeted seasonal messages — back-to- school postu</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Patients Into Long-Term Care Plans The lifetime value of a patient who completes a full care plan vs. one who drops off after 2 visits is enormous. The difference is almost always communication — specifically, what happens between visits. • The Between-Visit Check-In: A short message 2–3 days after each visit asking how the patient is feeling and reinforcing their home care instructions. Takes 90 seconds with AI. Patients feel supported. Drop-off rates fall. • The Care Plan Progress Email: At the midpoint of any care plan, AI writes a progress check-in that recaps improvements, reinforces why continuing matters, and addresses the most common reason patients stop: &#x27;I feel better now.&#x27; • The Wellness Transition Message: When a patient completes their acute care</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Plan, Most Chiropractors Lose Them. AI Writes A Transition Message That</h3>
+        <p>introduces maintenance/wellness care naturally — not as an upsell, but as the logical next step. • The Missed Appointment Sequence: When a patient misses without cancelling, AI writes a 2-message sequence: a same-day check-in, and a 3-day</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Follow-Up. Warm, Not Guilt-Inducing. Reschedules More Patients Than Silence</h3>
+        <p>does.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Building Your Referral Engine With AI</h3>
+        <p>Referrals are the most cost-effective source of new patients for any chiropractic practice. But most chiropractors never ask — not because they don&#x27;t want to, but because they don&#x27;t have a system. AI builds that system. • The Post-Milestone Referral Ask: The best time to ask for a referral is right after a patient hits a meaningful milestone — reduced pain, improved mobility, first full night&#x27;s sleep. AI writes a milestone celebration + referral ask in one natural message. • The Professional Referral Network: Primary care physicians, physical therapists, personal trainers, and massage therapists are your best referral sources. AI writes introduction emails and monthly value touchpoints that build those relationships without cold-calling. • The Family Referral Prompt: When a patient mentions a family member with a</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>relevant condition, that&#x27;s a referral opportunity. AI writes a follow-up message that makes suggesting chiropractic care to a loved one feel natural and easy. • The Review-to-Referral Pipeline: Patients who leave positive Google reviews are primed to refer. AI writes a thank-you message that acknowledges the review and gently introduces the idea of referring a friend or family member.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Social Content That Educates And</h3>
+        <p>Attracts New Patients Patients research chiropractors online before they ever call. The practices with consistent, educational social content get more inquiries, more trust, and more patients who show up already sold on care. AI makes that content effortless. • The 3-Post Formula: One educational post (condition, technique, or wellness tip), one trust post (patient story, behind the scenes, your philosophy), one engagement post (myth-bust, question, seasonal tip). Post Mon/Wed/Fri. • High-Converting Topic Categories: Posture and desk ergonomics, headache and migraine relief, sports injury recovery, pregnancy and pediatric chiropractic, sciatica and lower back pain, sleep and chiropractic, myth-busting (cracking knuckles, adjustments are dangerous, etc.). • Batch Creating in 30 Minutes: Use AI to generate a full month of captions in one session. Your 90-Day Calendar has the post ideas — the monthly AI prompt generates all 12 captions at once. • Patient Education Vide</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: Your 30-Day AI Implementation Plan</h3>
+        <p>Don&#x27;t try to implement everything at once. This plan gets you from reading to real results in 30 days without disrupting your clinical schedule. • Week 1 — Patient Communication Foundation: Set up Claude or ChatGPT. Write your new patient welcome email and appointment reminder sequence. Build your no-show recovery message. • Week 2 — Retention System: Build your between-visit check-in template. Write your care plan progress email. Create your wellness transition message.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Week 3 — Referrals and Reviews: Write your post-milestone referral ask. Set up your review request message. Draft 2 professional referral outreach emails. • Week 4 — Social Content: Create 2 weeks of posts using your 90-Day Calendar. Batch captions with the monthly AI prompt. Schedule Mon/Wed/Fri.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bonus: AI Prompt Cheat Sheet For</h3>
+        <p>Copy and paste these into Claude or ChatGPT. Replace [brackets] with your practice details. Patient Communication Prompts Write a 3-message appointment reminder sequence for a chiropractic patient named [Name] who has an appointment on [Date] at [Time]. Message 1: 48 hours before. Message 2: morning of. Message 3: post no-show re-engagement (if applicable). Tone: warm, professional, brief. Sign as [Dr. Name], [Practice Name]. Write a new patient welcome email for [Name] who has their first appointment at [Practice Name] on [Date]. Include: what to bring, what to expect during the first visit, a brief reassurance about the adjustment process, and an encouraging close. Keep it warm and under 200 words.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Retention &amp; Referral Prompts</h3>
+        <p>Write a between-visit check-in message for my patient [Name] who had an adjustment [X days ago] for [condition — e.g., lower back pain / neck tension / sciatica]. Ask how they&#x27;re feeling, remind them of one home care tip, and encourage them to reach out if they have questions before their next visit. Under 80 words. Write a reactivation message for a patient named [Name] who last visited [Practice Name] approximately [X months] ago for [condition]. Make it warm and personal — not a mass marketing</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email. Reference Their Previous Progress If Possible. Include A</h3>
+        <p>soft CTA to book a check-up. Sign as [Dr. Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Media Prompts</h3>
+        <p>Write 5 educational social media posts for a chiropractor. Topics: the real cause of most lower back pain, how chiropractic helps headaches, posture tips for desk workers, what to expect at your first chiropractic adjustment, and the difference between</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>chiropractic and physical therapy. Each under 150 words, ends with a question or CTA. Practice: [Practice Name], [City]. Better communication doesn&#x27;t just fill schedules. It helps patients commit to the care that actually changes their health.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

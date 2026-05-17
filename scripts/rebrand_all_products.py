@@ -7,11 +7,12 @@ import shutil
 from pathlib import Path
 
 from pypdf import PdfReader
+from create_all_niche_sample_documents import STYLE_BY_NICHE, css as sample_direction_css
 
 
 SOURCE_ROOT = Path("/Users/tomasz/Documents/Content Elevated/Content Elevated Products")
 WORKSPACE_ROOT = Path("/Users/tomasz/Documents/Codex/2026-05-15/can-you-build-a-website-for")
-OUTPUT_ROOT = WORKSPACE_ROOT / "rebranded-products-full-rebrand"
+OUTPUT_ROOT = WORKSPACE_ROOT / "rebranded-products-sample-direction"
 
 SKIP_DIR_NAMES = {"_SELLER MARKETING & INTERNAL DOCS", "Internal", "__MACOSX"}
 SPREADSHEET_EXTENSIONS = {".xlsx", ".xls", ".csv", ".numbers"}
@@ -147,24 +148,18 @@ def title_case(value: str) -> str:
 
 
 def theme_for(niche: str) -> dict[str, str]:
-    n = niche.lower()
-    if "barber" in n:
-        return THEMES["barber"]
-    if "tattoo" in n:
-        return THEMES["tattoo"]
-    if any(word in n for word in ["aesthetic", "bridal", "hair", "lash", "makeup", "med spa", "nail", "stylist"]):
-        return THEMES["beauty"]
-    if any(word in n for word in ["attorney", "accountant", "cpa", "financial", "insurance", "mortgage", "broker"]):
-        return THEMES["professional"]
-    if any(word in n for word in ["hvac", "electrician", "plumber", "car wash"]):
-        return THEMES["trades"]
-    if any(word in n for word in ["chiropractor", "dentist", "massage", "nutrition", "physical", "wellness"]):
-        return THEMES["wellness"]
-    if any(word in n for word in ["etsy", "e-commerce"]):
-        return THEMES["commerce"]
-    if any(word in n for word in ["chef", "nannies", "dog", "pet"]):
-        return THEMES["hospitality"]
-    return THEMES["creative"]
+    if niche in STYLE_BY_NICHE:
+        return STYLE_BY_NICHE[niche]
+    return {
+        "headline": f"{niche} Growth System",
+        "mood": "Premium business operating system",
+        "accent": "#5f7f86",
+        "accent2": "#a8bab5",
+        "paper": "#fbfaf4",
+        "dark": "#161b1f",
+        "layout": "ledger",
+        "tag": "Growth",
+    }
 
 
 def is_dark(theme: dict[str, str]) -> bool:
@@ -172,58 +167,17 @@ def is_dark(theme: dict[str, str]) -> bool:
 
 
 def css(theme: dict[str, str]) -> str:
-    dark = is_dark(theme)
-    grid_opacity = ".11" if dark else ".18"
-    page_bg = (
-        f"linear-gradient(145deg,{theme['paper']},{theme['tint']} 70%,{theme['dark']})"
-        if dark
-        else f"linear-gradient(145deg,{theme['paper']},{theme['tint']} 72%,#ebe5dc)"
-    )
-    return f"""
-@page {{ size: Letter; margin: 0; }}
-* {{ box-sizing: border-box; }}
-body {{ margin: 0; background: #d6d6d3; color: {theme['ink']}; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }}
-.book {{ width: 8.5in; margin: 0 auto; }}
-.page {{ position: relative; width: 8.5in; min-height: 11in; overflow: hidden; page-break-after: always; padding: .58in; background: {page_bg}; }}
-.page::before {{ content: ""; position: absolute; inset: 0; pointer-events: none; background:
-  radial-gradient(circle at 86% 12%, color-mix(in srgb,{theme['accent']} 18%,transparent), transparent 2.35in),
-  radial-gradient(circle at 10% 92%, color-mix(in srgb,{theme['accent2']} 14%,transparent), transparent 2.85in),
-  linear-gradient(rgba(255,255,255,{grid_opacity}) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,{grid_opacity}) 1px, transparent 1px);
-  background-size: auto, auto, .42in .42in, .42in .42in;
-  mask-image: linear-gradient(180deg, black, rgba(0,0,0,.2)); }}
-.page::after {{ content: ""; position: absolute; left: .58in; right: .58in; bottom: .62in; height: 1px; background: linear-gradient(90deg,{theme['accent']},transparent); opacity: .38; }}
-.brand {{ position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }}
-.brand-name {{ font-size: 10px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }}
-.brand-sub {{ margin-top: 8px; color: {theme['muted']}; font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }}
-.document-pill {{ border: 1px solid color-mix(in srgb,{theme['accent']} 28%,transparent); border-radius: 999px; padding: 10px 13px; color: {theme['accent']}; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; background: rgba(255,255,255,{'.04' if dark else '.38'}); }}
-.kicker {{ position: relative; z-index: 3; margin: .72in 0 18px; color: {theme['accent']}; font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }}
-.kicker::before {{ content: ""; display: inline-block; width: 42px; height: 1px; margin-right: 14px; vertical-align: middle; background: {theme['accent']}; }}
-h1 {{ position: relative; z-index: 3; margin: 0; max-width: 6.45in; font-family: Georgia, 'Times New Roman', serif; font-size: 55px; line-height: .95; font-weight: 400; letter-spacing: -.045em; }}
-h1 em {{ color: {theme['accent']}; font-style: italic; }}
-h2 {{ margin: 0 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: 33px; line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }}
-h3 {{ margin: 20px 0 9px; color: {theme['accent']}; font-size: 10px; line-height: 1.25; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }}
-p {{ margin: 0 0 9px; color: {theme['muted']}; font-size: 10.4px; line-height: 1.45; }}
-.lead {{ position: relative; z-index: 3; max-width: 5.35in; margin-top: .26in; font-size: 14px; line-height: 1.55; }}
-.cover-system {{ position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .95in; display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }}
-.cover-panel {{ border: 1px solid color-mix(in srgb,{theme['accent']} 20%,transparent); border-radius: 24px; padding: 23px; background: rgba(255,255,255,{'.045' if dark else '.55'}); box-shadow: 0 24px 70px rgba(0,0,0,{'.2' if dark else '.07'}); }}
-.cover-panel.dark {{ background: linear-gradient(135deg,{theme['dark']},color-mix(in srgb,{theme['dark']} 76%,{theme['accent']})); color: #f8f3ed; }}
-.cover-panel.dark p {{ color: rgba(248,243,237,.76); }}
-.smallcaps {{ color: {theme['accent2']}; font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }}
-.metric-grid {{ display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }}
-.metric {{ min-height: .74in; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.05); }}
-.metric b {{ display: block; font-family: Georgia, serif; color: #fff; font-size: 24px; font-weight: 400; }}
-.metric span {{ display: block; margin-top: 5px; color: rgba(255,255,255,.62); font-size: 7.6px; font-weight: 900; letter-spacing: .14em; line-height: 1.35; text-transform: uppercase; }}
-.intro-card {{ position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,{theme['accent']} 18%,transparent); border-radius: 28px; padding: 28px; background: rgba(255,255,255,{'.05' if dark else '.58'}); box-shadow: 0 20px 60px rgba(0,0,0,{'.18' if dark else '.06'}); }}
-.steps {{ display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 22px; }}
-.step {{ border: 1px solid color-mix(in srgb,{theme['accent']} 16%,transparent); border-radius: 18px; padding: 16px; background: rgba(255,255,255,{'.05' if dark else '.44'}); }}
-.step b {{ display: block; margin-bottom: 9px; font-family: Georgia, serif; color: {theme['accent']}; font-size: 23px; font-weight: 400; }}
-.content {{ position: relative; z-index: 3; margin-top: .38in; border: 1px solid color-mix(in srgb,{theme['accent']} 18%,transparent); border-radius: 26px; padding: 28px; background: rgba(255,255,255,{'.052' if dark else '.62'}); box-shadow: 0 22px 62px rgba(0,0,0,{'.18' if dark else '.065'}); }}
-.section-label {{ margin: 20px 0 10px; padding-top: 15px; border-top: 1px solid color-mix(in srgb,{theme['accent']} 18%,transparent); color: {theme['accent']}; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }}
-.template-line {{ border-left: 2px solid {theme['accent']}; padding: 7px 0 7px 12px; background: linear-gradient(90deg,color-mix(in srgb,{theme['accent']} 10%,transparent),transparent 76%); }}
-.footer {{ position: absolute; z-index: 3; left: .58in; right: .58in; bottom: .3in; display: flex; justify-content: space-between; color: {theme['muted']}; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }}
-.page-number {{ color: {theme['accent']}; font-family: Georgia, serif; }}
-@media print {{ body {{ background: white; }} .book {{ margin: 0; }} }}
+    return sample_direction_css(theme) + f"""
+.direction-page .section-head {{ margin-top: .18in; }}
+.direction-page .prompt-grid {{ margin-top: .32in; }}
+.direction-page .prompt-card {{ grid-template-columns: .44in 1fr; }}
+.direction-page .prompt-card p {{ font-size: 9.3px; }}
+.direction-page .content-stack {{ position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }}
+.direction-page .content-stack .prompt-card h3 {{ font-size: 15px; }}
+.direction-page .content-stack .prompt-card .eyebrow {{ font-size: 7.5px; }}
+.direction-page .section-label {{ margin: 10px 0 4px; color: {theme['accent']}; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }}
+.direction-page .plain-copy {{ margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }}
+.direction-page .template-line {{ border-left: 1px solid color-mix(in srgb,{theme['accent']} 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,{theme['accent']} 10%,transparent),transparent 70%); }}
 """
 
 
@@ -303,6 +257,44 @@ def render_blocks(blocks: list[tuple[str, str]]) -> str:
     return "\n".join(parts)
 
 
+def render_content_cards(blocks: list[tuple[str, str]]) -> str:
+    cards: list[tuple[str, str]] = []
+    current_title = "Action System"
+    current_body: list[str] = []
+
+    def flush() -> None:
+        nonlocal current_body
+        if current_body:
+            cards.append((current_title, " ".join(current_body)))
+            current_body = []
+
+    for kind, text in blocks:
+        if kind == "h":
+            flush()
+            current_title = title_case(text)
+        else:
+            current_body.append(text)
+    flush()
+    if not cards:
+        cards = [("Action System", "Review this section and customize the language for your business before using it with clients.")]
+
+    pieces = []
+    for index, (card_title, body) in enumerate(cards, start=1):
+        pieces.append(
+            f"""
+    <article class="prompt-card">
+      <div class="num">{index:02d}</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>{html.escape(card_title)}</h3>
+        <p>{html.escape(body[:980])}</p>
+      </div>
+    </article>
+"""
+        )
+    return "\n".join(pieces)
+
+
 def source_niche(path: Path) -> str:
     rel = path.relative_to(SOURCE_ROOT)
     return rel.parts[0]
@@ -349,39 +341,51 @@ def build_html(niche: str, title: str, descriptor: str, theme: dict[str, str], b
     chunks = chunk_blocks(blocks)
     pages = [
         f"""<section class="page cover">
-  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">{html.escape(niche)} Growth Bundle</div></div><div class="document-pill">{html.escape(theme['label'])}</div></div>
-  <p class="kicker">{html.escape(descriptor)}</p>
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you {html.escape(descriptor.lower())} for {html.escape(niche.lower())}</div>
+    </div>
+  </div>
   <h1>{title_html}</h1>
-  <p class="lead">A redesigned, print-ready business system built for clarity, premium presentation, and real-world implementation.</p>
-  <div class="cover-system">
-    <div class="cover-panel dark"><p class="smallcaps">Designed for {html.escape(theme['tone'])}</p><p>Use this file as an operating asset: customize the language, move the strongest ideas into your weekly workflow, and keep the system close to revenue moments.</p></div>
-    <div class="cover-panel dark"><div class="metric-grid"><div class="metric"><b>01</b><span>Read the system</span></div><div class="metric"><b>02</b><span>Customize quickly</span></div><div class="metric"><b>03</b><span>Use weekly</span></div><div class="metric"><b>CE</b><span>Premium file</span></div></div></div>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>{html.escape(theme["tag"])}</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
   </div>
-  <div class="footer"><span>{html.escape(niche)}</span><span class="page-number">01</span></div>
+  <div class="footer"><span>{html.escape(niche)} product file</span><span>01</span></div>
 </section>""",
-        f"""<section class="page">
-  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">{html.escape(niche)} Growth Bundle</div></div><div class="document-pill">Start Here</div></div>
-  <p class="kicker">Implementation Notes</p>
-  <h2>Turn this file into action.</h2>
-  <div class="intro-card">
-    <p>This redesigned version keeps the original content intact while improving hierarchy, pacing, readability, and perceived value. Work through it section by section and adapt the brackets, client language, and offers to the business.</p>
-    <div class="steps"><div class="step"><b>01</b><p>Skim once for strategy and context.</p></div><div class="step"><b>02</b><p>Highlight the pages that match the next business priority.</p></div><div class="step"><b>03</b><p>Customize prompts, scripts, and templates before using them live.</p></div><div class="step"><b>04</b><p>Save working versions into the client or content workflow.</p></div></div>
+        f"""<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
   </div>
-  <div class="footer"><span>{html.escape(title)}</span><span class="page-number">02</span></div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>{html.escape(title)}</span><span>02</span></div>
 </section>""",
     ]
     for index, chunk in enumerate(chunks, start=3):
         pages.append(
-            f"""<section class="page">
-  <div class="brand"><div><div class="brand-name">CONTENT ELEVATED</div><div class="brand-sub">{html.escape(niche)} Growth Bundle</div></div><div class="document-pill">{html.escape(descriptor)}</div></div>
-  <div class="content">{render_blocks(chunk)}</div>
-  <div class="footer"><span>{html.escape(title)}</span><span class="page-number">{index:02d}</span></div>
+            f"""<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">{html.escape(descriptor)}</p><h2>{html.escape(title)}</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">{render_content_cards(chunk)}</div>
+  <div class="footer"><span>{html.escape(title)}</span><span>{index:02d}</span></div>
 </section>"""
         )
     return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"/>'
         '<meta name="viewport" content="width=device-width, initial-scale=1"/>'
-        f"<title>{html.escape(title)}</title><style>{css(theme)}</style></head><body><main class=\"book\">"
+        f"<title>{html.escape(title)}</title><style>{css(theme)}</style></head><body><main class=\"book layout-{html.escape(theme['layout'])}\">"
         + "\n".join(pages)
         + "</main></body></html>"
     )
@@ -396,7 +400,7 @@ def write_pdf_html(path: Path) -> list[Path]:
     if niche.startswith("_"):
         return []
     theme = theme_for(niche)
-    title = display_title(path, niche)
+    title = theme["headline"] if path.name.startswith("LM_") else display_title(path, niche)
     descriptor = classify(path)
     lines = clean_lines(pdf_text(path), niche)
     blocks = paragraphize(lines)

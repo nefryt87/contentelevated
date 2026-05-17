@@ -1,0 +1,389 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbf7f4; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#9170a0 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d6b98f 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbf7f4 94%,white), color-mix(in srgb,#fbf7f4 86%,#9170a0)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#9170a0; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#9170a0 32%,transparent); border-radius:999px; color:#9170a0; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#9170a0; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#9170a0 38%,transparent); border-bottom:1px solid color-mix(in srgb,#9170a0 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#9170a0 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#9170a0 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#9170a0 52%,transparent); border-bottom:1px solid color-mix(in srgb,#9170a0 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#9170a0 32%,transparent); }
+.metric b { display:block; color:#9170a0; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#201823; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#9170a0 18%,transparent), transparent 2in), linear-gradient(135deg, #201823, color-mix(in srgb,#201823 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#9170a0; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#9170a0 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#9170a0 56%,transparent); color:#9170a0; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#9170a0 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#9170a0 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbf7f4; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#201823; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#201823; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #9170a0; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbf7f4; }
+.layout-protocol .work { background:#fbfbf5; color:#201823; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#9170a0 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#201823; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#201823; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#9170a0 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#201823; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#9170a0 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#201823; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #9170a0; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#9170a0 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#9170a0 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for event planners</div>
+    </div>
+  </div>
+  <h1>Email Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Events</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Event Planners product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Pack</h3>
+        <p>24 done-for-you templates for every stage of the planning journey Inquiries • Client management • Vendor relationships • Reviews • Referrals</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use These Templates</h3>
+        <p>• Replace all [brackets] with your client&#x27;s name, event details, and your business information. • Keep the tone aspirational, professional, and genuinely excited — clients hire planners who make them feel their event is the most important one on your calendar. • Always personalize the opening line using AI for the best first impression. • Works as email and as messaging through planning platforms like Aisle Planner or Honeybook.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Onboarding</h3>
+        <p>Inquiry Response — Same Day</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your [Wedding/Event] Inquiry — [Your Name]</h3>
+        <p>BODY Hi [First Name], Thank you so much for reaching out — your [event type] sounds absolutely beautiful and I&#x27;m so excited to learn more! I loved what you shared about [one specific element from their inquiry — their vision, venue choice, or date]. That&#x27;s exactly the kind of event I love creating. I&#x27;d love to schedule a discovery call so we can talk through your vision, get a feel for whether we&#x27;d be a great fit, and make sure I understand exactly what you&#x27;re dreaming of. Here&#x27;s my booking link: [link] — grab whatever time works best for you. Can&#x27;t wait to connect! [Your Name] | [Business Name] | [Phone] Post-Discovery Call Conversion</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Event — What I&#x27;M Envisioning For You, [First Name]</h3>
+        <p>BODY Hi [First Name], It was such a pleasure talking with you today — your vision for [event description] is genuinely stunning and I can absolutely make it happen. Based on what you shared, here&#x27;s what I&#x27;d propose: Package: [Package Name] What&#x27;s included: [Key inclusions]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Investment: [Price] [One sentence on why this package is specifically right for their event based on the call] To move forward, simply [clear next step — reply, sign contract link, or pay deposit]. I&#x27;m so excited about this one. Let&#x27;s create something extraordinary. [Your Name] | [Business Name] Onboarding Welcome Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Welcome To [Business Name] — The Planning Begins, [First Name]!</h3>
+        <p>BODY Hi [First Name], I am SO excited to officially be your event planner for [event name/date]! Here&#x27;s how our planning process works: 1. [Phase 1 — e.g., &#x27;Vision and concept development: we&#x27;ll lock in the aesthetic, key vendors, and overall direction&#x27;] 2. [Phase 2 — e.g., &#x27;Vendor booking and logistics: I&#x27;ll manage all vendor communication on your behalf&#x27;] 3. [Phase 3 — e.g., &#x27;Final details and day-of execution: I&#x27;ve got every detail handled so you can fully enjoy your day&#x27;] Your planning portal is [link]. That&#x27;s where you&#x27;ll find all documents, inspiration boards, and checklists. Our first planning session is scheduled for [date]. In the meantime, start saving inspiration to [Pinterest board / planning portal] — the more you share, the better I can bring your vision to life. This is going to be incredible. [Your Name] | [Business Name] Monthly Planning Check-In</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your [Month] Planning Update — [First Name]</h3>
+        <p>BODY Hi [First Name], Here&#x27;s a quick update on where we are with your [event]: Completed this month: - [Item 1] - [Item 2] Coming up next: - [Item 1 — with date/deadline if applicable] - [Item 2] One decision you need to make: [specific pending decision with a light deadline] Overall status: Everything is tracking beautifully. [Any reassurance or excitement note] Reach out any time if you have questions — that&#x27;s what I&#x27;m here for. [Your Name] Pre-Event Countdown — 30 Days Out</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject 30 Days To Go — Here&#x27;S What&#x27;S Happening, [First Name]</h3>
+        <p>BODY Hi [First Name], Can you believe it&#x27;s only 30 days away?! I&#x27;m getting so excited for you! Here&#x27;s where everything stands: - Venue: Confirmed for [Date] - Catering: Final menu confirmed</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>- [Other vendor]: [Status] - Outstanding: [Any pending items — be specific] One thing I need from you in the next week: [specific ask] The next time we speak will be for our final details call on [Date]. Between now and then, take a deep breath — you&#x27;re in good hands. Everything is under control. [Your Name] Post-Event Follow-Up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject How Are You Feeling, [First Name]?</h3>
+        <p>BODY Hi [First Name], I&#x27;ve been thinking about [event name] since [day/yesterday] and I just have to say — it turned out absolutely beautifully. Watching [couple / client] experience everything we&#x27;d planned together was genuinely one of the highlights of my year. I&#x27;d love to hear how you&#x27;re feeling about the day and whether there&#x27;s anything you&#x27;d change. If you&#x27;re willing, a Google review means the world to a small business like mine — and it helps other couples/clients find a planner they can trust. Here&#x27;s the link: [Google Review Link] And if you know anyone planning a special event, I&#x27;d love to be introduced. Working with incredible clients like you is how I built this business. Thank you for trusting me with something so important. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Vendor Relationships</h3>
+        <p>Post-Event Vendor Thank-You</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Thank You — It Was A Privilege Working With You, [Vendor Name]</h3>
+        <p>BODY Hi [Name], I just wanted to take a moment to say a genuine thank you for [what they contributed] at [Event Name] on [Date]. [One specific thing they did that stood out — be personal and specific.] Working with vendors who care as much as you do makes every event better. I&#x27;ll absolutely be recommending you to future clients, and I hope we get to collaborate again soon. Warmly, [Your Name] | [Business Name] New Vendor Introduction</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Introduction — [Your Name], Event Planner, [Business Name]</h3>
+        <p>BODY Hi [Name], My name is [Your Name] — I&#x27;m an event planner at [Business Name] specializing in [wedding / corporate / social / luxury events] in [City/Region]. I came across [their work/business] and I&#x27;m genuinely impressed — [one specific, genuine compliment].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>I&#x27;d love to add you to my preferred vendor network and explore whether there might be opportunities to work together on future events. I refer vendors consistently to clients who are a great fit for their style and specialty. Happy to connect for a quick call or coffee if you&#x27;re open to it. [Your Name] | [Business Name] | [Phone] Vendor Co-Marketing Proposal</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Collaboration Idea — [Your Name] + [Vendor Name]</h3>
+        <p>BODY Hi [Name], I&#x27;ve been thinking about how we might collaborate beyond individual events — and I wanted to put an idea on the table. A few options that might work well for both of us: - Styled shoot collaboration: we each promote the imagery to our respective audiences - Social media cross-promotion: tagging each other on shared events and</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content</h3>
+        <p>- Joint venue open day or showcase: presenting to prospective clients together I think our audiences overlap beautifully and there&#x27;s a genuine opportunity to create something that benefits both of our businesses. Would you be open to a quick call to explore it? [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3: Reviews &amp; Referrals</h3>
+        <p>Review Request — 48 Hours Post-Event</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Ask — You&#x27;D Be Helping So Much, [First Name]</h3>
+        <p>BODY Hi [First Name], I hope the glow is still very much alive after [event name]! If you had a wonderful experience working with [Business Name], I&#x27;d be so grateful if you took 2–3 minutes to share it on Google. It genuinely helps other couples and clients find a planner they can trust. Here&#x27;s the direct link: [Google Review Link] Thank you from the bottom of my heart — it&#x27;s clients like you that make this work so meaningful. [Your Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Do You Know Anyone Planning Something Extraordinary?</h3>
+        <p>BODY Hi [First Name], Working with you on [event name] was such an honour — thank you for trusting me with something so special. If you have friends, family, or colleagues planning a wedding or event, I&#x27;d be</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>so grateful for an introduction. I promise to take care of anyone you send my way with the same love and attention I gave to yours. Thank you for being such a wonderful client. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>07</span></div>
+</section></main></body></html>

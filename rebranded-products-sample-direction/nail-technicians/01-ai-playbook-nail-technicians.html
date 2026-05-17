@@ -1,0 +1,477 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f5; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#a97c84 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#dfbbb7 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f5 94%,white), color-mix(in srgb,#fff7f5 86%,#a97c84)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#a97c84; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#a97c84 32%,transparent); border-radius:999px; color:#a97c84; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#a97c84; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#a97c84 38%,transparent); border-bottom:1px solid color-mix(in srgb,#a97c84 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#a97c84 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#a97c84 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#a97c84 52%,transparent); border-bottom:1px solid color-mix(in srgb,#a97c84 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#a97c84 32%,transparent); }
+.metric b { display:block; color:#a97c84; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#22191b; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#a97c84 18%,transparent), transparent 2in), linear-gradient(135deg, #22191b, color-mix(in srgb,#22191b 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#a97c84; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#a97c84 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#a97c84 56%,transparent); color:#a97c84; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#a97c84 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#a97c84 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f5; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#22191b; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#22191b; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #a97c84; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f5; }
+.layout-protocol .work { background:#fbfbf5; color:#22191b; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#a97c84 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#22191b; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#22191b; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#a97c84 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#22191b; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#a97c84 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#22191b; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #a97c84; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#a97c84 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#a97c84 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for nail technicians</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Nails</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Nail Technicians product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Nail Technician</h3>
+        <p>The AI Playbook for Nail Technicians Fill your books with loyal clients, reduce no-shows, upsell nail art and treatments, and build the Instagram presence that keeps your DMs full</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction</h3>
+        <p>The nail technicians with fully booked calendars and waitlists aren&#x27;t just the most skilled. They respond to every DM within hours with a message that feels personal. They follow up on appointment reminders proactively. They reach out to clients at the perfect rebooking window before they even think about booking elsewhere. They run seasonal nail art campaigns that create genuine excitement and urgency. And they post consistently on Instagram and TikTok with content that attracts their ideal clients — the ones who value quality, tip well, and refer their friends. This playbook gives you 7 chapters covering every high-leverage scenario — with copy-paste AI prompts throughout.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Conversion</h3>
+        <p>The DM Response System Instagram DMs are how most nail clients make first contact. Your response speed and tone determines whether that conversation becomes a booking. A warm, specific response that asks the right qualifying question and gives a clear next step converts dramatically better than a delayed or generic reply.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram Dm Inquiry Response</h3>
+        <p>Write a warm, professional Instagram DM response for my nail studio. The client [Name] reached out about [service — e.g., gel manicure / nail art / acrylics / gel-x / dip powder]. They mentioned: [paste key details from their message — any design inspo they described, event they&#x27;re getting nails done for, etc.]. My style speciality is [your style — e.g., minimalist nail art / bold maximalist designs / gel extensions / natural nail care]. I want to: (1) make them feel like I genuinely read their message, (2) briefly describe how I&#x27;d approach their request, (3) ask one qualifying question if needed or invite them to book directly. Warm and excited, under 120 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a professional inquiry response email for my nail studio. Client [Name] reached out about [service]. They mentioned: [details]. My style: [style]. I want to: (1) acknowledge their request specifically, (2) briefly describe my process and what they can expect, (3) share my booking link or availability. Professional and warm, under 150 words. Sign as [Your Name], [Studio Name]. Handling Pricing Conversations</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Price Enquiry Response</h3>
+        <p>Write a response to someone who asked &#x27;how much do you charge for [service]?&#x27; My prices: [list service prices]. I want to: (1) give them clear pricing without apologising for it, (2) briefly explain what affects the price if relevant (nail art complexity, length, removal if needed), (3) invite them to book or ask more questions. Confident and clear, under 120 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Cancellations</h3>
+        <p>The Appointment Reminder System No-shows are the single most damaging thing to a nail tech&#x27;s income. A two-touch reminder system — 48 hours and 24 hours before — reduces no-shows by 60-70% compared to no reminders at all.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — 48-Hour Appointment Reminder</h3>
+        <p>Write a 48-hour appointment reminder message for my nail studio. Client [Name], appointment [date] at [time] for [service]. I want to: (1) remind them warmly, (2) confirm the key details, (3) mention my cancellation policy briefly without being heavy-handed. Under 80 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — 24-Hour Confirmation Message</h3>
+        <p>Write a 24-hour appointment confirmation message for my nail studio. Client [Name], appointment tomorrow [date] at [time] for [service]. I want to: (1) confirm the appointment, (2) give one quick prep tip (e.g., arrive with clean nails / remove old gel beforehand if self-removing), (3) share my direct number for any changes. Under 60 words. Sign as [Your Name / Studio Name]. Communicating Your Cancellation Policy</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Write a clear, professional cancellation policy message for my nail studio to send with every booking confirmation. Policy: I require [X] hours notice for cancellations. Late cancellations within [X] hours incur a [X]% fee. No-shows are charged [X]% of the service. I want to communicate this firmly but warmly — no apology for having policies. Under 120 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Rebooking &amp; Client Retention</h3>
+        <p>The Rebooking System The optimal rebooking window for gel manicures is 2-3 weeks. For acrylics it&#x27;s 3-4 weeks. Clients who rebook at the appointment — or are reminded at exactly the right time — fill calendars without any active marketing. Most nail techs never systematise this.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — End-Of-Appointment Rebooking Prompt</h3>
+        <p>Write a short, warm end-of-appointment rebooking message for my nail studio — for use verbally or as a text follow-up. Client [Name] just had [service]. Their recommended rebooking window: [X] weeks. I want to: (1) briefly mention how long the results will last, (2) make the rebooking invitation feel natural, (3) offer two specific availability windows. Under 80 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Rebooking Reminder (Sent At Optimal Window)</h3>
+        <p>Write a rebooking reminder message for a nail client. Client [Name] had [service] on [date]. It has been [X] weeks. I want to: (1) reference their nails specifically, (2) mention that now is the ideal time to book, (3) share booking link or availability. Brief and warm, under 80 words. Sign as [Your Name / Studio Name]. Lapsed Client Win-Back</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Lapsed Client Win-Back</h3>
+        <p>Write a win-back message for a nail client I haven&#x27;t seen in [X months]. Client [Name], last service: [service] on [date]. I want to: (1) check in warmly without guilt- tripping, (2) mention something new — a new nail art style I&#x27;m offering, a new product, or seasonal designs, (3) invite them to rebook with a simple call to action. Under 100 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Seasonal Nail Art Campaigns Seasonal campaigns create genuine excitement and urgency — and they&#x27;re the single most effective way to fill quiet booking periods. The nail techs who run monthly seasonal campaigns never have slow months.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Seasonal Nail Art Campaign Email</h3>
+        <p>Write a seasonal nail art campaign email for my nail studio. Season/occasion: [e.g., Christmas / Valentine&#x27;s Day / Summer / Halloween / Autumn]. Featured designs: [describe 2-3 designs you&#x27;re offering]. I want to: (1) create genuine excitement about the designs, (2) mention limited availability to create urgency, (3) make it easy to book. Fun and enthusiastic, under 200 words. Sign as [Your Name], [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — New Design / Nail Art Announcement</h3>
+        <p>Write a new design announcement message for my nail studio. I&#x27;m launching [design name/style — e.g., a new chrome collection / gel mosaic designs / press-on sets]. I want to: (1) describe what makes this design special, (2) explain how to book or claim one, (3) create mild scarcity if appropriate. Fun and confident, under 150 words. Sign as [Your Name / Studio Name]. Upselling Nail Art &amp; Add-Ons</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Nail Art Upsell At Booking</h3>
+        <p>Write a nail art upsell message for a client who has booked a plain gel manicure.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client [Name], Appointment [Date]. I Want To: (1) Mention A Current Nail Art Design Or</h3>
+        <p>seasonal option that would complement their booking, (2) explain how to add it (and the additional cost), (3) keep it enthusiastic not pushy. Under 100 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars That Keep Your Dms Full</h3>
+        <p>Instagram and TikTok are where nail clients discover, obsess over, and ultimately DM their next nail tech. The accounts with the fullest books post consistently across 4 pillars: nail reveals (fresh sets, nail art close-ups), process content (application, nail art creation), education (nail care tips, style explanations, myth-busting), and social proof (client photos, testimonials).</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>Write 5 Instagram captions for a nail technician specialising in [your style — e.g., minimalist nail art / gel extensions / maximalist designs]. Topics: (1) a nail set you&#x27;re most proud of this month — describe the design and the client&#x27;s reaction, (2) a common nail myth or misconception you want to correct, (3) how to make your gel manicure last longer — practical tips that show expertise, (4) your favourite design trend right now and why you love doing it, (5) a direct booking CTA with a description of what slots you have available. Each under 150 words, fun and specific. Studio name: [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Tiktok / Reel Concept Ideas</h3>
+        <p>Write 5 concept ideas for TikToks or Instagram Reels for a nail technician. Each should have: (1) a hook line for the first 2 seconds, (2) content description, (3) caption. Topics: a satisfying nail art process video, a nail care tip that sounds counterintuitive, a &#x27;what I&#x27;d never do to my nails&#x27; POV, a seasonal nail art tutorial, a before/after nail transformation. Studio: [Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Reviews &amp; Reputation</h3>
+        <p>The Review Generation System</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Prompt — Post-Appointment Review Request</h3>
+        <p>Write a post-appointment review request message for my nail studio. Client [Name] just had [service]. Send 24-48 hours after. I want to: (1) check they are happy with their nails, (2) make a warm personal ask for a Google review, (3) include the direct link. Genuine and brief, under 100 words. Sign as [Your Name / Studio Name].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 1: Inquiry &amp; No-Show System</h3>
+        <p>• Build your DM inquiry response template using Chapter 1 prompt • Write your 48-hour and 24-hour reminder messages • Build your cancellation policy communication — add to every booking confirmation</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 2: Rebooking System</h3>
+        <p>• Write rebooking reminders for your top 3 most-booked services at their optimal</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>windows • Identify lapsed clients — send the Chapter 3 win-back message to 10 of them this week • Set a reminder to offer rebooking at the end of every appointment</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Use Chapter 5 Instagram prompt to batch 10 captions in one session • Plan 3 TikToks/Reels using the Chapter 5 concepts prompt • Schedule 5 posts per week for the next 3 weeks</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Week 4: Campaign &amp; Review System</h3>
+        <p>• Plan your next seasonal nail art campaign using the Chapter 4 prompt • Set post-appointment review request as a standard 24-hour follow-up step • Identify past clients who haven&#x27;t reviewed — send personal review requests</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

@@ -1,0 +1,751 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon Brand Kit</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#b98378; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
+.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#241a1a; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#241a1a; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f3; }
+.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#241a1a; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#241a1a; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#241a1a; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #b98378; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b98378 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b98378 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for hair stylists</div>
+    </div>
+  </div>
+  <h1>Salon Brand Kit</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Hair Stylists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Salon Brand Kit</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit</h3>
+        <p>Your Complete Guide to a Consistent, Professional Salon Brand 5</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Pillars</h3>
+        <p>3 Voice tones 30+ Caption templates $197 Bundle price © 2026 · Hairstylist Complete Growth Bundle · Salon Brand Kit · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Why Your Brand Is Worth More Than Your</h3>
+        <p>Skills Two stylists can have identical technical ability. The one with a stronger brand charges more, fills their books faster, attracts better clients, and weathers slow seasons without panicking. Brand is not about logos or fonts — it is about how people feel when they interact with you, and how consistently you communicate who you are. This kit walks you through building every layer of your brand: your positioning, your voice, your visual identity guidelines, and the content templates that make showing up consistently effortless. What Is a Brand Kit? A brand kit is a reference document that captures all the decisions about how your business presents itself. When you have one, every piece of content you create — a caption, a price increase</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Email, A Job Posting, A Tiktok Script — Sounds And Looks Like It Came From The Same Place. Without</h3>
+        <p>one, you are reinventing yourself every time you post. This kit covers:</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section</h3>
+        <p>What You Will Build 1 Brand Foundation Your positioning statement, target client, and the problem you solve 2 Brand Voice Your tone, word choices, and communication style — written down so you can replicate it 3 Visual Identity Guidelines Color palette, font choices, imagery direction — even without a designer 4 Content Pillars &amp; Templates The 7 content pillars with fill-in-the-blank caption frameworks for each 5 Bio &amp; Profile Copy Ready-to-adapt copy for your Instagram bio, Google profile, and booking page</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Foundation</h3>
+        <p>Your brand foundation is the strategic layer that everything else is built on. Get this right and your voice, visuals, and content will feel coherent naturally. Step 1 — Your Positioning Statement A positioning statement is one or two sentences that capture who you serve, what you do, and what makes you different. It is not your tagline — it is the internal compass you use when making</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Decisions.</h3>
+        <p>The Formula: I help [target client] achieve [desired outcome] through [your approach/differentiator] — without [common pain point they want to avoid]. Example (fill this in for your own salon): I help busy women in their 30s and 40s get low-maintenance color that grows out beautifully — through techniques that prioritize the health of their hair, without the commitment of 6-week touch-ups. Step 2 — Your Target Client Profile Fill in each field for your ideal client. Be specific — a specific client profile produces better content than a vague one. Field Your Answer (fill in) Age Range Lifestyle What They Care About Most at a Salon Their Biggest Hair Frustration What They Do Before Booking a New Stylist Where They Spend Time Online What Would Make Them Switch Salons What Would Make Them Stay Forever</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Brands They Like / Aesthetic They Gravitate Toward Step 3 — Your Differentiators (What Makes You Different) Brainstorm 5–10 things that are true about your work or your client experience that your competitors cannot easily claim. Then circle the top 3. • Your specialization (what you do better than anyone else in your area) • Your process (how you approach consultations, services, or client relationships differently) • Your client experience (what people say about being in your chair)</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Your education or training (certifications, techniques, continuing education) • Your values (sustainability, inclusion, client empowerment, etc.) • Your personality (the intangible thing clients keep coming back for)</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Voice</h3>
+        <p>Your brand voice is how your business sounds when it speaks. It is consistent across every caption, text, email, and response to a review. Clients who love your voice will come looking for it — and it is one of the hardest things for competitors to copy. Step 1 — Choose Your 3 Voice Attributes Pick 3 adjectives from the list below that describe how you want your brand to sound. For each one, add what it means in practice and what it does NOT mean: Warm · Direct · Expert · Playful · Confident · Nurturing · Edgy · Premium · Approachable · Educational · Empowering · Honest · Witty · Calm · Energetic Voice Attribute In Practice This Means... This Does NOT Mean... Example: Warm Using first names, asking follow-up questions, writing like a text to a friend Being unprofessional, over-sharing, or losing authority Your Attribute 1: Your Attribute 2: Your Attribute 3: Step 2 — Voice Do&#x27;s and Don&#x27;ts</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Never</h3>
+        <p>Use contractions — &quot;you&#x27;re&quot;, &quot;I&#x27;m&quot;, &quot;we&#x27;ve&quot; Start captions with &quot;I&quot; (Instagram algorithm penalizes this) Write like you talk behind the chair Use corporate words: &quot;utilize&quot;, &quot;leverage&quot;, &quot;solutions&quot; Use the second person: &quot;you&quot;, &quot;your hair&quot; Over-apologize or hedge everything with qualifiers Be specific: &quot;balayage that grows out for 12 weeks&quot; not &quot;amazing color&quot; Write in passive voice: &quot;appointments are available&quot; vs. &quot;I have openings&quot; End with one clear call to action Stack multiple CTAs at the end of a post Reference specific client types or hair concerns Generic statements that could apply to any salon anywhere Step 3 — Train AI to Write in Your Voice Use this prompt in ChatGPT before writing any content. Do this once per session:</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only I am a hair stylist with a [warm / direct / expert] brand voice. Here are 3 examples of how I actually write: [paste 3 captions or texts you have already written]. Study the tone, sentence length, word choice, and personality. For the rest of this conversation, write all content in this exact voice. Confirm you understand by describing my voice in 2-3 sentences.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 3</h3>
+        <p>Visual Identity Guidelines You do not need a designer to have a consistent visual identity. You need a small set of intentional decisions made once, then followed consistently. This section helps you make those decisions. Your Color Palette (3–5 Colors) Choose 3–5 colors that represent your brand. Every graphic, Story template, and Canva design uses only these colors. Consistency is the goal — not perfection. Role Color Name Hex Code Where to Use Primary Your main brand color #______ Backgrounds, headers, primary buttons Secondary Complements your primary #______ Accents, borders, secondary elements Accent Used sparingly for contrast #______ Calls to action, highlights, key stats Neutral Light Off-white or light cream #______ Page/slide backgrounds, text boxes Neutral Dark Deep brown, navy, or black #______ Body text, dark backgrounds Sample Palette Direction by Brand Personality</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Personality</h3>
+        <p>Suggested Palette Direction Warm &amp; Approachable Terracotta, blush, cream, warm brown, gold — earthy and inviting Clean &amp; Modern White, soft gray, dusty sage, black, one warm accent — minimal and sleek Edgy &amp; Bold Deep charcoal, electric teal or coral, off-white, matte black — high contrast Luxe &amp; Premium Deep navy or black, champagne gold, ivory, bronze — rich and sophisticated Natural &amp; Organic Forest green, warm beige, terracotta, cream, soft white — earthy and grounded</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>Your Typography (2 Fonts Maximum) Choose one heading font and one body font. Use them everywhere. Two fonts is professional. Four fonts is chaos. Role Recommended Free Options (Google Fonts) Where to Use Heading Font Playfair Display / Cormorant / Libre Baskerville / Lora</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Canva Headers, Story Titles, Graphic Overlays</h3>
+        <p>Body Font Montserrat / Nunito / Work Sans / Jost Captions, body text, descriptions, labels</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Photography &amp; Imagery Direction Your photo aesthetic should be consistent. Answer these questions and you will have a photography brief you can use forever: Lighting: Natural light or warm artificial? Bright and airy or moody and dramatic? Background: Clean white/cream, salon setting, outdoor, or dark backdrop? Color grading: Warm tones, cool tones, desaturated film look, or true-to-life color? Composition: Close-up detail shots, full head, client facing forward or turned? Props &amp; Setting: Minimalist (just the hair), styled flat lays, tools in frame?</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars &amp; Caption Templates</h3>
+        <p>Your 7 content pillars define the categories of content you post. Within each pillar, these fill-in-the-blank frameworks give you a starting structure you can adapt in minutes. 1 Transformation Before/afters, reveals, dramatic changes</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>From [starting point] to [result]. This is what [service] can do when [brief expert note about technique]. Ready for yours? [CTA]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>She wanted [client goal]. Here is what we did: [brief process note]. The result? [emotional outcome].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>Not all [service types] are the same. Here is the difference technique makes. Swipe to see [before] become [after]. [CTA] 2 Educational Tips, how-tos, myth-busting, industry knowledge</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>Most people do not know this about [hair topic]. Here is what actually [works/happens/matters]: [tip]. Save this for later.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>MYTH: [common hair myth]. TRUTH: [the real answer]. Here is why it matters for your hair: [brief explanation].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>The [#] things I tell every client about [topic]: [short list]. Which one surprised you? 3 Engagement Polls, questions, hot takes, conversation starters</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>[Easy question about hair preference]? Drop your answer in the comments — I read every single one.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>Unpopular opinion: [your hot take about hair or salon culture]. Agree or disagree? I will defend this.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Tell me your hair struggle and I will tell you the one thing that would actually fix it. Go. 4 Promotional Offers, availability, services, bookings</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>I have [#] openings this week for [service]. If your hair has been on your mind — this is your sign.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>[Service] is one of my most requested appointments for a reason: [brief value prop]. Book before [date/availability closes]. [CTA]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>This month only: [offer]. Here is who it is for: [specific client type]. Here is how to book: [CTA]. 5 Behind the Scenes Process, daily life, tools, preparation</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>08</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>This is what [time] looks like before the first client walks in. [Brief description of what you do/show]. Preparation is everything.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>Here is what is actually in my kit and why I use each one. The difference between good tools and great ones is [brief insight].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>Behind every [result] is [the prep work clients never see]. Here is what went into today. 6 Testimonial</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>&quot;[Direct client quote].&quot; This is why I do this work. Thank you [first name] for trusting me. [CTA for others]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>[Client first name] came in for [service] and said [quote or paraphrase]. This is the reaction I work for every single day.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>5 stars. Again. Here is what [first name] said about their experience: [review snippet]. If you have been thinking about booking — this is your sign. [CTA] 7 Personal/Brand</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Your story, values, journey, vulnerability</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1:</h3>
+        <p>I did not get into this industry to [wrong reason]. I got into it because [real reason]. That is still what drives me every single day.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2:</h3>
+        <p>The hardest part of this job that nobody talks about: [honest truth]. Here is how I handle it.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3:</h3>
+        <p>[X] things I have learned in [X] years behind the chair that I wish someone had told me earlier: [short list].</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">11</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>09</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 5</h3>
+        <p>Bio &amp; Profile Copy Your bio is the first thing a potential client reads. It needs to communicate who you are, who you serve, and what to do next — in under 150 words. These templates give you a framework to adapt. Instagram Bio (150 characters maximum) Format: What you do | Who you do it for | Location | Call to action (link in bio) Specialist approach: Balayage specialist | Natural, lived-in color for low-maintenance women | [City] | Book below ↓ Full-service studio: Hair color + cuts for [client type] | [City], [State] | [X] years behind the chair | New clients welcome ↓ Personality-forward: [Your specialty] by appointment | I make [client type] feel like their best selves | [City] | Book your seat ↓ Google Business Profile Description (150–250 words) Structure: Who you are → What you specialize in → Who your ideal client is → What makes your experience different → How to book. [SALON NAME] is a [hair salon / suite / independent stylist] based in [CITY, STATE] spe</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Booking Page / Website About Section (100–150 Words)</h3>
+        <p>[YOUR NAME] is a [specialty] hair stylist based in [CITY] with [X] years of experience [brief description of specialty and approach]. Known for [what clients say about you most], [your name] believes that [your philosophy in one sentence]. Past clients describe the experience as [2-3 words from your best reviews]. Whether you are looking for [service 1], [service 2], or [service 3], every appointment is approached with [your value: precision, artistry, education, care]. [Your name] is currently accepting new clients. [CTA: Book online / Call to schedule / DM on Instagram].</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>10</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Salon Brand Kit</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Using AI to Finalize Your Copy Once you have filled in the templates above, use this prompt to polish them: Here is my draft bio / profile description: [PASTE YOUR DRAFT]. My brand voice is [your 3 voice attributes]. My target client is [1-2 sentences from your client profile]. Please refine this to sound more natural and on-brand, keeping it under [word count]. Do not add generic phrases like &#x27;passion for hair&#x27; or &#x27;love what I do&#x27; — make every word specific and intentional.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Hairstylist Complete Growth Bundle</h3>
+        <p>Page 14 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Your Brand Kit Completion Checklist Use this as your working document. Return to it whenever you create new content, write a bio, or train AI on your voice.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Foundation</h3>
+        <p>  Positioning statement written   Target client profile filled in (all 9 fields)   Top 3 differentiators identified</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Voice</h3>
+        <p>  3 voice attributes chosen and defined   Voice Do&#x27;s and Don&#x27;ts table completed   3 example captions saved for AI voice training Visual Identity   Primary color chosen and hex code noted   Full 3–5 color palette decided   Heading font chosen   Body font chosen   Photography direction written out   Canva brand kit created (free on Canva) with colors and fonts saved</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content Pillars</h3>
+        <p>  7 pillars understood and tagged in content plan   At least 1 template adapted per pillar to your voice   Adapted templates saved as Canva text presets or note Profile Copy   Instagram bio written and live   Google Business description written and live   Booking page about section written Once completed, this document is your brand bible. Share it with anyone who helps you create</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Content — A Va, A Social Media Helper, Or An AI Tool. The More Consistently You Reference It, The</h3>
+        <p>stronger your brand becomes.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Salon Brand Kit</span><span>11</span></div>
+</section></main></body></html>

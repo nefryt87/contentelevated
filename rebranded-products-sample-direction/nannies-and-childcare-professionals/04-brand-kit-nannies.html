@@ -1,0 +1,361 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brand Kit Nannies</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff9ef; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8c7b58 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d8caaa 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff9ef 94%,white), color-mix(in srgb,#fff9ef 86%,#8c7b58)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#8c7b58; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8c7b58 32%,transparent); border-radius:999px; color:#8c7b58; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#8c7b58; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8c7b58 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8c7b58 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#8c7b58 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8c7b58 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8c7b58 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8c7b58 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8c7b58 32%,transparent); }
+.metric b { display:block; color:#8c7b58; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#211b13; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8c7b58 18%,transparent), transparent 2in), linear-gradient(135deg, #211b13, color-mix(in srgb,#211b13 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#8c7b58; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8c7b58 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8c7b58 56%,transparent); color:#8c7b58; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8c7b58 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8c7b58 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff9ef; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#211b13; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#211b13; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8c7b58; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff9ef; }
+.layout-protocol .work { background:#fbfbf5; color:#211b13; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8c7b58 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#211b13; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#211b13; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8c7b58 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#211b13; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8c7b58 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#211b13; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #8c7b58; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8c7b58 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8c7b58 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-cards"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you brand kit for nannies &amp; childcare professionals</div>
+    </div>
+  </div>
+  <h1>Brand Kit Nannies</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Care</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Nannies &amp; Childcare Professionals product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Brand Kit Nannies</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit Nannies</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Brand Kit + Professional Profile Guide</h3>
+        <p>Two signature palettes, warm-professional typography, 7 Canva and platform template strategies, and a 7-day profile launch checklist</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>You Shortlisted</h3>
+        <p>Families shortlist nannies based on their profile, their photo, and the first impression of their communication before they ever have a conversation. A polished, warm, and consistent professional presence — on platforms, on LinkedIn, and in your written materials — communicates the same qualities that make a great nanny: care, organisation, warmth, and professionalism. This kit gives you two palettes, typography pairings, and template strategies built specifically for nannies and childcare professionals.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1: Warm Professional</h3>
+        <p>For nannies positioning at the warm, trusted, family-focused end. Think plum, gold, and the feeling of someone you would immediately trust with your children.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 1 Usage</h3>
+        <p>• Soft Plum (#3A2A5C): logo, headlines, primary text — sophisticated and trustworthy • Warm Gold (#C9922A): accent for CTAs, certification highlights, key credential callouts • Lavender Mist (#C8C0E0): backgrounds for graphics, story templates, profile headers • Warm White (#F8F5FF): all backgrounds — soft and premium</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit Nannies</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit Nannies</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>HEADINGS: Nunito Bold — friendly, rounded, warm. Approachable but professional. BODY: Open Sans — clean and readable across all platforms and sizes. ACCENT: Nunito ExtraBold — for credentials callouts, availability notices, key information.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2: Clean Modern</h3>
+        <p>For nannies with a cleaner, more contemporary professional positioning — particularly suited for those targeting high-profile or corporate families.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Palette 2 Usage</h3>
+        <p>• Deep Teal (#1A4A5C): logo, primary text, professional graphic elements • Warm Sand (#C8A878): accent — warm, trusted, premium • Soft Grey (#F0EEE8): backgrounds for graphics and documents • White (#FFFFFF): primary backgrounds — clean and modern</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Typography</h3>
+        <p>HEADINGS: Libre Baskerville — authoritative and warm. Professional and trustworthy. BODY: Lato — clean and professional. Used across LinkedIn, profile platforms, and print materials. ACCENT: Libre Baskerville Italic — for testimonial quotes, certification descriptions, personal taglines.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 1: Linkedin Profile Banner</h3>
+        <p>Search &#x27;LinkedIn banner childcare professional&#x27; or &#x27;nanny LinkedIn cover&#x27;. 1584×396px. A warm, professional photo of you (with children if consented) or a clean graphic. Your name, your speciality (&#x27;Professional Nanny | Early Childhood Specialist | [City]&#x27;), and</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit Nannies</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit Nannies</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>your key certifications. Every parent or agency who visits your LinkedIn sees this first — make it professional, warm, and immediately credible.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 2: Nanny Cv / Profile Document</h3>
+        <p>Search &#x27;nanny CV template&#x27; or &#x27;childcare professional resume&#x27;. Clean, warm layout. Your photo (professional, warm). Your name and contact. Your summary (use your platform bio). Experience (reverse chronological, with ages of children cared for). Qualifications and certifications. References available on request. Keep to 1-2 pages — concise and readable. Update it every 6 months.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 3: Credential / Certification Graphic</h3>
+        <p>Search &#x27;certification badge Instagram&#x27; or &#x27;professional credentials post&#x27;. A clean graphic featuring your key credentials: &#x27;First Aid Certified&#x27;, &#x27;DBS Cleared&#x27;, &#x27;Paediatric CPR&#x27;, &#x27;[X] Years Experience&#x27;. Your name. Use as a pinned Instagram post, on your LinkedIn, and in your platform profile. Parents scan this type of content quickly — make it visually easy to read.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 4: Activity Idea Post</h3>
+        <p>Search &#x27;children activity Instagram&#x27; or &#x27;parenting tip post&#x27;. A clean, engaging graphic: &#x27;[Age] Activity: [Activity Name]&#x27; with a brief description. Your name or handle. Post these regularly — parents save them, share them, and remember the professional who consistently provides value. Positions you as an expert, not just a carer.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 5: Testimonial / Reference Graphic</h3>
+        <p>Search &#x27;professional testimonial Instagram&#x27; or &#x27;nanny review post&#x27;. Feature a specific, warm quote from a past family (with their permission). Their first name and children&#x27;s ages (optional). Your name. These are your most powerful trust signals — post every new reference or testimonial you receive. Parents trust other parents more than any other marketing.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 6: Availability Announcement</h3>
+        <p>Search &#x27;professional available post&#x27; or &#x27;nanny available LinkedIn&#x27;. Clean graphic: &#x27;NOW AVAILABLE: [Role Type] in [Area] from [Date]&#x27;. Your key credentials (experience level, certifications, DBS). Your contact details. Post this on LinkedIn, Instagram, and update your platform profile simultaneously every time you open for new inquiries.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit Nannies</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Brand Kit</p><h2>Brand Kit Nannies</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template 7: Instagram Story — Daily Dispatch</h3>
+        <p>Search &#x27;daily update story template&#x27; or &#x27;professional story&#x27;. Vertical. Your name or business name small at top. &#x27;Today&#x27;s adventures:&#x27; with a safe, consent-appropriate image or graphic (no identifiable children unless fully consented). A warm caption. Post daily when working — parents of prospective clients follow nannies to see their day-to-</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Checklist</h3>
+        <p>✓ Day 1: Choose your palette. Arrange a professional headshot if your current photo is not warm and current. ✓ Day 2: Rewrite your Care.com / UrbanSitter / Sittercity profile using the bio from</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3 Of Doc 1.</h3>
+        <p>✓ Day 3: Update your LinkedIn — new headline, new summary (Chapter 5 prompt from Doc 1), and your new banner (Template 1). ✓ Day 4: Create your credential graphic using Template 3 — add to Instagram, LinkedIn, and your platform profile. ✓ Day 5: Create 5 activity idea posts using Template 4 — schedule one per week for 5 weeks. ✓ Day 6: Request written references from 2-3 past families using the Chapter 3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template From Doc 3.</h3>
+        <p>✓ Day 7: Post your availability announcement using Template 6 — LinkedIn, Instagram, and update all platform statuses. ✓ [A professional, consistent online presence does not guarantee the right family — but it gets you in front of them. Families are making a high-trust decision and your professional presentation is the first signal they use to decide who to shortlist.]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Brand Kit Nannies</span><span>06</span></div>
+</section></main></body></html>

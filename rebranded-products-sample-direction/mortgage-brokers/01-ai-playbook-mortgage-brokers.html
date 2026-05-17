@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8f7f1; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#637b8c 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c4b99f 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#f8f7f1 94%,white), color-mix(in srgb,#f8f7f1 86%,#637b8c)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#637b8c; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#637b8c 32%,transparent); border-radius:999px; color:#637b8c; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#637b8c; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#637b8c 38%,transparent); border-bottom:1px solid color-mix(in srgb,#637b8c 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#637b8c 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#637b8c 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#637b8c 52%,transparent); border-bottom:1px solid color-mix(in srgb,#637b8c 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#637b8c 32%,transparent); }
+.metric b { display:block; color:#637b8c; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#171d22; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#637b8c 18%,transparent), transparent 2in), linear-gradient(135deg, #171d22, color-mix(in srgb,#171d22 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#637b8c; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#637b8c 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#637b8c 56%,transparent); color:#637b8c; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#637b8c 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#637b8c 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#f8f7f1; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#171d22; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#171d22; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #637b8c; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#f8f7f1; }
+.layout-protocol .work { background:#fbfbf5; color:#171d22; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#637b8c 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#171d22; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#171d22; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#637b8c 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#171d22; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#637b8c 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#171d22; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #637b8c; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#637b8c 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#637b8c 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-ledger"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for mortgage brokers</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Lending</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Mortgage Brokers product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Close More Loans, Build A Referral Engine,</h3>
+        <p>and Reclaim Your Week Using AI A Complete Guide for Mortgage Brokers &amp; Loan Officers</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>What&#x27;S Inside</h3>
+        <p>1. Chapter 1: Why AI Is the Mortgage Broker&#x27;s Unfair Advantage 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Automating Lead Nurture From First Touch to Clear to Close 4. Chapter 4: Realtor Relationship Building at Scale 5. Chapter 5: Social Media Content Without the Time Commitment 6. Chapter 6: Your 30-Day AI Implementation Plan 7. BONUS: AI Prompt Cheat Sheet for Mortgage Brokers</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Mortgage Broker&#x27;S</h3>
+        <p>Unfair Advantage The average loan officer juggles 30–50 active files at once while simultaneously nurturing leads, maintaining realtor relationships, and trying to stay visible online. Something always gets dropped. AI doesn&#x27;t close loans — but it handles every task that prevents you from focusing on the ones that do. • The Pipeline Problem: Why most brokers are either feast or famine — and how consistent AI-powered nurture eliminates the dry spells. • The Realtor Relationship Gap: Most LOs say relationships are their #1 source of business — but have no system for actually maintaining them. AI fixes that. • The Response Time Advantage: Studies show responding to a lead within 5 minutes increases conversion by 900%. AI-assisted templates let you respond faster without sacrificing quality. • What AI Handles vs. What You Handle: AI writes, follows up, and nurtures. You advise, build trust, and close. Never confuse the two.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+        <p>Start here. These three quick wins will save you hours in your first week and show you exactly what AI can do for your business. • Win #1 — Pre-Approval Follow-Up: Use AI to write a personalized 5-email</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>sequence for every pre-approval application. Set it and forget it. Never let a warm lead go cold again. • Win #2 — Realtor Check-In Emails: Stop waiting to have something &#x27;worth sharing&#x27; before reaching out to your realtor partners. Use AI to write a weekly market update or rate alert email in under 3 minutes. • Win #3 — Condition Request Emails: Every file has conditions. Writing clear, professional, non-intimidating condition request emails to borrowers is a daily time drain. AI does this in 60 seconds.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Automating Lead Nurture From First</h3>
+        <p>Touch to Clear to Close The mortgage journey from first inquiry to closing can take 30–90 days. Most brokers touch their leads 1–2 times. The ones writing big numbers touch them 8–12 times. AI makes consistent nurture effortless. • The 6-Stage Nurture Framework: Inquiry → Pre-Qual → Application → Processing → Approval → Closing. Each stage needs specific communication. Templates for all 6 are in your Email Pack. • The Not-Ready Lead System: 60% of mortgage leads aren&#x27;t ready to buy for 3– 18 months. AI helps you stay in front of them with monthly value touches — so when they&#x27;re ready, they call you. • Credit Repair Nurture: For leads who don&#x27;t qualify yet, AI writes a 90-day credit improvement check-in sequence that positions you as their advisor — and earns you the deal when they&#x27;re ready. • Closing Day and Beyond: The closing isn&#x27;t the end of the relationship. AI helps you write post-close check-ins, 1-year anniversary emails, and refinance opportunity alerts that</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 4: Realtor Relationship Building At Scale</h3>
+        <p>Realtors are your most valuable referral source — but they have 10 LOs competing for their attention. The ones who win stay visible, add value consistently, and make realtors&#x27; lives easier. AI lets you do all three at scale. • The Weekly Realtor Touch: A short, valuable weekly email to your realtor partners — market rate update, new program alert, or relevant industry news. Takes 3 minutes with AI. Builds top-of-mind awareness over months.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• The New Realtor Outreach Sequence: AI-written 4-message sequence for newly licensed realtors in your market — the best time to form a partnership before they&#x27;ve committed to another LO. • Co-Marketing Content: Use AI to write social media captions and email content that realtors can share — making you easy to refer and keeping your name in front of their clients. • The Closed Deal Thank-You System: Every closed deal with a realtor referral should get a personalized thank-you. AI writes these in 30 seconds. Small touch, massive relationship ROI.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Social Media Content Without The</h3>
+        <p>Time Commitment Loan officers who show up consistently online get inbound leads. Realtors refer LOs they&#x27;ve seen posting credible, helpful content. You don&#x27;t need to post every day — you need to post the right things consistently. • The 3-Post Formula: One educational post (rate/market/product insight), one trust post (client story, behind the scenes, your process), one engagement post (question, poll, myth-bust). Rotate weekly. • Topics That Build Credibility: Rate updates and what they actually mean, first- time buyer myths, down payment assistance programs, credit score tips, self- employed borrower guidance, market timing insights. • Batch Creating in 30 Minutes: Use AI to generate a full month of captions in one Sunday session. Exact prompts included in your prompt cheat sheet. • Reels and Video Scripts: Short-form video is the highest-reach format on every platform. AI writes your 30-60 second scripts — you just record and post.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Your 30-Day AI Implementation Plan</h3>
+        <p>Implementation beats information. This 30-day plan gets you from reading to results without overwhelming your existing workflow. • Week 1 — Email Foundation: Set up Claude or ChatGPT. Write your first 10 borrower emails using AI. Build your pre-approval follow-up sequence. • Week 2 — Realtor System: Build your weekly realtor touch template. Write your new realtor outreach sequence. Identify 10 realtors to send it to.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Week 3 — Social Content: Create 2 weeks of posts using your 90-Day Calendar. Batch captions using the monthly AI prompt. Schedule using Facebook Creator Studio (free). • Week 4 — Optimize &amp; Systematize: Review response rates on your emails. Identify your top 3 AI use cases. Build a monthly rhythm you can sustain.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bonus: AI Prompt Cheat Sheet For Mortgage</h3>
+        <p>Brokers Copy and paste these prompts into Claude or ChatGPT. Replace [brackets] with your details. Lead Nurture Prompts Write a 5-email follow-up sequence for a lead named [Name] who submitted a pre-approval inquiry for a [purchase/refinance] loan of approximately $[Amount]. They haven&#x27;t responded to my first call. Space emails over 21 days. Tone: helpful, not pushy. Sign as [Your Name], [Company]. Write a 90-day check-in sequence (monthly touches) for a lead who wants to buy but needs 6 more months to save their down payment. Each email should provide one piece of genuinely useful advice for first-time buyers. Sign as [Your Name]. Realtor Relationship Prompts Write a short weekly market update email I can send to my realtor partners. This week&#x27;s key point: [rate movement or market note]. Keep it under 100 words, professional but conversational, and end with one insight they can share with their clients. Sign as [Your Name], [NMLS#], [Company]. Write a 4-message out</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Media Prompts</h3>
+        <p>Write 5 educational social media posts for a mortgage broker. Topics: how credit scores affect your rate, what &#x27;clear to close&#x27; actually means, 3 myths about down payments, when to lock your rate, and self-employed borrower tips. Each post under 150 words. End each with a question or CTA. The brokers who communicate best win the most business. AI makes communication consistent. Consistency builds trust. Trust closes loans.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section></main></body></html>

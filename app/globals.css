@@ -467,6 +467,50 @@ a:hover .brand-logo {
   transform: translateX(130%);
 }
 
+@media (hover: none), (pointer: coarse) {
+  .luxe-card,
+  .premium-edge,
+  .category-card {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .luxe-card:hover::before,
+  .premium-edge:hover::after,
+  .category-card:hover::before {
+    opacity: 0 !important;
+  }
+
+  .category-card:hover::after {
+    opacity: 0.24 !important;
+  }
+
+  .category-card:hover .category-card__glow,
+  .category-card:hover .category-card__line {
+    opacity: 0 !important;
+  }
+
+  .category-card:hover .category-card__line {
+    transform: scaleX(0.2) !important;
+  }
+
+  .category-card:hover .category-card__number,
+  .category-card:hover .category-card__count {
+    color: #8bd7ff !important;
+  }
+
+  .group:hover .luxe-sheen,
+  .group:hover .shine {
+    opacity: 0 !important;
+    transform: translateX(-145%) !important;
+  }
+
+  .group:hover img,
+  .group:hover svg {
+    transform: none !important;
+  }
+}
+
 .ai-scan {
   position: absolute;
   inset: 0;

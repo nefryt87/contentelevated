@@ -1,0 +1,367 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfcf3; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6f9274 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c8d7b9 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fbfcf3 94%,white), color-mix(in srgb,#fbfcf3 86%,#6f9274)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#6f9274; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6f9274 32%,transparent); border-radius:999px; color:#6f9274; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#6f9274; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6f9274 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6f9274 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#6f9274 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6f9274 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6f9274 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6f9274 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6f9274 32%,transparent); }
+.metric b { display:block; color:#6f9274; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#182218; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6f9274 18%,transparent), transparent 2in), linear-gradient(135deg, #182218, color-mix(in srgb,#182218 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#6f9274; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6f9274 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6f9274 56%,transparent); color:#6f9274; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6f9274 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6f9274 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fbfcf3; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#182218; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#182218; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6f9274; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fbfcf3; }
+.layout-protocol .work { background:#fbfbf5; color:#182218; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6f9274 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#182218; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#182218; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6f9274 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#182218; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6f9274 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#182218; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #6f9274; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6f9274 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6f9274 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-protocol"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you ai playbook for nutritionists</div>
+    </div>
+  </div>
+  <h1><em>AI</em> Playbook</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>Nutrition</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Nutritionists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Fill Your Client Roster, Improve Outcomes,</h3>
+        <p>and Build a Thriving Nutrition Practice Using AI A Complete Guide for Registered Dietitians, Nutritionists &amp; Nutrition Coaches</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>What&#x27;S Inside</h3>
+        <p>1. Chapter 1: Why AI Is the Nutrition Professional&#x27;s Competitive Edge 2. Chapter 2: Your First 3 AI Wins — This Week 3. Chapter 3: Filling Your Client Roster With the Right People 4. Chapter 4: Keeping Clients Engaged and On Track Between Sessions 5. Chapter 5: Meal Planning and Education Content at Scale 6. Chapter 6: Building Your Referral Network With Healthcare Providers 7. Chapter 7: Social Content That Educates and Attracts Clients 8. Chapter 8: Your 30-Day AI Implementation Plan 9. BONUS: AI Prompt Cheat Sheet for Nutrition Professionals</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 1: Why AI Is The Nutrition Professional&#x27;S</h3>
+        <p>Competitive Edge The nutrition and dietetics space has never been more crowded — or more in demand. More people than ever are seeking qualified guidance on eating for health, performance, and disease management. The practitioners winning in this environment aren&#x27;t just the most credentialed. They&#x27;re the most responsive, the most consistent, and the most visible. AI makes all three effortless. • The Consistency Gap: Clients who hear from their nutritionist or dietitian between sessions stay on track longer, achieve better outcomes, and renew their packages at far higher rates. Most practitioners have no system for this. AI builds one in an afternoon. • The Content Opportunity: Nutrition is one of the highest-engagement content categories on every social platform. The practitioners who show up consistently online attract inbound clients who arrive pre-sold on their approach. AI makes consistent posting effortless. • The Referral Blind Spot: GPs, endocrinologists, gast</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• What AI Does vs. What You Do: AI educates, follows up, creates content, and reaches out. You assess, counsel, and build the therapeutic relationship. The boundary matters — especially in a regulated field.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 2: Your First 3 AI Wins — This Week</h3>
+        <p>Start here. Three quick wins — each under an hour to implement — that will immediately impact your practice. • Win #1 — Inquiry Response System: Use AI to write a warm, detailed response to new inquiries that answers the most common questions, explains your approach, and invites a discovery call — all in one message. Response time is one of the biggest factors in converting inquiries to clients. • Win #2 — Weekly Client Check-In: AI writes personalized weekly check-in messages for every active client in under 5 minutes. Ask about adherence, energy, challenges. Clients feel supported. Drop-off rates fall. Outcomes improve. • Win #3 — Meal Plan Companion Email: Every meal plan you send should be accompanied by an AI-written companion email that explains the rationale, anticipates common questions, and offers encouragement. Clients follow plans better when they understand them.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 3: Filling Your Client Roster With The</h3>
+        <p>Right People A full client roster starts with a clear message about who you help and a system for following up with every inquiry. AI gives you both. • Niche Clarity Messaging: The most successful nutrition practitioners are clearly positioned — weight loss for women over 40, sports nutrition for endurance athletes, gut health and IBS, diabetes management, pediatric nutrition. AI helps you write messaging that speaks directly to your ideal client. • The Discovery Call Sequence: A 3-message sequence from inquiry to booked discovery call — warm response, value-add follow-up, and soft urgency close. Most practitioners follow up once. This system follows up three times without feeling pushy. • Post-Discovery Call Conversion: After a discovery call, AI writes a personalized follow-up that recaps the client&#x27;s goals, outlines your approach, and proposes the right package — making saying yes feel like the obvious next step.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• The Re-Inquiry Nurture: For people who inquired but never booked, AI writes a 90-day nurture sequence — monthly educational touchpoints that keep you top of mind until they&#x27;re ready. • Package Renewal Conversion: When a package is ending, AI writes a natural renewal email that recaps the client&#x27;s progress, frames what the next phase looks like, and makes continuing feel like momentum — not a sales pitch.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 4: Keeping Clients Engaged And On</h3>
+        <p>Track Between Sessions The gap between sessions is where most clients struggle — and where most practitioners lose them. AI keeps you present in your clients&#x27; lives without demanding more of your time. • The Weekly Check-In System: A brief, personalized message every week asking about adherence, energy, hunger levels, and any challenges. Takes 2 minutes with AI per client. Clients feel accountable and supported. Completion rates go up. • The Plateau Handler: When a client&#x27;s progress stalls, most practitioners wait for the next session to address it. AI writes a proactive mid-week message that reframes the plateau, adjusts expectations, and keeps motivation high. • Milestone Celebrations: First week of consistent meal prep. First A1C improvement. First athletic PR after a nutrition overhaul. AI writes a personalized celebration message for every meaningful win — clients share these. You get free referrals. • The Non-Adherence Recovery: When a client goes quiet or adm</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 5: Meal Planning And Education Content</h3>
+        <p>at Scale Meal plans are your core deliverable — but writing the educational content that makes them work takes hours. AI accelerates every part of this without replacing your clinical judgment.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>• Meal Plan Companion Emails: Every meal plan needs context — why these foods, what the macro targets mean, how to handle substitutions, what to do when they go off-plan. AI writes this companion content in minutes, not hours. • Condition-Specific Education Emails: For clients managing diabetes, PCOS, IBS, hypothyroidism, or other conditions, AI writes a monthly educational email series that deepens understanding and strengthens compliance. • Recipe and Substitution Guides: AI generates client-facing recipe explanations, ingredient substitution guides, and cooking tips in your voice — personalized to each client&#x27;s preferences, restrictions, and skill level. • Group Program Content: If you run group programs or courses, AI writes the educational emails, check-in messages, and lesson summaries that keep participants engaged through the full program.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 6: Building Your Referral Network With</h3>
+        <p>Healthcare Providers A single referring GP or endocrinologist can send you 5–20 clients per year. Most nutrition professionals never systematically build these relationships. AI makes the outreach easy and the follow-through consistent. • The Healthcare Provider Introduction: AI writes a concise, professional</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Introduction Email To Gps, Specialists, And Allied Health Providers In Your Area —</h3>
+        <p>positioning you as a clinical resource, not a competitor. • The Monthly Value Touch: Once a relationship is established, AI writes a monthly email to your referral partners — a relevant research update, a clinical insight, or a patient education resource they can share. Keeps you top of mind without being salesy. • Personal Trainer &amp; Gym Partnerships: Personal trainers refer nutrition clients constantly. AI writes a peer-to-peer outreach message and a mutual referral proposal that most trainers are genuinely excited to respond to. • The Referral Thank-You: Every referral deserves a personal thank-you. AI writes a warm, specific thank-you message that strengthens the relationship and makes the referrer feel appreciated — and more likely to refer again.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 7: Social Content That Educates And</h3>
+        <p>Attracts Clients Nutrition is one of the most shareable content categories online. The practitioners who show up consistently attract inbound clients who already trust their approach before the first session. AI makes that consistency achievable alongside a full client load. • The 3-Post Formula: One educational post (nutrition science, myth-bust, practical tip), one trust post (client win, your story, behind the scenes), one engagement post (question, poll, seasonal content). Post Mon/Wed/Fri. • High-Converting Topic Categories: Protein and satiety, gut health and the microbiome, blood sugar and energy, intuitive eating vs. tracking, nutrition for hormones, dieting myths, meal prep for busy people, nutrition for specific conditions. • Ethical Client Story Content: Transformation content works — but must be handled carefully. AI helps you write client story captions that celebrate the process and outcomes without focusing solely on appearance or weight. • Batch Crea</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Chapter 8: Your 30-Day AI Implementation Plan</h3>
+        <p>One system at a time. This plan gets you from reading to results in 30 days without disrupting your client sessions. • Week 1 — Client Communication Foundation: Set up Claude or ChatGPT. Write your inquiry response template. Build your weekly check-in message. Create your meal plan companion email template. • Week 2 — Retention System: Write your plateau handler. Build your milestone celebration messages for 5 common wins. Create your package renewal email. • Week 3 — Referral Network: Write your healthcare provider introduction email. Draft outreach to 5 GPs or specialists in your area. Write your personal trainer</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Partnership Proposal.</h3>
+        <p>• Week 4 — Social Content: Create 2 weeks of posts using your 90-Day Calendar. Batch captions with the monthly AI prompt. Schedule Mon/Wed/Fri.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Bonus: AI Prompt Cheat Sheet For Nutrition</h3>
+        <p>Professionals Copy and paste these into Claude or ChatGPT. Replace [brackets] with your client details.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Client Communication Prompts</h3>
+        <p>Write a weekly check-in message for my nutrition client [Name] who is working on [goal — e.g., weight loss / blood sugar management / gut health / sports performance]. They had their last session [X days ago]. Ask about their adherence to the meal plan, energy levels, any challenges, and one thing they&#x27;re proud of this week. Keep it under 80 words, warm and supportive. Write a meal plan companion email for my client [Name] who just received their [week number] meal plan focused on [key nutrition goal]. Explain the rationale behind the macro targets, highlight 2–3 key foods and why they&#x27;re included, address the most common question clients have about this type of plan, and end with an encouraging note. Keep it under 250 words. Lead Conversion &amp; Referral Prompts Write a post-discovery call follow-up email for a potential client named [Name] who wants to [goal]. In the call they mentioned [2–3 key details from the conversation]. Propose my [package name] as the right f</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Social Media Prompts</h3>
+        <p>Write 5 educational social media captions for a registered dietitian / nutritionist. Topics: the truth about detox diets, why protein matters more than most people think, what the Mediterranean diet actually involves, how to read a nutrition label properly, and the link between gut health and mood. Each under 150 words, conversational, ends with a question or CTA. Business: [Your Name / Practice Name]. Food is medicine. Your communication is the prescription. AI makes sure every client gets the support they need to actually follow it.</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section></main></body></html>

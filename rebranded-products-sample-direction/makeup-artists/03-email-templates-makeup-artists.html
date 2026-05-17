@@ -1,0 +1,331 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+.book { width:8.5in; margin:0 auto; }
+.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f5; }
+.page:before { content:""; position:absolute; inset:0; background:
+  radial-gradient(circle at 82% 14%, color-mix(in srgb,#ba7b83 24%,transparent), transparent 2.35in),
+  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b7ac 20%,transparent), transparent 2.55in),
+  linear-gradient(135deg, color-mix(in srgb,#fff7f5 94%,white), color-mix(in srgb,#fff7f5 86%,#ba7b83)); pointer-events:none; }
+.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
+.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
+.brand-stack { display:grid; gap:8px; }
+.brand-line { color:#121415; letter-spacing:.26em; }
+.doc-label { color:#ba7b83; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
+.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#ba7b83 32%,transparent); border-radius:999px; color:#ba7b83; background:rgba(255,255,255,.38); }
+h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
+.gold { color:#ba7b83; }
+.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
+.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#ba7b83 38%,transparent); border-bottom:1px solid color-mix(in srgb,#ba7b83 22%,transparent); background:
+  linear-gradient(90deg, transparent, color-mix(in srgb,#ba7b83 11%,transparent), transparent),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
+  opacity:.7; }
+.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#ba7b83 16%,transparent); border-left:0; border-right:0; }
+.motif { display:none; }
+.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#ba7b83 52%,transparent); border-bottom:1px solid color-mix(in srgb,#ba7b83 32%,transparent); }
+.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#ba7b83 32%,transparent); }
+.metric b { display:block; color:#ba7b83; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
+.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.work { background:#24191b; color:#f8f3e9; }
+.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#ba7b83 18%,transparent), transparent 2in), linear-gradient(135deg, #24191b, color-mix(in srgb,#24191b 78%,black)); }
+.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
+.eyebrow { margin:0 0 10px; color:#ba7b83; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
+h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
+.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
+.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
+.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#ba7b83 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#ba7b83 56%,transparent); color:#ba7b83; font-family:Georgia,serif; font-size:14px; }
+h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
+.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
+.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#ba7b83 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#ba7b83 12%,transparent),rgba(255,255,255,.025)); }
+.cta h2 { font-size:34px; }
+
+/* Distinct niche systems */
+.layout-ledger .cover-linework { display:none; }
+.layout-ledger .cover { background:#fff7f5; }
+.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
+.layout-ledger .work { background:#f7f6ef; color:#24191b; }
+.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
+.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
+.layout-ledger h3 { color:#24191b; }
+.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #ba7b83; }
+
+.layout-protocol .cover-linework { display:none; }
+.layout-protocol .cover { background:#fff7f5; }
+.layout-protocol .work { background:#fbfbf5; color:#24191b; }
+.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#ba7b83 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
+.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
+.layout-protocol h3 { color:#24191b; }
+.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-protocol .prompt-card:first-child { grid-column:span 2; }
+.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+
+.layout-editorial .cover-linework { display:none; }
+.layout-editorial .work { background:#141111; }
+.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-editorial .prompt-card:first-child { grid-column:span 2; }
+.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+
+.layout-field .cover-linework { display:none; }
+.layout-field .cover { background:#24191b; }
+.layout-field .metrics { right:.58in; }
+.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+
+.layout-performance .cover-linework { display:none; }
+.layout-performance .cover { background:#050707; }
+.layout-performance h1 { max-width:6.25in; font-size:82px; }
+.layout-performance .prompt-grid { grid-template-columns:1fr; }
+.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#ba7b83 14%,transparent)); }
+.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+
+.layout-dark-shop .cover-linework { display:none; }
+.layout-dark-shop .cover { background:#060504; }
+.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+
+.layout-commerce .cover-linework { display:none; }
+.layout-commerce .cover { background:#f8fbf9; }
+.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
+.layout-commerce .work { background:#f8fbf9; color:#24191b; }
+.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#ba7b83 8%,white)); }
+.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
+.layout-commerce h3 { color:#24191b; }
+.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+
+.layout-cards .cover-linework { display:none; }
+.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
+.layout-cards .prompt-card { border-radius:24px; }
+@media print { body { background:white; } .book { margin:0; } }
+
+.direction-page .section-head { margin-top: .18in; }
+.direction-page .prompt-grid { margin-top: .32in; }
+.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
+.direction-page .prompt-card p { font-size: 9.3px; }
+.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
+.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
+.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
+.direction-page .section-label { margin: 10px 0 4px; color: #ba7b83; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
+.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
+.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#ba7b83 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#ba7b83 10%,transparent),transparent 70%); }
+</style></head><body><main class="book layout-editorial"><section class="page cover">
+  <div class="brand">
+    <div class="brand-stack">
+      <div class="brand-line">CONTENT ELEVATED</div>
+      <div class="doc-label">Done-for-you templates for makeup artists</div>
+    </div>
+  </div>
+  <h1>Email Templates</h1>
+  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
+  <div class="metrics">
+    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
+    <div class="metric"><b>02</b><span>Designed for<br/>MUA</span></div>
+    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  </div>
+  <div class="footer"><span>Makeup Artists product file</span><span>01</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
+    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+  </div>
+  <div class="prompt-grid">
+    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
+    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
+    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  </div>
+  <div class="footer"><span>Email Templates</span><span>02</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Template Pack</h3>
+        <p>22 done-for-you templates for every stage of the client journey Inquiries • Bridal booking • Retention • Reviews • Vendor partnerships</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>How To Use These Templates</h3>
+        <p>• Replace all [brackets] with your client&#x27;s name, event, and your business details. • Keep the tone warm, professional, and excited — clients want to feel special, not processed. • Works as email, DM, and SMS — shorten to 2–3 sentences for text messages. • Always personalize the first line using AI — 30 seconds, huge difference in response rate.</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 1: Inquiry &amp; Booking</h3>
+        <p>Inquiry Response — Same Day</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Re: Your Makeup Inquiry — [Your Name]</h3>
+        <p>BODY Hi [First Name], Thank you so much for reaching out — I&#x27;m thrilled you&#x27;re considering me for [event type]! Here&#x27;s a quick overview: - Services: [list key services] - Investment: Starting from $[amount] for [service] - Availability: I&#x27;m currently [available/checking] for [date/season] I&#x27;d love to learn more about your vision. Would you like to book a quick consultation call or shall I send over my full pricing guide? [Your Name] | [Business Name] | [Instagram Handle] Bridal Inquiry Follow-Up — Day 3</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Your Wedding Makeup — A Few Things Worth Knowing</h3>
+        <p>BODY Hi [First Name], Just following up on my previous message — I wanted to share a couple of things that might be helpful as you&#x27;re choosing your makeup artist: [One genuine value point — e.g., &#x27;I specialize in long-wear bridal looks that photograph beautifully both in natural and flash photography.&#x27; / &#x27;All my bridal packages include a full trial so you know exactly what to expect on the day.&#x27;] I&#x27;d love to be part of your wedding day. Are you free for a quick call this week? [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>03</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject You&#x27;Re Booked — So Excited For [Event], [First Name]!</h3>
+        <p>BODY Hi [First Name], Wonderful news — your booking is confirmed! Here are your details: Date: [Date] Time: [Time] Location: [Location or &#x27;I&#x27;ll come to you&#x27;] Service: [Service booked] Deposit paid: $[Amount] ✓ Remaining balance: $[Amount] due [when] A few things to note before your appointment: [link to prep guide or include prep tips] If anything changes or you have questions before then, please don&#x27;t hesitate to reach out. I cannot wait to make you feel incredible! [Your Name] | [Business Name] | [Phone] Pre-Appointment Prep Email</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject How To Prep For Your Appointment — [First Name]</h3>
+        <p>BODY Hi [First Name], Your [bridal trial / appointment] is coming up on [Date] at [Time] — I&#x27;m so excited! To help us get the most out of our time together, here&#x27;s how to prepare: - Moisturize well the night before and morning of (no heavy serums right before) - Come with a clean, product-free face - Wear a front-opening top or button-down - Bring any inspo photos you love - If you have any skin sensitivities or allergies, please let me know in advance See you soon — this is going to be beautiful. [Your Name] Post-Appointment Follow-Up</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject How Did Everything Go, [First Name]?</h3>
+        <p>BODY Hi [First Name], I&#x27;ve been thinking about you since [your appointment / your big day] — I hope everything went absolutely perfectly! I&#x27;d love to know how it all went and whether you were happy with your look. If you have a moment, a review on [Google / Instagram / The Knot] means the world to me — it helps other brides and clients find me. Here&#x27;s the link: [link] And if you have any friends or family getting married or celebrating a special occasion, I&#x27;d be honoured if you sent them my way. Thank you for trusting me with such an important moment. [Your Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Section 2: Retention &amp; Re-Engagement</h3>
+        <p>Past Client Win-Back — 6 Months</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>04</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject It&#x27;S Been A While — Checking In, [First Name]</h3>
+        <p>BODY Hi [First Name], It&#x27;s been a little while and I just wanted to pop in and say hi! With [season / upcoming event] coming up, I&#x27;d love to help you get glam again if you have anything special on the horizon. I&#x27;m currently booking for [dates/season] — reply here or grab a slot at [booking link]. [Your Name] | [Business Name] Anniversary Touch — 1 Year Post Wedding</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Happy 1St Anniversary, [First Name]!</h3>
+        <p>BODY Hi [First Name], One year ago today — can you believe it?! I still think about [something specific from their wedding day — their look, a moment, their reaction]. Wishing you and [partner&#x27;s name] the most beautiful anniversary. If you ever need a glam refresh, anniversary portraits, or have a friend who&#x27;s getting married, I&#x27;d love to be your go-to. With love, [Your Name] Seasonal Booking Outreach</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Glam Season Is Coming — Are You Ready, [First Name]?</h3>
+        <p>BODY Hi [First Name], [Season] is just around the corner and I&#x27;m already booking up for [holiday parties / prom / NYE / weddings]. I wanted to reach out to my past clients first before opening up my calendar publicly — because you&#x27;re always my priority. Interested in booking? Reply here or grab a spot at [booking link]. I&#x27;d love to make you feel incredible again. [Your Name] | [Business Name]</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Partnerships</h3>
+        <p>Review Request — Post Appointment</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject A Small Favour — Means Everything To Me</h3>
+        <p>BODY Hi [First Name], I hope you&#x27;re still glowing from [your appointment / your wedding day]! If you loved your look and have 2 minutes, I&#x27;d be so grateful if you left me a review on [Google / The Knot / WeddingWire / Instagram]. It genuinely helps other clients find me and trust my work. Here&#x27;s the direct link: [link] Thank you so much — you&#x27;re the best! [Your Name] Bridal Referral Ask</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work direction-page">
+  <div class="brand"><div>Content Elevated</div><div></div></div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+  </div>
+  <div class="content-stack">
+    <article class="prompt-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Action System</h3>
+        <p>BODY Hi [First Name], I just wanted to say — working with you on your wedding day was such a privilege. Thank you for trusting me with something so special. If you know any friends or family who are newly engaged or planning a special event, I&#x27;d love to be introduced. I&#x27;ll take great care of anyone you send my way. You&#x27;re officially one of my favourite clients! [Your Name] | [Business Name] Vendor Partnership — Wedding Photographer</p>
+      </div>
+    </article>
+
+
+    <article class="prompt-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Working page</p>
+        <h3>Subject Fellow Wedding Vendor — Introduction From [Your Name]</h3>
+        <p>BODY Hi [Name], I came across your work and I&#x27;m absolutely obsessed — your photography is stunning. I&#x27;m [Your Name], a makeup artist based in [City] specializing in [bridal / editorial / etc.]. I work with a lot of wedding clients and I&#x27;m always looking for incredible photographers to recommend. I&#x27;d love to explore a mutual referral relationship — both of us sharing each other&#x27;s work with our clients. I think our styles complement each other beautifully. Would you be open to a quick coffee or call? [Your Name] | [Business Name] | [Instagram]</p>
+      </div>
+    </article>
+</div>
+  <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section></main></body></html>
