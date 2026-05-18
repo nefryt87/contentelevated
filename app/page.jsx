@@ -455,8 +455,10 @@ function Process() {
 }
 
 function CategoryShowcase() {
+  const canHover = useHoverCapable();
+
   return (
-    <Section id="categories" fadeOnly>
+    <Section id="categories" fadeOnly disableMobileMotion>
       <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1fr] lg:items-end">
         <div>
           <Eyebrow>Choose Your World</Eyebrow>
@@ -469,30 +471,49 @@ function CategoryShowcase() {
         </p>
       </div>
       <div className="grid gap-px overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/10 bg-[#6f7a89]/10 md:grid-cols-2 lg:grid-cols-4 lg:rounded-[1.6rem]">
-        {categories.map((category, index) => (
-          <motion.a
-            key={category.slug}
-            href={`/categories/${category.slug}`}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            whileTap={{ scale: 0.985 }}
-            viewport={{ once: true, margin: "-70px" }}
-            transition={{ duration: 0.56, delay: index * 0.035, ease: "easeOut" }}
-            className="category-card group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 sm:p-7 lg:min-h-[14rem]"
-          >
-            <span className="category-card__glow" />
-            <span className="category-card__line" />
-            <div className="mb-8 flex items-center justify-between">
-              <span className="category-card__number editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
-              <span className="category-card__count text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} {category.count === 1 ? "bundle" : "bundles"}</span>
-            </div>
-            <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
-            <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
-            <span className="mt-8 inline-grid h-9 w-9 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.025] text-[#b8f3ff] transition duration-500 sm:group-hover:border-[#b8f3ff]/35 sm:group-hover:bg-[#b8f3ff]/8">
-              <ArrowRight className="h-4 w-4 transition duration-500 sm:group-hover:translate-x-0.5" />
-            </span>
-          </motion.a>
-        ))}
+        {categories.map((category, index) => {
+          const content = (
+            <>
+              <span className="category-card__glow" />
+              <span className="category-card__line" />
+              <div className="mb-8 flex items-center justify-between">
+                <span className="category-card__number editorial-serif text-[1.45rem] text-[#8bd7ff] sm:text-[1.75rem]">0{index + 1}</span>
+                <span className="category-card__count text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#8bd7ff] sm:text-xs sm:tracking-[0.22em]">{category.count} {category.count === 1 ? "bundle" : "bundles"}</span>
+              </div>
+              <h3 className="editorial-serif text-[1.5rem] sm:text-[1.75rem]">{category.title}</h3>
+              <p className="mt-4 text-sm leading-6 text-[#8f9baa]">{category.text}</p>
+              <span className="mt-8 inline-grid h-9 w-9 place-items-center rounded-full border border-[#6f7a89]/10 bg-white/[0.025] text-[#b8f3ff] transition duration-500 sm:group-hover:border-[#b8f3ff]/35 sm:group-hover:bg-[#b8f3ff]/8">
+                <ArrowRight className="h-4 w-4 transition duration-500 sm:group-hover:translate-x-0.5" />
+              </span>
+            </>
+          );
+
+          if (!canHover) {
+            return (
+              <a
+                key={category.slug}
+                href={`/categories/${category.slug}`}
+                className="category-card group min-h-[12rem] bg-[#05070b] p-5 sm:p-7 lg:min-h-[14rem]"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <motion.a
+              key={category.slug}
+              href={`/categories/${category.slug}`}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-70px" }}
+              transition={{ duration: 0.56, delay: index * 0.035, ease: "easeOut" }}
+              className="category-card group min-h-[12rem] bg-[#05070b] p-5 transition duration-500 sm:p-7 lg:min-h-[14rem]"
+            >
+              {content}
+            </motion.a>
+          );
+        })}
       </div>
     </Section>
   );
@@ -709,7 +730,19 @@ function FooterList({ title, items }) {
   );
 }
 
-function Section({ id, children, compactTop = false, fadeOnly = false }) {
+function Section({ id, children, compactTop = false, fadeOnly = false, disableMobileMotion = false }) {
+  const canHover = useHoverCapable();
+  const shouldAnimate = !disableMobileMotion || canHover;
+  const className = `section-fade relative px-5 sm:px-8 ${compactTop ? "pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12" : "py-16 sm:py-20 lg:py-24"}`;
+
+  if (!shouldAnimate) {
+    return (
+      <section id={id} className={className}>
+        <div className="mx-auto max-w-[94rem]">{children}</div>
+      </section>
+    );
+  }
+
   return (
     <motion.section
       id={id}
@@ -717,7 +750,7 @@ function Section({ id, children, compactTop = false, fadeOnly = false }) {
       whileInView={fadeOnly ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-120px" }}
       transition={{ duration: fadeOnly ? 0.72 : 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`section-fade relative px-5 sm:px-8 ${compactTop ? "pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12" : "py-16 sm:py-20 lg:py-24"}`}
+      className={className}
     >
       <div className="mx-auto max-w-[94rem]">{children}</div>
     </motion.section>

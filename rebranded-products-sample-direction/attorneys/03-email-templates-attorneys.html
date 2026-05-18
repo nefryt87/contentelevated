@@ -1,331 +1,310 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f8f6f1; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#6c7481 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c2b08a 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#f8f6f1 94%,white), color-mix(in srgb,#f8f6f1 86%,#6c7481)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#6c7481; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#6c7481 32%,transparent); border-radius:999px; color:#6c7481; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#6c7481; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#6c7481 38%,transparent); border-bottom:1px solid color-mix(in srgb,#6c7481 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#6c7481 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#6c7481 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#6c7481 52%,transparent); border-bottom:1px solid color-mix(in srgb,#6c7481 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#6c7481 32%,transparent); }
-.metric b { display:block; color:#6c7481; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#17191d; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#6c7481 18%,transparent), transparent 2in), linear-gradient(135deg, #17191d, color-mix(in srgb,#17191d 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#6c7481; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#6c7481 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#6c7481 56%,transparent); color:#6c7481; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#6c7481 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#6c7481 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
-
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#f8f6f1; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#17191d; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#17191d; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #6c7481; }
-
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#f8f6f1; }
-.layout-protocol .work { background:#fbfbf5; color:#17191d; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#6c7481 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#17191d; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
-
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
-
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#17191d; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
-
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#6c7481 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#17191d; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#6c7481 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#17191d; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #6c7481; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#6c7481 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#6c7481 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-ledger"><section class="page cover">
+:root {
+  --ink:#171b1f;
+  --muted:#5d6870;
+  --quiet:#8a9399;
+  --paper:#fbfaf5;
+  --paper-2:#f1eee6;
+  --panel:#ffffff;
+  --line:rgba(23,27,31,.13);
+  --accent:#6c7481;
+  --dark:#17191d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#d9d7d1;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;padding:.62in;background:linear-gradient(135deg,var(--paper),#fff 50%,var(--paper-2))}
+.page::before{content:"";position:absolute;inset:.34in;border:1px solid rgba(23,27,31,.1);pointer-events:none}
+.page::after{content:"";position:absolute;right:.62in;top:.92in;width:2.55in;height:7.6in;border-left:1px solid rgba(23,27,31,.1);background:linear-gradient(90deg,rgba(95,127,134,.065),transparent 72%);pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;color:rgba(23,27,31,.7);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.brand small{display:block;margin-top:7px;color:var(--accent);font-size:8px;letter-spacing:.2em}
+.badge{border:1px solid rgba(23,27,31,.14);background:rgba(255,255,255,.64);padding:9px 13px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.84in;display:flex;align-items:center;gap:12px;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.cover-kicker::before{content:"";width:.48in;height:1px;background:var(--accent)}
+h1,h2,h3{position:relative;z-index:3;margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em}
+h1{max-width:5.65in;margin-top:.22in;font-size:58px;line-height:.96}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.lead{position:relative;z-index:3;max-width:4.9in;margin-top:.32in;color:#384149;font-size:15.5px;line-height:1.62}
+.memo-strip{position:absolute;z-index:3;left:.62in;right:.62in;bottom:.82in;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.memo-cell{min-height:.96in;padding:17px 18px;border-left:1px solid var(--line)}
+.memo-cell:first-child{border-left:0;padding-left:0}
+.memo-cell b{display:block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:400;line-height:1}
+.memo-cell span{display:block;margin-top:9px;color:#5f6870;font-size:8.5px;font-weight:850;letter-spacing:.14em;line-height:1.55;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.62in;right:.62in;bottom:.34in;display:flex;justify-content:space-between;color:rgba(23,27,31,.55);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:#fbfaf5;color:var(--ink)}
+.work::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 2.4in),linear-gradient(135deg,#fff,var(--paper-2));pointer-events:none}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.88fr 1.12fr;gap:.42in;align-items:end;margin-top:.28in;padding-bottom:.24in;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.22em;text-transform:uppercase}
+h2{font-size:39px;line-height:.98;color:var(--ink)}
+.intro{margin:0;color:#46515a;font-size:12px;line-height:1.62}
+.advisory-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.advisory-card{position:relative;min-height:1.78in;border:1px solid var(--line);background:rgba(255,255,255,.72);padding:18px;box-shadow:0 14px 34px rgba(23,27,31,.045)}
+.advisory-card::before{content:"";position:absolute;left:18px;right:18px;top:0;height:3px;background:var(--accent);opacity:.72}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:13px;border:1px solid color-mix(in srgb,var(--accent) 36%,transparent);border-radius:50%;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:14px}
+h3{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.16;letter-spacing:-.01em;font-weight:800;color:var(--ink)}
+.advisory-card p,.dossier-card p{margin:9px 0 0;color:#46515a;font-size:10.2px;line-height:1.55}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.dossier-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid var(--line);background:rgba(255,255,255,.74);box-shadow:0 12px 28px rgba(23,27,31,.045)}
+.dossier-card .eyebrow{margin-bottom:7px;color:#778088;font-size:7.4px;letter-spacing:.17em}
+.dossier-card h3{font-size:15.8px}
+.dossier-card .num{margin:0;background:#f5f4ee}
+.private-page{background:#171b1f;color:#f7f4ed}
+.private-page::before{background:radial-gradient(circle at 78% 18%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 2.45in),linear-gradient(135deg,#171b1f,#101317)}
+.private-page::after{display:none}
+.private-page .brand,.private-page .footer{color:rgba(247,244,237,.58)}
+.private-page h2,.private-page h3{color:#f7f4ed}
+.private-page .intro{color:rgba(247,244,237,.74)}
+.private-page .dossier-card,.private-page .advisory-card{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.13);box-shadow:none}
+.private-page .dossier-card p,.private-page .advisory-card p{color:rgba(247,244,237,.74)}
+.private-page .dossier-card .eyebrow{color:color-mix(in srgb,var(--accent) 72%,#fff)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you templates for attorneys</div>
-    </div>
+    <div>CONTENT ELEVATED<small>Attorneys Advisory System</small></div>
+    <div class="badge">Templates</div>
   </div>
+  <p class="cover-kicker">Authority · trust · client growth</p>
   <h1>Email Templates</h1>
-  <p class="lead">A premium, niche-specific growth system built to help the business move faster with clearer content, stronger client touchpoints, and ready-to-use execution assets.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Ready-to-use<br/>growth system</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Legal</span></div>
-    <div class="metric"><b>03</b><span>Customize<br/>and launch</span></div>
+  <p class="lead">A refined client-growth system for turning expertise into clearer communication, better follow-up, stronger referral touchpoints, and more trusted advisory relationships.</p>
+  <div class="memo-strip">
+    <div class="memo-cell"><b>01</b><span>Clarify the client conversation</span></div>
+    <div class="memo-cell"><b>02</b><span>Follow up with more authority</span></div>
+    <div class="memo-cell"><b>03</b><span>Build trust before the consult</span></div>
   </div>
-  <div class="footer"><span>Attorneys product file</span><span>01</span></div>
+  <div class="footer"><span>Attorneys advisory system</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">Use this section to move from strategy into execution with clear steps, customized language, and a simple weekly workflow.</p>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Advisor Notes</div>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="section-head">
+    <div><p class="eyebrow">Use the system</p><h2>Make expertise easier to trust.</h2></div>
+    <p class="intro">Start with the asset closest to the next client moment: inquiry response, consultation follow-up, referral nurture, renewal conversation, education content, or retention touchpoint.</p>
+  </div>
+  <div class="advisory-grid">
+    <article class="advisory-card"><div class="num">01</div><h3>Lead with context</h3><p>Adapt each asset around the client’s situation, risk, urgency, and decision stage.</p></article>
+    <article class="advisory-card"><div class="num">02</div><h3>Sound clear, not canned</h3><p>Keep the structure, then add the details that prove the client was heard.</p></article>
+    <article class="advisory-card"><div class="num">03</div><h3>Review before sending</h3><p>Check every client-facing asset for accuracy, compliance, and professional tone.</p></article>
   </div>
   <div class="footer"><span>Email Templates</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work private-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Client Communication Template Pack</h3>
         <p>24 done-for-you, ethics-aware templates for every stage of the client relationship</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Intake • Consultation Follow-Up • Client Retention • Referral Network • Reviews</h3>
         <p>Important: All templates should be reviewed for compliance with your state bar&#x27;s rules on advertising, solicitation, and client communication before use.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>How To Use These Templates</h3>
         <p>• Replace all [brackets] with client name, matter details, and firm information. • Review every template for compliance with your state bar&#x27;s advertising and solicitation rules before sending. • Works as email and through client portals (Clio, MyCase, PracticePanther, etc.). • The tone throughout is professional, warm, and clear — clients hire attorneys they trust and understand.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Section 1: Intake &amp; Consultation</h3>
         <p>Same-Day Intake Response</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject Re: Your Inquiry To [Firm Name] — [First Name]</h3>
         <p>BODY Dear [First Name], Thank you for reaching out to [Firm Name]. We understand that [legal situation type — e.g., &#x27;going through a divorce / starting a business / dealing with an estate matter&#x27;] can feel overwhelming, and we&#x27;re glad you took this step. Here&#x27;s what happens next: 1. We&#x27;ll review the information you&#x27;ve shared 2. One of our attorneys will be in touch within [timeframe] to schedule a consultation 3. At the consultation, we&#x27;ll discuss your situation in detail and outline our recommended approach In the meantime, if you have any urgent questions, please call us at [Phone]. We look forward to speaking with you. [Attorney Name] | [Firm Name] | [Phone] Post-Consultation Follow-Up — Same Day</p>
       </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Email Templates</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Client system</p>
+        <h3>Subject Following Our Consultation Today — [First Name]</h3>
         <p>BODY Dear [First Name], Thank you for coming in today — it was a pleasure meeting you and learning more about your situation. Based on our conversation, here&#x27;s a summary of where things stand and what I&#x27;d recommend: Your situation: [1-2 sentence plain-language summary of their legal situation] Recommended approach: [2-3 sentences on the proposed legal strategy] Proposed next steps: [clear next step to engage] If you&#x27;d like to move forward, [clear call to action — e.g., &#x27;please sign and return the attached engagement letter&#x27; / &#x27;please call our office to schedule your next appointment&#x27;]. I&#x27;m happy to answer any additional questions before you decide. Please don&#x27;t hesitate to reach out. Sincerely, [Attorney Name] | [Firm Name] | [Phone] 30-Day Nurture — Prospect Not Yet Retained</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject A Resource That May Be Helpful — [First Name]</h3>
         <p>BODY Dear [First Name], I wanted to follow up and share a resource that may be useful as you consider your options. [Link or brief description of a relevant article, checklist, or explainer relevant to their legal situation] Navigating [legal situation] is something many people find daunting, and having the right information makes a real difference in the decisions you make. If you have any questions or would like to discuss your situation further, I&#x27;m always happy to talk. Sincerely, [Attorney Name] | [Firm Name] | [Phone]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Section 2: Active Matter Communication</h3>
         <p>Matter Progress Update</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject Update On Your Matter — [First Name]</h3>
-        <p>BODY Dear [First Name], I wanted to provide you with a brief update on your [matter type]. Where things stand: [2-3 clear sentences on current status in plain language] What&#x27;s happening next: [next concrete step and approximate timing] What I need from you (if anything): [specific ask or &#x27;nothing at this time&#x27;] Please don&#x27;t hesitate to reach out if you have questions at any point. Keeping you informed is something I take seriously. Sincerely, [Attorney Name] | [Firm Name] Matter Completion — Close-Out Letter</p>
+        <p>BODY Dear [First Name], I wanted to provide you with a brief update on your [matter type]. Where things stand: [2-3 clear sentences on current status in plain language] What&#x27;s happening next: [next concrete step and approximate timing]</p>
       </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Email Templates</span><span>04</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="dossier-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Client system</p>
+        <h3>Advisory System</h3>
+        <p>What I need from you (if anything): [specific ask or &#x27;nothing at this time&#x27;] Please don&#x27;t hesitate to reach out if you have questions at any point. Keeping you informed is something I take seriously. Sincerely, [Attorney Name] | [Firm Name] Matter Completion — Close-Out Letter</p>
+      </div>
+    </article>
+
+    <article class="dossier-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Client system</p>
+        <h3>Subject Your Matter Is Resolved — A Note From [Attorney Name]</h3>
         <p>BODY Dear [First Name], I&#x27;m pleased to let you know that your [matter type] has been successfully [resolved / closed / executed]. What was accomplished: [1-2 sentences summarizing the outcome in plain language] It&#x27;s been a genuine privilege helping you through this. [One personal sentence acknowledging what they went through or achieved.] A few things worth knowing now that this matter is closed: [any relevant follow- up actions — document storage, future review dates, etc.] Should you need legal assistance in the future — or if someone you know does — I hope you&#x27;ll think of us. And if you have a moment, a Google review would mean a great deal to our firm: [link] With appreciation, [Attorney Name] | [Firm Name] Annual Review Outreach — Estate / Business Clients</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="dossier-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject Time For Your Annual Legal Review — [First Name]</h3>
         <p>BODY Dear [First Name], It&#x27;s been approximately a year since we [completed your estate plan / formed your business / handled your last matter], and I wanted to reach out about a brief annual review. Laws change. Life changes. What we put in place last year may need updating based on [relevant trigger — e.g., &#x27;changes in your family situation / new business developments / recent tax law changes&#x27;]. A review typically takes [timeframe] and can prevent significant issues down the road. Would you like to schedule a brief call? I&#x27;m happy to let you know whether any updates are needed. Sincerely, [Attorney Name] | [Firm Name]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="dossier-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Section 3: Referral Network &amp; Reviews</h3>
         <p>Post-Referral Thank-You</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    </article></div>
+  <div class="footer"><span>Email Templates</span><span>05</span></div>
+</section>
+<section class="page work private-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
+  </div>
+  <div class="content-stack">
+    <article class="dossier-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Thank You For The Referral — [Name]</h3>
+        <p class="eyebrow">Client system</p>
+        <h3>Advisory System</h3>
         <p>BODY Dear [Name], I just wanted to take a moment to personally thank you for referring [Client First Name] to our firm. We take every referral seriously — it&#x27;s the highest expression of professional trust, and I don&#x27;t take it for granted. I&#x27;ll make sure [he/she/they] receives the same quality of service that led you to think of us. I&#x27;ll keep you posted as appropriate on how the matter progresses. With gratitude, [Attorney Name] | [Firm Name] CPA / Financial Advisor Introduction</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Email Templates</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="dossier-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Client system</p>
+        <h3>Subject Introduction — [Your Name], [Practice Area] Attorney, [Firm Name]</h3>
         <p>BODY Dear [Name], My name is [Attorney Name] — I&#x27;m a [practice area] attorney at [Firm Name] in [City], focused on [brief description of clients and work]. I work with many clients who also need the guidance of a skilled [CPA / financial advisor], and I&#x27;m always looking for trusted professionals to refer them to. Similarly, your clients likely encounter [relevant legal situations] where quality legal counsel makes a real difference. I&#x27;d love to explore whether a mutual referral relationship might benefit both of our clients. Would you be open to a brief call? Sincerely, [Attorney Name] | [Firm Name] | [Phone] Google Review Request — Post Close</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="dossier-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject A Small Ask — Your Words Carry Real Weight</h3>
         <p>BODY Dear [First Name], Now that your matter has been resolved, I wanted to reach out with one small ask. If you were happy with the service you received at [Firm Name], an honest Google review would mean a great deal to us — and genuinely helps other people in [City] find legal representation they can trust. Here&#x27;s the direct link: [Google Review Link] Thank you again for trusting us with something so important. Sincerely, [Attorney Name] | [Firm Name] Past Client Referral Request</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="dossier-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Client system</p>
         <h3>Subject A Personal Note — [First Name]</h3>
-        <p>BODY Dear [First Name], I hope you&#x27;re doing well since we resolved your [matter type]. I&#x27;m reaching out because the foundation of this practice is built on client trust and referrals — and I wanted to let you know that if you ever have a friend, family member, or colleague who needs [practice area] legal help, I would consider it a privilege to assist them. Anyone you refer will receive the same attention and care we gave to your matter. Thank you for continuing to be a part of our practice community. Sincerely, [Attorney Name] | [Firm Name]</p>
+        <p>BODY Dear [First Name], I hope you&#x27;re doing well since we resolved your [matter type]. I&#x27;m reaching out because the foundation of this practice is built on client trust and referrals — and I wanted to let you know that if you ever have a friend,</p>
       </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Email Templates</span><span>06</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Attorneys</small></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
+  </div>
+  <div class="content-stack">
+    <article class="dossier-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Client system</p>
+        <h3>Advisory System</h3>
+        <p>family member, or colleague who needs [practice area] legal help, I would consider it a privilege to assist them. Anyone you refer will receive the same attention and care we gave to your matter. Thank you for continuing to be a part of our practice community. Sincerely, [Attorney Name] | [Firm Name]</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Email Templates</span><span>07</span></div>
 </section></main></body></html>

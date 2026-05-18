@@ -32,6 +32,13 @@ HOME_SERVICE_NICHES = {
     "Landscapers",
     "Plumbers",
 }
+PROFESSIONAL_SERVICE_NICHES = {
+    "Accountants & CPAs",
+    "Attorneys",
+    "Financial Advisors",
+    "Insurance Agents",
+    "Mortgage Brokers",
+}
 
 
 SECTION_RE = re.compile(
@@ -190,6 +197,10 @@ def is_home_service_niche(niche: str) -> bool:
     return niche in HOME_SERVICE_NICHES
 
 
+def is_professional_service_niche(niche: str) -> bool:
+    return niche in PROFESSIONAL_SERVICE_NICHES or "Broker" in niche or "Advisor" in niche
+
+
 def css(theme: dict[str, str]) -> str:
     return sample_direction_css(theme) + f"""
 .direction-page .section-head {{ margin-top: .18in; }}
@@ -344,6 +355,74 @@ h3{{font-size:15px;line-height:1.12;color:#0b1420;font-weight:850;letter-spacing
 .highlight-page .data-card p,.highlight-page .command-card p{{color:rgba(232,241,249,.82)}}
 .highlight-page .data-card .eyebrow{{color:#a9dfff}}
 .highlight-page .footer{{color:rgba(226,236,246,.5)}}
+@media print{{body{{background:white}}.book{{width:auto;margin:0}}}}
+"""
+
+
+def professional_service_css(theme: dict[str, str]) -> str:
+    accent = theme["accent"]
+    dark = theme["dark"]
+    return f"""
+@page {{ size: Letter; margin: 0; }}
+:root {{
+  --ink:#171b1f;
+  --muted:#5d6870;
+  --quiet:#8a9399;
+  --paper:#fbfaf5;
+  --paper-2:#f1eee6;
+  --panel:#ffffff;
+  --line:rgba(23,27,31,.13);
+  --accent:{accent};
+  --dark:{dark};
+}}
+*{{box-sizing:border-box}}
+body{{margin:0;background:#d9d7d1;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}}
+.book{{width:8.5in;margin:0 auto}}
+.page{{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;padding:.62in;background:linear-gradient(135deg,var(--paper),#fff 50%,var(--paper-2))}}
+.page::before{{content:"";position:absolute;inset:.34in;border:1px solid rgba(23,27,31,.1);pointer-events:none}}
+.page::after{{content:"";position:absolute;right:.62in;top:.92in;width:2.55in;height:7.6in;border-left:1px solid rgba(23,27,31,.1);background:linear-gradient(90deg,rgba(95,127,134,.065),transparent 72%);pointer-events:none}}
+.brand{{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;color:rgba(23,27,31,.7);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}}
+.brand small{{display:block;margin-top:7px;color:var(--accent);font-size:8px;letter-spacing:.2em}}
+.badge{{border:1px solid rgba(23,27,31,.14);background:rgba(255,255,255,.64);padding:9px 13px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}}
+.cover-kicker{{position:relative;z-index:3;margin-top:.84in;display:flex;align-items:center;gap:12px;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}}
+.cover-kicker::before{{content:"";width:.48in;height:1px;background:var(--accent)}}
+h1,h2,h3{{position:relative;z-index:3;margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em}}
+h1{{max-width:5.65in;margin-top:.22in;font-size:58px;line-height:.96}}
+h1 em,h2 em{{font-style:italic;color:var(--accent)}}
+.lead{{position:relative;z-index:3;max-width:4.9in;margin-top:.32in;color:#384149;font-size:15.5px;line-height:1.62}}
+.memo-strip{{position:absolute;z-index:3;left:.62in;right:.62in;bottom:.82in;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}}
+.memo-cell{{min-height:.96in;padding:17px 18px;border-left:1px solid var(--line)}}
+.memo-cell:first-child{{border-left:0;padding-left:0}}
+.memo-cell b{{display:block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:400;line-height:1}}
+.memo-cell span{{display:block;margin-top:9px;color:#5f6870;font-size:8.5px;font-weight:850;letter-spacing:.14em;line-height:1.55;text-transform:uppercase}}
+.footer{{position:absolute;z-index:3;left:.62in;right:.62in;bottom:.34in;display:flex;justify-content:space-between;color:rgba(23,27,31,.55);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}}
+.work{{background:#fbfaf5;color:var(--ink)}}
+.work::before{{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 2.4in),linear-gradient(135deg,#fff,var(--paper-2));pointer-events:none}}
+.work::after{{display:none}}
+.section-head{{position:relative;z-index:3;display:grid;grid-template-columns:.88fr 1.12fr;gap:.42in;align-items:end;margin-top:.28in;padding-bottom:.24in;border-bottom:1px solid var(--line)}}
+.eyebrow{{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.22em;text-transform:uppercase}}
+h2{{font-size:39px;line-height:.98;color:var(--ink)}}
+.intro{{margin:0;color:#46515a;font-size:12px;line-height:1.62}}
+.advisory-grid{{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}}
+.advisory-card{{position:relative;min-height:1.78in;border:1px solid var(--line);background:rgba(255,255,255,.72);padding:18px;box-shadow:0 14px 34px rgba(23,27,31,.045)}}
+.advisory-card::before{{content:"";position:absolute;left:18px;right:18px;top:0;height:3px;background:var(--accent);opacity:.72}}
+.num{{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:13px;border:1px solid color-mix(in srgb,var(--accent) 36%,transparent);border-radius:50%;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:14px}}
+h3{{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.16;letter-spacing:-.01em;font-weight:800;color:var(--ink)}}
+.advisory-card p,.dossier-card p{{margin:9px 0 0;color:#46515a;font-size:10.2px;line-height:1.55}}
+.content-stack{{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}}
+.dossier-card{{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid var(--line);background:rgba(255,255,255,.74);box-shadow:0 12px 28px rgba(23,27,31,.045)}}
+.dossier-card .eyebrow{{margin-bottom:7px;color:#778088;font-size:7.4px;letter-spacing:.17em}}
+.dossier-card h3{{font-size:15.8px}}
+.dossier-card .num{{margin:0;background:#f5f4ee}}
+.private-page{{background:#171b1f;color:#f7f4ed}}
+.private-page::before{{background:radial-gradient(circle at 78% 18%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 2.45in),linear-gradient(135deg,#171b1f,#101317)}}
+.private-page::after{{display:none}}
+.private-page .brand,.private-page .footer{{color:rgba(247,244,237,.58)}}
+.private-page h2,.private-page h3{{color:#f7f4ed}}
+.private-page .intro{{color:rgba(247,244,237,.74)}}
+.private-page .dossier-card,.private-page .advisory-card{{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.13);box-shadow:none}}
+.private-page .dossier-card p,.private-page .advisory-card p{{color:rgba(247,244,237,.74)}}
+.private-page .dossier-card .eyebrow{{color:color-mix(in srgb,var(--accent) 72%,#fff)}}
 @media print{{body{{background:white}}.book{{width:auto;margin:0}}}}
 """
 
@@ -698,6 +777,108 @@ def build_home_service_html(niche: str, title: str, descriptor: str, theme: dict
     )
 
 
+def render_professional_cards(blocks: list[tuple[str, str]], start_index: int = 1) -> str:
+    cards: list[tuple[str, str]] = []
+    current_title = "Advisory System"
+    current_body: list[str] = []
+
+    def flush() -> None:
+        nonlocal current_body
+        if current_body:
+            cards.append((current_title, " ".join(current_body)))
+            current_body = []
+
+    for kind, text in blocks:
+        if kind == "h":
+            flush()
+            current_title = title_case(text)
+        else:
+            current_body.append(text)
+    flush()
+
+    if not cards:
+        cards = [("Advisory System", "Customize this section for the client type, engagement, compliance context, and next professional touchpoint.")]
+
+    pieces = []
+    for offset, (card_title, body) in enumerate(cards, start=start_index):
+        pieces.append(
+            f"""
+    <article class="dossier-card">
+      <div class="num">{offset:02d}</div>
+      <div>
+        <p class="eyebrow">Client system</p>
+        <h3>{html.escape(card_title)}</h3>
+        <p>{html.escape(body[:1080])}</p>
+      </div>
+    </article>"""
+        )
+    return "\n".join(pieces)
+
+
+def build_professional_service_html(niche: str, title: str, descriptor: str, theme: dict[str, str], blocks: list[tuple[str, str]]) -> str:
+    title_html = html.escape(title).replace("AI", "<em>AI</em>")
+    chunks = chunk_blocks(blocks, max_chars=2550)
+    brand = html.escape(niche)
+    pages = [
+        f"""<section class="page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>{brand} Advisory System</small></div>
+    <div class="badge">{html.escape(descriptor)}</div>
+  </div>
+  <p class="cover-kicker">Authority · trust · client growth</p>
+  <h1>{title_html}</h1>
+  <p class="lead">A refined client-growth system for turning expertise into clearer communication, better follow-up, stronger referral touchpoints, and more trusted advisory relationships.</p>
+  <div class="memo-strip">
+    <div class="memo-cell"><b>01</b><span>Clarify the client conversation</span></div>
+    <div class="memo-cell"><b>02</b><span>Follow up with more authority</span></div>
+    <div class="memo-cell"><b>03</b><span>Build trust before the consult</span></div>
+  </div>
+  <div class="footer"><span>{brand} advisory system</span><span>01</span></div>
+</section>""",
+        f"""<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>{brand}</small></div>
+    <div class="badge">Advisor Notes</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Use the system</p><h2>Make expertise easier to trust.</h2></div>
+    <p class="intro">Start with the asset closest to the next client moment: inquiry response, consultation follow-up, referral nurture, renewal conversation, education content, or retention touchpoint.</p>
+  </div>
+  <div class="advisory-grid">
+    <article class="advisory-card"><div class="num">01</div><h3>Lead with context</h3><p>Adapt each asset around the client’s situation, risk, urgency, and decision stage.</p></article>
+    <article class="advisory-card"><div class="num">02</div><h3>Sound clear, not canned</h3><p>Keep the structure, then add the details that prove the client was heard.</p></article>
+    <article class="advisory-card"><div class="num">03</div><h3>Review before sending</h3><p>Check every client-facing asset for accuracy, compliance, and professional tone.</p></article>
+  </div>
+  <div class="footer"><span>{html.escape(title)}</span><span>02</span></div>
+</section>""",
+    ]
+
+    for page_index, chunk in enumerate(chunks, start=3):
+        page_class = "page work private-page" if page_index % 3 == 0 else "page work"
+        pages.append(
+            f"""<section class="{page_class}">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>{brand}</small></div>
+    <div class="badge">{html.escape(descriptor)}</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">{html.escape(descriptor)}</p><h2>{html.escape(title)}</h2></div>
+    <p class="intro">Use these assets to make client communication clearer, more consistent, and easier to act on.</p>
+  </div>
+  <div class="content-stack">{render_professional_cards(chunk)}</div>
+  <div class="footer"><span>{html.escape(title)}</span><span>{page_index:02d}</span></div>
+</section>"""
+        )
+
+    return (
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"/>'
+        '<meta name="viewport" content="width=device-width, initial-scale=1"/>'
+        f"<title>{html.escape(title)}</title><style>{professional_service_css(theme)}</style></head><body><main class=\"book\">"
+        + "\n".join(pages)
+        + "</main></body></html>"
+    )
+
+
 def source_niche(path: Path) -> str:
     rel = path.relative_to(SOURCE_ROOT)
     return rel.parts[0]
@@ -740,6 +921,9 @@ def split_calendar(blocks: list[tuple[str, str]]) -> list[list[tuple[str, str]]]
 
 
 def build_html(niche: str, title: str, descriptor: str, theme: dict[str, str], blocks: list[tuple[str, str]]) -> str:
+    if is_professional_service_niche(niche):
+        return build_professional_service_html(niche, title, descriptor, theme, blocks)
+
     if is_home_service_niche(niche):
         return build_home_service_html(niche, title, descriptor, theme, blocks)
 
