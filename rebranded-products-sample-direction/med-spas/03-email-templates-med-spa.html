@@ -1,331 +1,312 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Email Templates</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fbfaf5; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8a927f 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d8c7ad 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#fbfaf5 94%,white), color-mix(in srgb,#fbfaf5 86%,#8a927f)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#8a927f; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8a927f 32%,transparent); border-radius:999px; color:#8a927f; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#8a927f; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8a927f 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8a927f 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#8a927f 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8a927f 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8a927f 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8a927f 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8a927f 32%,transparent); }
-.metric b { display:block; color:#8a927f; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#181d18; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8a927f 18%,transparent), transparent 2in), linear-gradient(135deg, #181d18, color-mix(in srgb,#181d18 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#8a927f; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8a927f 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8a927f 56%,transparent); color:#8a927f; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8a927f 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8a927f 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#17110f;
+  --soft-ink:#5d504b;
+  --muted:#8e7a72;
+  --paper:#fbfaf5;
+  --paper-2:#f6e8de;
+  --blush:#d8c7ad;
+  --rose:#8a927f;
+  --cream:#fffaf4;
+  --dark:#181d18;
+  --line:rgba(91,67,58,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;background:#e8d7ca;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--blush) 34%,transparent),transparent 2.2in),radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--rose) 18%,transparent),transparent 2.5in),linear-gradient(135deg,var(--paper),var(--cream) 52%,var(--paper-2));padding:.62in}
+.page::before{content:"";position:absolute;inset:.28in;border:1px solid rgba(91,67,58,.12);border-radius:28px;pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.1in;top:-.3in;width:3.2in;height:9.8in;background:linear-gradient(180deg,rgba(23,17,15,.06),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--blush) 26%,transparent),transparent 64%);transform:rotate(-10deg);border-radius:999px;pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.wordmark{font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.wordmark small{display:block;margin-top:8px;color:var(--rose);font-size:9px;font-weight:700;letter-spacing:.18em}
+.badge{border:1px solid color-mix(in srgb,var(--rose) 26%,transparent);border-radius:999px;padding:10px 14px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,250,244,.64)}
+.kicker{position:relative;z-index:2;display:flex;align-items:center;gap:12px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.kicker::before{content:"";width:42px;height:1px;background:var(--rose)}
+h1,h2,h3{position:relative;z-index:2;margin:0;font-family:"Didot","Bodoni 72","Times New Roman",serif;font-weight:400;letter-spacing:-.045em}
+h1{max-width:5.85in;margin-top:.82in;font-size:66px;line-height:.93}
+h2{font-size:42px;line-height:.96}
+h3{font-size:24px;line-height:1}
+h1 span,h2 span,h1 em,h2 em{color:var(--rose);font-style:italic}
+p{position:relative;z-index:2;margin:0;color:var(--soft-ink);font-size:12.5px;line-height:1.62}
+.lead{max-width:4.85in;margin-top:.28in;font-size:16px;line-height:1.55}
+.cover-meta{position:absolute;left:.62in;right:.62in;bottom:.74in;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta-item{padding:18px 16px;border-left:1px solid var(--line)}
+.meta-item:first-child{border-left:0;padding-left:0}
+.meta-item strong{display:block;font-family:"Didot","Bodoni 72","Times New Roman",serif;color:var(--rose);font-size:28px;font-weight:400;line-height:1}
+.meta-item span{display:block;margin-top:8px;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.16em;line-height:1.45;text-transform:uppercase}
+.footer{position:absolute;left:.62in;right:.62in;bottom:.34in;z-index:2;display:flex;justify-content:space-between;color:rgba(93,80,75,.72);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.intro-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:.42in}
+.panel{position:relative;z-index:2;border:1px solid var(--line);border-radius:22px;background:rgba(255,250,244,.66);padding:22px;box-shadow:0 18px 52px rgba(95,61,51,.08)}
+.panel.dark{background:rgba(255,250,244,.66);color:var(--ink)}
+.panel.dark p{color:var(--soft-ink)}
+.panel.dark .label{color:var(--rose)}
+.label{margin-bottom:12px;color:var(--rose);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.rule{position:relative;z-index:2;height:1px;margin:28px 0;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--rose) 38%,transparent),transparent)}
+.template{position:relative;z-index:2;display:grid;grid-template-columns:.78in 1fr;gap:18px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.template:first-of-type{border-top:0;padding-top:0}
+.num{width:.58in;height:.58in;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--rose) 24%,transparent);border-radius:50%;color:var(--rose);font-family:"Didot","Bodoni 72","Times New Roman",serif;font-size:22px;background:rgba(255,250,244,.66)}
+.when{margin:10px 0 14px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.script{border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,250,244,.82)),radial-gradient(circle at 8% 12%,color-mix(in srgb,var(--blush) 18%,transparent),transparent 45%);border:1px solid color-mix(in srgb,var(--rose) 14%,transparent);padding:18px;color:#2a201d;font-size:13px;line-height:1.55}
+.tip{margin-top:12px;border-left:3px solid var(--rose);padding-left:12px;color:var(--soft-ink);font-size:11px;line-height:1.5}
+.cta-page{background:radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--blush) 22%,transparent),transparent 2.6in),linear-gradient(135deg,#1b1412,color-mix(in srgb,var(--rose) 72%,#251413));color:#fff7ef}
+.cta-page::before{border-color:rgba(255,250,244,.14)}
+.cta-page p,.cta-page .footer,.cta-page .wordmark small{color:rgba(255,247,239,.74)}
+.cta-page h2,.cta-page .wordmark{color:#fff7ef}
+.cta-button{display:inline-block;margin-top:28px;border-radius:999px;background:#fff7ef;color:color-mix(in srgb,var(--rose) 78%,#2a1716);padding:16px 22px;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div>
+          <div class="badge">Templates</div>
+        </div>
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#fbfaf5; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#181d18; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#181d18; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8a927f; }
+        <p class="kicker" style="margin-top: 0.78in;">Copy · Customize · Launch</p>
+        <h1>Email Templates</h1>
+        <p class="lead">A polished, niche-specific growth system designed to help you turn client communication, content, and brand direction into a more consistent beauty business.</p>
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#fbfaf5; }
-.layout-protocol .work { background:#fbfbf5; color:#181d18; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8a927f 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#181d18; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+        <div class="cover-meta">
+          <div class="meta-item"><strong>01</strong><span>Ready-to-use system</span></div>
+          <div class="meta-item"><strong>Studio</strong><span>Beauty-specific system</span></div>
+          <div class="meta-item"><strong>Fast</strong><span>Customize and launch</span></div>
+        </div>
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>01</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Implementation System</small></div>
+          <div class="badge">How to Use</div>
+        </div>
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+        <p class="kicker" style="margin-top: 0.72in;">Before You Use It</p>
+        <h2>Make the system feel <span>personal.</span></h2>
+        <p class="lead">Use this file as the polished base. Replace brackets, offers, services, client details, and local language so every asset sounds like the business using it.</p>
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#181d18; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+        <div class="intro-grid">
+          <div class="panel">
+            <div class="label">The Rule</div>
+            <p>Keep the strategy intact, but make every client-facing line specific. Beauty buyers respond to trust, taste, timing, and a sense that the experience was designed for them.</p>
+          </div>
+          <div class="panel dark">
+            <div class="label">Best Practice</div>
+            <p>Batch the assets weekly. Turn prompts into posts, templates into follow-ups, and brand direction into a consistent client experience across every touchpoint.</p>
+          </div>
+        </div>
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8a927f 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#181d18; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8a927f 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#181d18; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #8a927f; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8a927f 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8a927f 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-protocol"><section class="page cover">
-  <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you templates for med spas</div>
-    </div>
-  </div>
-  <h1>Email Templates</h1>
-  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Med Spa</span></div>
-    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
-  </div>
-  <div class="footer"><span>Med Spas product file</span><span>01</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
-  </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
-  </div>
-  <div class="footer"><span>Email Templates</span><span>02</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Client Communication Template Pack</h3>
-        <p>24 done-for-you templates for every stage of the client journey Inquiries • Pre-treatment • Post-treatment • Retention • Referrals • Reviews</p>
+        <div class="rule"></div>
+        
+      <div class="template">
+        <div class="num">01</div>
+        <div>
+          <h3>Client Communication Template Pack</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">24 done-for-you templates for every stage of the client journey Inquiries • Pre-treatment • Post-treatment • Retention • Referrals • Reviews</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>How To Use These Templates</h3>
-        <p>• Replace all [brackets] with client name, treatment, and spa details. • Keep the tone warm, professional, and reassuring — aesthetic clients want to feel safe and cared for, not processed. • Works as email, SMS, and client portal messages — shorten to 2-3 sentences for texts. • Always personalize the opening line using AI for best response rates.</p>
+      <div class="template">
+        <div class="num">02</div>
+        <div>
+          <h3>How To Use These Templates</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">• Replace all [brackets] with client name, treatment, and spa details. • Keep the tone warm, professional, and reassuring — aesthetic clients want to feel safe and cared for, not processed. • Works as email, SMS, and client portal messages — shorten to 2-3 sentences for texts. • Always personalize the opening line using AI for best response rates.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Re: Your Inquiry To [Spa Name] — [First Name]</h3>
-        <p>BODY Hi [First Name], Thank you so much for reaching out — we&#x27;re so glad you&#x27;re considering [Spa Name] for your [treatment interest]! Here&#x27;s a quick overview of how we can help: - Treatment: [brief description of the treatment they inquired about] - What to expect: [one sentence on the process] - Investment: Starting from $[amount] — we&#x27;ll discuss the exact plan at your consultation We&#x27;d love to schedule a complimentary consultation so we can understand your goals and recommend the best approach for you specifically. Book here: [booking link] or reply and we&#x27;ll find a time that works. Looking forward to meeting you! [Practitioner Name] | [Spa Name] | [Phone] Post-Consultation Conversion Email</p>
+      <div class="template">
+        <div class="num">03</div>
+        <div>
+          <h3>Subject Re: Your Inquiry To [Spa Name] — [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], Thank you so much for reaching out — we&#x27;re so glad you&#x27;re considering [Spa Name] for your [treatment interest]! Here&#x27;s a quick overview of how we can help: - Treatment: [brief description of the treatment they inquired about] - What to expect: [one sentence on the process] - Investment: Starting from $[amount] — we&#x27;ll discuss the exact plan at your consultation We&#x27;d love to schedule a complimentary consultation so we can understand your goals and recommend the best approach for you specifically. Book here: [booking link] or reply and we&#x27;ll find a time that works. Looking forward to meeting you!</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>02</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Templates</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Your Treatment Plan — [First Name]</h3>
-        <p>BODY Hi [First Name], It was such a pleasure meeting you today! I loved learning about your goals and I&#x27;m genuinely excited about what we can achieve together. Based on our consultation, here&#x27;s what I&#x27;d recommend: Treatment plan: [treatment(s) recommended]</p>
+        <p class="kicker" style="margin-top: 0.42in;">Templates</p>
+        
+      <div class="template">
+        <div class="num">19</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">[Practitioner Name] | [Spa Name] | [Phone] Post-Consultation Conversion Email</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Email Templates</span><span>03</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Expected results: [brief description of realistic outcomes] Investment: $[amount] / [package price] Recommended schedule: [frequency and timing] To get started, simply [clear CTA — e.g., &#x27;book your first appointment here: [link]&#x27; / &#x27;reply to confirm and I&#x27;ll hold a time for you&#x27;]. Any questions at all — just reach out. I want you to feel completely comfortable before we begin. [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Injectables</p>
+
+      <div class="template">
+        <div class="num">20</div>
+        <div>
+          <h3>Subject Your Treatment Plan — [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], It was such a pleasure meeting you today! I loved learning about your goals and I&#x27;m genuinely excited about what we can achieve together. Based on our consultation, here&#x27;s what I&#x27;d recommend: Treatment plan: [treatment(s) recommended] Expected results: [brief description of realistic outcomes] Investment: $[amount] / [package price] Recommended schedule: [frequency and timing] To get started, simply [clear CTA — e.g., &#x27;book your first appointment here: [link]&#x27; / &#x27;reply to confirm and I&#x27;ll hold a time for you&#x27;]. Any questions at all — just reach out. I want you to feel completely comfortable before we begin. [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Injectables</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Your Appointment Is Coming Up — How To Prepare, [First Name]</h3>
-        <p>BODY Hi [First Name], Your [Botox / filler / treatment] appointment is on [Date] at [Time] — I&#x27;m so excited for you! To make sure you get the best possible results, here&#x27;s how to prepare: - Avoid alcohol for 24 hours before your appointment - Avoid blood thinners (aspirin, ibuprofen, fish oil) for 1 week before if possible — check with your doctor first - Come with a clean face — no makeup needed - Arrive 5-10 minutes early to complete any paperwork - Let me know if you have any upcoming events — timing matters with injectables First time? I want you to know: we go slowly, we check in throughout, and you&#x27;re always in control. This is your experience. See you soon! [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Laser / Body</p>
+      <div class="template">
+        <div class="num">21</div>
+        <div>
+          <h3>Subject Your Appointment Is Coming Up — How To Prepare, [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], Your [Botox / filler / treatment] appointment is on [Date] at [Time] — I&#x27;m so excited for you! To make sure you get the best possible results, here&#x27;s how to prepare: - Avoid alcohol for 24 hours before your appointment - Avoid blood thinners (aspirin, ibuprofen, fish oil) for 1 week before if possible — check with your doctor first - Come with a clean face — no makeup needed - Arrive 5-10 minutes early to complete any paperwork - Let me know if you have any upcoming events — timing matters with injectables First time? I want you to know: we go slowly, we check in throughout, and you&#x27;re always in control. This is your experience. See you soon! [Practitioner Name] | [Spa Name] Pre-Treatment Prep Email — Laser / Body</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>03</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Templates</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Your [Treatment] Appointment — What To Know, [First Name]</h3>
-        <p>BODY Hi [First Name], Your [laser / body treatment] is coming up on [Date] at [Time] — exciting! A few things to help you prepare: - [Specific prep instructions for the treatment type — e.g., &#x27;Avoid sun exposure and self-tanner for 2 weeks before your laser appointment&#x27;] - [Skincare to pause — e.g., &#x27;Stop retinol and exfoliating acids 5 days before&#x27;] - [Comfort tips — e.g., &#x27;You may want to take an OTC pain reliever 30-60 minutes before if you&#x27;re sensitive to discomfort&#x27;] - What to expect during: [brief treatment description] - Results timeline: [when they&#x27;ll see results] If you have any questions before your appointment, please don&#x27;t hesitate to reach out. We want you feeling informed and confident. [Practitioner Name] | [Spa Name]</p>
+        <p class="kicker" style="margin-top: 0.42in;">Templates</p>
+        
+      <div class="template">
+        <div class="num">33</div>
+        <div>
+          <h3>Subject Your [Treatment] Appointment — What To Know, [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], Your [laser / body treatment] is coming up on [Date] at [Time] — exciting! A few things to help you prepare: - [Specific prep instructions for the treatment type — e.g., &#x27;Avoid sun exposure and self-tanner for 2 weeks before your laser appointment&#x27;] - [Skincare to pause — e.g., &#x27;Stop retinol and exfoliating acids 5 days before&#x27;] - [Comfort tips — e.g., &#x27;You may want to take an OTC pain reliever 30-60 minutes before if you&#x27;re sensitive to discomfort&#x27;] - What to expect during: [brief treatment description] - Results timeline: [when they&#x27;ll see results] If you have any questions before your appointment, please don&#x27;t hesitate to reach out. We want you feeling informed and confident. [Practitioner Name] | [Spa Name]</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Email Templates</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Section 2: Post-Treatment &amp; Retention</h3>
-        <p>Post-Treatment Follow-Up — 48 Hours</p>
+
+      <div class="template">
+        <div class="num">34</div>
+        <div>
+          <h3>Section 2: Post-Treatment &amp; Retention</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Post-Treatment Follow-Up — 48 Hours</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject How Are You Feeling, [First Name]?</h3>
-        <p>BODY Hi [First Name], Just checking in — how are you feeling after your [treatment] on [Date]? A quick post-care reminder: [1-2 specific aftercare tips relevant to their treatment] Results timeline: [when to expect full results — e.g., &#x27;Botox typically takes 7-14 days to fully settle&#x27;] I&#x27;d love to see you back for [maintenance recommendation] in approximately [timeframe]. Want to lock in a time now? Book here: [link] or reply and I&#x27;ll check availability. [Practitioner Name] | [Spa Name] Maintenance Reminder — Botox</p>
+      <div class="template">
+        <div class="num">35</div>
+        <div>
+          <h3>Subject How Are You Feeling, [First Name]?</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], Just checking in — how are you feeling after your [treatment] on [Date]? A quick post-care reminder: [1-2 specific aftercare tips relevant to their treatment] Results timeline: [when to expect full results — e.g., &#x27;Botox typically takes 7-14 days to fully settle&#x27;] I&#x27;d love to see you back for [maintenance recommendation] in approximately [timeframe]. Want to lock in a time now? Book here: [link] or reply and I&#x27;ll check availability. [Practitioner Name] | [Spa Name] Maintenance Reminder — Botox</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>04</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Templates</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Time For Your Touch-Up, [First Name]!</h3>
-        <p>BODY Hi [First Name], It&#x27;s been about [timeframe] since your last Botox treatment — which means you&#x27;re right on schedule for your maintenance appointment! Staying consistent is the best way to maintain your results and actually need less product over time as muscles train. I have [some availability this week / availability in [month]] — shall I hold a time for you? Book here: [link] or reply and I&#x27;ll sort it. [Practitioner Name] | [Spa Name] Treatment Package Offer</p>
+        <p class="kicker" style="margin-top: 0.42in;">Templates</p>
+        
+      <div class="template">
+        <div class="num">49</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], It&#x27;s been about [timeframe] since your last Botox treatment — which means you&#x27;re right on schedule for your maintenance appointment! Staying consistent is the best way to maintain your results and actually need less product over time as muscles train. I have [some availability this week / availability in [month]] — shall I hold a time for you? Book here: [link] or reply and I&#x27;ll sort it. [Practitioner Name] | [Spa Name] Treatment Package Offer</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject A Smarter Way To Invest In Your Results — [First Name]</h3>
-        <p>BODY Hi [First Name], A lot of my clients who see the best, longest-lasting results invest in a treatment package rather than individual sessions. Here&#x27;s what I&#x27;d recommend for your goals: [Package name]: [inclusions] — $[price] (save $[amount] vs. individual sessions) The benefits: priority scheduling, significant savings, and the consistency that produces the results you actually want. Interested? Reply here or book directly at [link]. [Practitioner Name] | [Spa Name] Lapsed Client Win-Back</p>
+      <div class="template">
+        <div class="num">50</div>
+        <div>
+          <h3>Subject A Smarter Way To Invest In Your Results — [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], A lot of my clients who see the best, longest-lasting results invest in a treatment package rather than individual sessions. Here&#x27;s what I&#x27;d recommend for your goals: [Package name]: [inclusions] — $[price] (save $[amount] vs. individual sessions) The benefits: priority scheduling, significant savings, and the consistency that produces the results you actually want. Interested? Reply here or book directly at [link]. [Practitioner Name] | [Spa Name] Lapsed Client Win-Back</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject It&#x27;S Been A While — We&#x27;D Love To See You, [First Name]</h3>
-        <p>BODY Hi [First Name], It&#x27;s been [timeframe] since your last visit and I just wanted to check in — how are you doing? We&#x27;ve added [new treatment or technology] since you were last in, and given your treatment history, I think you&#x27;d be a great candidate. I&#x27;d love to welcome you back. Reply here or book at [link] — mention this email for [small offer if applicable]. [Practitioner Name] | [Spa Name]</p>
+      <div class="template">
+        <div class="num">51</div>
+        <div>
+          <h3>Subject It&#x27;S Been A While — We&#x27;D Love To See You, [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], It&#x27;s been [timeframe] since your last visit and I just wanted to check in — how are you doing? We&#x27;ve added [new treatment or technology] since you were last in, and given your treatment history, I think you&#x27;d be a great candidate. I&#x27;d love to welcome you back. Reply here or book at [link] — mention this email for [small offer if applicable]. [Practitioner Name] | [Spa Name]</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Email Templates</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Email Templates</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Partnerships</h3>
-        <p>Post-Results Referral Ask</p>
+
+      <div class="template">
+        <div class="num">52</div>
+        <div>
+          <h3>Partnerships</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Post-Results Referral Ask</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>05</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Templates</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject You&#x27;Re Glowing — And We&#x27;D Love To Share It, [First Name]</h3>
-        <p>BODY Hi [First Name], I hope you&#x27;re loving your results — you looked absolutely radiant after your last visit! If you have friends or family who&#x27;ve been curious about [treatment type], I&#x27;d love to be introduced. I&#x27;ll take incredible care of anyone you refer. As a thank-you, [referral reward if applicable — e.g., &#x27;you&#x27;ll both receive $X toward your next treatment&#x27;]. Just share my booking link: [link] or have them mention your name when they call. [Practitioner Name] | [Spa Name] Google Review Request</p>
+        <p class="kicker" style="margin-top: 0.42in;">Templates</p>
+        
+      <div class="template">
+        <div class="num">61</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], I hope you&#x27;re loving your results — you looked absolutely radiant after your last visit! If you have friends or family who&#x27;ve been curious about [treatment type], I&#x27;d love to be introduced. I&#x27;ll take incredible care of anyone you refer. As a thank-you, [referral reward if applicable — e.g., &#x27;you&#x27;ll both receive $X toward your next treatment&#x27;]. Just share my booking link: [link] or have them mention your name when they call. [Practitioner Name] | [Spa Name] Google Review Request</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject A Small Ask — Your Words Help Others Find Us, [First Name]</h3>
-        <p>BODY Hi [First Name], I hope your results are everything you hoped for! If you&#x27;ve loved your experience at [Spa Name], I&#x27;d be so grateful if you shared it on Google. It genuinely helps other people in [City] feel confident choosing us. Here&#x27;s the direct link: [Google Review Link] Thank you — you&#x27;re one of my all-time favourite clients. [Practitioner Name] Dermatologist / Primary Care Introduction</p>
+      <div class="template">
+        <div class="num">62</div>
+        <div>
+          <h3>Subject A Small Ask — Your Words Help Others Find Us, [First Name]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Hi [First Name], I hope your results are everything you hoped for! If you&#x27;ve loved your experience at [Spa Name], I&#x27;d be so grateful if you shared it on Google. It genuinely helps other people in [City] feel confident choosing us. Here&#x27;s the direct link: [Google Review Link] Thank you — you&#x27;re one of my all-time favourite clients. [Practitioner Name] Dermatologist / Primary Care Introduction</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Introduction — [Spa Name], Medical Aesthetics, [City]</h3>
-        <p>BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m [title / credentials] at [Spa Name] in [City], specializing in [treatments]. I work with many patients who overlap with your practice — particularly those interested in non-surgical aesthetic enhancement and medical-grade skincare. I&#x27;d love to explore a mutual referral relationship that benefits our shared patients. Happy to share more about our clinical approach and the treatments we offer. Would you be open to a brief introduction? [Your Name] | [Spa Name] | [Phone]</p>
+      <div class="template">
+        <div class="num">63</div>
+        <div>
+          <h3>Subject Introduction — [Spa Name], Medical Aesthetics, [City]</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">BODY Dear Dr. [Name], My name is [Your Name] — I&#x27;m [title / credentials] at [Spa Name] in [City], specializing in [treatments]. I work with many patients who overlap with your practice — particularly those interested in non-surgical aesthetic enhancement and medical-grade skincare. I&#x27;d love to explore a mutual referral relationship that benefits our shared patients. Happy to share more about our clinical approach and the treatments we offer. Would you be open to a brief introduction? [Your Name] | [Spa Name] | [Phone]</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Email Templates</span><span>06</span></div>
-</section></main></body></html>
+
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>06</span></div>
+      </section>
+<section class="page cta-page">
+        <div class="brand">
+          <div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div>
+          <div class="badge" style="color:#fff7ef;border-color:rgba(255,247,239,.24);background:rgba(255,247,239,.08)">Next Step</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 1.15in; color:#f2c8c7;">Want the full system?</p>
+        <h2 style="max-width: 5.7in;">Build a beauty brand experience that looks polished before it ever feels complicated.</h2>
+        <p class="lead">Pair this file with the rest of the Med Spas bundle: calendars, prompts, client systems, brand assets, templates, and launch materials.</p>
+        <a class="cta-button">Content Elevated</a>
+        <div class="footer"><span>Med Spas Complete Growth Bundle</span><span>07</span></div>
+      </section></main></body></html>

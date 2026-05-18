@@ -1,359 +1,319 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Phone Scripts</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f2f8fb; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#4d9dc9 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#f1b84f 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#f2f8fb 94%,white), color-mix(in srgb,#f2f8fb 86%,#4d9dc9)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#4d9dc9; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); border-radius:999px; color:#4d9dc9; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
-.gold { color:#4d9dc9; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#4d9dc9 38%,transparent); border-bottom:1px solid color-mix(in srgb,#4d9dc9 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#4d9dc9 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#4d9dc9 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#4d9dc9 52%,transparent); border-bottom:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); }
-.metric b { display:block; color:#4d9dc9; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#101820; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#4d9dc9 18%,transparent), transparent 2in), linear-gradient(135deg, #101820, color-mix(in srgb,#101820 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#4d9dc9; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#4d9dc9 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#4d9dc9 56%,transparent); color:#4d9dc9; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#4d9dc9 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#4d9dc9 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
-
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#f2f8fb; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#101820; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#101820; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #4d9dc9; }
-
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#f2f8fb; }
-.layout-protocol .work { background:#fbfbf5; color:#101820; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#4d9dc9 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#101820; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
-
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
-
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#101820; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
-
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#4d9dc9 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#101820; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#4d9dc9 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#101820; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #4d9dc9; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#4d9dc9 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#4d9dc9 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-field"><section class="page cover">
+:root {
+  --ink:#f5f8fb;
+  --muted:#9fb1c2;
+  --quiet:#647688;
+  --paper:#07111b;
+  --panel:#0b1825;
+  --panel-2:#101f2f;
+  --line:rgba(157,206,255,.18);
+  --accent:#4d9dc9;
+  --accent-2:#f1b84f;
+  --orange:#ff9b5c;
+  --dark:#101820;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#0a1017;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;padding:.54in;background:linear-gradient(135deg,#050b12 0%,#0b1724 58%,#08131f 100%)}
+.page::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 76% 18%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 2.2in),
+  radial-gradient(circle at 15% 92%,rgba(255,155,92,.12),transparent 2.5in),
+  linear-gradient(135deg,rgba(255,255,255,.035),transparent 44%);
+  pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.15in;top:.75in;width:3.8in;height:8.2in;border:1px solid rgba(157,206,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 65%);transform:skewX(-9deg);opacity:.42;pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;align-items:flex-start;justify-content:space-between;color:rgba(245,248,251,.82);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.brand small{display:block;margin-top:7px;color:var(--accent);font-size:8px;letter-spacing:.2em}
+.badge{border:1px solid rgba(157,206,255,.18);border-radius:999px;background:rgba(255,255,255,.045);padding:10px 13px;color:#cfe9ff;font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.76in;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.28em;text-transform:uppercase}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.6in;margin-top:.16in;font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:72px;line-height:.86;font-weight:950;letter-spacing:-.055em;text-transform:uppercase}
+h1 em{font-style:normal;color:#d9f3ff;text-shadow:0 0 28px color-mix(in srgb,var(--accent) 35%,transparent)}
+.lead{position:relative;z-index:3;max-width:5.55in;margin-top:.28in;color:rgba(239,246,252,.9);font-size:16px;line-height:1.58}
+.system-strip{position:absolute;z-index:3;left:.54in;right:.54in;bottom:.86in;display:grid;grid-template-columns:1.1fr .9fr .9fr .9fr;border:1px solid rgba(157,206,255,.24);background:rgba(5,12,20,.82);box-shadow:0 22px 70px rgba(0,0,0,.22)}
+.system-cell{min-height:.98in;padding:17px 15px;border-left:1px solid var(--line)}
+.system-cell:first-child{border-left:0}
+.system-cell b{display:block;color:#f5f8fb;font-size:20px;line-height:1;font-weight:950;letter-spacing:-.02em}
+.system-cell span{display:block;margin-top:10px;color:#c6d5e4;font-size:8.4px;font-weight:850;letter-spacing:.14em;line-height:1.55;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.54in;right:.54in;bottom:.31in;display:flex;justify-content:space-between;color:rgba(159,177,194,.72);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:#f7fafc;color:#0b1420}
+.work::before{background:
+  radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 2.4in),
+  linear-gradient(135deg,rgba(255,255,255,.92),rgba(231,239,246,.62));
+  background-size:auto,auto}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.95fr 1.05fr;gap:.36in;align-items:end;margin-top:.25in;padding-bottom:.22in;border-bottom:1px solid rgba(16,31,47,.14)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.23em;text-transform:uppercase}
+h2{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:39px;line-height:.94;font-weight:950;letter-spacing:-.04em;text-transform:uppercase;color:#0b1420}
+.intro{margin:0;color:#314255;font-size:12.2px;line-height:1.6}
+.command-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.command-card{position:relative;min-height:1.82in;border:1px solid rgba(16,31,47,.12);background:linear-gradient(145deg,#fff,rgba(239,245,249,.9));padding:18px;box-shadow:0 14px 34px rgba(7,17,27,.055)}
+.command-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--orange))}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:12px;border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:6px;color:var(--accent);font-size:12px;font-weight:950}
+h3{font-size:15px;line-height:1.12;color:#0b1420;font-weight:850;letter-spacing:-.01em}
+.command-card p,.data-card p{margin:9px 0 0;color:#26384a;font-size:10.6px;line-height:1.55}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.data-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid rgba(16,31,47,.12);background:linear-gradient(135deg,#fff,rgba(240,246,250,.92));box-shadow:0 12px 30px rgba(7,17,27,.055)}
+.data-card .eyebrow{margin-bottom:7px;color:#52687d;font-size:7.5px;letter-spacing:.18em}
+.data-card h3{font-size:16.5px}
+.data-card .num{margin:0;background:#0b1825;color:#d9f3ff;border-color:rgba(55,168,230,.42)}
+.highlight-page{background:linear-gradient(135deg,#07111b,#102033)}
+.highlight-page::before{background:radial-gradient(circle at 78% 20%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 2.4in),linear-gradient(135deg,rgba(255,255,255,.035),transparent 48%);background-size:auto,auto}
+.highlight-page h2{color:#f5f8fb}
+.highlight-page .intro,.highlight-page .lead{color:rgba(239,246,252,.86)}
+.highlight-page .data-card,.highlight-page .command-card{background:rgba(245,250,255,.08);border-color:rgba(157,206,255,.2);box-shadow:none}
+.highlight-page h3{color:#f5f8fb}
+.highlight-page .data-card p,.highlight-page .command-card p{color:rgba(232,241,249,.82)}
+.highlight-page .data-card .eyebrow{color:#a9dfff}
+.highlight-page .footer{color:rgba(226,236,246,.5)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you growth system for electricians</div>
-    </div>
+    <div>CONTENT ELEVATED<small>Electricians Growth System</small></div>
+    <div class="badge">Growth System</div>
   </div>
+  <p class="cover-kicker">Local authority · follow-up · booked jobs</p>
   <h1>Phone Scripts</h1>
-  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Power</span></div>
-    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  <p class="lead">A high-clarity operating file for turning estimates, service calls, reviews, reminders, and seasonal demand into a cleaner growth workflow.</p>
+  <div class="system-strip">
+    <div class="system-cell"><b>Field</b><span>Built for real service operators</span></div>
+    <div class="system-cell"><b>Fast</b><span>Customize before the next job</span></div>
+    <div class="system-cell"><b>Local</b><span>Sharper trust in your market</span></div>
+    <div class="system-cell"><b>Repeat</b><span>Systems for steady demand</span></div>
   </div>
-  <div class="footer"><span>Electricians product file</span><span>01</span></div>
+  <div class="footer"><span>Electricians growth system</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Operator Notes</div>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="section-head">
+    <div><p class="eyebrow">Use the system</p><h2>Make every lead easier to convert.</h2></div>
+    <p class="intro">Start with the asset closest to the next revenue moment: estimate follow-up, maintenance reminder, review request, service agreement, seasonal campaign, or referral ask.</p>
+  </div>
+  <div class="command-grid">
+    <article class="command-card"><div class="num">01</div><h3>Match the job type</h3><p>Adjust the language for install, repair, quote, maintenance, emergency call, membership, or repeat service.</p></article>
+    <article class="command-card"><div class="num">02</div><h3>Localize the trust</h3><p>Add the city, service area, homeowner concern, business context, and proof points that make the message credible.</p></article>
+    <article class="command-card"><div class="num">03</div><h3>Move fast</h3><p>Use the finished asset in the same week: send the follow-up, post the content, request the review, or launch the campaign.</p></article>
   </div>
   <div class="footer"><span>Phone Scripts</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work highlight-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Growth System</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Phone Scripts, Voicemail &amp; Dispatcher Playbook</h3>
         <p>Inbound call scripts, emergency protocols, voicemails that get returned, commercial pitching, and review response templates</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Section 1: Inbound Call Scripts</h3>
         <p>Standard Residential Service Call</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Dispatcher Script — Standard Residential Call</h3>
         <p>DISPATCHER: Thank you for calling [Company Name], this is [Name] — how can I help you today? [Listen fully. Let them describe the problem without interrupting. Don&#x27;t diagnose on the phone.] DISPATCHER: Got it — that&#x27;s something we can definitely take care of. Let me get a couple of quick details. [Collect: full name, address, best callback number, description of the issue, urgency level] DISPATCHER: We have availability [today / tomorrow / this week]. Our electricians are licensed and insured — they&#x27;ll call you 30 minutes before arrival. Does [time window] work? [Confirm. Read the address back. Always.] DISPATCHER: Perfect — you&#x27;re all set. Any questions before I let you go? [KEY: Collect all details before quoting anything. Never give a firm price over the phone for diagnostic work.] Emergency Call — Burning Smell / Sparking / Power Out</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Dispatcher Script — Electrical Emergency</h3>
-        <p>DISPATCHER: [Company Name] — sounds like an emergency. I want to help you quickly. What&#x27;s happening? [Listen. Assess safety risk immediately.] DISPATCHER: First — if you can smell burning or see sparking, please turn off the main breaker at your electrical panel right now if it&#x27;s safe to do so. Do you know where your panel is? [Guide them through this if needed. Do NOT let them stay near an active electrical hazard.] DISPATCHER: I&#x27;m reaching out to our nearest licensed electrician right now. What&#x27;s your address and best callback number? [Dispatch. Call back within 10 minutes with a confirmed ETA.] DISPATCHER: [Your Name] is heading to you now and will be there by [time]. If anything changes before they arrive, call me directly at [Phone]. [If burning smell or smoke: &#x27;If the burning smell continues after you turn off the breaker, please call 911 and evacuate. Electrical fires can start inside walls.&#x27;] Price-Shopping Call — &#x27;How Much Does It Cost?&#x27;</p>
+        <p>DISPATCHER: [Company Name] — sounds like an emergency. I want to help you quickly. What&#x27;s happening? [Listen. Assess safety risk immediately.] DISPATCHER: First — if you can smell burning or see sparking, please turn off the main breaker at your electrical panel right now if it&#x27;s safe to do so. Do you know where your panel is? [Guide them through this if needed. Do NOT let them stay near an active electrical hazard.] DISPATCHER: I&#x27;m reaching out to our nearest licensed electrician right now. What&#x27;s</p>
       </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Phone Scripts</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Growth System</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
+        <p>your address and best callback number? [Dispatch. Call back within 10 minutes with a confirmed ETA.] DISPATCHER: [Your Name] is heading to you now and will be there by [time]. If anything changes before they arrive, call me directly at [Phone]. [If burning smell or smoke: &#x27;If the burning smell continues after you turn off the breaker, please call 911 and evacuate. Electrical fires can start inside walls.&#x27;] Price-Shopping Call — &#x27;How Much Does It Cost?&#x27;</p>
+      </div>
+    </article>
+
+    <article class="data-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Operator asset</p>
         <h3>Dispatcher Script — Price Shopping</h3>
         <p>CUSTOMER: How much does it cost to [rewire an outlet / install a panel / run a new circuit]? DISPATCHER: Great question — and I want to give you a real number, not a guess. For [panel upgrades], most residential jobs run between $[X] and $[X] depending on the size of your panel and the condition of your existing wiring. For smaller jobs like outlets and circuits, our service call is $[amount] and our electrician will give you an exact price before any work starts. DISPATCHER: Can I get you scheduled for a free assessment? It&#x27;s the only way to give you an accurate number — and there&#x27;s no obligation after the assessment. [Give ranges for standard jobs. Never give firm prices for diagnostic work. Always offer the free assessment as the next step.]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Voicemail — Estimate Follow-Up</h3>
         <p>Hi [First Name], this is [Your Name] from [Company Name] — just following up on the estimate for [job type] I left on [day]. Wanted to make sure you got it and see if you had any questions. We&#x27;re [available this week / booking out X weeks] if you&#x27;d like to move forward. Call or text me at [Phone] — [repeat number]. No pressure at all. Talk soon. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    </article></div>
+  <div class="footer"><span>Phone Scripts</span><span>04</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Growth System</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Voicemail — Seasonal Campaign</h3>
         <p>Hi [First Name], [Your Name] from [Company Name]. Just reaching out because we&#x27;re running our [seasonal] whole-home electrical inspection this month — it&#x27;s $[amount], takes about [X] hours, and catches the kind of issues that turn into emergencies. If your home is more than 15 years old, it&#x27;s worth doing. Call me at [Phone] — [repeat number]. Thanks! [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Phone Scripts</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Voicemail — Ev Charger Campaign</h3>
         <p>Hi [First Name], [Your Name] from [Company Name]. I&#x27;m calling because a lot of our customers in [area] are getting EVs and asking about Level 2 home charging. Installation typically runs $[X]-$[X] and cuts charging time from 50 hours to under 8. Happy to give you a free assessment if you&#x27;re interested. Call me at [Phone] — [repeat number]. Thanks. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Voicemail — Commercial Prospect</h3>
         <p>Hi [Name], [Your Name] from [Company Name]. I&#x27;m a licensed electrical contractor serving commercial properties in [City] — reaching out because I work with several property managers in the area and I&#x27;d love to introduce myself. Happy to talk about emergency response, code compliance, or anything else. My number is [Phone] — [repeat number]. Look forward to connecting. [Keep all voicemails under 30 seconds. Name, company, specific reason, number twice. No exceptions.]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Section 3: Objection Handling Scripts</h3>
         <p>Objection: &quot;IT&#x27;S TOO EXPENSIVE&quot;</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    </article></div>
+  <div class="footer"><span>Phone Scripts</span><span>05</span></div>
+</section>
+<section class="page work highlight-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Growth System</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Objection Script — It&#x27;S Too Expensive</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
         <p>ELEC: I hear you — it&#x27;s more than you were expecting. Can I ask: is it the total number, or a question about what&#x27;s included? [If total number:] ELEC: We do offer [payment plan / financing for jobs over $X] if spreading the cost out would help. For a job like this, that works out to about $[monthly amount] a</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Month.</h3>
         <p>[If questioning what&#x27;s included:] ELEC: Let me quickly walk you through what our quote covers that a lower bid might not: we&#x27;re licensed, we pull the permit where required, our work is inspected, and everything comes with a [X]-year workmanship guarantee. A lower quote may not include all of those — and when something goes wrong, you&#x27;ll want those protections. [Never apologize for your price. State it, explain the value, hold it.] Objection: &quot;I GOT A CHEAPER QUOTE&quot;</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Phone Scripts</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Objection Script — I Got A Cheaper Quote</h3>
         <p>ELEC: I appreciate you being upfront about that. Can I ask — was the other quote for the same scope? Did they mention pulling a permit? ELEC: The reason I ask is that [job type] typically requires a permit in [jurisdiction]. If the other quote doesn&#x27;t include that, you may be looking at unpermitted work — which can create issues at resale and potentially void your homeowner&#x27;s insurance. ELEC: I&#x27;m not suggesting they&#x27;re cutting corners — I genuinely don&#x27;t know. But it&#x27;s worth asking before you sign. [Never disparage competitors. Ask the right question and let the customer connect the dots themselves.] Objection: &quot;I&#x27;LL THINK ABOUT IT&quot;</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Objection Script — I&#x27;Ll Think About It</h3>
         <p>DISPATCHER: Of course — take your time. Can I ask: is there anything specific you&#x27;re weighing? Sometimes I can answer it right now. DISPATCHER: One thing worth knowing: we&#x27;re currently booking about [X weeks] out for [job type]. I can hold a slot for [24/48 hours] while you decide — that way you don&#x27;t lose the availability. [Soft urgency. Never pressure. Give them a genuine reason to decide sooner without making them feel pushed.]</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    </article></div>
+  <div class="footer"><span>Phone Scripts</span><span>06</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Growth System</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Section 4: Review Response Templates</h3>
         <p>5-Star Review Response</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Subject Google Business Profile — Respond Directly</h3>
         <p>Thank you so much, [First Name]! It was a pleasure taking care of your [job type] — [add one specific detail from the review if possible]. We really appreciate you taking the time to share your experience. If you ever need us again, we&#x27;re just a call or text away. — [Your Name], [Company Name] [Respond within 24 hours. Include company name — it helps local SEO. Specific and warm.] Negative Review Response</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Subject Google Business Profile — Respond Directly</h3>
-        <p>Hi [First Name], thank you for taking the time to share this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I&#x27;d really like to understand what happened and make it right. Please call me directly at [Phone] and I&#x27;ll personally address it. We stand behind our work and I take every piece of feedback seriously. — [Your Name], Owner, [Company Name] [Never argue publicly. Never explain defensively. Move it offline. Prospects</p>
+        <p>Hi [First Name], thank you for taking the time to share this — I&#x27;m genuinely sorry your experience didn&#x27;t meet the standard we hold ourselves to. I&#x27;d really like to understand what happened and make it right. Please call me directly at [Phone] and I&#x27;ll personally address it. We stand behind our work and I take every piece of feedback seriously. — [Your Name], Owner, [Company Name] [Never argue publicly. Never explain defensively. Move it offline. Prospects read your responses — composure and accountability are more trust-building than a defensive explanation.]</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Phone Scripts</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Growth System</p><h2>Phone Scripts</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>read your responses — composure and accountability are more trust-building than a defensive explanation.]</p>
-      </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Phone Scripts</span><span>07</span></div>
 </section></main></body></html>

@@ -1,677 +1,732 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Salon AI Playbook</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff7f3; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b98378 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#e2b9aa 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#fff7f3 94%,white), color-mix(in srgb,#fff7f3 86%,#b98378)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#b98378; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b98378 32%,transparent); border-radius:999px; color:#b98378; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#b98378; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b98378 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#b98378 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b98378 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b98378 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b98378 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b98378 32%,transparent); }
-.metric b { display:block; color:#b98378; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#241a1a; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b98378 18%,transparent), transparent 2in), linear-gradient(135deg, #241a1a, color-mix(in srgb,#241a1a 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#b98378; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b98378 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b98378 56%,transparent); color:#b98378; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b98378 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b98378 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#17110f;
+  --soft-ink:#5d504b;
+  --muted:#8e7a72;
+  --paper:#fff7f3;
+  --paper-2:#f6e8de;
+  --blush:#e2b9aa;
+  --rose:#b98378;
+  --cream:#fffaf4;
+  --dark:#241a1a;
+  --line:rgba(91,67,58,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;background:#e8d7ca;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--blush) 34%,transparent),transparent 2.2in),radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--rose) 18%,transparent),transparent 2.5in),linear-gradient(135deg,var(--paper),var(--cream) 52%,var(--paper-2));padding:.62in}
+.page::before{content:"";position:absolute;inset:.28in;border:1px solid rgba(91,67,58,.12);border-radius:28px;pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.1in;top:-.3in;width:3.2in;height:9.8in;background:linear-gradient(180deg,rgba(23,17,15,.06),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--blush) 26%,transparent),transparent 64%);transform:rotate(-10deg);border-radius:999px;pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.wordmark{font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.wordmark small{display:block;margin-top:8px;color:var(--rose);font-size:9px;font-weight:700;letter-spacing:.18em}
+.badge{border:1px solid color-mix(in srgb,var(--rose) 26%,transparent);border-radius:999px;padding:10px 14px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,250,244,.64)}
+.kicker{position:relative;z-index:2;display:flex;align-items:center;gap:12px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.kicker::before{content:"";width:42px;height:1px;background:var(--rose)}
+h1,h2,h3{position:relative;z-index:2;margin:0;font-family:"Didot","Bodoni 72","Times New Roman",serif;font-weight:400;letter-spacing:-.045em}
+h1{max-width:5.85in;margin-top:.82in;font-size:66px;line-height:.93}
+h2{font-size:42px;line-height:.96}
+h3{font-size:24px;line-height:1}
+h1 span,h2 span,h1 em,h2 em{color:var(--rose);font-style:italic}
+p{position:relative;z-index:2;margin:0;color:var(--soft-ink);font-size:12.5px;line-height:1.62}
+.lead{max-width:4.85in;margin-top:.28in;font-size:16px;line-height:1.55}
+.cover-meta{position:absolute;left:.62in;right:.62in;bottom:.74in;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta-item{padding:18px 16px;border-left:1px solid var(--line)}
+.meta-item:first-child{border-left:0;padding-left:0}
+.meta-item strong{display:block;font-family:"Didot","Bodoni 72","Times New Roman",serif;color:var(--rose);font-size:28px;font-weight:400;line-height:1}
+.meta-item span{display:block;margin-top:8px;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.16em;line-height:1.45;text-transform:uppercase}
+.footer{position:absolute;left:.62in;right:.62in;bottom:.34in;z-index:2;display:flex;justify-content:space-between;color:rgba(93,80,75,.72);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.intro-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:.42in}
+.panel{position:relative;z-index:2;border:1px solid var(--line);border-radius:22px;background:rgba(255,250,244,.66);padding:22px;box-shadow:0 18px 52px rgba(95,61,51,.08)}
+.panel.dark{background:rgba(255,250,244,.66);color:var(--ink)}
+.panel.dark p{color:var(--soft-ink)}
+.panel.dark .label{color:var(--rose)}
+.label{margin-bottom:12px;color:var(--rose);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.rule{position:relative;z-index:2;height:1px;margin:28px 0;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--rose) 38%,transparent),transparent)}
+.template{position:relative;z-index:2;display:grid;grid-template-columns:.78in 1fr;gap:18px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.template:first-of-type{border-top:0;padding-top:0}
+.num{width:.58in;height:.58in;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--rose) 24%,transparent);border-radius:50%;color:var(--rose);font-family:"Didot","Bodoni 72","Times New Roman",serif;font-size:22px;background:rgba(255,250,244,.66)}
+.when{margin:10px 0 14px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.script{border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,250,244,.82)),radial-gradient(circle at 8% 12%,color-mix(in srgb,var(--blush) 18%,transparent),transparent 45%);border:1px solid color-mix(in srgb,var(--rose) 14%,transparent);padding:18px;color:#2a201d;font-size:13px;line-height:1.55}
+.tip{margin-top:12px;border-left:3px solid var(--rose);padding-left:12px;color:var(--soft-ink);font-size:11px;line-height:1.5}
+.cta-page{background:radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--blush) 22%,transparent),transparent 2.6in),linear-gradient(135deg,#1b1412,color-mix(in srgb,var(--rose) 72%,#251413));color:#fff7ef}
+.cta-page::before{border-color:rgba(255,250,244,.14)}
+.cta-page p,.cta-page .footer,.cta-page .wordmark small{color:rgba(255,247,239,.74)}
+.cta-page h2,.cta-page .wordmark{color:#fff7ef}
+.cta-button{display:inline-block;margin-top:28px;border-radius:999px;background:#fff7ef;color:color-mix(in srgb,var(--rose) 78%,#2a1716);padding:16px 22px;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>Complete Growth Bundle</small></div>
+          <div class="badge">AI Playbook</div>
+        </div>
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#fff7f3; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#241a1a; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#241a1a; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b98378; }
+        <p class="kicker" style="margin-top: 0.78in;">Copy · Customize · Launch</p>
+        <h1>Salon <span>AI</span> Playbook</h1>
+        <p class="lead">A polished, niche-specific growth system designed to help you turn client communication, content, and brand direction into a more consistent beauty business.</p>
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#fff7f3; }
-.layout-protocol .work { background:#fbfbf5; color:#241a1a; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b98378 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#241a1a; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+        <div class="cover-meta">
+          <div class="meta-item"><strong>01</strong><span>Ready-to-use system</span></div>
+          <div class="meta-item"><strong>Studio</strong><span>Beauty-specific system</span></div>
+          <div class="meta-item"><strong>Fast</strong><span>Customize and launch</span></div>
+        </div>
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>01</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>Implementation System</small></div>
+          <div class="badge">How to Use</div>
+        </div>
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+        <p class="kicker" style="margin-top: 0.72in;">Before You Use It</p>
+        <h2>Make the system feel <span>personal.</span></h2>
+        <p class="lead">Use this file as the polished base. Replace brackets, offers, services, client details, and local language so every asset sounds like the business using it.</p>
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#241a1a; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+        <div class="intro-grid">
+          <div class="panel">
+            <div class="label">The Rule</div>
+            <p>Keep the strategy intact, but make every client-facing line specific. Beauty buyers respond to trust, taste, timing, and a sense that the experience was designed for them.</p>
+          </div>
+          <div class="panel dark">
+            <div class="label">Best Practice</div>
+            <p>Batch the assets weekly. Turn prompts into posts, templates into follow-ups, and brand direction into a consistent client experience across every touchpoint.</p>
+          </div>
+        </div>
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b98378 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#241a1a; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b98378 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#241a1a; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #b98378; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b98378 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b98378 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-editorial"><section class="page cover">
-  <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you ai playbook for hair stylists</div>
-    </div>
-  </div>
-  <h1>Salon <em>AI</em> Playbook</h1>
-  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Salon</span></div>
-    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
-  </div>
-  <div class="footer"><span>Hair Stylists product file</span><span>01</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
-  </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
-  </div>
-  <div class="footer"><span>Salon AI Playbook</span><span>02</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>AI Playbook</h3>
-        <p>Complete AI Guide for Salon Owners + 57-Prompt Library 50+ Salon-specific prompts 6 Chapters 10+ AI tools covered 0 Tech skills required © 2026 · Hairstylist Complete Growth Bundle · AI Playbook · All rights reserved · For single-business use only</p>
+        <div class="rule"></div>
+        
+      <div class="template">
+        <div class="num">01</div>
+        <div>
+          <h3>AI Playbook</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Complete AI Guide for Salon Owners + 57-Prompt Library 50+ Salon-specific prompts 6 Chapters 10+ AI tools covered 0 Tech skills required © 2026 · Hairstylist Complete Growth Bundle · AI Playbook · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only What&#x27;s Inside Intro Why AI is the unfair advantage every salon owner needs now 1 Your AI starter kit — tools, setup, and your first win in 20 minutes 2 AI for marketing — content, captions, ads, and your brand voice 3 AI for client communications — emails, texts, rebooking, and reviews 4 AI for operations — hiring scripts, staff comms, SOPs, and pricing 5 AI for growth — Google presence, referrals, and new client acquisition 6 Building your AI habit — a weekly system that takes 30 minutes</p>
+      <div class="template">
+        <div class="num">02</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 2 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only What&#x27;s Inside Intro Why AI is the unfair advantage every salon owner needs now 1 Your AI starter kit — tools, setup, and your first win in 20 minutes 2 AI for marketing — content, captions, ads, and your brand voice 3 AI for client communications — emails, texts, rebooking, and reviews 4 AI for operations — hiring scripts, staff comms, SOPs, and pricing 5 AI for growth — Google presence, referrals, and new client acquisition 6 Building your AI habit — a weekly system that takes 30 minutes</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Why AI Is The Unfair Advantage Every Salon</h3>
-        <p>Owner Needs Right Now Let&#x27;s be honest. Running a salon is one of the hardest small businesses there is. You&#x27;re the owner, the stylist, the marketer, the HR department, and sometimes the janitor — all in the same day. You&#x27;re behind the chair for eight hours and then expected to show up on social media, answer DMs, send rebooking reminders, write job posts, respond to reviews, and somehow still have energy left over. Most marketing advice isn&#x27;t built for you. It assumes you have a team, a budget, and hours of free time. You have none of those things. AI changes that equation. Not because it replaces you — it absolutely cannot do what you do behind the chair. But it can handle the thinking, writing, and planning that eats your time and mental energy outside of it. This playbook shows you exactly how. What AI can do for your salon: Write captions, emails, and texts in seconds. Draft job postings and staff policies. Generate 30</p>
+      <div class="template">
+        <div class="num">03</div>
+        <div>
+          <h3>Why AI Is The Unfair Advantage Every Salon</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Owner Needs Right Now Let&#x27;s be honest. Running a salon is one of the hardest small businesses there is. You&#x27;re the owner, the stylist, the marketer, the HR department, and sometimes the janitor — all in the same day. You&#x27;re behind the chair for eight hours and then expected to show up on social media, answer DMs, send rebooking reminders, write job posts, respond to reviews, and somehow still have energy left over.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>03</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Content Ideas In Under A Minute. Help You Raise Your Prices Confidently. Answer Client Faqs</h3>
-        <p>automatically. Build a rebooking system you set up once and forget. Create SOPs, training guides, and onboarding documents. Research trends and competitors. Write your Google Business responses. And a lot more. What AI cannot do: Give a great haircut. Build genuine client relationships. Make creative decisions that require your taste and expertise. Replace your personality and brand voice. Think strategically about your specific business without your input.</p>
+
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>02</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">13</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Most marketing advice isn&#x27;t built for you. It assumes you have a team, a budget, and hours of free time. You have none of those things. AI changes that equation. Not because it replaces you — it absolutely cannot do what you do behind the chair. But it can handle the thinking, writing, and planning that eats your time and mental energy outside of it. This playbook shows you exactly how. What AI can do for your salon: Write captions, emails, and texts in seconds. Draft job postings and staff policies. Generate 30</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      <div class="template">
+        <div class="num">14</div>
+        <div>
+          <h3>Content Ideas In Under A Minute. Help You Raise Your Prices Confidently. Answer Client Faqs</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">automatically. Build a rebooking system you set up once and forget. Create SOPs, training guides, and onboarding documents. Research trends and competitors. Write your Google Business responses. And a lot more. What AI cannot do: Give a great haircut. Build genuine client relationships. Make creative decisions that require your taste and expertise. Replace your personality and brand voice. Think strategically about your specific business without your input.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>How To Use This Playbook:</h3>
-        <p>Read it chapter by chapter the first time through. Each chapter covers one area of your business with step-by-step instructions and ready-to-use prompts. Start with Chapter 1 to get your tools set up, then pick the chapter that solves your biggest current pain point. The prompt library at the end is your ongoing reference — bookmark it and come back whenever you need to produce something quickly.</p>
+      <div class="template">
+        <div class="num">15</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 3 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      <div class="template">
+        <div class="num">16</div>
+        <div>
+          <h3>How To Use This Playbook:</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Read it chapter by chapter the first time through. Each chapter covers one area of your business with step-by-step instructions and ready-to-use prompts. Start with Chapter 1 to get your tools set up, then pick the chapter that solves your biggest current pain point. The prompt library at the end is your ongoing reference — bookmark it and come back whenever you need to produce something quickly.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>03</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 1</h3>
-        <p>Your AI Starter Kit Tools, setup, and your first real win — in 20 minutes or less. The Only Tools You Need to Start You do not need to pay for anything to get started. These three free tools cover 90% of what this</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">25</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 4 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Playbook Teaches.</h3>
-        <p>Tool What It Does Cost chat.openai.com Core AI writing tool. Sufficient for everything in this playbook. Simple chat interface. Free</p>
+      <div class="template">
+        <div class="num">26</div>
+        <div>
+          <h3>Chapter 1</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Your AI Starter Kit Tools, setup, and your first real win — in 20 minutes or less. The Only Tools You Need to Start You do not need to pay for anything to get started. These three free tools cover 90% of what this</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">07</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Canva.Com</h3>
-        <p>Graphics, photo editing, social media images, and AI image generation. Free gemini.google.com Drafting docs and generating ideas. Integrates with Google Docs and Gmail. Free Setting Up ChatGPT for Your Salon Before you start prompting, give ChatGPT context about your business once. This is called a system</p>
+      <div class="template">
+        <div class="num">27</div>
+        <div>
+          <h3>Playbook Teaches.</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Tool What It Does Cost chat.openai.com Core AI writing tool. Sufficient for everything in this playbook. Simple chat interface. Free</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt Or Custom Instruction — It Means Every Response Will Automatically Be Tailored To Your</h3>
-        <p>salon without you having to explain it every time. 1 Go to chat.openai.com and create a free account Use your email. No credit card required for the free tier. 2 Click your profile icon → &#x27;Customize ChatGPT&#x27; This opens the custom instructions panel. 3 In the first box, paste your salon bio Include your salon name, location, services you offer, your vibe/brand, and who your typical client is. 4 In the second box, paste your response preferences Tell it: &#x27;Always write in a warm, friendly tone. Keep captions concise. Write like a real person, not a corporate brand.&#x27; 5 Save and start a new chat Every new conversation will now have your salon context built in automatically. Your Salon Bio Template — Copy and Fill In</p>
+
+      <div class="template">
+        <div class="num">28</div>
+        <div>
+          <h3>Canva.Com</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Graphics, photo editing, social media images, and AI image generation. Free gemini.google.com Drafting docs and generating ideas. Integrates with Google Docs and Gmail. Free Setting Up ChatGPT for Your Salon Before you start prompting, give ChatGPT context about your business once. This is called a system</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only I own [SALON NAME], a [TYPE: hair salon / suite / booth rental] in [CITY, STATE]. I specialize in [TOP 2-3 SERVICES]. My typical client is [DESCRIBE: age, lifestyle, what they care about]. My brand vibe is [DESCRIBE: modern and clean / warm and welcoming / edgy and creative]. I am a solo stylist / I have [X] stylists on my team. My price range is [LOW END] to [HIGH END] per service. Your First Win: Write This Week&#x27;s Instagram Caption Open ChatGPT and try this prompt right now. It will take about 30 seconds and produce something better than most people write in 20 minutes. Write 3 Instagram captions for my salon. One should promote [SERVICE], one should be a behind-the-scenes post about [SOMETHING FROM THIS WEEK], and one should be an engagement question for my followers. Keep each caption under 150 words, use a conversational tone, and end each with a call to action</p>
+      <div class="template">
+        <div class="num">29</div>
+        <div>
+          <h3>Prompt Or Custom Instruction — It Means Every Response Will Automatically Be Tailored To Your</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">salon without you having to explain it every time. 1 Go to chat.openai.com and create a free account Use your email. No credit card required for the free tier. 2 Click your profile icon → &#x27;Customize ChatGPT&#x27; This opens the custom instructions panel. 3 In the first box, paste your salon bio Include your salon name, location, services you offer, your vibe/brand, and who your typical client is. 4 In the second box, paste your response preferences Tell it: &#x27;Always write in a warm, friendly tone. Keep captions concise. Write like a real person, not a corporate brand.&#x27; 5 Save and start a new chat Every new conversation will now have your salon context built in automatically. Your Salon Bio Template — Copy and Fill In</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>04</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt = Something You Can Actually Use. Always Include: What You Want, Who It&#x27;S For, The Tone,</h3>
-        <p>and any details that make your salon unique.</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">37</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 5 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only I own [SALON NAME], a [TYPE: hair salon / suite / booth rental] in [CITY, STATE]. I specialize in [TOP 2-3 SERVICES]. My typical client is [DESCRIBE: age, lifestyle, what they care about]. My brand vibe is [DESCRIBE: modern and clean / warm and welcoming / edgy and creative]. I am a solo stylist / I have [X] stylists on my team. My price range is [LOW END] to [HIGH END] per service. Your First Win: Write This Week&#x27;s Instagram Caption Open ChatGPT and try this prompt right now. It will take about 30 seconds and produce something better than most people write in 20 minutes. Write 3 Instagram captions for my salon. One should promote [SERVICE], one should be a behind-the-scenes post about [SOMETHING FROM THIS WEEK], and one should be an engagement question for my followers. Keep each caption under 150 words, use a conversational tone, and end each with a call to action. The Golden Rule of Prompting: The more specific you are, the better the output. Vague prompt = generic response. Specific</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      <div class="template">
+        <div class="num">38</div>
+        <div>
+          <h3>Prompt = Something You Can Actually Use. Always Include: What You Want, Who It&#x27;S For, The Tone,</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">and any details that make your salon unique.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 2</h3>
-        <p>AI for Marketing</p>
+
+      <div class="template">
+        <div class="num">39</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 6 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Content, Captions, Email Campaigns, And How To Make AI Sound Like You — Not A Robot.</h3>
-        <p>Training AI to Write in Your Voice The most common complaint about AI content is that it sounds generic. The fix is simple: you have to teach it your voice before asking it to write for you. Do this once and every piece of content it produces will feel like you wrote it. Voice training prompt — run this first: I&#x27;m going to give you 3 examples of captions I&#x27;ve written. Study the tone, word choice, sentence length, and personality. Then write all future social media content in this style. Example 1: [paste a caption you&#x27;ve written] Example 2: [paste another caption] Example 3: [paste another caption] Confirm you understand my voice.</p>
+      <div class="template">
+        <div class="num">40</div>
+        <div>
+          <h3>Chapter 2</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">AI for Marketing</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>05</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Content Creation — The Full Workflow</h3>
-        <p>Step Task How 1 Monthly Brainstorm At the start of each month, ask AI for 30 content ideas tailored to your salon, the season, and any promotions. 2 Caption Writing Pick your ideas, give AI the context, and ask for 3 caption options per post. Choose the best one and adapt it. 3 Hashtag Research Ask AI for 15 hashtags for each post type — it will group them by reach (broad, niche, local). 4 Repurposing Take your best-performing posts and ask AI to rewrite them for a different platform or angle. Essential Marketing Prompts Monthly content brainstorm: Give me 30 social media post ideas for a hair salon in [MONTH]. Include a mix of: before/after transformations, educational tips, behind-the-scenes content, client engagement questions, and promotional posts. Format as a numbered list with one-line descriptions. Caption from a photo description: Write an Instagram caption for a photo of [DESCRIBE THE PHOTO]. The caption should be engaging, include a hook in the first line</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">50</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Training AI to Write in Your Voice The most common complaint about AI content is that it sounds generic. The fix is simple: you have to teach it your voice before asking it to write for you. Do this once and every piece of content it produces will feel like you wrote it. Voice training prompt — run this first: I&#x27;m going to give you 3 examples of captions I&#x27;ve written. Study the tone, word choice, sentence length, and personality. Then write all future social media content in this style. Example 1: [paste a caption you&#x27;ve written] Example 2: [paste another caption] Example 3: [paste another caption] Confirm you understand my voice.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Win-back email: Write a win-back email for a hair salon client who hasn&#x27;t booked in 3 months. Subject line should create curiosity, not desperation. The email should: acknowledge we miss them (warmly, not guilting), mention something new at the salon, include a limited-time reason to rebook (not a discount — think priority booking or a free add-on), and end with a direct link CTA. Tone: friendly, personal, like a note from the stylist. The 4 Core Emails You Need</p>
+
+      <div class="template">
+        <div class="num">51</div>
+        <div>
+          <h3>Content Creation — The Full Workflow</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Step Task How 1 Monthly Brainstorm At the start of each month, ask AI for 30 content ideas tailored to your salon, the season, and any promotions. 2 Caption Writing Pick your ideas, give AI the context, and ask for 3 caption options per post. Choose the best one and adapt it. 3 Hashtag Research Ask AI for 15 hashtags for each post type — it will group them by reach (broad, niche, local). 4 Repurposing Take your best-performing posts and ask AI to rewrite them for a different platform or angle. Essential Marketing Prompts Monthly content brainstorm: Give me 30 social media post ideas for a hair salon in [MONTH]. Include a mix of: before/after transformations, educational tips, behind-the-scenes content, client engagement questions, and promotional posts. Format as a numbered list with one-line descriptions. Caption from a photo description: Write an Instagram caption for a photo of [DESCRIBE THE PHOTO]. The caption should be engaging, include a hook in the first line, describe the technique briefly, and end with a call to book. Under 120 words.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>06</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Email Type</h3>
-        <p>When to Send Purpose Welcome Email When a new client books their first appointment Introduce your salon, set expectations, build excitement Post-Appointment Follow-Up 24 hours after a visit Thank them, ask for a review, plant the rebooking seed Win-Back Campaign</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">58</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Promotional post without sounding salesy: Write a social media post promoting [SERVICE] at my salon. Make it feel like helpful information rather than a hard sell. Mention who it&#x27;s best for, what the experience is like, and include a soft call to action. Tone: warm and genuine.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Client Inactive 90+ Days</h3>
-        <p>Acknowledge the gap, give a reason to return, make it easy to book Monthly Newsletter Once per month Keep your name in their inbox, share what&#x27;s new, soft offer</p>
+      <div class="template">
+        <div class="num">59</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 7 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Win-back email: Write a win-back email for a hair salon client who hasn&#x27;t booked in 3 months. Subject line should create curiosity, not desperation. The email should: acknowledge we miss them (warmly, not guilting), mention something new at the salon, include a limited-time reason to rebook (not a discount — think priority booking or a free add-on), and end with a direct link CTA. Tone: friendly, personal, like a note from the stylist. The 4 Core Emails You Need</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      <div class="template">
+        <div class="num">60</div>
+        <div>
+          <h3>Email Type</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">When to Send Purpose Welcome Email When a new client books their first appointment Introduce your salon, set expectations, build excitement Post-Appointment Follow-Up 24 hours after a visit Thank them, ask for a review, plant the rebooking seed Win-Back Campaign</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 3</h3>
-        <p>AI for Client Communications Rebooking reminders, review responses, consultation scripts, and texts that actually convert. The Client Communication System Most salon revenue leaks happen in the gap between appointments. Clients mean to rebook but forget. They get a mediocre review experience and don&#x27;t leave one. They have a question and don&#x27;t ask — they just don&#x27;t come back. AI helps you close every one of those gaps with communication that feels personal at scale. Rebooking — The Highest-ROI Communication You Can Send The math: If your average service is $120 and you rebook just 2 extra clients per week, that&#x27;s $240/week — $12,480 per year — from messages that take seconds to generate and a few minutes to send. Rebooking reminder text (send 4 weeks after appointment): Write a short, friendly text message from a hair stylist to a client who is due for a [SERVICE] appointment. The message should: feel personal (not automated), mention approximately when they</p>
+      <div class="template">
+        <div class="num">61</div>
+        <div>
+          <h3>Client Inactive 90+ Days</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Acknowledge the gap, give a reason to return, make it easy to book Monthly Newsletter Once per month Keep your name in their inbox, share what&#x27;s new, soft offer</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>07</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>were last in, suggest a timeframe to come back, and include a simple way to book. Keep it under 60 words. Rebooking reminder text (client overdue by 6+ weeks): Write a casual, non-pushy text to a hair salon client who is 6 weeks overdue for their [SERVICE] appointment. Tone should be warm and a little playful — like a text from a friend, not a business. Mention what tends to happen when you wait too long, and make it easy to reply with a day that works. Review Management Responding to reviews — both positive and negative — is one of the most valuable things you can do for your Google ranking and your reputation. AI makes it fast. Respond to a 5-star review: Write a response to this 5-star Google review for my salon: [PASTE REVIEW]. The response should: thank them by name, reference something specific from their review, reflect my salon&#x27;s personality, and invite them back. Under 80 words. Respond to a negative review (without being defensive): Write a professional, c</p>
+
+      <div class="template">
+        <div class="num">62</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 8 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>07</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Consultation Scripts A strong consultation converts uncertain clients into confident ones — and confident clients spend more, rebook faster, and refer more friends. Build a consultation script for any service: Create a consultation script for a hair stylist about to do a [SERVICE] on a new client. Include: 5 questions to understand their hair history and goals, 2 questions to uncover lifestyle and maintenance habits, key things to look for during the hair assessment, and language to set realistic expectations if needed. Format as a natural conversation guide.</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">70</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">AI for Client Communications Rebooking reminders, review responses, consultation scripts, and texts that actually convert. The Client Communication System Most salon revenue leaks happen in the gap between appointments. Clients mean to rebook but forget. They get a mediocre review experience and don&#x27;t leave one. They have a question and don&#x27;t ask — they just don&#x27;t come back. AI helps you close every one of those gaps with communication that feels personal at scale. Rebooking — The Highest-ROI Communication You Can Send The math: If your average service is $120 and you rebook just 2 extra clients per week, that&#x27;s $240/week — $12,480 per year — from messages that take seconds to generate and a few minutes to send. Rebooking reminder text (send 4 weeks after appointment): Write a short, friendly text message from a hair stylist to a client who is due for a [SERVICE] appointment. The message should: feel personal (not automated), mention approximately when they were last in, suggest a timeframe to come back, and include a simple way to book. Keep it under 60 words. Rebooking reminder text (client overdue by 6+ weeks): Write a casual, non-pushy text to a hair salon client who is 6 weeks overdue for their [SERVICE] appointment. Tone sho</div>
+          <div class="tip"><strong>Studio note:</strong> uld be warm and a little playful — like a text from a friend, not a business. Mention what tends to happen when you wait too long, and make it easy to reply with a day that works. Review Management Responding to reviews — both positive and negative —</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>08</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Script For Raising Your Prices:</h3>
-        <p>Write a short, confident script for a hair stylist to tell a long-term client that their prices are increasing by [AMOUNT] starting [DATE]. The message should: be direct and unapologetic, acknowledge the relationship, briefly justify the increase, and thank them for their loyalty. Format: short text or email version.</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">78</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Respond to a negative review (without being defensive): Write a professional, calm response to this negative Google review: [PASTE REVIEW]. The response should: acknowledge their experience without admitting fault, express genuine concern, invite them to contact me directly to resolve it, and not make the situation worse. Tone: mature, empathetic, professional. Under 100 words.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>08</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+
+      <div class="template">
+        <div class="num">79</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 9 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Consultation Scripts A strong consultation converts uncertain clients into confident ones — and confident clients spend more, rebook faster, and refer more friends. Build a consultation script for any service: Create a consultation script for a hair stylist about to do a [SERVICE] on a new client. Include: 5 questions to understand their hair history and goals, 2 questions to uncover lifestyle and maintenance habits, key things to look for during the hair assessment, and language to set realistic expectations if needed. Format as a natural conversation guide.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 4</h3>
-        <p>AI for Operations Hiring, staff communications, SOPs, pricing strategy, and the admin work that drains you. Hiring — The Biggest Operational Headache in Salons Writing a job post that attracts the right stylists — not just bodies — is harder than it sounds. AI helps you write posts that communicate your culture, screen for values, and stand out from generic listings. Write a stylist job post: Write a job posting for a licensed hair stylist at my salon. My salon: [DESCRIBE — commission / booth rental / suite, team size, vibe, specialties]. The ideal candidate: [DESCRIBE — experience level, values, what matters to you]. Include: role description, what we offer, what we&#x27;re looking for, and</p>
+      <div class="template">
+        <div class="num">80</div>
+        <div>
+          <h3>Script For Raising Your Prices:</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a short, confident script for a hair stylist to tell a long-term client that their prices are increasing by [AMOUNT] starting [DATE]. The message should: be direct and unapologetic, acknowledge the relationship, briefly justify the increase, and thank them for their loyalty. Format: short text or email version.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>How To Apply. Tone Should Reflect My Brand — Not Corporate.</h3>
-        <p>Interview questions for a new stylist: Give me 10 interview questions for hiring a hair stylist at a salon that values [YOUR VALUES]. Include a mix of: technical skill questions, culture-fit questions, and scenario-based questions that reveal how they handle real situations (difficult clients, mistakes, slow weeks). For each question, note what a strong answer looks like. Standard Operating Procedures (SOPs) SOPs are the difference between a salon that runs smoothly when you&#x27;re not there and one that falls apart. AI can draft a full SOP in minutes — you just need to review it and add your specific details. Create an SOP for any process: Write a standard operating procedure for [PROCESS: e.g., opening the salon, client check-in, color mixing, closing procedures, retail upselling]. Format it as a numbered step-by-step checklist. Include: who is responsible, what tools or supplies are needed, any quality checkpoints, and what to do if something goes wrong. New staff on</p>
+      <div class="template">
+        <div class="num">81</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 10 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>09</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Use AI as a thinking partner when you&#x27;re working through pricing decisions. It can&#x27;t access your specific numbers, but it can help you think through the logic, write the communication, and stress-test your reasoning. Think through a price increase: Help me think through raising my prices. My current prices: [LIST KEY SERVICES AND PRICES]. My costs have increased by approximately [%] in the last year. My target hourly rate is $[AMOUNT]. Walk me through: how to calculate the right increase percentage, how to phase it in, how to communicate it to clients, and what objections I might face. AI Tools for Operations Beyond ChatGPT Tool Best Used For Notion AI If you use Notion for salon management, the built-in AI can summarize meeting notes, draft policy documents, and generate task lists instantly. Google Gemini + Docs Works directly inside Google Docs. Great for drafti</p>
+
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>09</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">90</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">AI for Operations Hiring, staff communications, SOPs, pricing strategy, and the admin work that drains you. Hiring — The Biggest Operational Headache in Salons Writing a job post that attracts the right stylists — not just bodies — is harder than it sounds. AI helps you write posts that communicate your culture, screen for values, and stand out from generic listings. Write a stylist job post: Write a job posting for a licensed hair stylist at my salon. My salon: [DESCRIBE — commission / booth rental / suite, team size, vibe, specialties]. The ideal candidate: [DESCRIBE — experience level, values, what matters to you]. Include: role description, what we offer, what we&#x27;re looking for, and</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+      <div class="template">
+        <div class="num">91</div>
+        <div>
+          <h3>How To Apply. Tone Should Reflect My Brand — Not Corporate.</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Interview questions for a new stylist: Give me 10 interview questions for hiring a hair stylist at a salon that values [YOUR VALUES]. Include a mix of: technical skill questions, culture-fit questions, and scenario-based questions that reveal how they handle real situations (difficult clients, mistakes, slow weeks). For each question, note what a strong answer looks like. Standard Operating Procedures (SOPs) SOPs are the difference between a salon that runs smoothly when you&#x27;re not there and one that falls apart. AI can draft a full SOP in minutes — you just need to review it and add your specific details. Create an SOP for any process: Write a standard operating procedure for [PROCESS: e.g., opening the salon, client check-in, color mixing, closing procedures, retail upselling]. Format it as a numbered step-by-step checklist. Include: who is responsible, what tools or supplies are needed, any quality checkpoints, and what to do if something goes wrong. New staff onboarding guide: Create a first-week onboarding guide for a new stylist joining my salon. Include: day-by-day breakdown of their first 5 days, what they need to learn by when, who to go to with different</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>10</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 5</h3>
-        <p>AI for Growth</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">99</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">questions, key policies to understand immediately, and what success looks like at the end of week one.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>New Client Acquisition, Google Visibility, Referral Systems, And Getting Found Online.</h3>
-        <p>Your Google Presence Is Your #1 Growth Lever More new clients find salons through Google Search and Google Maps than through Instagram, TikTok, and Facebook combined. AI helps you optimize every part of your Google Business Profile — the place most salon owners completely ignore. The Google Business Profile Checklist: Complete every section (services, hours, photos, description, Q&amp;A). Post at least twice per month using Google Posts. Respond to every review within 48 hours. Add new photos weekly. Answer your own Q&amp;A section with keyword-rich responses.</p>
+      <div class="template">
+        <div class="num">100</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 11 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Use AI as a thinking partner when you&#x27;re working through pricing decisions. It can&#x27;t access your specific numbers, but it can help you think through the logic, write the communication, and stress-test your reasoning. Think through a price increase: Help me think through raising my prices. My current prices: [LIST KEY SERVICES AND PRICES]. My costs have increased by approximately [%] in the last year. My target hourly rate is $[AMOUNT]. Walk me through: how to calculate the right increase percentage, how to phase it in, how to communicate it to clients, and what objections I might face. AI Tools for Operations Beyond ChatGPT Tool Best Used For Notion AI If you use Notion for salon management, the built-in AI can summarize meeting notes, draft policy documents, and generate task lists instantly. Google Gemini + Docs Works directly inside Google Docs. Great for drafting employee handbooks, menus, and any document you&#x27;re already building in Google. Otter.ai (free tier) Records and transcribes conversations. Use it for team meetings or client consultations — then ask AI to summarize key points and action items.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>10</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Write your Google Business description: Write a Google Business Profile description for my hair salon. Salon name: [NAME]. Location: [CITY, STATE]. Services: [LIST TOP SERVICES]. What makes us different: [YOUR DIFFERENTIATOR]. The description should: be 250 words or less, include natural keywords, communicate our vibe, and end with a call to book. No keyword stuffing — write for humans first. Answer your own Google Q&amp;A: Create 8 Q&amp;A entries for my Google Business Profile for a hair salon specializing in [SERVICES]. Questions should be what real clients actually search for. Answers should be helpful, include natural keywords, and be under 200 words each. Building a Referral System Word of mouth is still the most powerful marketing channel for salons — but most owners leave it to chance. A simple, structured referral program with the right communication can double your</p>
+
+      <div class="template">
+        <div class="num">101</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 12 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>New Client Rate.</h3>
-        <p>Design a referral program: Help me design a referral program for my hair salon. I want it to: reward both the referring client and the new client, be simple enough to explain in 10 seconds, not require complicated tracking, and be sustainable. Suggest 3 different program structures with the pros and cons of each, then write the client-facing announcement for my top choice. Write a local SEO blog post: Write a 400-word blog post for my salon website titled &#x27;[SERVICE] in [CITY] — What to Expect at [SALON NAME].&#x27; Include: what the service involves, who it&#x27;s best for, how to prepare, what results to expect, and how to book. Write naturally — optimize for &#x27;[service] [city]&#x27; search terms without keyword stuffing.</p>
+      <div class="template">
+        <div class="num">102</div>
+        <div>
+          <h3>Chapter 5</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">AI for Growth</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>11</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">112</div>
+        <div>
+          <h3>New Client Acquisition, Google Visibility, Referral Systems, And Getting Found Online.</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Your Google Presence Is Your #1 Growth Lever More new clients find salons through Google Search and Google Maps than through Instagram, TikTok, and Facebook combined. AI helps you optimize every part of your Google Business Profile — the place most salon owners completely ignore. The Google Business Profile Checklist: Complete every section (services, hours, photos, description, Q&amp;A). Post at least twice per month using Google Posts. Respond to every review within 48 hours. Add new photos weekly. Answer your own Q&amp;A section with keyword-rich responses. Write your Google Business description: Write a Google Business Profile description for my hair salon. Salon name: [NAME]. Location: [CITY, STATE]. Services: [LIST TOP SERVICES]. What makes us different: [YOUR DIFFERENTIATOR]. The description should: be 250 words or less, include natural keywords, communicate our vibe, and end with a call to book. No keyword stuffing — write for humans first. Answer your own Google Q&amp;A: Create 8 Q&amp;A entries for my Google Business Profile for a hair salon specializing in [SERVICES]. Questions should be what real clients actually search for. Answers should be helpful, include natural keywords, and be under 200 words each. Building a Referral System Wo</div>
+          <div class="tip"><strong>Studio note:</strong> rd of mouth is still the most powerful marketing channel for salons — but most owners leave it to chance. A simple, structured referral program with the right communication can double your</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 6</h3>
-        <p>Building Your AI Habit A simple weekly system that takes 30 minutes and keeps your whole business moving. The 30-Minute AI Week Consistency beats intensity. You don&#x27;t need to spend hours with AI every day — you need a reliable 30-minute weekly routine that covers your biggest needs.</p>
+      <div class="template">
+        <div class="num">113</div>
+        <div>
+          <h3>New Client Rate.</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Design a referral program: Help me design a referral program for my hair salon. I want it to: reward both the referring client and the new client, be simple enough to explain in 10 seconds, not require complicated tracking, and</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>11</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Time Task Monday 10 min Content planning — ask ChatGPT for this week&#x27;s 5 post ideas. Write captions for 3 of them. Schedule in Buffer or Later. Wednesday 10 min Client communications — pull up clients due for rebooking. Generate and send 5-10 personalized messages. Check and respond to Google reviews. Friday 10 min Planning and ops — reflect on the week. Draft one SOP or policy document. Write next week&#x27;s email. Prep any staff communications. Monthly Add-On (30 extra minutes, once a month): First Monday of the month: ask AI for a full month of content ideas. Build your promotional calendar. Write your monthly email newsletter. Review what worked last month and ask AI to help you do more of it. When AI Output Isn&#x27;t Quite Right AI rarely nails it perfectly on the first try — especially for tone and voice. Here are the refinement prompts that fix 90% of issues. Fix: Too formal / corporate Rewrite this in a more casual, conversational tone. Like how I&#x27;d actually talk to</p>
+
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>12</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">121</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">be sustainable. Suggest 3 different program structures with the pros and cons of each, then write the client-facing announcement for my top choice. Write a local SEO blog post: Write a 400-word blog post for my salon website titled &#x27;[SERVICE] in [CITY] — What to Expect at [SALON NAME].&#x27; Include: what the service involves, who it&#x27;s best for, how to prepare, what results to expect, and how to book. Write naturally — optimize for &#x27;[service] [city]&#x27; search terms without keyword stuffing.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Hairstylist Complete Growth Bundle</h3>
-        <p>Page 14 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Your Action Plan for the Next 7 Days</p>
+      <div class="template">
+        <div class="num">122</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 13 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 1</h3>
-        <p>Set up ChatGPT with your salon bio in Custom Instructions (Chapter 1). Run your first caption prompt.</p>
+      <div class="template">
+        <div class="num">123</div>
+        <div>
+          <h3>Chapter 6</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Building Your AI Habit A simple weekly system that takes 30 minutes and keeps your whole business moving. The 30-Minute AI Week Consistency beats intensity. You don&#x27;t need to spend hours with AI every day — you need a reliable 30-minute weekly routine that covers your biggest needs.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 2</h3>
-        <p>Train AI on your voice using 3 example captions you&#x27;ve already written (Chapter 2).</p>
+      <div class="template">
+        <div class="num">124</div>
+        <div>
+          <h3>Day</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Time Task Monday 10 min Content planning — ask ChatGPT for this week&#x27;s 5 post ideas. Write captions for 3 of them. Schedule in Buffer or Later. Wednesday 10 min Client communications — pull up clients due for rebooking. Generate and send 5-10 personalized messages. Check and respond to Google reviews. Friday 10 min Planning and ops — reflect on the week. Draft one SOP or policy document. Write next week&#x27;s email. Prep any staff communications. Monthly Add-On (30 extra minutes, once a month): First Monday of the month: ask AI for a full month of content ideas. Build your promotional</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>13</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 3</h3>
-        <p>Write this week&#x27;s 5 social posts in one 20-minute session. Schedule them.</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">132</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">calendar. Write your monthly email newsletter. Review what worked last month and ask AI to help you do more of it. When AI Output Isn&#x27;t Quite Right AI rarely nails it perfectly on the first try — especially for tone and voice. Here are the refinement prompts that fix 90% of issues. Fix: Too formal / corporate Rewrite this in a more casual, conversational tone. Like how I&#x27;d actually talk to a client, not a press release. Fix: Too long Shorten this to under [X] words without losing the key points. Fix: Doesn&#x27;t sound like me Rewrite this using the voice examples I gave you earlier. It should sound more like [describe your style]. Fix: Missing a call to action Add a natural call to action at the end that asks them to [book / DM / call / reply]. Fix: Too salesy Rewrite this to feel less like an ad. Lead with value or information, and make the offer feel like a helpful suggestion.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 4</h3>
-        <p>Set up your Google Business Profile using the description and Q&amp;A prompts (Chapter 5).</p>
+      <div class="template">
+        <div class="num">133</div>
+        <div>
+          <h3>Hairstylist Complete Growth Bundle</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Page 14 © 2026 Hairstylist Complete Growth Bundle · All rights reserved · For single-business use only Your Action Plan for the Next 7 Days</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>12</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>Salon AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 5</h3>
-        <p>Write your 4 core emails: welcome, post-visit, win-back, monthly (Chapter 3).</p>
+
+      <div class="template">
+        <div class="num">134</div>
+        <div>
+          <h3>Day 1</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Set up ChatGPT with your salon bio in Custom Instructions (Chapter 1). Run your first caption prompt.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 6</h3>
-        <p>Build one SOP for a process that currently lives only in your head (Chapter 4).</p>
+      <div class="template">
+        <div class="num">135</div>
+        <div>
+          <h3>Day 2</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Train AI on your voice using 3 example captions you&#x27;ve already written (Chapter 2).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Day 7</h3>
-        <p>Set your weekly 30-minute AI calendar appointments going forward (Chapter 6).</p>
+      <div class="template">
+        <div class="num">136</div>
+        <div>
+          <h3>Day 3</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write this week&#x27;s 5 social posts in one 20-minute session. Schedule them.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Salon AI Playbook</span><span>13</span></div>
-</section></main></body></html>
+
+      <div class="template">
+        <div class="num">137</div>
+        <div>
+          <h3>Day 4</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Set up your Google Business Profile using the description and Q&amp;A prompts (Chapter 5).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
+      </div>
+
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>14</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">147</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write your 4 core emails: welcome, post-visit, win-back, monthly (Chapter 3).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
+      </div>
+
+      <div class="template">
+        <div class="num">148</div>
+        <div>
+          <h3>Day 6</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Build one SOP for a process that currently lives only in your head (Chapter 4).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
+      </div>
+
+      <div class="template">
+        <div class="num">149</div>
+        <div>
+          <h3>Day 7</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Set your weekly 30-minute AI calendar appointments going forward (Chapter 6).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
+      </div>
+
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>15</span></div>
+      </section>
+<section class="page cta-page">
+        <div class="brand">
+          <div class="wordmark">Hair Stylists<small>Complete Growth Bundle</small></div>
+          <div class="badge" style="color:#fff7ef;border-color:rgba(255,247,239,.24);background:rgba(255,247,239,.08)">Next Step</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 1.15in; color:#f2c8c7;">Want the full system?</p>
+        <h2 style="max-width: 5.7in;">Build a beauty brand experience that looks polished before it ever feels complicated.</h2>
+        <p class="lead">Pair this file with the rest of the Hair Stylists bundle: calendars, prompts, client systems, brand assets, templates, and launch materials.</p>
+        <a class="cta-button">Content Elevated</a>
+        <div class="footer"><span>Hair Stylists Complete Growth Bundle</span><span>16</span></div>
+      </section></main></body></html>

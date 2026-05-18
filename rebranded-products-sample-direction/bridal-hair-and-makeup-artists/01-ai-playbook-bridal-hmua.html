@@ -1,487 +1,492 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Bridal HMUA</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff8f5; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#b9878d 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#dfc1b5 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#fff8f5 94%,white), color-mix(in srgb,#fff8f5 86%,#b9878d)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#b9878d; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#b9878d 32%,transparent); border-radius:999px; color:#b9878d; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#b9878d; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#b9878d 38%,transparent); border-bottom:1px solid color-mix(in srgb,#b9878d 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#b9878d 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#b9878d 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#b9878d 52%,transparent); border-bottom:1px solid color-mix(in srgb,#b9878d 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#b9878d 32%,transparent); }
-.metric b { display:block; color:#b9878d; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#24191b; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#b9878d 18%,transparent), transparent 2in), linear-gradient(135deg, #24191b, color-mix(in srgb,#24191b 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#b9878d; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#b9878d 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#b9878d 56%,transparent); color:#b9878d; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#b9878d 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#b9878d 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#17110f;
+  --soft-ink:#5d504b;
+  --muted:#8e7a72;
+  --paper:#fff8f5;
+  --paper-2:#f6e8de;
+  --blush:#dfc1b5;
+  --rose:#b9878d;
+  --cream:#fffaf4;
+  --dark:#24191b;
+  --line:rgba(91,67,58,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;background:#e8d7ca;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--blush) 34%,transparent),transparent 2.2in),radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--rose) 18%,transparent),transparent 2.5in),linear-gradient(135deg,var(--paper),var(--cream) 52%,var(--paper-2));padding:.62in}
+.page::before{content:"";position:absolute;inset:.28in;border:1px solid rgba(91,67,58,.12);border-radius:28px;pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.1in;top:-.3in;width:3.2in;height:9.8in;background:linear-gradient(180deg,rgba(23,17,15,.06),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--blush) 26%,transparent),transparent 64%);transform:rotate(-10deg);border-radius:999px;pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.wordmark{font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.wordmark small{display:block;margin-top:8px;color:var(--rose);font-size:9px;font-weight:700;letter-spacing:.18em}
+.badge{border:1px solid color-mix(in srgb,var(--rose) 26%,transparent);border-radius:999px;padding:10px 14px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,250,244,.64)}
+.kicker{position:relative;z-index:2;display:flex;align-items:center;gap:12px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.kicker::before{content:"";width:42px;height:1px;background:var(--rose)}
+h1,h2,h3{position:relative;z-index:2;margin:0;font-family:"Didot","Bodoni 72","Times New Roman",serif;font-weight:400;letter-spacing:-.045em}
+h1{max-width:5.85in;margin-top:.82in;font-size:66px;line-height:.93}
+h2{font-size:42px;line-height:.96}
+h3{font-size:24px;line-height:1}
+h1 span,h2 span,h1 em,h2 em{color:var(--rose);font-style:italic}
+p{position:relative;z-index:2;margin:0;color:var(--soft-ink);font-size:12.5px;line-height:1.62}
+.lead{max-width:4.85in;margin-top:.28in;font-size:16px;line-height:1.55}
+.cover-meta{position:absolute;left:.62in;right:.62in;bottom:.74in;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta-item{padding:18px 16px;border-left:1px solid var(--line)}
+.meta-item:first-child{border-left:0;padding-left:0}
+.meta-item strong{display:block;font-family:"Didot","Bodoni 72","Times New Roman",serif;color:var(--rose);font-size:28px;font-weight:400;line-height:1}
+.meta-item span{display:block;margin-top:8px;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.16em;line-height:1.45;text-transform:uppercase}
+.footer{position:absolute;left:.62in;right:.62in;bottom:.34in;z-index:2;display:flex;justify-content:space-between;color:rgba(93,80,75,.72);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.intro-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:.42in}
+.panel{position:relative;z-index:2;border:1px solid var(--line);border-radius:22px;background:rgba(255,250,244,.66);padding:22px;box-shadow:0 18px 52px rgba(95,61,51,.08)}
+.panel.dark{background:rgba(255,250,244,.66);color:var(--ink)}
+.panel.dark p{color:var(--soft-ink)}
+.panel.dark .label{color:var(--rose)}
+.label{margin-bottom:12px;color:var(--rose);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.rule{position:relative;z-index:2;height:1px;margin:28px 0;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--rose) 38%,transparent),transparent)}
+.template{position:relative;z-index:2;display:grid;grid-template-columns:.78in 1fr;gap:18px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.template:first-of-type{border-top:0;padding-top:0}
+.num{width:.58in;height:.58in;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--rose) 24%,transparent);border-radius:50%;color:var(--rose);font-family:"Didot","Bodoni 72","Times New Roman",serif;font-size:22px;background:rgba(255,250,244,.66)}
+.when{margin:10px 0 14px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.script{border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,250,244,.82)),radial-gradient(circle at 8% 12%,color-mix(in srgb,var(--blush) 18%,transparent),transparent 45%);border:1px solid color-mix(in srgb,var(--rose) 14%,transparent);padding:18px;color:#2a201d;font-size:13px;line-height:1.55}
+.tip{margin-top:12px;border-left:3px solid var(--rose);padding-left:12px;color:var(--soft-ink);font-size:11px;line-height:1.5}
+.cta-page{background:radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--blush) 22%,transparent),transparent 2.6in),linear-gradient(135deg,#1b1412,color-mix(in srgb,var(--rose) 72%,#251413));color:#fff7ef}
+.cta-page::before{border-color:rgba(255,250,244,.14)}
+.cta-page p,.cta-page .footer,.cta-page .wordmark small{color:rgba(255,247,239,.74)}
+.cta-page h2,.cta-page .wordmark{color:#fff7ef}
+.cta-button{display:inline-block;margin-top:28px;border-radius:999px;background:#fff7ef;color:color-mix(in srgb,var(--rose) 78%,#2a1716);padding:16px 22px;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>Complete Growth Bundle</small></div>
+          <div class="badge">AI Playbook</div>
+        </div>
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#fff8f5; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#24191b; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#24191b; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #b9878d; }
+        <p class="kicker" style="margin-top: 0.78in;">Copy · Customize · Launch</p>
+        <h1><span>AI</span> Playbook Bridal HMUA</h1>
+        <p class="lead">A polished, niche-specific growth system designed to help you turn client communication, content, and brand direction into a more consistent beauty business.</p>
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#fff8f5; }
-.layout-protocol .work { background:#fbfbf5; color:#24191b; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#b9878d 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#24191b; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+        <div class="cover-meta">
+          <div class="meta-item"><strong>01</strong><span>Ready-to-use system</span></div>
+          <div class="meta-item"><strong>Studio</strong><span>Beauty-specific system</span></div>
+          <div class="meta-item"><strong>Fast</strong><span>Customize and launch</span></div>
+        </div>
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>01</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>Implementation System</small></div>
+          <div class="badge">How to Use</div>
+        </div>
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+        <p class="kicker" style="margin-top: 0.72in;">Before You Use It</p>
+        <h2>Make the system feel <span>personal.</span></h2>
+        <p class="lead">Use this file as the polished base. Replace brackets, offers, services, client details, and local language so every asset sounds like the business using it.</p>
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#24191b; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+        <div class="intro-grid">
+          <div class="panel">
+            <div class="label">The Rule</div>
+            <p>Keep the strategy intact, but make every client-facing line specific. Beauty buyers respond to trust, taste, timing, and a sense that the experience was designed for them.</p>
+          </div>
+          <div class="panel dark">
+            <div class="label">Best Practice</div>
+            <p>Batch the assets weekly. Turn prompts into posts, templates into follow-ups, and brand direction into a consistent client experience across every touchpoint.</p>
+          </div>
+        </div>
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#b9878d 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#24191b; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#b9878d 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#24191b; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #b9878d; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#b9878d 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#b9878d 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-editorial"><section class="page cover">
-  <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you ai playbook for bridal hair &amp; makeup artists</div>
-    </div>
-  </div>
-  <h1><em>AI</em> Playbook Bridal HMUA</h1>
-  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Bridal</span></div>
-    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
-  </div>
-  <div class="footer"><span>Bridal Hair &amp; Makeup Artists product file</span><span>01</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
-  </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
-  </div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>02</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Bridal Hair &amp; Makeup Artist</h3>
-        <p>The AI Playbook for Bridal Hair &amp; Makeup Artists Convert more bridal inquiries, protect your bookings, build a vendor referral network, and create a</p>
+        <div class="rule"></div>
+        
+      <div class="template">
+        <div class="num">01</div>
+        <div>
+          <h3>Bridal Hair &amp; Makeup Artist</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The AI Playbook for Bridal Hair &amp; Makeup Artists Convert more bridal inquiries, protect your bookings, build a vendor referral network, and create a</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Introduction</h3>
-        <p>The bridal hair and makeup artists with full books and waitlists aren&#x27;t just the most skilled. They respond to inquiries within hours — with copy that makes a bride feel instantly understood. They follow up on ghosted leads with the right message. They protect every booking with a bulletproof contract and trial run system. They maintain relationships with photographers, planners, and venues that send warm referrals year- round. And they post consistently enough on Instagram that brides find them before they ever search a competitor. This playbook gives you 7 chapters covering every high- leverage scenario — with copy-paste AI prompts throughout.</p>
+      <div class="template">
+        <div class="num">02</div>
+        <div>
+          <h3>Introduction</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The bridal hair and makeup artists with full books and waitlists aren&#x27;t just the most skilled. They respond to inquiries within hours — with copy that makes a bride feel instantly understood. They follow up on ghosted leads with the right message. They protect every booking with a bulletproof contract and trial run system. They maintain relationships with photographers, planners, and venues that send warm referrals year- round. And they post consistently enough on Instagram that brides find them before they ever search a competitor. This playbook gives you 7 chapters covering every high- leverage scenario — with copy-paste AI prompts throughout.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 1: Bridal Inquiry Conversion</h3>
-        <p>The 2-Hour Response Window Brides typically contact 5-10 artists simultaneously. The first professional, warm, and specific response wins a disproportionate number of consultations. Most brides make their shortlist within 24 hours of reaching out — your first response is your audition.</p>
+      <div class="template">
+        <div class="num">03</div>
+        <div>
+          <h3>Chapter 1: Bridal Inquiry Conversion</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The 2-Hour Response Window Brides typically contact 5-10 artists simultaneously. The first professional, warm, and specific response wins a disproportionate number of consultations. Most brides make their shortlist within 24 hours of reaching out — your first response is your audition.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Bridal Inquiry Response Email</h3>
-        <p>Write a warm, enthusiastic bridal inquiry response email for my hair and makeup studio. The bride [Name] reached out about her wedding on [date] at [venue]. She mentioned: [paste details from her inquiry — style she&#x27;s going for, how many people in the party, any specific concerns]. My speciality is [your speciality — e.g., romantic bridal looks / bold editorial bridal / natural glow]. I want to: (1) make her feel like I genuinely read her inquiry, (2) briefly describe how I&#x27;d approach her specific wedding, (3) mention what&#x27;s included in my bridal packages, (4) invite her to a trial or consultation. Warm, excited, under 200 words. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">04</div>
+        <div>
+          <h3>Prompt — Bridal Inquiry Response Email</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a warm, enthusiastic bridal inquiry response email for my hair and makeup studio. The bride [Name] reached out about her wedding on [date] at [venue]. She mentioned: [paste details from her inquiry — style she&#x27;s going for, how many people</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>03</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Write a 3-message follow-up sequence for a bridal hair and makeup inquiry that hasn&#x27;t responded. Bride [Name], wedding [date] at [venue]. Message 1 (Day 3): warm check-in, add one specific insight about her venue or style. Message 2 (Day 8): share a relevant look or a tip about booking bridal artists for her wedding season. Message 3 (Day 14): soft close — &#x27;closing my [month] inquiry folder — your date is still available if timing works&#x27;. Each under 80 words. Sign as [Your Name], [Studio Name]. Managing Bridal Party Size &amp; Pricing Conversations One of the most common friction points in bridal bookings is the price-per-person conversation for large parties. Handling this proactively — before the bride asks — prevents awkward negotiations and positions your pricing as professional and transparent.</p>
+
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>02</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">13</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">in the party, any specific concerns]. My speciality is [your speciality — e.g., romantic bridal looks / bold editorial bridal / natural glow]. I want to: (1) make her feel like I genuinely read her inquiry, (2) briefly describe how I&#x27;d approach her specific wedding, (3) mention what&#x27;s included in my bridal packages, (4) invite her to a trial or consultation. Warm, excited, under 200 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Bridal Party Pricing Email</h3>
-        <p>Write a professional bridal party pricing email for my hair and makeup studio. The bride [Name] has a party of [X] people — [breakdown: e.g., 1 bride, 4 bridesmaids, 2 mothers]. My pricing: Bride $[amount] / Bridesmaids $[amount] / Mothers $[amount]. Total: $[amount]. I want to: (1) present the pricing clearly and confidently, (2) briefly explain what&#x27;s included for each person, (3) mention my travel fee if applicable, (4) outline the next steps — trial booking and contract. Professional and warm. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">14</div>
+        <div>
+          <h3>Prompt — Bridal Inquiry Follow-Up Sequence</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a 3-message follow-up sequence for a bridal hair and makeup inquiry that hasn&#x27;t responded. Bride [Name], wedding [date] at [venue]. Message 1 (Day 3): warm check-in, add one specific insight about her venue or style. Message 2 (Day 8): share a relevant look or a tip about booking bridal artists for her wedding season. Message 3 (Day 14): soft close — &#x27;closing my [month] inquiry folder — your date is still available if timing works&#x27;. Each under 80 words. Sign as [Your Name], [Studio Name]. Managing Bridal Party Size &amp; Pricing Conversations One of the most common friction points in bridal bookings is the price-per-person conversation for large parties. Handling this proactively — before the bride asks — prevents awkward negotiations and positions your pricing as professional and transparent.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 2: The Trial Run System</h3>
-        <p>The Trial Run as a Conversion Tool The trial run is where bookings are won or lost — but it&#x27;s also where the client relationship is made or broken. A trial run that&#x27;s well-prepared, well-communicated, and properly documented produces a bride who trusts you completely and refers her friends.</p>
+      <div class="template">
+        <div class="num">15</div>
+        <div>
+          <h3>Prompt — Bridal Party Pricing Email</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a professional bridal party pricing email for my hair and makeup studio. The bride [Name] has a party of [X] people — [breakdown: e.g., 1 bride, 4 bridesmaids, 2 mothers]. My pricing: Bride $[amount] / Bridesmaids $[amount] / Mothers $[amount]. Total: $[amount]. I want to: (1) present the pricing clearly and confidently, (2) briefly explain what&#x27;s included for each person, (3) mention my travel fee if applicable, (4) outline the next steps — trial booking and contract. Professional and warm. Under</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>03</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Trial Run Booking Confirmation</h3>
-        <p>Write a trial run booking confirmation email for my bridal hair and makeup studio. Bride [Name], trial date [date] at [time] at [location]. I want to cover: (1) what to bring and how to prepare (clean hair if hair trial, clean moisturised face for makeup trial,</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">23</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">200 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>inspo photos, any accessories to test with), (2) what to expect during the session, (3) what we&#x27;ll document at the end (approved look notes), (4) how the trial connects to the wedding day. Practical and excited. Under 200 words. Sign as [Your Name], [Studio Name].</p>
+
+      <div class="template">
+        <div class="num">24</div>
+        <div>
+          <h3>Chapter 2: The Trial Run System</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The Trial Run as a Conversion Tool The trial run is where bookings are won or lost — but it&#x27;s also where the client relationship is made or broken. A trial run that&#x27;s well-prepared, well-communicated, and properly documented produces a bride who trusts you completely and refers her friends.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Trial Follow-Up Email</h3>
-        <p>Write a post-trial follow-up email for my bridal hair and makeup studio. Bride [Name]&#x27;s trial was today. We achieved [brief description of the look]. I want to: (1) celebrate the look we created, (2) confirm the approved look in writing so we&#x27;re both aligned, (3) note any adjustments we agreed to make on the wedding day, (4) outline the next touchpoint before the wedding. Warm and professional. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">25</div>
+        <div>
+          <h3>Prompt — Trial Run Booking Confirmation</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a trial run booking confirmation email for my bridal hair and makeup studio. Bride [Name], trial date [date] at [time] at [location]. I want to cover: (1) what to bring and how to prepare (clean hair if hair trial, clean moisturised face for makeup trial, inspo photos, any accessories to test with), (2) what to expect during the session, (3) what we&#x27;ll document at the end (approved look notes), (4) how the trial connects to the wedding day. Practical and excited. Under 200 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Communication</h3>
-        <p>The Getting Ready Timeline System Timing is the most critical variable on a wedding morning. A getting ready timeline that runs over causes a cascade of problems — late ceremony, missed photos, stressed bride. The artists who avoid these problems build their timelines proactively and communicate them clearly.</p>
+      <div class="template">
+        <div class="num">26</div>
+        <div>
+          <h3>Prompt — Post-Trial Follow-Up Email</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a post-trial follow-up email for my bridal hair and makeup studio. Bride [Name]&#x27;s trial was today. We achieved [brief description of the look]. I want to: (1) celebrate the look we created, (2) confirm the approved look in writing so we&#x27;re both aligned, (3) note any adjustments we agreed to make on the wedding day, (4) outline the next touchpoint before the wedding. Warm and professional. Under 150 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>04</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Wedding Morning Timeline Email</h3>
-        <p>Write a wedding morning getting-ready timeline email for my bridal hair and makeup studio. Wedding: [bride name], [date]. Party: [breakdown — e.g., 1 bride, 4 bridesmaids, 2 mothers]. I&#x27;m doing [hair only / makeup only / both hair and makeup]. I need [X] minutes per person for hair, [X] minutes for makeup. Ceremony starts at [time], bride needs to be ready by [time]. I want to: (1) present the timeline clearly showing start time and each person in sequence, (2) explain what the bride needs to have ready (lighting, space, mirrors), (3) confirm my arrival time and my assistant&#x27;s arrival if applicable. Clear and professional. Sign as [Your Name], [Studio Name].</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">35</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The Getting Ready Timeline System Timing is the most critical variable on a wedding morning. A getting ready timeline that runs over causes a cascade of problems — late ceremony, missed photos, stressed bride. The artists who avoid these problems build their timelines proactively and communicate them clearly.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Week-Before Wedding Confirmation Email</h3>
-        <p>Write a week-before-wedding confirmation email for my bridal hair and makeup studio. Bride [Name], wedding [date]. I want to confirm: (1) my arrival time, (2) the address, (3) the getting-ready order, (4) any last details I need from her, (5) my</p>
+      <div class="template">
+        <div class="num">36</div>
+        <div>
+          <h3>Prompt — Wedding Morning Timeline Email</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a wedding morning getting-ready timeline email for my bridal hair and makeup studio. Wedding: [bride name], [date]. Party: [breakdown — e.g., 1 bride, 4 bridesmaids, 2 mothers]. I&#x27;m doing [hair only / makeup only / both hair and makeup]. I need [X] minutes per person for hair, [X] minutes for makeup. Ceremony starts at [time], bride needs to be ready by [time]. I want to: (1) present the timeline clearly showing start time and each person in sequence, (2) explain what the bride needs to have ready (lighting, space, mirrors), (3) confirm my arrival time and my assistant&#x27;s arrival if applicable. Clear and professional. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>direct phone number for the morning. Warm but clear and logistically focused. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+
+      <div class="template">
+        <div class="num">37</div>
+        <div>
+          <h3>Prompt — Week-Before Wedding Confirmation Email</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a week-before-wedding confirmation email for my bridal hair and makeup studio. Bride [Name], wedding [date]. I want to confirm: (1) my arrival time, (2) the address, (3) the getting-ready order, (4) any last details I need from her, (5) my direct phone number for the morning. Warm but clear and logistically focused. Under 150 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 4: Vendor Referral System</h3>
-        <p>Building Referral Partnerships With Wedding Vendors The bridal artists with the most consistent bookings maintain active referral relationships with wedding photographers, planners, and venue coordinators. One photographer who loves working with you will mention your name to every couple they shoot. One planner can fill your entire calendar.</p>
+      <div class="template">
+        <div class="num">38</div>
+        <div>
+          <h3>Chapter 4: Vendor Referral System</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Building Referral Partnerships With Wedding Vendors The bridal artists with the most consistent bookings maintain active referral relationships with wedding photographers, planners, and venue coordinators. One photographer who</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>05</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Wedding Photographer Introduction</h3>
-        <p>Write a professional introduction email from a bridal hair and makeup artist to a wedding photographer named [Name]. I want to: (1) introduce myself and my bridal speciality, (2) mention that well-prepared hair and makeup dramatically affects photo results, (3) propose a mutual referral relationship or a styled shoot collaboration. Warm and professional. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">46</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">loves working with you will mention your name to every couple they shoot. One planner can fill your entire calendar.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Wedding Planner Introduction</h3>
-        <p>Write a professional introduction email from a bridal hair and makeup artist to a wedding planner named [Name] at [Company]. I want to: (1) introduce my studio briefly, (2) mention my experience with [venue type / wedding style / party sizes], (3)</p>
+      <div class="template">
+        <div class="num">47</div>
+        <div>
+          <h3>Prompt — Wedding Photographer Introduction</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a professional introduction email from a bridal hair and makeup artist to a wedding photographer named [Name]. I want to: (1) introduce myself and my bridal speciality, (2) mention that well-prepared hair and makeup dramatically affects photo results, (3) propose a mutual referral relationship or a styled shoot collaboration. Warm and professional. Under 150 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Offer To Meet For Coffee Or A Call To Discuss Their Vendor Recommendations Process.</h3>
-        <p>Warm, not salesy. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">48</div>
+        <div>
+          <h3>Prompt — Wedding Planner Introduction</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a professional introduction email from a bridal hair and makeup artist to a wedding planner named [Name] at [Company]. I want to: (1) introduce my studio briefly, (2) mention my experience with [venue type / wedding style / party sizes], (3)</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Monthly Vendor Value Touch</h3>
-        <p>Write a monthly value email from a bridal hair and makeup artist to a wedding photographer or planner named [Name]. Share: (1) one insight useful for their couples or their workflow — e.g., a timeline tip, a common getting-ready mistake that affects photos, a trend worth knowing. Short, genuinely useful, under 100 words. Colleague-to-colleague. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">49</div>
+        <div>
+          <h3>Offer To Meet For Coffee Or A Call To Discuss Their Vendor Recommendations Process.</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Warm, not salesy. Under 150 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>The Content Pillars That Book Brides Instagram is where brides discover bridal hair and makeup artists — full stop. The accounts that book consistently post across 4 pillars: bridal reveals (emotional, high- resolution final looks), process content (behind-the-scenes, getting ready), education (tips, trends, how to prepare), and social proof (reviews, testimonials, vendor tags).</p>
+
+      <div class="template">
+        <div class="num">50</div>
+        <div>
+          <h3>Prompt — Monthly Vendor Value Touch</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a monthly value email from a bridal hair and makeup artist to a wedding photographer or planner named [Name]. Share: (1) one insight useful for their couples or their workflow — e.g., a timeline tip, a common getting-ready mistake that affects photos, a trend worth knowing. Short, genuinely useful, under 100 words. Colleague-to-colleague. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>06</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Instagram Caption Batch (Bridal)</h3>
-        <p>Write 5 Instagram captions for a bridal hair and makeup artist. Topics: (1) a wedding morning story — emotional, specific, one moment that stood out (change names), (2) &#x27;how to prepare for your bridal trial&#x27; — practical tips that help brides and demonstrate expertise, (3) a bridal trend you&#x27;re loving right now and why it photographs so well, (4) what to look for when choosing your bridal hair and makeup artist — genuine advice that positions your expertise, (5) a direct booking CTA for [current season]. Each under 150 words, warm and specific, ending with a question or soft CTA. Studio name: [Studio Name].</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">59</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The Content Pillars That Book Brides Instagram is where brides discover bridal hair and makeup artists — full stop. The accounts that book consistently post across 4 pillars: bridal reveals (emotional, high- resolution final looks), process content (behind-the-scenes, getting ready), education (tips, trends, how to prepare), and social proof (reviews, testimonials, vendor tags).</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Reel / Tiktok Concept Ideas</h3>
-        <p>Write 5 concept ideas for Instagram Reels or TikTok videos for a bridal hair and makeup artist. Each should be 15-60 seconds. Include: (1) a hook line that stops the scroll, (2) a brief description of the video content, (3) the caption text to accompany it. Topics: getting-ready transformation, a tip brides always get wrong, a trending bridal look tutorial, a day-in-the-life on a wedding morning, a before/after reveal. Studio name: [Studio Name].</p>
+      <div class="template">
+        <div class="num">60</div>
+        <div>
+          <h3>Prompt — Instagram Caption Batch (Bridal)</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write 5 Instagram captions for a bridal hair and makeup artist. Topics: (1) a wedding morning story — emotional, specific, one moment that stood out (change names), (2) &#x27;how to prepare for your bridal trial&#x27; — practical tips that help brides and demonstrate expertise, (3) a bridal trend you&#x27;re loving right now and why it photographs so well, (4) what to look for when choosing your bridal hair and makeup artist — genuine advice that positions your expertise, (5) a direct booking CTA for [current season]. Each under 150 words, warm and specific, ending with a question or soft CTA. Studio name: [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Building</h3>
-        <p>The Post-Wedding Review System The best time to ask for a review is 5-7 days after the wedding — when the photos start coming in and the emotion is still fresh. Most artists never ask, or ask immediately, or ask in a generic automated way. A personal, well-timed ask generates dramatically better reviews.</p>
+      <div class="template">
+        <div class="num">61</div>
+        <div>
+          <h3>Prompt — Reel / Tiktok Concept Ideas</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write 5 concept ideas for Instagram Reels or TikTok videos for a bridal hair and makeup artist. Each should be 15-60 seconds. Include: (1) a hook line that stops the scroll, (2) a brief description of the video content, (3) the caption text to accompany it. Topics: getting-ready transformation, a tip brides always get wrong, a trending bridal look tutorial, a day-in-the-life on a wedding morning, a before/after reveal. Studio name: [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>07</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Wedding Review Request</h3>
-        <p>Write a post-wedding review request email for my bridal hair and makeup studio. Bride [Name], wedding [date] at [venue]. I want to: (1) check in on how the wedding went, (2) share one personal observation about the morning or her look, (3) make a</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">70</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">The Post-Wedding Review System The best time to ask for a review is 5-7 days after the wedding — when the photos start coming in and the emotion is still fresh. Most artists never ask, or ask immediately, or ask in a generic automated way. A personal, well-timed ask generates dramatically better reviews.</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>07</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Bridal HMUA</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>warm personal ask for a Google and/or The Knot / WeddingWire review, (4) include direct links. Emotional and personal — not automated-feeling. Under 150 words. Sign as [Your Name], [Studio Name].</p>
+
+      <div class="template">
+        <div class="num">71</div>
+        <div>
+          <h3>Prompt — Post-Wedding Review Request</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a post-wedding review request email for my bridal hair and makeup studio. Bride [Name], wedding [date] at [venue]. I want to: (1) check in on how the wedding went, (2) share one personal observation about the morning or her look, (3) make a warm personal ask for a Google and/or The Knot / WeddingWire review, (4) include direct links. Emotional and personal — not automated-feeling. Under 150 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Wedding Instagram Feature Request</h3>
-        <p>Write a message to a recent bride asking if I can feature her wedding photos on my Instagram. I want to: (1) compliment a specific element of her look, (2) ask permission to share the photos (tag the photographer), (3) mention it helps other brides find me. Warm and brief, under 100 words. Sign as [Your Name], [Studio Name].</p>
+      <div class="template">
+        <div class="num">72</div>
+        <div>
+          <h3>Prompt — Post-Wedding Instagram Feature Request</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">Write a message to a recent bride asking if I can feature her wedding photos on my Instagram. I want to: (1) compliment a specific element of her look, (2) ask permission to share the photos (tag the photographer), (3) mention it helps other brides find me. Warm and brief, under 100 words. Sign as [Your Name], [Studio Name].</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 1: Inquiry System</h3>
-        <p>• Build your bridal inquiry response email using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save as drafts • Set a reminder to check unanswered inquiries every Monday and Thursday</p>
+      <div class="template">
+        <div class="num">73</div>
+        <div>
+          <h3>Week 1: Inquiry System</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">• Build your bridal inquiry response email using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save as drafts • Set a reminder to check unanswered inquiries every Monday and Thursday</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 2: Vendor Outreach</h3>
-        <p>• List 10 photographers, planners, and venue coordinators you want referral relationships with • Use Chapter 4 prompts to write 5 personalized introduction emails • Write your monthly vendor value touch template — schedule for the 1st of each</p>
+      <div class="template">
+        <div class="num">74</div>
+        <div>
+          <h3>Week 2: Vendor Outreach</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">• List 10 photographers, planners, and venue coordinators you want referral</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>08</span></div>
+      </section>
+<section class="page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>AI Playbook</small></div>
+          <div class="badge">Working Pages</div>
+        </div>
 
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 3: Content Batch</h3>
-        <p>• Use the Chapter 5 Instagram prompt to batch 10 captions in one session • Plan your next 3 Reels using the Chapter 5 Reel concept prompt • Schedule 4-5 posts per week for the next 3 weeks</p>
+        <p class="kicker" style="margin-top: 0.42in;">AI Playbook</p>
+        
+      <div class="template">
+        <div class="num">85</div>
+        <div>
+          <h3>Action Template</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">relationships with • Use Chapter 4 prompts to write 5 personalized introduction emails • Write your monthly vendor value touch template — schedule for the 1st of each</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 4: Review &amp; Timeline System</h3>
-        <p>• Identify 10 past brides who haven&#x27;t reviewed — use Chapter 6 prompt to write personal requests • Build your wedding morning timeline email template using Chapter 3 prompt • Set post-wedding review request as a standard step 5-7 days after every wedding</p>
+      <div class="template">
+        <div class="num">86</div>
+        <div>
+          <h3>Week 3: Content Batch</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">• Use the Chapter 5 Instagram prompt to batch 10 captions in one session • Plan your next 3 Reels using the Chapter 5 Reel concept prompt • Schedule 4-5 posts per week for the next 3 weeks</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook Bridal HMUA</span><span>08</span></div>
-</section></main></body></html>
+
+      <div class="template">
+        <div class="num">87</div>
+        <div>
+          <h3>Week 4: Review &amp; Timeline System</h3>
+          <div class="when">Customize before use</div>
+          <div class="script">• Identify 10 past brides who haven&#x27;t reviewed — use Chapter 6 prompt to write personal requests • Build your wedding morning timeline email template using Chapter 3 prompt • Set post-wedding review request as a standard step 5-7 days after every wedding</div>
+          <div class="tip"><strong>Studio note:</strong> Use this as a polished starting point, then add one real detail so the finished asset feels personal.</div>
+        </div>
+      </div>
+
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>09</span></div>
+      </section>
+<section class="page cta-page">
+        <div class="brand">
+          <div class="wordmark">Bridal Hair &amp; Makeup Artists<small>Complete Growth Bundle</small></div>
+          <div class="badge" style="color:#fff7ef;border-color:rgba(255,247,239,.24);background:rgba(255,247,239,.08)">Next Step</div>
+        </div>
+
+        <p class="kicker" style="margin-top: 1.15in; color:#f2c8c7;">Want the full system?</p>
+        <h2 style="max-width: 5.7in;">Build a beauty brand experience that looks polished before it ever feels complicated.</h2>
+        <p class="lead">Pair this file with the rest of the Bridal Hair &amp; Makeup Artists bundle: calendars, prompts, client systems, brand assets, templates, and launch materials.</p>
+        <a class="cta-button">Content Elevated</a>
+        <div class="footer"><span>Bridal Hair &amp; Makeup Artists Complete Growth Bundle</span><span>10</span></div>
+      </section></main></body></html>

@@ -1,457 +1,431 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#f2f8fb; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#4d9dc9 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#f1b84f 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#f2f8fb 94%,white), color-mix(in srgb,#f2f8fb 86%,#4d9dc9)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#4d9dc9; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); border-radius:999px; color:#4d9dc9; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:74px; line-height:.84; font-weight:950; letter-spacing:-.055em; text-transform:uppercase; }
-.gold { color:#4d9dc9; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#4d9dc9 38%,transparent); border-bottom:1px solid color-mix(in srgb,#4d9dc9 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#4d9dc9 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#4d9dc9 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#4d9dc9 52%,transparent); border-bottom:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#4d9dc9 32%,transparent); }
-.metric b { display:block; color:#4d9dc9; font-size:22px; margin-bottom:10px; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#101820; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#4d9dc9 18%,transparent), transparent 2in), linear-gradient(135deg, #101820, color-mix(in srgb,#101820 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#4d9dc9; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size:40px; line-height:.94; font-weight:950; letter-spacing:-.04em; text-transform:uppercase; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#4d9dc9 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#4d9dc9 56%,transparent); color:#4d9dc9; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#4d9dc9 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#4d9dc9 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
-
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#f2f8fb; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#101820; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#101820; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #4d9dc9; }
-
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#f2f8fb; }
-.layout-protocol .work { background:#fbfbf5; color:#101820; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#4d9dc9 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#101820; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
-
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
-
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#101820; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
-
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#4d9dc9 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
-
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
-
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#101820; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#4d9dc9 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#101820; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
-
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #4d9dc9; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#4d9dc9 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#4d9dc9 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-field"><section class="page cover">
+:root {
+  --ink:#f5f8fb;
+  --muted:#9fb1c2;
+  --quiet:#647688;
+  --paper:#07111b;
+  --panel:#0b1825;
+  --panel-2:#101f2f;
+  --line:rgba(157,206,255,.18);
+  --accent:#4d9dc9;
+  --accent-2:#f1b84f;
+  --orange:#ff9b5c;
+  --dark:#101820;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#0a1017;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;padding:.54in;background:linear-gradient(135deg,#050b12 0%,#0b1724 58%,#08131f 100%)}
+.page::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 76% 18%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 2.2in),
+  radial-gradient(circle at 15% 92%,rgba(255,155,92,.12),transparent 2.5in),
+  linear-gradient(135deg,rgba(255,255,255,.035),transparent 44%);
+  pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.15in;top:.75in;width:3.8in;height:8.2in;border:1px solid rgba(157,206,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 65%);transform:skewX(-9deg);opacity:.42;pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;align-items:flex-start;justify-content:space-between;color:rgba(245,248,251,.82);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.brand small{display:block;margin-top:7px;color:var(--accent);font-size:8px;letter-spacing:.2em}
+.badge{border:1px solid rgba(157,206,255,.18);border-radius:999px;background:rgba(255,255,255,.045);padding:10px 13px;color:#cfe9ff;font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.76in;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.28em;text-transform:uppercase}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.6in;margin-top:.16in;font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:72px;line-height:.86;font-weight:950;letter-spacing:-.055em;text-transform:uppercase}
+h1 em{font-style:normal;color:#d9f3ff;text-shadow:0 0 28px color-mix(in srgb,var(--accent) 35%,transparent)}
+.lead{position:relative;z-index:3;max-width:5.55in;margin-top:.28in;color:rgba(239,246,252,.9);font-size:16px;line-height:1.58}
+.system-strip{position:absolute;z-index:3;left:.54in;right:.54in;bottom:.86in;display:grid;grid-template-columns:1.1fr .9fr .9fr .9fr;border:1px solid rgba(157,206,255,.24);background:rgba(5,12,20,.82);box-shadow:0 22px 70px rgba(0,0,0,.22)}
+.system-cell{min-height:.98in;padding:17px 15px;border-left:1px solid var(--line)}
+.system-cell:first-child{border-left:0}
+.system-cell b{display:block;color:#f5f8fb;font-size:20px;line-height:1;font-weight:950;letter-spacing:-.02em}
+.system-cell span{display:block;margin-top:10px;color:#c6d5e4;font-size:8.4px;font-weight:850;letter-spacing:.14em;line-height:1.55;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.54in;right:.54in;bottom:.31in;display:flex;justify-content:space-between;color:rgba(159,177,194,.72);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:#f7fafc;color:#0b1420}
+.work::before{background:
+  radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 2.4in),
+  linear-gradient(135deg,rgba(255,255,255,.92),rgba(231,239,246,.62));
+  background-size:auto,auto}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.95fr 1.05fr;gap:.36in;align-items:end;margin-top:.25in;padding-bottom:.22in;border-bottom:1px solid rgba(16,31,47,.14)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.23em;text-transform:uppercase}
+h2{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:39px;line-height:.94;font-weight:950;letter-spacing:-.04em;text-transform:uppercase;color:#0b1420}
+.intro{margin:0;color:#314255;font-size:12.2px;line-height:1.6}
+.command-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.command-card{position:relative;min-height:1.82in;border:1px solid rgba(16,31,47,.12);background:linear-gradient(145deg,#fff,rgba(239,245,249,.9));padding:18px;box-shadow:0 14px 34px rgba(7,17,27,.055)}
+.command-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--orange))}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:12px;border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:6px;color:var(--accent);font-size:12px;font-weight:950}
+h3{font-size:15px;line-height:1.12;color:#0b1420;font-weight:850;letter-spacing:-.01em}
+.command-card p,.data-card p{margin:9px 0 0;color:#26384a;font-size:10.6px;line-height:1.55}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.data-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid rgba(16,31,47,.12);background:linear-gradient(135deg,#fff,rgba(240,246,250,.92));box-shadow:0 12px 30px rgba(7,17,27,.055)}
+.data-card .eyebrow{margin-bottom:7px;color:#52687d;font-size:7.5px;letter-spacing:.18em}
+.data-card h3{font-size:16.5px}
+.data-card .num{margin:0;background:#0b1825;color:#d9f3ff;border-color:rgba(55,168,230,.42)}
+.highlight-page{background:linear-gradient(135deg,#07111b,#102033)}
+.highlight-page::before{background:radial-gradient(circle at 78% 20%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 2.4in),linear-gradient(135deg,rgba(255,255,255,.035),transparent 48%);background-size:auto,auto}
+.highlight-page h2{color:#f5f8fb}
+.highlight-page .intro,.highlight-page .lead{color:rgba(239,246,252,.86)}
+.highlight-page .data-card,.highlight-page .command-card{background:rgba(245,250,255,.08);border-color:rgba(157,206,255,.2);box-shadow:none}
+.highlight-page h3{color:#f5f8fb}
+.highlight-page .data-card p,.highlight-page .command-card p{color:rgba(232,241,249,.82)}
+.highlight-page .data-card .eyebrow{color:#a9dfff}
+.highlight-page .footer{color:rgba(226,236,246,.5)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you ai playbook for electricians</div>
-    </div>
+    <div>CONTENT ELEVATED<small>Electricians Growth System</small></div>
+    <div class="badge">AI Playbook</div>
   </div>
+  <p class="cover-kicker">Local authority · follow-up · booked jobs</p>
   <h1><em>AI</em> Playbook</h1>
-  <p class="lead">A premium, niche-specific product file rebuilt from the real source content. Same direction as the approved sample index, expanded for the complete bundle.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Real bundle<br/>source content</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Power</span></div>
-    <div class="metric"><b>03</b><span>Print-ready<br/>review file</span></div>
+  <p class="lead">A high-clarity operating file for turning estimates, service calls, reviews, reminders, and seasonal demand into a cleaner growth workflow.</p>
+  <div class="system-strip">
+    <div class="system-cell"><b>Field</b><span>Built for real service operators</span></div>
+    <div class="system-cell"><b>Fast</b><span>Customize before the next job</span></div>
+    <div class="system-cell"><b>Local</b><span>Sharper trust in your market</span></div>
+    <div class="system-cell"><b>Repeat</b><span>Systems for steady demand</span></div>
   </div>
-  <div class="footer"><span>Electricians product file</span><span>01</span></div>
+  <div class="footer"><span>Electricians growth system</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">This version keeps the original product content intact while matching the premium sample-document direction for this niche.</p>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">Operator Notes</div>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="section-head">
+    <div><p class="eyebrow">Use the system</p><h2>Make every lead easier to convert.</h2></div>
+    <p class="intro">Start with the asset closest to the next revenue moment: estimate follow-up, maintenance reminder, review request, service agreement, seasonal campaign, or referral ask.</p>
+  </div>
+  <div class="command-grid">
+    <article class="command-card"><div class="num">01</div><h3>Match the job type</h3><p>Adjust the language for install, repair, quote, maintenance, emergency call, membership, or repeat service.</p></article>
+    <article class="command-card"><div class="num">02</div><h3>Localize the trust</h3><p>Add the city, service area, homeowner concern, business context, and proof points that make the message credible.</p></article>
+    <article class="command-card"><div class="num">03</div><h3>Move fast</h3><p>Use the finished asset in the same week: send the follow-up, post the content, request the review, or launch the campaign.</p></article>
   </div>
   <div class="footer"><span>AI Playbook</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work highlight-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Electrician</h3>
         <p>The AI Playbook for Electrical Contractors Convert more estimates, sell service agreements, win commercial accounts, and build the Google reputation that makes your phone ring first</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Introduction</h3>
         <p>The electrical contractors dominating their local markets aren&#x27;t just the best technicians. They follow up on estimates within 48 hours. They win commercial accounts with a professional proposal that most competitors never send. They sell whole-home electrical inspections that generate 3-5 additional jobs per customer per year. And they have a Google reputation that does their selling before they pick up the phone. AI makes all of it systematic. This playbook gives you 7 chapters covering every high- leverage scenario — with copy-paste prompts throughout.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Conversion</h3>
         <p>The 48-Hour Follow-Up Window Electrical estimates that aren&#x27;t followed up within 48 hours convert at a fraction of the rate of those that are. Most homeowners are getting 2-3 quotes — the contractor who follows up professionally and specifically wins a disproportionate number of jobs.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Estimate Follow-Up Email</h3>
         <p>Write a professional estimate follow-up email for my electrical contracting business. The customer [Name] received an estimate for [job type] on [date] for $[amount]. I want to: (1) confirm they received it, (2) briefly explain what&#x27;s included that a lower bid might not cover (licensed, insured, permit pulled if required, [X]-year workmanship guarantee), (3) make the next step obvious. Professional and warm, not pushy. Under 150 words. Sign as [Your Name], [Company Name]. The 3-Touch Follow-Up Sequence</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — 3-Touch Estimate Follow-Up Sequence</h3>
-        <p>Write a 3-message follow-up sequence for an electrical estimate that hasn&#x27;t converted. Customer [Name], job type [description], estimate amount $[amount]. Message 1 (Day 2): confirm receipt, ask if there are questions. Message 2 (Day 5):</p>
-      </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>AI Playbook</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>add one piece of value — e.g., mention permit requirements, safety consideration, or timing advantage. Message 3 (Day 10): soft close — &#x27;closing my estimate folder for the month&#x27;. Each under 80 words. Sign as [Your Name], [Company Name].</p>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
+        <p>Write a 3-message follow-up sequence for an electrical estimate that hasn&#x27;t converted. Customer [Name], job type [description], estimate amount $[amount]. Message 1 (Day 2): confirm receipt, ask if there are questions. Message 2 (Day 5): add one piece of value — e.g., mention permit requirements, safety consideration, or timing advantage. Message 3 (Day 10): soft close — &#x27;closing my estimate folder for the month&#x27;. Each under 80 words. Sign as [Your Name], [Company Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Maintenance Plan Selling</h3>
         <p>The Post-Job Maintenance Plan Offer Homeowners who&#x27;ve just had an electrical issue resolved are the warmest possible audience for a maintenance plan. They&#x27;ve just experienced a problem — and the fear of another one is fresh. This is the right moment.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Post-Job Maintenance Plan Offer</h3>
         <p>Write a post-job email offering a home electrical maintenance plan to customer [Name] who just had [job type] completed. The plan costs $[amount]/year and covers [what&#x27;s included — e.g., annual whole-home inspection, priority scheduling, X% discount on repairs]. I want to frame it as: &#x27;this is how you prevent what happened today from happening again unexpectedly&#x27;. Warm, not salesy. Under 150 words. Sign as [Your Name], [Company Name]. The EV Charger Upsell Campaign EV charger installation is one of the highest-growth electrical services in the country right now. Homeowners with Teslas and other EVs frequently don&#x27;t know that a Level 2 charger can be installed for a predictable cost by a licensed electrician. This is a proactive outreach campaign to past customers.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Ev Charger Campaign Email</h3>
-        <p>Write a proactive EV charger campaign email for my electrical contracting business to send to past residential customers. I want to: (1) mention the rapid growth of EVs and that many homeowners don&#x27;t realise they can charge at home significantly faster with a Level 2 charger, (2) briefly explain the installation (what it involves, typical timeframe), (3) mention the investment range $[X]-$[X], (4) invite them to call or reply for a free assessment. Professional, helpful, not spammy. Under 200 words. Sign as [Your Name], [Company Name].</p>
+        <p>Write a proactive EV charger campaign email for my electrical contracting business to send to past residential customers. I want to: (1) mention the rapid growth of EVs and that many homeowners don&#x27;t realise they can charge at home significantly</p>
       </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>AI Playbook</span><span>04</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
+        <p>faster with a Level 2 charger, (2) briefly explain the installation (what it involves, typical timeframe), (3) mention the investment range $[X]-$[X], (4) invite them to call or reply for a free assessment. Professional, helpful, not spammy. Under 200 words. Sign as [Your Name], [Company Name].</p>
+      </div>
+    </article>
+
+    <article class="data-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Acquisition</h3>
         <p>Winning Property Managers &amp; Building Owners One commercial property management company can send 20-50 electrical service calls per year. The electricians winning these accounts send a professional introduction — not just a knock on the door.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Property Manager Introduction Email</h3>
         <p>Write a professional introduction email from an electrical contractor to a property manager named [Name] at [Company]. I want to: (1) briefly introduce my company and our commercial electrical service capabilities, (2) mention that we specialise in [relevant services — e.g., emergency response, code compliance, panel upgrades], (3) note our response time commitment and licensing, (4) propose a brief meeting or call. Under 150 words. Professional and confident. Sign as [Your Name], [Company Name]. Monthly Commercial Client Value Touch</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Commercial Client Monthly Touch</h3>
         <p>Write a monthly value email from an electrical contractor to a commercial property management client named [Name]. Include: (1) one electrical safety tip or code update relevant to commercial properties right now, (2) a seasonal maintenance reminder (e.g., GFCI testing, panel inspection, outdoor lighting before winter), (3) a soft reminder that we&#x27;re available for emergency calls. Professional, genuinely useful, under 150 words. Sign as [Your Name], [Company Name].</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    </article></div>
+  <div class="footer"><span>AI Playbook</span><span>05</span></div>
+</section>
+<section class="page work highlight-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Proactive Outreach</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
         <p>Whole-Home Electrical Inspection Campaign A proactive whole-home electrical inspection campaign converts at remarkably high rates when framed correctly — not as a sales call, but as a safety check. Position it as what responsible homeowners do every few years.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Whole-Home Inspection Campaign</h3>
         <p>Write a proactive outreach email to past residential customers offering a whole- home electrical safety inspection. Inspection costs $[amount] and takes approximately [time]. I want to: (1) frame this as a safety initiative, not a sales call, (2) mention 2-3 specific things an inspection catches (outdated panels, overloaded circuits, GFCI compliance), (3) note that we&#x27;re booking limited slots this month. Under 200 words. Sign as [Your Name], [Company Name]. Smart Home &amp; Panel Upgrade Campaign</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Panel Upgrade Campaign Email</h3>
         <p>Write an educational email to past residential customers about electrical panel upgrades. I want to: (1) explain what a panel upgrade involves and who typically needs one (in plain language — not technical jargon), (2) mention the EV charger and smart home connection — many customers don&#x27;t realise a panel upgrade enables both, (3) offer a free panel assessment with no obligation. Under 200 words. Sign as [Your Name], [Company Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Content That Builds Trust With Homeowners</h3>
         <p>Homeowners hire electricians they trust — and social media builds trust before a single conversation happens. The content pillars that convert best for electrical contractors: education (safety, what to look for), social proof (completed jobs, reviews), and seasonal awareness (when to call).</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    </article></div>
+  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Facebook &amp; Google Post Batch</h3>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
         <p>Write 5 Facebook and Google Business Profile posts for an electrical contractor. Topics: (1) &#x27;5 signs your home&#x27;s electrical panel might need an upgrade&#x27; — educational, specific signs in plain language, (2) &#x27;Why you should always hire a licensed electrician for [job type]&#x27; — builds trust, explains licensing, (3) a completed job post — describe a recent project (e.g., &#x27;Just finished a full rewire at a [year] home in [neighbourhood] — here&#x27;s what we found&#x27;), (4) EV charger educational post — what Level 1 vs Level 2 means for a homeowner, (5) a seasonal safety tip post. Each under 150 words, professional and useful. Company name: [Company Name]. Nextdoor Strategy for Electricians Nextdoor is the highest-converting social platform for trade contractors because it&#x27;s hyperlocal and neighbours trust recommendations from other neighbours. One strong Nextdoor review can generate 5-15 calls.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Nextdoor Community Post</h3>
-        <p>Write a professional Nextdoor community introduction post for an electrical contractor. I want to: (1) introduce myself and my company briefly, (2) mention the neighbourhoods I serve, (3) share one useful electrical tip for homeowners in the</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>area, (4) offer a free estimate for any electrical work. Warm and community-focused — not a sales pitch. Under 150 words. Sign as [Your Name], [Company Name], [License Number if relevant].</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="data-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Prompt — Nextdoor Community Post</h3>
+        <p>Write a professional Nextdoor community introduction post for an electrical contractor. I want to: (1) introduce myself and my company briefly, (2) mention the neighbourhoods I serve, (3) share one useful electrical tip for homeowners in the area, (4) offer a free estimate for any electrical work. Warm and community-focused — not a sales pitch. Under 150 words. Sign as [Your Name], [Company Name], [License Number if relevant].</p>
+      </div>
+    </article>
+
+    <article class="data-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Operator asset</p>
         <h3>Chapter 6: Google Reviews &amp; Reputation</h3>
         <p>The Post-Job Review Request System Electrical contractors with 50+ Google reviews get called first by homeowners who don&#x27;t have a referral. The window for asking is 24-48 hours after job completion — when satisfaction is highest.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Post-Job Review Request</h3>
-        <p>Write a post-job review request text message and email for my electrical contracting business. Customer [Name] just had [job type] completed at their home. The text version should be under 60 words. The email version should be under 100 words. Both should: make a personal, non-automated-feeling ask, include the direct Google review link, and express genuine appreciation. Sign as [Your Name], [Company Name]. Responding to Reviews</p>
+        <p>Write a post-job review request text message and email for my electrical contracting business. Customer [Name] just had [job type] completed at their home. The text version should be under 60 words. The email version should be under 100 words.</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
+        <p>Both should: make a personal, non-automated-feeling ask, include the direct Google review link, and express genuine appreciation. Sign as [Your Name], [Company Name]. Responding to Reviews</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — 5-Star Review Response</h3>
         <p>Write a warm, specific response to a 5-star Google review for my electrical company. The reviewer said: [paste their review]. I want to: respond personally, reference one detail from their review, express genuine thanks, and mention [Company Name] naturally for SEO. Under 80 words.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="data-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Prompt — Negative Review Response</h3>
         <p>Write a professional, non-defensive response to a negative Google review for my electrical company. The reviewer said: [paste their review]. I want to: acknowledge their experience, apologise for falling short of our standard, invite them to contact me directly to resolve it, and include my direct phone number. Under 80 words. Never argue. Never explain defensively.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
+    <article class="data-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Week 1: Estimate Follow-Up System</h3>
         <p>• Build your 48-hour estimate follow-up email using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save as email drafts • Set a recurring calendar reminder: check unanswered estimates every Monday and Friday</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>07</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages rebuilt in the same visual system as the approved sample direction.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="data-card">
+      <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Week 2: Proactive Campaign</h3>
         <p>• Build your EV charger outreach email and send to past residential customers • Write your whole-home inspection campaign email — target customers from 3+ years ago • Set a goal: send to 50 past customers this week</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="data-card">
+      <div class="num">06</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Week 3: Commercial Outreach</h3>
-        <p>• List 10 property managers or commercial building owners in your area • Use Chapter 3 prompts to write 5 personalized introduction emails • Follow up on any responses immediately — commercial accounts move fast when they need someone</p>
+        <p>• List 10 property managers or commercial building owners in your area</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+</section>
+<section class="page work highlight-page">
+  <div class="brand">
+    <div>CONTENT ELEVATED<small>Electricians</small></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
+    <p class="intro">Use these assets to tighten communication, increase trust, and create more consistent demand from the service area.</p>
+  </div>
+  <div class="content-stack">
+    <article class="data-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Operator asset</p>
+        <h3>Field System</h3>
+        <p>• Use Chapter 3 prompts to write 5 personalized introduction emails • Follow up on any responses immediately — commercial accounts move fast when they need someone</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="data-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Operator asset</p>
         <h3>Week 4: Review System</h3>
         <p>• Identify 20 past customers who haven&#x27;t left a Google review • Use Chapter 6 prompts to write personalized review request texts • Set up a post-job review request as a standard step in your job close-out process</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook</span><span>09</span></div>
 </section></main></body></html>
