@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Start Here - Videographer Growth System</title><style>
+@page { size: Letter; margin: 0; }
+:root{
+  --ink:#f8fbff;
+  --paper:#06070b;
+  --panel:#0e1119;
+  --panel2:#151923;
+  --soft:#b8c0cc;
+  --muted:#7e8796;
+  --line:rgba(248,251,255,.14);
+  --blue:#4aa8ff;
+  --cyan:#35e4d7;
+  --violet:#7c6cff;
+  --warm:#f0c389;
+  --bone:#f6f4ee;
+  --charcoal:#15171d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#111;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;padding:.56in;background:
+  radial-gradient(circle at 78% 16%,rgba(74,168,255,.22),transparent 2.3in),
+  radial-gradient(circle at 18% 88%,rgba(53,228,215,.10),transparent 2.45in),
+  linear-gradient(135deg,#05060a,#0b0e16 56%,#070910)}
+.page::before{content:"";position:absolute;inset:.28in;border:1px solid rgba(248,251,255,.10);border-radius:26px;pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.1in;top:.55in;width:4.1in;height:8.8in;border:1px solid rgba(248,251,255,.06);background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 65%);transform:skewX(-8deg);opacity:.42;pointer-events:none}
+.light{background:radial-gradient(circle at 86% 10%,rgba(74,168,255,.12),transparent 2.5in),linear-gradient(135deg,#fff,#f1f3f7 62%,#e8edf5);color:#171b22}
+.light::before{border-color:rgba(23,27,34,.12)}
+.light::after{display:none}
+.feature{background:radial-gradient(circle at 78% 12%,rgba(53,228,215,.16),transparent 2.3in),linear-gradient(135deg,#070910,#121724 62%,#0a0d14)}
+.brand{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.wordmark{font-size:10.5px;font-weight:900;letter-spacing:.23em;text-transform:uppercase;color:rgba(248,251,255,.78)}
+.wordmark small{display:block;margin-top:7px;color:rgba(74,168,255,.9);font-size:8px;font-weight:850;letter-spacing:.18em}
+.light .wordmark{color:#151922}.light .wordmark small{color:#356fa8}
+.badge{border:1px solid rgba(248,251,255,.15);border-radius:999px;background:rgba(255,255,255,.055);padding:9px 13px;color:#dcecff;font-size:8px;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+.light .badge{border-color:rgba(21,25,34,.15);background:rgba(255,255,255,.72);color:#356fa8}
+.kicker{position:relative;z-index:3;display:flex;align-items:center;gap:12px;color:var(--cyan);font-size:9px;font-weight:950;letter-spacing:.24em;text-transform:uppercase}
+.kicker::before{content:"";width:42px;height:1px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.6in;margin-top:.75in;font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:72px;line-height:.86;font-weight:950;letter-spacing:-.055em;text-transform:uppercase}
+h1 em{font-style:normal;color:#fff;text-shadow:0 0 30px rgba(74,168,255,.36)}
+h2{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-size:41px;line-height:.94;font-weight:950;letter-spacing:-.04em;text-transform:uppercase}
+h2 em{font-style:normal;color:var(--blue)}
+h3{font-size:17px;line-height:1.13;font-weight:850;letter-spacing:-.01em}
+p{position:relative;z-index:3;margin:0;color:var(--soft);font-size:11.5px;line-height:1.55}
+.light p{color:#47505b}
+.lead{max-width:5.4in;margin-top:.28in;color:rgba(248,251,255,.84);font-size:15.5px;line-height:1.55}
+.light .lead{color:#3a444f}
+.cover-strip{position:absolute;z-index:3;left:.56in;right:.56in;bottom:.86in;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(248,251,255,.15);background:rgba(6,7,11,.72);box-shadow:0 22px 70px rgba(0,0,0,.24)}
+.cover-cell{min-height:.96in;padding:16px 15px;border-left:1px solid var(--line)}
+.cover-cell:first-child{border-left:0}
+.cover-cell b{display:block;color:#fff;font-size:21px;line-height:1;font-weight:950;letter-spacing:-.02em}
+.cover-cell span{display:block;margin-top:10px;color:rgba(248,251,255,.72);font-size:8px;font-weight:850;letter-spacing:.14em;line-height:1.5;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.56in;right:.56in;bottom:.34in;display:flex;justify-content:space-between;color:rgba(248,251,255,.48);font-size:8px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.light .footer{color:rgba(21,25,34,.5)}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.95fr 1.05fr;gap:.34in;align-items:end;margin-top:.26in;padding-bottom:.22in;border-bottom:1px solid rgba(248,251,255,.13)}
+.light .section-head{border-bottom-color:rgba(21,25,34,.12)}
+.eyebrow{margin:0 0 9px;color:var(--blue);font-size:8px;font-weight:950;letter-spacing:.21em;text-transform:uppercase}
+.intro{margin:0;color:rgba(248,251,255,.72);font-size:11.6px;line-height:1.56}
+.light .intro{color:#555f6b}
+.grid-2{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:.30in}
+.grid-3{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.30in}
+.card,.panel{position:relative;z-index:3;border:1px solid rgba(248,251,255,.14);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border-radius:18px;padding:16px;box-shadow:0 16px 42px rgba(0,0,0,.16)}
+.light .card,.light .panel{border-color:rgba(21,25,34,.12);background:linear-gradient(145deg,#fff,rgba(242,244,249,.94));box-shadow:0 14px 36px rgba(10,18,28,.06)}
+.card::before{content:"";position:absolute;left:0;top:15px;bottom:15px;width:3px;border-radius:999px;background:linear-gradient(180deg,var(--blue),var(--cyan))}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:11px;border:1px solid rgba(74,168,255,.42);border-radius:10px;color:#dcecff;font-size:11px;font-weight:950;background:rgba(74,168,255,.08)}
+.light .num{background:#111827;color:#fff;border-color:rgba(74,168,255,.55)}
+.card p,.panel p{margin-top:9px;font-size:10.3px;line-height:1.5}
+.stack{position:relative;z-index:3;display:grid;gap:11px;margin-top:.30in}
+.asset{display:grid;grid-template-columns:.50in 1fr;gap:14px;padding:15px 17px;border:1px solid rgba(248,251,255,.14);border-radius:18px;background:rgba(255,255,255,.065)}
+.light .asset{border-color:rgba(21,25,34,.12);background:rgba(255,255,255,.78)}
+.asset .num{margin:0}
+.asset p{font-size:10.7px;line-height:1.5}
+.script{margin-top:9px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(248,251,255,.12);padding:12px;color:rgba(248,251,255,.82);font-size:10.3px;line-height:1.48}
+.light .script{background:#fff;border-color:rgba(21,25,34,.10);color:#323943}
+.script ul{margin:0;padding-left:18px}.script li{margin:0 0 6px}
+.table{position:relative;z-index:3;margin-top:.25in;border:1px solid rgba(21,25,34,.12);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.82)}
+.row{display:grid;grid-template-columns:1.05fr 1.35fr 1.4fr;border-top:1px solid rgba(21,25,34,.11)}
+.row:first-child{border-top:0}.row>*{padding:9px 11px;border-left:1px solid rgba(21,25,34,.11);font-size:9.7px;line-height:1.35;color:#525b66}.row>*:first-child{border-left:0;color:#171b22;font-weight:800}
+.row.head>*{background:#111827;color:white;font-size:7.6px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.swatches{display:flex;gap:10px;margin-top:11px}.swatch{width:.4in;height:.4in;border-radius:999px;border:1px solid rgba(0,0,0,.14)}
+.quote{position:relative;z-index:3;margin-top:.38in;padding:.34in;border:1px solid rgba(248,251,255,.15);border-radius:22px;background:rgba(255,255,255,.07)}
+.quote p{font-size:17px;line-height:1.42;color:#fff}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page "><div class="brand"><div class="wordmark">Content Elevated<small>Videographer Growth Bundle</small></div><div class="badge">Start Here - Videographer Growth System</div></div><p class="kicker" style="margin-top:.78in">Cinematic systems · premium clients</p><h1>Start Here: <em>Videographer</em> Growth System</h1><p class="lead">A practical implementation guide for turning the bundle into better inquiries, stronger creative briefs, smoother delivery, and more referral-ready client experiences.</p><div class="cover-strip"><div class="cover-cell"><b>01</b><span>Inquiry system</span></div><div class="cover-cell"><b>90</b><span>Day content plan</span></div><div class="cover-cell"><b>24+</b><span>Client templates</span></div><div class="cover-cell"><b>B2B</b><span>Wedding + commercial</span></div></div><div class="footer"><span>Start Here - Videographer Growth System</span><span>01</span></div></section><section class="page light"><div class="brand"><div class="wordmark">Content Elevated<small>Videographer Growth Bundle</small></div><div class="badge">How To Use</div></div><div class="section-head"><div><p class="eyebrow">How to use it</p><h2>Turn the bundle into a studio operating system.</h2></div><p class="intro">The fastest win is not making everything pretty. It is installing the moments that book projects: inquiry response, follow-up, questionnaire, package presentation, delivery message, review ask, and vendor touch.</p></div><div class="grid-3"><article class="card"><div class="num">01</div><h3>Pick the market</h3><p>Decide whether the asset is for weddings, corporate work, commercial brands, or hybrid studios before customizing the copy.</p></article><article class="card"><div class="num">02</div><h3>Customize the proof</h3><p>Add your style, portfolio examples, production process, delivery timeline, package names, and client outcomes.</p></article><article class="card"><div class="num">03</div><h3>Ship the system</h3><p>Install the inquiry reply, follow-up sequence, questionnaire, content calendar, and vendor touchpoints before redesigning anything.</p></article></div><div class="footer"><span>Start Here - Videographer Growth System</span><span>02</span></div></section><section class="page light"><div class="brand"><div class="wordmark">Content Elevated<small>Videographer Growth Bundle</small></div><div class="badge">Install first</div></div><div class="section-head"><div><p class="eyebrow">Install first</p><h2>The first 48 hours.</h2></div><p class="intro">Customize these assets before touching the rest of the bundle.</p></div><div class="stack"><article class="asset"><div class="num">01</div><div><h3>Inquiry response</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Bookings</p><div class="script"><ul><li>Create one wedding version and one corporate version.</li><li>Add your package names, starting price, and call link.</li><li>Save as a phone note, email template, and CRM snippet.</li></ul></div></div></article><article class="asset"><div class="num">02</div><div><h3>Follow-up sequence</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Lost lead recovery</p><div class="script"><ul><li>Use Day 3, Day 8, and Day 14 follow-ups.</li><li>Add one relevant portfolio link to each.</li><li>Keep the third message graceful, never desperate.</li></ul></div></div></article><article class="asset"><div class="num">03</div><div><h3>Project questionnaire</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Client experience</p><div class="script"><ul><li>Send after booking or before proposal depending on your process.</li><li>Use answers to shape timeline, shot list, and edit priorities.</li><li>Keep it short enough that clients finish it.</li></ul></div></div></article></div><div class="footer"><span>Start Here - Videographer Growth System</span><span>03</span></div></section><section class="page feature"><div class="brand"><div class="wordmark">Content Elevated<small>Videographer Growth Bundle</small></div><div class="badge">7-Day Launch</div></div><div class="section-head"><div><p class="eyebrow">7-Day Launch</p><h2>Put the system into market.</h2></div><p class="intro">A focused week for getting the assets live and visible.</p></div><div class="stack"><article class="asset"><div class="num">01</div><div><h3>Day 1-2</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Foundation</p><div class="script"><ul><li>Update the brand kit with your studio voice.</li><li>Choose the primary market: wedding, commercial, corporate, or hybrid.</li><li>Add booking links to all templates.</li></ul></div></div></article><article class="asset"><div class="num">02</div><div><h3>Day 3-4</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Content</p><div class="script"><ul><li>Write 12 captions from the calendar.</li><li>Create 3 portfolio posts using real story context.</li><li>Draft one YouTube or LinkedIn authority piece.</li></ul></div></div></article><article class="asset"><div class="num">03</div><div><h3>Day 5-7</h3><p class="eyebrow" style="margin-top:8px;margin-bottom:0">Revenue</p><div class="script"><ul><li>Send one vendor relationship email.</li><li>Follow up with 5 warm inquiries or past clients.</li><li>Ask for 2 reviews from recently delivered projects.</li></ul></div></div></article></div><div class="footer"><span>Start Here - Videographer Growth System</span><span>04</span></div></section><section class="page light"><div class="brand"><div class="wordmark">Content Elevated<small>Videographer Growth Bundle</small></div><div class="badge">Quality gate</div></div><div class="section-head"><div><p class="eyebrow">Quality gate</p><h2>Before you upload or send anything.</h2></div><p class="intro">Use this checklist to keep the product polished and professional.</p></div><div class="grid-3"><article class="card"><div class="num">01</div><h3>No generic claims</h3><p>Replace broad phrases like &#x27;high quality video&#x27; with specific style, process, or deliverable language.</p></article><article class="card"><div class="num">02</div><h3>No fake metrics</h3><p>Do not invent ROI, bookings, or campaign results. Use placeholders or actual client-approved proof.</p></article><article class="card"><div class="num">03</div><h3>Clear next step</h3><p>Every sales asset should invite the client into one action: call, reply, book, review, or refer.</p></article></div><div class="footer"><span>Start Here - Videographer Growth System</span><span>05</span></div></section></main></body></html>

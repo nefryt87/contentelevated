@@ -1,565 +1,1062 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Personal Chefs</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff8ef; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#947454 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d2b382 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#fff8ef 94%,white), color-mix(in srgb,#fff8ef 86%,#947454)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#947454; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#947454 32%,transparent); border-radius:999px; color:#947454; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#947454; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#947454 38%,transparent); border-bottom:1px solid color-mix(in srgb,#947454 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#947454 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#947454 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#947454 52%,transparent); border-bottom:1px solid color-mix(in srgb,#947454 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#947454 32%,transparent); }
-.metric b { display:block; color:#947454; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#211712; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#947454 18%,transparent), transparent 2in), linear-gradient(135deg, #211712, color-mix(in srgb,#211712 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#947454; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#947454 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#947454 56%,transparent); color:#947454; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#947454 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#947454 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#151716;
+  --muted:#5f665f;
+  --paper:#fff8ef;
+  --paper-2:#efe8dc;
+  --line:rgba(21,23,22,.13);
+  --accent:#947454;
+  --accent-2:#d2b382;
+  --deep:#211712;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#ddd7cf;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;padding:.58in;background:linear-gradient(135deg,var(--paper),#fff 54%,var(--paper-2))}
+.page::before{content:"";position:absolute;inset:.32in;border:1px solid var(--line);pointer-events:none}
+.page::after{content:"";position:absolute;right:-.9in;top:.58in;width:3.5in;height:8.7in;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);transform:skewX(-8deg);opacity:.72;pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;color:rgba(21,23,22,.62);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.badge{border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);background:rgba(255,255,255,.66);padding:10px 14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.82in;display:flex;align-items:center;gap:12px;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.27em;text-transform:uppercase}
+.cover-kicker::before{content:"";width:.5in;height:1px;background:var(--accent)}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.18in;margin-top:.2in;font-family:Georgia,"Times New Roman",serif;font-size:58px;line-height:.96;font-weight:400;letter-spacing:-.05em;color:var(--ink)}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.lead{position:relative;z-index:3;max-width:5.2in;margin-top:.28in;color:#434842;font-size:15px;line-height:1.64}
+.signature-strip{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.88in;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.48)}
+.signature-cell{min-height:.92in;padding:16px 15px;border-left:1px solid var(--line)}
+.signature-cell:first-child{border-left:0}
+.signature-cell b{display:block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:400;line-height:1}
+.signature-cell span{display:block;margin-top:9px;color:#697069;font-size:8.3px;font-weight:850;letter-spacing:.14em;line-height:1.5;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.42in;display:flex;justify-content:space-between;color:rgba(21,23,22,.52);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:linear-gradient(135deg,#fff,var(--paper) 62%,var(--paper-2));color:var(--ink)}
+.work::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 84% 8%,color-mix(in srgb,var(--accent-2) 22%,transparent),transparent 2.45in);pointer-events:none}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.92fr 1.08fr;gap:.38in;align-items:end;margin-top:.25in;padding-bottom:.23in;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.23em;text-transform:uppercase}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:39px;line-height:.98;font-weight:400;letter-spacing:-.045em;color:var(--ink)}
+.intro{margin:0;color:#4b514b;font-size:12px;line-height:1.62}
+.bespoke-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.bespoke-card{position:relative;min-height:1.84in;border:1px solid var(--line);background:rgba(255,255,255,.76);padding:18px;box-shadow:0 12px 28px rgba(21,23,22,.045)}
+.bespoke-card::before{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.75}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:12px;border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);background:#fff;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:13px;font-weight:400}
+h3{font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:15px;line-height:1.14;font-weight:850;letter-spacing:-.01em}
+.bespoke-card p,.asset-card p{margin:9px 0 0;color:#4b514b;font-size:10.4px;line-height:1.56}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.asset-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid var(--line);background:rgba(255,255,255,.8);box-shadow:0 10px 24px rgba(21,23,22,.04)}
+.asset-card .eyebrow{margin-bottom:7px;color:#73786f;font-size:7.4px;letter-spacing:.17em}
+.asset-card h3{font-size:16px}
+.asset-card .num{margin:0;background:var(--deep);color:#fff;border-color:color-mix(in srgb,var(--accent) 36%,transparent)}
+.feature-page{background:linear-gradient(135deg,var(--deep),color-mix(in srgb,var(--deep) 86%,#fff));color:#fff}
+.feature-page::before{background:radial-gradient(circle at 78% 15%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 2.35in),linear-gradient(135deg,rgba(255,255,255,.04),transparent 48%)}
+.feature-page h2,.feature-page h3{color:#fff}
+.feature-page .intro,.feature-page .asset-card p,.feature-page .bespoke-card p{color:rgba(255,255,255,.78)}
+.feature-page .asset-card,.feature-page .bespoke-card{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.15);box-shadow:none}
+.feature-page .asset-card .eyebrow{color:color-mix(in srgb,var(--accent-2) 74%,#fff)}
+.feature-page .brand,.feature-page .footer{color:rgba(255,255,255,.56)}
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#fff8ef; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#211712; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#211712; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #947454; }
+.family-barber{--ink:#f5eee4;--paper:#0b0806;--paper-2:#17100c;--line:rgba(245,238,228,.16)}
+.family-barber .page{background:linear-gradient(135deg,#070504,#15100c 58%,#0b0806)}
+.family-barber .page::before{border-color:rgba(245,238,228,.12)}
+.family-barber .lead,.family-barber .intro,.family-barber .bespoke-card p,.family-barber .asset-card p{color:rgba(245,238,228,.76)}
+.family-barber .bespoke-card,.family-barber .asset-card,.family-barber .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(245,238,228,.14)}
+.family-barber .work{background:linear-gradient(135deg,#0b0806,#19110c)}
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#fff8ef; }
-.layout-protocol .work { background:#fbfbf5; color:#211712; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#947454 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#211712; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+.family-petcare{--ink:#2b241a;--paper:#fff8ef;--paper-2:#eadbc6;--line:rgba(154,122,85,.18)}
+.family-petcare .page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.34),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1)}
+.family-petcare .page::before{inset:.3in;border-color:rgba(154,122,85,.14);border-radius:26px}
+.family-petcare .page::after{right:.72in;top:1.08in;width:2.15in;height:2.15in;border-radius:50%;border:1px solid rgba(154,122,85,.13);background:radial-gradient(circle,rgba(255,255,255,.6),rgba(216,195,164,.18) 62%,transparent 63%);transform:none;opacity:.72}
+.family-petcare h1,.family-petcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-petcare .lead,.family-petcare .intro,.family-petcare .bespoke-card p,.family-petcare .asset-card p{color:#514637}
+.family-petcare .bespoke-card,.family-petcare .asset-card,.family-petcare .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.28),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1);color:#2b241a}
+.family-petcare .feature-page::before{inset:.3in;border:1px solid rgba(154,122,85,.14);border-radius:26px;background:transparent}
+.family-petcare .feature-page h2,.family-petcare .feature-page h3{color:#2b241a}
+.family-petcare .feature-page .intro,.family-petcare .feature-page .asset-card p,.family-petcare .feature-page .bespoke-card p{color:#514637}
+.family-petcare .feature-page .asset-card,.family-petcare .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page .asset-card .eyebrow{color:#9a7a55}
+.family-petcare .feature-page .brand,.family-petcare .feature-page .footer{color:rgba(43,36,26,.54)}
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+.family-etsy{--ink:#132023;--paper:#fbfcfb;--paper-2:#e9f0ec;--line:rgba(79,143,148,.16)}
+.family-etsy .page::after{transform:rotate(-6deg);background:linear-gradient(180deg,rgba(255,143,97,.16),rgba(79,143,148,.1),transparent 70%)}
+.family-etsy .bespoke-card::before{height:4px}
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#211712; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+.family-coach{--ink:#1b1d24;--paper:#fbf8f2;--paper-2:#ece5d9;--line:rgba(75,86,118,.16)}
+.family-coach .page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.24),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9)}
+.family-coach .page::after{right:.62in;top:1.08in;width:2.1in;height:2.1in;border:1px solid rgba(75,86,118,.12);background:radial-gradient(circle,rgba(255,255,255,.58),rgba(189,170,135,.14) 64%,transparent 65%);transform:none;border-radius:50%}
+.family-coach h1,.family-coach h2{font-family:"Didot","Bodoni 72",Georgia,serif;letter-spacing:-.04em}
+.family-coach .lead,.family-coach .intro,.family-coach .bespoke-card p,.family-coach .asset-card p{color:#46454c}
+.family-coach .bespoke-card,.family-coach .asset-card,.family-coach .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.22),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9);color:#1b1d24}
+.family-coach .feature-page::before{inset:.32in;border:1px solid rgba(75,86,118,.14);background:transparent}
+.family-coach .feature-page h2,.family-coach .feature-page h3{color:#1b1d24}
+.family-coach .feature-page .intro,.family-coach .feature-page .asset-card p,.family-coach .feature-page .bespoke-card p{color:#46454c}
+.family-coach .feature-page .asset-card,.family-coach .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page .asset-card .eyebrow{color:#4b5676}
+.family-coach .feature-page .brand,.family-coach .feature-page .footer{color:rgba(27,29,36,.54)}
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#947454 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+.family-childcare{--ink:#27352f;--paper:#fffdf8;--paper-2:#eef7ef;--line:rgba(112,154,128,.18)}
+.family-childcare .page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.42),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef)}
+.family-childcare .page::before{inset:.3in;border-color:rgba(112,154,128,.16);border-radius:28px}
+.family-childcare .page::after{right:.58in;top:.95in;width:2.1in;height:2.1in;border:1px solid rgba(112,154,128,.14);background:radial-gradient(circle,rgba(255,255,255,.72),rgba(255,210,185,.22) 56%,rgba(180,220,190,.13) 57%,transparent 68%);transform:none;border-radius:38% 62% 45% 55%;opacity:.78}
+.family-childcare h1,.family-childcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-childcare .cover-kicker,.family-childcare .eyebrow{color:#6f9f7b}
+.family-childcare .badge{color:#6f9f7b;border-color:rgba(112,154,128,.22);background:rgba(255,255,255,.72)}
+.family-childcare .num{border-radius:999px;border-color:rgba(112,154,128,.24);color:#6f9f7b;background:#fffefb}
+.family-childcare .lead,.family-childcare .intro,.family-childcare .bespoke-card p,.family-childcare .asset-card p{color:#526159}
+.family-childcare .signature-cell b{color:#6f9f7b}
+.family-childcare .signature-cell span{color:#718077}
+.family-childcare .bespoke-card,.family-childcare .asset-card,.family-childcare .signature-strip{background:rgba(255,255,255,.88);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .bespoke-card::before{height:2px;background:linear-gradient(90deg,#6f9f7b,#f0b8a1);opacity:.52}
+.family-childcare .asset-card .num{background:#eaf5ec;color:#527b61}
+.family-childcare .feature-page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.38),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef);color:#27352f}
+.family-childcare .feature-page::before{inset:.3in;border:1px solid rgba(112,154,128,.16);border-radius:28px;background:transparent}
+.family-childcare .feature-page h2,.family-childcare .feature-page h3{color:#27352f}
+.family-childcare .feature-page .intro,.family-childcare .feature-page .asset-card p,.family-childcare .feature-page .bespoke-card p{color:#526159}
+.family-childcare .feature-page .asset-card,.family-childcare .feature-page .bespoke-card{background:rgba(255,255,255,.9);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .feature-page .asset-card .eyebrow{color:#6f9f7b}
+.family-childcare .feature-page .brand,.family-childcare .feature-page .footer{color:rgba(39,53,47,.54)}
 
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+.family-chef{--ink:#241711;--paper:#fff8ef;--paper-2:#efe0ca;--line:rgba(148,116,84,.18)}
+.family-chef .page::after{background:radial-gradient(ellipse at center,rgba(210,179,130,.28),transparent 63%);transform:rotate(5deg)}
+.family-chef h1,.family-chef h2{font-family:Georgia,"Times New Roman",serif}
 
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#211712; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#947454 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#211712; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+.family-stylist{--ink:#211920;--paper:#faf6f2;--paper-2:#eaded5;--line:rgba(139,116,132,.17)}
+.family-stylist .page{background:radial-gradient(circle at 80% 10%,rgba(200,183,163,.24),transparent 2.4in),linear-gradient(135deg,#fff,#faf6f2 62%,#eaded5)}
+.family-stylist .page::after{right:.74in;top:1.1in;width:1.9in;height:1.9in;border:1px solid rgba(139,116,132,.14);background:radial-gradient(circle,rgba(255,255,255,.62),rgba(200,183,163,.16) 62%,transparent 63%);transform:none;border-radius:50%}
+.family-stylist h1,.family-stylist h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.family-stylist .lead,.family-stylist .intro,.family-stylist .bespoke-card p,.family-stylist .asset-card p{color:#4f454d}
+.family-stylist .bespoke-card,.family-stylist .asset-card,.family-stylist .signature-strip{background:rgba(255,255,255,.84);border-color:rgba(139,116,132,.15);box-shadow:0 10px 24px rgba(58,42,54,.035)}
+.family-stylist .bespoke-card::before{height:1px;opacity:.48}
+.family-stylist .num{border-radius:999px}
+.family-stylist .feature-page{background:radial-gradient(circle at 80% 10%,rgba(200,183,163,.22),transparent 2.4in),linear-gradient(135deg,#fff,#faf6f2 62%,#eaded5);color:#211920}
+.family-stylist .feature-page::before{inset:.32in;border:1px solid rgba(139,116,132,.15);background:transparent}
+.family-stylist .feature-page h2,.family-stylist .feature-page h3{color:#211920}
+.family-stylist .feature-page .intro,.family-stylist .feature-page .asset-card p,.family-stylist .feature-page .bespoke-card p{color:#4f454d}
+.family-stylist .feature-page .asset-card,.family-stylist .feature-page .bespoke-card{background:rgba(255,255,255,.86);border-color:rgba(139,116,132,.15);box-shadow:0 10px 24px rgba(58,42,54,.035)}
+.family-stylist .feature-page .asset-card .eyebrow{color:#8b7484}
+.family-stylist .feature-page .brand,.family-stylist .feature-page .footer{color:rgba(33,25,32,.54)}
 
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #947454; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#947454 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#947454 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-editorial"><section class="page cover">
+.family-trainer{--ink:#effaf4;--paper:#0d1514;--paper-2:#16211f;--line:rgba(200,255,95,.16)}
+.family-trainer .page{background:linear-gradient(135deg,#0a1110,#121c1a 58%,#0d1514)}
+.family-trainer .page::after{background:linear-gradient(180deg,rgba(200,255,95,.12),rgba(45,143,118,.18),transparent 72%)}
+.family-trainer .lead,.family-trainer .intro,.family-trainer .bespoke-card p,.family-trainer .asset-card p{color:rgba(239,250,244,.78)}
+.family-trainer .bespoke-card,.family-trainer .asset-card,.family-trainer .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(239,250,244,.13)}
+.family-trainer .work{background:linear-gradient(135deg,#0d1514,#16211f)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book family-chef"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you ai playbook for personal chefs</div>
-    </div>
+    <div></div>
+    <div class="badge">AI Playbook</div>
   </div>
-  <h1><em>AI</em> Playbook</h1>
-  <p class="lead">A premium, niche-specific growth system built to help the business move faster with clearer content, stronger client touchpoints, and ready-to-use execution assets.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Ready-to-use<br/>growth system</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Chef</span></div>
-    <div class="metric"><b>03</b><span>Customize<br/>and launch</span></div>
+  <p class="cover-kicker">Private dining · premium hospitality</p>
+  <h1><em>AI</em> Playbook Personal Chefs</h1>
+  <p class="lead">A culinary growth system for presenting menus, guiding client inquiries, creating polished hospitality touchpoints, and turning private dining into repeat bookings.</p>
+  <div class="signature-strip">
+    <div class="signature-cell"><b>01</b><span>Present the menu</span></div>
+    <div class="signature-cell"><b>02</b><span>Guide the inquiry</span></div>
+    <div class="signature-cell"><b>03</b><span>Elevate service</span></div>
+    <div class="signature-cell"><b>04</b><span>Book repeat tables</span></div>
   </div>
-  <div class="footer"><span>Personal Chefs product file</span><span>01</span></div>
+  <div class="footer"><span>Content Elevated</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Use the System</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">Use this section to move from strategy into execution with clear steps, customized language, and a simple weekly workflow.</p>
+    <div><p class="eyebrow">Implementation</p><h2>Make the system feel made for the niche.</h2></div>
+    <p class="intro">Start with the next dining touchpoint: menu inquiry, consultation reply, event follow-up, dietary questionnaire, seasonal offer, or referral ask.</p>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="bespoke-grid">
+    <article class="bespoke-card"><div class="num">01</div><h3>Start with the buyer moment</h3><p>Use the asset that matches the next decision your client, customer, or lead needs to make.</p></article>
+    <article class="bespoke-card"><div class="num">02</div><h3>Make it sound specific</h3><p>Swap bracketed language, services, location, timeline, pricing context, and proof so the system feels built for the business.</p></article>
+    <article class="bespoke-card"><div class="num">03</div><h3>Create one weekly rhythm</h3><p>Batch content, follow-ups, prompts, and client messages together so execution feels simple instead of scattered.</p></article>
   </div>
-  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Personal Chef</h3>
         <p>The AI Playbook for Personal Chefs &amp; Private Chefs Convert more inquiries, present proposals with confidence, build realtor and event planner partnerships, and create a client experience that generates referrals</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Introduction</h3>
-        <p>The personal chefs with full client rosters and premium rates aren&#x27;t just the most technically skilled in the kitchen. They respond to every inquiry professionally and specifically — making potential clients feel understood before they&#x27;ve ever tasted the food. They present proposals that communicate value before they present a number. They maintain relationships with realtors, concierge services, and event planners who send warm referrals year-round. They build a personal brand on Instagram and YouTube that positions them as the expert their ideal client is searching for. And they create a client experience so consistently excellent that every meal becomes a referral. This playbook gives you 7 chapters covering every high-leverage scenario — from private dining to weekly meal prep to corporate catering — with copy-paste AI prompts throughout.</p>
+        <p>The personal chefs with full client rosters and premium rates aren&#x27;t just the most technically skilled in the kitchen. They respond to every inquiry professionally and specifically — making potential clients feel understood before they&#x27;ve ever tasted the</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Conversion</h3>
-        <p>The Same-Day Inquiry Response System High-value clients hiring a private chef are making a significant investment and often contact 2-3 chefs simultaneously. A response that feels personalised, professional, and knowledgeable within a few hours wins a disproportionate number of initial consultations.</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Introduction</h3>
+        <p>food. They present proposals that communicate value before they present a number. They maintain relationships with realtors, concierge services, and event planners who send warm referrals year-round. They build a personal brand on Instagram and</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Private Dining Inquiry Response</h3>
-        <p>Write a warm, professional inquiry response email for my personal chef business. The client [Name] reached out about [service — e.g., private dinner party / weekly meal prep / vacation chef / corporate catering]. They mentioned: [paste key details — guest count, occasion, dietary requirements, cuisine preferences, date]. My culinary style and speciality: [your style — e.g., Mediterranean farm-to-table / Asian fusion / classic French / plant-based]. I want to: (1) make them feel like I genuinely</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Introduction</h3>
+        <p>YouTube that positions them as the expert their ideal client is searching for. And they create a client experience so consistently excellent that every meal becomes a referral. This playbook gives you 7 chapters covering every high-leverage scenario — from</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>private dining to weekly meal prep to corporate catering — with copy-paste AI prompts throughout.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Conversion</h3>
+        <p>The Same-Day Inquiry Response System High-value clients hiring a private chef are making a significant investment and often contact 2-3 chefs simultaneously. A response that feels personalized, professional, and</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Conversion</h3>
+        <p>knowledgeable within a few hours wins a disproportionate number of initial consultations.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Private Dining Inquiry Response</h3>
+        <p>Write a warm, professional inquiry response email for my personal chef business. The client [Name] reached out about [service — e.g., private dinner party / weekly meal prep / vacation chef / corporate catering]. They mentioned: [paste key details</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>04</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>— guest count, occasion, dietary requirements, cuisine preferences, date]. My culinary style and specialty: [your style — e.g., Mediterranean farm-to-table / Asian fusion / classic French / plant-based]. I want to: (1) make them feel like I genuinely</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
         <p>read their inquiry, (2) briefly describe how I&#x27;d approach their specific event or service, (3) ask 1-2 clarifying questions to move toward a proposal, (4) invite them to a discovery call. Warm, professional, and enthusiastic. Under 200 words. Sign as [Your Name], [Business Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Weekly Meal Prep Inquiry Response</h3>
         <p>Write a professional inquiry response email for my personal chef meal prep service.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Client [Name] Reached Out About Weekly Meal Preparation. They Mentioned: [Details</h3>
-        <p>— household size, dietary preferences, allergies, schedule]. I want to: (1) acknowledge their specific household needs, (2) briefly describe my weekly meal prep process, (3) explain what a typical weekly service looks like, (4) invite them to a tasting consultation. Professional and warm. Under 200 words. Sign as [Your Name], [Business Name]. Presenting Your Proposal With Confidence Personal chefs who struggle to close high-value clients almost always present the price before establishing the full scope of value. A proposal that builds the vision first — the experience, the personalisation, the logistics handled — makes the investment feel proportionate.</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Event Dining Proposal Email</h3>
-        <p>Write a private dining proposal email for my personal chef business. Client [Name], event: [type and description], date: [date], guest count: [X], location: [venue/home]. Proposed menu: [brief menu description — courses, key dishes, dietary accommodations]. Investment: $[amount] which includes [what&#x27;s covered — groceries, prep, service, cleanup]. I want this proposal to: (1) paint a vivid picture of the dining experience, (2) communicate the value of having everything handled, (3) present the investment confidently, (4) outline the next step to confirm. Professional and evocative. Under 300 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Client [Name] Reached Out About Weekly Meal Preparation. They Mentioned: [Details</h3>
+        <p>— household size, dietary preferences, allergies, schedule]. I want to: (1) acknowledge their specific household needs, (2) briefly describe my weekly meal prep process, (3) explain what a typical weekly service looks like, (4) invite them to</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>05</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>a tasting consultation. Professional and warm. Under 200 words. Sign as [Your Name], [Business Name]. Presenting Your Proposal With Confidence Personal chefs who struggle to close high-value clients almost always present the price</p>
       </div>
     </article>
 
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>before establishing the full scope of value. A proposal that builds the vision first — the experience, the personalisation, the logistics handled — makes the investment feel proportionate.</p>
+      </div>
+    </article>
 
-    <article class="prompt-card">
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Event Dining Proposal Email</h3>
+        <p>Write a private dining proposal email for my personal chef business. Client [Name], event: [type and description], date: [date], guest count: [X], location: [venue/home]. Proposed menu: [brief menu description — courses, key dishes, dietary</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Event Dining Proposal Email</h3>
+        <p>accommodations]. Investment: $[amount] which includes [what&#x27;s covered — groceries, prep, service, cleanup]. I want this proposal to: (1) paint a vivid picture of the dining experience, (2) communicate the value of having everything handled, (3)</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>06</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Event Dining Proposal Email</h3>
+        <p>present the investment confidently, (4) outline the next step to confirm. Professional and evocative. Under 300 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>07</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Weekly Meal Prep Proposal</h3>
         <p>Write a weekly meal prep service proposal for my personal chef business. Client [Name], household size [X], dietary preferences: [list]. Proposed service: [X] meals per week covering [meals — e.g., lunches and dinners / full week]. Investment: $</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>[amount] per week which covers [what&#x27;s included — grocery shopping, prep, packaging, cleanup]. I want to: (1) describe the lifestyle benefit of never thinking about what to eat again, (2) outline exactly what each week looks like, (3) present the investment, (4) propose a trial week. Under 250 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>System</h3>
-        <p>Building Referral Partnerships The personal chefs with the most consistently full rosters rarely rely on advertising. They maintain active referral relationships with luxury real estate agents (who sell homes to exactly the right client), concierge services, event planners, and high-end property managers. One strong realtor relationship can generate 10-20 qualified referrals per year.</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Weekly Meal Prep Proposal</h3>
+        <p>[amount] per week which covers [what&#x27;s included — grocery shopping, prep, packaging, cleanup]. I want to: (1) describe the lifestyle benefit of never thinking about what to eat again, (2) outline exactly what each week looks like, (3) present</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Luxury Realtor Introduction</h3>
-        <p>Write a professional introduction email from a personal chef to a luxury real estate agent named [Name] at [Brokerage]. I want to: (1) introduce my private chef service and client profile briefly, (2) mention how my service is an amenity that elevates a luxury home purchase or listing experience, (3) propose either a referral arrangement or a co-marketing idea — e.g., a private chef dinner for their VIP clients or new homeowners. Professional and specific. Under 150 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Weekly Meal Prep Proposal</h3>
+        <p>the investment, (4) propose a trial week. Under 250 words. Sign as [Your Name], [Business Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Event Planner Partnership</h3>
-        <p>Write a professional introduction email from a personal chef to a wedding or event planner named [Name] at [Company]. I want to: (1) introduce my chef service and culinary style, (2) explain how I complement their event planning service — intimate rehearsal dinners, post-wedding brunches, client appreciation dinners, (3) propose a mutual referral relationship. Warm and professional. Under 150 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>System</h3>
+        <p>Building Referral Partnerships The personal chefs with the most consistently full rosters rarely rely on advertising. They maintain active referral relationships with luxury real estate agents (who sell</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>08</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>homes to exactly the right client), concierge services, event planners, and high-end property managers. One strong realtor relationship can generate 10-20 qualified referrals per year.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Luxury Realtor Introduction</h3>
+        <p>Write a professional introduction email from a personal chef to a luxury real estate agent named [Name] at [Brokerage]. I want to: (1) introduce my private chef service and client profile briefly, (2) mention how my service is an amenity that elevates a</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Luxury Realtor Introduction</h3>
+        <p>luxury home purchase or listing experience, (3) propose either a referral arrangement or a co-marketing idea — e.g., a private chef dinner for their VIP clients or new homeowners. Professional and specific. Under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Event Planner Partnership</h3>
+        <p>Write a professional introduction email from a personal chef to a wedding or event planner named [Name] at [Company]. I want to: (1) introduce my chef service and culinary style, (2) explain how I complement their event planning service — intimate</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>09</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>rehearsal dinners, post-wedding brunches, client appreciation dinners, (3) propose a mutual referral relationship. Warm and professional. Under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Monthly Partner Value Touch</h3>
         <p>Write a monthly value email from a personal chef to a referral partner named [Name]. Share: (1) one food or dining insight that would genuinely interest their clients — a seasonal ingredient, a culinary trend, a dinner experience idea relevant</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Monthly Partner Value Touch</h3>
         <p>to their market. Short, useful, under 100 words. Colleague tone. Sign as [Your Name], [Business Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="asset-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Retention</h3>
-        <p>The Pre-Event Client Experience Clients who feel fully prepared, heard, and cared for before the first knife hits the board arrive relaxed and excited — and relaxed, excited clients become the most enthusiastic referrers. Pre-event communication is where the client experience is actually made.</p>
+        <p>The Pre-Event Client Experience Clients who feel fully prepared, heard, and cared for before the first knife hits the board arrive relaxed and excited — and relaxed, excited clients become the most enthusiastic</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>10</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Retention</h3>
+        <p>referrers. Pre-event communication is where the client experience is actually made.</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>11</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Pre-Dinner Consultation Confirmation</h3>
         <p>Write a pre-dinner consultation confirmation email for my personal chef business.</p>
       </div>
     </article>
 
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Client [Name], Consultation Call On [Date] At [Time]. For Their Event On [Event Date] —</h3>
+        <p>[brief description]. I want to cover: (1) what we&#x27;ll discuss on the call — menu direction, dietary restrictions, service preferences, logistics, (2) anything they should prepare or think about beforehand, (3) my enthusiasm for the event. Warm and</p>
+      </div>
+    </article>
 
-    <article class="prompt-card">
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Client [Name], Consultation Call On [Date] At [Time]. For Their Event On [Event Date] —</h3>
+        <p>preparatory. Under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Client [Name], Consultation Call On [Date] At [Time]. For Their Event On [Event Date] —</h3>
-        <p>[brief description]. I want to cover: (1) what we&#x27;ll discuss on the call — menu direction, dietary restrictions, service preferences, logistics, (2) anything they should prepare or think about beforehand, (3) my enthusiasm for the event. Warm and preparatory. Under 200 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Post-Event Follow-Up Email</h3>
-        <p>Write a post-event follow-up email for my personal chef business. Client [Name], event was [date] — [brief description of the dinner/event]. I want to: (1) express genuine gratitude for having me in their home, (2) share one personal observation about what made the evening special, (3) ask for feedback on anything they&#x27;d adjust, (4) plant the seed for the next event or ongoing service, (5) mention referrals warmly. Under 200 words. Sign as [Your Name], [Business Name]. Building Ongoing Meal Prep Client Relationships</p>
+        <p>Write a post-event follow-up email for my personal chef business. Client [Name], event was [date] — [brief description of the dinner/event]. I want to: (1) express genuine gratitude for having me in their home, (2) share one personal observation</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>12</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>about what made the evening special, (3) ask for feedback on anything they&#x27;d adjust, (4) plant the seed for the next event or ongoing service, (5) mention referrals warmly. Under 200 words. Sign as [Your Name], [Business Name]. Building Ongoing Meal Prep Client Relationships</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Weekly Meal Prep Check-In</h3>
         <p>Write a weekly meal prep client check-in message for my personal chef business.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">07</div>
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Client [Name], This Week I Prepared: [Brief Menu Summary]. I Want To: (1) Let Them</h3>
         <p>know what&#x27;s in the fridge and how to reheat each dish, (2) ask for feedback on this</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="asset-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week&#x27;s Meals, (3) Mention Any Upcoming Seasonal Ingredients Or Dishes I&#x27;m Excited</h3>
         <p>to make for them. Warm and conversational. Under 150 words. Sign as [Your Name], [Business Name].</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>13</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Chapter 4: Content Strategy</h3>
         <p>Instagram, YouTube &amp; Pinterest Strategy for Personal Chefs</p>
       </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>14</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Content Is The Most Powerful Tool A Personal Chef Has For Demonstrating Skill And</h3>
+        <p>building trust before a client ever tastes their food. The accounts that generate consistent inquiries post across 4 pillars: behind-the-scenes (prep, plating, markets), education (techniques, ingredients, recipes), social proof (events, client experiences,</p>
+      </div>
     </article>
 
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Content Is The Most Powerful Tool A Personal Chef Has For Demonstrating Skill And</h3>
+        <p>testimonials), and personal story.</p>
+      </div>
+    </article>
 
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Content Is The Most Powerful Tool A Personal Chef Has For Demonstrating Skill And</h3>
-        <p>building trust before a client ever tastes their food. The accounts that generate consistent inquiries post across 4 pillars: behind-the-scenes (prep, plating, markets), education (techniques, ingredients, recipes), social proof (events, client experiences, testimonials), and personal story.</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>Write 5 Instagram captions for a personal chef specializing in [your style]. Topics: (1) a recent private dinner — describe the menu, the occasion, what made it special (anonymise the client), (2) a seasonal ingredient you love right now and how you&#x27;re</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Instagram Caption Batch</h3>
-        <p>Write 5 Instagram captions for a personal chef specialising in [your style]. Topics: (1) a recent private dinner — describe the menu, the occasion, what made it special (anonymise the client), (2) a seasonal ingredient you love right now and how you&#x27;re using it, (3) what clients say is the biggest benefit of having a personal chef (besides the food), (4) a behind-the-scenes look at sourcing ingredients for a client — farmers market, specialist supplier, etc., (5) a direct inquiry CTA describing who you&#x27;d love to cook for. Each under 150 words, warm and sensory. Business name: [Business Name].</p>
+        <p>using it, (3) what clients say is the biggest benefit of having a personal chef (besides the food), (4) a behind-the-scenes look at sourcing ingredients for a client — farmers market, specialist supplier, etc., (5) a direct inquiry CTA describing who</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>15</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>you&#x27;d love to cook for. Each under 150 words, warm and sensory. Business name: [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>16</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Prompt — Youtube / Blog Content Ideas</h3>
         <p>Write 5 YouTube video or blog post ideas for a personal chef. Each should include a compelling title and a brief description of what the content covers. Topics: a signature dish tutorial with the story behind it, a day-in-the-life of a private chef (prep</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Day For A Client Event), A Seasonal Menu Planning Guide, The Most Common Mistakes</h3>
         <p>people make when hosting a dinner party, what a private chef actually costs and what drives the price. Business name: [Business Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">07</div>
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Conversations</h3>
         <p>Presenting Your Rates With Confidence</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>17</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+<article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Write a response to a client who asked &#x27;what do you charge?&#x27; for [service type — e.g., private dinner for 8 / weekly meal prep / vacation chef week]. My rates: [describe your pricing structure]. I want to: (1) give them a realistic range or structure without committing to a final number before I know the scope, (2) briefly explain what drives the cost (guest count, menu complexity, logistics, grocery budget), (3) invite them to a discovery call for an accurate quote. Confident, not apologetic. Under 150 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>Write a response to a client who asked &#x27;what do you charge?&#x27; for [service type — e.g., private dinner for 8 / weekly meal prep / vacation chef week]. My rates: [describe your pricing structure]. I want to: (1) give them a realistic range or</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Budget Objection Response</h3>
-        <p>Write a professional response to a potential client who said my rate is higher than they expected. My minimum for [service] is $[amount]. I want to: (1) acknowledge their honesty, (2) briefly explain what&#x27;s reflected in the rate — ingredients, prep time, service, cleanup, the experience, (3) present any genuine alternatives — a smaller menu, a different service type, or a trial meal. Warm and confident. Under 200 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>structure without committing to a final number before I know the scope, (2) briefly explain what drives the cost (guest count, menu complexity, logistics, grocery budget), (3) invite them to a discovery call for an accurate quote. Confident, not</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>apologetic. Under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Budget Objection Response</h3>
+        <p>Write a professional response to a potential client who said my rate is higher than they expected. My minimum for [service] is $[amount]. I want to: (1) acknowledge their honesty, (2) briefly explain what&#x27;s reflected in the rate — ingredients, prep time,</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>18</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Budget Objection Response</h3>
+        <p>service, cleanup, the experience, (3) present any genuine alternatives — a smaller menu, a different service type, or a trial meal. Warm and confident. Under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>19</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
         <h3>Chapter 6: Reviews &amp; Reputation</h3>
         <p>Generating Reviews and Testimonials</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Event Review Request</h3>
-        <p>Write a post-event review request email for my personal chef business. Client [Name], event: [description]. Send 2-3 days after. I want to: (1) check in on how they&#x27;re still feeling about the evening, (2) share one personal memory from the event, (3) make a warm personal ask for a Google review or testimonial, (4) include the direct link. Genuine and warm. Under 150 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 1: Inquiry &amp; Proposal System</h3>
-        <p>• Build your private dining and meal prep inquiry response templates • Write your event proposal template — use the Chapter 1 prompt • Set a goal: respond to every inquiry within 3 hours this month</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 2: Partnership Outreach</h3>
-        <p>• List 10 luxury realtors, event planners, or concierge services you want referral relationships with</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>08</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>• Write 5 personalised introduction emails using Chapter 2 prompts • Build your monthly partner value touch template</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 3: Content Batch</h3>
-        <p>• Use Chapter 4 Instagram prompt to batch 10 captions in one session • Brainstorm 3 YouTube/blog ideas using the Chapter 4 prompt — pick one to create this month • Schedule 4-5 posts per week for the next 3 weeks</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Post-Event Review Request</h3>
+        <p>Write a post-event review request email for my personal chef business. Client [Name], event: [description]. Send 2-3 days after. I want to: (1) check in on how they&#x27;re still feeling about the evening, (2) share one personal memory from the</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 4: Review System &amp; Client Follow-Up</h3>
-        <p>• Identify past clients who haven&#x27;t reviewed — write personal review requests • Set post-event follow-up as a standard step 2-3 days after every event • Build your weekly meal prep check-in template and use it every week going forward</p>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Prompt — Post-Event Review Request</h3>
+        <p>event, (3) make a warm personal ask for a Google review or testimonial, (4) include the direct link. Genuine and warm. Under 150 words. Sign as [Your Name], [Business Name].</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>09</span></div>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 1: Inquiry &amp; Proposal System</h3>
+        <p>• Build your private dining and meal prep inquiry response templates</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>20</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 1: Inquiry &amp; Proposal System</h3>
+        <p>• Write your event proposal template — use the Chapter 1 prompt</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 1: Inquiry &amp; Proposal System</h3>
+        <p>• Set a goal: respond to every inquiry within 3 hours this month</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>21</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 2: Partnership Outreach</h3>
+        <p>• List 10 luxury realtors, event planners, or concierge services you want referral</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 2: Partnership Outreach</h3>
+        <p>relationships with</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 2: Partnership Outreach</h3>
+        <p>• Write 5 personalized introduction emails using Chapter 2 prompts</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 2: Partnership Outreach</h3>
+        <p>• Build your monthly partner value touch template</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>22</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Use Chapter 4 Instagram prompt to batch 10 captions in one session</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Brainstorm 3 YouTube/blog ideas using the Chapter 4 prompt — pick one to</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>create this month</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Schedule 4-5 posts per week for the next 3 weeks</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>23</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 4: Review System &amp; Client Follow-Up</h3>
+        <p>• Identify past clients who haven&#x27;t reviewed — write personal review requests</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Week 4: Review System &amp; Client Follow-Up</h3>
+        <p>• Set post-event follow-up as a standard step 2-3 days after every event</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>24</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Chefs</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>• Build your weekly meal prep check-in template and use it every week going</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Hospitality asset</p>
+        <h3>Growth Asset</h3>
+        <p>forward</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Chefs</span><span>25</span></div>
 </section></main></body></html>

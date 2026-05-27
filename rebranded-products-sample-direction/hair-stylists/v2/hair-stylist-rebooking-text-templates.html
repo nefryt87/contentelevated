@@ -15,7 +15,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:#e8d7ca;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
 .book{width:8.5in;margin:0 auto}
-.page{position:relative;width:8.5in;min-height:11in;overflow:hidden;page-break-after:always;background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--blush) 34%,transparent),transparent 2.2in),radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--rose) 18%,transparent),transparent 2.5in),linear-gradient(135deg,var(--paper),var(--cream) 52%,var(--paper-2));padding:.62in}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--blush) 34%,transparent),transparent 2.2in),radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--rose) 18%,transparent),transparent 2.5in),linear-gradient(135deg,var(--paper),var(--cream) 52%,var(--paper-2));padding:.62in}
 .page::before{content:"";position:absolute;inset:.28in;border:1px solid rgba(91,67,58,.12);border-radius:28px;pointer-events:none}
 .page::after{content:"";position:absolute;right:-1.1in;top:-.3in;width:3.2in;height:9.8in;background:linear-gradient(180deg,rgba(23,17,15,.06),transparent 58%),radial-gradient(ellipse at center,color-mix(in srgb,var(--blush) 26%,transparent),transparent 64%);transform:rotate(-10deg);border-radius:999px;pointer-events:none}
 .brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}

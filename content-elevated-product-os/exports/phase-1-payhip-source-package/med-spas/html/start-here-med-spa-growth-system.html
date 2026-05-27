@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Start Here - Med Spa Growth System</title><style>
+@page { size: Letter; margin: 0; }
+:root{
+  --ink:#17201f;
+  --soft:#53615f;
+  --muted:#7c8a86;
+  --paper:#fbfaf6;
+  --cream:#fffdf8;
+  --mist:#eaf3ef;
+  --blush:#f2dfda;
+  --sage:#7f9b8b;
+  --teal:#285a55;
+  --rose:#b78078;
+  --line:rgba(40,90,85,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;background:#edf2ee;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;padding:.62in;background:radial-gradient(circle at 12% 10%,rgba(242,223,218,.72),transparent 2.4in),radial-gradient(circle at 88% 18%,rgba(234,243,239,.95),transparent 2.8in),linear-gradient(135deg,var(--cream),var(--paper) 58%,#f2f7f4)}
+.page::before{content:"";position:absolute;inset:.3in;border:1px solid var(--line);border-radius:28px;pointer-events:none}
+.page::after{content:"";position:absolute;right:-1.35in;top:.25in;width:3.4in;height:9.4in;border-radius:999px;background:radial-gradient(ellipse at center,rgba(127,155,139,.16),transparent 65%);pointer-events:none}
+.brand{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.wordmark{font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.wordmark small{display:block;margin-top:8px;color:var(--sage);font-size:9px;font-weight:800;letter-spacing:.16em}
+.badge{border:1px solid rgba(40,90,85,.22);border-radius:999px;padding:9px 13px;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.68)}
+.kicker{position:relative;z-index:2;display:flex;align-items:center;gap:12px;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.kicker::before{content:"";width:42px;height:1px;background:var(--sage)}
+h1,h2,h3{position:relative;z-index:2;margin:0;font-family:"Didot","Bodoni 72","Times New Roman",serif;font-weight:400;letter-spacing:-.04em}
+h1{max-width:6.2in;margin-top:.78in;font-size:64px;line-height:.94}
+h2{font-size:40px;line-height:1}
+h3{font-size:22px;line-height:1.06}
+h1 span,h2 span,h1 em,h2 em{color:var(--teal);font-style:italic}
+p{position:relative;z-index:2;margin:0;color:var(--soft);font-size:12px;line-height:1.58}
+.lead{max-width:5.15in;margin-top:.28in;font-size:15px;line-height:1.55}
+.cover-meta{position:absolute;left:.62in;right:.62in;bottom:.78in;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta-item{padding:17px 16px;border-left:1px solid var(--line)}
+.meta-item:first-child{border-left:0;padding-left:0}
+.meta-item strong{display:block;font-family:"Didot","Bodoni 72","Times New Roman",serif;color:var(--teal);font-size:27px;font-weight:400;line-height:1}
+.meta-item span{display:block;margin-top:8px;color:var(--muted);font-size:8.5px;font-weight:900;letter-spacing:.15em;line-height:1.42;text-transform:uppercase}
+.footer{position:absolute;left:.62in;right:.62in;bottom:.39in;z-index:2;display:flex;justify-content:space-between;color:rgba(83,97,95,.70);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.grid-2{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:.35in}
+.grid-3{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:.3in}
+.panel,.card{position:relative;z-index:2;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.70);padding:18px;box-shadow:0 18px 44px rgba(32,71,68,.07)}
+.panel.tinted,.card.tinted{background:linear-gradient(135deg,rgba(234,243,239,.78),rgba(255,255,255,.74))}
+.panel.blush,.card.blush{background:linear-gradient(135deg,rgba(242,223,218,.70),rgba(255,255,255,.72))}
+.label{margin-bottom:10px;color:var(--teal);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.rule{position:relative;z-index:2;height:1px;margin:24px 0;background:linear-gradient(90deg,transparent,rgba(40,90,85,.26),transparent)}
+.template{position:relative;z-index:2;display:grid;grid-template-columns:.62in 1fr;gap:15px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.template:first-of-type{border-top:0;padding-top:0}
+.num{width:.5in;height:.5in;display:grid;place-items:center;border:1px solid rgba(40,90,85,.28);border-radius:50%;color:var(--teal);font-family:"Didot","Bodoni 72","Times New Roman",serif;font-size:20px;background:rgba(255,255,255,.70)}
+.when{margin:8px 0 10px;color:var(--muted);font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.script{border-radius:16px;background:rgba(255,255,255,.76);border:1px solid rgba(40,90,85,.12);padding:14px;color:#243532;font-size:11.6px;line-height:1.52}
+.script ul{margin:0;padding-left:18px}.script li{margin:0 0 6px}
+.tip{margin-top:10px;border-left:3px solid var(--sage);padding-left:11px;color:var(--soft);font-size:10.5px;line-height:1.45}
+.small{font-size:10.5px;line-height:1.5}.tight{margin-top:.18in}.mt{margin-top:.34in}
+.checklist{position:relative;z-index:2;margin-top:.28in;display:grid;gap:11px}
+.check{display:grid;grid-template-columns:.38in 1fr;gap:11px;align-items:start;padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.72)}
+.dot{width:.32in;height:.32in;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:white;font-size:10px;font-weight:900}
+.swatches{display:flex;gap:11px;margin-top:12px}.swatch{width:.42in;height:.42in;border-radius:999px;border:1px solid rgba(23,32,31,.12)}
+.table{position:relative;z-index:2;margin-top:.25in;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.72)}
+.row{display:grid;grid-template-columns:1.1fr 1.3fr 1.5fr;border-top:1px solid var(--line)}.row:first-child{border-top:0}
+.row>*{padding:10px 12px;font-size:10.5px;line-height:1.35;color:var(--soft);border-left:1px solid var(--line)}.row>*:first-child{border-left:0;color:var(--ink);font-weight:800}
+.row.head>*{background:var(--teal);color:white;font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.cta-page{background:radial-gradient(circle at 18% 18%,rgba(127,155,139,.28),transparent 2.5in),linear-gradient(135deg,#15201f,#294c48 66%,#6f8f82);color:#fffaf6}
+.cta-page::before{border-color:rgba(255,255,255,.16)}.cta-page p,.cta-page .footer,.cta-page .wordmark small{color:rgba(255,250,246,.76)}
+.cta-page h2,.cta-page .wordmark{color:#fffaf6}.cta-page .kicker{color:#dce9e2}.cta-page .kicker::before{background:#dce9e2}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book"><section class="page "><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">Start Here</div></div><p class="kicker" style="margin-top:.78in">Premium client trust system</p><h1>Start Here: <span>Med Spa</span> Growth System</h1><p class="lead">A quick implementation guide for turning the bundle into cleaner content, better consultation follow-up, stronger retention, and more confident client communication.</p><div class="cover-meta"><div class="meta-item"><strong>01</strong><span>Set up the system</span></div><div class="meta-item"><strong>7 days</strong><span>First launch sprint</span></div><div class="meta-item"><strong>Trust</strong><span>Before treatment</span></div></div><div class="footer"><span>Start Here - Med Spa Growth System</span><span>01</span></div></section><section class="page "><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">How to Use</div></div><p class="kicker" style="margin-top:.68in">Before You Use It</p><h2>Trust is the conversion engine.</h2><p class="lead">Customize the brackets, treatment names, provider credentials, policies, contraindications, and local rules before sending anything to a client.</p><div class="grid-2"><div class="panel"><div class="label">The Rule</div><p>Med spa marketing has to feel elevated and medically responsible. Use the system to educate, reassure, and invite the next step - never to overpromise results.</p></div><div class="panel tinted"><div class="label">Safety Note</div><p>All treatment-specific claims, prep instructions, aftercare language, and review requests should be reviewed by the practice owner or qualified provider.</p></div></div><div class="footer"><span>Start Here - Med Spa Growth System</span><span>02</span></div></section><section class="page "><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">First 60 Minutes</div></div><p class="kicker" style="margin-top:.44in">First 60 Minutes</p><h2>Set the practice up before you touch the templates.</h2><div class="template"><div class="num">01</div><div><h3>Choose your core treatments</h3><div class="when">Menu clarity</div><div class="script"><ul><li>Pick 3-5 priority services to promote first.</li><li>Add treatment names, price ranges, provider names, and booking links.</li><li>Remove any treatment language that does not match your scope.</li></ul></div></div></div><div class="template"><div class="num">02</div><div><h3>Define the safest language</h3><div class="when">Compliance pass</div><div class="script"><ul><li>Avoid overpromised outcomes.</li><li>Use realistic timelines.</li><li>Route clinical claims through the provider or medical director.</li></ul></div></div></div><div class="template"><div class="num">03</div><div><h3>Map the client journey</h3><div class="when">Inquiry to retention</div><div class="script"><ul><li>Inquiry response.</li><li>Consultation follow-up.</li><li>Prep and aftercare.</li><li>Maintenance reminder.</li><li>Review or referral ask.</li></ul></div></div></div><div class="footer"><span>Start Here - Med Spa Growth System</span><span>03</span></div></section><section class="page "><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">7-Day Launch Sprint</div></div><p class="kicker" style="margin-top:.44in">7-Day Launch Sprint</p><h2>A clean first week that gets the bundle into motion.</h2><div class="template"><div class="num">01</div><div><h3>Day 1-2: brand and booking</h3><div class="when">Foundation</div><div class="script"><ul><li>Customize the brand kit palette and voice.</li><li>Add booking links to email templates.</li><li>Check all policies and disclaimers.</li></ul></div></div></div><div class="template"><div class="num">02</div><div><h3>Day 3-4: content batch</h3><div class="when">Visibility</div><div class="script"><ul><li>Use the calendar to write the first 12 posts.</li><li>Create 3 educational reels.</li><li>Prepare one consultation CTA.</li></ul></div></div></div><div class="template"><div class="num">03</div><div><h3>Day 5-7: client follow-up</h3><div class="when">Revenue recovery</div><div class="script"><ul><li>Send the lapsed-client win-back.</li><li>Set up maintenance reminders.</li><li>Ask recent happy clients for reviews privately and compliantly.</li></ul></div></div></div><div class="footer"><span>Start Here - Med Spa Growth System</span><span>04</span></div></section><section class="page "><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">Provider Review Checklist</div></div><p class="kicker" style="margin-top:.44in">Provider Review Checklist</p><h2>The buyer-facing safety layer that protects the brand.</h2><div class="template"><div class="num">01</div><div><h3>Treatment prep</h3><div class="when">Review before use</div><div class="script"><ul><li>No blanket medical advice.</li><li>Include &#x27;check with your provider&#x27; where appropriate.</li><li>Match instructions to the actual device, injectable, product, or protocol.</li></ul></div></div></div><div class="template"><div class="num">02</div><div><h3>Before and after content</h3><div class="when">Consent required</div><div class="script"><ul><li>Use written consent.</li><li>Do not edit results in a misleading way.</li><li>Avoid claims that every client will see the same outcome.</li></ul></div></div></div><div class="template"><div class="num">03</div><div><h3>Reviews and testimonials</h3><div class="when">Privacy first</div><div class="script"><ul><li>Never mention protected details in public replies.</li><li>Move unhappy reviews offline.</li><li>Keep testimonial requests simple and pressure-free.</li></ul></div></div></div><div class="footer"><span>Start Here - Med Spa Growth System</span><span>05</span></div></section><section class="page cta-page"><div class="brand"><div class="wordmark">Med Spas<small>Complete Growth Bundle</small></div><div class="badge">Ready</div></div><p class="kicker" style="margin-top:1in">Launch Order</p><h2>Start with communication, then content.</h2><p class="lead">The fastest path to value is simple: install the inquiry response, consult follow-up, prep message, post-treatment check-in, and maintenance reminder first. Then batch the social calendar around the services you want to book.</p><div class="footer"><span>Start Here - Med Spa Growth System</span><span>06</span></div></section></main></body></html>

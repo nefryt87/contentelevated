@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dog Walkers & Pet Sitters AI Playbook Sample</title>
+  <style>
+    @page { size: Letter; margin: 0; }
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #24312c;
+      --muted: #66746b;
+      --paper: #fffaf3;
+      --mist: #eef7ef;
+      --sage: #6f9f7b;
+      --leaf: #2f6e52;
+      --clay: #d6a07d;
+      --sun: #f5d9a5;
+      --line: rgba(47, 110, 82, .16);
+    }
+    body {
+      margin: 0;
+      background: #e7ece6;
+      color: var(--ink);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    }
+    .book { width: 8.5in; margin: 0 auto; }
+    .page {
+      position: relative;
+      width: 8.5in;
+      min-height: 11in;
+      overflow: hidden;
+      page-break-after: always;
+      padding: .58in;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(245, 217, 165, .55), transparent 2.5in),
+        radial-gradient(circle at 10% 88%, rgba(111, 159, 123, .18), transparent 2.3in),
+        linear-gradient(135deg, #fffdf8, #fff8ef 54%, #edf7ee);
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: .32in;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      pointer-events: none;
+    }
+    .orbit {
+      position: absolute;
+      right: .6in;
+      top: 1.02in;
+      width: 2.25in;
+      height: 2.25in;
+      border: 1px solid rgba(47, 110, 82, .13);
+      border-radius: 44% 56% 52% 48%;
+      background:
+        radial-gradient(circle at 38% 34%, rgba(255,255,255,.86), transparent .52in),
+        radial-gradient(circle at 64% 66%, rgba(214,160,125,.18), transparent .7in);
+    }
+    .brand {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: rgba(36, 49, 44, .58);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+    .pill {
+      border: 1px solid rgba(47, 110, 82, .18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .66);
+      padding: 10px 14px;
+      color: var(--leaf);
+    }
+    .kicker {
+      position: relative;
+      z-index: 2;
+      margin-top: .86in;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--sage);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+    .kicker::before { content: ""; width: .48in; height: 1px; background: var(--sage); }
+    h1, h2, h3, p { position: relative; z-index: 2; margin: 0; }
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -.045em;
+      color: var(--ink);
+    }
+    h1 { max-width: 5.72in; margin-top: .22in; font-size: 58px; line-height: .96; }
+    h1 em, h2 em { color: var(--leaf); font-style: italic; }
+    .lead {
+      max-width: 4.95in;
+      margin-top: .26in;
+      color: #526159;
+      font-size: 15px;
+      line-height: 1.62;
+    }
+    .stats {
+      position: absolute;
+      z-index: 2;
+      left: .58in;
+      right: .58in;
+      bottom: .86in;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 16px 42px rgba(47, 110, 82, .07);
+    }
+    .stat { min-height: .92in; padding: 16px 17px; border-left: 1px solid var(--line); }
+    .stat:first-child { border-left: 0; }
+    .stat b {
+      display: block;
+      color: var(--leaf);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 9px;
+      color: #718077;
+      font-size: 8.2px;
+      font-weight: 850;
+      letter-spacing: .14em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .footer {
+      position: absolute;
+      z-index: 2;
+      left: .58in;
+      right: .58in;
+      bottom: .38in;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(36,49,44,.46);
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-head {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: .42in;
+      align-items: end;
+      margin-top: .28in;
+      padding-bottom: .24in;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--sage);
+      font-size: 8px;
+      font-weight: 950;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+    }
+    h2 { font-size: 38px; line-height: 1; }
+    .intro { color: #526159; font-size: 12px; line-height: 1.62; }
+    .cards { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: .36in; }
+    .card {
+      min-height: 1.68in;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.78);
+      padding: 20px;
+      box-shadow: 0 14px 32px rgba(47, 110, 82, .045);
+    }
+    .num {
+      display: inline-grid;
+      width: .38in;
+      height: .38in;
+      place-items: center;
+      margin-bottom: 12px;
+      border: 1px solid rgba(47,110,82,.2);
+      border-radius: 999px;
+      color: var(--leaf);
+      background: #fffefb;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 12px;
+    }
+    h3 { color: var(--ink); font-size: 15px; line-height: 1.18; font-weight: 850; letter-spacing: -.01em; }
+    .card p { margin-top: 9px; color: #526159; font-size: 10.7px; line-height: 1.56; }
+    .prompt {
+      margin-top: .32in;
+      border: 1px solid rgba(47,110,82,.18);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(238,247,239,.78));
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(47,110,82,.05);
+    }
+    .prompt h3 { font-family: Georgia, "Times New Roman", serif; font-size: 25px; font-weight: 400; }
+    .prompt p { margin-top: 12px; color: #526159; font-size: 12px; line-height: 1.65; }
+    .checklist { position: relative; z-index: 2; display: grid; gap: 12px; margin-top: .34in; }
+    .row {
+      display: grid;
+      grid-template-columns: .42in 1fr;
+      gap: 14px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.76);
+      padding: 16px 18px;
+    }
+    .row .num { margin: 0; }
+    .row p { margin-top: 5px; color: #526159; font-size: 10.6px; line-height: 1.55; }
+    @media print { body { background: white; } .book { width: auto; margin: 0; } }
+  </style>
+</head>
+<body>
+  <main class="book">
+    <section class="page">
+      <div class="orbit"></div>
+      <div class="brand"><span>Content Elevated</span><span class="pill">Pet Care System</span></div>
+      <p class="kicker">Neighborhood trust · repeat care</p>
+      <h1><em>AI Playbook</em> for Dog Walkers & Pet Sitters</h1>
+      <p class="lead">A warm, polished client-growth system for earning trust quickly, turning inquiries into meet-and-greets, sending better care updates, and building the referral loop that keeps the calendar full.</p>
+      <div class="stats">
+        <div class="stat"><b>01</b><span>Inquiry replies</span></div>
+        <div class="stat"><b>02</b><span>Meet-and-greet follow-up</span></div>
+        <div class="stat"><b>03</b><span>Care update prompts</span></div>
+        <div class="stat"><b>04</b><span>Review and referral asks</span></div>
+      </div>
+      <div class="footer"><span>Done-for-you AI prompts for pet care pros</span><span>01</span></div>
+    </section>
+
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Client Trust</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">The Framework</p><h2>Pet owners are buying <em>peace of mind</em>.</h2></div>
+        <p class="intro">The best dog walkers do more than show availability. They make owners feel safe, informed, and understood before the first leash handoff.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="num">01</div><h3>Respond fast and warm</h3><p>Use a first reply that confirms the request, reflects the pet details, and invites a simple next step without sounding scripted.</p></article>
+        <article class="card"><div class="num">02</div><h3>Turn meet-and-greets into bookings</h3><p>Recap what you learned about the pet, outline how care will work, and make the booking step feel easy.</p></article>
+        <article class="card"><div class="num">03</div><h3>Send care updates that reassure</h3><p>Short photo check-ins and specific notes help owners feel connected while they are away.</p></article>
+        <article class="card"><div class="num">04</div><h3>Ask for reviews at the right moment</h3><p>Turn a happy walk, sit, or boarding stay into a natural review or referral request while the experience is fresh.</p></article>
+      </div>
+      <div class="footer"><span>Dog Walkers & Pet Sitters</span><span>02</span></div>
+    </section>
+
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Copy + Paste</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Prompt System</p><h2>The first reply should feel <em>calm, capable, and human</em>.</h2></div>
+        <p class="intro">Use the prompt below when a new owner reaches out about recurring walks, pet sitting, boarding, or a trial booking.</p>
+      </div>
+      <div class="prompt">
+        <h3>New Client Inquiry Response</h3>
+        <p>Write a warm, professional response for my dog walking or pet sitting business. The potential client [Name] reached out about [service]. Their pet is [pet name, breed/species, age] and they mentioned [key details]. Make them feel that their pet will be safe, cared for, and understood. Ask 2-3 helpful questions, briefly explain my approach, and invite them to a meet-and-greet. Keep it under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="num">A</div><h3>Use specific pet details</h3><p>Reference the pet’s name, age, routine, behavior notes, or care need so the reply feels personal.</p></article>
+        <article class="card"><div class="num">B</div><h3>Make the next step obvious</h3><p>Offer one simple action: schedule a meet-and-greet, reply with availability, or book a trial walk.</p></article>
+      </div>
+      <div class="footer"><span>AI Playbook</span><span>03</span></div>
+    </section>
+
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Weekly Rhythm</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Implementation</p><h2>Build the trust loop in <em>one week</em>.</h2></div>
+        <p class="intro">Keep the system simple: one inquiry template, one meet-and-greet follow-up, one update format, one review request, one referral touchpoint.</p>
+      </div>
+      <div class="checklist">
+        <div class="row"><div class="num">01</div><div><h3>Write your new inquiry reply</h3><p>Customize the prompt with your service area, pet-care style, booking process, and meet-and-greet availability.</p></div></div>
+        <div class="row"><div class="num">02</div><div><h3>Create your care update format</h3><p>Build a short message structure: photo note, mood, route/activity, food/water/potty update, and next visit reminder.</p></div></div>
+        <div class="row"><div class="num">03</div><div><h3>Set your review ask trigger</h3><p>Ask after the third successful walk, the end of a pet sitting stay, or a happy first month of recurring service.</p></div></div>
+        <div class="row"><div class="num">04</div><div><h3>Add one referral partner touch</h3><p>Reach out to one groomer, trainer, vet office, or pet shop with a friendly intro and clear referral fit.</p></div></div>
+      </div>
+      <div class="footer"><span>Trust first. Bookings follow.</span><span>04</span></div>
+    </section>
+  </main>
+</body>
+</html>

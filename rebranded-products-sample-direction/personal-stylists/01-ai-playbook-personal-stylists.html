@@ -1,495 +1,994 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AI Playbook Personal Stylists</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#faf6f2; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8b7484 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#c8b7a3 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#faf6f2 94%,white), color-mix(in srgb,#faf6f2 86%,#8b7484)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#8b7484; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8b7484 32%,transparent); border-radius:999px; color:#8b7484; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#8b7484; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8b7484 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8b7484 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#8b7484 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8b7484 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8b7484 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8b7484 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8b7484 32%,transparent); }
-.metric b { display:block; color:#8b7484; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#1e171b; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8b7484 18%,transparent), transparent 2in), linear-gradient(135deg, #1e171b, color-mix(in srgb,#1e171b 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#8b7484; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8b7484 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8b7484 56%,transparent); color:#8b7484; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8b7484 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8b7484 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#151716;
+  --muted:#5f665f;
+  --paper:#faf6f2;
+  --paper-2:#efe8dc;
+  --line:rgba(21,23,22,.13);
+  --accent:#8b7484;
+  --accent-2:#c8b7a3;
+  --deep:#1e171b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#ddd7cf;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;padding:.58in;background:linear-gradient(135deg,var(--paper),#fff 54%,var(--paper-2))}
+.page::before{content:"";position:absolute;inset:.32in .32in .48in;border:1px solid var(--line);pointer-events:none}
+.page::after{content:"";position:absolute;right:-.9in;top:.58in;width:3.5in;height:8.7in;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);transform:skewX(-8deg);opacity:.72;pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;color:rgba(21,23,22,.62);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.badge{border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);background:rgba(255,255,255,.66);padding:10px 14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.82in;display:flex;align-items:center;gap:12px;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.27em;text-transform:uppercase}
+.cover-kicker::before{content:"";width:.5in;height:1px;background:var(--accent)}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.18in;margin-top:.2in;font-family:Georgia,"Times New Roman",serif;font-size:58px;line-height:.96;font-weight:400;letter-spacing:-.05em;color:var(--ink)}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.lead{position:relative;z-index:3;max-width:5.2in;margin-top:.28in;color:#434842;font-size:15px;line-height:1.64}
+.signature-strip{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.88in;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.48)}
+.signature-cell{min-height:.92in;padding:16px 15px;border-left:1px solid var(--line)}
+.signature-cell:first-child{border-left:0}
+.signature-cell b{display:block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:400;line-height:1}
+.signature-cell span{display:block;margin-top:9px;color:#697069;font-size:8.3px;font-weight:850;letter-spacing:.14em;line-height:1.5;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.27in;display:flex;justify-content:space-between;color:rgba(21,23,22,.52);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:linear-gradient(135deg,#fff,var(--paper) 62%,var(--paper-2));color:var(--ink)}
+.work::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 84% 8%,color-mix(in srgb,var(--accent-2) 22%,transparent),transparent 2.45in);pointer-events:none}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.92fr 1.08fr;gap:.38in;align-items:end;margin-top:.25in;padding-bottom:.23in;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.23em;text-transform:uppercase}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:39px;line-height:.98;font-weight:400;letter-spacing:-.045em;color:var(--ink)}
+.intro{margin:0;color:#4b514b;font-size:12px;line-height:1.62}
+.bespoke-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.bespoke-card{position:relative;min-height:1.84in;border:1px solid var(--line);background:rgba(255,255,255,.76);padding:18px;box-shadow:0 12px 28px rgba(21,23,22,.045)}
+.bespoke-card::before{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.75}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:12px;border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);background:#fff;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:13px;font-weight:400}
+h3{font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:15px;line-height:1.14;font-weight:850;letter-spacing:-.01em}
+.bespoke-card p,.asset-card p{margin:9px 0 0;color:#4b514b;font-size:10.4px;line-height:1.56}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.asset-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid var(--line);background:rgba(255,255,255,.8);box-shadow:0 10px 24px rgba(21,23,22,.04)}
+.asset-card .eyebrow{margin-bottom:7px;color:#73786f;font-size:7.4px;letter-spacing:.17em}
+.asset-card h3{font-size:16px}
+.asset-card .num{margin:0;background:var(--deep);color:#fff;border-color:color-mix(in srgb,var(--accent) 36%,transparent)}
+.feature-page{background:linear-gradient(135deg,var(--deep),color-mix(in srgb,var(--deep) 86%,#fff));color:#fff}
+.feature-page::before{background:radial-gradient(circle at 78% 15%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 2.35in),linear-gradient(135deg,rgba(255,255,255,.04),transparent 48%)}
+.feature-page h2,.feature-page h3{color:#fff}
+.feature-page .intro,.feature-page .asset-card p,.feature-page .bespoke-card p{color:rgba(255,255,255,.78)}
+.feature-page .asset-card,.feature-page .bespoke-card{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.15);box-shadow:none}
+.feature-page .asset-card .eyebrow{color:color-mix(in srgb,var(--accent-2) 74%,#fff)}
+.feature-page .brand,.feature-page .footer{color:rgba(255,255,255,.56)}
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#faf6f2; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#1e171b; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#1e171b; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8b7484; }
+.family-barber{--ink:#f5eee4;--paper:#0b0806;--paper-2:#17100c;--line:rgba(245,238,228,.16)}
+.family-barber .page{background:linear-gradient(135deg,#070504,#15100c 58%,#0b0806)}
+.family-barber .page::before{border-color:rgba(245,238,228,.12)}
+.family-barber .lead,.family-barber .intro,.family-barber .bespoke-card p,.family-barber .asset-card p{color:rgba(245,238,228,.76)}
+.family-barber .bespoke-card,.family-barber .asset-card,.family-barber .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(245,238,228,.14)}
+.family-barber .work{background:linear-gradient(135deg,#0b0806,#19110c)}
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#faf6f2; }
-.layout-protocol .work { background:#fbfbf5; color:#1e171b; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8b7484 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#1e171b; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+.family-petcare{--ink:#2b241a;--paper:#fff8ef;--paper-2:#eadbc6;--line:rgba(154,122,85,.18)}
+.family-petcare .page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.34),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1)}
+.family-petcare .page::before{inset:.3in;border-color:rgba(154,122,85,.14);border-radius:26px}
+.family-petcare .page::after{right:.72in;top:1.08in;width:2.15in;height:2.15in;border-radius:50%;border:1px solid rgba(154,122,85,.13);background:radial-gradient(circle,rgba(255,255,255,.6),rgba(216,195,164,.18) 62%,transparent 63%);transform:none;opacity:.72}
+.family-petcare h1,.family-petcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-petcare .lead,.family-petcare .intro,.family-petcare .bespoke-card p,.family-petcare .asset-card p{color:#514637}
+.family-petcare .bespoke-card,.family-petcare .asset-card,.family-petcare .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.28),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1);color:#2b241a}
+.family-petcare .feature-page::before{inset:.3in;border:1px solid rgba(154,122,85,.14);border-radius:26px;background:transparent}
+.family-petcare .feature-page h2,.family-petcare .feature-page h3{color:#2b241a}
+.family-petcare .feature-page .intro,.family-petcare .feature-page .asset-card p,.family-petcare .feature-page .bespoke-card p{color:#514637}
+.family-petcare .feature-page .asset-card,.family-petcare .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page .asset-card .eyebrow{color:#9a7a55}
+.family-petcare .feature-page .brand,.family-petcare .feature-page .footer{color:rgba(43,36,26,.54)}
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+.family-etsy{--ink:#132023;--paper:#fbfcfb;--paper-2:#e9f0ec;--line:rgba(79,143,148,.16)}
+.family-etsy .page::after{transform:rotate(-6deg);background:linear-gradient(180deg,rgba(255,143,97,.16),rgba(79,143,148,.1),transparent 70%)}
+.family-etsy .bespoke-card::before{height:4px}
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#1e171b; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+.family-coach{--ink:#1b1d24;--paper:#fbf8f2;--paper-2:#ece5d9;--line:rgba(75,86,118,.16)}
+.family-coach .page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.24),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9)}
+.family-coach .page::after{right:.62in;top:1.08in;width:2.1in;height:2.1in;border:1px solid rgba(75,86,118,.12);background:radial-gradient(circle,rgba(255,255,255,.58),rgba(189,170,135,.14) 64%,transparent 65%);transform:none;border-radius:50%}
+.family-coach h1,.family-coach h2{font-family:"Didot","Bodoni 72",Georgia,serif;letter-spacing:-.04em}
+.family-coach .lead,.family-coach .intro,.family-coach .bespoke-card p,.family-coach .asset-card p{color:#46454c}
+.family-coach .bespoke-card,.family-coach .asset-card,.family-coach .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.22),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9);color:#1b1d24}
+.family-coach .feature-page::before{inset:.32in;border:1px solid rgba(75,86,118,.14);background:transparent}
+.family-coach .feature-page h2,.family-coach .feature-page h3{color:#1b1d24}
+.family-coach .feature-page .intro,.family-coach .feature-page .asset-card p,.family-coach .feature-page .bespoke-card p{color:#46454c}
+.family-coach .feature-page .asset-card,.family-coach .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page .asset-card .eyebrow{color:#4b5676}
+.family-coach .feature-page .brand,.family-coach .feature-page .footer{color:rgba(27,29,36,.54)}
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8b7484 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+.family-childcare{--ink:#27352f;--paper:#fffdf8;--paper-2:#eef7ef;--line:rgba(112,154,128,.18)}
+.family-childcare .page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.42),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef)}
+.family-childcare .page::before{inset:.3in;border-color:rgba(112,154,128,.16);border-radius:28px}
+.family-childcare .page::after{right:.58in;top:.95in;width:2.1in;height:2.1in;border:1px solid rgba(112,154,128,.14);background:radial-gradient(circle,rgba(255,255,255,.72),rgba(255,210,185,.22) 56%,rgba(180,220,190,.13) 57%,transparent 68%);transform:none;border-radius:38% 62% 45% 55%;opacity:.78}
+.family-childcare h1,.family-childcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-childcare .cover-kicker,.family-childcare .eyebrow{color:#6f9f7b}
+.family-childcare .badge{color:#6f9f7b;border-color:rgba(112,154,128,.22);background:rgba(255,255,255,.72)}
+.family-childcare .num{border-radius:999px;border-color:rgba(112,154,128,.24);color:#6f9f7b;background:#fffefb}
+.family-childcare .lead,.family-childcare .intro,.family-childcare .bespoke-card p,.family-childcare .asset-card p{color:#526159}
+.family-childcare .signature-cell b{color:#6f9f7b}
+.family-childcare .signature-cell span{color:#718077}
+.family-childcare .bespoke-card,.family-childcare .asset-card,.family-childcare .signature-strip{background:rgba(255,255,255,.88);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .bespoke-card::before{height:2px;background:linear-gradient(90deg,#6f9f7b,#f0b8a1);opacity:.52}
+.family-childcare .asset-card .num{background:#eaf5ec;color:#527b61}
+.family-childcare .feature-page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.38),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef);color:#27352f}
+.family-childcare .feature-page::before{inset:.3in;border:1px solid rgba(112,154,128,.16);border-radius:28px;background:transparent}
+.family-childcare .feature-page h2,.family-childcare .feature-page h3{color:#27352f}
+.family-childcare .feature-page .intro,.family-childcare .feature-page .asset-card p,.family-childcare .feature-page .bespoke-card p{color:#526159}
+.family-childcare .feature-page .asset-card,.family-childcare .feature-page .bespoke-card{background:rgba(255,255,255,.9);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .feature-page .asset-card .eyebrow{color:#6f9f7b}
+.family-childcare .feature-page .brand,.family-childcare .feature-page .footer{color:rgba(39,53,47,.54)}
 
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+.family-chef{--ink:#241711;--paper:#fff8ef;--paper-2:#efe0ca;--line:rgba(148,116,84,.18)}
+.family-chef .page::after{background:radial-gradient(ellipse at center,rgba(210,179,130,.28),transparent 63%);transform:rotate(5deg)}
+.family-chef h1,.family-chef h2{font-family:Georgia,"Times New Roman",serif}
 
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#1e171b; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8b7484 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#1e171b; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+.family-stylist{--ink:#211920;--paper:#fbf7f3;--paper-2:#eaded5;--line:rgba(142,117,136,.16)}
+.family-stylist .page{background:radial-gradient(circle at 86% 11%,rgba(217,197,189,.16),transparent 2.25in),radial-gradient(circle at 9% 86%,rgba(142,117,136,.09),transparent 2.1in),linear-gradient(135deg,#fffdfb,#fbf7f3 63%,#efe4dd)}
+.family-stylist .page::after{right:.68in;top:1.04in;width:1.72in;height:1.72in;border:1px solid rgba(142,117,136,.12);background:radial-gradient(circle,rgba(255,255,255,.58),rgba(217,197,189,.12) 62%,transparent 63%);transform:none;border-radius:50%;opacity:.72}
+.family-stylist h1,.family-stylist h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.family-stylist .lead,.family-stylist .intro,.family-stylist .bespoke-card p,.family-stylist .asset-card p{color:#51464e}
+.family-stylist .bespoke-card,.family-stylist .asset-card,.family-stylist .signature-strip{background:rgba(255,255,255,.88);border-color:rgba(142,117,136,.14);box-shadow:0 12px 28px rgba(58,42,54,.035)}
+.family-stylist .bespoke-card::before{height:1px;background:linear-gradient(90deg,#8e7588,#d9c5bd);opacity:.46}
+.family-stylist .asset-card .num,.family-stylist .num{border-radius:999px;background:#fff;color:#8e7588;border-color:rgba(142,117,136,.24)}
+.family-stylist .feature-page{background:radial-gradient(circle at 82% 12%,rgba(217,197,189,.12),transparent 2.35in),radial-gradient(circle at 10% 88%,rgba(142,117,136,.1),transparent 2.1in),linear-gradient(135deg,#211b20,#302731 72%,#241e24);color:#fff}
+.family-stylist .feature-page::before{inset:.32in .32in .48in;border:1px solid rgba(255,255,255,.13);background:transparent}
+.family-stylist .feature-page h2,.family-stylist .feature-page h3{color:#fff}
+.family-stylist .feature-page .intro,.family-stylist .feature-page .asset-card p,.family-stylist .feature-page .bespoke-card p{color:rgba(255,255,255,.76)}
+.family-stylist .feature-page .asset-card,.family-stylist .feature-page .bespoke-card{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.15);box-shadow:none}
+.family-stylist .feature-page .asset-card .eyebrow{color:#f1dcd2}
+.family-stylist .feature-page .brand,.family-stylist .feature-page .footer{color:rgba(255,255,255,.58)}
+.family-stylist .feature-page .num{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#f1dcd2}
 
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #8b7484; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8b7484 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8b7484 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-editorial"><section class="page cover">
+.family-trainer{--ink:#effaf4;--paper:#0d1514;--paper-2:#16211f;--line:rgba(200,255,95,.16)}
+.family-trainer .page{background:linear-gradient(135deg,#0a1110,#121c1a 58%,#0d1514)}
+.family-trainer .page::after{background:linear-gradient(180deg,rgba(200,255,95,.12),rgba(45,143,118,.18),transparent 72%)}
+.family-trainer .lead,.family-trainer .intro,.family-trainer .bespoke-card p,.family-trainer .asset-card p{color:rgba(239,250,244,.78)}
+.family-trainer .bespoke-card,.family-trainer .asset-card,.family-trainer .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(239,250,244,.13)}
+.family-trainer .work{background:linear-gradient(135deg,#0d1514,#16211f)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book family-stylist"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you ai playbook for personal stylists</div>
-    </div>
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
   </div>
-  <h1><em>AI</em> Playbook</h1>
-  <p class="lead">A premium, niche-specific growth system built to help the business move faster with clearer content, stronger client touchpoints, and ready-to-use execution assets.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Ready-to-use<br/>growth system</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Style</span></div>
-    <div class="metric"><b>03</b><span>Customize<br/>and launch</span></div>
+  <p class="cover-kicker">Wardrobe clarity · editorial confidence</p>
+  <h1><em>AI</em> Playbook Personal Stylists</h1>
+  <p class="lead">A fashion-forward styling growth system for shaping your offer, guiding client consultations, presenting taste, and turning style expertise into premium bookings.</p>
+  <div class="signature-strip">
+    <div class="signature-cell"><b>01</b><span>Define the style</span></div>
+    <div class="signature-cell"><b>02</b><span>Guide the consult</span></div>
+    <div class="signature-cell"><b>03</b><span>Present taste</span></div>
+    <div class="signature-cell"><b>04</b><span>Book premium clients</span></div>
   </div>
-  <div class="footer"><span>Personal Stylists product file</span><span>01</span></div>
+  <div class="footer"><span>Content Elevated</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">Use the System</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">Use this section to move from strategy into execution with clear steps, customized language, and a simple weekly workflow.</p>
+    <div><p class="eyebrow">Implementation</p><h2>Make the system feel made for the niche.</h2></div>
+    <p class="intro">Start with the next style touchpoint: inquiry reply, style questionnaire, wardrobe audit follow-up, package pitch, seasonal content, or referral request.</p>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="bespoke-grid">
+    <article class="bespoke-card"><div class="num">01</div><h3>Start with the buyer moment</h3><p>Use the asset that matches the next decision your client, customer, or lead needs to make.</p></article>
+    <article class="bespoke-card"><div class="num">02</div><h3>Make it sound specific</h3><p>Swap bracketed language, services, location, timeline, pricing context, and proof so the system feels built for the business.</p></article>
+    <article class="bespoke-card"><div class="num">03</div><h3>Create one weekly rhythm</h3><p>Batch content, follow-ups, prompts, and client messages together so execution feels simple instead of scattered.</p></article>
   </div>
-  <div class="footer"><span>AI Playbook</span><span>02</span></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
         <h3>Personal Stylist</h3>
         <p>The AI Playbook for Personal Stylists &amp; Fashion Consultants Convert more discovery calls, build a premium client experience, create content that attracts ideal clients, and grow a practice that runs on referrals</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
         <h3>Introduction</h3>
-        <p>The personal stylists building thriving practices aren&#x27;t just the most knowledgeable about fashion. They respond to inquiries the same day — with copy that makes a potential client feel instantly understood. They follow up on proposals before clients disappear. They maintain relationships with photographers, executives, and wedding planners who send warm referrals year-round. And they create consistent content that positions them as the go-to authority in their niche. This playbook gives you 7 chapters covering every high-leverage scenario — with copy-paste AI prompts throughout.</p>
+        <p>The personal stylists building thriving practices aren&#x27;t just the most knowledgeable about fashion. They respond to inquiries the same day — with copy that makes a potential client feel instantly understood. They follow up on proposals before clients</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Consultation Conversion</h3>
-        <p>The Same-Day Inquiry Response First response wins a disproportionate number of consultations in personal styling. High-value clients — executives, brides, professionals going through a career transition — are often contacting 2-3 stylists simultaneously. The one who responds thoughtfully and specifically within a few hours wins the call.</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Introduction</h3>
+        <p>disappear. They maintain relationships with photographers, executives, and wedding planners who send warm referrals year-round. And they create consistent content that positions them as the go-to authority in their niche. This playbook gives you 7 chapters</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Same-Day Inquiry Response Email</h3>
-        <p>Write a warm, enthusiastic inquiry response email for my personal styling practice. The potential client [Name] reached out about [service type — e.g., wardrobe audit / corporate styling / bridal styling / total style transformation]. They mentioned: [paste key details from their inquiry — their goal, their concern, what they&#x27;re hoping to achieve]. My styling philosophy is [your approach — e.g., building a functional wardrobe around their real life / helping professional women dress with authority / effortless elevated everyday style]. I want to: (1) make them feel genuinely understood, (2) briefly describe how I&#x27;d approach their specific situation, (3) invite them to a discovery call with a specific time offered. Warm, confident, under 200 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Introduction</h3>
+        <p>covering every high-leverage scenario — with copy-paste AI prompts throughout.</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>03</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Follow-Up Sequence (3 Touches)</h3>
-        <p>Write a 3-message follow-up sequence for a personal styling inquiry that hasn&#x27;t responded. Client [Name], service: [type]. Message 1 (Day 3): warm check-in, add one specific insight relevant to their stated goal. Message 2 (Day 8): share one piece of genuinely useful style advice for their situation — no pitch. Message 3 (Day 14): soft close that leaves the door open. Each under 80 words. Sign as [Your Name], [Business Name]. Post-Discovery Call Conversion The discovery call that doesn&#x27;t convert within 48 hours rarely converts. A thoughtful, specific follow-up that reflects what you heard on the call closes at a dramatically higher rate than waiting for the client to decide on their own.</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>The Same-Day Inquiry Response First response wins a disproportionate number of consultations in personal styling. High-value clients — executives, brides, professionals going through a career transition</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Discovery Call Follow-Up</h3>
-        <p>Write a post-discovery call follow-up email for my personal styling practice. I just spoke with [Name] about [their goal/situation]. Key things they shared: [list 3-4 things — their wardrobe frustration, their body confidence issue, their lifestyle needs, their upcoming event or life change]. I&#x27;m proposing [service/package] at $ [amount]. I want this email to: (1) mirror back what they told me they most need in their own language, (2) briefly explain how my approach addresses it, (3) present the next step clearly (sign up / book / pay deposit). Warm and confident. Under 250 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>— are often contacting 2-3 stylists simultaneously. The one who responds thoughtfully and specifically within a few hours wins the call.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Retention</h3>
-        <p>Onboarding &amp; Pre-Session Communication Clients who arrive well-prepared for styling sessions get dramatically better results. A pre-session email that sets expectations, asks the right questions, and builds anticipation creates a better client experience before you&#x27;ve even met in person.</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Same-Day Inquiry Response Email</h3>
+        <p>Write a warm, enthusiastic inquiry response email for my personal styling practice. The potential client [Name] reached out about [service type — e.g., wardrobe audit / corporate styling / bridal styling / total style transformation]. They mentioned: [paste</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Same-Day Inquiry Response Email</h3>
+        <p>key details from their inquiry — their goal, their concern, what they&#x27;re hoping to achieve]. My styling philosophy is [your approach — e.g., building a functional wardrobe around their real life / helping professional women dress with authority /</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>04</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>effortless elevated everyday style]. I want to: (1) make them feel genuinely understood, (2) briefly describe how I&#x27;d approach their specific situation, (3) invite them to a discovery call with a specific time offered. Warm, confident, under 200</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Follow-Up Sequence (3 Touches)</h3>
+        <p>Write a 3-message follow-up sequence for a personal styling inquiry that hasn&#x27;t responded. Client [Name], service: [type]. Message 1 (Day 3): warm check-in, add one specific insight relevant to their stated goal. Message 2 (Day 8): share one</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Follow-Up Sequence (3 Touches)</h3>
+        <p>piece of genuinely useful style advice for their situation — no pitch. Message 3 (Day 14): soft close that leaves the door open. Each under 80 words. Sign as [Your Name], [Business Name]. Post-Discovery Call Conversion</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>05</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Follow-Up Sequence (3 Touches)</h3>
+        <p>The discovery call that doesn&#x27;t convert within 48 hours rarely converts. A thoughtful, specific follow-up that reflects what you heard on the call closes at a dramatically higher rate than waiting for the client to decide on their own.</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>06</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Discovery Call Follow-Up</h3>
+        <p>Write a post-discovery call follow-up email for my personal styling practice. I just spoke with [Name] about [their goal/situation]. Key things they shared: [list 3-4 things — their wardrobe frustration, their body confidence issue, their lifestyle</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Discovery Call Follow-Up</h3>
+        <p>needs, their upcoming event or life change]. I&#x27;m proposing [service/package] at $ [amount]. I want this email to: (1) mirror back what they told me they most need in their own language, (2) briefly explain how my approach addresses it, (3) present</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Discovery Call Follow-Up</h3>
+        <p>the next step clearly (sign up / book / pay deposit). Warm and confident. Under 250 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Retention</h3>
+        <p>Onboarding &amp; Pre-Session Communication Clients who arrive well-prepared for styling sessions get dramatically better results. A pre-session email that sets expectations, asks the right questions, and builds</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>07</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>anticipation creates a better client experience before you&#x27;ve even met in person.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
         <h3>Prompt — Pre-Wardrobe-Audit Prep Email</h3>
         <p>Write a pre-wardrobe audit preparation email for my personal styling client [Name] whose session is on [date]. I want them to: (1) know what to have ready for the session (their full closet accessible, nothing put away), (2) think in advance about</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>04</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pre-Wardrobe-Audit Prep Email</h3>
         <p>what they love wearing vs. what they avoid, (3) feel excited rather than anxious — frame the audit as an act of self-care, not criticism. Include 3 questions to reflect on before we meet. Warm and practical. Under 200 words. Sign as [Your Name], [Business Name].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Pre-Shopping Session Prep Email</h3>
-        <p>Write a pre-personal-shopping-session preparation email for my styling client [Name] whose session is on [date] at [location/area]. Cover: what to wear (something easy to take on and off), what to bring (their measurements if known, any items they want to match to), what to expect, and how many looks we&#x27;re aiming for. Excited and organised. Under 200 words. Sign as [Your Name], [Business Name]. Post-Session Follow-Up &amp; Retention The session that doesn&#x27;t have a clear next step loses the client. A post-session email that celebrates what was accomplished and proposes a natural next step converts one- time clients into ongoing relationships.</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Wardrobe-Audit Follow-Up</h3>
-        <p>Write a post-wardrobe audit follow-up email for my styling client [Name]. In the session we: [list 2-3 key accomplishments — e.g., identified 15 pieces for donation, identified 3 key gaps in their wardrobe, created a capsule of 20 versatile pieces]. I want to: (1) celebrate what we accomplished, (2) share the 2-3 most important gaps I identified and why they matter for their specific goals, (3) propose a shopping session as the natural next step. Warm and motivating. Under 200 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pre-Shopping Session Prep Email</h3>
+        <p>Write a pre-personal-shopping-session preparation email for my styling client [Name] whose session is on [date] at [location/area]. Cover: what to wear (something easy to take on and off), what to bring (their measurements if known,</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>08</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>any items they want to match to), what to expect, and how many looks we&#x27;re aiming for. Excited and organised. Under 200 words. Sign as [Your Name], [Business Name]. Post-Session Follow-Up &amp; Retention</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>The session that doesn&#x27;t have a clear next step loses the client. A post-session email that celebrates what was accomplished and proposes a natural next step converts one- time clients into ongoing relationships.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Wardrobe-Audit Follow-Up</h3>
+        <p>Write a post-wardrobe audit follow-up email for my styling client [Name]. In the session we: [list 2-3 key accomplishments — e.g., identified 15 pieces for donation, identified 3 key gaps in their wardrobe, created a capsule of 20 versatile pieces]. I</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Wardrobe-Audit Follow-Up</h3>
+        <p>want to: (1) celebrate what we accomplished, (2) share the 2-3 most important gaps I identified and why they matter for their specific goals, (3) propose a shopping session as the natural next step. Warm and motivating. Under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>09</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
         <h3>System</h3>
         <p>Building Referral Partnerships The highest-value referral partners for personal stylists are: photographers (headshots, branding sessions, events), wedding planners, executive coaches, real estate agents, and corporate HR teams. Each can send multiple warm clients per year.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
         <h3>Prompt — Photographer Partnership Introduction</h3>
         <p>Write a professional introduction email from a personal stylist to a photographer named [Name] who specialises in [headshots / branding / weddings]. I want to propose a mutual referral relationship — my clients need photography, their clients</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>05</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>benefit from styling guidance before shoots. I want to: (1) introduce myself and my styling niche briefly, (2) explain how styling before a shoot dramatically improves results for both of us, (3) propose a collaboration — either a joint package or a mutual referral arrangement. Under 150 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Corporate / Executive Coach Introduction</h3>
-        <p>Write a professional introduction email from a personal stylist to an executive coach named [Name]. I want to propose a referral relationship — executive coaches work with clients on professional presence, and personal styling is a tangible extension of that work. I want to: (1) introduce my corporate styling specialty briefly, (2) explain how wardrobe and personal presentation affects executive presence and confidence, (3) propose a referral arrangement or a guest session for their clients. Professional and compelling. Under 150 words. Sign as [Your Name], [Business Name]. Monthly Partner Value Touch</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Photographer Partnership Introduction</h3>
+        <p>benefit from styling guidance before shoots. I want to: (1) introduce myself and my styling niche briefly, (2) explain how styling before a shoot dramatically improves results for both of us, (3) propose a collaboration — either a joint package or a</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Photographer Partnership Introduction</h3>
+        <p>mutual referral arrangement. Under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>10</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>Write a professional introduction email from a personal stylist to an executive coach named [Name]. I want to propose a referral relationship — executive coaches work with clients on professional presence, and personal styling is a tangible extension of</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>that work. I want to: (1) introduce my corporate styling specialty briefly, (2) explain how wardrobe and personal presentation affects executive presence and confidence, (3) propose a referral arrangement or a guest session for their clients.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>Professional and compelling. Under 150 words. Sign as [Your Name], [Business Name]. Monthly Partner Value Touch</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
         <h3>Prompt — Monthly Partner Value Touch</h3>
-        <p>Write a monthly value email from a personal stylist to a referral partner named [Name] — [photographer / executive coach / wedding planner]. Share: (1) one relevant styling insight that helps their clients — e.g., &#x27;what to wear for a headshot session&#x27;, &#x27;how a capsule wardrobe supports a job transition&#x27;, &#x27;bridal party styling tips that photograph beautifully&#x27;. Useful, collegial, under 120 words. Not a sales email. Sign as [Your Name], [Business Name].</p>
+        <p>Write a monthly value email from a personal stylist to a referral partner named [Name] — [photographer / executive coach / wedding planner]. Share: (1) one relevant styling insight that helps their clients — e.g., &#x27;what to wear for a headshot</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Content Pillars For Personal Stylists</h3>
-        <p>Instagram and Pinterest are the highest-ROI platforms for personal stylists — visual- first, discovery-oriented, and populated by exactly your ideal clients. The content pillars that convert best: education (style rules, outfit formulas, capsule building), transformation (before/afters, client reveals), behind-the-scenes (shopping trips, wardrobe audits), and social proof.</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>06</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>11</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Monthly Partner Value Touch</h3>
+        <p>session&#x27;, &#x27;how a capsule wardrobe supports a job transition&#x27;, &#x27;bridal party styling tips that photograph beautifully&#x27;. Useful, collegial, under 120 words. Not a sales email. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>12</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Write 5 Instagram captions for a personal stylist who specialises in [niche — e.g., corporate women / plus-size styling / sustainable fashion / bridal party]. Topics: (1) the most common wardrobe mistake your clients make before working with you, (2) a capsule wardrobe formula for [their specific lifestyle — e.g., the working mum / the female executive / the weekend-focused professional], (3) how to dress for [specific situation — e.g., a job interview / a first date / a conference keynote], (4) what personal styling actually costs vs. what clients assume, (5) a before/after client transformation story (anonymise). Each under 150 words, warm and specific, ending with a question or soft CTA. Business name: [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Content Pillars For Personal Stylists</h3>
+        <p>Instagram and Pinterest are the highest-ROI platforms for personal stylists — visual- first, discovery-oriented, and populated by exactly your ideal clients. The content pillars that convert best: education (style rules, outfit formulas, capsule building),</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Pinterest Board Pin Descriptions</h3>
-        <p>Write 5 Pinterest pin descriptions for a personal stylist, each optimised for search discovery. Pins cover: (1) capsule wardrobe for [professional women / working mum / etc.], (2) business casual outfit ideas for [body type or style preference], (3) how to dress for a job interview, (4) wardrobe essentials every woman needs, (5) styling tips for [a specific occasion — conference, wedding guest, casual Friday]. Each 100-150 words, keyword-rich, include style type, occasion, and a soft CTA. Business name: [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Content Pillars For Personal Stylists</h3>
+        <p>transformation (before/afters, client reveals), behind-the-scenes (shopping trips, wardrobe audits), and social proof.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Chapter 5: Pricing &amp; Premium Positioning</h3>
-        <p>Presenting Your Fees With Confidence Personal stylists who struggle with pricing conversations almost always struggle because they haven&#x27;t established value before presenting the number. By the time you share your fee, the client should already understand what transformation they&#x27;re buying — not just what service.</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Instagram Caption Batch</h3>
+        <p>Write 5 Instagram captions for a personal stylist who specialises in [niche — e.g., corporate women / plus-size styling / sustainable fashion / bridal party]. Topics: (1) the most common wardrobe mistake your clients make before working with you, (2)</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Pricing Enquiry Response</h3>
-        <p>Write a response email to a potential styling client who asked &#x27;what do you charge?&#x27; for [service type]. My investment for [service] is $[amount]. Rather than just listing the price, I want to: (1) briefly describe what&#x27;s actually included and the transformation they can expect, (2) explain why that investment is positioned where it is, (3) invite them to a discovery call to confirm it&#x27;s the right fit. Confident, not apologetic. Under 200 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>07</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>13</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>Write a response for a potential styling client who said &#x27;I love your work but it&#x27;s a bit beyond my budget&#x27;. My lowest service is $[amount]. Options I can genuinely offer: [e.g., a smaller package / a payment plan / a virtual service instead of in-person]. I want to: (1) acknowledge their honesty, (2) briefly explain what my fee reflects, (3) present any genuine alternatives without devaluing the full service. Warm but confident. Under 200 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>a capsule wardrobe formula for [their specific lifestyle — e.g., the working mum / the female executive / the weekend-focused professional], (3) how to dress for [specific situation — e.g., a job interview / a first date / a conference keynote], (4) what</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>personal styling actually costs vs. what clients assume, (5) a before/after client transformation story (anonymise). Each under 150 words, warm and specific, ending with a question or soft CTA. Business name: [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pinterest Board Pin Descriptions</h3>
+        <p>Write 5 Pinterest pin descriptions for a personal stylist, each optimized for search discovery. Pins cover: (1) capsule wardrobe for [professional women / working mum / etc.], (2) business casual outfit ideas for [body type or style preference], (3) how to</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pinterest Board Pin Descriptions</h3>
+        <p>dress for a job interview, (4) wardrobe essentials every woman needs, (5) styling tips for [a specific occasion — conference, wedding guest, casual Friday]. Each 100-150 words, keyword-rich, include style type, occasion, and a soft CTA. Business name: [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>14</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Chapter 5: Pricing &amp; Premium Positioning</h3>
+        <p>Presenting Your Fees With Confidence Personal stylists who struggle with pricing conversations almost always struggle because they haven&#x27;t established value before presenting the number. By the time you</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Chapter 5: Pricing &amp; Premium Positioning</h3>
+        <p>share your fee, the client should already understand what transformation they&#x27;re buying — not just what service.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pricing inquiry Response</h3>
+        <p>Write a response email to a potential styling client who asked &#x27;what do you charge?&#x27; for [service type]. My investment for [service] is $[amount]. Rather than just listing the price, I want to: (1) briefly describe what&#x27;s actually included and the</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Pricing inquiry Response</h3>
+        <p>transformation they can expect, (2) explain why that investment is positioned where it is, (3) invite them to a discovery call to confirm it&#x27;s the right fit. Confident, not apologetic. Under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>15</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>Write a response for a potential styling client who said &#x27;I love your work but it&#x27;s a bit beyond my budget&#x27;. My lowest service is $[amount]. Options I can genuinely offer: [e.g., a smaller package / a payment plan / a virtual service instead of in-person]. I</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>want to: (1) acknowledge their honesty, (2) briefly explain what my fee reflects, (3) present any genuine alternatives without devaluing the full service. Warm but confident. Under 200 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
         <h3>Chapter 6: Reviews &amp; Reputation</h3>
         <p>The Post-Service Review Request System</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Post-Service Review Request</h3>
-        <p>Write a post-service review request email for my personal styling practice. Client [Name] just completed [wardrobe audit / shopping session / total transformation package]. I want to: (1) celebrate what they achieved, (2) make a personal, warm ask for a Google or Instagram review, (3) include the direct link. Emotional and genuine — not automated-feeling. Under 150 words. Sign as [Your Name], [Business Name].</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Prompt — Instagram Testimonial Request</h3>
-        <p>Write a message asking a happy styling client [Name] if they&#x27;d be willing to share a before/after photo and a brief testimonial for my Instagram. I want to: (1) acknowledge their transformation, (2) explain how it helps other clients who are where they were, (3) give them the option to stay anonymous if they prefer. Warm and personal. Under 100 words. Sign as [Your Name], [Business Name].</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Service Review Request</h3>
+        <p>Write a post-service review request email for my personal styling practice. Client [Name] just completed [wardrobe audit / shopping session / total transformation package]. I want to: (1) celebrate what they achieved, (2) make a personal, warm</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 1: Inquiry &amp; Conversion System</h3>
-        <p>• Build your same-day inquiry response template using the Chapter 1 prompt • Write your 3-touch follow-up sequence and save as drafts • Set a reminder to check unanswered inquiries every Monday and Thursday</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 2: Partnership Outreach</h3>
-        <p>• List 10 photographers, executive coaches, or wedding planners you want referral relationships with • Write 5 personalized introduction emails using the Chapter 3 prompts</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>08</span></div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>16</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
   <div class="section-head">
-    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Post-Service Review Request</h3>
+        <p>ask for a Google or Instagram review, (3) include the direct link. Emotional and genuine — not automated-feeling. Under 150 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>17</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Instagram Testimonial Request</h3>
+        <p>Write a message asking a happy styling client [Name] if they&#x27;d be willing to share a before/after photo and a brief testimonial for my Instagram. I want to: (1) acknowledge their transformation, (2) explain how it helps other clients who are</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Prompt — Instagram Testimonial Request</h3>
+        <p>where they were, (3) give them the option to stay anonymous if they prefer. Warm and personal. Under 100 words. Sign as [Your Name], [Business Name].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 1: Inquiry &amp; Conversion System</h3>
+        <p>• Build your same-day inquiry response template using the Chapter 1 prompt</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 1: Inquiry &amp; Conversion System</h3>
+        <p>• Write your 3-touch follow-up sequence and save as drafts</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>18</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 1: Inquiry &amp; Conversion System</h3>
+        <p>• Set a reminder to check unanswered inquiries every Monday and Thursday</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 2: Partnership Outreach</h3>
+        <p>• List 10 photographers, executive coaches, or wedding planners you want referral</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>19</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>relationships with</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
+        <p>• Write 5 personalized introduction emails using the Chapter 3 prompts</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Growth Asset</h3>
         <p>• Build your monthly partner value touch template</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="asset-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Style asset</p>
         <h3>Week 3: Content Batch</h3>
-        <p>• Use the Chapter 4 Instagram prompt to write 10 captions in one session • Schedule 3-4 posts per week for the next 3 weeks • Write 5 Pinterest pin descriptions for your most popular styling content</p>
+        <p>• Use the Chapter 4 Instagram prompt to write 10 captions in one session</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>20</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week 4: Review System</h3>
-        <p>• Identify 10 past clients who haven&#x27;t reviewed — write personal review requests using Chapter 6 prompts • Ask 3 clients for before/after Instagram testimonials • Set post-service review request as a standard final step after every engagement</p>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Schedule 3-4 posts per week for the next 3 weeks</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>AI Playbook</span><span>09</span></div>
+
+    <article class="asset-card">
+      <div class="num">06</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 3: Content Batch</h3>
+        <p>• Write 5 Pinterest pin descriptions for your most popular styling content</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">07</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 4: Review System</h3>
+        <p>• Identify 10 past clients who haven&#x27;t reviewed — write personal review requests</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">08</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 4: Review System</h3>
+        <p>using Chapter 6 prompts</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>21</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div>Content Elevated</div>
+    <div class="badge">AI Playbook</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">AI Playbook</p><h2>AI Playbook Personal Stylists</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">09</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 4: Review System</h3>
+        <p>• Ask 3 clients for before/after Instagram testimonials</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">10</div>
+      <div>
+        <p class="eyebrow">Style asset</p>
+        <h3>Week 4: Review System</h3>
+        <p>• Set post-service review request as a standard final step after every engagement</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>AI Playbook Personal Stylists</span><span>22</span></div>
 </section></main></body></html>

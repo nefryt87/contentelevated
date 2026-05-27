@@ -1,0 +1,3322 @@
+[
+  {
+    "slug": "accountants-and-cpas",
+    "product_name": "Accountants & CPAs Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 49,
+    "prompt_count": 10,
+    "template_count_estimate": 56,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-accountants-cpas.html",
+        "title": "AI Playbook Accountants CPAs",
+        "pages": 10,
+        "prompts": 5,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-accountants-cpas-month-1.html",
+        "title": "90-Day Content Calendar Accountants CPAs \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-accountants-cpas-month-2.html",
+        "title": "90-Day Content Calendar Accountants CPAs \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-accountants-cpas-month-3.html",
+        "title": "90-Day Content Calendar Accountants CPAs \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-accountants-cpas.html",
+        "title": "Email Templates Accountants CPAs",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-accountants-cpas.html",
+        "title": "Brand Kit Accountants CPAs",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-onboarding-cpas.html",
+        "title": "Client Onboarding CPAs",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-accountants-cpas.html",
+        "title": "5 AI Prompts for a Sharper Practice",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "aestheticians",
+    "product_name": "Aestheticians Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 53,
+    "prompt_count": 6,
+    "template_count_estimate": 94,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-aestheticians.html",
+        "title": "AI Playbook Aestheticians",
+        "pages": 10,
+        "prompts": 1,
+        "templates": 23,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-aestheticians-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-aestheticians-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-aestheticians-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-aestheticians.html",
+        "title": "Email Templates Aestheticians",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 24,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-aestheticians.html",
+        "title": "Brand Kit Aestheticians",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 17,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-aestheticians.html",
+        "title": "Client Intake",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-aestheticians.html",
+        "title": "5 AI Prompts for a Fully Booked Skin Studio",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "attorneys",
+    "product_name": "Attorneys Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 42,
+    "prompt_count": 5,
+    "template_count_estimate": 31,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-attorneys.html",
+        "title": "AI Playbook Attorneys",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-attorneys-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-attorneys-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-attorneys-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-attorneys.html",
+        "title": "Email Templates Attorneys",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-attorneys.html",
+        "title": "Brand Kit Attorneys",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-attorneys.html",
+        "title": "Client Intake",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-attorneys.html",
+        "title": "5 AI Prompts for a More Trusted Firm",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "barbers",
+    "product_name": "Barbers Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 65,
+    "prompt_count": 4,
+    "template_count_estimate": 61,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-barbers.html",
+        "title": "AI Playbook Barbers",
+        "pages": 13,
+        "prompts": 4,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-barbers-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-barbers-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-barbers-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-barbers.html",
+        "title": "Communication Templates Barbers",
+        "pages": 13,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-barbers.html",
+        "title": "Brand Kit Barbers",
+        "pages": 10,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-barbers.html",
+        "title": "Client Intake Barbers",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-barbers.html",
+        "title": "5 Free AI Prompts to Fill Your Chair",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "bridal-hair-and-makeup-artists",
+    "product_name": "Bridal Hair & Makeup Artists Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 52,
+    "prompt_count": 11,
+    "template_count_estimate": 82,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-bridal-hmua.html",
+        "title": "AI Playbook Bridal HMUA",
+        "pages": 10,
+        "prompts": 6,
+        "templates": 25,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-bridal-hmua-month-1.html",
+        "title": "90 Day Content Calendar Bridal HMUA \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-bridal-hmua-month-2.html",
+        "title": "90 Day Content Calendar Bridal HMUA \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-bridal-hmua-month-3.html",
+        "title": "90 Day Content Calendar Bridal HMUA \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-bridal-hmua.html",
+        "title": "Email Templates Bridal HMUA",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-bridal-hmua.html",
+        "title": "Brand Kit Bridal HMUA",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-booking-system-bridal-hmua.html",
+        "title": "Booking System Bridal HMUA",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-bridal-hmua.html",
+        "title": "5 AI Prompts for Bridal Booking Flow",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "broker-toolkit",
+    "product_name": "Broker Toolkit Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 0,
+    "internal_file_count": 0,
+    "spreadsheet_count": 2,
+    "total_customer_pages": 0,
+    "prompt_count": 0,
+    "template_count_estimate": 0,
+    "spreadsheet_files": [
+      "04_Client_Renewal_Tracker.xlsx",
+      "05_Benefits_Cost_Calculator.xlsx"
+    ],
+    "files": []
+  },
+  {
+    "slug": "car-wash-businesses",
+    "product_name": "Car Wash Businesses Growth Bundle",
+    "category": "Home Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 1,
+    "total_customer_pages": 45,
+    "prompt_count": 11,
+    "template_count_estimate": 50,
+    "spreadsheet_files": [
+      "05_Membership_Campaign_Planner_Car_Wash.xlsx"
+    ],
+    "files": [
+      {
+        "file": "01-ai-playbook-car-wash.html",
+        "title": "AI Playbook Car Wash",
+        "pages": 9,
+        "prompts": 6,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-car-wash-month-1.html",
+        "title": "90 Day Content Calendar Car Wash \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-car-wash-month-2.html",
+        "title": "90 Day Content Calendar Car Wash \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-car-wash-month-3.html",
+        "title": "90 Day Content Calendar Car Wash \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-car-wash.html",
+        "title": "Communication Templates Car Wash",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-car-wash.html",
+        "title": "Brand Kit Car Wash",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-membership-system-car-wash.html",
+        "title": "Membership System Car Wash",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-car-wash.html",
+        "title": "5 AI Prompts for Membership Growth",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "chiropractors",
+    "product_name": "Chiropractors Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 44,
+    "prompt_count": 5,
+    "template_count_estimate": 41,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-chiropractors.html",
+        "title": "AI Playbook Chiropractors",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-chiropractors-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-chiropractors-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-chiropractors-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-chiropractors.html",
+        "title": "Email Templates Chiropractors",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-chiropractors.html",
+        "title": "Brand Kit Chiropractors",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-intake-reactivation-chiropractors.html",
+        "title": "Intake Reactivation",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-chiropractors.html",
+        "title": "5 AI Prompts for Patient Retention",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "dentists",
+    "product_name": "Dentists Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 46,
+    "prompt_count": 5,
+    "template_count_estimate": 58,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-dentists.html",
+        "title": "AI Playbook Dentists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-dentists-month-1.html",
+        "title": "90-Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-dentists-month-2.html",
+        "title": "90-Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-dentists-month-3.html",
+        "title": "90-Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-patient-templates-dentists.html",
+        "title": "Patient Templates Dentists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-dentists.html",
+        "title": "Brand Kit Dentists",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-treatment-scripts-dentists.html",
+        "title": "Treatment Scripts",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-dentists.html",
+        "title": "5 AI Prompts for a Better Patient Flow",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "dog-walkers-and-pet-sitters",
+    "product_name": "Dog Walkers & Pet Sitters Growth Bundle",
+    "category": "Local Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 1,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 70,
+    "prompt_count": 10,
+    "template_count_estimate": 61,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-dog-walkers.html",
+        "title": "AI Playbook Dog Walkers",
+        "pages": 15,
+        "prompts": 5,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-dog-walkers-month-1.html",
+        "title": "90 Day Content Calendar Dog Walkers \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-dog-walkers-month-2.html",
+        "title": "90 Day Content Calendar Dog Walkers \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-dog-walkers-month-3.html",
+        "title": "90 Day Content Calendar Dog Walkers \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-dog-walkers.html",
+        "title": "Communication Templates Dog Walkers",
+        "pages": 16,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-dog-walkers.html",
+        "title": "Brand Kit Dog Walkers",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-dog-walkers.html",
+        "title": "Client Intake Dog Walkers",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "dog-walkers-redesign-sample.html",
+        "title": "Dog Walkers & Pet Sitters AI Playbook Sample",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 4,
+        "internal": true,
+        "internal_reasons": [
+          "filename suggests review/sample file"
+        ]
+      },
+      {
+        "file": "lm-dog-walkers.html",
+        "title": "5 AI Prompts for More Repeat Clients",
+        "pages": 5,
+        "prompts": 5,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "electricians",
+    "product_name": "Electricians Growth Bundle",
+    "category": "Home Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 49,
+    "prompt_count": 11,
+    "template_count_estimate": 61,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-electricians.html",
+        "title": "AI Playbook Electricians",
+        "pages": 9,
+        "prompts": 6,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-electricians-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-electricians-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-electricians-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-electricians.html",
+        "title": "Email Templates Electricians",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-electricians.html",
+        "title": "Brand Kit Electricians",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-phone-scripts-electricians.html",
+        "title": "Phone Scripts",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-electricians.html",
+        "title": "5 AI Prompts for More Service Calls",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "etsy-sellers",
+    "product_name": "Etsy Sellers Growth Bundle",
+    "category": "E-Commerce",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 1,
+    "total_customer_pages": 77,
+    "prompt_count": 10,
+    "template_count_estimate": 83,
+    "spreadsheet_files": [
+      "05_SEO_Listing_Tracker_Etsy_Sellers.xlsx"
+    ],
+    "files": [
+      {
+        "file": "01-ai-playbook-etsy-sellers.html",
+        "title": "AI Playbook Etsy Sellers",
+        "pages": 17,
+        "prompts": 5,
+        "templates": 28,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-etsy-sellers-month-1.html",
+        "title": "90-Day Content Calendar \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-etsy-sellers-month-2.html",
+        "title": "90-Day Content Calendar \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-etsy-sellers-month-3.html",
+        "title": "90-Day Content Calendar \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-etsy-sellers.html",
+        "title": "Communication Templates Etsy Sellers",
+        "pages": 16,
+        "prompts": 0,
+        "templates": 20,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-etsy-sellers.html",
+        "title": "Brand Kit Etsy Sellers",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 17,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-seo-listing-system-etsy-sellers.html",
+        "title": "SEO Listing System",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-etsy-sellers.html",
+        "title": "5 AI Prompts for a Stronger Shop",
+        "pages": 6,
+        "prompts": 5,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "event-planners",
+    "product_name": "Event Planners Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 42,
+    "prompt_count": 0,
+    "template_count_estimate": 39,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-event-planners.html",
+        "title": "AI Playbook Event Planners",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-event-planners-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-event-planners-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-event-planners-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-event-planners.html",
+        "title": "Email Templates Event Planners",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-event-planners.html",
+        "title": "Brand Kit Event Planners",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-vendor-timeline-event-planners.html",
+        "title": "Vendor Timeline",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-event-planners.html",
+        "title": "Event Planners Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "financial-advisors",
+    "product_name": "Financial Advisors Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 44,
+    "prompt_count": 5,
+    "template_count_estimate": 35,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-financial-advisors.html",
+        "title": "AI Playbook Financial Advisors",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-financial-advisors-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-financial-advisors-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-financial-advisors-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-financial-advisors.html",
+        "title": "Email Templates Financial Advisors",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-financial-advisors.html",
+        "title": "Brand Kit Financial Advisors",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-volatility-scripts-financial-advisors.html",
+        "title": "Volatility Scripts",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-financial-advisors.html",
+        "title": "5 AI Prompts for Client Confidence",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "florists",
+    "product_name": "Florists Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 49,
+    "prompt_count": 4,
+    "template_count_estimate": 60,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-florists.html",
+        "title": "AI Playbook Florists",
+        "pages": 9,
+        "prompts": 4,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-florists-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-florists-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-florists-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-florists.html",
+        "title": "Email Templates Florists",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-florists.html",
+        "title": "Brand Kit Florists",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-questionnaire-florists.html",
+        "title": "Client Questionnaire",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-florists.html",
+        "title": "Florists Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "hair-stylists",
+    "product_name": "Hair Stylists Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 10,
+    "internal_file_count": 2,
+    "spreadsheet_count": 2,
+    "total_customer_pages": 124,
+    "prompt_count": 57,
+    "template_count_estimate": 270,
+    "spreadsheet_files": [
+      "Hairstylist_Profit_Calculator.xlsx",
+      "Salon_Systems__Product_4__Client_Retention_Tracker.xlsx"
+    ],
+    "files": [
+      {
+        "file": "start-here-hair-stylist-growth-system.html",
+        "title": "Start Here - Hair Stylist Growth System",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "5-free-rebooking-text-templates.html",
+        "title": "Free Rebooking Text Templates",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "90-day-salon-content-calendar-month-1.html",
+        "title": "90-Day Salon Content Calendar \u00b7 Month 1",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 22,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "90-day-salon-content-calendar-month-2.html",
+        "title": "90-Day Salon Content Calendar \u00b7 Month 2",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 22,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "90-day-salon-content-calendar-month-3.html",
+        "title": "90-Day Salon Content Calendar \u00b7 Month 3",
+        "pages": 15,
+        "prompts": 0,
+        "templates": 24,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "hairstylist-bundle-launch-kit.html",
+        "title": "Hairstylist Bundle Launch Kit",
+        "pages": 21,
+        "prompts": 0,
+        "templates": 52,
+        "internal": true,
+        "internal_reasons": [
+          "filename suggests internal launch/reference file",
+          "mentions ConvertKit/admin email setup",
+          "mentions Etsy as marketplace/listing channel",
+          "mentions Gumroad",
+          "mentions Stan Store",
+          "mentions consulting upsell",
+          "mentions launch pricing"
+        ]
+      },
+      {
+        "file": "hairstylist-complete-growth-bundle-master-reference.html",
+        "title": "Hairstylist Complete Growth Bundle Master Reference",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 13,
+        "internal": true,
+        "internal_reasons": [
+          "filename suggests internal launch/reference file",
+          "mentions ConvertKit/admin email setup",
+          "mentions Etsy as marketplace/listing channel",
+          "mentions Gumroad",
+          "mentions Stan Store",
+          "mentions consulting upsell",
+          "mentions launch pricing",
+          "mentions listing copy",
+          "mentions sales channels"
+        ]
+      },
+      {
+        "file": "salon-ai-playbook.html",
+        "title": "Salon AI Playbook",
+        "pages": 16,
+        "prompts": 0,
+        "templates": 36,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "salon-ai-prompt-library.html",
+        "title": "Salon AI Prompt Library",
+        "pages": 16,
+        "prompts": 57,
+        "templates": 48,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "salon-brand-kit.html",
+        "title": "Salon Brand Kit",
+        "pages": 17,
+        "prompts": 0,
+        "templates": 43,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "salon-client-retention-system.html",
+        "title": "Salon Client Retention System",
+        "pages": 13,
+        "prompts": 0,
+        "templates": 34,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "salon-profit-calculator-guide.html",
+        "title": "Salon Profit Calculator Guide",
+        "pages": 13,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "hvac-contractors",
+    "product_name": "HVAC Contractors Growth Bundle",
+    "category": "Home Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 43,
+    "prompt_count": 5,
+    "template_count_estimate": 44,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-hvac-contractors.html",
+        "title": "AI Playbook HVAC Contractors",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-hvac-month-1.html",
+        "title": "90-Day Content Calendar HVAC \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-hvac-month-2.html",
+        "title": "90-Day Content Calendar HVAC \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-hvac-month-3.html",
+        "title": "90-Day Content Calendar HVAC \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-hvac.html",
+        "title": "Email Templates HVAC",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-hvac.html",
+        "title": "Brand Kit HVAC",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-phone-scripts-hvac.html",
+        "title": "Phone Scripts HVAC",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-hvac-contractors.html",
+        "title": "5 AI Prompts for More HVAC Calls",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "insurance-agents",
+    "product_name": "Insurance Agents Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 41,
+    "prompt_count": 10,
+    "template_count_estimate": 38,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-insurance-agents.html",
+        "title": "AI Playbook Insurance Agents",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-insurance-agents-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-insurance-agents-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-insurance-agents-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-insurance-agents.html",
+        "title": "Email Templates Insurance Agents",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-insurance-agents.html",
+        "title": "Brand Kit Insurance Agents",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-policy-scripts-insurance-agents.html",
+        "title": "Policy Scripts",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-insurance-agents.html",
+        "title": "5 AI Prompts for More Policy Conversations",
+        "pages": 4,
+        "prompts": 10,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "interior-designers",
+    "product_name": "Interior Designers Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 53,
+    "prompt_count": 6,
+    "template_count_estimate": 67,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-interior-designers.html",
+        "title": "AI Playbook Interior Designers",
+        "pages": 11,
+        "prompts": 6,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-interior-designers-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-interior-designers-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-interior-designers-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-interior-designers.html",
+        "title": "Email Templates Interior Designers",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-interior-designers.html",
+        "title": "Brand Kit Interior Designers",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-onboarding-interior-designers.html",
+        "title": "Client Onboarding",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-interior-designers.html",
+        "title": "Interior Designers Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "lash-technicians",
+    "product_name": "Lash Technicians Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 50,
+    "prompt_count": 9,
+    "template_count_estimate": 85,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-lash-technicians.html",
+        "title": "AI Playbook Lash Technicians",
+        "pages": 10,
+        "prompts": 4,
+        "templates": 22,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-lash-technicians-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-lash-technicians-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-lash-technicians-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-lash-technicians.html",
+        "title": "Email Templates Lash Technicians",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 20,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-lash-technicians.html",
+        "title": "Brand Kit Lash Technicians",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 16,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-lash-technicians.html",
+        "title": "Client Intake",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-lash-technicians.html",
+        "title": "5 AI Prompts for More Lash Clients",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "life-and-business-coaches",
+    "product_name": "Life & Business Coaches Growth Bundle",
+    "category": "Coaches & Educators",
+    "customer_pdf_count": 8,
+    "internal_file_count": 1,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 76,
+    "prompt_count": 10,
+    "template_count_estimate": 82,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-life-business-coaches.html",
+        "title": "AI Playbook Life Business Coaches",
+        "pages": 17,
+        "prompts": 0,
+        "templates": 26,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-life-business-coaches-month-1.html",
+        "title": "90 Day Social Calendar Life Business Coaches \u00b7 Month 1",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-life-business-coaches-month-2.html",
+        "title": "90 Day Social Calendar Life Business Coaches \u00b7 Month 2",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-life-business-coaches-month-3.html",
+        "title": "90 Day Social Calendar Life Business Coaches \u00b7 Month 3",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-life-business-coaches.html",
+        "title": "Email Templates Life Business Coaches",
+        "pages": 14,
+        "prompts": 0,
+        "templates": 22,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-life-business-coaches.html",
+        "title": "Brand Kit Life Business Coaches",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 17,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-discovery-coaching-templates.html",
+        "title": "Discovery Coaching Templates",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "life-business-coaches-redesign-sample.html",
+        "title": "Life & Business Coaches AI Playbook Sample",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 4,
+        "internal": true,
+        "internal_reasons": [
+          "filename suggests review/sample file"
+        ]
+      },
+      {
+        "file": "lm-life-business-coaches.html",
+        "title": "5 AI Prompts for Better Discovery Calls",
+        "pages": 5,
+        "prompts": 10,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "makeup-artists",
+    "product_name": "Makeup Artists Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 43,
+    "prompt_count": 5,
+    "template_count_estimate": 66,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-makeup-artists.html",
+        "title": "AI Playbook Makeup Artists",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-makeup-artists-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-makeup-artists-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-makeup-artists-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-makeup-artists.html",
+        "title": "Email Templates Makeup Artists",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-makeup-artists.html",
+        "title": "Brand Kit Makeup Artists",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-bridal-kit-makeup-artists.html",
+        "title": "Bridal Kit",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-makeup-artists.html",
+        "title": "5 AI Prompts for More Makeup Bookings",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "massage-therapists",
+    "product_name": "Massage Therapists Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 38,
+    "prompt_count": 5,
+    "template_count_estimate": 39,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-massage-therapists.html",
+        "title": "AI Playbook Massage Therapists",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-massage-therapists-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-massage-therapists-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-massage-therapists-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-massage-therapists.html",
+        "title": "Email Templates Massage Therapists",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-massage-therapists.html",
+        "title": "Brand Kit Massage Therapists",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-intake-membership-massage.html",
+        "title": "Intake Membership Massage",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-massage-therapists.html",
+        "title": "5 AI Prompts for Repeat Massage Clients",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "med-spas",
+    "product_name": "Med Spas Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 9,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 54,
+    "prompt_count": 45,
+    "template_count_estimate": 128,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "start-here-med-spa-growth-system.html",
+        "title": "Start Here - Med Spa Growth System",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "01-ai-playbook-med-spa.html",
+        "title": "Med Spa AI Playbook",
+        "pages": 8,
+        "prompts": 8,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-med-spa-month-1.html",
+        "title": "90-Day Social Calendar - Month 1",
+        "pages": 5,
+        "prompts": 1,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-med-spa-month-2.html",
+        "title": "90-Day Social Calendar - Month 2",
+        "pages": 5,
+        "prompts": 1,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-med-spa-month-3.html",
+        "title": "90-Day Social Calendar - Month 3",
+        "pages": 5,
+        "prompts": 1,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-med-spa.html",
+        "title": "Med Spa Client Email Templates",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 24,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-med-spa.html",
+        "title": "Med Spa Brand Kit",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-pre-consult-med-spa.html",
+        "title": "Med Spa Pre-Consult and Reputation System",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-med-spa.html",
+        "title": "5 AI Prompts for Med Spa Growth",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "mortgage-brokers",
+    "product_name": "Mortgage Brokers Growth Bundle",
+    "category": "Professional Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 42,
+    "prompt_count": 10,
+    "template_count_estimate": 35,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-mortgage-brokers.html",
+        "title": "AI Playbook Mortgage Brokers",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 7,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-mortgage-brokers-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-mortgage-brokers-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-mortgage-brokers-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 0,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-mortgage-brokers.html",
+        "title": "Email Templates Mortgage Brokers",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-mortgage-brokers.html",
+        "title": "Brand Kit Mortgage Brokers",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-preapproval-mortgage-brokers.html",
+        "title": "Preapproval",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-mortgage-brokers.html",
+        "title": "5 AI Prompts for More Pre-Approvals",
+        "pages": 4,
+        "prompts": 10,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "nail-technicians",
+    "product_name": "Nail Technicians Growth Bundle",
+    "category": "Beauty",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 48,
+    "prompt_count": 9,
+    "template_count_estimate": 80,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-nail-technicians.html",
+        "title": "AI Playbook Nail Technicians",
+        "pages": 9,
+        "prompts": 4,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nail-technicians-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nail-technicians-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nail-technicians-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-nail-technicians.html",
+        "title": "Email Templates Nail Technicians",
+        "pages": 10,
+        "prompts": 0,
+        "templates": 21,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-nail-technicians.html",
+        "title": "Brand Kit Nail Technicians",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 17,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-nail-technicians.html",
+        "title": "Client Intake",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-nail-technicians.html",
+        "title": "5 AI Prompts for More Nail Clients",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "nannies-and-childcare-professionals",
+    "product_name": "Nannies & Childcare Professionals Growth Bundle",
+    "category": "Local Services",
+    "customer_pdf_count": 7,
+    "internal_file_count": 1,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 59,
+    "prompt_count": 10,
+    "template_count_estimate": 49,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-nannies.html",
+        "title": "AI Playbook Nannies",
+        "pages": 17,
+        "prompts": 5,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nannies-month-1.html",
+        "title": "90 Day Content Calendar Nannies \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nannies-month-2.html",
+        "title": "90 Day Content Calendar Nannies \u00b7 Month 2",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-nannies-month-3.html",
+        "title": "90 Day Content Calendar Nannies \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-nannies.html",
+        "title": "Communication Templates Nannies",
+        "pages": 19,
+        "prompts": 0,
+        "templates": 28,
+        "internal": true,
+        "internal_reasons": [
+          "mentions Etsy as marketplace/listing channel"
+        ]
+      },
+      {
+        "file": "04-brand-kit-nannies.html",
+        "title": "Brand Kit Nannies",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-professional-toolkit-nannies.html",
+        "title": "Professional Toolkit Nannies",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-nannies.html",
+        "title": "5 AI Prompts for More Family Trust",
+        "pages": 6,
+        "prompts": 5,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "nutritionists",
+    "product_name": "Nutritionists Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 46,
+    "prompt_count": 10,
+    "template_count_estimate": 44,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-nutritionists.html",
+        "title": "AI Playbook Nutritionists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-nutritionists-month-1.html",
+        "title": "90-Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-nutritionists-month-2.html",
+        "title": "90-Day Social Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-nutritionists-month-3.html",
+        "title": "90-Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-nutritionists.html",
+        "title": "Email Templates Nutritionists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-nutritionists.html",
+        "title": "Brand Kit Nutritionists",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-meal-plan-templates-nutritionists.html",
+        "title": "Meal Plan Templates",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-nutritionists.html",
+        "title": "5 AI Prompts for Better Client Plans",
+        "pages": 4,
+        "prompts": 10,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "party-planners",
+    "product_name": "Party Planners Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 1,
+    "total_customer_pages": 48,
+    "prompt_count": 4,
+    "template_count_estimate": 54,
+    "spreadsheet_files": [
+      "05_Event_Tracker_Seasonal_Planner_Party_Planners.xlsx"
+    ],
+    "files": [
+      {
+        "file": "01-ai-playbook-party-planners.html",
+        "title": "AI Playbook Party Planners",
+        "pages": 9,
+        "prompts": 4,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-party-planners-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-party-planners-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-party-planners-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-communication-templates-party-planners.html",
+        "title": "Communication Templates Party Planners",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-party-planners.html",
+        "title": "Brand Kit Party Planners",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-planning-system-party-planners.html",
+        "title": "Planning System",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-party-planners.html",
+        "title": "Party Planners Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "personal-chefs",
+    "product_name": "Personal Chefs Growth Bundle",
+    "category": "Hospitality",
+    "customer_pdf_count": 6,
+    "internal_file_count": 2,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 55,
+    "prompt_count": 0,
+    "template_count_estimate": 64,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-personal-chefs.html",
+        "title": "AI Playbook Personal Chefs",
+        "pages": 17,
+        "prompts": 4,
+        "templates": 23,
+        "internal": true,
+        "internal_reasons": [
+          "mentions Etsy as marketplace/listing channel"
+        ]
+      },
+      {
+        "file": "02-90day-content-calendar-personal-chefs-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-personal-chefs-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-personal-chefs-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-personal-chefs.html",
+        "title": "Email Templates Personal Chefs",
+        "pages": 20,
+        "prompts": 0,
+        "templates": 28,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-personal-chefs.html",
+        "title": "Brand Kit Personal Chefs",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-questionnaire-personal-chefs.html",
+        "title": "Client Questionnaire Personal Chefs",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-personal-chefs.html",
+        "title": "5 AI Prompts for Private Chef Clients",
+        "pages": 6,
+        "prompts": 5,
+        "templates": 5,
+        "internal": true,
+        "internal_reasons": [
+          "mentions Etsy as marketplace/listing channel"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "personal-stylists",
+    "product_name": "Personal Stylists Growth Bundle",
+    "category": "Personal Services",
+    "customer_pdf_count": 7,
+    "internal_file_count": 2,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 61,
+    "prompt_count": 5,
+    "template_count_estimate": 59,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-personal-stylists.html",
+        "title": "AI Playbook Personal Stylists",
+        "pages": 16,
+        "prompts": 6,
+        "templates": 33,
+        "internal": true,
+        "internal_reasons": [
+          "mentions Etsy as marketplace/listing channel"
+        ]
+      },
+      {
+        "file": "02-90day-content-calendar-personal-stylists-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-personal-stylists-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-personal-stylists-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-personal-stylists.html",
+        "title": "Email Templates Personal Stylists",
+        "pages": 20,
+        "prompts": 0,
+        "templates": 20,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-personal-stylists.html",
+        "title": "Brand Kit Personal Stylists",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 23,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-style-questionnaire-stylists.html",
+        "title": "Client Style Questionnaire Stylists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-personal-stylists.html",
+        "title": "5 AI Prompts for Styling Clients",
+        "pages": 6,
+        "prompts": 5,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "personal-stylists-redesign-sample.html",
+        "title": "Personal Stylists AI Playbook Sample",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": true,
+        "internal_reasons": [
+          "filename suggests review/sample file"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "personal-trainers",
+    "product_name": "Personal Trainers Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 67,
+    "prompt_count": 5,
+    "template_count_estimate": 75,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-personal-trainers.html",
+        "title": "AI Playbook Personal Trainers",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-personal-trainers-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-personal-trainers-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-personal-trainers-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-personal-trainers.html",
+        "title": "Email Templates Personal Trainers",
+        "pages": 13,
+        "prompts": 0,
+        "templates": 20,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-personal-trainers.html",
+        "title": "Brand Kit Personal Trainers",
+        "pages": 11,
+        "prompts": 0,
+        "templates": 11,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-onboarding-scripts-personal-trainers.html",
+        "title": "Onboarding Scripts Personal Trainers",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-personal-trainers.html",
+        "title": "5 AI Prompts for More Training Clients",
+        "pages": 5,
+        "prompts": 5,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "physical-therapists",
+    "product_name": "Physical Therapists Growth Bundle",
+    "category": "Health & Wellness",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 46,
+    "prompt_count": 5,
+    "template_count_estimate": 45,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-physical-therapists.html",
+        "title": "AI Playbook Physical Therapists",
+        "pages": 9,
+        "prompts": 0,
+        "templates": 10,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-physical-therapists-month-1.html",
+        "title": "90 Day Social Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-physical-therapists-month-2.html",
+        "title": "90 Day Social Calendar \u00b7 Month 2",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-social-calendar-physical-therapists-month-3.html",
+        "title": "90 Day Social Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-patient-templates-physical-therapists.html",
+        "title": "Patient Templates Physical Therapists",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-physical-therapists.html",
+        "title": "Brand Kit Physical Therapists",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-hep-discharge-physical-therapists.html",
+        "title": "Hep Discharge",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 6,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-physical-therapists.html",
+        "title": "5 AI Prompts for Patient Follow-Up",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "plumbers",
+    "product_name": "Plumbers Growth Bundle",
+    "category": "Home Services",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 43,
+    "prompt_count": 5,
+    "template_count_estimate": 46,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-plumbers.html",
+        "title": "AI Playbook Plumbers",
+        "pages": 8,
+        "prompts": 0,
+        "templates": 9,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-plumbers-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-plumbers-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-plumbers-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-plumbers.html",
+        "title": "Email Templates Plumbers",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-plumbers.html",
+        "title": "Brand Kit Plumbers",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-phone-scripts-plumbers.html",
+        "title": "Phone Scripts",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-plumbers.html",
+        "title": "5 AI Prompts for More Plumbing Jobs",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "public-speakers",
+    "product_name": "Public Speakers Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 50,
+    "prompt_count": 2,
+    "template_count_estimate": 55,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-public-speakers.html",
+        "title": "AI Playbook Public Speakers",
+        "pages": 9,
+        "prompts": 2,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-public-speakers-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-public-speakers-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-public-speakers-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-public-speakers.html",
+        "title": "Email Templates Public Speakers",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-public-speakers.html",
+        "title": "Brand Kit Public Speakers",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-business-development-public-speakers.html",
+        "title": "Business Development",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-public-speakers.html",
+        "title": "Public Speakers Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "tattoo-artists",
+    "product_name": "Tattoo Artists Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 49,
+    "prompt_count": 3,
+    "template_count_estimate": 62,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-tattoo-artists.html",
+        "title": "AI Playbook Tattoo Artists",
+        "pages": 10,
+        "prompts": 3,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-tattoo-artists-month-1.html",
+        "title": "90 Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-tattoo-artists-month-2.html",
+        "title": "90 Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-tattoo-artists-month-3.html",
+        "title": "90 Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 1,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-tattoo-artists.html",
+        "title": "Email Templates Tattoo Artists",
+        "pages": 10,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-tattoo-artists.html",
+        "title": "Brand Kit Tattoo Artists",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 13,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-client-intake-tattoo-artists.html",
+        "title": "Client Intake",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-tattoo-artists.html",
+        "title": "Tattoo Artists Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "videographers",
+    "product_name": "Videographers Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 9,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 53,
+    "prompt_count": 52,
+    "template_count_estimate": 137,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "start-here-videographer-growth-system.html",
+        "title": "Start Here - Videographer Growth System",
+        "pages": 5,
+        "prompts": 0,
+        "templates": 18,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "01-ai-playbook-videographers.html",
+        "title": "Videographer AI Playbook",
+        "pages": 9,
+        "prompts": 18,
+        "templates": 26,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-videographers-month-1.html",
+        "title": "90-Day Content Calendar - Videographers - Month 1",
+        "pages": 5,
+        "prompts": 3,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-videographers-month-2.html",
+        "title": "90-Day Content Calendar - Videographers - Month 2",
+        "pages": 5,
+        "prompts": 3,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-videographers-month-3.html",
+        "title": "90-Day Content Calendar - Videographers - Month 3",
+        "pages": 5,
+        "prompts": 3,
+        "templates": 15,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-videographers.html",
+        "title": "Videographer Client Communication Templates",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 29,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-videographers.html",
+        "title": "Videographer Brand Kit",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 19,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-questionnaire-kit-videographers.html",
+        "title": "Videographer Questionnaire and Business Development Kit",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 22,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-videographers.html",
+        "title": "5 Free AI Prompts for Videographers",
+        "pages": 4,
+        "prompts": 5,
+        "templates": 8,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  },
+  {
+    "slug": "wedding-photographers",
+    "product_name": "Wedding Photographers Growth Bundle",
+    "category": "Creatives & Events",
+    "customer_pdf_count": 8,
+    "internal_file_count": 0,
+    "spreadsheet_count": 0,
+    "total_customer_pages": 50,
+    "prompt_count": 4,
+    "template_count_estimate": 59,
+    "spreadsheet_files": [],
+    "files": [
+      {
+        "file": "01-ai-playbook-wedding-photographers.html",
+        "title": "AI Playbook Wedding Photographers",
+        "pages": 9,
+        "prompts": 4,
+        "templates": 17,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-wedding-photographers-month-1.html",
+        "title": "90-Day Content Calendar \u00b7 Month 1",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-wedding-photographers-month-2.html",
+        "title": "90-Day Content Calendar \u00b7 Month 2",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 2,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "02-90day-content-calendar-wedding-photographers-month-3.html",
+        "title": "90-Day Content Calendar \u00b7 Month 3",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 3,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "03-email-templates-wedding-photographers.html",
+        "title": "Email Templates Wedding Photographers",
+        "pages": 12,
+        "prompts": 0,
+        "templates": 12,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "04-brand-kit-wedding-photographers.html",
+        "title": "Brand Kit Wedding Photographers",
+        "pages": 7,
+        "prompts": 0,
+        "templates": 14,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "05-wedding-day-questionnaire-photographers.html",
+        "title": "Wedding Day Questionnaire Photographers",
+        "pages": 6,
+        "prompts": 0,
+        "templates": 4,
+        "internal": false,
+        "internal_reasons": []
+      },
+      {
+        "file": "lm-wedding-photographers.html",
+        "title": "Wedding Photographers Growth System",
+        "pages": 4,
+        "prompts": 0,
+        "templates": 5,
+        "internal": false,
+        "internal_reasons": []
+      }
+    ]
+  }
+]

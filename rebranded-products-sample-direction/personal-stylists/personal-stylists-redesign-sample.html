@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Stylists AI Playbook Sample</title>
+  <style>
+    @page { size: Letter; margin: 0; }
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #211b20;
+      --muted: #696067;
+      --paper: #fbf7f3;
+      --ivory: #fffdf9;
+      --rose: #d9c5bd;
+      --mauve: #8e7588;
+      --taupe: #b7a89a;
+      --charcoal: #2a2329;
+      --line: rgba(142, 117, 136, .18);
+    }
+    body { margin: 0; background: #ded8d2; color: var(--ink); font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
+    .book { width: 8.5in; margin: 0 auto; }
+    .page {
+      position: relative;
+      width: 8.5in;
+      min-height: 11in;
+      overflow: hidden;
+      page-break-after: always;
+      padding: .62in;
+      background:
+        radial-gradient(circle at 86% 14%, rgba(217,197,189,.16), transparent 2.25in),
+        radial-gradient(circle at 10% 92%, rgba(142,117,136,.055), transparent 2.05in),
+        linear-gradient(135deg, var(--ivory), var(--paper) 72%, #f3ebe6);
+    }
+    .page::before { content: ""; position: absolute; inset: .34in .34in .48in; border: 1px solid var(--line); border-radius: 32px; pointer-events: none; }
+    .brand { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; color: rgba(33,27,32,.56); font-size: 9px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; }
+    .label { border: 1px solid rgba(142,117,136,.2); border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,.68); color: var(--mauve); }
+    .kicker { position: relative; z-index: 2; margin-top: .88in; display: flex; gap: 12px; align-items: center; color: var(--mauve); font-size: 10px; font-weight: 950; letter-spacing: .26em; text-transform: uppercase; }
+    .kicker::before { content: ""; width: .52in; height: 1px; background: var(--mauve); }
+    h1, h2, h3, p { position: relative; z-index: 2; margin: 0; }
+    h1, h2 { font-family: "Didot", "Bodoni 72", Georgia, serif; font-weight: 400; letter-spacing: -.052em; color: var(--ink); }
+    h1 { max-width: 6.15in; margin-top: .24in; font-size: 58px; line-height: .94; }
+    h1 em, h2 em { color: var(--mauve); font-style: italic; }
+    .lead { max-width: 5.08in; margin-top: .28in; color: #574f55; font-size: 14.5px; line-height: 1.66; }
+    .cover-note {
+      position: absolute;
+      z-index: 2;
+      right: .72in;
+      bottom: 2.05in;
+      width: 2.25in;
+      padding: 22px;
+      border: 1px solid rgba(142,117,136,.18);
+      border-radius: 26px;
+      background: rgba(255,255,255,.66);
+      box-shadow: 0 20px 48px rgba(58,42,54,.06);
+    }
+    .cover-note b { display: block; color: var(--mauve); font-family: "Didot", "Bodoni 72", Georgia, serif; font-size: 28px; font-weight: 400; }
+    .cover-note span { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; font-weight: 850; letter-spacing: .14em; line-height: 1.55; text-transform: uppercase; }
+    .strip { position: absolute; z-index: 2; left: .62in; right: .62in; bottom: .86in; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: rgba(255,255,255,.68); }
+    .strip div { min-height: .88in; padding: 16px; border-left: 1px solid var(--line); }
+    .strip div:first-child { border-left: 0; }
+    .strip b { display: block; color: var(--mauve); font-family: Georgia, serif; font-size: 21px; font-weight: 400; }
+    .strip span { display: block; margin-top: 8px; color: #756b72; font-size: 8px; font-weight: 850; letter-spacing: .14em; line-height: 1.48; text-transform: uppercase; }
+    .footer { position: absolute; z-index: 2; left: .62in; right: .62in; bottom: .28in; display: flex; justify-content: space-between; color: rgba(33,27,32,.48); font-size: 8px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    .section-head { position: relative; z-index: 2; display: grid; grid-template-columns: .96fr 1.04fr; gap: .42in; align-items: end; margin-top: .24in; padding-bottom: .25in; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin-bottom: 10px; color: var(--mauve); font-size: 8px; font-weight: 950; letter-spacing: .23em; text-transform: uppercase; }
+    h2 { font-size: 39px; line-height: .98; }
+    .intro { color: var(--muted); font-size: 11.8px; line-height: 1.64; }
+    .atelier-list { position: relative; z-index: 2; margin-top: .35in; display: grid; gap: 12px; }
+    .atelier-row { display: grid; grid-template-columns: .52in 1fr .7in; gap: 18px; align-items: start; padding: 18px 0; border-bottom: 1px solid rgba(142,117,136,.15); }
+    .atelier-row:first-child { border-top: 1px solid rgba(142,117,136,.15); }
+    .num { display: inline-grid; width: .42in; height: .42in; place-items: center; border: 1px solid rgba(142,117,136,.25); border-radius: 999px; background: #fff; color: var(--mauve); font-family: Georgia, serif; font-size: 12px; }
+    h3 { color: var(--ink); font-size: 15px; line-height: 1.22; font-weight: 850; letter-spacing: -.01em; }
+    .atelier-row p { margin-top: 8px; color: var(--muted); font-size: 10.8px; line-height: 1.55; }
+    .code { color: var(--taupe); font-size: 8px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; text-align: right; }
+    .feature {
+      background:
+        radial-gradient(circle at 82% 12%, rgba(217,197,189,.12), transparent 2.35in),
+        radial-gradient(circle at 10% 88%, rgba(142,117,136,.1), transparent 2.1in),
+        linear-gradient(135deg, #211b20, #302731 72%, #241e24);
+      color: #fff;
+    }
+    .feature::before { border-color: rgba(255,255,255,.13); }
+    .feature h2, .feature h3 { color: #fff; }
+    .feature .intro, .feature .atelier-row p { color: rgba(255,255,255,.76); }
+    .feature .brand, .feature .footer { color: rgba(255,255,255,.58); }
+    .feature .label { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: #f1dcd2; }
+    .feature .atelier-row { border-color: rgba(255,255,255,.14); }
+    .feature .num { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); color: #f1dcd2; }
+    .prompt { position: relative; z-index: 2; margin-top: .36in; padding: 26px; border: 1px solid rgba(255,255,255,.15); border-radius: 28px; background: rgba(255,255,255,.075); }
+    .prompt h3 { font-family: "Didot", "Bodoni 72", Georgia, serif; font-weight: 400; font-size: 28px; }
+    .prompt p { margin-top: 13px; color: rgba(255,255,255,.78); font-size: 11.7px; line-height: 1.68; }
+    .routine { position: relative; z-index: 2; margin-top: .36in; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .routine article { min-height: 1.55in; padding: 24px 24px 21px; border: 1px solid var(--line); border-radius: 25px; background: rgba(255,255,255,.7); display: grid; grid-template-columns: .48in 1fr; column-gap: 17px; align-items: start; }
+    .routine .num { grid-row: 1 / span 2; margin-top: 1px; }
+    .routine p { margin-top: 9px; color: var(--muted); font-size: 10.8px; line-height: 1.55; }
+    @media print { body { background: white; } .book { width: auto; margin: 0; } }
+  </style>
+</head>
+<body>
+  <main class="book">
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="label">Stylist Growth System</span></div>
+      <p class="kicker">Wardrobe clarity · client confidence</p>
+      <h1><em>AI Playbook</em> for Personal Stylists</h1>
+      <p class="lead">A refined styling business system for shaping your point of view, guiding consultations, presenting taste, and turning wardrobe expertise into premium client bookings.</p>
+      <div class="cover-note"><b>Style</b><span>Position the eye, guide the client, elevate the offer.</span></div>
+      <div class="strip">
+        <div><b>01</b><span>Define the style point of view</span></div>
+        <div><b>02</b><span>Guide consults with care</span></div>
+        <div><b>03</b><span>Present polished recommendations</span></div>
+        <div><b>04</b><span>Convert premium clients</span></div>
+      </div>
+      <div class="footer"><span>Done-for-you AI prompts for stylists</span><span>01</span></div>
+    </section>
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="label">The Method</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Client Experience</p><h2>Great styling sells <em>discernment</em>, not more clothes.</h2></div>
+        <p class="intro">The strongest stylist brands help clients feel understood before they ever step into a fitting room. This system turns your taste into a clear process, polished messaging, and a client journey that feels personal.</p>
+      </div>
+      <div class="atelier-list">
+        <article class="atelier-row"><div class="num">01</div><div><h3>Clarify the style promise</h3><p>Name the transformation you create: fewer closet mistakes, better outfit confidence, sharper personal presentation, or a wardrobe that matches the client’s next season.</p></div><div class="code">Point of view</div></article>
+        <article class="atelier-row"><div class="num">02</div><div><h3>Turn intake into insight</h3><p>Use prompts to read lifestyle, body confidence, budget, occasion, and buying friction so recommendations feel intentional instead of generic.</p></div><div class="code">Consult flow</div></article>
+        <article class="atelier-row"><div class="num">03</div><div><h3>Present the recommendation</h3><p>Frame outfits, edits, capsules, and shopping links with language that explains the why behind every choice.</p></div><div class="code">Taste notes</div></article>
+        <article class="atelier-row"><div class="num">04</div><div><h3>Follow up with polish</h3><p>Create thoughtful post-session emails, review requests, referrals, and rebooking notes that keep the relationship warm.</p></div><div class="code">Client care</div></article>
+      </div>
+      <div class="footer"><span>Personal Stylists</span><span>02</span></div>
+    </section>
+    <section class="page feature">
+      <div class="brand"><span>Content Elevated</span><span class="label">Copy + Paste</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Signature Prompt</p><h2>Build a premium <em>style consultation</em> summary.</h2></div>
+        <p class="intro">Use this after an intake form or discovery call to turn scattered client details into a polished, confidence-building plan.</p>
+      </div>
+      <div class="prompt">
+        <h3>Personal Style Direction Prompt</h3>
+        <p>Act as a premium personal stylist and client experience strategist. Based on this client intake: [paste notes], create a polished style direction summary. Include: their lifestyle needs, style goals, current wardrobe friction, 3 guiding style principles, suggested color/material direction, what to stop buying, what to invest in next, and a warm next-step note. Keep the tone refined, specific, encouraging, and practical.</p>
+      </div>
+      <div class="atelier-list">
+        <article class="atelier-row"><div class="num">A</div><div><h3>Use before a paid consult</h3><p>Send a shortened version before the session so the client arrives feeling seen and excited.</p></div><div class="code">Pre-work</div></article>
+        <article class="atelier-row"><div class="num">B</div><div><h3>Use after the closet edit</h3><p>Turn session notes into a beautiful recap with priorities, outfit formulas, and the next purchase plan.</p></div><div class="code">Follow-up</div></article>
+      </div>
+      <div class="footer"><span>AI Playbook</span><span>03</span></div>
+    </section>
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="label">Weekly Rhythm</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Implementation</p><h2>Make the business feel as polished as the <em>wardrobe</em>.</h2></div>
+        <p class="intro">A simple weekly cadence keeps the system usable: one piece of authority content, one client message, one consult improvement, and one relationship-building action.</p>
+      </div>
+      <div class="routine">
+        <article><div class="num">01</div><h3>Monday: publish a style principle</h3><p>Share one outfit rule, capsule framework, or shopping mistake your ideal client needs to understand.</p></article>
+        <article><div class="num">02</div><h3>Tuesday: refine one intake question</h3><p>Make your questionnaire more specific around lifestyle, budget, wardrobe frustration, and desired identity.</p></article>
+        <article><div class="num">03</div><h3>Thursday: send a warm follow-up</h3><p>Follow up with one lead, past client, or referral partner using a message that feels personal and useful.</p></article>
+        <article><div class="num">04</div><h3>Friday: build one recommendation asset</h3><p>Create a mini guide, outfit formula, shopping note, or rebooking prompt that improves the client experience.</p></article>
+      </div>
+      <div class="footer"><span>Style with clarity. Sell with confidence.</span><span>04</span></div>
+    </section>
+  </main>
+</body>
+</html>

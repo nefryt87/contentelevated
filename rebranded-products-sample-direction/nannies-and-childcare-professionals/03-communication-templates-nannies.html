@@ -1,573 +1,1089 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Communication Templates Nannies</title><style>
 @page { size: Letter; margin: 0; }
-* { box-sizing: border-box; }
-body { margin:0; background:#d2d2cf; color:#121415; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
-.book { width:8.5in; margin:0 auto; }
-.page { position:relative; width:8.5in; min-height:11in; overflow:hidden; page-break-after:always; padding:.58in; background:#fff9ef; }
-.page:before { content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 82% 14%, color-mix(in srgb,#8c7b58 24%,transparent), transparent 2.35in),
-  radial-gradient(circle at 12% 90%, color-mix(in srgb,#d8caaa 20%,transparent), transparent 2.55in),
-  linear-gradient(135deg, color-mix(in srgb,#fff9ef 94%,white), color-mix(in srgb,#fff9ef 86%,#8c7b58)); pointer-events:none; }
-.page:after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size:.42in .42in; opacity:.22; mask-image:radial-gradient(circle at 50% 40%,black,transparent 80%); pointer-events:none; }
-.brand { position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; font-size:9px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(18,20,21,.62); }
-.brand-stack { display:grid; gap:8px; }
-.brand-line { color:#121415; letter-spacing:.26em; }
-.doc-label { color:#8c7b58; font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:900; }
-.tag { padding:9px 13px; border:1px solid color-mix(in srgb,#8c7b58 32%,transparent); border-radius:999px; color:#8c7b58; background:rgba(255,255,255,.38); }
-h1 { position:relative; z-index:3; margin:.88in 0 0; max-width:5.6in; font-family:Georgia, 'Times New Roman', serif; font-size:54px; line-height:.96; font-weight:400; letter-spacing:-.055em; text-transform:none; }
-.gold { color:#8c7b58; }
-.lead { position:relative; z-index:3; max-width:4.75in; margin-top:.28in; color:rgba(18,20,21,.62); font-size:15px; line-height:1.48; }
-.cover-linework { position:absolute; z-index:2; right:.58in; top:1.48in; width:3.05in; height:5.95in; border-top:1px solid color-mix(in srgb,#8c7b58 38%,transparent); border-bottom:1px solid color-mix(in srgb,#8c7b58 22%,transparent); background:
-  linear-gradient(90deg, transparent, color-mix(in srgb,#8c7b58 11%,transparent), transparent),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.052) 0 1px, transparent 1px 24px);
-  opacity:.7; }
-.cover-linework:after { content:""; position:absolute; inset:.35in; border:1px solid color-mix(in srgb,#8c7b58 16%,transparent); border-left:0; border-right:0; }
-.motif { display:none; }
-.metrics { position:absolute; z-index:3; left:.58in; right:2.2in; bottom:1.1in; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid color-mix(in srgb,#8c7b58 52%,transparent); border-bottom:1px solid color-mix(in srgb,#8c7b58 32%,transparent); }
-.metric { min-height:1.1in; padding:16px 13px; border-right:1px solid color-mix(in srgb,#8c7b58 32%,transparent); }
-.metric b { display:block; color:#8c7b58; font-size:22px; margin-bottom:10px; font-family:Georgia, 'Times New Roman', serif; }
-.metric span { display:block; color:rgba(18,20,21,.62); font-size:9px; line-height:1.55; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
-.work { background:#211b13; color:#f8f3e9; }
-.work:before { background:radial-gradient(circle at 14% 10%, color-mix(in srgb,#8c7b58 18%,transparent), transparent 2in), linear-gradient(135deg, #211b13, color-mix(in srgb,#211b13 78%,black)); }
-.section-head { position:relative; z-index:3; margin-top:.45in; display:grid; grid-template-columns:1.05fr .95fr; gap:.35in; align-items:end; }
-.eyebrow { margin:0 0 10px; color:#8c7b58; font-size:8px; font-weight:950; letter-spacing:.22em; text-transform:uppercase; }
-h2 { margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:.94; font-weight:400; letter-spacing:-.04em; text-transform:none; }
-.intro { color:rgba(248,243,233,.7); font-size:11px; line-height:1.55; }
-.prompt-grid { position:relative; z-index:3; margin-top:.4in; display:grid; gap:14px; }
-.prompt-card { display:grid; grid-template-columns:.5in 1fr; gap:15px; padding:17px; border:1px solid color-mix(in srgb,#8c7b58 26%,transparent); background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018)); border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
-.num { width:.5in; height:.5in; display:grid; place-items:center; border-radius:50%; border:1px solid color-mix(in srgb,#8c7b58 56%,transparent); color:#8c7b58; font-family:Georgia,serif; font-size:14px; }
-h3 { margin:0 0 8px; color:#fff8ef; font-size:17px; line-height:1.1; }
-.prompt-card p { margin:0; color:rgba(248,243,233,.72); font-size:9.8px; line-height:1.46; }
-.footer { position:absolute; z-index:3; left:.58in; right:.58in; bottom:.31in; display:flex; justify-content:space-between; color:rgba(18,20,21,.62); font-size:8px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
-.cta { position:relative; z-index:3; margin-top:.35in; padding:24px; border:1px solid color-mix(in srgb,#8c7b58 28%,transparent); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,#8c7b58 12%,transparent),rgba(255,255,255,.025)); }
-.cta h2 { font-size:34px; }
+:root {
+  --ink:#151716;
+  --muted:#5f665f;
+  --paper:#fff9ef;
+  --paper-2:#efe8dc;
+  --line:rgba(21,23,22,.13);
+  --accent:#8c7b58;
+  --accent-2:#d8caaa;
+  --deep:#211b13;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#ddd7cf;color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
+.book{width:8.5in;margin:0 auto}
+.page{position:relative;width:8.5in;height:11in;overflow:hidden;page-break-after:always;padding:.58in;background:linear-gradient(135deg,var(--paper),#fff 54%,var(--paper-2))}
+.page::before{content:"";position:absolute;inset:.32in;border:1px solid var(--line);pointer-events:none}
+.page::after{content:"";position:absolute;right:-.9in;top:.58in;width:3.5in;height:8.7in;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);transform:skewX(-8deg);opacity:.72;pointer-events:none}
+.brand{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;color:rgba(21,23,22,.62);font-size:9px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.badge{border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);background:rgba(255,255,255,.66);padding:10px 14px;color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.cover-kicker{position:relative;z-index:3;margin-top:.82in;display:flex;align-items:center;gap:12px;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.27em;text-transform:uppercase}
+.cover-kicker::before{content:"";width:.5in;height:1px;background:var(--accent)}
+h1,h2,h3{position:relative;z-index:3;margin:0}
+h1{max-width:6.18in;margin-top:.2in;font-family:Georgia,"Times New Roman",serif;font-size:58px;line-height:.96;font-weight:400;letter-spacing:-.05em;color:var(--ink)}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+.lead{position:relative;z-index:3;max-width:5.2in;margin-top:.28in;color:#434842;font-size:15px;line-height:1.64}
+.signature-strip{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.88in;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.48)}
+.signature-cell{min-height:.92in;padding:16px 15px;border-left:1px solid var(--line)}
+.signature-cell:first-child{border-left:0}
+.signature-cell b{display:block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:400;line-height:1}
+.signature-cell span{display:block;margin-top:9px;color:#697069;font-size:8.3px;font-weight:850;letter-spacing:.14em;line-height:1.5;text-transform:uppercase}
+.footer{position:absolute;z-index:3;left:.58in;right:.58in;bottom:.42in;display:flex;justify-content:space-between;color:rgba(21,23,22,.52);font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.work{background:linear-gradient(135deg,#fff,var(--paper) 62%,var(--paper-2));color:var(--ink)}
+.work::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 84% 8%,color-mix(in srgb,var(--accent-2) 22%,transparent),transparent 2.45in);pointer-events:none}
+.work::after{display:none}
+.section-head{position:relative;z-index:3;display:grid;grid-template-columns:.92fr 1.08fr;gap:.38in;align-items:end;margin-top:.25in;padding-bottom:.23in;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 10px;color:var(--accent);font-size:8px;font-weight:950;letter-spacing:.23em;text-transform:uppercase}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:39px;line-height:.98;font-weight:400;letter-spacing:-.045em;color:var(--ink)}
+.intro{margin:0;color:#4b514b;font-size:12px;line-height:1.62}
+.bespoke-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.34in}
+.bespoke-card{position:relative;min-height:1.84in;border:1px solid var(--line);background:rgba(255,255,255,.76);padding:18px;box-shadow:0 12px 28px rgba(21,23,22,.045)}
+.bespoke-card::before{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.75}
+.num{display:inline-grid;width:.42in;height:.42in;place-items:center;margin-bottom:12px;border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);background:#fff;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:13px;font-weight:400}
+h3{font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:15px;line-height:1.14;font-weight:850;letter-spacing:-.01em}
+.bespoke-card p,.asset-card p{margin:9px 0 0;color:#4b514b;font-size:10.4px;line-height:1.56}
+.content-stack{position:relative;z-index:3;display:grid;gap:12px;margin-top:.31in}
+.asset-card{display:grid;grid-template-columns:.48in 1fr;gap:15px;padding:17px 18px;border:1px solid var(--line);background:rgba(255,255,255,.8);box-shadow:0 10px 24px rgba(21,23,22,.04)}
+.asset-card .eyebrow{margin-bottom:7px;color:#73786f;font-size:7.4px;letter-spacing:.17em}
+.asset-card h3{font-size:16px}
+.asset-card .num{margin:0;background:var(--deep);color:#fff;border-color:color-mix(in srgb,var(--accent) 36%,transparent)}
+.feature-page{background:linear-gradient(135deg,var(--deep),color-mix(in srgb,var(--deep) 86%,#fff));color:#fff}
+.feature-page::before{background:radial-gradient(circle at 78% 15%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 2.35in),linear-gradient(135deg,rgba(255,255,255,.04),transparent 48%)}
+.feature-page h2,.feature-page h3{color:#fff}
+.feature-page .intro,.feature-page .asset-card p,.feature-page .bespoke-card p{color:rgba(255,255,255,.78)}
+.feature-page .asset-card,.feature-page .bespoke-card{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.15);box-shadow:none}
+.feature-page .asset-card .eyebrow{color:color-mix(in srgb,var(--accent-2) 74%,#fff)}
+.feature-page .brand,.feature-page .footer{color:rgba(255,255,255,.56)}
 
-/* Distinct niche systems */
-.layout-ledger .cover-linework { display:none; }
-.layout-ledger .cover { background:#fff9ef; }
-.layout-ledger .cover:after { background-size:.28in .28in; opacity:.32; }
-.layout-ledger .work { background:#f7f6ef; color:#211b13; }
-.layout-ledger .work:before { background:linear-gradient(135deg,#fbfaf4,#ece8dc); }
-.layout-ledger .intro,.layout-ledger .prompt-card p { color:rgba(20,24,26,.66); }
-.layout-ledger h3 { color:#211b13; }
-.layout-ledger .prompt-card { border-radius:0; box-shadow:none; background:rgba(255,255,255,.48); border-left:5px solid #8c7b58; }
+.family-barber{--ink:#f5eee4;--paper:#0b0806;--paper-2:#17100c;--line:rgba(245,238,228,.16)}
+.family-barber .page{background:linear-gradient(135deg,#070504,#15100c 58%,#0b0806)}
+.family-barber .page::before{border-color:rgba(245,238,228,.12)}
+.family-barber .lead,.family-barber .intro,.family-barber .bespoke-card p,.family-barber .asset-card p{color:rgba(245,238,228,.76)}
+.family-barber .bespoke-card,.family-barber .asset-card,.family-barber .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(245,238,228,.14)}
+.family-barber .work{background:linear-gradient(135deg,#0b0806,#19110c)}
 
-.layout-protocol .cover-linework { display:none; }
-.layout-protocol .cover { background:#fff9ef; }
-.layout-protocol .work { background:#fbfbf5; color:#211b13; }
-.layout-protocol .work:before { background:radial-gradient(circle at 82% 12%,color-mix(in srgb,#8c7b58 13%,transparent),transparent 2in),linear-gradient(135deg,#fff,#eef3ea); }
-.layout-protocol .intro,.layout-protocol .prompt-card p { color:rgba(20,25,22,.66); }
-.layout-protocol h3 { color:#211b13; }
-.layout-protocol .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-protocol .prompt-card:first-child { grid-column:span 2; }
-.layout-protocol .prompt-card { border-radius:22px; background:rgba(255,255,255,.7); box-shadow:0 20px 60px rgba(45,75,54,.08); }
+.family-petcare{--ink:#2b241a;--paper:#fff8ef;--paper-2:#eadbc6;--line:rgba(154,122,85,.18)}
+.family-petcare .page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.34),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1)}
+.family-petcare .page::before{inset:.3in;border-color:rgba(154,122,85,.14);border-radius:26px}
+.family-petcare .page::after{right:.72in;top:1.08in;width:2.15in;height:2.15in;border-radius:50%;border:1px solid rgba(154,122,85,.13);background:radial-gradient(circle,rgba(255,255,255,.6),rgba(216,195,164,.18) 62%,transparent 63%);transform:none;opacity:.72}
+.family-petcare h1,.family-petcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-petcare .lead,.family-petcare .intro,.family-petcare .bespoke-card p,.family-petcare .asset-card p{color:#514637}
+.family-petcare .bespoke-card,.family-petcare .asset-card,.family-petcare .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page{background:radial-gradient(circle at 82% 10%,rgba(216,195,164,.28),transparent 2.4in),linear-gradient(135deg,#fffdf8,#fff8ef 64%,#f0e4d1);color:#2b241a}
+.family-petcare .feature-page::before{inset:.3in;border:1px solid rgba(154,122,85,.14);border-radius:26px;background:transparent}
+.family-petcare .feature-page h2,.family-petcare .feature-page h3{color:#2b241a}
+.family-petcare .feature-page .intro,.family-petcare .feature-page .asset-card p,.family-petcare .feature-page .bespoke-card p{color:#514637}
+.family-petcare .feature-page .asset-card,.family-petcare .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(154,122,85,.16);box-shadow:0 10px 24px rgba(89,69,43,.035)}
+.family-petcare .feature-page .asset-card .eyebrow{color:#9a7a55}
+.family-petcare .feature-page .brand,.family-petcare .feature-page .footer{color:rgba(43,36,26,.54)}
 
-.layout-editorial .cover-linework { display:none; }
-.layout-editorial .work { background:#141111; }
-.layout-editorial .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-editorial .prompt-card:first-child { grid-column:span 2; }
-.layout-editorial .prompt-card { border-radius:30px; padding:22px; }
+.family-etsy{--ink:#132023;--paper:#fbfcfb;--paper-2:#e9f0ec;--line:rgba(79,143,148,.16)}
+.family-etsy .page::after{transform:rotate(-6deg);background:linear-gradient(180deg,rgba(255,143,97,.16),rgba(79,143,148,.1),transparent 70%)}
+.family-etsy .bespoke-card::before{height:4px}
 
-.layout-field .cover-linework { display:none; }
-.layout-field .cover { background:#211b13; }
-.layout-field .metrics { right:.58in; }
-.layout-field .prompt-card { border-radius:8px; clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px); }
+.family-coach{--ink:#1b1d24;--paper:#fbf8f2;--paper-2:#ece5d9;--line:rgba(75,86,118,.16)}
+.family-coach .page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.24),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9)}
+.family-coach .page::after{right:.62in;top:1.08in;width:2.1in;height:2.1in;border:1px solid rgba(75,86,118,.12);background:radial-gradient(circle,rgba(255,255,255,.58),rgba(189,170,135,.14) 64%,transparent 65%);transform:none;border-radius:50%}
+.family-coach h1,.family-coach h2{font-family:"Didot","Bodoni 72",Georgia,serif;letter-spacing:-.04em}
+.family-coach .lead,.family-coach .intro,.family-coach .bespoke-card p,.family-coach .asset-card p{color:#46454c}
+.family-coach .bespoke-card,.family-coach .asset-card,.family-coach .signature-strip{background:rgba(255,255,255,.82);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page{background:radial-gradient(circle at 80% 10%,rgba(189,170,135,.22),transparent 2.5in),linear-gradient(135deg,#fff,#fbf8f2 62%,#ece5d9);color:#1b1d24}
+.family-coach .feature-page::before{inset:.32in;border:1px solid rgba(75,86,118,.14);background:transparent}
+.family-coach .feature-page h2,.family-coach .feature-page h3{color:#1b1d24}
+.family-coach .feature-page .intro,.family-coach .feature-page .asset-card p,.family-coach .feature-page .bespoke-card p{color:#46454c}
+.family-coach .feature-page .asset-card,.family-coach .feature-page .bespoke-card{background:rgba(255,255,255,.84);border-color:rgba(75,86,118,.14);box-shadow:0 10px 24px rgba(35,36,44,.035)}
+.family-coach .feature-page .asset-card .eyebrow{color:#4b5676}
+.family-coach .feature-page .brand,.family-coach .feature-page .footer{color:rgba(27,29,36,.54)}
 
-.layout-performance .cover-linework { display:none; }
-.layout-performance .cover { background:#050707; }
-.layout-performance h1 { max-width:6.25in; font-size:82px; }
-.layout-performance .prompt-grid { grid-template-columns:1fr; }
-.layout-performance .prompt-card { border-radius:7px; background:linear-gradient(100deg,rgba(255,255,255,.06),color-mix(in srgb,#8c7b58 14%,transparent)); }
-.layout-performance .num { border-radius:8px; font-family:Inter,Arial,sans-serif; font-weight:950; }
+.family-childcare{--ink:#27352f;--paper:#fffdf8;--paper-2:#eef7ef;--line:rgba(112,154,128,.18)}
+.family-childcare .page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.42),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef)}
+.family-childcare .page::before{inset:.3in;border-color:rgba(112,154,128,.16);border-radius:28px}
+.family-childcare .page::after{right:.58in;top:.95in;width:2.1in;height:2.1in;border:1px solid rgba(112,154,128,.14);background:radial-gradient(circle,rgba(255,255,255,.72),rgba(255,210,185,.22) 56%,rgba(180,220,190,.13) 57%,transparent 68%);transform:none;border-radius:38% 62% 45% 55%;opacity:.78}
+.family-childcare h1,.family-childcare h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.family-childcare .cover-kicker,.family-childcare .eyebrow{color:#6f9f7b}
+.family-childcare .badge{color:#6f9f7b;border-color:rgba(112,154,128,.22);background:rgba(255,255,255,.72)}
+.family-childcare .num{border-radius:999px;border-color:rgba(112,154,128,.24);color:#6f9f7b;background:#fffefb}
+.family-childcare .lead,.family-childcare .intro,.family-childcare .bespoke-card p,.family-childcare .asset-card p{color:#526159}
+.family-childcare .signature-cell b{color:#6f9f7b}
+.family-childcare .signature-cell span{color:#718077}
+.family-childcare .bespoke-card,.family-childcare .asset-card,.family-childcare .signature-strip{background:rgba(255,255,255,.88);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .bespoke-card::before{height:2px;background:linear-gradient(90deg,#6f9f7b,#f0b8a1);opacity:.52}
+.family-childcare .asset-card .num{background:#eaf5ec;color:#527b61}
+.family-childcare .feature-page{background:radial-gradient(circle at 82% 9%,rgba(255,210,185,.38),transparent 2.25in),radial-gradient(circle at 8% 86%,rgba(180,220,190,.28),transparent 2.15in),linear-gradient(135deg,#fffdf8,#fff9f1 54%,#eef7ef);color:#27352f}
+.family-childcare .feature-page::before{inset:.3in;border:1px solid rgba(112,154,128,.16);border-radius:28px;background:transparent}
+.family-childcare .feature-page h2,.family-childcare .feature-page h3{color:#27352f}
+.family-childcare .feature-page .intro,.family-childcare .feature-page .asset-card p,.family-childcare .feature-page .bespoke-card p{color:#526159}
+.family-childcare .feature-page .asset-card,.family-childcare .feature-page .bespoke-card{background:rgba(255,255,255,.9);border-color:rgba(112,154,128,.15);box-shadow:0 12px 28px rgba(74,105,86,.04)}
+.family-childcare .feature-page .asset-card .eyebrow{color:#6f9f7b}
+.family-childcare .feature-page .brand,.family-childcare .feature-page .footer{color:rgba(39,53,47,.54)}
 
-.layout-dark-shop .cover-linework { display:none; }
-.layout-dark-shop .cover { background:#060504; }
-.layout-dark-shop .prompt-card { background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(0,0,0,.34)); border-radius:6px; }
+.family-chef{--ink:#241711;--paper:#fff8ef;--paper-2:#efe0ca;--line:rgba(148,116,84,.18)}
+.family-chef .page::after{background:radial-gradient(ellipse at center,rgba(210,179,130,.28),transparent 63%);transform:rotate(5deg)}
+.family-chef h1,.family-chef h2{font-family:Georgia,"Times New Roman",serif}
 
-.layout-commerce .cover-linework { display:none; }
-.layout-commerce .cover { background:#f8fbf9; }
-.layout-commerce h1 { font-size:62px; letter-spacing:-.06em; }
-.layout-commerce .work { background:#f8fbf9; color:#211b13; }
-.layout-commerce .work:before { background:linear-gradient(135deg,#fff,color-mix(in srgb,#8c7b58 8%,white)); }
-.layout-commerce .intro,.layout-commerce .prompt-card p { color:rgba(18,24,24,.66); }
-.layout-commerce h3 { color:#211b13; }
-.layout-commerce .prompt-card { background:#fff; border-radius:20px; box-shadow:0 18px 46px rgba(0,0,0,.08); }
+.family-stylist{--ink:#211920;--paper:#faf6f2;--paper-2:#eaded5;--line:rgba(139,116,132,.17)}
+.family-stylist .page{background:radial-gradient(circle at 80% 10%,rgba(200,183,163,.24),transparent 2.4in),linear-gradient(135deg,#fff,#faf6f2 62%,#eaded5)}
+.family-stylist .page::after{right:.74in;top:1.1in;width:1.9in;height:1.9in;border:1px solid rgba(139,116,132,.14);background:radial-gradient(circle,rgba(255,255,255,.62),rgba(200,183,163,.16) 62%,transparent 63%);transform:none;border-radius:50%}
+.family-stylist h1,.family-stylist h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.family-stylist .lead,.family-stylist .intro,.family-stylist .bespoke-card p,.family-stylist .asset-card p{color:#4f454d}
+.family-stylist .bespoke-card,.family-stylist .asset-card,.family-stylist .signature-strip{background:rgba(255,255,255,.84);border-color:rgba(139,116,132,.15);box-shadow:0 10px 24px rgba(58,42,54,.035)}
+.family-stylist .bespoke-card::before{height:1px;opacity:.48}
+.family-stylist .num{border-radius:999px}
+.family-stylist .feature-page{background:radial-gradient(circle at 80% 10%,rgba(200,183,163,.22),transparent 2.4in),linear-gradient(135deg,#fff,#faf6f2 62%,#eaded5);color:#211920}
+.family-stylist .feature-page::before{inset:.32in;border:1px solid rgba(139,116,132,.15);background:transparent}
+.family-stylist .feature-page h2,.family-stylist .feature-page h3{color:#211920}
+.family-stylist .feature-page .intro,.family-stylist .feature-page .asset-card p,.family-stylist .feature-page .bespoke-card p{color:#4f454d}
+.family-stylist .feature-page .asset-card,.family-stylist .feature-page .bespoke-card{background:rgba(255,255,255,.86);border-color:rgba(139,116,132,.15);box-shadow:0 10px 24px rgba(58,42,54,.035)}
+.family-stylist .feature-page .asset-card .eyebrow{color:#8b7484}
+.family-stylist .feature-page .brand,.family-stylist .feature-page .footer{color:rgba(33,25,32,.54)}
 
-.layout-cards .cover-linework { display:none; }
-.layout-cards .prompt-grid { grid-template-columns:1fr 1fr; }
-.layout-cards .prompt-card { border-radius:24px; }
-@media print { body { background:white; } .book { margin:0; } }
-
-.direction-page .section-head { margin-top: .18in; }
-.direction-page .prompt-grid { margin-top: .32in; }
-.direction-page .prompt-card { grid-template-columns: .44in 1fr; }
-.direction-page .prompt-card p { font-size: 9.3px; }
-.direction-page .content-stack { position: relative; z-index: 3; margin-top: .32in; display: grid; gap: 13px; }
-.direction-page .content-stack .prompt-card h3 { font-size: 15px; }
-.direction-page .content-stack .prompt-card .eyebrow { font-size: 7.5px; }
-.direction-page .section-label { margin: 10px 0 4px; color: #8c7b58; font-size: 8px; font-weight: 950; letter-spacing: .2em; text-transform: uppercase; }
-.direction-page .plain-copy { margin: 0; color: rgba(248,243,233,.72); font-size: 9.5px; line-height: 1.48; }
-.direction-page .template-line { border-left: 1px solid color-mix(in srgb,#8c7b58 56%,transparent); padding-left: 10px; background: linear-gradient(90deg,color-mix(in srgb,#8c7b58 10%,transparent),transparent 70%); }
-</style></head><body><main class="book layout-cards"><section class="page cover">
+.family-trainer{--ink:#effaf4;--paper:#0d1514;--paper-2:#16211f;--line:rgba(200,255,95,.16)}
+.family-trainer .page{background:linear-gradient(135deg,#0a1110,#121c1a 58%,#0d1514)}
+.family-trainer .page::after{background:linear-gradient(180deg,rgba(200,255,95,.12),rgba(45,143,118,.18),transparent 72%)}
+.family-trainer .lead,.family-trainer .intro,.family-trainer .bespoke-card p,.family-trainer .asset-card p{color:rgba(239,250,244,.78)}
+.family-trainer .bespoke-card,.family-trainer .asset-card,.family-trainer .signature-strip{background:rgba(255,255,255,.055);border-color:rgba(239,250,244,.13)}
+.family-trainer .work{background:linear-gradient(135deg,#0d1514,#16211f)}
+@media print{body{background:white}.book{width:auto;margin:0}}
+</style></head><body><main class="book family-childcare"><section class="page">
   <div class="brand">
-    <div class="brand-stack">
-      <div class="brand-line">CONTENT ELEVATED</div>
-      <div class="doc-label">Done-for-you templates for nannies &amp; childcare professionals</div>
-    </div>
+    <div></div>
+    <div class="badge">Templates</div>
   </div>
+  <p class="cover-kicker">Gentle care · family confidence</p>
   <h1>Communication Templates Nannies</h1>
-  <p class="lead">A premium, niche-specific growth system built to help the business move faster with clearer content, stronger client touchpoints, and ready-to-use execution assets.</p>
-  <div class="metrics">
-    <div class="metric"><b>01</b><span>Ready-to-use<br/>growth system</span></div>
-    <div class="metric"><b>02</b><span>Designed for<br/>Care</span></div>
-    <div class="metric"><b>03</b><span>Customize<br/>and launch</span></div>
+  <p class="lead">A bright, reassuring childcare growth system for communicating reliability, building parent confidence, improving inquiry flow, and presenting a polished care brand.</p>
+  <div class="signature-strip">
+    <div class="signature-cell"><b>01</b><span>Build family trust</span></div>
+    <div class="signature-cell"><b>02</b><span>Guide inquiries</span></div>
+    <div class="signature-cell"><b>03</b><span>Communicate care</span></div>
+    <div class="signature-cell"><b>04</b><span>Book confidently</span></div>
   </div>
-  <div class="footer"><span>Nannies &amp; Childcare Professionals product file</span><span>01</span></div>
+  <div class="footer"><span>Content Elevated</span><span>01</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Implementation Notes</p><h2>Turn this file into action.</h2></div>
-    <p class="intro">Use this section to move from strategy into execution with clear steps, customized language, and a simple weekly workflow.</p>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Use the System</div>
   </div>
-  <div class="prompt-grid">
-    <article class="prompt-card"><div class="num">01</div><div><p class="eyebrow">Review</p><h3>Skim the system</h3><p>Read the file once for strategy, workflow, and context before customizing any client-facing language.</p></div></article>
-    <article class="prompt-card"><div class="num">02</div><div><p class="eyebrow">Customize</p><h3>Make it specific</h3><p>Replace brackets, niche details, service names, offers, and client language with the business details.</p></div></article>
-    <article class="prompt-card"><div class="num">03</div><div><p class="eyebrow">Use</p><h3>Put it in motion</h3><p>Move finished prompts, templates, calendars, and scripts into the weekly operating workflow.</p></div></article>
+  <div class="section-head">
+    <div><p class="eyebrow">Implementation</p><h2>Make the system feel made for the niche.</h2></div>
+    <p class="intro">Start with the next family touchpoint: inquiry reply, parent update, onboarding questionnaire, availability message, testimonial request, or care introduction.</p>
+  </div>
+  <div class="bespoke-grid">
+    <article class="bespoke-card"><div class="num">01</div><h3>Start with the buyer moment</h3><p>Use the asset that matches the next decision your client, customer, or lead needs to make.</p></article>
+    <article class="bespoke-card"><div class="num">02</div><h3>Make it sound specific</h3><p>Swap bracketed language, services, location, timeline, pricing context, and proof so the system feels built for the business.</p></article>
+    <article class="bespoke-card"><div class="num">03</div><h3>Create one weekly rhythm</h3><p>Batch content, follow-ups, prompts, and client messages together so execution feels simple instead of scattered.</p></article>
   </div>
   <div class="footer"><span>Communication Templates Nannies</span><span>02</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Nanny</h3>
         <p>Professional Communication Template Pack 24 done-for-you templates: family inquiries, interview follow-ups, daily updates, agreements, difficult conversations, and references</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Section 1: Family Inquiries &amp; Interviews</h3>
         <p>T1 — Family Inquiry Response</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Re: Nanny Inquiry — [Your Name]</h3>
-        <p>Dear [Name], Thank you so much for reaching out — your family sounds wonderful and the role you&#x27;ve described is exactly the kind of placement I love being part of. [2-3 sentences showing you&#x27;ve read their inquiry carefully — reference their children&#x27;s ages, the hours, anything specific they mentioned.] A few questions before we go further: [2-3 specific questions — e.g., &#x27;What does a typical day look like for your children?&#x27; / &#x27;Are there any specific routines or approaches that are important to you?&#x27; / &#x27;Is there anything particular you are looking for beyond the basics?&#x27;] I would love to arrange a call to learn more about your children and your family&#x27;s needs. I am available [two specific times] this week. Warm regards, [Your Name] | [Phone] | [Email] T2 — Platform First Message</p>
+        <p>Dear [Name], Thank you so much for reaching out — your family sounds wonderful and the role you&#x27;ve described is exactly the kind of placement I love being part of. [2-3 sentences showing you&#x27;ve read their inquiry carefully — reference their</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Care Platform — Send Directly</h3>
-        <p>Hello [Name]! I came across your listing and I think I could be a wonderful fit for your family. [One specific sentence showing you read their listing — e.g., &#x27;I have extensive experience with the [age] stage and your approach to routine really resonates with me.&#x27;] A little about me: [2-3 sentences — experience, qualifications, approach]. I would love to learn more about your children and discuss the role. Would a call this week work? [Your Name] T3 — Interview Confirmation</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Re: Nanny Inquiry — [Your Name]</h3>
+        <p>children&#x27;s ages, the hours, anything specific they mentioned.] A few questions before we go further: [2-3 specific questions — e.g., &#x27;What does a typical day look like for your children?&#x27; / &#x27;Are there any specific</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Looking Forward To Meeting You — [Your Name]</h3>
-        <p>Dear [Name], I&#x27;m so looking forward to our meeting on [date] at [time] at [location / video call]. I&#x27;ll make sure to bring: [list — e.g., my CV, reference letters, first aid certificate, DBS/background check]. Is there anything specific you&#x27;d like me to prepare or think about before we meet? I want to make the most of our time together. See you [day]! [Your Name] | [Phone] T4 — Post-Interview Follow-Up</p>
-      </div>
-    </article>
-</div>
+    </article></div>
   <div class="footer"><span>Communication Templates Nannies</span><span>03</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Thank You For Meeting With Me — [Your Name]</h3>
-        <p>Dear [Name], Thank you so much for taking the time to meet with me [today/yesterday] — it was genuinely lovely to learn about your children and your family. [One or two specific things you loved — e.g., &#x27;The way [Child&#x27;s Name] immediately showed me their drawing collection was just the sweetest thing&#x27; / &#x27;Your approach to [specific parenting value they shared] really resonated with me.&#x27;] I left feeling genuinely excited about this role and I believe my experience with [relevant age/area] would be a wonderful fit for your family. I am ready to move forward at any time and happy to discuss any remaining questions. Please do not hesitate to reach out. Warm regards, [Your Name] | [Phone]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>routines or approaches that are important to you?&#x27; / &#x27;Is there anything particular you are looking for beyond the basics?&#x27;] I would love to arrange a call to learn more about your children and your family&#x27;s needs. I am available [two specific times] this week.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>Warm regards, [Your Name] | [Phone] | [Email] T2 — Platform First Message</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Care Platform — Send Directly</h3>
+        <p>Hello [Name]! I came across your listing and I think I could be a wonderful fit for your family. [One specific sentence showing you read their listing — e.g., &#x27;I have extensive experience with the [age] stage and your approach to routine really resonates with me.&#x27;]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Care Platform — Send Directly</h3>
+        <p>A little about me: [2-3 sentences — experience, qualifications, approach]. I would love to learn more about your children and discuss the role. Would a call this week work? [Your Name] T3 — Interview Confirmation</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>04</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>Dear [Name], I&#x27;m so looking forward to our meeting on [date] at [time] at [location / video call]. I&#x27;ll make sure to bring: [list — e.g., my CV, reference letters, first aid certificate, DBS/background check].</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>Is there anything specific you&#x27;d like me to prepare or think about before we meet? I want to make the most of our time together. See you [day]! [Your Name] | [Phone] T4 — Post-Interview Follow-Up</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Thank You For Meeting With Me — [Your Name]</h3>
+        <p>Dear [Name], Thank you so much for taking the time to meet with me [today/yesterday] — it was genuinely lovely to learn about your children and your family. [One or two specific things you loved — e.g., &#x27;The way [Child&#x27;s Name]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Thank You For Meeting With Me — [Your Name]</h3>
+        <p>immediately showed me their drawing collection was just the sweetest thing&#x27; / &#x27;Your approach to [specific parenting value they shared] really resonated with me.&#x27;] I left feeling genuinely excited about this role and I believe my experience</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>05</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>with [relevant age/area] would be a wonderful fit for your family. I am ready to move forward at any time and happy to discuss any remaining questions. Please do not hesitate to reach out. Warm regards, [Your Name] | [Phone]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Section 2: Rates &amp; Agreements</h3>
         <p>T5 — Rate Discussion Email</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Rate Discussion — [Your Name]</h3>
-        <p>Dear [Name], I am delighted to be in conversation about this role — I wanted to address the rate question directly so we are both clear. My rate is $[amount] gross per hour / $[amount] gross per week. This reflects [brief explanation — e.g., my [X] years of experience with children of your children&#x27;s ages, my first aid certification, and my commitment to ongoing professional development]. For this rate you can expect: [brief description — hours covered, activities, any additional duties included]. Before I can give you a final number, it would help to know your budget range — that way we can be honest with each other about whether this is likely to work. Warm regards, [Your Name] T6 — Working Agreement Introduction</p>
+        <p>Dear [Name], I am delighted to be in conversation about this role — I wanted to address the rate question directly so we are both clear. My rate is $[amount] gross per hour / $[amount] gross per week. This reflects</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Working Agreement — Let&#x27;S Make This Formal</h3>
-        <p>Dear [Name], I am so excited to be moving forward with this role — I genuinely believe we are going to work wonderfully together. Before we start, I would love for us to put a simple working agreement in place. It does not need to be complicated — it just means we are both clear from day one on hours, duties, pay, holiday entitlement, sick leave, and notice period. This protects both of us and prevents the small misunderstandings that can sometimes arise in even the best nanny-family relationships.</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Rate Discussion — [Your Name]</h3>
+        <p>[brief explanation — e.g., my [X] years of experience with children of your children&#x27;s ages, my first aid certification, and my commitment to ongoing professional development]. For this rate you can expect: [brief description — hours covered, activities,</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>04</span></div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>06</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>I can send a draft for you to review, or we can go through it together on a call. Which would you prefer? Warm regards, [Your Name] T7 — Rate Increase Notice</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>any additional duties included]. Before I can give you a final number, it would help to know your budget range — that way we can be honest with each other about whether this is likely to work. Warm regards, [Your Name] T6 — Working Agreement Introduction</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Rate Review — [Your Name]</h3>
-        <p>Dear [Name], I have so enjoyed my time with your family and I am grateful for the trust you place in me every day. I wanted to have a professional conversation about my rate. It has been [X months/years] since we last reviewed it, and given [rising cost of living / additional responsibilities I have taken on / my continued professional development], I would like to propose a rate of $[new amount] from [date]. I wanted to give you plenty of notice and the opportunity to discuss this openly. I hope we can find an arrangement that works for everyone. With warmth, [Your Name]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Working Agreement — Let&#x27;s Make This Formal</h3>
+        <p>Dear [Name], I am so excited to be moving forward with this role — I genuinely believe we are going to work wonderfully together. Before we start, I would love for us to put a simple working agreement in place. It does not need to be complicated — it just means we are both clear</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Working Agreement — Let&#x27;s Make This Formal</h3>
+        <p>from day one on hours, duties, pay, holiday entitlement, sick leave, and notice period. This protects both of us and prevents the small misunderstandings that can sometimes arise in even the best nanny-family relationships.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Working Agreement — Let&#x27;s Make This Formal</h3>
+        <p>I can send a draft for you to review, or we can go through it together on a call. Which would you prefer? Warm regards, [Your Name] T7 — Rate Increase Notice</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>07</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>Dear [Name], I have so enjoyed my time with your family and I am grateful for the trust you place in me every day. I wanted to have a professional conversation about my rate. It has been [X months/years] since we last reviewed it, and given [rising cost of living /</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>additional responsibilities I have taken on / my continued professional development], I would like to propose a rate of $[new amount] from [date]. I wanted to give you plenty of notice and the opportunity to discuss this</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>openly. I hope we can find an arrangement that works for everyone. With warmth, [Your Name]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Section 3: Daily Family Communication</h3>
         <p>T8 — End of Day Update</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Text / Whatsapp — Send At End Of Each Day</h3>
-        <p>Hi [Name]! Here is [Child&#x27;s Name]&#x27;s day: Morning: [brief activity summary] Lunch: [what they ate and how much] Nap: [time and duration if applicable] Afternoon: [activity] Highlight of the day: [one specific sweet or funny moment] [Any practical notes — e.g., &#x27;They finished their antibiotics at 2pm — dose given.&#x27; / &#x27;They were a little tired this afternoon — early night might be good.&#x27;] See you [tomorrow / day]! [Your Name] T9 — Developmental Observation Note</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>08</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Lovely Moment I Wanted To Share — [Child&#x27;S Name]</h3>
-        <p>Hi [Name]! I just had to share this with you — today [Child&#x27;s Name] [describe the developmental moment — e.g., &#x27;used the word [word] completely unprompted and in the right context for the first time&#x27; / &#x27;independently did [task] without any help from me — they were so proud of themselves&#x27;]. I know these moments go by so fast — I did not want you to miss it. [Your Name] 🌟 T10 — Concern Communication</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Text / Whatsapp — Send At End Of Each Day</h3>
+        <p>Hi [Name]! Here is [Child&#x27;s Name]&#x27;s day: Morning: [brief activity summary] Lunch: [what they ate and how much] Nap: [time and duration if applicable] Afternoon: [activity] Highlight of the day: [one specific sweet or funny moment]</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>09</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>[Any practical notes — e.g., &#x27;They finished their antibiotics at 2pm — dose given.&#x27; / &#x27;They were a little tired this afternoon — early night might be good.&#x27;] See you [tomorrow / day]! [Your Name] T9 — Developmental Observation Note</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">06</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Lovely Moment I Wanted To Share — [Child&#x27;s Name]</h3>
+        <p>Hi [Name]! I just had to share this with you — today [Child&#x27;s Name] [describe the developmental moment — e.g., &#x27;used the word [word] completely unprompted and in the right context for the first time&#x27; / &#x27;independently did [task] without any</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Lovely Moment I Wanted To Share — [Child&#x27;s Name]</h3>
+        <p>help from me — they were so proud of themselves&#x27;]. I know these moments go by so fast — I did not want you to miss it. [Your Name] 🌟 T10 — Concern Communication</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Something I Wanted To Share With You</h3>
         <p>Dear [Name], I hope everything is well with you. I wanted to share something I have noticed over the past [few days/week] — not because I am alarmed, but because I believe in keeping you fully informed about your children.</p>
       </div>
-    </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>05</span></div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>10</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>[Describe the observation specifically and calmly — e.g., &#x27;I have noticed [Child&#x27;s Name] seems more withdrawn than usual and has been reluctant to engage in activities they normally love.&#x27; / &#x27;I have noticed [Child&#x27;s Name] has had some difficulty with [specific area] this week.&#x27;] I may of course be reading it wrong — you know them best. But I wanted to share it so we can keep an eye on it together. Let me know if you would like to talk through it. [Your Name] T11 — Sick Child Notification</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>[Describe the observation specifically and calmly — e.g., &#x27;I have noticed [Child&#x27;s Name] seems more withdrawn than usual and has been reluctant to engage in activities they normally love.&#x27; / &#x27;I have noticed [Child&#x27;s Name] has had some difficulty with [specific area] this week.&#x27;]</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Important — [Child&#x27;S Name] Is Unwell</h3>
-        <p>Hi [Name], I wanted to let you know immediately that [Child&#x27;s Name] is not feeling well today. [Specific symptoms — e.g., &#x27;They have a temperature of [X]°F / 38°C and have been quite lethargic since about [time].&#x27; / &#x27;They vomited once at [time] and haven&#x27;t eaten lunch.&#x27;] [What I have done: &#x27;I have given them Calpol at [time] as per your instructions / I am keeping them comfortable and resting / I have not given any medication and am waiting to hear from you.&#x27;] Please call me on [Phone] when you see this. I am here with them and they are comfortable. [Your Name]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>I may of course be reading it wrong — you know them best. But I wanted to share it so we can keep an eye on it together. Let me know if you would like to talk through it. [Your Name] T11 — Sick Child Notification</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Important — [Child&#x27;s Name] Is Unwell</h3>
+        <p>Hi [Name], I wanted to let you know immediately that [Child&#x27;s Name] is not feeling well today. [Specific symptoms — e.g., &#x27;They have a temperature of [X]°F / 38°C and have been quite lethargic since about [time].&#x27; / &#x27;They vomited once at [time] and haven&#x27;t eaten lunch.&#x27;]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Important — [Child&#x27;s Name] Is Unwell</h3>
+        <p>[What I have done: &#x27;I have given them Calpol at [time] as per your instructions / I am keeping them comfortable and resting / I have not given any medication and am waiting to hear from you.&#x27;] Please call me on [Phone] when you see this. I am here with them and they</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>11</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>are comfortable. [Your Name]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Materials</h3>
         <p>T12 — Reference Request Email</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">04</div>
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Reference Request — [Your Name]</h3>
-        <p>Dear [Name], I hope you and the children are doing wonderfully. I am currently [exploring new opportunities / being considered for a wonderful new role] and the family has asked for professional references. I would be so grateful if you would be willing to either write a brief letter of reference or speak with them directly. Your perspective on my work with [Child&#x27;s Name(s)] would mean a great deal. If it would help, I am happy to send a few prompting questions or even draft something for you to review and adjust. Thank you so much for considering this. [Your Name] | [Phone] T13 — Agency Introduction Email</p>
+        <p>Dear [Name], I hope you and the children are doing wonderfully. I am currently [exploring new opportunities / being considered for a wonderful new role] and the family has asked for professional references.</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Reference Request — [Your Name]</h3>
+        <p>I would be so grateful if you would be willing to either write a brief letter of reference or speak with them directly. Your perspective on my work with [Child&#x27;s Name(s)] would mean a great deal. If it would help, I am happy to send a few prompting questions or even draft</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>12</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">05</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Nanny Registration Enquiry — [Your Name]</h3>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Reference Request — [Your Name]</h3>
+        <p>something for you to review and adjust. Thank you so much for considering this. [Your Name] | [Phone] T13 — Agency Introduction Email</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>13</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
         <p>Dear [Name], I am writing to enquire about registering with [Agency Name] as a professional nanny. About me: [Your Name], [X years] experience working with children aged [age range]. Qualifications: [first aid / DBS cleared / relevant education]. My</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>06</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
-        <p>preferred role: [live-in / live-out / full-time / part-time / location]. I am available from [start date] and am currently seeking a long-term placement with a [type of family/setup]. I would be grateful for information about your registration process and any current placements that might be a good fit. I am happy to provide references, certificates, and a full CV on request. Warm regards, [Your Name] | [Phone] | [Email]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>preferred role: [live-in / live-out / full-time / part-time / location]. I am available from [start date] and am currently seeking a long-term placement with a [type of family/setup]. I would be grateful for information about your registration process and any</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>current placements that might be a good fit. I am happy to provide references, certificates, and a full CV on request. Warm regards, [Your Name] | [Phone] | [Email]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Section 5: Challenging Situations</h3>
         <p>T14 — Scope Creep Conversation</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">03</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Our Arrangement — [Your Name]</h3>
-        <p>Dear [Name], I hope you know how much I value our relationship — working with your children has been one of the genuine privileges of my professional life. I wanted to have a straightforward conversation about something before it becomes a source of friction. Over the past [timeframe], my duties have expanded to include [specific examples — e.g., school run for an additional child / additional household management / weekend cover on top of my contracted hours]. I am happy to continue with these additional duties — I just think it would be fair for us to formally update my working agreement to reflect them. Could we find 20 minutes to discuss this week? I want this arrangement to work brilliantly for all of us, long term. Warm regards, [Your Name] T15 — Notice of Resignation</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">04</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject My Resignation — [Your Name]</h3>
-        <p>Dear [Name], This is one of the hardest messages I have written professionally. After [timeframe] with your family, I have made the difficult decision to move on, and I wanted to tell you personally rather than formally. [Genuine reason — keep it warm and honest: new opportunity / relocation / career change / further study / personal reasons]. This is not a decision I have made lightly. I will give my full [X weeks] notice and I am committed to making the transition as smooth as possible. I will write a detailed handover document and I am happy to be involved in meeting any potential replacement if you would find that helpful. Working with [children&#x27;s names] has been one of the genuine joys of my professional life. Thank you for trusting me with them. With warmth and gratitude, [Your Name] T16 — Sudden Unavailability / Sick Day</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>07</span></div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>14</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Our Arrangement — [Your Name]</h3>
+        <p>Dear [Name], I hope you know how much I value our relationship — working with your children has been one of the genuine privileges of my professional life. I wanted to have a straightforward conversation about something before it</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>15</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Important — I Am Unable To Work Today</h3>
-        <p>Dear [Name], I am so sorry to message you with this news — I am unwell this morning and unable to come in today. [Brief description if appropriate — e.g., &#x27;I have a temperature and do not want to risk bringing this to the children.&#x27;] I have contacted [colleague/cover nanny name] who [is / is not] available to help — [relevant info]. I will update you as soon as I know about tomorrow. I am so sorry for the disruption to your day. [Your Name] | [Phone]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>becomes a source of friction. Over the past [timeframe], my duties have expanded to include [specific examples — e.g., school run for an additional child / additional household management / weekend cover on top of my contracted hours].</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>I am happy to continue with these additional duties — I just think it would be fair for us to formally update my working agreement to reflect them. Could we find 20 minutes to discuss this week? I want this arrangement to work brilliantly for all of us, long term.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>Warm regards, [Your Name] T15 — Notice of Resignation</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject My Resignation — [Your Name]</h3>
+        <p>Dear [Name], This is one of the hardest messages I have written professionally. After [timeframe] with your family, I have made the difficult decision to move on, and I wanted to tell you personally rather than formally.</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>16</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject My Resignation — [Your Name]</h3>
+        <p>[Genuine reason — keep it warm and honest: new opportunity / relocation / career change / further study / personal reasons]. This is not a decision I have made lightly. I will give my full [X weeks] notice and I am committed to making the</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>17</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>transition as smooth as possible. I will write a detailed handover document and I am happy to be involved in meeting any potential replacement if you would find that helpful. Working with [children&#x27;s names] has been one of the genuine joys of my</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>professional life. Thank you for trusting me with them. With warmth and gratitude, [Your Name] T16 — Sudden Unavailability / Sick Day</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Important — I Am Unable To Work Today</h3>
+        <p>Dear [Name], I am so sorry to message you with this news — I am unwell this morning and unable to come in today. [Brief description if appropriate — e.g., &#x27;I have a temperature and do not want to risk bringing this to the children.&#x27;]</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Important — I Am Unable To Work Today</h3>
+        <p>I have contacted [colleague/cover nanny name] who [is / is not] available to help — [relevant info]. I will update you as soon as I know about tomorrow. I am so sorry for the disruption to your day. [Your Name] | [Phone]</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>18</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
         <h3>Section 6: Additional Templates</h3>
         <p>T17 — Nanny Share Inquiry Response</p>
       </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>19</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Re: Nanny Share Inquiry — [Your Name]</h3>
+        <p>Dear [Name], Thank you for reaching out about a nanny share arrangement — I love this model and have experience making them work brilliantly for all the families involved. [2-3 sentences on your experience with nanny shares or how you would approach one.]</p>
+      </div>
     </article>
 
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Re: Nanny Share Inquiry — [Your Name]</h3>
+        <p>Before we go further, a few things that would help me understand the fit: [2-3 questions — the ages and temperaments of the children, how the families know each other, proposed hours and location, pay arrangement].</p>
+      </div>
+    </article>
 
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Re: Nanny Share Inquiry — [Your Name]</h3>
-        <p>Dear [Name], Thank you for reaching out about a nanny share arrangement — I love this model and have experience making them work brilliantly for all the families involved. [2-3 sentences on your experience with nanny shares or how you would approach one.] Before we go further, a few things that would help me understand the fit: [2-3 questions — the ages and temperaments of the children, how the families know each other, proposed hours and location, pay arrangement]. A joint meet-and-greet with both families is usually the best first step. Would that be possible? [Your Name] | [Phone] T18 — Emergency Childcare Availability</p>
+        <p>A joint meet-and-greet with both families is usually the best first step. Would that be possible? [Your Name] | [Phone] T18 — Emergency Childcare Availability</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Emergency Childcare Available — [Your Name]</h3>
-        <p>Hi [Name]! I wanted to reach out because I have some unexpected availability [today / this week] and I am able to offer emergency childcare cover if needed. I am available [hours and dates]. Please pass this on to anyone in your network who might need a trusted, experienced hand at short notice. [Your Name] | [Phone] | DBS cleared / first aid certified T19 — Activity Planning Email to Parents</p>
+        <p>Hi [Name]! I wanted to reach out because I have some unexpected availability [today / this week] and I am able to offer emergency childcare cover if needed. I am available [hours and dates]. Please pass this on to anyone in your</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>20</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>network who might need a trusted, experienced hand at short notice. [Your Name] | [Phone] | DBS cleared / first aid certified T19 — Activity Planning Email to Parents</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">05</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject This Week&#x27;S Activities — [Child&#x27;S Name]</h3>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject This Week&#x27;s Activities — [Child&#x27;s Name]</h3>
         <p>Hi [Name]! Here is a quick overview of what I am planning for [Child&#x27;s Name] this week: Monday: [activity and brief reason — e.g., &#x27;sensory play with water and containers — great for fine motor development&#x27;] Tuesday: [activity] Wednesday: [outing if applicable]</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>08</span></div>
-</section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
-  <div class="section-head">
-    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
-  </div>
-  <div class="content-stack">
-    <article class="prompt-card">
-      <div class="num">01</div>
+
+    <article class="asset-card">
+      <div class="num">03</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Action System</h3>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject This Week&#x27;s Activities — [Child&#x27;s Name]</h3>
         <p>Thursday: [activity] Friday: [activity or free play] Let me know if there is anything you would like me to focus on or if anything needs adjusting. [Your Name] T20 — Holiday / Time Off Request</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">02</div>
+    <article class="asset-card">
+      <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Holiday Request — [Your Name]</h3>
-        <p>Dear [Name], I wanted to let you know as early as possible that I am hoping to take [X days] holiday from [date] to [date]. [If within contracted holiday entitlement: &#x27;This falls within my annual leave entitlement as per our agreement.&#x27;] [If additional: &#x27;I understand this may require arrangement — I am happy to discuss how we can make this work for you.&#x27;] I wanted to give you as much notice as possible so you have plenty of time to</p>
+        <p>Dear [Name], I wanted to let you know as early as possible that I am hoping to take [X days] holiday from [date] to [date]. [If within contracted holiday entitlement: &#x27;This falls within my annual leave entitlement as per our agreement.&#x27;] [If additional: &#x27;I understand this may</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>21</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+<article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>require arrangement — I am happy to discuss how we can make this work for you.&#x27;] I wanted to give you as much notice as possible so you have plenty of time to</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
-      <div class="num">03</div>
+    <article class="asset-card">
+      <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Plan. Please Let Me Know If You Have Any Questions.</h3>
         <p>Thank you, [Your Name] T21 — Positive Family Reference (Template for Past Employers to Adapt)</p>
       </div>
     </article>
 
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Reference For [Your Name] — Provided By Request</h3>
+        <p>To whom it may concern, I am writing to provide a reference for [Nanny Name], who worked as our family&#x27;s nanny from [dates]. [Nanny Name] cared for our [number] children aged [ages] and was an outstanding professional in every respect. [She/He/They] brought warmth,</p>
+      </div>
+    </article>
 
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">04</div>
       <div>
-        <p class="eyebrow">Working page</p>
+        <p class="eyebrow">Family asset</p>
         <h3>Subject Reference For [Your Name] — Provided By Request</h3>
-        <p>To whom it may concern, I am writing to provide a reference for [Nanny Name], who worked as our family&#x27;s nanny from [dates]. [Nanny Name] cared for our [number] children aged [ages] and was an outstanding professional in every respect. [She/He/They] brought warmth, patience, and genuine expertise to every aspect of the role. I would particularly highlight [2-3 specific strengths — e.g., &#x27;an exceptional ability to manage our toddler&#x27;s big emotions with compassion and consistency&#x27; / &#x27;a wonderful natural rapport with our baby from the very first</p>
+        <p>patience, and genuine expertise to every aspect of the role. I would particularly highlight [2-3 specific strengths — e.g., &#x27;an exceptional ability to manage our toddler&#x27;s big emotions with compassion and</p>
       </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">05</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Week&#x27;].</h3>
-        <p>I recommend [Nanny Name] without reservation and would welcome any enquiries at [contact details]. Yours sincerely, [Parent Name and details] T22 — Background Check / DBS Request Response</p>
-      </div>
-    </article>
-
-
-    <article class="prompt-card">
-      <div class="num">06</div>
-      <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Re: Background Check — [Your Name]</h3>
-        <p>Dear [Name], Of course — I completely understand and support the need for a thorough background check. The safety of the children in my care is my top priority. I am [DBS checked / background checked] as of [date]. My certificate number is [number] and I am happy to show the original or arrange an online check through the Update Service if preferred. Please let me know what you need from me and I will arrange it as quickly as possible. [Your Name] T23 — First Aid / Certification Expiry Notice</p>
-      </div>
-    </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>09</span></div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>22</span></div>
 </section>
-<section class="page work direction-page">
-  <div class="brand"><div>Content Elevated</div><div></div></div>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
   <div class="section-head">
     <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
-    <p class="intro">Working pages designed to keep the strategy clear, usable, and easy to customize for the business.</p>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
   </div>
   <div class="content-stack">
-    <article class="prompt-card">
+<article class="asset-card">
+      <div class="num">05</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Reference For [Your Name] — Provided By Request</h3>
+        <p>consistency&#x27; / &#x27;a wonderful natural rapport with our baby from the very first</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>23</span></div>
+</section>
+<section class="page work feature-page">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
       <div class="num">01</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Certification Update — [Your Name]</h3>
-        <p>Dear [Name], I just wanted to let you know that my [First Aid / Paediatric CPR / other] certification is due for renewal in [month]. I have already booked my refresher course for [date], so I will remain fully certified throughout. I will send you my updated certificate once I receive it. Keeping my certifications current is something I take very seriously — I want you to always have complete confidence in my preparedness. [Your Name] T24 — Gratitude / Long-Term Thank-You</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>I recommend [Nanny Name] without reservation and would welcome any inquiries at [contact details]. Yours sincerely, [Parent Name and details] T22 — Background Check / DBS Request Response</p>
       </div>
     </article>
 
-
-    <article class="prompt-card">
+    <article class="asset-card">
       <div class="num">02</div>
       <div>
-        <p class="eyebrow">Working page</p>
-        <h3>Subject Thank You — [Your Name]</h3>
-        <p>Dear [Name], I just wanted to take a moment to say thank you. Working with [children&#x27;s names] has been one of the most meaningful things I have done professionally. Watching [specific example of growth or moment that touched you] — these are the moments I will carry with me. Thank you for the trust, the warmth, and for making me feel part of your family. With genuine gratitude, [Your Name]</p>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Re: Background Check — [Your Name]</h3>
+        <p>Dear [Name], Of course — I completely understand and support the need for a thorough background check. The safety of the children in my care is my top priority. I am [DBS checked / background checked] as of [date]. My certificate number</p>
       </div>
     </article>
-</div>
-  <div class="footer"><span>Communication Templates Nannies</span><span>10</span></div>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Re: Background Check — [Your Name]</h3>
+        <p>is [number] and I am happy to show the original or arrange an online check through the Update Service if preferred. Please let me know what you need from me and I will arrange it as quickly as possible. [Your Name] T23 — First Aid / Certification Expiry Notice</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">04</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Certification Update — [Your Name]</h3>
+        <p>Dear [Name], I just wanted to let you know that my [First Aid / Paediatric CPR / other] certification is due for renewal in [month]. I have already booked my refresher course for [date], so I will remain fully</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>24</span></div>
+</section>
+<section class="page work">
+  <div class="brand">
+    <div></div>
+    <div class="badge">Templates</div>
+  </div>
+  <div class="section-head">
+    <div><p class="eyebrow">Templates</p><h2>Communication Templates Nannies</h2></div>
+    <p class="intro">Use these assets to sharpen the offer, improve the client journey, and make the next action easier to take.</p>
+  </div>
+  <div class="content-stack">
+    <article class="asset-card">
+      <div class="num">01</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Growth Asset</h3>
+        <p>certified throughout. I will send you my updated certificate once I receive it. Keeping my certifications current is something I take very seriously — I want you to always have complete confidence in my preparedness. [Your Name] T24 — Gratitude / Long-Term Thank-You</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">02</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Thank You — [Your Name]</h3>
+        <p>Dear [Name], I just wanted to take a moment to say thank you. Working with [children&#x27;s names] has been one of the most meaningful things I have done professionally. Watching [specific example of growth or moment that touched you] — these are the moments I will carry with me.</p>
+      </div>
+    </article>
+
+    <article class="asset-card">
+      <div class="num">03</div>
+      <div>
+        <p class="eyebrow">Family asset</p>
+        <h3>Subject Thank You — [Your Name]</h3>
+        <p>Thank you for the trust, the warmth, and for making me feel part of your family. With genuine gratitude, [Your Name]</p>
+      </div>
+    </article></div>
+  <div class="footer"><span>Communication Templates Nannies</span><span>25</span></div>
 </section></main></body></html>

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Start Here - Hair Stylist Growth System</title>
+    <style>
+      @page {
+        size: Letter;
+        margin: 0;
+      }
+
+      :root {
+        --ink: #17110f;
+        --soft-ink: #5d504b;
+        --muted: #8e7a72;
+        --paper: #fbf4ec;
+        --paper-2: #f6e8de;
+        --blush: #d99aa0;
+        --rose: #9f5f62;
+        --clay: #ba806d;
+        --cream: #fffaf4;
+        --line: rgba(91, 67, 58, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #e8d7ca;
+        color: var(--ink);
+        font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .book {
+        width: 8.5in;
+        margin: 0 auto;
+      }
+
+      .page {
+        position: relative;
+        width: 8.5in;
+        min-height: 11in;
+        overflow: hidden;
+        page-break-after: always;
+        background:
+          radial-gradient(circle at 15% 10%, rgba(217, 154, 160, 0.30), transparent 2.1in),
+          radial-gradient(circle at 86% 14%, rgba(186, 128, 109, 0.17), transparent 2.35in),
+          linear-gradient(135deg, var(--paper), var(--cream) 56%, var(--paper-2));
+        padding: 0.62in;
+      }
+
+      .page::before {
+        content: "";
+        position: absolute;
+        inset: 0.28in;
+        border: 1px solid rgba(91, 67, 58, 0.12);
+        border-radius: 28px;
+        pointer-events: none;
+      }
+
+      .kicker {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--rose);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .kicker::before {
+        content: "";
+        width: 42px;
+        height: 1px;
+        background: var(--rose);
+      }
+
+      h1,
+      h2,
+      h3 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-family: "Didot", "Bodoni 72", "Times New Roman", serif;
+        font-weight: 400;
+        letter-spacing: -0.045em;
+      }
+
+      h1 {
+        max-width: 5.9in;
+        margin-top: 0.78in;
+        font-size: 64px;
+        line-height: 0.94;
+      }
+
+      h1 span,
+      h2 span {
+        color: var(--rose);
+        font-style: italic;
+      }
+
+      h2 {
+        max-width: 5.8in;
+        margin-top: 0.26in;
+        font-size: 42px;
+        line-height: 0.98;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        color: var(--soft-ink);
+        font-size: 12.5px;
+        line-height: 1.58;
+      }
+
+      .lead {
+        max-width: 4.95in;
+        margin-top: 0.28in;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .brand {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .wordmark {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .wordmark small {
+        display: block;
+        margin-top: 8px;
+        color: var(--rose);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+
+      .badge {
+        border: 1px solid rgba(159, 95, 98, 0.22);
+        border-radius: 999px;
+        padding: 10px 14px;
+        color: var(--rose);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        background: rgba(255, 250, 244, 0.64);
+      }
+
+      .cover-meta {
+        position: absolute;
+        left: 0.62in;
+        right: 0.62in;
+        bottom: 0.74in;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .meta-item {
+        padding: 18px 16px;
+        border-left: 1px solid var(--line);
+      }
+
+      .meta-item:first-child {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .meta-item strong {
+        display: block;
+        font-family: "Didot", "Bodoni 72", "Times New Roman", serif;
+        color: var(--rose);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .meta-item span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.18in;
+        margin-top: 0.42in;
+      }
+
+      .card,
+      .wide-card {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 0.23in;
+        background: rgba(255, 250, 244, 0.62);
+        box-shadow: 0 18px 48px rgba(91, 67, 58, 0.08);
+      }
+
+      .wide-card {
+        grid-column: 1 / -1;
+      }
+
+      .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.36in;
+        height: 0.36in;
+        margin-bottom: 0.16in;
+        border: 1px solid rgba(159, 95, 98, 0.28);
+        border-radius: 999px;
+        color: var(--rose);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .list {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        gap: 0.14in;
+        margin-top: 0.35in;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 0.46in 1fr;
+        gap: 0.18in;
+        align-items: start;
+        padding: 0.18in 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .row:last-child {
+        border-bottom: 0;
+      }
+
+      .pill {
+        display: inline-block;
+        margin-bottom: 0.08in;
+        color: var(--rose);
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        position: absolute;
+        z-index: 2;
+        left: 0.62in;
+        right: 0.62in;
+        bottom: 0.36in;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        padding-top: 0.15in;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="book">
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Hair Stylist Growth System</small></div>
+          <div class="badge">Start Here</div>
+        </div>
+        <p class="kicker">First 60 minutes</p>
+        <h1>Start with the system that books the <span>next client.</span></h1>
+        <p class="lead">This bundle is not meant to be read once and forgotten. Use it like a working salon growth desk: content for visibility, prompts for speed, rebooking scripts for retention, and numbers for smarter pricing.</p>
+        <div class="cover-meta">
+          <div class="meta-item"><strong>01</strong><span>Set up</span></div>
+          <div class="meta-item"><strong>07</strong><span>Days of action</span></div>
+          <div class="meta-item"><strong>30</strong><span>Days of traction</span></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>01</span></div>
+      </section>
+
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Start Here</small></div>
+          <div class="badge">Inventory</div>
+        </div>
+        <p class="kicker">What you have</p>
+        <h2>A complete salon growth system, not a folder of random files.</h2>
+        <div class="grid">
+          <div class="card"><div class="num">01</div><h3>90-day content calendar</h3><p>Three monthly execution files with post ideas, hooks, captions, platform direction, and salon-specific content themes.</p></div>
+          <div class="card"><div class="num">02</div><h3>AI playbook + prompt library</h3><p>Use AI to create captions, offers, emails, scripts, service messaging, policy copy, and client communication faster.</p></div>
+          <div class="card"><div class="num">03</div><h3>Client retention system</h3><p>Rebooking, win-back, referral, review, and follow-up workflows for keeping the chair full between launches.</p></div>
+          <div class="card"><div class="num">04</div><h3>Brand + pricing tools</h3><p>Brand positioning, visual direction, profit guide, service pricing spreadsheet, and client retention tracker.</p></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>02</span></div>
+      </section>
+
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Start Here</small></div>
+          <div class="badge">Fast path</div>
+        </div>
+        <p class="kicker">First hour</p>
+        <h2>Do this before opening every file.</h2>
+        <div class="list">
+          <div class="row"><div class="num">01</div><div><span class="pill">Choose your goal</span><h3>Pick one priority for the next 30 days.</h3><p>More first-time bookings, better rebooking, more color clients, higher average ticket, better Instagram consistency, or stronger client retention.</p></div></div>
+          <div class="row"><div class="num">02</div><div><span class="pill">Set your inputs</span><h3>Fill in the numbers first.</h3><p>Open the profit calculator and add your services, current prices, chair time, supply costs, booth rent, and monthly income goal.</p></div></div>
+          <div class="row"><div class="num">03</div><div><span class="pill">Pick one campaign</span><h3>Choose your next offer or content theme.</h3><p>Examples: color refresh month, extension consults, first-time client openings, summer hair prep, holiday pre-booking, or win-back week.</p></div></div>
+          <div class="row"><div class="num">04</div><div><span class="pill">Use the scripts</span><h3>Send one rebooking or win-back message today.</h3><p>Do not wait until the whole system is perfect. One sent message can turn the bundle into revenue immediately.</p></div></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>03</span></div>
+      </section>
+
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Start Here</small></div>
+          <div class="badge">First week</div>
+        </div>
+        <p class="kicker">Seven-day setup</p>
+        <h2>Build the system once, then work from it weekly.</h2>
+        <div class="grid">
+          <div class="card"><div class="num">01</div><h3>Monday</h3><p>Plan seven posts from the calendar. Choose one transformation, one education post, one personal brand post, one offer, one review, one behind-the-scenes post, and one rebooking reminder.</p></div>
+          <div class="card"><div class="num">02</div><h3>Tuesday</h3><p>Use the prompt library to turn those ideas into captions, story slides, and short-form video scripts.</p></div>
+          <div class="card"><div class="num">03</div><h3>Wednesday</h3><p>Update the client retention tracker. Mark who is due soon, overdue, inactive, or ready for a review request.</p></div>
+          <div class="card"><div class="num">04</div><h3>Thursday</h3><p>Send rebooking, review, referral, or win-back messages. Keep them warm, specific, and easy to answer.</p></div>
+          <div class="wide-card"><div class="num">05</div><h3>Friday</h3><p>Review what got saves, DMs, comments, bookings, or replies. Keep the winners. Rewrite the weak pieces. Repeat next week.</p></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>04</span></div>
+      </section>
+
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Start Here</small></div>
+          <div class="badge">Use map</div>
+        </div>
+        <p class="kicker">What to open</p>
+        <h2>Use the right file for the right business problem.</h2>
+        <div class="list">
+          <div class="row"><div class="num">01</div><div><span class="pill">I do not know what to post</span><h3>Open the 90-day calendar.</h3><p>Use the platform, hook, and content idea as your starting point.</p></div></div>
+          <div class="row"><div class="num">02</div><div><span class="pill">I know what to say but not how to say it</span><h3>Open the prompt library.</h3><p>Paste the prompt into your AI tool with your service, tone, client type, and offer.</p></div></div>
+          <div class="row"><div class="num">03</div><div><span class="pill">Clients are not rebooking</span><h3>Open the retention system.</h3><p>Use the in-chair script, the post-appointment text, and the win-back sequence.</p></div></div>
+          <div class="row"><div class="num">04</div><div><span class="pill">My prices feel random</span><h3>Open the profit calculator.</h3><p>Price from chair time, supplies, overhead, skill, and profit target instead of guessing.</p></div></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>05</span></div>
+      </section>
+
+      <section class="page">
+        <div class="brand">
+          <div class="wordmark">Content Elevated<small>Start Here</small></div>
+          <div class="badge">Professional use</div>
+        </div>
+        <p class="kicker">Use it well</p>
+        <h2>Make every asset sound like your chair, not a template.</h2>
+        <div class="grid">
+          <div class="card"><div class="num">01</div><h3>Personalize before sending</h3><p>Add the client's name, service, timing, and one detail from the appointment whenever possible.</p></div>
+          <div class="card"><div class="num">02</div><h3>Use real availability</h3><p>Only create urgency when it is true. Trust is more valuable than a forced deadline.</p></div>
+          <div class="card"><div class="num">03</div><h3>Get consent</h3><p>Ask permission before sharing client photos, names, testimonials, or transformation stories.</p></div>
+          <div class="card"><div class="num">04</div><h3>Stay inside your scope</h3><p>Keep hair and scalp education practical. Avoid medical claims and follow your local license, salon, and platform rules.</p></div>
+          <div class="wide-card"><div class="num">05</div><h3>Track one number weekly</h3><p>Choose one metric: rebookings, consultation requests, reviews, referrals, or average ticket. A premium business is built through patterns, not panic.</p></div>
+        </div>
+        <div class="footer"><span>Hair Stylist Growth Bundle</span><span>06</span></div>
+      </section>
+    </main>
+  </body>
+</html>

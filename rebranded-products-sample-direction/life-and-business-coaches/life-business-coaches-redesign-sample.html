@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Life & Business Coaches AI Playbook Sample</title>
+  <style>
+    @page { size: Letter; margin: 0; }
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #102327;
+      --graphite: #12181b;
+      --deep: #09292f;
+      --teal: #0c6670;
+      --aqua: #79d4d8;
+      --brass: #8fb8b7;
+      --ivory: #f6f9f8;
+      --mist: #e9f0ec;
+      --muted: #667271;
+      --line: rgba(16,35,39,.14);
+    }
+    body {
+      margin: 0;
+      background: #d8ddd9;
+      color: var(--ink);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    }
+    .book { width: 8.5in; margin: 0 auto; }
+    .page {
+      position: relative;
+      width: 8.5in;
+      min-height: 11in;
+      overflow: hidden;
+      page-break-after: always;
+      padding: .58in;
+      background:
+        radial-gradient(circle at 84% 12%, rgba(121,212,216,.14), transparent 2.35in),
+        radial-gradient(circle at 9% 87%, rgba(82,112,126,.08), transparent 2.1in),
+        linear-gradient(135deg, #f8fbfa, #eef4f3 58%, #e3ecec);
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: .32in .32in .48in;
+      border: 1px solid var(--line);
+      pointer-events: none;
+    }
+    .page::after {
+      content: "";
+      position: absolute;
+      right: -.65in;
+      top: .85in;
+      width: 3.1in;
+      height: 8.9in;
+      background:
+        linear-gradient(180deg, rgba(14,110,120,.11), rgba(82,112,126,.07), transparent 72%);
+      transform: skewX(-8deg);
+      pointer-events: none;
+    }
+    .cover {
+      color: var(--ivory);
+      background:
+        linear-gradient(90deg, rgba(12,18,21,.94), rgba(12,18,21,.72) 52%, rgba(12,18,21,.9)),
+        radial-gradient(circle at 80% 18%, rgba(121,212,216,.18), transparent 2.55in),
+        radial-gradient(circle at 14% 88%, rgba(82,112,126,.12), transparent 2.1in),
+        linear-gradient(135deg, #080f12, #102327 58%, #151c20);
+    }
+    .cover::before { border-color: rgba(251,248,242,.14); }
+    .cover::after {
+      right: -.7in;
+      top: 1in;
+      width: 3.2in;
+      height: 8.6in;
+      border: 0;
+      background: linear-gradient(180deg, rgba(121,212,216,.12), rgba(82,112,126,.05), transparent 72%);
+      transform: skewX(-10deg);
+      opacity: .55;
+    }
+    .brand {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: rgba(16,35,39,.56);
+      font-size: 8.5px;
+      font-weight: 900;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .cover .brand { color: rgba(251,248,242,.65); }
+    .pill {
+      padding: 9px 13px;
+      border: 1px solid rgba(14,110,120,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      color: var(--teal);
+      letter-spacing: .16em;
+    }
+    .cover .pill {
+      background: rgba(251,248,242,.08);
+      border-color: rgba(131,215,215,.32);
+      color: var(--aqua);
+    }
+    h1, h2, h3, p { position: relative; z-index: 2; margin: 0; }
+    .eyebrow {
+      position: relative;
+      z-index: 2;
+      margin-top: .64in;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--teal);
+      font-size: 9px;
+      font-weight: 950;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+    }
+    .cover .eyebrow { color: var(--aqua); }
+    .eyebrow::before { content: ""; width: .48in; height: 1px; background: currentColor; opacity: .75; }
+    h1 {
+      max-width: 5.9in;
+      margin-top: .26in;
+      color: var(--ivory);
+      font-family: "Avenir Next Condensed", "Arial Narrow", Inter, sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+    h1 span {
+      display: block;
+      color: var(--aqua);
+    }
+    h1 em {
+      display: block;
+      margin-top: .14in;
+      color: rgba(251,248,242,.7);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 1.5;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 4.8in;
+      margin-top: .24in;
+      color: rgba(251,248,242,.78);
+      font-size: 14.5px;
+      line-height: 1.58;
+    }
+    .cover-line {
+      position: relative;
+      z-index: 2;
+      margin-top: .58in;
+      width: 5.75in;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(251,248,242,.18);
+      color: rgba(251,248,242,.7);
+      font-size: 8.5px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .cover-line span { display: inline-flex; align-items: center; gap: 18px; }
+    .cover-line span + span::before { content: ""; width: 4px; height: 4px; border-radius: 999px; background: var(--aqua); opacity: .8; }
+    .footer {
+      position: absolute;
+      z-index: 2;
+      left: .58in;
+      right: .58in;
+      bottom: .28in;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(16,35,39,.48);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .cover .footer { color: rgba(251,248,242,.55); }
+    .section-head {
+      position: relative;
+      z-index: 2;
+      margin-top: .48in;
+      display: grid;
+      grid-template-columns: 1.04fr .86fr;
+      gap: .48in;
+      align-items: end;
+    }
+    h2 {
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: 42px;
+      line-height: .98;
+      font-weight: 850;
+      letter-spacing: -.055em;
+      color: var(--ink);
+    }
+    h2 em { color: var(--teal); font-style: normal; }
+    .intro {
+      color: var(--muted);
+      font-size: 12.3px;
+      line-height: 1.62;
+    }
+    .strategy-map {
+      position: relative;
+      z-index: 2;
+      margin-top: .44in;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .strategy-card {
+      min-height: 1.45in;
+      padding: 22px;
+      border: 1px solid rgba(16,35,39,.13);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 14px 30px rgba(16,35,39,.035);
+    }
+    .num {
+      display: inline-grid;
+      width: .36in;
+      height: .36in;
+      place-items: center;
+      border: 1px solid rgba(14,110,120,.22);
+      border-radius: 999px;
+      color: var(--teal);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 850;
+    }
+    h3 {
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: 15.5px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -.01em;
+    }
+    .strategy-card p, .week-card p, .note-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 10.8px;
+      line-height: 1.56;
+    }
+    .diagnostic {
+      position: relative;
+      z-index: 2;
+      margin-top: .34in;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+    }
+    .note-card {
+      padding: 24px;
+      border: 1px solid rgba(16,35,39,.13);
+      background: linear-gradient(135deg, rgba(9,41,47,.94), rgba(14,110,120,.78));
+      color: var(--ivory);
+    }
+    .note-card h3 { margin-top: 0; color: var(--ivory); font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 850; }
+    .note-card p { color: rgba(251,248,242,.76); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(16,35,39,.13);
+      background: rgba(255,255,255,.58);
+    }
+    .metrics div { padding: 19px 16px; border-right: 1px solid rgba(16,35,39,.11); }
+    .metrics div:last-child { border-right: 0; }
+    .metrics b { display: block; color: var(--teal); font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 19px; font-weight: 900; }
+    .metrics span { display: block; margin-top: 7px; color: var(--muted); font-size: 8px; font-weight: 900; line-height: 1.35; letter-spacing: .13em; text-transform: uppercase; }
+    .dark-panel {
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(131,215,215,.16), transparent 2.2in),
+        linear-gradient(135deg, #11171a, #16282c 58%, #0a1d21);
+    }
+    .dark-panel::before { border-color: rgba(251,248,242,.13); }
+    .dark-panel h2, .dark-panel h3 { color: var(--ivory); }
+    .dark-panel .intro { color: rgba(251,248,242,.66); }
+    .prompt-box {
+      position: relative;
+      z-index: 2;
+      margin-top: .42in;
+      padding: 30px;
+      border: 1px solid rgba(131,215,215,.23);
+      background: rgba(251,248,242,.065);
+    }
+    .prompt-box .label {
+      color: var(--aqua);
+      font-size: 8px;
+      font-weight: 950;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .prompt-box h3 {
+      margin-top: 16px;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: 27px;
+      font-weight: 850;
+      letter-spacing: -.035em;
+    }
+    .prompt-box p {
+      margin-top: 14px;
+      color: rgba(251,248,242,.78);
+      font-size: 12px;
+      line-height: 1.68;
+    }
+    .prompt-split {
+      position: relative;
+      z-index: 2;
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .prompt-split article {
+      padding: 21px;
+      border: 1px solid rgba(251,248,242,.13);
+      background: rgba(251,248,242,.05);
+    }
+    .prompt-split p { color: rgba(251,248,242,.68); font-size: 10.5px; line-height: 1.55; }
+    .week-grid {
+      position: relative;
+      z-index: 2;
+      margin-top: .42in;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .week-card {
+      min-height: 1.42in;
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(16,35,39,.13);
+      background: rgba(255,255,255,.7);
+      display: grid;
+      grid-template-columns: .46in 1fr;
+      column-gap: 16px;
+      align-items: start;
+    }
+    .week-card .num { grid-row: 1 / span 2; margin-top: 1px; }
+    .week-card h3 { margin-top: 0; }
+    .week-card p { margin-top: 8px; }
+    .closing-band {
+      position: relative;
+      z-index: 2;
+      margin-top: .36in;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(16,35,39,.13);
+      background: rgba(255,255,255,.56);
+    }
+    .closing-band div { min-height: .82in; padding: 17px; border-right: 1px solid rgba(16,35,39,.11); }
+    .closing-band div:last-child { border-right: 0; }
+    .closing-band b { display: block; color: var(--teal); font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: 900; }
+    .closing-band span { display: block; margin-top: 6px; color: var(--muted); font-size: 8px; font-weight: 900; line-height: 1.35; letter-spacing: .12em; text-transform: uppercase; }
+    @media print { body { background: white; } .book { width: auto; margin: 0; } }
+  </style>
+</head>
+<body>
+  <main class="book">
+    <section class="page cover">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Coach Growth System</span></div>
+      <p class="eyebrow">Position · Convert · Lead</p>
+      <h1>Life Coach <span>Growth</span><em>High-ticket positioning, authority content, discovery calls, onboarding, and client experience systems.</em></h1>
+      <p class="lead">A premium AI-powered operating system for coaches who need sharper positioning, stronger discovery calls, authority content, and a client journey that feels clear from first click to paid transformation.</p>
+      <div class="cover-line">
+        <span>Offer clarity</span>
+        <span>Authority content</span>
+        <span>Client conversion</span>
+        <span>Premium delivery</span>
+      </div>
+      <div class="footer"><span>Done-for-you growth tools for coaches</span><span>01</span></div>
+    </section>
+
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Offer Architecture</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">The Method</p><h2>Coaching sells when the <em>path</em> is visible.</h2></div>
+        <p class="intro">The strongest coaching brands do not sell vague transformation. They name the tension, clarify the outcome, show the method, and make the next step feel obvious.</p>
+      </div>
+      <div class="strategy-map">
+        <article class="strategy-card"><div class="num">01</div><h3>Name the exact tension</h3><p>Translate broad pain into a specific client moment: stuck in a transition, overthinking the offer, inconsistent action, or unclear leadership identity.</p></article>
+        <article class="strategy-card"><div class="num">02</div><h3>Package the transformation</h3><p>Turn the coaching outcome into a named process, container, sprint, audit, roadmap, or private advisory experience.</p></article>
+        <article class="strategy-card"><div class="num">03</div><h3>Build authority without hype</h3><p>Use frameworks, client questions, diagnostic posts, and process breakdowns so the coach sounds grounded, credible, and specific.</p></article>
+        <article class="strategy-card"><div class="num">04</div><h3>Make conversion feel calm</h3><p>Use discovery call prompts, consult follow-ups, onboarding notes, and expectation-setting templates that create trust without pressure.</p></article>
+      </div>
+      <div class="diagnostic">
+        <article class="note-card"><h3>The rule</h3><p>If the client cannot repeat what you help with in one sentence, the offer is still too abstract.</p></article>
+        <div class="metrics">
+          <div><b>Clarity</b><span>Specific problem and outcome</span></div>
+          <div><b>Proof</b><span>Process, language, and credibility</span></div>
+          <div><b>Next</b><span>Simple path to consult</span></div>
+        </div>
+      </div>
+      <div class="footer"><span>Life & Business Coaches</span><span>02</span></div>
+    </section>
+
+    <section class="page dark-panel">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Prompt Lab</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Copy + Paste</p><h2>Build a clearer <em>coaching offer</em>.</h2></div>
+        <p class="intro">Use this prompt when the offer feels too broad, too soft, or too hard to explain in a sales conversation.</p>
+      </div>
+      <div class="prompt-box">
+        <div class="label">Signature Prompt</div>
+        <h3>Offer Positioning Prompt</h3>
+        <p>Act as a premium coaching brand strategist. Help me clarify my offer for [audience]. They currently struggle with [current problem] and want [desired outcome]. My method combines [method/process]. Give me 5 positioning options with a short promise, ideal client description, core tension, emotional payoff, content angle, and simple CTA. Keep the tone intelligent, grounded, direct, and non-hype.</p>
+      </div>
+      <div class="prompt-split">
+        <article><h3>Use it for sales pages</h3><p>Turn broad transformation language into sharper sections, clearer objections, and better offer framing.</p></article>
+        <article><h3>Use it for content</h3><p>Pull weekly themes, reels, emails, and carousel ideas from the same core positioning instead of starting cold.</p></article>
+      </div>
+      <div class="footer"><span>AI Playbook</span><span>03</span></div>
+    </section>
+
+    <section class="page">
+      <div class="brand"><span>Content Elevated</span><span class="pill">Execution Rhythm</span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Implementation</p><h2>A weekly cadence for <em>visible expertise</em>.</h2></div>
+        <p class="intro">The system works best when it becomes a repeatable operating rhythm: one insight, one offer asset, one client touchpoint, and one conversion move every week.</p>
+      </div>
+      <div class="week-grid">
+        <article class="week-card"><div class="num">01</div><h3>Monday: publish one diagnostic</h3><p>Ask a precise question that helps ideal clients recognize the problem you solve.</p></article>
+        <article class="week-card"><div class="num">02</div><h3>Tuesday: teach the framework</h3><p>Turn one coaching principle into a post, email, short video outline, or carousel.</p></article>
+        <article class="week-card"><div class="num">03</div><h3>Thursday: improve the consult</h3><p>Refine one discovery question, follow-up note, objection response, or onboarding detail.</p></article>
+        <article class="week-card"><div class="num">04</div><h3>Friday: make the offer visible</h3><p>Share a clear next step: audit, consult, private coaching, group program, workshop, or advisory container.</p></article>
+      </div>
+      <div class="closing-band">
+        <div><b>01</b><span>Position the offer</span></div>
+        <div><b>02</b><span>Teach the method</span></div>
+        <div><b>03</b><span>Convert the consult</span></div>
+        <div><b>04</b><span>Support the client</span></div>
+      </div>
+      <div class="footer"><span>Clearer offer. Stronger authority. Better clients.</span><span>04</span></div>
+    </section>
+  </main>
+</body>
+</html>

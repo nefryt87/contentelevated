@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "accountants-and-cpas",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/accountants-and-cpas"
+  },
+  {
+    "slug": "aestheticians",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/aestheticians"
+  },
+  {
+    "slug": "attorneys",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/attorneys"
+  },
+  {
+    "slug": "barbers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/barbers"
+  },
+  {
+    "slug": "bridal-hair-and-makeup-artists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/bridal-hair-and-makeup-artists"
+  },
+  {
+    "slug": "broker-toolkit",
+    "customer_files": 0,
+    "internal_candidates": 0,
+    "spreadsheets": 2,
+    "internal_folder": "content-elevated-product-os/internal/broker-toolkit"
+  },
+  {
+    "slug": "car-wash-businesses",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 1,
+    "internal_folder": "content-elevated-product-os/internal/car-wash-businesses"
+  },
+  {
+    "slug": "chiropractors",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/chiropractors"
+  },
+  {
+    "slug": "dentists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/dentists"
+  },
+  {
+    "slug": "dog-walkers-and-pet-sitters",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/dog-walkers-and-pet-sitters"
+  },
+  {
+    "slug": "electricians",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/electricians"
+  },
+  {
+    "slug": "etsy-sellers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 1,
+    "internal_folder": "content-elevated-product-os/internal/etsy-sellers"
+  },
+  {
+    "slug": "event-planners",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/event-planners"
+  },
+  {
+    "slug": "financial-advisors",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/financial-advisors"
+  },
+  {
+    "slug": "florists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/florists"
+  },
+  {
+    "slug": "hair-stylists",
+    "customer_files": 9,
+    "internal_candidates": 2,
+    "spreadsheets": 2,
+    "internal_folder": "content-elevated-product-os/internal/hair-stylists"
+  },
+  {
+    "slug": "hvac-contractors",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/hvac-contractors"
+  },
+  {
+    "slug": "insurance-agents",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/insurance-agents"
+  },
+  {
+    "slug": "interior-designers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/interior-designers"
+  },
+  {
+    "slug": "lash-technicians",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/lash-technicians"
+  },
+  {
+    "slug": "life-and-business-coaches",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/life-and-business-coaches"
+  },
+  {
+    "slug": "makeup-artists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/makeup-artists"
+  },
+  {
+    "slug": "massage-therapists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/massage-therapists"
+  },
+  {
+    "slug": "med-spas",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/med-spas"
+  },
+  {
+    "slug": "mortgage-brokers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/mortgage-brokers"
+  },
+  {
+    "slug": "nail-technicians",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/nail-technicians"
+  },
+  {
+    "slug": "nannies-and-childcare-professionals",
+    "customer_files": 7,
+    "internal_candidates": 1,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/nannies-and-childcare-professionals"
+  },
+  {
+    "slug": "nutritionists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/nutritionists"
+  },
+  {
+    "slug": "party-planners",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 1,
+    "internal_folder": "content-elevated-product-os/internal/party-planners"
+  },
+  {
+    "slug": "personal-chefs",
+    "customer_files": 6,
+    "internal_candidates": 2,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/personal-chefs"
+  },
+  {
+    "slug": "personal-stylists",
+    "customer_files": 7,
+    "internal_candidates": 1,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/personal-stylists"
+  },
+  {
+    "slug": "personal-trainers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/personal-trainers"
+  },
+  {
+    "slug": "physical-therapists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/physical-therapists"
+  },
+  {
+    "slug": "plumbers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/plumbers"
+  },
+  {
+    "slug": "public-speakers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/public-speakers"
+  },
+  {
+    "slug": "tattoo-artists",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/tattoo-artists"
+  },
+  {
+    "slug": "videographers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/videographers"
+  },
+  {
+    "slug": "wedding-photographers",
+    "customer_files": 8,
+    "internal_candidates": 0,
+    "spreadsheets": 0,
+    "internal_folder": "content-elevated-product-os/internal/wedding-photographers"
+  }
+]

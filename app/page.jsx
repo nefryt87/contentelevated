@@ -117,7 +117,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Method />
-      <InsideBundle />
       <BundleShowcase />
       <Process />
       <CategoryShowcase />
@@ -291,48 +290,6 @@ function Method() {
               <h3 className="editorial-serif text-[1.45rem]">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-[#8f9baa]">{text}</p>
             </motion.article>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-function InsideBundle() {
-  const list = [
-    ["01", "90-day content calendar", "Daily prompts, themes, captions, and hooks tuned to your niche."],
-    ["02", "AI playbook + prompts", "Niche-trained prompts for captions, scripts, emails, offers, and ads."],
-    ["03", "Client systems pack", "Intake forms, consult scripts, follow-ups, rebooking sequences."],
-    ["04", "Editable brand kit + Canva", "Palette, type direction, post templates, story templates, and business cards."],
-    ["05", "Profit & pricing calculators", "Plug-in spreadsheets to price services and project monthly revenue."]
-  ];
-
-  return (
-    <Section id="inside">
-      <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-        <div>
-          <Eyebrow>Inside Every Bundle</Eyebrow>
-          <h2 className="editorial-serif text-[clamp(2.2rem,12vw,3.3rem)] leading-[1] sm:text-[clamp(2.55rem,4.35vw,5rem)] sm:leading-[0.98]">
-            A complete <span className="gold-text">operating system</span> for your business.
-          </h2>
-          <div className="mt-10 space-y-6">
-            {list.map(([number, title, text]) => (
-              <div key={title} className="group flex gap-5 rounded-2xl p-2 transition duration-300 hover:bg-white/[0.025]">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#6f7a89]/10 text-sm text-[#b8f3ff]">{number}</span>
-                <div>
-                  <h3 className="text-xl font-bold">{title}</h3>
-                  <p className="mt-1 text-base leading-7 text-[#8f9baa]">{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-          {showcaseProducts.slice(1, 5).map((product, index) => (
-            <a key={product.slug} href={`/products/${product.slug}`} className={`luxe-card premium-edge group relative block overflow-hidden rounded-[1.25rem] border border-[#6f7a89]/8 bg-[#10141b] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition duration-500 sm:rounded-[1.5rem] sm:hover:-translate-y-2 ${index % 2 ? "sm:mt-10" : ""}`}>
-              <div className="luxe-sheen z-10" />
-              <img src={product.image} alt="" className="aspect-[1.18] w-full object-contain p-2 transition duration-700 sm:group-hover:scale-[1.035]" />
-            </a>
           ))}
         </div>
       </div>
